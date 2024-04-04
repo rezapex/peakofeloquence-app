@@ -1,0 +1,233 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/color-mode/ColorModeImage.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, openBlock as _openBlock, createBlock as _createBlock, Fragment as _Fragment, createElementBlock as _createElementBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'ColorModeImage',\n  props: {\n  as: {\n    type: [String, Object],\n    default: 'img'\n  },\n  dark: {\n    type: String,\n    required: true\n  },\n  light: {\n    type: String,\n    required: true\n  }\n},\n  setup(__props) {\n\n\n\n\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    (_openBlock(), _createBlock(_resolveDynamicComponent(__props.as), _mergeProps({\n      src: __props.light,\n      class: \"dark:hidden\"\n    }, _ctx.$attrs), null, 16, [\"src\"])),\n    (_openBlock(), _createBlock(_resolveDynamicComponent(__props.as), _mergeProps({\n      src: __props.dark,\n      class: \"hidden dark:block\"\n    }, _ctx.$attrs), null, 16, [\"src\"]))\n  ], 64))\n}\n}\n\n})",
+      "start": 1712268127446,
+      "end": 1712268127446
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127446,
+      "end": 1712268127446,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127446,
+      "end": 1712268127446,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127446,
+      "end": 1712268127446,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127446,
+      "end": 1712268127446,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127446,
+      "end": 1712268127446,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, openBlock as _openBlock, createBlock as _createBlock, Fragment as _Fragment, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ColorModeImage\",\n  props: {\n    as: {\n      type: [String, Object],\n      default: \"img\"\n    },\n    dark: {\n      type: String,\n      required: true\n    },\n    light: {\n      type: String,\n      required: true\n    }\n  },\n  setup(__props) {\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(_Fragment, null, [\n        (_openBlock(), _createBlock(_resolveDynamicComponent(__props.as), _mergeProps({\n          src: __props.light,\n          class: \"dark:hidden\"\n        }, _ctx.$attrs), null, 16, [\"src\"])),\n        (_openBlock(), _createBlock(_resolveDynamicComponent(__props.as), _mergeProps({\n          src: __props.dark,\n          class: \"hidden dark:block\"\n        }, _ctx.$attrs), null, 16, [\"src\"]))\n      ], 64);\n    };\n  }\n});\n",
+      "start": 1712268127446,
+      "end": 1712268127460,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/color-mode/ColorModeImage.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, openBlock as _openBlock, createBlock as _createBlock, Fragment as _Fragment, createElementBlock as _createElementBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'ColorModeImage',\n  props: {\n  as: {\n    type: [String, Object],\n    default: 'img'\n  },\n  dark: {\n    type: String,\n    required: true\n  },\n  light: {\n    type: String,\n    required: true\n  }\n},\n  setup(__props) {\n\n\n\n\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    (_openBlock(), _createBlock(_resolveDynamicComponent(__props.as), _mergeProps({\n      src: __props.light,\n      class: \"dark:hidden\"\n    }, _ctx.$attrs), null, 16, [\"src\"])),\n    (_openBlock(), _createBlock(_resolveDynamicComponent(__props.as), _mergeProps({\n      src: __props.dark,\n      class: \"hidden dark:block\"\n    }, _ctx.$attrs), null, 16, [\"src\"]))\n  ], 64))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,2BAA2B,0BAA0B,cAAc,aAAa,aAAa,YAAY,eAAe,cAAc,YAAY,WAAW,sBAAsB,2BAA2B;AAGvN,eAA4B,iCAAiB;AAAA,EAC3C,GAAG;AAAA,IACH,cAAc;AAAA,EAChB;AAAA,EACE,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,IAAI;AAAA,MACF,MAAM,CAAC,QAAQ,MAAM;AAAA,MACrB,SAAS;AAAA,IACX;AAAA,IACA,MAAM;AAAA,MACJ,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,IACA,OAAO;AAAA,MACL,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAMjB,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,WAAW,MAAM;AAAA,SACxD,WAAW,GAAG,aAAa,yBAAyB,QAAQ,EAAE,GAAG,YAAY;AAAA,UAC5E,KAAK,QAAQ;AAAA,UACb,OAAO;AAAA,QACT,GAAG,KAAK,MAAM,GAAG,MAAM,IAAI,CAAC,KAAK,CAAC;AAAA,SACjC,WAAW,GAAG,aAAa,yBAAyB,QAAQ,EAAE,GAAG,YAAY;AAAA,UAC5E,KAAK,QAAQ;AAAA,UACb,OAAO;AAAA,QACT,GAAG,KAAK,MAAM,GAAG,MAAM,IAAI,CAAC,KAAK,CAAC;AAAA,MACpC,GAAG,EAAE;AAAA,IACP;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127461,
+      "end": 1712268127461,
+      "order": "normal"
+    }
+  ]
+}

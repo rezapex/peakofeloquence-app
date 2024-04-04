@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark/lib/preprocess.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-util-types').Chunk} Chunk\n * @typedef {import('micromark-util-types').Code} Code\n * @typedef {import('micromark-util-types').Encoding} Encoding\n * @typedef {import('micromark-util-types').Value} Value\n */\n\n/**\n * @callback Preprocessor\n * @param {Value} value\n * @param {Encoding | null | undefined} [encoding]\n * @param {boolean | null | undefined} [end=false]\n * @returns {Array<Chunk>}\n */\n\nconst search = /[\\0\\t\\n\\r]/g\n\n/**\n * @returns {Preprocessor}\n */\nexport function preprocess() {\n  let column = 1\n  let buffer = ''\n  /** @type {boolean | undefined} */\n  let start = true\n  /** @type {boolean | undefined} */\n  let atCarriageReturn\n  return preprocessor\n\n  /** @type {Preprocessor} */\n  // eslint-disable-next-line complexity\n  function preprocessor(value, encoding, end) {\n    /** @type {Array<Chunk>} */\n    const chunks = []\n    /** @type {RegExpMatchArray | null} */\n    let match\n    /** @type {number} */\n    let next\n    /** @type {number} */\n    let startPosition\n    /** @type {number} */\n    let endPosition\n    /** @type {Code} */\n    let code\n    value =\n      buffer +\n      (typeof value === 'string'\n        ? value.toString()\n        : new TextDecoder(encoding || undefined).decode(value))\n    startPosition = 0\n    buffer = ''\n    if (start) {\n      // To do: `markdown-rs` actually parses BOMs (byte order mark).\n      if (value.charCodeAt(0) === 65279) {\n        startPosition++\n      }\n      start = undefined\n    }\n    while (startPosition < value.length) {\n      search.lastIndex = startPosition\n      match = search.exec(value)\n      endPosition =\n        match && match.index !== undefined ? match.index : value.length\n      code = value.charCodeAt(endPosition)\n      if (!match) {\n        buffer = value.slice(startPosition)\n        break\n      }\n      if (code === 10 && startPosition === endPosition && atCarriageReturn) {\n        chunks.push(-3)\n        atCarriageReturn = undefined\n      } else {\n        if (atCarriageReturn) {\n          chunks.push(-5)\n          atCarriageReturn = undefined\n        }\n        if (startPosition < endPosition) {\n          chunks.push(value.slice(startPosition, endPosition))\n          column += endPosition - startPosition\n        }\n        switch (code) {\n          case 0: {\n            chunks.push(65533)\n            column++\n            break\n          }\n          case 9: {\n            next = Math.ceil(column / 4) * 4\n            chunks.push(-2)\n            while (column++ < next) chunks.push(-1)\n            break\n          }\n          case 10: {\n            chunks.push(-4)\n            column = 1\n            break\n          }\n          default: {\n            atCarriageReturn = true\n            column = 1\n          }\n        }\n      }\n      startPosition = endPosition + 1\n    }\n    if (end) {\n      if (atCarriageReturn) chunks.push(-5)\n      if (buffer) chunks.push(buffer)\n      chunks.push(null)\n    }\n    return chunks\n  }\n}\n",
+      "start": 1712268127816,
+      "end": 1712268127827,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127827,
+      "end": 1712268127827,
+      "order": "normal"
+    }
+  ]
+}

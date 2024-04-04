@@ -1,0 +1,298 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/color-mode/ColorModeImage.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderVNode as _ssrRenderVNode } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'ColorModeImage',\n  __ssrInlineRender: true,\n  props: {\n  as: {\n    type: [String, Object],\n    default: 'img'\n  },\n  dark: {\n    type: String,\n    required: true\n  },\n  light: {\n    type: String,\n    required: true\n  }\n},\n  setup(__props) {\n\n\n\n\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<!--[-->`)\n  _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(__props.as), _mergeProps({\n    src: __props.light,\n    class: \"dark:hidden\"\n  }, _ctx.$attrs), null), _parent)\n  _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(__props.as), _mergeProps({\n    src: __props.dark,\n    class: \"hidden dark:block\"\n  }, _ctx.$attrs), null), _parent)\n  _push(`<!--]-->`)\n}\n}\n\n})",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/color-mode/ColorModeImage.vue"
+        ],
+        "sourcesContent": [
+          "<template>\n  <component :is=\"as\" :src=\"light\" class=\"dark:hidden\" v-bind=\"$attrs\" />\n  <component :is=\"as\" :src=\"dark\" class=\"hidden dark:block\" v-bind=\"$attrs\" />\n</template>\n\n<script setup lang=\"ts\">\ndefineOptions({\n  inheritAttrs: false\n})\n\ndefineProps({\n  as: {\n    type: [String, Object],\n    default: 'img'\n  },\n  dark: {\n    type: String,\n    required: true\n  },\n  light: {\n    type: String,\n    required: true\n  }\n})\n</script>\n"
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;AAKwB;AAGtB;AACF;AAcE;;;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderVNode as _ssrRenderVNode } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ColorModeImage\",\n  __ssrInlineRender: true,\n  props: {\n    as: {\n      type: [String, Object],\n      default: \"img\"\n    },\n    dark: {\n      type: String,\n      required: true\n    },\n    light: {\n      type: String,\n      required: true\n    }\n  },\n  setup(__props) {\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<!--[-->`);\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(__props.as), _mergeProps({\n        src: __props.light,\n        class: \"dark:hidden\"\n      }, _ctx.$attrs), null), _parent);\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(__props.as), _mergeProps({\n        src: __props.dark,\n        class: \"hidden dark:block\"\n      }, _ctx.$attrs), null), _parent);\n      _push(`<!--]-->`);\n    };\n  }\n});\n",
+      "start": 1712268134205,
+      "end": 1712268134212,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/color-mode/ColorModeImage.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderVNode as _ssrRenderVNode } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'ColorModeImage',\n  __ssrInlineRender: true,\n  props: {\n  as: {\n    type: [String, Object],\n    default: 'img'\n  },\n  dark: {\n    type: String,\n    required: true\n  },\n  light: {\n    type: String,\n    required: true\n  }\n},\n  setup(__props) {\n\n\n\n\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<!--[-->`)\n  _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(__props.as), _mergeProps({\n    src: __props.light,\n    class: \"dark:hidden\"\n  }, _ctx.$attrs), null), _parent)\n  _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(__props.as), _mergeProps({\n    src: __props.dark,\n    class: \"hidden dark:block\"\n  }, _ctx.$attrs), null), _parent)\n  _push(`<!--]-->`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,2BAA2B,0BAA0B,cAAc,aAAa,eAAe,oBAAoB;AAC5H,SAAS,kBAAkB,uBAAuB;AAGlD,eAA4B,iCAAiB;AAAA,EAC3C,GAAG;AAAA,IACH,cAAc;AAAA,EAChB;AAAA,EACE,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,IAAI;AAAA,MACF,MAAM,CAAC,QAAQ,MAAM;AAAA,MACrB,SAAS;AAAA,IACX;AAAA,IACA,MAAM;AAAA,MACJ,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,IACA,OAAO;AAAA,MACL,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAMjB,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,UAAU;AAChB,sBAAgB,OAAO,aAAa,yBAAyB,QAAQ,EAAE,GAAG,YAAY;AAAA,QACpF,KAAK,QAAQ;AAAA,QACb,OAAO;AAAA,MACT,GAAG,KAAK,MAAM,GAAG,IAAI,GAAG,OAAO;AAC/B,sBAAgB,OAAO,aAAa,yBAAyB,QAAQ,EAAE,GAAG,YAAY;AAAA,QACpF,KAAK,QAAQ;AAAA,QACb,OAAO;AAAA,MACT,GAAG,KAAK,MAAM,GAAG,IAAI,GAAG,OAAO;AAC/B,YAAM,UAAU;AAAA,IAClB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268134212,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268134212,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "normal"
+    }
+  ]
+}

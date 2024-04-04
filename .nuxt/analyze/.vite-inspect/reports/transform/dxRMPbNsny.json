@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark-extension-gfm-task-list-item/lib/syntax.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-util-types').Extension} Extension\n * @typedef {import('micromark-util-types').State} State\n * @typedef {import('micromark-util-types').TokenizeContext} TokenizeContext\n * @typedef {import('micromark-util-types').Tokenizer} Tokenizer\n */\n\nimport {factorySpace} from 'micromark-factory-space'\nimport {\n  markdownLineEnding,\n  markdownLineEndingOrSpace,\n  markdownSpace\n} from 'micromark-util-character'\nconst tasklistCheck = {\n  tokenize: tokenizeTasklistCheck\n}\n\n/**\n * Create an HTML extension for `micromark` to support GFM task list items\n * syntax.\n *\n * @returns {Extension}\n *   Extension for `micromark` that can be passed in `htmlExtensions` to\n *   support GFM task list items when serializing to HTML.\n */\nexport function gfmTaskListItem() {\n  return {\n    text: {\n      [91]: tasklistCheck\n    }\n  }\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction tokenizeTasklistCheck(effects, ok, nok) {\n  const self = this\n  return open\n\n  /**\n   * At start of task list item check.\n   *\n   * ```markdown\n   * > | * [x] y.\n   *       ^\n   * ```\n   *\n   * @type {State}\n   */\n  function open(code) {\n    if (\n      // Exit if there’s stuff before.\n      self.previous !== null ||\n      // Exit if not in the first content that is the first child of a list\n      // item.\n      !self._gfmTasklistFirstContentOfListItem\n    ) {\n      return nok(code)\n    }\n    effects.enter('taskListCheck')\n    effects.enter('taskListCheckMarker')\n    effects.consume(code)\n    effects.exit('taskListCheckMarker')\n    return inside\n  }\n\n  /**\n   * In task list item check.\n   *\n   * ```markdown\n   * > | * [x] y.\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function inside(code) {\n    // Currently we match how GH works in files.\n    // To match how GH works in comments, use `markdownSpace` (`[\\t ]`) instead\n    // of `markdownLineEndingOrSpace` (`[\\t\\n\\r ]`).\n    if (markdownLineEndingOrSpace(code)) {\n      effects.enter('taskListCheckValueUnchecked')\n      effects.consume(code)\n      effects.exit('taskListCheckValueUnchecked')\n      return close\n    }\n    if (code === 88 || code === 120) {\n      effects.enter('taskListCheckValueChecked')\n      effects.consume(code)\n      effects.exit('taskListCheckValueChecked')\n      return close\n    }\n    return nok(code)\n  }\n\n  /**\n   * At close of task list item check.\n   *\n   * ```markdown\n   * > | * [x] y.\n   *         ^\n   * ```\n   *\n   * @type {State}\n   */\n  function close(code) {\n    if (code === 93) {\n      effects.enter('taskListCheckMarker')\n      effects.consume(code)\n      effects.exit('taskListCheckMarker')\n      effects.exit('taskListCheck')\n      return after\n    }\n    return nok(code)\n  }\n\n  /**\n   * @type {State}\n   */\n  function after(code) {\n    // EOL in paragraph means there must be something else after it.\n    if (markdownLineEnding(code)) {\n      return ok(code)\n    }\n\n    // Space or tab?\n    // Check what comes after.\n    if (markdownSpace(code)) {\n      return effects.check(\n        {\n          tokenize: spaceThenNonSpace\n        },\n        ok,\n        nok\n      )(code)\n    }\n\n    // EOF, or non-whitespace, both wrong.\n    return nok(code)\n  }\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction spaceThenNonSpace(effects, ok, nok) {\n  return factorySpace(effects, after, 'whitespace')\n\n  /**\n   * After whitespace, after task list item check.\n   *\n   * ```markdown\n   * > | * [x] y.\n   *           ^\n   * ```\n   *\n   * @type {State}\n   */\n  function after(code) {\n    // EOF means there was nothing, so bad.\n    // EOL means there’s content after it, so good.\n    // Impossible to have more spaces.\n    // Anything else is good.\n    return code === null ? nok(code) : ok(code)\n  }\n}\n",
+      "start": 1712268127822,
+      "end": 1712268127835,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127835,
+      "end": 1712268127835,
+      "order": "normal"
+    }
+  ]
+}

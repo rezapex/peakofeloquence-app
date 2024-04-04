@@ -1,0 +1,318 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue?vue&type=style&index=0&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\npre code .line {\n  display: block;\n  min-height: 1rem;\n}\n",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue"
+        ],
+        "names": [],
+        "mappings": ";AAgEA,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE;EACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;EACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;AAClB",
+        "file": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\n\ndefineProps({\n  code: {\n    type: String,\n    required: true\n  },\n  icon: {\n    type: String,\n    default: undefined\n  },\n  language: {\n    type: String,\n    default: undefined\n  },\n  hideHeader: {\n    type: Boolean,\n    default: false\n  },\n  filename: {\n    type: String,\n    default: undefined\n  },\n  highlights: {\n    type: Array as PropType<number[]>,\n    default: undefined\n  },\n  meta: {\n    type: String,\n    default: undefined\n  }\n})\n\nconst config = {\n  wrapper: '[&>pre]:!rounded-t-none [&>pre]:!my-0 my-5',\n  header: 'flex items-center gap-1.5 border border-gray-200 dark:border-gray-700 border-b-0 relative rounded-t-md px-4 py-3 not-prose',\n  icon: {\n    base: ''\n  },\n  button: {\n    base: 'absolute top-2.5 right-2.5'\n  },\n  filename: 'text-gray-700 dark:text-gray-200 text-sm/6'\n}\n\nconst { ui } = useUI('content.prose.code', undefined, config, undefined, true)\n</script>\n\n<template>\n  <div class=\"relative\" :class=\"!!filename && ui.wrapper\">\n    <div v-if=\"filename && !hideHeader\" :class=\"ui.header\">\n      <ProseCodeIcon :icon=\"icon\" :filename=\"filename\" :class=\"ui.icon.base\" />\n\n      <span :class=\"ui.filename\">{{ filename }}</span>\n    </div>\n\n    <ProseCodeButton :code=\"code\" :class=\"ui.button.base\" />\n\n    <slot />\n  </div>\n</template>\n\n<style>\npre code .line {\n  display: block;\n  min-height: 1rem;\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1712268133706,
+      "end": 1712268133706,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": "pre code .line{display:block;min-height:1rem}",
+      "start": 1712268133706,
+      "end": 1712268133719,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+        "mappings": "AACA,eACE,aAAc,CACd,eACF",
+        "names": [],
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue"
+        ],
+        "sourcesContent": [
+          "\npre code .line {\n  display: block;\n  min-height: 1rem;\n}\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "pre code .line{display:block;min-height:1rem}",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+        "mappings": "AAAA,eAAe,aAAa,CAAC,eAAe",
+        "names": [],
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268133719,
+      "end": 1712268133719,
+      "order": "normal"
+    }
+  ]
+}

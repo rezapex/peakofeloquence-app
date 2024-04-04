@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/mdast-util-to-markdown/lib/handle/code.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('mdast').Code} Code\n * @typedef {import('mdast').Parents} Parents\n * @typedef {import('../types.js').Info} Info\n * @typedef {import('../types.js').Map} Map\n * @typedef {import('../types.js').State} State\n */\n\nimport {longestStreak} from 'longest-streak'\nimport {formatCodeAsIndented} from '../util/format-code-as-indented.js'\nimport {checkFence} from '../util/check-fence.js'\n\n/**\n * @param {Code} node\n * @param {Parents | undefined} _\n * @param {State} state\n * @param {Info} info\n * @returns {string}\n */\nexport function code(node, _, state, info) {\n  const marker = checkFence(state)\n  const raw = node.value || ''\n  const suffix = marker === '`' ? 'GraveAccent' : 'Tilde'\n\n  if (formatCodeAsIndented(node, state)) {\n    const exit = state.enter('codeIndented')\n    const value = state.indentLines(raw, map)\n    exit()\n    return value\n  }\n\n  const tracker = state.createTracker(info)\n  const sequence = marker.repeat(Math.max(longestStreak(raw, marker) + 1, 3))\n  const exit = state.enter('codeFenced')\n  let value = tracker.move(sequence)\n\n  if (node.lang) {\n    const subexit = state.enter(`codeFencedLang${suffix}`)\n    value += tracker.move(\n      state.safe(node.lang, {\n        before: value,\n        after: ' ',\n        encode: ['`'],\n        ...tracker.current()\n      })\n    )\n    subexit()\n  }\n\n  if (node.lang && node.meta) {\n    const subexit = state.enter(`codeFencedMeta${suffix}`)\n    value += tracker.move(' ')\n    value += tracker.move(\n      state.safe(node.meta, {\n        before: value,\n        after: '\\n',\n        encode: ['`'],\n        ...tracker.current()\n      })\n    )\n    subexit()\n  }\n\n  value += tracker.move('\\n')\n\n  if (raw) {\n    value += tracker.move(raw + '\\n')\n  }\n\n  value += tracker.move(sequence)\n  exit()\n  return value\n}\n\n/** @type {Map} */\nfunction map(line, _, blank) {\n  return (blank ? '' : '    ') + line\n}\n",
+      "start": 1712268127690,
+      "end": 1712268127705,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127705,
+      "end": 1712268127705,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127705,
+      "end": 1712268127706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127706,
+      "end": 1712268127706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127706,
+      "end": 1712268127706,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127706,
+      "end": 1712268127706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127706,
+      "end": 1712268127706,
+      "order": "normal"
+    }
+  ]
+}

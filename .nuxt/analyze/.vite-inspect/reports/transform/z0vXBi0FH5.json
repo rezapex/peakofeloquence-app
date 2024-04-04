@@ -1,0 +1,226 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/footer/FooterLinks.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <ul v-if=\"links?.length\" :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <li v-for=\"(link, index) of links\" :key=\"index\" class=\"relative\">\n      <ULink\n        v-bind=\"getULinkProps(link)\"\n        :class=\"ui.base\"\n        :active-class=\"ui.active\"\n        :inactive-class=\"ui.inactive\"\n        @click=\"link.click\"\n      >\n        {{ link.label }}\n\n        <UIcon v-if=\"link.target === '_blank'\" :name=\"ui.externalIcon.name\" :class=\"ui.externalIcon.base\" />\n      </ULink>\n    </li>\n  </ul>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\nimport { getULinkProps } from '#ui/utils'\nimport type { FooterLink } from '#ui-pro/types'\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  wrapper: 'flex flex-col md:flex-row items-center justify-center gap-4 lg:gap-6',\n  base: 'text-sm',\n  active: 'text-gray-900 dark:text-white font-medium',\n  inactive: 'text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300',\n  externalIcon: {\n    name: appConfig.ui.icons.external,\n    base: 'w-3 h-3 absolute top-0.5 -right-3.5 text-gray-400 dark:text-gray-500'\n  }\n}))\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  links: {\n    type: Array as PropType<FooterLink[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n})\n\nconst { ui, attrs } = useUI('footer.links', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n</script>\n",
+      "start": 1712268127600,
+      "end": 1712268127632,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127632,
+      "end": 1712268127632,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127632,
+      "end": 1712268127632,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127632,
+      "end": 1712268127632,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127632,
+      "end": 1712268127632,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127632,
+      "end": 1712268127632,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127632,
+      "end": 1712268127632,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127632,
+      "end": 1712268127632,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127632,
+      "end": 1712268127632,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/footer/FooterLinks.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/footer/FooterLinks.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1712268127632,
+      "end": 1712268127660,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127660,
+      "end": 1712268127660,
+      "order": "normal"
+    }
+  ]
+}

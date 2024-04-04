@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/mdast-util-to-markdown/lib/util/safe.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('../types.js').SafeConfig} SafeConfig\n * @typedef {import('../types.js').State} State\n */\n\nimport {patternInScope} from './pattern-in-scope.js'\n\n/**\n * Make a string safe for embedding in markdown constructs.\n *\n * In markdown, almost all punctuation characters can, in certain cases,\n * result in something.\n * Whether they do is highly subjective to where they happen and in what\n * they happen.\n *\n * To solve this, `mdast-util-to-markdown` tracks:\n *\n * * Characters before and after something;\n * * What “constructs” we are in.\n *\n * This information is then used by this function to escape or encode\n * special characters.\n *\n * @param {State} state\n *   Info passed around about the current state.\n * @param {string | null | undefined} input\n *   Raw value to make safe.\n * @param {SafeConfig} config\n *   Configuration.\n * @returns {string}\n *   Serialized markdown safe for embedding.\n */\nexport function safe(state, input, config) {\n  const value = (config.before || '') + (input || '') + (config.after || '')\n  /** @type {Array<number>} */\n  const positions = []\n  /** @type {Array<string>} */\n  const result = []\n  /** @type {Record<number, {before: boolean, after: boolean}>} */\n  const infos = {}\n  let index = -1\n\n  while (++index < state.unsafe.length) {\n    const pattern = state.unsafe[index]\n\n    if (!patternInScope(state.stack, pattern)) {\n      continue\n    }\n\n    const expression = state.compilePattern(pattern)\n    /** @type {RegExpExecArray | null} */\n    let match\n\n    while ((match = expression.exec(value))) {\n      const before = 'before' in pattern || Boolean(pattern.atBreak)\n      const after = 'after' in pattern\n      const position = match.index + (before ? match[1].length : 0)\n\n      if (positions.includes(position)) {\n        if (infos[position].before && !before) {\n          infos[position].before = false\n        }\n\n        if (infos[position].after && !after) {\n          infos[position].after = false\n        }\n      } else {\n        positions.push(position)\n        infos[position] = {before, after}\n      }\n    }\n  }\n\n  positions.sort(numerical)\n\n  let start = config.before ? config.before.length : 0\n  const end = value.length - (config.after ? config.after.length : 0)\n  index = -1\n\n  while (++index < positions.length) {\n    const position = positions[index]\n\n    // Character before or after matched:\n    if (position < start || position >= end) {\n      continue\n    }\n\n    // If this character is supposed to be escaped because it has a condition on\n    // the next character, and the next character is definitly being escaped,\n    // then skip this escape.\n    if (\n      (position + 1 < end &&\n        positions[index + 1] === position + 1 &&\n        infos[position].after &&\n        !infos[position + 1].before &&\n        !infos[position + 1].after) ||\n      (positions[index - 1] === position - 1 &&\n        infos[position].before &&\n        !infos[position - 1].before &&\n        !infos[position - 1].after)\n    ) {\n      continue\n    }\n\n    if (start !== position) {\n      // If we have to use a character reference, an ampersand would be more\n      // correct, but as backslashes only care about punctuation, either will\n      // do the trick\n      result.push(escapeBackslashes(value.slice(start, position), '\\\\'))\n    }\n\n    start = position\n\n    if (\n      /[!-/:-@[-`{-~]/.test(value.charAt(position)) &&\n      (!config.encode || !config.encode.includes(value.charAt(position)))\n    ) {\n      // Character escape.\n      result.push('\\\\')\n    } else {\n      // Character reference.\n      result.push(\n        '&#x' + value.charCodeAt(position).toString(16).toUpperCase() + ';'\n      )\n      start++\n    }\n  }\n\n  result.push(escapeBackslashes(value.slice(start, end), config.after))\n\n  return result.join('')\n}\n\n/**\n * @param {number} a\n * @param {number} b\n * @returns {number}\n */\nfunction numerical(a, b) {\n  return a - b\n}\n\n/**\n * @param {string} value\n * @param {string} after\n * @returns {string}\n */\nfunction escapeBackslashes(value, after) {\n  const expression = /\\\\(?=[!-/:-@[-`{-~])/g\n  /** @type {Array<number>} */\n  const positions = []\n  /** @type {Array<string>} */\n  const results = []\n  const whole = value + after\n  let index = -1\n  let start = 0\n  /** @type {RegExpExecArray | null} */\n  let match\n\n  while ((match = expression.exec(whole))) {\n    positions.push(match.index)\n  }\n\n  while (++index < positions.length) {\n    if (start !== positions[index]) {\n      results.push(value.slice(start, positions[index]))\n    }\n\n    results.push('\\\\')\n    start = positions[index]\n  }\n\n  results.push(value.slice(start))\n\n  return results.join('')\n}\n",
+      "start": 1712268127680,
+      "end": 1712268127693,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127693,
+      "end": 1712268127693,
+      "order": "normal"
+    }
+  ]
+}

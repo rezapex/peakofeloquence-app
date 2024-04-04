@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/skin-tone/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "'use strict';\nconst emojiModifierBase = require('unicode-emoji-modifier-base');\n\nconst skinTones = new Map([\n\t['none', ''],\n\t['white', '🏻'],\n\t['creamWhite', '🏼'],\n\t['lightBrown', '🏽'],\n\t['brown', '🏾'],\n\t['darkBrown', '🏿']\n]);\n\nmodule.exports = (emoji, tone) => {\n\tif (!skinTones.has(tone)) {\n\t\tthrow new TypeError(`Unexpected \\`skinTone\\` name: ${tone}`);\n\t}\n\n\temoji = emoji.replace(/[\\u{1f3fb}-\\u{1f3ff}]/u, '');\n\n\tif (emojiModifierBase.has(emoji.codePointAt(0)) && tone !== 'none') {\n\t\temoji += skinTones.get(tone);\n\t}\n\n\treturn emoji;\n};\n",
+      "start": 1712268127595,
+      "end": 1712268127627,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127627,
+      "end": 1712268127627,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127627,
+      "end": 1712268127627,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127627,
+      "end": 1712268127627,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127627,
+      "end": 1712268127627,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127627,
+      "end": 1712268127627,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127628,
+      "end": 1712268127628,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport require$$0 from \"\\u0000/Users/rezajafar/peakofeloquence-site/node_modules/unicode-emoji-modifier-base/index.js?commonjs-proxy\";\n\n'use strict';\nconst emojiModifierBase = require$$0;\n\nconst skinTones = new Map([\n\t['none', ''],\n\t['white', '🏻'],\n\t['creamWhite', '🏼'],\n\t['lightBrown', '🏽'],\n\t['brown', '🏾'],\n\t['darkBrown', '🏿']\n]);\n\nvar skinTone = (emoji, tone) => {\n\tif (!skinTones.has(tone)) {\n\t\tthrow new TypeError(`Unexpected \\`skinTone\\` name: ${tone}`);\n\t}\n\n\temoji = emoji.replace(/[\\u{1f3fb}-\\u{1f3ff}]/u, '');\n\n\tif (emojiModifierBase.has(emoji.codePointAt(0)) && tone !== 'none') {\n\t\temoji += skinTones.get(tone);\n\t}\n\n\treturn emoji;\n};\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(skinTone);\nexport { skinTone as __moduleExports };",
+      "start": 1712268127628,
+      "end": 1712268127733,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,YAAY,CAAC;AACb,MAAM,iBAAiB,GAAG,UAAsC,CAAC;AACjE;AACA,MAAM,SAAS,GAAG,IAAI,GAAG,CAAC;AAC1B,CAAC,CAAC,MAAM,EAAE,EAAE,CAAC;AACb,CAAC,CAAC,OAAO,EAAE,IAAI,CAAC;AAChB,CAAC,CAAC,YAAY,EAAE,IAAI,CAAC;AACrB,CAAC,CAAC,YAAY,EAAE,IAAI,CAAC;AACrB,CAAC,CAAC,OAAO,EAAE,IAAI,CAAC;AAChB,CAAC,CAAC,WAAW,EAAE,IAAI,CAAC;AACpB,CAAC,CAAC,CAAC;AACH;IACA,QAAc,GAAG,CAAC,KAAK,EAAE,IAAI,KAAK;AAClC,CAAC,IAAI,CAAC,SAAS,CAAC,GAAG,CAAC,IAAI,CAAC,EAAE;AAC3B,EAAE,MAAM,IAAI,SAAS,CAAC,CAAC,8BAA8B,EAAE,IAAI,CAAC,CAAC,CAAC,CAAC;AAC/D,EAAE;AACF;AACA,CAAC,KAAK,GAAG,KAAK,CAAC,OAAO,CAAC,wBAAwB,EAAE,EAAE,CAAC,CAAC;AACrD;AACA,CAAC,IAAI,iBAAiB,CAAC,GAAG,CAAC,KAAK,CAAC,WAAW,CAAC,CAAC,CAAC,CAAC,IAAI,IAAI,KAAK,MAAM,EAAE;AACrE,EAAE,KAAK,IAAI,SAAS,CAAC,GAAG,CAAC,IAAI,CAAC,CAAC;AAC/B,EAAE;AACF;AACA,CAAC,OAAO,KAAK,CAAC;AACd,CAAC"
+      }
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127733,
+      "end": 1712268127733,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+title: 'Nahj al-Balagha - Peak of Eloquence'
+description: Explore the wisdom of Imam Ali with Nahj al-Balagha, offering comprehensive access to teachings, commentaries, and scholarly interpretations.
+navigation: true
+hero:
+  title: 'Nahj al-Balagha: Peak of Eloquence'
+  description: 'Dive into the ocean of wisdom with Nahj al-Balagha, enriched with scholarly interpretations and various language translations.'
+  orientation: horizontal
+  headline:
+    label: Empowering knowledge by the Teachings of Imam Ali
+    icon: i-heroicons-arrow-top-right-on-square-20-solid
+  links:
+    - label: Explore Teachings
+      icon: i-heroicons-book-open-20-solid
+      trailing: true
+      to: '/teachings'
+      size: lg
+    - label: Scholarly Interpretations
+      icon: i-heroicons-academic-cap-20-solid
+      size: lg
+      color: gray
+      to: '/interpretations'
+      target: '_self'
+  code: |
+    ```python [Saying of the Day]
+    Live amongst people in such a manner that if you die they weep over you and if you are alive they crave for your company.
+    ```
+features:
+  title: 'Explore the Depths of Nahj al-Balagha'
+  links:
+    - label: 'Learn more about Nahj al-Balagha'
+      icon: 'i-simple-icons-book'
+      trailingIcon: 'i-heroicons-arrow-right-20-solid'
+      color: 'gray'
+      to: 'https://peakofeloquence.org'
+      target: '_blank'
+      size: lg
+  items:
+    - title: 'Historical Context'
+      description: 'Understand the era and the circumstances in which Imam Ali conveyed his messages.'
+      icon: 'i-simple-icons-time'
+      to: '/history'
+      target: '_self'
+    - title: 'Commentaries'
+      description: 'Detailed explanations and interpretations by renowned scholars.'
+      icon: 'i-simple-icons-comment-discussion'
+      to: '/commentaries'
+      target: '_self'
+    - title: 'Translations'
+      description: 'Available in multiple languages for a global understanding.'
+      icon: 'i-simple-icons-translate'
+      to: '/translations'
+      target: '_self'
+    - title: 'Audio Library'
+      description: 'Listen to the sermons and sayings of Imam Ali.'
+      icon: 'i-heroicons-volume-up-20-solid'
+      to: '/audio-library'
+      target: '_self'
+    - title: 'Interactive Learning'
+      description: 'Engage with the teachings through quizzes and reflections.'
+      icon: 'i-heroicons-puzzle-piece-20-solid'
+      to: '/learning'
+      target: '_self'
+    - title: 'Research Resources'
+      description: 'A treasure trove for students and scholars.'
+      icon: 'i-heroicons-academic-cap-20-solid'
+      to: '/research'
+      target: '_self'

@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/char-regex/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "\"use strict\"\r\n\r\n// Based on: https://github.com/lodash/lodash/blob/6018350ac10d5ce6a5b7db625140b82aeab804df/.internal/unicodeSize.js\r\n\r\nmodule.exports = () => {\r\n\t// Used to compose unicode character classes.\r\n\tconst astralRange = \"\\\\ud800-\\\\udfff\"\r\n\tconst comboMarksRange = \"\\\\u0300-\\\\u036f\"\r\n\tconst comboHalfMarksRange = \"\\\\ufe20-\\\\ufe2f\"\r\n\tconst comboSymbolsRange = \"\\\\u20d0-\\\\u20ff\"\r\n\tconst comboMarksExtendedRange = \"\\\\u1ab0-\\\\u1aff\"\r\n\tconst comboMarksSupplementRange = \"\\\\u1dc0-\\\\u1dff\"\r\n\tconst comboRange = comboMarksRange + comboHalfMarksRange + comboSymbolsRange + comboMarksExtendedRange + comboMarksSupplementRange\r\n\tconst varRange = \"\\\\ufe0e\\\\ufe0f\"\r\n\tconst familyRange = \"\\\\uD83D\\\\uDC69\\\\uD83C\\\\uDFFB\\\\u200D\\\\uD83C\\\\uDF93\"\r\n\r\n\t// Used to compose unicode capture groups.\r\n\tconst astral = `[${astralRange}]`\r\n\tconst combo = `[${comboRange}]`\r\n\tconst fitz = \"\\\\ud83c[\\\\udffb-\\\\udfff]\"\r\n\tconst modifier = `(?:${combo}|${fitz})`\r\n\tconst nonAstral = `[^${astralRange}]`\r\n\tconst regional = \"(?:\\\\uD83C[\\\\uDDE6-\\\\uDDFF]){2}\"\r\n\tconst surrogatePair = \"[\\\\ud800-\\\\udbff][\\\\udc00-\\\\udfff]\"\r\n\tconst zwj = \"\\\\u200d\"\r\n\tconst blackFlag = \"(?:\\\\ud83c\\\\udff4\\\\udb40\\\\udc67\\\\udb40\\\\udc62\\\\udb40(?:\\\\udc65|\\\\udc73|\\\\udc77)\\\\udb40(?:\\\\udc6e|\\\\udc63|\\\\udc6c)\\\\udb40(?:\\\\udc67|\\\\udc74|\\\\udc73)\\\\udb40\\\\udc7f)\"\r\n\tconst family = `[${familyRange}]`\r\n\r\n\t// Used to compose unicode regexes.\r\n\tconst optModifier = `${modifier}?`\r\n\tconst optVar = `[${varRange}]?`\r\n\tconst optJoin = `(?:${zwj}(?:${[nonAstral, regional, surrogatePair].join(\"|\")})${optVar + optModifier})*`\r\n\tconst seq = optVar + optModifier + optJoin\r\n\tconst nonAstralCombo = `${nonAstral}${combo}?`\r\n\tconst symbol = `(?:${[nonAstralCombo, combo, regional, surrogatePair, astral, family].join(\"|\")})`\r\n\r\n\t// Used to match [String symbols](https://mathiasbynens.be/notes/javascript-unicode).\r\n\treturn new RegExp(`${blackFlag}|${fitz}(?=${fitz})|${symbol + seq}`, \"g\")\r\n}\r\n",
+      "start": 1712268127588,
+      "end": 1712268127633,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\n\"use strict\"\r\n\r\n// Based on: https://github.com/lodash/lodash/blob/6018350ac10d5ce6a5b7db625140b82aeab804df/.internal/unicodeSize.js\r\n\r\nvar charRegex = () => {\r\n\t// Used to compose unicode character classes.\r\n\tconst astralRange = \"\\\\ud800-\\\\udfff\"\r\n\tconst comboMarksRange = \"\\\\u0300-\\\\u036f\"\r\n\tconst comboHalfMarksRange = \"\\\\ufe20-\\\\ufe2f\"\r\n\tconst comboSymbolsRange = \"\\\\u20d0-\\\\u20ff\"\r\n\tconst comboMarksExtendedRange = \"\\\\u1ab0-\\\\u1aff\"\r\n\tconst comboMarksSupplementRange = \"\\\\u1dc0-\\\\u1dff\"\r\n\tconst comboRange = comboMarksRange + comboHalfMarksRange + comboSymbolsRange + comboMarksExtendedRange + comboMarksSupplementRange\r\n\tconst varRange = \"\\\\ufe0e\\\\ufe0f\"\r\n\tconst familyRange = \"\\\\uD83D\\\\uDC69\\\\uD83C\\\\uDFFB\\\\u200D\\\\uD83C\\\\uDF93\"\r\n\r\n\t// Used to compose unicode capture groups.\r\n\tconst astral = `[${astralRange}]`\r\n\tconst combo = `[${comboRange}]`\r\n\tconst fitz = \"\\\\ud83c[\\\\udffb-\\\\udfff]\"\r\n\tconst modifier = `(?:${combo}|${fitz})`\r\n\tconst nonAstral = `[^${astralRange}]`\r\n\tconst regional = \"(?:\\\\uD83C[\\\\uDDE6-\\\\uDDFF]){2}\"\r\n\tconst surrogatePair = \"[\\\\ud800-\\\\udbff][\\\\udc00-\\\\udfff]\"\r\n\tconst zwj = \"\\\\u200d\"\r\n\tconst blackFlag = \"(?:\\\\ud83c\\\\udff4\\\\udb40\\\\udc67\\\\udb40\\\\udc62\\\\udb40(?:\\\\udc65|\\\\udc73|\\\\udc77)\\\\udb40(?:\\\\udc6e|\\\\udc63|\\\\udc6c)\\\\udb40(?:\\\\udc67|\\\\udc74|\\\\udc73)\\\\udb40\\\\udc7f)\"\r\n\tconst family = `[${familyRange}]`\r\n\r\n\t// Used to compose unicode regexes.\r\n\tconst optModifier = `${modifier}?`\r\n\tconst optVar = `[${varRange}]?`\r\n\tconst optJoin = `(?:${zwj}(?:${[nonAstral, regional, surrogatePair].join(\"|\")})${optVar + optModifier})*`\r\n\tconst seq = optVar + optModifier + optJoin\r\n\tconst nonAstralCombo = `${nonAstral}${combo}?`\r\n\tconst symbol = `(?:${[nonAstralCombo, combo, regional, surrogatePair, astral, family].join(\"|\")})`\r\n\r\n\t// Used to match [String symbols](https://mathiasbynens.be/notes/javascript-unicode).\r\n\treturn new RegExp(`${blackFlag}|${fitz}(?=${fitz})|${symbol + seq}`, \"g\")\r\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(charRegex);\nexport { charRegex as __moduleExports };",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,YAAY;AACZ;AACA;AACA;IACA,SAAc,GAAG,MAAM;AACvB;AACA,CAAC,MAAM,WAAW,GAAG,iBAAiB;AACtC,CAAC,MAAM,eAAe,GAAG,iBAAiB;AAC1C,CAAC,MAAM,mBAAmB,GAAG,iBAAiB;AAC9C,CAAC,MAAM,iBAAiB,GAAG,iBAAiB;AAC5C,CAAC,MAAM,uBAAuB,GAAG,iBAAiB;AAClD,CAAC,MAAM,yBAAyB,GAAG,iBAAiB;AACpD,CAAC,MAAM,UAAU,GAAG,eAAe,GAAG,mBAAmB,GAAG,iBAAiB,GAAG,uBAAuB,GAAG,yBAAyB;AACnI,CAAC,MAAM,QAAQ,GAAG,gBAAgB;AAClC,CAAC,MAAM,WAAW,GAAG,mDAAmD;AACxE;AACA;AACA,CAAC,MAAM,MAAM,GAAG,CAAC,CAAC,EAAE,WAAW,CAAC,CAAC,CAAC;AAClC,CAAC,MAAM,KAAK,GAAG,CAAC,CAAC,EAAE,UAAU,CAAC,CAAC,CAAC;AAChC,CAAC,MAAM,IAAI,GAAG,0BAA0B;AACxC,CAAC,MAAM,QAAQ,GAAG,CAAC,GAAG,EAAE,KAAK,CAAC,CAAC,EAAE,IAAI,CAAC,CAAC,CAAC;AACxC,CAAC,MAAM,SAAS,GAAG,CAAC,EAAE,EAAE,WAAW,CAAC,CAAC,CAAC;AACtC,CAAC,MAAM,QAAQ,GAAG,iCAAiC;AACnD,CAAC,MAAM,aAAa,GAAG,oCAAoC;AAC3D,CAAC,MAAM,GAAG,GAAG,SAAS;AACtB,CAAC,MAAM,SAAS,GAAG,oKAAoK;AACvL,CAAC,MAAM,MAAM,GAAG,CAAC,CAAC,EAAE,WAAW,CAAC,CAAC,CAAC;AAClC;AACA;AACA,CAAC,MAAM,WAAW,GAAG,CAAC,EAAE,QAAQ,CAAC,CAAC,CAAC;AACnC,CAAC,MAAM,MAAM,GAAG,CAAC,CAAC,EAAE,QAAQ,CAAC,EAAE,CAAC;AAChC,CAAC,MAAM,OAAO,GAAG,CAAC,GAAG,EAAE,GAAG,CAAC,GAAG,EAAE,CAAC,SAAS,EAAE,QAAQ,EAAE,aAAa,CAAC,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC,CAAC,EAAE,MAAM,GAAG,WAAW,CAAC,EAAE,CAAC;AAC1G,CAAC,MAAM,GAAG,GAAG,MAAM,GAAG,WAAW,GAAG,OAAO;AAC3C,CAAC,MAAM,cAAc,GAAG,CAAC,EAAE,SAAS,CAAC,EAAE,KAAK,CAAC,CAAC,CAAC;AAC/C,CAAC,MAAM,MAAM,GAAG,CAAC,GAAG,EAAE,CAAC,cAAc,EAAE,KAAK,EAAE,QAAQ,EAAE,aAAa,EAAE,MAAM,EAAE,MAAM,CAAC,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC;AACnG;AACA;AACA,CAAC,OAAO,IAAI,MAAM,CAAC,CAAC,EAAE,SAAS,CAAC,CAAC,EAAE,IAAI,CAAC,GAAG,EAAE,IAAI,CAAC,EAAE,EAAE,MAAM,GAAG,GAAG,CAAC,CAAC,EAAE,GAAG,CAAC;AAC1E"
+      }
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127633,
+      "end": 1712268127633,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127633,
+      "end": 1712268127634,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127634,
+      "end": 1712268127634,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127634,
+      "end": 1712268127634,
+      "order": "normal"
+    }
+  ]
+}

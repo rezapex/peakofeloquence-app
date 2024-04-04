@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/mdast-util-gfm-strikethrough/lib/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('mdast').Delete} Delete\n *\n * @typedef {import('mdast-util-from-markdown').CompileContext} CompileContext\n * @typedef {import('mdast-util-from-markdown').Extension} FromMarkdownExtension\n * @typedef {import('mdast-util-from-markdown').Handle} FromMarkdownHandle\n *\n * @typedef {import('mdast-util-to-markdown').ConstructName} ConstructName\n * @typedef {import('mdast-util-to-markdown').Handle} ToMarkdownHandle\n * @typedef {import('mdast-util-to-markdown').Options} ToMarkdownExtension\n */\n\n/**\n * List of constructs that occur in phrasing (paragraphs, headings), but cannot\n * contain strikethrough.\n * So they sort of cancel each other out.\n * Note: could use a better name.\n *\n * Note: keep in sync with: <https://github.com/syntax-tree/mdast-util-to-markdown/blob/8ce8dbf/lib/unsafe.js#L14>\n *\n * @type {Array<ConstructName>}\n */\nconst constructsWithoutStrikethrough = [\n  'autolink',\n  'destinationLiteral',\n  'destinationRaw',\n  'reference',\n  'titleQuote',\n  'titleApostrophe'\n]\n\nhandleDelete.peek = peekDelete\n\n/**\n * Create an extension for `mdast-util-from-markdown` to enable GFM\n * strikethrough in markdown.\n *\n * @returns {FromMarkdownExtension}\n *   Extension for `mdast-util-from-markdown` to enable GFM strikethrough.\n */\nexport function gfmStrikethroughFromMarkdown() {\n  return {\n    canContainEols: ['delete'],\n    enter: {strikethrough: enterStrikethrough},\n    exit: {strikethrough: exitStrikethrough}\n  }\n}\n\n/**\n * Create an extension for `mdast-util-to-markdown` to enable GFM\n * strikethrough in markdown.\n *\n * @returns {ToMarkdownExtension}\n *   Extension for `mdast-util-to-markdown` to enable GFM strikethrough.\n */\nexport function gfmStrikethroughToMarkdown() {\n  return {\n    unsafe: [\n      {\n        character: '~',\n        inConstruct: 'phrasing',\n        notInConstruct: constructsWithoutStrikethrough\n      }\n    ],\n    handlers: {delete: handleDelete}\n  }\n}\n\n/**\n * @this {CompileContext}\n * @type {FromMarkdownHandle}\n */\nfunction enterStrikethrough(token) {\n  this.enter({type: 'delete', children: []}, token)\n}\n\n/**\n * @this {CompileContext}\n * @type {FromMarkdownHandle}\n */\nfunction exitStrikethrough(token) {\n  this.exit(token)\n}\n\n/**\n * @type {ToMarkdownHandle}\n * @param {Delete} node\n */\nfunction handleDelete(node, _, state, info) {\n  const tracker = state.createTracker(info)\n  const exit = state.enter('strikethrough')\n  let value = tracker.move('~~')\n  value += state.containerPhrasing(node, {\n    ...tracker.current(),\n    before: value,\n    after: '~'\n  })\n  value += tracker.move('~~')\n  exit()\n  return value\n}\n\n/** @type {ToMarkdownHandle} */\nfunction peekDelete() {\n  return '~'\n}\n",
+      "start": 1712268127866,
+      "end": 1712268127886,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127886,
+      "end": 1712268127886,
+      "order": "normal"
+    }
+  ]
+}

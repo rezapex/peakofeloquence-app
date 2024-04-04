@@ -1,0 +1,278 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxtjs/mdc/dist/runtime/highlighter/rehype-nuxt.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { rehypeHighlight as rehypeHighlightUniversal } from \"./rehype.mjs\";\nconst defaults = {\n  theme: {},\n  async highlighter(code, lang, theme, options) {\n    try {\n      if (process.browser && window.sessionStorage.getItem(\"mdc-shiki-highlighter\") === \"browser\") {\n        return import(\"#mdc-highlighter\").then((h) => h.default(code, lang, theme, options)).catch(() => ({}));\n      }\n      return await $fetch(\"/api/_mdc/highlight\", {\n        params: {\n          code,\n          lang,\n          theme: JSON.stringify(theme),\n          options: JSON.stringify(options)\n        }\n      });\n    } catch (e) {\n      if (process.browser && e?.response?.status === 404) {\n        window.sessionStorage.setItem(\"mdc-shiki-highlighter\", \"browser\");\n        return this.highlighter?.(code, lang, theme, options);\n      }\n    }\n    return Promise.resolve({ tree: [{ type: \"text\", value: code }], className: \"\", style: \"\" });\n  }\n};\nexport default rehypeHighlight;\nexport function rehypeHighlight(opts = {}) {\n  const options = { ...defaults, ...opts };\n  if (typeof options.highlighter !== \"function\") {\n    options.highlighter = defaults.highlighter;\n  }\n  return rehypeHighlightUniversal(options);\n}\n",
+      "start": 1712268134203,
+      "end": 1712268134211,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268134211,
+      "end": 1712268134211,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268134211,
+      "end": 1712268134211,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268134211,
+      "end": 1712268134211,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268134211,
+      "end": 1712268134211,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268134211,
+      "end": 1712268134211,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268134211,
+      "end": 1712268134211,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268134211,
+      "end": 1712268134211,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1712268134211,
+      "end": 1712268134211,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268134212,
+      "end": 1712268134212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { rehypeHighlight as rehypeHighlightUniversal } from \"./rehype.mjs\";\nconst defaults = {\n  theme: {},\n  async highlighter(code, lang, theme, options) {\n    try {\n      if (false) {\n        return null.then((h) => h.default(code, lang, theme, options)).catch(() => ({}));\n      }\n      return await $fetch(\"/api/_mdc/highlight\", {\n        params: {\n          code,\n          lang,\n          theme: JSON.stringify(theme),\n          options: JSON.stringify(options)\n        }\n      });\n    } catch (e) {\n      if (false) {\n        (void 0).sessionStorage.setItem(\"mdc-shiki-highlighter\", \"browser\");\n        return this.highlighter?.(code, lang, theme, options);\n      }\n    }\n    return Promise.resolve({ tree: [{ type: \"text\", value: code }], className: \"\", style: \"\" });\n  }\n};\nexport default rehypeHighlight;\nexport function rehypeHighlight(opts = {}) {\n  const options = { ...defaults, ...opts };\n  if (typeof options.highlighter !== \"function\") {\n    options.highlighter = defaults.highlighter;\n  }\n  return rehypeHighlightUniversal(options);\n}\n",
+      "start": 1712268134212,
+      "end": 1712268134255,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxtjs/mdc/dist/runtime/highlighter/rehype-nuxt.mjs\"],\n  \"sourcesContent\": [\"import { rehypeHighlight as rehypeHighlightUniversal } from \\\"./rehype.mjs\\\";\\nconst defaults = {\\n  theme: {},\\n  async highlighter(code, lang, theme, options) {\\n    try {\\n      if (process.browser && window.sessionStorage.getItem(\\\"mdc-shiki-highlighter\\\") === \\\"browser\\\") {\\n        return import(\\\"#mdc-highlighter\\\").then((h) => h.default(code, lang, theme, options)).catch(() => ({}));\\n      }\\n      return await $fetch(\\\"/api/_mdc/highlight\\\", {\\n        params: {\\n          code,\\n          lang,\\n          theme: JSON.stringify(theme),\\n          options: JSON.stringify(options)\\n        }\\n      });\\n    } catch (e) {\\n      if (process.browser && e?.response?.status === 404) {\\n        window.sessionStorage.setItem(\\\"mdc-shiki-highlighter\\\", \\\"browser\\\");\\n        return this.highlighter?.(code, lang, theme, options);\\n      }\\n    }\\n    return Promise.resolve({ tree: [{ type: \\\"text\\\", value: code }], className: \\\"\\\", style: \\\"\\\" });\\n  }\\n};\\nexport default rehypeHighlight;\\nexport function rehypeHighlight(opts = {}) {\\n  const options = { ...defaults, ...opts };\\n  if (typeof options.highlighter !== \\\"function\\\") {\\n    options.highlighter = defaults.highlighter;\\n  }\\n  return rehypeHighlightUniversal(options);\\n}\\n\"],\n  \"mappings\": \"AAAA,SAAS,mBAAmB,gCAAgC;AAC5D,MAAM,WAAW;AAAA,EACf,OAAO,CAAC;AAAA,EACR,MAAM,YAAY,MAAM,MAAM,OAAO,SAAS;AAC5C,QAAI;AACF,UAAI,OAAyF;AAC3F,eAAc,KAAoB,KAAK,CAAC,MAAM,EAAE,QAAQ,MAAM,MAAM,OAAO,OAAO,CAAC,EAAE,MAAM,OAAO,CAAC,EAAE;AAAA,MACvG;AACA,aAAO,MAAM,OAAO,uBAAuB;AAAA,QACzC,QAAQ;AAAA,UACN;AAAA,UACA;AAAA,UACA,OAAO,KAAK,UAAU,KAAK;AAAA,UAC3B,SAAS,KAAK,UAAU,OAAO;AAAA,QACjC;AAAA,MACF,CAAC;AAAA,IACH,SAAS,GAAG;AACV,UAAI,OAAgD;AAClD,iBAAO,eAAe,QAAQ,yBAAyB,SAAS;AAChE,eAAO,KAAK,cAAc,MAAM,MAAM,OAAO,OAAO;AAAA,MACtD;AAAA,IACF;AACA,WAAO,QAAQ,QAAQ,EAAE,MAAM,CAAC,EAAE,MAAM,QAAQ,OAAO,KAAK,CAAC,GAAG,WAAW,IAAI,OAAO,GAAG,CAAC;AAAA,EAC5F;AACF;AACA,eAAe;AACR,gBAAS,gBAAgB,OAAO,CAAC,GAAG;AACzC,QAAM,UAAU,EAAE,GAAG,UAAU,GAAG,KAAK;AACvC,MAAI,OAAO,QAAQ,gBAAgB,YAAY;AAC7C,YAAQ,cAAc,SAAS;AAAA,EACjC;AACA,SAAO,yBAAyB,OAAO;AACzC;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268134255,
+      "end": 1712268134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268134255,
+      "end": 1712268134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268134256,
+      "end": 1712268134256,
+      "order": "normal"
+    }
+  ]
+}

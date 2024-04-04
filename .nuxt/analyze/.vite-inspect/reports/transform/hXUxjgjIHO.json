@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-util-types').Encoding} Encoding\n * @typedef {import('micromark-util-types').Options} Options\n * @typedef {import('micromark-util-types').Value} Value\n */\n\nimport {compile} from './lib/compile.js'\nimport {parse} from './lib/parse.js'\nimport {postprocess} from './lib/postprocess.js'\nimport {preprocess} from './lib/preprocess.js'\nexport {compile} from './lib/compile.js'\nexport {parse} from './lib/parse.js'\nexport {postprocess} from './lib/postprocess.js'\nexport {preprocess} from './lib/preprocess.js'\n\n/**\n * Compile markdown to HTML.\n *\n * > Note: which encodings are supported depends on the engine.\n * > For info on Node.js, see:\n * > <https://nodejs.org/api/util.html#whatwg-supported-encodings>.\n *\n * @overload\n * @param {Value} value\n *   Markdown to parse (`string` or `Uint8Array`).\n * @param {Encoding | null | undefined} encoding\n *   Character encoding to understand `value` as when it’s a `Uint8Array`\n *   (`string`, default: `'utf8'`).\n * @param {Options | null | undefined} [options]\n *   Configuration.\n * @returns {string}\n *   Compiled HTML.\n *\n * @overload\n * @param {Value} value\n *   Markdown to parse (`string` or `Uint8Array`).\n * @param {Options | null | undefined} [options]\n *   Configuration.\n * @returns {string}\n *   Compiled HTML.\n *\n * @param {Value} value\n *   Markdown to parse (`string` or `Uint8Array`).\n * @param {Encoding | Options | null | undefined} [encoding]\n *   Character encoding to understand `value` as when it’s a `Uint8Array`\n *   (`string`, default: `'utf8'`).\n * @param {Options | null | undefined} [options]\n *   Configuration.\n * @returns {string}\n *   Compiled HTML.\n */\nexport function micromark(value, encoding, options) {\n  if (typeof encoding !== 'string') {\n    options = encoding\n    encoding = undefined\n  }\n  return compile(options)(\n    postprocess(\n      parse(options).document().write(preprocess()(value, encoding, true))\n    )\n  )\n}\n",
+      "start": 1712268127708,
+      "end": 1712268127732,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127732,
+      "end": 1712268127732,
+      "order": "normal"
+    }
+  ]
+}

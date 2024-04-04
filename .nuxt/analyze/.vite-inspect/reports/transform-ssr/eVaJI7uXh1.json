@@ -1,0 +1,298 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/components/OgImage/OgImageDocs.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'OgImageDocs',\n  __ssrInlineRender: true,\n  props: {\n  title: {\n    type: String,\n    required: true\n  },\n  description: {\n    type: String,\n    required: true\n  }\n},\n  setup(__props) {\n\n\n\n\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"w-full h-full flex flex-col justify-center text-center bg-slate-900 p-8\" }, _attrs))\n  }><div class=\"relative\"><h1 class=\"text-8xl mb-4 text-white\">${\n    _ssrInterpolate(__props.title)\n  }</h1><p class=\"text-5xl text-gray-200 leading-tight\">${\n    _ssrInterpolate(__props.description)\n  }</p></div></div>`)\n}\n}\n\n})",
+      "start": 1712268133910,
+      "end": 1712268133910,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/components/OgImage/OgImageDocs.vue"
+        ],
+        "sourcesContent": [
+          "<script lang=\"ts\" setup>\ndefineOptions({\n  inheritAttrs: false\n})\n\ndefineProps({\n  title: {\n    type: String,\n    required: true\n  },\n  description: {\n    type: String,\n    required: true\n  }\n})\n</script>\n\n<template>\n  <div class=\"w-full h-full flex flex-col justify-center text-center bg-slate-900 p-8\">\n    <div class=\"relative\">\n      <h1 class=\"text-8xl mb-4 text-white\">\n        {{ title }}\n      </h1>\n      <p class=\"text-5xl text-gray-200 leading-tight\">\n        {{ description }}\n      </p>\n    </div>\n  </div>\n</template>\n"
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;;;;;;;;AAAwB;AAGtB;AACF;AAUE;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268133910,
+      "end": 1712268133910,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268133910,
+      "end": 1712268133910,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268133910,
+      "end": 1712268133910,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268133910,
+      "end": 1712268133910,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268133911,
+      "end": 1712268133911,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268133911,
+      "end": 1712268133911,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268133911,
+      "end": 1712268133911,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1712268133911,
+      "end": 1712268133911,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268133911,
+      "end": 1712268133911,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"OgImageDocs\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      required: true\n    },\n    description: {\n      type: String,\n      required: true\n    }\n  },\n  setup(__props) {\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full h-full flex flex-col justify-center text-center bg-slate-900 p-8\" }, _attrs))}><div class=\"relative\"><h1 class=\"text-8xl mb-4 text-white\">${_ssrInterpolate(__props.title)}</h1><p class=\"text-5xl text-gray-200 leading-tight\">${_ssrInterpolate(__props.description)}</p></div></div>`);\n    };\n  }\n});\n",
+      "start": 1712268133911,
+      "end": 1712268134059,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/components/OgImage/OgImageDocs.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'OgImageDocs',\n  __ssrInlineRender: true,\n  props: {\n  title: {\n    type: String,\n    required: true\n  },\n  description: {\n    type: String,\n    required: true\n  }\n},\n  setup(__props) {\n\n\n\n\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"w-full h-full flex flex-col justify-center text-center bg-slate-900 p-8\" }, _attrs))\n  }><div class=\"relative\"><h1 class=\"text-8xl mb-4 text-white\">${\n    _ssrInterpolate(__props.title)\n  }</h1><p class=\"text-5xl text-gray-200 leading-tight\">${\n    _ssrInterpolate(__props.description)\n  }</p></div></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,kBAAkB,iBAAiB,kBAAkB,uBAAuB;AAGrF,eAA4B,iCAAiB;AAAA,EAC3C,GAAG;AAAA,IACH,cAAc;AAAA,EAChB;AAAA,EACE,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,OAAO;AAAA,MACL,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,IACA,aAAa;AAAA,MACX,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAMjB,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OACJ,gBAAgB,YAAY,EAAE,OAAO,0EAA0E,GAAG,MAAM,CAAC,CAC3H,+DACE,gBAAgB,QAAQ,KAAK,CAC/B,wDACE,gBAAgB,QAAQ,WAAW,CACrC,kBAAkB;AAAA,IACpB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268134059,
+      "end": 1712268134059,
+      "order": "normal"
+    }
+  ]
+}

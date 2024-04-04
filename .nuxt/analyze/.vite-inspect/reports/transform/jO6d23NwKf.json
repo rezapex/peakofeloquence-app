@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark-core-commonmark/lib/attention.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-util-types').Code} Code\n * @typedef {import('micromark-util-types').Construct} Construct\n * @typedef {import('micromark-util-types').Event} Event\n * @typedef {import('micromark-util-types').Point} Point\n * @typedef {import('micromark-util-types').Resolver} Resolver\n * @typedef {import('micromark-util-types').State} State\n * @typedef {import('micromark-util-types').Token} Token\n * @typedef {import('micromark-util-types').TokenizeContext} TokenizeContext\n * @typedef {import('micromark-util-types').Tokenizer} Tokenizer\n */\n\nimport {push, splice} from 'micromark-util-chunked'\nimport {classifyCharacter} from 'micromark-util-classify-character'\nimport {resolveAll} from 'micromark-util-resolve-all'\n/** @type {Construct} */\nexport const attention = {\n  name: 'attention',\n  tokenize: tokenizeAttention,\n  resolveAll: resolveAllAttention\n}\n\n/**\n * Take all events and resolve attention to emphasis or strong.\n *\n * @type {Resolver}\n */\n// eslint-disable-next-line complexity\nfunction resolveAllAttention(events, context) {\n  let index = -1\n  /** @type {number} */\n  let open\n  /** @type {Token} */\n  let group\n  /** @type {Token} */\n  let text\n  /** @type {Token} */\n  let openingSequence\n  /** @type {Token} */\n  let closingSequence\n  /** @type {number} */\n  let use\n  /** @type {Array<Event>} */\n  let nextEvents\n  /** @type {number} */\n  let offset\n\n  // Walk through all events.\n  //\n  // Note: performance of this is fine on an mb of normal markdown, but it’s\n  // a bottleneck for malicious stuff.\n  while (++index < events.length) {\n    // Find a token that can close.\n    if (\n      events[index][0] === 'enter' &&\n      events[index][1].type === 'attentionSequence' &&\n      events[index][1]._close\n    ) {\n      open = index\n\n      // Now walk back to find an opener.\n      while (open--) {\n        // Find a token that can open the closer.\n        if (\n          events[open][0] === 'exit' &&\n          events[open][1].type === 'attentionSequence' &&\n          events[open][1]._open &&\n          // If the markers are the same:\n          context.sliceSerialize(events[open][1]).charCodeAt(0) ===\n            context.sliceSerialize(events[index][1]).charCodeAt(0)\n        ) {\n          // If the opening can close or the closing can open,\n          // and the close size *is not* a multiple of three,\n          // but the sum of the opening and closing size *is* multiple of three,\n          // then don’t match.\n          if (\n            (events[open][1]._close || events[index][1]._open) &&\n            (events[index][1].end.offset - events[index][1].start.offset) % 3 &&\n            !(\n              (events[open][1].end.offset -\n                events[open][1].start.offset +\n                events[index][1].end.offset -\n                events[index][1].start.offset) %\n              3\n            )\n          ) {\n            continue\n          }\n\n          // Number of markers to use from the sequence.\n          use =\n            events[open][1].end.offset - events[open][1].start.offset > 1 &&\n            events[index][1].end.offset - events[index][1].start.offset > 1\n              ? 2\n              : 1\n          const start = Object.assign({}, events[open][1].end)\n          const end = Object.assign({}, events[index][1].start)\n          movePoint(start, -use)\n          movePoint(end, use)\n          openingSequence = {\n            type: use > 1 ? 'strongSequence' : 'emphasisSequence',\n            start,\n            end: Object.assign({}, events[open][1].end)\n          }\n          closingSequence = {\n            type: use > 1 ? 'strongSequence' : 'emphasisSequence',\n            start: Object.assign({}, events[index][1].start),\n            end\n          }\n          text = {\n            type: use > 1 ? 'strongText' : 'emphasisText',\n            start: Object.assign({}, events[open][1].end),\n            end: Object.assign({}, events[index][1].start)\n          }\n          group = {\n            type: use > 1 ? 'strong' : 'emphasis',\n            start: Object.assign({}, openingSequence.start),\n            end: Object.assign({}, closingSequence.end)\n          }\n          events[open][1].end = Object.assign({}, openingSequence.start)\n          events[index][1].start = Object.assign({}, closingSequence.end)\n          nextEvents = []\n\n          // If there are more markers in the opening, add them before.\n          if (events[open][1].end.offset - events[open][1].start.offset) {\n            nextEvents = push(nextEvents, [\n              ['enter', events[open][1], context],\n              ['exit', events[open][1], context]\n            ])\n          }\n\n          // Opening.\n          nextEvents = push(nextEvents, [\n            ['enter', group, context],\n            ['enter', openingSequence, context],\n            ['exit', openingSequence, context],\n            ['enter', text, context]\n          ])\n\n          // Always populated by defaults.\n\n          // Between.\n          nextEvents = push(\n            nextEvents,\n            resolveAll(\n              context.parser.constructs.insideSpan.null,\n              events.slice(open + 1, index),\n              context\n            )\n          )\n\n          // Closing.\n          nextEvents = push(nextEvents, [\n            ['exit', text, context],\n            ['enter', closingSequence, context],\n            ['exit', closingSequence, context],\n            ['exit', group, context]\n          ])\n\n          // If there are more markers in the closing, add them after.\n          if (events[index][1].end.offset - events[index][1].start.offset) {\n            offset = 2\n            nextEvents = push(nextEvents, [\n              ['enter', events[index][1], context],\n              ['exit', events[index][1], context]\n            ])\n          } else {\n            offset = 0\n          }\n          splice(events, open - 1, index - open + 3, nextEvents)\n          index = open + nextEvents.length - offset - 2\n          break\n        }\n      }\n    }\n  }\n\n  // Remove remaining sequences.\n  index = -1\n  while (++index < events.length) {\n    if (events[index][1].type === 'attentionSequence') {\n      events[index][1].type = 'data'\n    }\n  }\n  return events\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction tokenizeAttention(effects, ok) {\n  const attentionMarkers = this.parser.constructs.attentionMarkers.null\n  const previous = this.previous\n  const before = classifyCharacter(previous)\n\n  /** @type {NonNullable<Code>} */\n  let marker\n  return start\n\n  /**\n   * Before a sequence.\n   *\n   * ```markdown\n   * > | **\n   *     ^\n   * ```\n   *\n   * @type {State}\n   */\n  function start(code) {\n    marker = code\n    effects.enter('attentionSequence')\n    return inside(code)\n  }\n\n  /**\n   * In a sequence.\n   *\n   * ```markdown\n   * > | **\n   *     ^^\n   * ```\n   *\n   * @type {State}\n   */\n  function inside(code) {\n    if (code === marker) {\n      effects.consume(code)\n      return inside\n    }\n    const token = effects.exit('attentionSequence')\n\n    // To do: next major: move this to resolver, just like `markdown-rs`.\n    const after = classifyCharacter(code)\n\n    // Always populated by defaults.\n\n    const open =\n      !after || (after === 2 && before) || attentionMarkers.includes(code)\n    const close =\n      !before || (before === 2 && after) || attentionMarkers.includes(previous)\n    token._open = Boolean(marker === 42 ? open : open && (before || !close))\n    token._close = Boolean(marker === 42 ? close : close && (after || !open))\n    return ok(code)\n  }\n}\n\n/**\n * Move a point a bit.\n *\n * Note: `move` only works inside lines! It’s not possible to move past other\n * chunks (replacement characters, tabs, or line endings).\n *\n * @param {Point} point\n * @param {number} offset\n * @returns {undefined}\n */\nfunction movePoint(point, offset) {\n  point.column += offset\n  point.offset += offset\n  point._bufferIndex += offset\n}\n",
+      "start": 1712268127555,
+      "end": 1712268127581,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127581,
+      "end": 1712268127581,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127581,
+      "end": 1712268127582,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127582,
+      "end": 1712268127582,
+      "order": "normal"
+    }
+  ]
+}

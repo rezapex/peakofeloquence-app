@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/parse5/dist/tokenizer/preprocessor.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { CODE_POINTS as $, getSurrogatePairCodePoint, isControlCodePoint, isSurrogate, isSurrogatePair, isUndefinedCodePoint, } from '../common/unicode.js';\nimport { ERR } from '../common/error-codes.js';\n//Const\nconst DEFAULT_BUFFER_WATERLINE = 1 << 16;\n//Preprocessor\n//NOTE: HTML input preprocessing\n//(see: http://www.whatwg.org/specs/web-apps/current-work/multipage/parsing.html#preprocessing-the-input-stream)\nexport class Preprocessor {\n    constructor(handler) {\n        this.handler = handler;\n        this.html = '';\n        this.pos = -1;\n        // NOTE: Initial `lastGapPos` is -2, to ensure `col` on initialisation is 0\n        this.lastGapPos = -2;\n        this.gapStack = [];\n        this.skipNextNewLine = false;\n        this.lastChunkWritten = false;\n        this.endOfChunkHit = false;\n        this.bufferWaterline = DEFAULT_BUFFER_WATERLINE;\n        this.isEol = false;\n        this.lineStartPos = 0;\n        this.droppedBufferSize = 0;\n        this.line = 1;\n        //NOTE: avoid reporting errors twice on advance/retreat\n        this.lastErrOffset = -1;\n    }\n    /** The column on the current line. If we just saw a gap (eg. a surrogate pair), return the index before. */\n    get col() {\n        return this.pos - this.lineStartPos + Number(this.lastGapPos !== this.pos);\n    }\n    get offset() {\n        return this.droppedBufferSize + this.pos;\n    }\n    getError(code) {\n        const { line, col, offset } = this;\n        return {\n            code,\n            startLine: line,\n            endLine: line,\n            startCol: col,\n            endCol: col,\n            startOffset: offset,\n            endOffset: offset,\n        };\n    }\n    _err(code) {\n        if (this.handler.onParseError && this.lastErrOffset !== this.offset) {\n            this.lastErrOffset = this.offset;\n            this.handler.onParseError(this.getError(code));\n        }\n    }\n    _addGap() {\n        this.gapStack.push(this.lastGapPos);\n        this.lastGapPos = this.pos;\n    }\n    _processSurrogate(cp) {\n        //NOTE: try to peek a surrogate pair\n        if (this.pos !== this.html.length - 1) {\n            const nextCp = this.html.charCodeAt(this.pos + 1);\n            if (isSurrogatePair(nextCp)) {\n                //NOTE: we have a surrogate pair. Peek pair character and recalculate code point.\n                this.pos++;\n                //NOTE: add a gap that should be avoided during retreat\n                this._addGap();\n                return getSurrogatePairCodePoint(cp, nextCp);\n            }\n        }\n        //NOTE: we are at the end of a chunk, therefore we can't infer the surrogate pair yet.\n        else if (!this.lastChunkWritten) {\n            this.endOfChunkHit = true;\n            return $.EOF;\n        }\n        //NOTE: isolated surrogate\n        this._err(ERR.surrogateInInputStream);\n        return cp;\n    }\n    willDropParsedChunk() {\n        return this.pos > this.bufferWaterline;\n    }\n    dropParsedChunk() {\n        if (this.willDropParsedChunk()) {\n            this.html = this.html.substring(this.pos);\n            this.lineStartPos -= this.pos;\n            this.droppedBufferSize += this.pos;\n            this.pos = 0;\n            this.lastGapPos = -2;\n            this.gapStack.length = 0;\n        }\n    }\n    write(chunk, isLastChunk) {\n        if (this.html.length > 0) {\n            this.html += chunk;\n        }\n        else {\n            this.html = chunk;\n        }\n        this.endOfChunkHit = false;\n        this.lastChunkWritten = isLastChunk;\n    }\n    insertHtmlAtCurrentPos(chunk) {\n        this.html = this.html.substring(0, this.pos + 1) + chunk + this.html.substring(this.pos + 1);\n        this.endOfChunkHit = false;\n    }\n    startsWith(pattern, caseSensitive) {\n        // Check if our buffer has enough characters\n        if (this.pos + pattern.length > this.html.length) {\n            this.endOfChunkHit = !this.lastChunkWritten;\n            return false;\n        }\n        if (caseSensitive) {\n            return this.html.startsWith(pattern, this.pos);\n        }\n        for (let i = 0; i < pattern.length; i++) {\n            const cp = this.html.charCodeAt(this.pos + i) | 0x20;\n            if (cp !== pattern.charCodeAt(i)) {\n                return false;\n            }\n        }\n        return true;\n    }\n    peek(offset) {\n        const pos = this.pos + offset;\n        if (pos >= this.html.length) {\n            this.endOfChunkHit = !this.lastChunkWritten;\n            return $.EOF;\n        }\n        const code = this.html.charCodeAt(pos);\n        return code === $.CARRIAGE_RETURN ? $.LINE_FEED : code;\n    }\n    advance() {\n        this.pos++;\n        //NOTE: LF should be in the last column of the line\n        if (this.isEol) {\n            this.isEol = false;\n            this.line++;\n            this.lineStartPos = this.pos;\n        }\n        if (this.pos >= this.html.length) {\n            this.endOfChunkHit = !this.lastChunkWritten;\n            return $.EOF;\n        }\n        let cp = this.html.charCodeAt(this.pos);\n        //NOTE: all U+000D CARRIAGE RETURN (CR) characters must be converted to U+000A LINE FEED (LF) characters\n        if (cp === $.CARRIAGE_RETURN) {\n            this.isEol = true;\n            this.skipNextNewLine = true;\n            return $.LINE_FEED;\n        }\n        //NOTE: any U+000A LINE FEED (LF) characters that immediately follow a U+000D CARRIAGE RETURN (CR) character\n        //must be ignored.\n        if (cp === $.LINE_FEED) {\n            this.isEol = true;\n            if (this.skipNextNewLine) {\n                // `line` will be bumped again in the recursive call.\n                this.line--;\n                this.skipNextNewLine = false;\n                this._addGap();\n                return this.advance();\n            }\n        }\n        this.skipNextNewLine = false;\n        if (isSurrogate(cp)) {\n            cp = this._processSurrogate(cp);\n        }\n        //OPTIMIZATION: first check if code point is in the common allowed\n        //range (ASCII alphanumeric, whitespaces, big chunk of BMP)\n        //before going into detailed performance cost validation.\n        const isCommonValidRange = this.handler.onParseError === null ||\n            (cp > 0x1f && cp < 0x7f) ||\n            cp === $.LINE_FEED ||\n            cp === $.CARRIAGE_RETURN ||\n            (cp > 0x9f && cp < 64976);\n        if (!isCommonValidRange) {\n            this._checkForProblematicCharacters(cp);\n        }\n        return cp;\n    }\n    _checkForProblematicCharacters(cp) {\n        if (isControlCodePoint(cp)) {\n            this._err(ERR.controlCharacterInInputStream);\n        }\n        else if (isUndefinedCodePoint(cp)) {\n            this._err(ERR.noncharacterInInputStream);\n        }\n    }\n    retreat(count) {\n        this.pos -= count;\n        while (this.pos < this.lastGapPos) {\n            this.lastGapPos = this.gapStack.pop();\n            this.pos--;\n        }\n        this.isEol = false;\n    }\n}\n//# sourceMappingURL=preprocessor.js.map",
+      "start": 1712268127923,
+      "end": 1712268127933,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127933,
+      "end": 1712268127933,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127933,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127934,
+      "end": 1712268127934,
+      "order": "normal"
+    }
+  ]
+}

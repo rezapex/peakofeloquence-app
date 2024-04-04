@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/mdast-util-to-markdown/lib/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('mdast').Nodes} Nodes\n * @typedef {import('./types.js').Enter} Enter\n * @typedef {import('./types.js').Info} Info\n * @typedef {import('./types.js').Join} Join\n * @typedef {import('./types.js').FlowParents} FlowParents\n * @typedef {import('./types.js').Options} Options\n * @typedef {import('./types.js').PhrasingParents} PhrasingParents\n * @typedef {import('./types.js').SafeConfig} SafeConfig\n * @typedef {import('./types.js').State} State\n * @typedef {import('./types.js').TrackFields} TrackFields\n */\n\nimport {zwitch} from 'zwitch'\nimport {configure} from './configure.js'\nimport {handle as handlers} from './handle/index.js'\nimport {join} from './join.js'\nimport {unsafe} from './unsafe.js'\nimport {association} from './util/association.js'\nimport {compilePattern} from './util/compile-pattern.js'\nimport {containerPhrasing} from './util/container-phrasing.js'\nimport {containerFlow} from './util/container-flow.js'\nimport {indentLines} from './util/indent-lines.js'\nimport {safe} from './util/safe.js'\nimport {track} from './util/track.js'\n\n/**\n * Turn an mdast syntax tree into markdown.\n *\n * @param {Nodes} tree\n *   Tree to serialize.\n * @param {Options} [options]\n *   Configuration (optional).\n * @returns {string}\n *   Serialized markdown representing `tree`.\n */\nexport function toMarkdown(tree, options = {}) {\n  /** @type {State} */\n  const state = {\n    enter,\n    indentLines,\n    associationId: association,\n    containerPhrasing: containerPhrasingBound,\n    containerFlow: containerFlowBound,\n    createTracker: track,\n    compilePattern,\n    safe: safeBound,\n    stack: [],\n    unsafe: [...unsafe],\n    join: [...join],\n    // @ts-expect-error: GFM / frontmatter are typed in `mdast` but not defined\n    // here.\n    handlers: {...handlers},\n    options: {},\n    indexStack: [],\n    // @ts-expect-error: add `handle` in a second.\n    handle: undefined\n  }\n\n  configure(state, options)\n\n  if (state.options.tightDefinitions) {\n    state.join.push(joinDefinition)\n  }\n\n  state.handle = zwitch('type', {\n    invalid,\n    unknown,\n    handlers: state.handlers\n  })\n\n  let result = state.handle(tree, undefined, state, {\n    before: '\\n',\n    after: '\\n',\n    now: {line: 1, column: 1},\n    lineShift: 0\n  })\n\n  if (\n    result &&\n    result.charCodeAt(result.length - 1) !== 10 &&\n    result.charCodeAt(result.length - 1) !== 13\n  ) {\n    result += '\\n'\n  }\n\n  return result\n\n  /** @type {Enter} */\n  function enter(name) {\n    state.stack.push(name)\n    return exit\n\n    /**\n     * @returns {undefined}\n     */\n    function exit() {\n      state.stack.pop()\n    }\n  }\n}\n\n/**\n * @param {unknown} value\n * @returns {never}\n */\nfunction invalid(value) {\n  throw new Error('Cannot handle value `' + value + '`, expected node')\n}\n\n/**\n * @param {unknown} value\n * @returns {never}\n */\nfunction unknown(value) {\n  // Always a node.\n  const node = /** @type {Nodes} */ (value)\n  throw new Error('Cannot handle unknown node `' + node.type + '`')\n}\n\n/** @type {Join} */\nfunction joinDefinition(left, right) {\n  // No blank line between adjacent definitions.\n  if (left.type === 'definition' && left.type === right.type) {\n    return 0\n  }\n}\n\n/**\n * Serialize the children of a parent that contains phrasing children.\n *\n * These children will be joined flush together.\n *\n * @this {State}\n *   Info passed around about the current state.\n * @param {PhrasingParents} parent\n *   Parent of flow nodes.\n * @param {Info} info\n *   Info on where we are in the document we are generating.\n * @returns {string}\n *   Serialized children, joined together.\n */\nfunction containerPhrasingBound(parent, info) {\n  return containerPhrasing(parent, this, info)\n}\n\n/**\n * Serialize the children of a parent that contains flow children.\n *\n * These children will typically be joined by blank lines.\n * What they are joined by exactly is defined by `Join` functions.\n *\n * @this {State}\n *   Info passed around about the current state.\n * @param {FlowParents} parent\n *   Parent of flow nodes.\n * @param {TrackFields} info\n *   Info on where we are in the document we are generating.\n * @returns {string}\n *   Serialized children, joined by (blank) lines.\n */\nfunction containerFlowBound(parent, info) {\n  return containerFlow(parent, this, info)\n}\n\n/**\n * Make a string safe for embedding in markdown constructs.\n *\n * In markdown, almost all punctuation characters can, in certain cases,\n * result in something.\n * Whether they do is highly subjective to where they happen and in what\n * they happen.\n *\n * To solve this, `mdast-util-to-markdown` tracks:\n *\n * * Characters before and after something;\n * * What “constructs” we are in.\n *\n * This information is then used by this function to escape or encode\n * special characters.\n *\n * @this {State}\n *   Info passed around about the current state.\n * @param {string | null | undefined} value\n *   Raw value to make safe.\n * @param {SafeConfig} config\n *   Configuration.\n * @returns {string}\n *   Serialized markdown safe for embedding.\n */\nfunction safeBound(value, config) {\n  return safe(this, value, config)\n}\n",
+      "start": 1712268127552,
+      "end": 1712268127580,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127580,
+      "end": 1712268127580,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark-core-commonmark/lib/code-fenced.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-util-types').Code} Code\n * @typedef {import('micromark-util-types').Construct} Construct\n * @typedef {import('micromark-util-types').State} State\n * @typedef {import('micromark-util-types').TokenizeContext} TokenizeContext\n * @typedef {import('micromark-util-types').Tokenizer} Tokenizer\n */\n\nimport {factorySpace} from 'micromark-factory-space'\nimport {markdownLineEnding, markdownSpace} from 'micromark-util-character'\n/** @type {Construct} */\nconst nonLazyContinuation = {\n  tokenize: tokenizeNonLazyContinuation,\n  partial: true\n}\n\n/** @type {Construct} */\nexport const codeFenced = {\n  name: 'codeFenced',\n  tokenize: tokenizeCodeFenced,\n  concrete: true\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction tokenizeCodeFenced(effects, ok, nok) {\n  const self = this\n  /** @type {Construct} */\n  const closeStart = {\n    tokenize: tokenizeCloseStart,\n    partial: true\n  }\n  let initialPrefix = 0\n  let sizeOpen = 0\n  /** @type {NonNullable<Code>} */\n  let marker\n  return start\n\n  /**\n   * Start of code.\n   *\n   * ```markdown\n   * > | ~~~js\n   *     ^\n   *   | alert(1)\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function start(code) {\n    // To do: parse whitespace like `markdown-rs`.\n    return beforeSequenceOpen(code)\n  }\n\n  /**\n   * In opening fence, after prefix, at sequence.\n   *\n   * ```markdown\n   * > | ~~~js\n   *     ^\n   *   | alert(1)\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function beforeSequenceOpen(code) {\n    const tail = self.events[self.events.length - 1]\n    initialPrefix =\n      tail && tail[1].type === 'linePrefix'\n        ? tail[2].sliceSerialize(tail[1], true).length\n        : 0\n    marker = code\n    effects.enter('codeFenced')\n    effects.enter('codeFencedFence')\n    effects.enter('codeFencedFenceSequence')\n    return sequenceOpen(code)\n  }\n\n  /**\n   * In opening fence sequence.\n   *\n   * ```markdown\n   * > | ~~~js\n   *      ^\n   *   | alert(1)\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function sequenceOpen(code) {\n    if (code === marker) {\n      sizeOpen++\n      effects.consume(code)\n      return sequenceOpen\n    }\n    if (sizeOpen < 3) {\n      return nok(code)\n    }\n    effects.exit('codeFencedFenceSequence')\n    return markdownSpace(code)\n      ? factorySpace(effects, infoBefore, 'whitespace')(code)\n      : infoBefore(code)\n  }\n\n  /**\n   * In opening fence, after the sequence (and optional whitespace), before info.\n   *\n   * ```markdown\n   * > | ~~~js\n   *        ^\n   *   | alert(1)\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function infoBefore(code) {\n    if (code === null || markdownLineEnding(code)) {\n      effects.exit('codeFencedFence')\n      return self.interrupt\n        ? ok(code)\n        : effects.check(nonLazyContinuation, atNonLazyBreak, after)(code)\n    }\n    effects.enter('codeFencedFenceInfo')\n    effects.enter('chunkString', {\n      contentType: 'string'\n    })\n    return info(code)\n  }\n\n  /**\n   * In info.\n   *\n   * ```markdown\n   * > | ~~~js\n   *        ^\n   *   | alert(1)\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function info(code) {\n    if (code === null || markdownLineEnding(code)) {\n      effects.exit('chunkString')\n      effects.exit('codeFencedFenceInfo')\n      return infoBefore(code)\n    }\n    if (markdownSpace(code)) {\n      effects.exit('chunkString')\n      effects.exit('codeFencedFenceInfo')\n      return factorySpace(effects, metaBefore, 'whitespace')(code)\n    }\n    if (code === 96 && code === marker) {\n      return nok(code)\n    }\n    effects.consume(code)\n    return info\n  }\n\n  /**\n   * In opening fence, after info and whitespace, before meta.\n   *\n   * ```markdown\n   * > | ~~~js eval\n   *           ^\n   *   | alert(1)\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function metaBefore(code) {\n    if (code === null || markdownLineEnding(code)) {\n      return infoBefore(code)\n    }\n    effects.enter('codeFencedFenceMeta')\n    effects.enter('chunkString', {\n      contentType: 'string'\n    })\n    return meta(code)\n  }\n\n  /**\n   * In meta.\n   *\n   * ```markdown\n   * > | ~~~js eval\n   *           ^\n   *   | alert(1)\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function meta(code) {\n    if (code === null || markdownLineEnding(code)) {\n      effects.exit('chunkString')\n      effects.exit('codeFencedFenceMeta')\n      return infoBefore(code)\n    }\n    if (code === 96 && code === marker) {\n      return nok(code)\n    }\n    effects.consume(code)\n    return meta\n  }\n\n  /**\n   * At eol/eof in code, before a non-lazy closing fence or content.\n   *\n   * ```markdown\n   * > | ~~~js\n   *          ^\n   * > | alert(1)\n   *             ^\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function atNonLazyBreak(code) {\n    return effects.attempt(closeStart, after, contentBefore)(code)\n  }\n\n  /**\n   * Before code content, not a closing fence, at eol.\n   *\n   * ```markdown\n   *   | ~~~js\n   * > | alert(1)\n   *             ^\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function contentBefore(code) {\n    effects.enter('lineEnding')\n    effects.consume(code)\n    effects.exit('lineEnding')\n    return contentStart\n  }\n\n  /**\n   * Before code content, not a closing fence.\n   *\n   * ```markdown\n   *   | ~~~js\n   * > | alert(1)\n   *     ^\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function contentStart(code) {\n    return initialPrefix > 0 && markdownSpace(code)\n      ? factorySpace(\n          effects,\n          beforeContentChunk,\n          'linePrefix',\n          initialPrefix + 1\n        )(code)\n      : beforeContentChunk(code)\n  }\n\n  /**\n   * Before code content, after optional prefix.\n   *\n   * ```markdown\n   *   | ~~~js\n   * > | alert(1)\n   *     ^\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function beforeContentChunk(code) {\n    if (code === null || markdownLineEnding(code)) {\n      return effects.check(nonLazyContinuation, atNonLazyBreak, after)(code)\n    }\n    effects.enter('codeFlowValue')\n    return contentChunk(code)\n  }\n\n  /**\n   * In code content.\n   *\n   * ```markdown\n   *   | ~~~js\n   * > | alert(1)\n   *     ^^^^^^^^\n   *   | ~~~\n   * ```\n   *\n   * @type {State}\n   */\n  function contentChunk(code) {\n    if (code === null || markdownLineEnding(code)) {\n      effects.exit('codeFlowValue')\n      return beforeContentChunk(code)\n    }\n    effects.consume(code)\n    return contentChunk\n  }\n\n  /**\n   * After code.\n   *\n   * ```markdown\n   *   | ~~~js\n   *   | alert(1)\n   * > | ~~~\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function after(code) {\n    effects.exit('codeFenced')\n    return ok(code)\n  }\n\n  /**\n   * @this {TokenizeContext}\n   * @type {Tokenizer}\n   */\n  function tokenizeCloseStart(effects, ok, nok) {\n    let size = 0\n    return startBefore\n\n    /**\n     *\n     *\n     * @type {State}\n     */\n    function startBefore(code) {\n      effects.enter('lineEnding')\n      effects.consume(code)\n      effects.exit('lineEnding')\n      return start\n    }\n\n    /**\n     * Before closing fence, at optional whitespace.\n     *\n     * ```markdown\n     *   | ~~~js\n     *   | alert(1)\n     * > | ~~~\n     *     ^\n     * ```\n     *\n     * @type {State}\n     */\n    function start(code) {\n      // Always populated by defaults.\n\n      // To do: `enter` here or in next state?\n      effects.enter('codeFencedFence')\n      return markdownSpace(code)\n        ? factorySpace(\n            effects,\n            beforeSequenceClose,\n            'linePrefix',\n            self.parser.constructs.disable.null.includes('codeIndented')\n              ? undefined\n              : 4\n          )(code)\n        : beforeSequenceClose(code)\n    }\n\n    /**\n     * In closing fence, after optional whitespace, at sequence.\n     *\n     * ```markdown\n     *   | ~~~js\n     *   | alert(1)\n     * > | ~~~\n     *     ^\n     * ```\n     *\n     * @type {State}\n     */\n    function beforeSequenceClose(code) {\n      if (code === marker) {\n        effects.enter('codeFencedFenceSequence')\n        return sequenceClose(code)\n      }\n      return nok(code)\n    }\n\n    /**\n     * In closing fence sequence.\n     *\n     * ```markdown\n     *   | ~~~js\n     *   | alert(1)\n     * > | ~~~\n     *     ^\n     * ```\n     *\n     * @type {State}\n     */\n    function sequenceClose(code) {\n      if (code === marker) {\n        size++\n        effects.consume(code)\n        return sequenceClose\n      }\n      if (size >= sizeOpen) {\n        effects.exit('codeFencedFenceSequence')\n        return markdownSpace(code)\n          ? factorySpace(effects, sequenceCloseAfter, 'whitespace')(code)\n          : sequenceCloseAfter(code)\n      }\n      return nok(code)\n    }\n\n    /**\n     * After closing fence sequence, after optional whitespace.\n     *\n     * ```markdown\n     *   | ~~~js\n     *   | alert(1)\n     * > | ~~~\n     *        ^\n     * ```\n     *\n     * @type {State}\n     */\n    function sequenceCloseAfter(code) {\n      if (code === null || markdownLineEnding(code)) {\n        effects.exit('codeFencedFence')\n        return ok(code)\n      }\n      return nok(code)\n    }\n  }\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction tokenizeNonLazyContinuation(effects, ok, nok) {\n  const self = this\n  return start\n\n  /**\n   *\n   *\n   * @type {State}\n   */\n  function start(code) {\n    if (code === null) {\n      return nok(code)\n    }\n    effects.enter('lineEnding')\n    effects.consume(code)\n    effects.exit('lineEnding')\n    return lineStart\n  }\n\n  /**\n   *\n   *\n   * @type {State}\n   */\n  function lineStart(code) {\n    return self.parser.lazy[self.now().line] ? nok(code) : ok(code)\n  }\n}\n",
+      "start": 1712268127561,
+      "end": 1712268127588,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127588,
+      "end": 1712268127588,
+      "order": "normal"
+    }
+  ]
+}

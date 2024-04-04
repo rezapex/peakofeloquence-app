@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark-core-commonmark/lib/label-end.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-util-types').Construct} Construct\n * @typedef {import('micromark-util-types').Event} Event\n * @typedef {import('micromark-util-types').Resolver} Resolver\n * @typedef {import('micromark-util-types').State} State\n * @typedef {import('micromark-util-types').Token} Token\n * @typedef {import('micromark-util-types').TokenizeContext} TokenizeContext\n * @typedef {import('micromark-util-types').Tokenizer} Tokenizer\n */\n\nimport {factoryDestination} from 'micromark-factory-destination'\nimport {factoryLabel} from 'micromark-factory-label'\nimport {factoryTitle} from 'micromark-factory-title'\nimport {factoryWhitespace} from 'micromark-factory-whitespace'\nimport {markdownLineEndingOrSpace} from 'micromark-util-character'\nimport {push, splice} from 'micromark-util-chunked'\nimport {normalizeIdentifier} from 'micromark-util-normalize-identifier'\nimport {resolveAll} from 'micromark-util-resolve-all'\n/** @type {Construct} */\nexport const labelEnd = {\n  name: 'labelEnd',\n  tokenize: tokenizeLabelEnd,\n  resolveTo: resolveToLabelEnd,\n  resolveAll: resolveAllLabelEnd\n}\n\n/** @type {Construct} */\nconst resourceConstruct = {\n  tokenize: tokenizeResource\n}\n/** @type {Construct} */\nconst referenceFullConstruct = {\n  tokenize: tokenizeReferenceFull\n}\n/** @type {Construct} */\nconst referenceCollapsedConstruct = {\n  tokenize: tokenizeReferenceCollapsed\n}\n\n/** @type {Resolver} */\nfunction resolveAllLabelEnd(events) {\n  let index = -1\n  while (++index < events.length) {\n    const token = events[index][1]\n    if (\n      token.type === 'labelImage' ||\n      token.type === 'labelLink' ||\n      token.type === 'labelEnd'\n    ) {\n      // Remove the marker.\n      events.splice(index + 1, token.type === 'labelImage' ? 4 : 2)\n      token.type = 'data'\n      index++\n    }\n  }\n  return events\n}\n\n/** @type {Resolver} */\nfunction resolveToLabelEnd(events, context) {\n  let index = events.length\n  let offset = 0\n  /** @type {Token} */\n  let token\n  /** @type {number | undefined} */\n  let open\n  /** @type {number | undefined} */\n  let close\n  /** @type {Array<Event>} */\n  let media\n\n  // Find an opening.\n  while (index--) {\n    token = events[index][1]\n    if (open) {\n      // If we see another link, or inactive link label, we’ve been here before.\n      if (\n        token.type === 'link' ||\n        (token.type === 'labelLink' && token._inactive)\n      ) {\n        break\n      }\n\n      // Mark other link openings as inactive, as we can’t have links in\n      // links.\n      if (events[index][0] === 'enter' && token.type === 'labelLink') {\n        token._inactive = true\n      }\n    } else if (close) {\n      if (\n        events[index][0] === 'enter' &&\n        (token.type === 'labelImage' || token.type === 'labelLink') &&\n        !token._balanced\n      ) {\n        open = index\n        if (token.type !== 'labelLink') {\n          offset = 2\n          break\n        }\n      }\n    } else if (token.type === 'labelEnd') {\n      close = index\n    }\n  }\n  const group = {\n    type: events[open][1].type === 'labelLink' ? 'link' : 'image',\n    start: Object.assign({}, events[open][1].start),\n    end: Object.assign({}, events[events.length - 1][1].end)\n  }\n  const label = {\n    type: 'label',\n    start: Object.assign({}, events[open][1].start),\n    end: Object.assign({}, events[close][1].end)\n  }\n  const text = {\n    type: 'labelText',\n    start: Object.assign({}, events[open + offset + 2][1].end),\n    end: Object.assign({}, events[close - 2][1].start)\n  }\n  media = [\n    ['enter', group, context],\n    ['enter', label, context]\n  ]\n\n  // Opening marker.\n  media = push(media, events.slice(open + 1, open + offset + 3))\n\n  // Text open.\n  media = push(media, [['enter', text, context]])\n\n  // Always populated by defaults.\n\n  // Between.\n  media = push(\n    media,\n    resolveAll(\n      context.parser.constructs.insideSpan.null,\n      events.slice(open + offset + 4, close - 3),\n      context\n    )\n  )\n\n  // Text close, marker close, label close.\n  media = push(media, [\n    ['exit', text, context],\n    events[close - 2],\n    events[close - 1],\n    ['exit', label, context]\n  ])\n\n  // Reference, resource, or so.\n  media = push(media, events.slice(close + 1))\n\n  // Media close.\n  media = push(media, [['exit', group, context]])\n  splice(events, open, events.length, media)\n  return events\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction tokenizeLabelEnd(effects, ok, nok) {\n  const self = this\n  let index = self.events.length\n  /** @type {Token} */\n  let labelStart\n  /** @type {boolean} */\n  let defined\n\n  // Find an opening.\n  while (index--) {\n    if (\n      (self.events[index][1].type === 'labelImage' ||\n        self.events[index][1].type === 'labelLink') &&\n      !self.events[index][1]._balanced\n    ) {\n      labelStart = self.events[index][1]\n      break\n    }\n  }\n  return start\n\n  /**\n   * Start of label end.\n   *\n   * ```markdown\n   * > | [a](b) c\n   *       ^\n   * > | [a][b] c\n   *       ^\n   * > | [a][] b\n   *       ^\n   * > | [a] b\n   * ```\n   *\n   * @type {State}\n   */\n  function start(code) {\n    // If there is not an okay opening.\n    if (!labelStart) {\n      return nok(code)\n    }\n\n    // If the corresponding label (link) start is marked as inactive,\n    // it means we’d be wrapping a link, like this:\n    //\n    // ```markdown\n    // > | a [b [c](d) e](f) g.\n    //                  ^\n    // ```\n    //\n    // We can’t have that, so it’s just balanced brackets.\n    if (labelStart._inactive) {\n      return labelEndNok(code)\n    }\n    defined = self.parser.defined.includes(\n      normalizeIdentifier(\n        self.sliceSerialize({\n          start: labelStart.end,\n          end: self.now()\n        })\n      )\n    )\n    effects.enter('labelEnd')\n    effects.enter('labelMarker')\n    effects.consume(code)\n    effects.exit('labelMarker')\n    effects.exit('labelEnd')\n    return after\n  }\n\n  /**\n   * After `]`.\n   *\n   * ```markdown\n   * > | [a](b) c\n   *       ^\n   * > | [a][b] c\n   *       ^\n   * > | [a][] b\n   *       ^\n   * > | [a] b\n   *       ^\n   * ```\n   *\n   * @type {State}\n   */\n  function after(code) {\n    // Note: `markdown-rs` also parses GFM footnotes here, which for us is in\n    // an extension.\n\n    // Resource (`[asd](fgh)`)?\n    if (code === 40) {\n      return effects.attempt(\n        resourceConstruct,\n        labelEndOk,\n        defined ? labelEndOk : labelEndNok\n      )(code)\n    }\n\n    // Full (`[asd][fgh]`) or collapsed (`[asd][]`) reference?\n    if (code === 91) {\n      return effects.attempt(\n        referenceFullConstruct,\n        labelEndOk,\n        defined ? referenceNotFull : labelEndNok\n      )(code)\n    }\n\n    // Shortcut (`[asd]`) reference?\n    return defined ? labelEndOk(code) : labelEndNok(code)\n  }\n\n  /**\n   * After `]`, at `[`, but not at a full reference.\n   *\n   * > 👉 **Note**: we only get here if the label is defined.\n   *\n   * ```markdown\n   * > | [a][] b\n   *        ^\n   * > | [a] b\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function referenceNotFull(code) {\n    return effects.attempt(\n      referenceCollapsedConstruct,\n      labelEndOk,\n      labelEndNok\n    )(code)\n  }\n\n  /**\n   * Done, we found something.\n   *\n   * ```markdown\n   * > | [a](b) c\n   *           ^\n   * > | [a][b] c\n   *           ^\n   * > | [a][] b\n   *          ^\n   * > | [a] b\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function labelEndOk(code) {\n    // Note: `markdown-rs` does a bunch of stuff here.\n    return ok(code)\n  }\n\n  /**\n   * Done, it’s nothing.\n   *\n   * There was an okay opening, but we didn’t match anything.\n   *\n   * ```markdown\n   * > | [a](b c\n   *        ^\n   * > | [a][b c\n   *        ^\n   * > | [a] b\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function labelEndNok(code) {\n    labelStart._balanced = true\n    return nok(code)\n  }\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction tokenizeResource(effects, ok, nok) {\n  return resourceStart\n\n  /**\n   * At a resource.\n   *\n   * ```markdown\n   * > | [a](b) c\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function resourceStart(code) {\n    effects.enter('resource')\n    effects.enter('resourceMarker')\n    effects.consume(code)\n    effects.exit('resourceMarker')\n    return resourceBefore\n  }\n\n  /**\n   * In resource, after `(`, at optional whitespace.\n   *\n   * ```markdown\n   * > | [a](b) c\n   *         ^\n   * ```\n   *\n   * @type {State}\n   */\n  function resourceBefore(code) {\n    return markdownLineEndingOrSpace(code)\n      ? factoryWhitespace(effects, resourceOpen)(code)\n      : resourceOpen(code)\n  }\n\n  /**\n   * In resource, after optional whitespace, at `)` or a destination.\n   *\n   * ```markdown\n   * > | [a](b) c\n   *         ^\n   * ```\n   *\n   * @type {State}\n   */\n  function resourceOpen(code) {\n    if (code === 41) {\n      return resourceEnd(code)\n    }\n    return factoryDestination(\n      effects,\n      resourceDestinationAfter,\n      resourceDestinationMissing,\n      'resourceDestination',\n      'resourceDestinationLiteral',\n      'resourceDestinationLiteralMarker',\n      'resourceDestinationRaw',\n      'resourceDestinationString',\n      32\n    )(code)\n  }\n\n  /**\n   * In resource, after destination, at optional whitespace.\n   *\n   * ```markdown\n   * > | [a](b) c\n   *          ^\n   * ```\n   *\n   * @type {State}\n   */\n  function resourceDestinationAfter(code) {\n    return markdownLineEndingOrSpace(code)\n      ? factoryWhitespace(effects, resourceBetween)(code)\n      : resourceEnd(code)\n  }\n\n  /**\n   * At invalid destination.\n   *\n   * ```markdown\n   * > | [a](<<) b\n   *         ^\n   * ```\n   *\n   * @type {State}\n   */\n  function resourceDestinationMissing(code) {\n    return nok(code)\n  }\n\n  /**\n   * In resource, after destination and whitespace, at `(` or title.\n   *\n   * ```markdown\n   * > | [a](b ) c\n   *           ^\n   * ```\n   *\n   * @type {State}\n   */\n  function resourceBetween(code) {\n    if (code === 34 || code === 39 || code === 40) {\n      return factoryTitle(\n        effects,\n        resourceTitleAfter,\n        nok,\n        'resourceTitle',\n        'resourceTitleMarker',\n        'resourceTitleString'\n      )(code)\n    }\n    return resourceEnd(code)\n  }\n\n  /**\n   * In resource, after title, at optional whitespace.\n   *\n   * ```markdown\n   * > | [a](b \"c\") d\n   *              ^\n   * ```\n   *\n   * @type {State}\n   */\n  function resourceTitleAfter(code) {\n    return markdownLineEndingOrSpace(code)\n      ? factoryWhitespace(effects, resourceEnd)(code)\n      : resourceEnd(code)\n  }\n\n  /**\n   * In resource, at `)`.\n   *\n   * ```markdown\n   * > | [a](b) d\n   *          ^\n   * ```\n   *\n   * @type {State}\n   */\n  function resourceEnd(code) {\n    if (code === 41) {\n      effects.enter('resourceMarker')\n      effects.consume(code)\n      effects.exit('resourceMarker')\n      effects.exit('resource')\n      return ok\n    }\n    return nok(code)\n  }\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction tokenizeReferenceFull(effects, ok, nok) {\n  const self = this\n  return referenceFull\n\n  /**\n   * In a reference (full), at the `[`.\n   *\n   * ```markdown\n   * > | [a][b] d\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function referenceFull(code) {\n    return factoryLabel.call(\n      self,\n      effects,\n      referenceFullAfter,\n      referenceFullMissing,\n      'reference',\n      'referenceMarker',\n      'referenceString'\n    )(code)\n  }\n\n  /**\n   * In a reference (full), after `]`.\n   *\n   * ```markdown\n   * > | [a][b] d\n   *          ^\n   * ```\n   *\n   * @type {State}\n   */\n  function referenceFullAfter(code) {\n    return self.parser.defined.includes(\n      normalizeIdentifier(\n        self.sliceSerialize(self.events[self.events.length - 1][1]).slice(1, -1)\n      )\n    )\n      ? ok(code)\n      : nok(code)\n  }\n\n  /**\n   * In reference (full) that was missing.\n   *\n   * ```markdown\n   * > | [a][b d\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function referenceFullMissing(code) {\n    return nok(code)\n  }\n}\n\n/**\n * @this {TokenizeContext}\n * @type {Tokenizer}\n */\nfunction tokenizeReferenceCollapsed(effects, ok, nok) {\n  return referenceCollapsedStart\n\n  /**\n   * In reference (collapsed), at `[`.\n   *\n   * > 👉 **Note**: we only get here if the label is defined.\n   *\n   * ```markdown\n   * > | [a][] d\n   *        ^\n   * ```\n   *\n   * @type {State}\n   */\n  function referenceCollapsedStart(code) {\n    // We only attempt a collapsed label if there’s a `[`.\n\n    effects.enter('reference')\n    effects.enter('referenceMarker')\n    effects.consume(code)\n    effects.exit('referenceMarker')\n    return referenceCollapsedOpen\n  }\n\n  /**\n   * In reference (collapsed), at `]`.\n   *\n   * > 👉 **Note**: we only get here if the label is defined.\n   *\n   * ```markdown\n   * > | [a][] d\n   *         ^\n   * ```\n   *\n   *  @type {State}\n   */\n  function referenceCollapsedOpen(code) {\n    if (code === 93) {\n      effects.enter('referenceMarker')\n      effects.consume(code)\n      effects.exit('referenceMarker')\n      effects.exit('reference')\n      return ok\n    }\n    return nok(code)\n  }\n}\n",
+      "start": 1712268127565,
+      "end": 1712268127603,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127603,
+      "end": 1712268127603,
+      "order": "normal"
+    }
+  ]
+}

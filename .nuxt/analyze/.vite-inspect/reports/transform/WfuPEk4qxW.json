@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/entities/lib/esm/escape.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export const xmlReplacer = /[\"&'<>$\\x80-\\uFFFF]/g;\nconst xmlCodeMap = new Map([\n    [34, \"&quot;\"],\n    [38, \"&amp;\"],\n    [39, \"&apos;\"],\n    [60, \"&lt;\"],\n    [62, \"&gt;\"],\n]);\n// For compatibility with node < 4, we wrap `codePointAt`\nexport const getCodePoint = \n// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition\nString.prototype.codePointAt != null\n    ? (str, index) => str.codePointAt(index)\n    : // http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae\n        (c, index) => (c.charCodeAt(index) & 0xfc00) === 0xd800\n            ? (c.charCodeAt(index) - 0xd800) * 0x400 +\n                c.charCodeAt(index + 1) -\n                0xdc00 +\n                0x10000\n            : c.charCodeAt(index);\n/**\n * Encodes all non-ASCII characters, as well as characters not valid in XML\n * documents using XML entities.\n *\n * If a character has no equivalent entity, a\n * numeric hexadecimal reference (eg. `&#xfc;`) will be used.\n */\nexport function encodeXML(str) {\n    let ret = \"\";\n    let lastIdx = 0;\n    let match;\n    while ((match = xmlReplacer.exec(str)) !== null) {\n        const i = match.index;\n        const char = str.charCodeAt(i);\n        const next = xmlCodeMap.get(char);\n        if (next !== undefined) {\n            ret += str.substring(lastIdx, i) + next;\n            lastIdx = i + 1;\n        }\n        else {\n            ret += `${str.substring(lastIdx, i)}&#x${getCodePoint(str, i).toString(16)};`;\n            // Increase by 1 if we have a surrogate pair\n            lastIdx = xmlReplacer.lastIndex += Number((char & 0xfc00) === 0xd800);\n        }\n    }\n    return ret + str.substr(lastIdx);\n}\n/**\n * Encodes all non-ASCII characters, as well as characters not valid in XML\n * documents using numeric hexadecimal reference (eg. `&#xfc;`).\n *\n * Have a look at `escapeUTF8` if you want a more concise output at the expense\n * of reduced transportability.\n *\n * @param data String to escape.\n */\nexport const escape = encodeXML;\n/**\n * Creates a function that escapes all characters matched by the given regular\n * expression using the given map of characters to escape to their entities.\n *\n * @param regex Regular expression to match characters to escape.\n * @param map Map of characters to escape to their entities.\n *\n * @returns Function that escapes all characters matched by the given regular\n * expression using the given map of characters to escape to their entities.\n */\nfunction getEscaper(regex, map) {\n    return function escape(data) {\n        let match;\n        let lastIdx = 0;\n        let result = \"\";\n        while ((match = regex.exec(data))) {\n            if (lastIdx !== match.index) {\n                result += data.substring(lastIdx, match.index);\n            }\n            // We know that this character will be in the map.\n            result += map.get(match[0].charCodeAt(0));\n            // Every match will be of length 1\n            lastIdx = match.index + 1;\n        }\n        return result + data.substring(lastIdx);\n    };\n}\n/**\n * Encodes all characters not valid in XML documents using XML entities.\n *\n * Note that the output will be character-set dependent.\n *\n * @param data String to escape.\n */\nexport const escapeUTF8 = getEscaper(/[&<>'\"]/g, xmlCodeMap);\n/**\n * Encodes all characters that have to be escaped in HTML attributes,\n * following {@link https://html.spec.whatwg.org/multipage/parsing.html#escapingString}.\n *\n * @param data String to escape.\n */\nexport const escapeAttribute = getEscaper(/[\"&\\u00A0]/g, new Map([\n    [34, \"&quot;\"],\n    [38, \"&amp;\"],\n    [160, \"&nbsp;\"],\n]));\n/**\n * Encodes all characters that have to be escaped in HTML text,\n * following {@link https://html.spec.whatwg.org/multipage/parsing.html#escapingString}.\n *\n * @param data String to escape.\n */\nexport const escapeText = getEscaper(/[&<>\\u00A0]/g, new Map([\n    [38, \"&amp;\"],\n    [60, \"&lt;\"],\n    [62, \"&gt;\"],\n    [160, \"&nbsp;\"],\n]));\n//# sourceMappingURL=escape.js.map",
+      "start": 1712268127913,
+      "end": 1712268127929,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127929,
+      "end": 1712268127929,
+      "order": "normal"
+    }
+  ]
+}

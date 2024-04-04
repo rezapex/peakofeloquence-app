@@ -1,0 +1,226 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/page/PageLinks.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <p v-if=\"title || $slots.title\" :class=\"ui.title\">\n      <slot name=\"title\">\n        {{ title }}\n      </slot>\n    </p>\n\n    <div :class=\"ui.container\">\n      <slot>\n        <ULink\n          v-for=\"(link, index) of links\"\n          :key=\"index\"\n          v-bind=\"getULinkProps(link)\"\n          :class=\"ui.base\"\n          :active-class=\"ui.active\"\n          :inactive-class=\"ui.inactive\"\n          @click=\"link.click\"\n        >\n          <UIcon v-if=\"link.icon\" :name=\"link.icon\" :class=\"twMerge(ui.icon.base, link.iconClass)\" />\n          <UAvatar v-if=\"link.avatar\" v-bind=\"{ size: ui.avatar.size, ...link.avatar }\" :class=\"twMerge(ui.avatar.base, link.avatarClass)\" />\n\n          <span :class=\"ui.label\">\n            {{ link.label }}\n\n            <UIcon v-if=\"link.target === '_blank'\" :name=\"ui.externalIcon.name\" :class=\"ui.externalIcon.base\" />\n          </span>\n        </ULink>\n      </slot>\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\nimport { twMerge } from 'tailwind-merge'\nimport { getULinkProps } from '#ui/utils'\nimport type { PageLink } from '#ui-pro/types'\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  wrapper: 'space-y-3',\n  title: 'text-sm/6 font-semibold flex items-center gap-1.5',\n  container: 'space-y-3 lg:space-y-1.5',\n  base: 'flex items-center gap-1.5',\n  active: 'text-primary',\n  inactive: 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200',\n  icon: {\n    base: 'w-5 h-5 flex-shrink-0'\n  },\n  avatar: {\n    base: 'self-center',\n    size: '2xs' as const\n  },\n  externalIcon: {\n    name: appConfig.ui.icons.external,\n    base: 'w-3 h-3 absolute top-0.5 -right-3.5 text-gray-400 dark:text-gray-500'\n  },\n  label: 'text-sm/6 font-medium relative'\n}))\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  title: {\n    type: String,\n    default: undefined\n  },\n  links: {\n    type: Array as PropType<PageLink[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n})\n\nconst { ui, attrs } = useUI('page.links', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n</script>\n",
+      "start": 1712268127178,
+      "end": 1712268127198,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127198,
+      "end": 1712268127198,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127198,
+      "end": 1712268127198,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127198,
+      "end": 1712268127198,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127198,
+      "end": 1712268127198,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127198,
+      "end": 1712268127198,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127198,
+      "end": 1712268127198,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127198,
+      "end": 1712268127198,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127198,
+      "end": 1712268127198,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/page/PageLinks.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/page/PageLinks.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1712268127198,
+      "end": 1712268127281,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127281,
+      "end": 1712268127281,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127281,
+      "end": 1712268127281,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127281,
+      "end": 1712268127281,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127281,
+      "end": 1712268127281,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127281,
+      "end": 1712268127281,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127281,
+      "end": 1712268127281,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127281,
+      "end": 1712268127281,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127281,
+      "end": 1712268127281,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127281,
+      "end": 1712268127282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127282,
+      "end": 1712268127282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127282,
+      "end": 1712268127282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127282,
+      "end": 1712268127282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127282,
+      "end": 1712268127282,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127282,
+      "end": 1712268127282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127282,
+      "end": 1712268127282,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127282,
+      "end": 1712268127282,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127282,
+      "end": 1712268127282,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127282,
+      "end": 1712268127283,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127283,
+      "end": 1712268127283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127283,
+      "end": 1712268127283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127283,
+      "end": 1712268127283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127283,
+      "end": 1712268127283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127283,
+      "end": 1712268127283,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127283,
+      "end": 1712268127283,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127283,
+      "end": 1712268127283,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127283,
+      "end": 1712268127283,
+      "order": "normal"
+    }
+  ]
+}

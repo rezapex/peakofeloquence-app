@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/entities/lib/esm/decode.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import htmlDecodeTree from \"./generated/decode-data-html.js\";\nimport xmlDecodeTree from \"./generated/decode-data-xml.js\";\nimport decodeCodePoint, { replaceCodePoint, fromCodePoint, } from \"./decode_codepoint.js\";\n// Re-export for use by eg. htmlparser2\nexport { htmlDecodeTree, xmlDecodeTree, decodeCodePoint };\nexport { replaceCodePoint, fromCodePoint } from \"./decode_codepoint.js\";\nvar CharCodes;\n(function (CharCodes) {\n    CharCodes[CharCodes[\"NUM\"] = 35] = \"NUM\";\n    CharCodes[CharCodes[\"SEMI\"] = 59] = \"SEMI\";\n    CharCodes[CharCodes[\"EQUALS\"] = 61] = \"EQUALS\";\n    CharCodes[CharCodes[\"ZERO\"] = 48] = \"ZERO\";\n    CharCodes[CharCodes[\"NINE\"] = 57] = \"NINE\";\n    CharCodes[CharCodes[\"LOWER_A\"] = 97] = \"LOWER_A\";\n    CharCodes[CharCodes[\"LOWER_F\"] = 102] = \"LOWER_F\";\n    CharCodes[CharCodes[\"LOWER_X\"] = 120] = \"LOWER_X\";\n    CharCodes[CharCodes[\"LOWER_Z\"] = 122] = \"LOWER_Z\";\n    CharCodes[CharCodes[\"UPPER_A\"] = 65] = \"UPPER_A\";\n    CharCodes[CharCodes[\"UPPER_F\"] = 70] = \"UPPER_F\";\n    CharCodes[CharCodes[\"UPPER_Z\"] = 90] = \"UPPER_Z\";\n})(CharCodes || (CharCodes = {}));\n/** Bit that needs to be set to convert an upper case ASCII character to lower case */\nconst TO_LOWER_BIT = 0b100000;\nexport var BinTrieFlags;\n(function (BinTrieFlags) {\n    BinTrieFlags[BinTrieFlags[\"VALUE_LENGTH\"] = 49152] = \"VALUE_LENGTH\";\n    BinTrieFlags[BinTrieFlags[\"BRANCH_LENGTH\"] = 16256] = \"BRANCH_LENGTH\";\n    BinTrieFlags[BinTrieFlags[\"JUMP_TABLE\"] = 127] = \"JUMP_TABLE\";\n})(BinTrieFlags || (BinTrieFlags = {}));\nfunction isNumber(code) {\n    return code >= CharCodes.ZERO && code <= CharCodes.NINE;\n}\nfunction isHexadecimalCharacter(code) {\n    return ((code >= CharCodes.UPPER_A && code <= CharCodes.UPPER_F) ||\n        (code >= CharCodes.LOWER_A && code <= CharCodes.LOWER_F));\n}\nfunction isAsciiAlphaNumeric(code) {\n    return ((code >= CharCodes.UPPER_A && code <= CharCodes.UPPER_Z) ||\n        (code >= CharCodes.LOWER_A && code <= CharCodes.LOWER_Z) ||\n        isNumber(code));\n}\n/**\n * Checks if the given character is a valid end character for an entity in an attribute.\n *\n * Attribute values that aren't terminated properly aren't parsed, and shouldn't lead to a parser error.\n * See the example in https://html.spec.whatwg.org/multipage/parsing.html#named-character-reference-state\n */\nfunction isEntityInAttributeInvalidEnd(code) {\n    return code === CharCodes.EQUALS || isAsciiAlphaNumeric(code);\n}\nvar EntityDecoderState;\n(function (EntityDecoderState) {\n    EntityDecoderState[EntityDecoderState[\"EntityStart\"] = 0] = \"EntityStart\";\n    EntityDecoderState[EntityDecoderState[\"NumericStart\"] = 1] = \"NumericStart\";\n    EntityDecoderState[EntityDecoderState[\"NumericDecimal\"] = 2] = \"NumericDecimal\";\n    EntityDecoderState[EntityDecoderState[\"NumericHex\"] = 3] = \"NumericHex\";\n    EntityDecoderState[EntityDecoderState[\"NamedEntity\"] = 4] = \"NamedEntity\";\n})(EntityDecoderState || (EntityDecoderState = {}));\nexport var DecodingMode;\n(function (DecodingMode) {\n    /** Entities in text nodes that can end with any character. */\n    DecodingMode[DecodingMode[\"Legacy\"] = 0] = \"Legacy\";\n    /** Only allow entities terminated with a semicolon. */\n    DecodingMode[DecodingMode[\"Strict\"] = 1] = \"Strict\";\n    /** Entities in attributes have limitations on ending characters. */\n    DecodingMode[DecodingMode[\"Attribute\"] = 2] = \"Attribute\";\n})(DecodingMode || (DecodingMode = {}));\n/**\n * Token decoder with support of writing partial entities.\n */\nexport class EntityDecoder {\n    constructor(\n    /** The tree used to decode entities. */\n    decodeTree, \n    /**\n     * The function that is called when a codepoint is decoded.\n     *\n     * For multi-byte named entities, this will be called multiple times,\n     * with the second codepoint, and the same `consumed` value.\n     *\n     * @param codepoint The decoded codepoint.\n     * @param consumed The number of bytes consumed by the decoder.\n     */\n    emitCodePoint, \n    /** An object that is used to produce errors. */\n    errors) {\n        this.decodeTree = decodeTree;\n        this.emitCodePoint = emitCodePoint;\n        this.errors = errors;\n        /** The current state of the decoder. */\n        this.state = EntityDecoderState.EntityStart;\n        /** Characters that were consumed while parsing an entity. */\n        this.consumed = 1;\n        /**\n         * The result of the entity.\n         *\n         * Either the result index of a numeric entity, or the codepoint of a\n         * numeric entity.\n         */\n        this.result = 0;\n        /** The current index in the decode tree. */\n        this.treeIndex = 0;\n        /** The number of characters that were consumed in excess. */\n        this.excess = 1;\n        /** The mode in which the decoder is operating. */\n        this.decodeMode = DecodingMode.Strict;\n    }\n    /** Resets the instance to make it reusable. */\n    startEntity(decodeMode) {\n        this.decodeMode = decodeMode;\n        this.state = EntityDecoderState.EntityStart;\n        this.result = 0;\n        this.treeIndex = 0;\n        this.excess = 1;\n        this.consumed = 1;\n    }\n    /**\n     * Write an entity to the decoder. This can be called multiple times with partial entities.\n     * If the entity is incomplete, the decoder will return -1.\n     *\n     * Mirrors the implementation of `getDecoder`, but with the ability to stop decoding if the\n     * entity is incomplete, and resume when the next string is written.\n     *\n     * @param string The string containing the entity (or a continuation of the entity).\n     * @param offset The offset at which the entity begins. Should be 0 if this is not the first call.\n     * @returns The number of characters that were consumed, or -1 if the entity is incomplete.\n     */\n    write(str, offset) {\n        switch (this.state) {\n            case EntityDecoderState.EntityStart: {\n                if (str.charCodeAt(offset) === CharCodes.NUM) {\n                    this.state = EntityDecoderState.NumericStart;\n                    this.consumed += 1;\n                    return this.stateNumericStart(str, offset + 1);\n                }\n                this.state = EntityDecoderState.NamedEntity;\n                return this.stateNamedEntity(str, offset);\n            }\n            case EntityDecoderState.NumericStart: {\n                return this.stateNumericStart(str, offset);\n            }\n            case EntityDecoderState.NumericDecimal: {\n                return this.stateNumericDecimal(str, offset);\n            }\n            case EntityDecoderState.NumericHex: {\n                return this.stateNumericHex(str, offset);\n            }\n            case EntityDecoderState.NamedEntity: {\n                return this.stateNamedEntity(str, offset);\n            }\n        }\n    }\n    /**\n     * Switches between the numeric decimal and hexadecimal states.\n     *\n     * Equivalent to the `Numeric character reference state` in the HTML spec.\n     *\n     * @param str The string containing the entity (or a continuation of the entity).\n     * @param offset The current offset.\n     * @returns The number of characters that were consumed, or -1 if the entity is incomplete.\n     */\n    stateNumericStart(str, offset) {\n        if (offset >= str.length) {\n            return -1;\n        }\n        if ((str.charCodeAt(offset) | TO_LOWER_BIT) === CharCodes.LOWER_X) {\n            this.state = EntityDecoderState.NumericHex;\n            this.consumed += 1;\n            return this.stateNumericHex(str, offset + 1);\n        }\n        this.state = EntityDecoderState.NumericDecimal;\n        return this.stateNumericDecimal(str, offset);\n    }\n    addToNumericResult(str, start, end, base) {\n        if (start !== end) {\n            const digitCount = end - start;\n            this.result =\n                this.result * Math.pow(base, digitCount) +\n                    parseInt(str.substr(start, digitCount), base);\n            this.consumed += digitCount;\n        }\n    }\n    /**\n     * Parses a hexadecimal numeric entity.\n     *\n     * Equivalent to the `Hexademical character reference state` in the HTML spec.\n     *\n     * @param str The string containing the entity (or a continuation of the entity).\n     * @param offset The current offset.\n     * @returns The number of characters that were consumed, or -1 if the entity is incomplete.\n     */\n    stateNumericHex(str, offset) {\n        const startIdx = offset;\n        while (offset < str.length) {\n            const char = str.charCodeAt(offset);\n            if (isNumber(char) || isHexadecimalCharacter(char)) {\n                offset += 1;\n            }\n            else {\n                this.addToNumericResult(str, startIdx, offset, 16);\n                return this.emitNumericEntity(char, 3);\n            }\n        }\n        this.addToNumericResult(str, startIdx, offset, 16);\n        return -1;\n    }\n    /**\n     * Parses a decimal numeric entity.\n     *\n     * Equivalent to the `Decimal character reference state` in the HTML spec.\n     *\n     * @param str The string containing the entity (or a continuation of the entity).\n     * @param offset The current offset.\n     * @returns The number of characters that were consumed, or -1 if the entity is incomplete.\n     */\n    stateNumericDecimal(str, offset) {\n        const startIdx = offset;\n        while (offset < str.length) {\n            const char = str.charCodeAt(offset);\n            if (isNumber(char)) {\n                offset += 1;\n            }\n            else {\n                this.addToNumericResult(str, startIdx, offset, 10);\n                return this.emitNumericEntity(char, 2);\n            }\n        }\n        this.addToNumericResult(str, startIdx, offset, 10);\n        return -1;\n    }\n    /**\n     * Validate and emit a numeric entity.\n     *\n     * Implements the logic from the `Hexademical character reference start\n     * state` and `Numeric character reference end state` in the HTML spec.\n     *\n     * @param lastCp The last code point of the entity. Used to see if the\n     *               entity was terminated with a semicolon.\n     * @param expectedLength The minimum number of characters that should be\n     *                       consumed. Used to validate that at least one digit\n     *                       was consumed.\n     * @returns The number of characters that were consumed.\n     */\n    emitNumericEntity(lastCp, expectedLength) {\n        var _a;\n        // Ensure we consumed at least one digit.\n        if (this.consumed <= expectedLength) {\n            (_a = this.errors) === null || _a === void 0 ? void 0 : _a.absenceOfDigitsInNumericCharacterReference(this.consumed);\n            return 0;\n        }\n        // Figure out if this is a legit end of the entity\n        if (lastCp === CharCodes.SEMI) {\n            this.consumed += 1;\n        }\n        else if (this.decodeMode === DecodingMode.Strict) {\n            return 0;\n        }\n        this.emitCodePoint(replaceCodePoint(this.result), this.consumed);\n        if (this.errors) {\n            if (lastCp !== CharCodes.SEMI) {\n                this.errors.missingSemicolonAfterCharacterReference();\n            }\n            this.errors.validateNumericCharacterReference(this.result);\n        }\n        return this.consumed;\n    }\n    /**\n     * Parses a named entity.\n     *\n     * Equivalent to the `Named character reference state` in the HTML spec.\n     *\n     * @param str The string containing the entity (or a continuation of the entity).\n     * @param offset The current offset.\n     * @returns The number of characters that were consumed, or -1 if the entity is incomplete.\n     */\n    stateNamedEntity(str, offset) {\n        const { decodeTree } = this;\n        let current = decodeTree[this.treeIndex];\n        // The mask is the number of bytes of the value, including the current byte.\n        let valueLength = (current & BinTrieFlags.VALUE_LENGTH) >> 14;\n        for (; offset < str.length; offset++, this.excess++) {\n            const char = str.charCodeAt(offset);\n            this.treeIndex = determineBranch(decodeTree, current, this.treeIndex + Math.max(1, valueLength), char);\n            if (this.treeIndex < 0) {\n                return this.result === 0 ||\n                    // If we are parsing an attribute\n                    (this.decodeMode === DecodingMode.Attribute &&\n                        // We shouldn't have consumed any characters after the entity,\n                        (valueLength === 0 ||\n                            // And there should be no invalid characters.\n                            isEntityInAttributeInvalidEnd(char)))\n                    ? 0\n                    : this.emitNotTerminatedNamedEntity();\n            }\n            current = decodeTree[this.treeIndex];\n            valueLength = (current & BinTrieFlags.VALUE_LENGTH) >> 14;\n            // If the branch is a value, store it and continue\n            if (valueLength !== 0) {\n                // If the entity is terminated by a semicolon, we are done.\n                if (char === CharCodes.SEMI) {\n                    return this.emitNamedEntityData(this.treeIndex, valueLength, this.consumed + this.excess);\n                }\n                // If we encounter a non-terminated (legacy) entity while parsing strictly, then ignore it.\n                if (this.decodeMode !== DecodingMode.Strict) {\n                    this.result = this.treeIndex;\n                    this.consumed += this.excess;\n                    this.excess = 0;\n                }\n            }\n        }\n        return -1;\n    }\n    /**\n     * Emit a named entity that was not terminated with a semicolon.\n     *\n     * @returns The number of characters consumed.\n     */\n    emitNotTerminatedNamedEntity() {\n        var _a;\n        const { result, decodeTree } = this;\n        const valueLength = (decodeTree[result] & BinTrieFlags.VALUE_LENGTH) >> 14;\n        this.emitNamedEntityData(result, valueLength, this.consumed);\n        (_a = this.errors) === null || _a === void 0 ? void 0 : _a.missingSemicolonAfterCharacterReference();\n        return this.consumed;\n    }\n    /**\n     * Emit a named entity.\n     *\n     * @param result The index of the entity in the decode tree.\n     * @param valueLength The number of bytes in the entity.\n     * @param consumed The number of characters consumed.\n     *\n     * @returns The number of characters consumed.\n     */\n    emitNamedEntityData(result, valueLength, consumed) {\n        const { decodeTree } = this;\n        this.emitCodePoint(valueLength === 1\n            ? decodeTree[result] & ~BinTrieFlags.VALUE_LENGTH\n            : decodeTree[result + 1], consumed);\n        if (valueLength === 3) {\n            // For multi-byte values, we need to emit the second byte.\n            this.emitCodePoint(decodeTree[result + 2], consumed);\n        }\n        return consumed;\n    }\n    /**\n     * Signal to the parser that the end of the input was reached.\n     *\n     * Remaining data will be emitted and relevant errors will be produced.\n     *\n     * @returns The number of characters consumed.\n     */\n    end() {\n        var _a;\n        switch (this.state) {\n            case EntityDecoderState.NamedEntity: {\n                // Emit a named entity if we have one.\n                return this.result !== 0 &&\n                    (this.decodeMode !== DecodingMode.Attribute ||\n                        this.result === this.treeIndex)\n                    ? this.emitNotTerminatedNamedEntity()\n                    : 0;\n            }\n            // Otherwise, emit a numeric entity if we have one.\n            case EntityDecoderState.NumericDecimal: {\n                return this.emitNumericEntity(0, 2);\n            }\n            case EntityDecoderState.NumericHex: {\n                return this.emitNumericEntity(0, 3);\n            }\n            case EntityDecoderState.NumericStart: {\n                (_a = this.errors) === null || _a === void 0 ? void 0 : _a.absenceOfDigitsInNumericCharacterReference(this.consumed);\n                return 0;\n            }\n            case EntityDecoderState.EntityStart: {\n                // Return 0 if we have no entity.\n                return 0;\n            }\n        }\n    }\n}\n/**\n * Creates a function that decodes entities in a string.\n *\n * @param decodeTree The decode tree.\n * @returns A function that decodes entities in a string.\n */\nfunction getDecoder(decodeTree) {\n    let ret = \"\";\n    const decoder = new EntityDecoder(decodeTree, (str) => (ret += fromCodePoint(str)));\n    return function decodeWithTrie(str, decodeMode) {\n        let lastIndex = 0;\n        let offset = 0;\n        while ((offset = str.indexOf(\"&\", offset)) >= 0) {\n            ret += str.slice(lastIndex, offset);\n            decoder.startEntity(decodeMode);\n            const len = decoder.write(str, \n            // Skip the \"&\"\n            offset + 1);\n            if (len < 0) {\n                lastIndex = offset + decoder.end();\n                break;\n            }\n            lastIndex = offset + len;\n            // If `len` is 0, skip the current `&` and continue.\n            offset = len === 0 ? lastIndex + 1 : lastIndex;\n        }\n        const result = ret + str.slice(lastIndex);\n        // Make sure we don't keep a reference to the final string.\n        ret = \"\";\n        return result;\n    };\n}\n/**\n * Determines the branch of the current node that is taken given the current\n * character. This function is used to traverse the trie.\n *\n * @param decodeTree The trie.\n * @param current The current node.\n * @param nodeIdx The index right after the current node and its value.\n * @param char The current character.\n * @returns The index of the next node, or -1 if no branch is taken.\n */\nexport function determineBranch(decodeTree, current, nodeIdx, char) {\n    const branchCount = (current & BinTrieFlags.BRANCH_LENGTH) >> 7;\n    const jumpOffset = current & BinTrieFlags.JUMP_TABLE;\n    // Case 1: Single branch encoded in jump offset\n    if (branchCount === 0) {\n        return jumpOffset !== 0 && char === jumpOffset ? nodeIdx : -1;\n    }\n    // Case 2: Multiple branches encoded in jump table\n    if (jumpOffset) {\n        const value = char - jumpOffset;\n        return value < 0 || value >= branchCount\n            ? -1\n            : decodeTree[nodeIdx + value] - 1;\n    }\n    // Case 3: Multiple branches encoded in dictionary\n    // Binary search for the character.\n    let lo = nodeIdx;\n    let hi = lo + branchCount - 1;\n    while (lo <= hi) {\n        const mid = (lo + hi) >>> 1;\n        const midVal = decodeTree[mid];\n        if (midVal < char) {\n            lo = mid + 1;\n        }\n        else if (midVal > char) {\n            hi = mid - 1;\n        }\n        else {\n            return decodeTree[mid + branchCount];\n        }\n    }\n    return -1;\n}\nconst htmlDecoder = getDecoder(htmlDecodeTree);\nconst xmlDecoder = getDecoder(xmlDecodeTree);\n/**\n * Decodes an HTML string.\n *\n * @param str The string to decode.\n * @param mode The decoding mode.\n * @returns The decoded string.\n */\nexport function decodeHTML(str, mode = DecodingMode.Legacy) {\n    return htmlDecoder(str, mode);\n}\n/**\n * Decodes an HTML string in an attribute.\n *\n * @param str The string to decode.\n * @returns The decoded string.\n */\nexport function decodeHTMLAttribute(str) {\n    return htmlDecoder(str, DecodingMode.Attribute);\n}\n/**\n * Decodes an HTML string, requiring all entities to be terminated by a semicolon.\n *\n * @param str The string to decode.\n * @returns The decoded string.\n */\nexport function decodeHTMLStrict(str) {\n    return htmlDecoder(str, DecodingMode.Strict);\n}\n/**\n * Decodes an XML string, requiring all entities to be terminated by a semicolon.\n *\n * @param str The string to decode.\n * @returns The decoded string.\n */\nexport function decodeXML(str) {\n    return xmlDecoder(str, DecodingMode.Strict);\n}\n//# sourceMappingURL=decode.js.map",
+      "start": 1712268127923,
+      "end": 1712268127936,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127936,
+      "end": 1712268127936,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127936,
+      "end": 1712268127937,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127937,
+      "end": 1712268127937,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark-extension-gfm/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-extension-gfm-footnote').HtmlOptions} HtmlOptions\n * @typedef {import('micromark-extension-gfm-strikethrough').Options} Options\n * @typedef {import('micromark-util-types').Extension} Extension\n * @typedef {import('micromark-util-types').HtmlExtension} HtmlExtension\n */\n\nimport {\n  combineExtensions,\n  combineHtmlExtensions\n} from 'micromark-util-combine-extensions'\nimport {\n  gfmAutolinkLiteral,\n  gfmAutolinkLiteralHtml\n} from 'micromark-extension-gfm-autolink-literal'\nimport {gfmFootnote, gfmFootnoteHtml} from 'micromark-extension-gfm-footnote'\nimport {\n  gfmStrikethrough,\n  gfmStrikethroughHtml\n} from 'micromark-extension-gfm-strikethrough'\nimport {gfmTable, gfmTableHtml} from 'micromark-extension-gfm-table'\nimport {gfmTagfilterHtml} from 'micromark-extension-gfm-tagfilter'\nimport {\n  gfmTaskListItem,\n  gfmTaskListItemHtml\n} from 'micromark-extension-gfm-task-list-item'\n\n/**\n * Create an extension for `micromark` to enable GFM syntax.\n *\n * @param {Options | null | undefined} [options]\n *   Configuration (optional).\n *\n *   Passed to `micromark-extens-gfm-strikethrough`.\n * @returns {Extension}\n *   Extension for `micromark` that can be passed in `extensions` to enable GFM\n *   syntax.\n */\nexport function gfm(options) {\n  return combineExtensions([\n    gfmAutolinkLiteral(),\n    gfmFootnote(),\n    gfmStrikethrough(options),\n    gfmTable(),\n    gfmTaskListItem()\n  ])\n}\n\n/**\n * Create an extension for `micromark` to support GFM when serializing to HTML.\n *\n * @param {HtmlOptions | null | undefined} [options]\n *   Configuration (optional).\n *\n *   Passed to `micromark-extens-gfm-footnote`.\n * @returns {HtmlExtension}\n *   Extension for `micromark` that can be passed in `htmlExtensions` to\n *   support GFM when serializing to HTML.\n */\nexport function gfmHtml(options) {\n  return combineHtmlExtensions([\n    gfmAutolinkLiteralHtml(),\n    gfmFootnoteHtml(options),\n    gfmStrikethroughHtml(),\n    gfmTableHtml(),\n    gfmTagfilterHtml(),\n    gfmTaskListItemHtml()\n  ])\n}\n",
+      "start": 1712268127599,
+      "end": 1712268127630,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127630,
+      "end": 1712268127630,
+      "order": "normal"
+    }
+  ]
+}

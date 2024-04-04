@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/detab/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const search = /[\\t\\n\\r]/g\n\n/***\n * Replace tabs with spaces, being smart about which column the tab is at and\n * which size should be used.\n *\n * @param {string} value\n *   Value with tabs.\n * @param {number} [tabSize=4]\n *   Tab size.\n * @returns {string}\n *   Value with spaces.\n */\nexport function detab(value, tabSize = 4) {\n  /** @type {Array<string>} */\n  const result = []\n  let start = 0\n  let index = 0\n  let column = -1\n\n  if (typeof value !== 'string') {\n    throw new TypeError('detab expected string')\n  }\n\n  while (index < value.length) {\n    search.lastIndex = index\n    const match = search.exec(value)\n    const end = match ? match.index : value.length\n\n    if (value.codePointAt(end) === 9) {\n      const add = tabSize - ((column + end - index + 1) % tabSize)\n      result.push(value.slice(start, end), ' '.repeat(add))\n      column += end - index + add\n      start = end + 1\n    } else {\n      column = -1\n    }\n\n    index = end + 1\n  }\n\n  result.push(value.slice(start))\n\n  return result.join('')\n}\n",
+      "start": 1712268127673,
+      "end": 1712268127683,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@shikijs/transformers/dist/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "function separateContinuousSpaces(inputs) {\n  const result = [];\n  let current = \"\";\n  function bump() {\n    if (current.length)\n      result.push(current);\n    current = \"\";\n  }\n  inputs.forEach((part, idx) => {\n    if (isTab(part)) {\n      bump();\n      result.push(part);\n    } else if (isSpace(part) && (isSpace(inputs[idx - 1]) || isSpace(inputs[idx + 1]))) {\n      bump();\n      result.push(part);\n    } else {\n      current += part;\n    }\n  });\n  bump();\n  return result;\n}\nfunction isTab(part) {\n  return part === \"\t\";\n}\nfunction isSpace(part) {\n  return part === \" \" || part === \"\t\";\n}\nfunction splitSpaces(parts, type, renderContinuousSpaces = true) {\n  if (type === \"all\")\n    return parts;\n  let leftCount = 0;\n  let rightCount = 0;\n  if (type === \"boundary\") {\n    for (let i = 0; i < parts.length; i++) {\n      if (isSpace(parts[i]))\n        leftCount++;\n      else\n        break;\n    }\n  }\n  if (type === \"boundary\" || type === \"trailing\") {\n    for (let i = parts.length - 1; i >= 0; i--) {\n      if (isSpace(parts[i]))\n        rightCount++;\n      else\n        break;\n    }\n  }\n  const middle = parts.slice(leftCount, parts.length - rightCount);\n  return [\n    ...parts.slice(0, leftCount),\n    ...renderContinuousSpaces ? separateContinuousSpaces(middle) : [middle.join(\"\")],\n    ...parts.slice(parts.length - rightCount)\n  ];\n}\n\nfunction transformerRenderWhitespace(options = {}) {\n  const classMap = {\n    \" \": options.classSpace ?? \"space\",\n    \"\t\": options.classTab ?? \"tab\"\n  };\n  const position = options.position ?? \"all\";\n  const keys = Object.keys(classMap);\n  return {\n    name: \"@shikijs/transformers:render-whitespace\",\n    // We use `root` hook here to ensure it runs after all other transformers\n    root(root) {\n      const pre = root.children[0];\n      const code = pre.children[0];\n      code.children.forEach(\n        (line) => {\n          if (line.type !== \"element\")\n            return;\n          const elements = line.children.filter((token) => token.type === \"element\");\n          const last = elements.length - 1;\n          line.children = line.children.flatMap((token) => {\n            if (token.type !== \"element\")\n              return token;\n            const index = elements.indexOf(token);\n            if (position === \"boundary\" && index !== 0 && index !== last)\n              return token;\n            if (position === \"trailing\" && index !== last)\n              return token;\n            const node = token.children[0];\n            if (node.type !== \"text\" || !node.value)\n              return token;\n            const parts = splitSpaces(\n              node.value.split(/([ \\t])/).filter((i) => i.length),\n              position === \"boundary\" && index === last && last !== 0 ? \"trailing\" : position,\n              position !== \"trailing\"\n            );\n            if (parts.length <= 1)\n              return token;\n            return parts.map((part) => {\n              const clone = {\n                ...token,\n                properties: { ...token.properties }\n              };\n              clone.children = [{ type: \"text\", value: part }];\n              if (keys.includes(part)) {\n                this.addClassToHast(clone, classMap[part]);\n                delete clone.properties.style;\n              }\n              return clone;\n            });\n          });\n        }\n      );\n    }\n  };\n}\n\nfunction transformerRemoveLineBreak() {\n  return {\n    name: \"@shikijs/transformers:remove-line-break\",\n    code(code) {\n      code.children = code.children.filter((line) => !(line.type === \"text\" && line.value === \"\\n\"));\n    }\n  };\n}\n\nfunction transformerCompactLineOptions(lineOptions = []) {\n  return {\n    name: \"@shikijs/transformers:compact-line-options\",\n    line(node, line) {\n      const lineOption = lineOptions.find((o) => o.line === line);\n      if (lineOption?.classes)\n        this.addClassToHast(node, lineOption.classes);\n      return node;\n    }\n  };\n}\n\nfunction createCommentNotationTransformer(name, regex, onMatch, removeEmptyLines = false) {\n  return {\n    name,\n    code(code) {\n      const lines = code.children.filter((i) => i.type === \"element\");\n      const linesToRemove = [];\n      lines.forEach((line, idx) => {\n        let nodeToRemove;\n        for (const child of line.children) {\n          if (child.type !== \"element\")\n            continue;\n          const text = child.children[0];\n          if (text.type !== \"text\")\n            continue;\n          let replaced = false;\n          text.value = text.value.replace(regex, (...match) => {\n            if (onMatch.call(this, match, line, child, lines, idx)) {\n              replaced = true;\n              return \"\";\n            }\n            return match[0];\n          });\n          if (replaced && !text.value.trim())\n            nodeToRemove = child;\n        }\n        if (nodeToRemove) {\n          line.children.splice(line.children.indexOf(nodeToRemove), 1);\n          if (line.children.length === 0) {\n            linesToRemove.push(line);\n            if (removeEmptyLines) {\n              const next = code.children[code.children.indexOf(line) + 1];\n              if (next && next.type === \"text\" && next.value === \"\\n\")\n                linesToRemove.push(next);\n            }\n          }\n        }\n      });\n      for (const line of linesToRemove)\n        code.children.splice(code.children.indexOf(line), 1);\n    }\n  };\n}\n\nfunction escapeRegExp(str) {\n  return str.replace(/[.*+?^${}()|[\\]\\\\]/g, \"\\\\$&\");\n}\nfunction transformerNotationMap(options = {}, name = \"@shikijs/transformers:notation-map\") {\n  const {\n    classMap = {},\n    classActivePre = void 0\n  } = options;\n  return createCommentNotationTransformer(\n    name,\n    new RegExp(`\\\\s*(?://|/\\\\*|<!--|#)\\\\s+\\\\[!code (${Object.keys(classMap).map(escapeRegExp).join(\"|\")})(:\\\\d+)?\\\\]\\\\s*(?:\\\\*/|-->)?`),\n    function([_, match, range = \":1\"], _line, _comment, lines, index) {\n      const lineNum = Number.parseInt(range.slice(1), 10);\n      lines.slice(index, index + lineNum).forEach((line) => {\n        this.addClassToHast(line, classMap[match]);\n      });\n      if (classActivePre)\n        this.addClassToHast(this.pre, classActivePre);\n      return true;\n    }\n  );\n}\n\nfunction transformerNotationFocus(options = {}) {\n  const {\n    classActiveLine = \"focused\",\n    classActivePre = \"has-focused\"\n  } = options;\n  return transformerNotationMap(\n    {\n      classMap: {\n        focus: classActiveLine\n      },\n      classActivePre\n    },\n    \"@shikijs/transformers:notation-focus\"\n  );\n}\n\nfunction transformerNotationHighlight(options = {}) {\n  const {\n    classActiveLine = \"highlighted\",\n    classActivePre = \"has-highlighted\"\n  } = options;\n  return transformerNotationMap(\n    {\n      classMap: {\n        highlight: classActiveLine,\n        hl: classActiveLine\n      },\n      classActivePre\n    },\n    \"@shikijs/transformers:notation-highlight\"\n  );\n}\n\nfunction highlightWordInLine(line, ignoredElement, word, className) {\n  const content = getTextContent(line);\n  let index = content.indexOf(word);\n  while (index !== -1) {\n    highlightRange.call(this, line.children, ignoredElement, index, word.length, className);\n    index = content.indexOf(word, index + 1);\n  }\n}\nfunction getTextContent(element) {\n  if (element.type === \"text\")\n    return element.value;\n  if (element.type === \"element\" && element.tagName === \"span\")\n    return element.children.map(getTextContent).join(\"\");\n  return \"\";\n}\nfunction highlightRange(elements, ignoredElement, index, len, className) {\n  let currentIdx = 0;\n  for (let i = 0; i < elements.length; i++) {\n    const element = elements[i];\n    if (element.type !== \"element\" || element.tagName !== \"span\" || element === ignoredElement)\n      continue;\n    const textNode = element.children[0];\n    if (textNode.type !== \"text\")\n      continue;\n    if (hasOverlap([currentIdx, currentIdx + textNode.value.length - 1], [index, index + len])) {\n      const start = Math.max(0, index - currentIdx);\n      const length = len - Math.max(0, currentIdx - index);\n      if (length === 0)\n        continue;\n      const separated = separateToken(element, textNode, start, length);\n      this.addClassToHast(separated[1], className);\n      const output = separated.filter(Boolean);\n      elements.splice(i, 1, ...output);\n      i += output.length - 1;\n    }\n    currentIdx += textNode.value.length;\n  }\n}\nfunction hasOverlap(range1, range2) {\n  return range1[0] <= range2[1] && range1[1] >= range2[0];\n}\nfunction separateToken(span, textNode, index, len) {\n  const text = textNode.value;\n  const createNode = (value) => inheritElement(span, {\n    children: [\n      {\n        type: \"text\",\n        value\n      }\n    ]\n  });\n  return [\n    index > 0 ? createNode(text.slice(0, index)) : void 0,\n    createNode(text.slice(index, index + len)),\n    index + len < text.length ? createNode(text.slice(index + len)) : void 0\n  ];\n}\nfunction inheritElement(original, overrides) {\n  return {\n    ...original,\n    properties: {\n      ...original.properties\n    },\n    ...overrides\n  };\n}\n\nfunction transformerNotationWordHighlight(options = {}) {\n  const {\n    classActiveWord = \"highlighted-word\",\n    classActivePre = void 0\n  } = options;\n  return createCommentNotationTransformer(\n    \"@shikijs/transformers:notation-highlight-word\",\n    // comment-start             | marker    | word           | range | comment-end\n    /^\\s*(?:\\/\\/|\\/\\*|<!--|#)\\s+\\[!code word:((?:\\\\.|[^:\\]])+)(:\\d+)?\\]\\s*(?:\\*\\/|-->)?/,\n    function([_, word, range], _line, comment, lines, index) {\n      const lineNum = range ? Number.parseInt(range.slice(1), 10) : lines.length;\n      word = word.replace(/\\\\(.)/g, \"$1\");\n      lines.slice(index + 1, index + 1 + lineNum).forEach((line) => highlightWordInLine.call(this, line, comment, word, classActiveWord));\n      if (classActivePre)\n        this.addClassToHast(this.pre, classActivePre);\n      return true;\n    },\n    true\n    // remove empty lines\n  );\n}\n\nfunction parseMetaHighlightWords(meta) {\n  if (!meta)\n    return [];\n  const match = Array.from(meta.matchAll(/\\/((?:\\\\.|[^\\/])+?)\\//ig));\n  return match.map((v) => v[1].replace(/\\\\(.)/g, \"$1\"));\n}\nfunction transformerMetaWordHighlight(options = {}) {\n  const {\n    className = \"highlighted-word\"\n  } = options;\n  return {\n    name: \"@shikijs/transformers:meta-word-highlight\",\n    preprocess(code, options2) {\n      if (!this.options.meta?.__raw)\n        return;\n      const words = parseMetaHighlightWords(this.options.meta.__raw);\n      options2.decorations || (options2.decorations = []);\n      for (const word of words) {\n        const indexes = findAllSubstringIndexes(code, word);\n        for (const index of indexes) {\n          options2.decorations.push({\n            start: index,\n            end: index + word.length,\n            properties: {\n              class: className\n            }\n          });\n        }\n      }\n    }\n  };\n}\nfunction findAllSubstringIndexes(str, substr) {\n  const indexes = [];\n  let i = -1;\n  while ((i = str.indexOf(substr, i + 1)) !== -1)\n    indexes.push(i);\n  return indexes;\n}\n\nfunction transformerNotationDiff(options = {}) {\n  const {\n    classLineAdd = \"diff add\",\n    classLineRemove = \"diff remove\",\n    classActivePre = \"has-diff\"\n  } = options;\n  return transformerNotationMap(\n    {\n      classMap: {\n        \"++\": classLineAdd,\n        \"--\": classLineRemove\n      },\n      classActivePre\n    },\n    \"@shikijs/transformers:notation-diff\"\n  );\n}\n\nfunction transformerNotationErrorLevel(options = {}) {\n  const {\n    classMap = {\n      error: [\"highlighted\", \"error\"],\n      warning: [\"highlighted\", \"warning\"]\n    },\n    classActivePre = \"has-highlighted\"\n  } = options;\n  return transformerNotationMap(\n    {\n      classMap,\n      classActivePre\n    },\n    \"@shikijs/transformers:notation-error-level\"\n  );\n}\n\nfunction parseMetaHighlightString(meta) {\n  if (!meta)\n    return null;\n  const match = meta.match(/{([\\d,-]+)}/);\n  if (!match)\n    return null;\n  const lines = match[1].split(\",\").flatMap((v) => {\n    const num = v.split(\"-\").map((v2) => Number.parseInt(v2, 10));\n    if (num.length === 1)\n      return [num[0]];\n    else\n      return Array.from({ length: num[1] - num[0] + 1 }, (_, i) => i + num[0]);\n  });\n  return lines;\n}\nconst symbol = Symbol(\"highlighted-lines\");\nfunction transformerMetaHighlight(options = {}) {\n  const {\n    className = \"highlighted\"\n  } = options;\n  return {\n    name: \"@shikijs/transformers:meta-highlight\",\n    line(node, line) {\n      var _a;\n      if (!this.options.meta?.__raw)\n        return;\n      (_a = this.meta)[symbol] || (_a[symbol] = parseMetaHighlightString(this.options.meta.__raw));\n      const lines = this.meta[symbol] || [];\n      if (lines.includes(line))\n        this.addClassToHast(node, className);\n      return node;\n    }\n  };\n}\n\nexport { createCommentNotationTransformer, parseMetaHighlightString, parseMetaHighlightWords, transformerCompactLineOptions, transformerMetaHighlight, transformerMetaWordHighlight, transformerNotationDiff, transformerNotationErrorLevel, transformerNotationFocus, transformerNotationHighlight, transformerNotationWordHighlight, transformerRemoveLineBreak, transformerRenderWhitespace };\n",
+      "start": 1712268127738,
+      "end": 1712268127762,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127762,
+      "end": 1712268127762,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127762,
+      "end": 1712268127763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127763,
+      "end": 1712268127763,
+      "order": "normal"
+    }
+  ]
+}

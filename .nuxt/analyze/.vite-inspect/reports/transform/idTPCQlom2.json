@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/mdast-util-to-markdown/lib/unsafe.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('./types.js').ConstructName} ConstructName\n * @typedef {import('./types.js').Unsafe} Unsafe\n */\n\n/**\n * List of constructs that occur in phrasing (paragraphs, headings), but cannot\n * contain things like attention (emphasis, strong), images, or links.\n * So they sort of cancel each other out.\n * Note: could use a better name.\n *\n * @type {Array<ConstructName>}\n */\nconst fullPhrasingSpans = [\n  'autolink',\n  'destinationLiteral',\n  'destinationRaw',\n  'reference',\n  'titleQuote',\n  'titleApostrophe'\n]\n\n/** @type {Array<Unsafe>} */\nexport const unsafe = [\n  {character: '\\t', after: '[\\\\r\\\\n]', inConstruct: 'phrasing'},\n  {character: '\\t', before: '[\\\\r\\\\n]', inConstruct: 'phrasing'},\n  {\n    character: '\\t',\n    inConstruct: ['codeFencedLangGraveAccent', 'codeFencedLangTilde']\n  },\n  {\n    character: '\\r',\n    inConstruct: [\n      'codeFencedLangGraveAccent',\n      'codeFencedLangTilde',\n      'codeFencedMetaGraveAccent',\n      'codeFencedMetaTilde',\n      'destinationLiteral',\n      'headingAtx'\n    ]\n  },\n  {\n    character: '\\n',\n    inConstruct: [\n      'codeFencedLangGraveAccent',\n      'codeFencedLangTilde',\n      'codeFencedMetaGraveAccent',\n      'codeFencedMetaTilde',\n      'destinationLiteral',\n      'headingAtx'\n    ]\n  },\n  {character: ' ', after: '[\\\\r\\\\n]', inConstruct: 'phrasing'},\n  {character: ' ', before: '[\\\\r\\\\n]', inConstruct: 'phrasing'},\n  {\n    character: ' ',\n    inConstruct: ['codeFencedLangGraveAccent', 'codeFencedLangTilde']\n  },\n  // An exclamation mark can start an image, if it is followed by a link or\n  // a link reference.\n  {\n    character: '!',\n    after: '\\\\[',\n    inConstruct: 'phrasing',\n    notInConstruct: fullPhrasingSpans\n  },\n  // A quote can break out of a title.\n  {character: '\"', inConstruct: 'titleQuote'},\n  // A number sign could start an ATX heading if it starts a line.\n  {atBreak: true, character: '#'},\n  {character: '#', inConstruct: 'headingAtx', after: '(?:[\\r\\n]|$)'},\n  // Dollar sign and percentage are not used in markdown.\n  // An ampersand could start a character reference.\n  {character: '&', after: '[#A-Za-z]', inConstruct: 'phrasing'},\n  // An apostrophe can break out of a title.\n  {character: \"'\", inConstruct: 'titleApostrophe'},\n  // A left paren could break out of a destination raw.\n  {character: '(', inConstruct: 'destinationRaw'},\n  // A left paren followed by `]` could make something into a link or image.\n  {\n    before: '\\\\]',\n    character: '(',\n    inConstruct: 'phrasing',\n    notInConstruct: fullPhrasingSpans\n  },\n  // A right paren could start a list item or break out of a destination\n  // raw.\n  {atBreak: true, before: '\\\\d+', character: ')'},\n  {character: ')', inConstruct: 'destinationRaw'},\n  // An asterisk can start thematic breaks, list items, emphasis, strong.\n  {atBreak: true, character: '*', after: '(?:[ \\t\\r\\n*])'},\n  {character: '*', inConstruct: 'phrasing', notInConstruct: fullPhrasingSpans},\n  // A plus sign could start a list item.\n  {atBreak: true, character: '+', after: '(?:[ \\t\\r\\n])'},\n  // A dash can start thematic breaks, list items, and setext heading\n  // underlines.\n  {atBreak: true, character: '-', after: '(?:[ \\t\\r\\n-])'},\n  // A dot could start a list item.\n  {atBreak: true, before: '\\\\d+', character: '.', after: '(?:[ \\t\\r\\n]|$)'},\n  // Slash, colon, and semicolon are not used in markdown for constructs.\n  // A less than can start html (flow or text) or an autolink.\n  // HTML could start with an exclamation mark (declaration, cdata, comment),\n  // slash (closing tag), question mark (instruction), or a letter (tag).\n  // An autolink also starts with a letter.\n  // Finally, it could break out of a destination literal.\n  {atBreak: true, character: '<', after: '[!/?A-Za-z]'},\n  {\n    character: '<',\n    after: '[!/?A-Za-z]',\n    inConstruct: 'phrasing',\n    notInConstruct: fullPhrasingSpans\n  },\n  {character: '<', inConstruct: 'destinationLiteral'},\n  // An equals to can start setext heading underlines.\n  {atBreak: true, character: '='},\n  // A greater than can start block quotes and it can break out of a\n  // destination literal.\n  {atBreak: true, character: '>'},\n  {character: '>', inConstruct: 'destinationLiteral'},\n  // Question mark and at sign are not used in markdown for constructs.\n  // A left bracket can start definitions, references, labels,\n  {atBreak: true, character: '['},\n  {character: '[', inConstruct: 'phrasing', notInConstruct: fullPhrasingSpans},\n  {character: '[', inConstruct: ['label', 'reference']},\n  // A backslash can start an escape (when followed by punctuation) or a\n  // hard break (when followed by an eol).\n  // Note: typical escapes are handled in `safe`!\n  {character: '\\\\', after: '[\\\\r\\\\n]', inConstruct: 'phrasing'},\n  // A right bracket can exit labels.\n  {character: ']', inConstruct: ['label', 'reference']},\n  // Caret is not used in markdown for constructs.\n  // An underscore can start emphasis, strong, or a thematic break.\n  {atBreak: true, character: '_'},\n  {character: '_', inConstruct: 'phrasing', notInConstruct: fullPhrasingSpans},\n  // A grave accent can start code (fenced or text), or it can break out of\n  // a grave accent code fence.\n  {atBreak: true, character: '`'},\n  {\n    character: '`',\n    inConstruct: ['codeFencedLangGraveAccent', 'codeFencedMetaGraveAccent']\n  },\n  {character: '`', inConstruct: 'phrasing', notInConstruct: fullPhrasingSpans},\n  // Left brace, vertical bar, right brace are not used in markdown for\n  // constructs.\n  // A tilde can start code (fenced).\n  {atBreak: true, character: '~'}\n]\n",
+      "start": 1712268127676,
+      "end": 1712268127691,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    }
+  ]
+}

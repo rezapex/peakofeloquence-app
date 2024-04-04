@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/entities/lib/esm/decode_codepoint.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "// Adapted from https://github.com/mathiasbynens/he/blob/36afe179392226cf1b6ccdb16ebbb7a5a844d93a/src/he.js#L106-L134\nvar _a;\nconst decodeMap = new Map([\n    [0, 65533],\n    // C1 Unicode control character reference replacements\n    [128, 8364],\n    [130, 8218],\n    [131, 402],\n    [132, 8222],\n    [133, 8230],\n    [134, 8224],\n    [135, 8225],\n    [136, 710],\n    [137, 8240],\n    [138, 352],\n    [139, 8249],\n    [140, 338],\n    [142, 381],\n    [145, 8216],\n    [146, 8217],\n    [147, 8220],\n    [148, 8221],\n    [149, 8226],\n    [150, 8211],\n    [151, 8212],\n    [152, 732],\n    [153, 8482],\n    [154, 353],\n    [155, 8250],\n    [156, 339],\n    [158, 382],\n    [159, 376],\n]);\n/**\n * Polyfill for `String.fromCodePoint`. It is used to create a string from a Unicode code point.\n */\nexport const fromCodePoint = \n// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, node/no-unsupported-features/es-builtins\n(_a = String.fromCodePoint) !== null && _a !== void 0 ? _a : function (codePoint) {\n    let output = \"\";\n    if (codePoint > 0xffff) {\n        codePoint -= 0x10000;\n        output += String.fromCharCode(((codePoint >>> 10) & 0x3ff) | 0xd800);\n        codePoint = 0xdc00 | (codePoint & 0x3ff);\n    }\n    output += String.fromCharCode(codePoint);\n    return output;\n};\n/**\n * Replace the given code point with a replacement character if it is a\n * surrogate or is outside the valid range. Otherwise return the code\n * point unchanged.\n */\nexport function replaceCodePoint(codePoint) {\n    var _a;\n    if ((codePoint >= 0xd800 && codePoint <= 0xdfff) || codePoint > 0x10ffff) {\n        return 0xfffd;\n    }\n    return (_a = decodeMap.get(codePoint)) !== null && _a !== void 0 ? _a : codePoint;\n}\n/**\n * Replace the code point if relevant, then convert it to a string.\n *\n * @deprecated Use `fromCodePoint(replaceCodePoint(codePoint))` instead.\n * @param codePoint The code point to decode.\n * @returns The decoded code point.\n */\nexport default function decodeCodePoint(codePoint) {\n    return fromCodePoint(replaceCodePoint(codePoint));\n}\n//# sourceMappingURL=decode_codepoint.js.map",
+      "start": 1712268127943,
+      "end": 1712268127952,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127952,
+      "end": 1712268127952,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/rehype-sort-attributes/lib/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('hast').Properties} Properties\n * @typedef {import('hast').Root} Root\n */\n\nimport {visit} from 'unist-util-visit'\n\n/**\n * Sort attributes.\n *\n * @returns\n *   Transform.\n */\nexport default function rehypeSortAttributes() {\n  /**\n   * @param {Root} tree\n   *   Tree.\n   * @returns {undefined}\n   *   Nothing.\n   */\n  return function (tree) {\n    // Map of tag names to property names to counts.\n    /** @type {Map<string, Map<string, number>>} */\n    const counts = new Map()\n\n    visit(tree, 'element', function (node) {\n      let cache = counts.get(node.tagName)\n\n      if (!cache) {\n        cache = new Map()\n        counts.set(node.tagName, cache)\n      }\n\n      /** @type {string} */\n      let prop\n\n      for (prop in node.properties) {\n        if (Object.hasOwn(node.properties, prop)) {\n          cache.set(prop, (cache.get(prop) || 0) + 1)\n        }\n      }\n    })\n\n    const caches = optimize()\n\n    visit(tree, 'element', function (node) {\n      const cache = caches.get(node.tagName)\n\n      if (cache) {\n        /** @type {Array<string>} */\n        const keys = []\n        /** @type {Properties} */\n        const result = {}\n        let index = -1\n        /** @type {string} */\n        let prop\n\n        for (prop in node.properties) {\n          if (Object.hasOwn(node.properties, prop)) {\n            keys.push(prop)\n          }\n        }\n\n        keys.sort(function (a, b) {\n          return cache.indexOf(a) - cache.indexOf(b)\n        })\n\n        while (++index < keys.length) {\n          result[keys[index]] = node.properties[keys[index]]\n        }\n\n        node.properties = result\n      }\n    })\n\n    /**\n     * @returns\n     *   Optimized caches.\n     */\n    function optimize() {\n      // Map of tag names to sorted property names.\n      /** @type {Map<string, Array<string>>} */\n      const caches = new Map()\n\n      for (const [name, properties] of counts.entries()) {\n        caches.set(\n          name,\n          [...properties.entries()]\n            .sort(function (a, b) {\n              return b[1] - a[1] || compare(String(a[0]), String(b[0]), 0)\n            })\n            .map(function (d) {\n              return d[0]\n            })\n        )\n      }\n\n      return caches\n    }\n  }\n}\n\n/**\n * This would create an infinite loop if `a` and `b` could be equal, but the\n * list we operate on only has unique values.\n *\n * @param {string} a\n *   Left value.\n * @param {string} b\n *   Right value.\n * @param {number} index\n *   Current index in values.\n * @returns {number}\n *   Order.\n */\nfunction compare(a, b, index) {\n  return (\n    (a.charCodeAt(index) || 0) - (b.charCodeAt(index) || 0) ||\n    compare(a, b, index + 1)\n  )\n}\n",
+      "start": 1712268127461,
+      "end": 1712268127552,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127552,
+      "end": 1712268127552,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127552,
+      "end": 1712268127553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127553,
+      "end": 1712268127553,
+      "order": "normal"
+    }
+  ]
+}

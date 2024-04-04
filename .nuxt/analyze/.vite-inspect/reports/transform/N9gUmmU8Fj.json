@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/stringify-entities/lib/core.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef CoreOptions\n * @property {Array<string>} [subset=[]]\n *   Whether to only escape the given subset of characters.\n * @property {boolean} [escapeOnly=false]\n *   Whether to only escape possibly dangerous characters.\n *   Those characters are `\"`, `&`, `'`, `<`, `>`, and `` ` ``.\n *\n * @typedef FormatOptions\n * @property {(code: number, next: number, options: CoreWithFormatOptions) => string} format\n *   Format strategy.\n *\n * @typedef {CoreOptions & FormatOptions & import('./util/format-smart.js').FormatSmartOptions} CoreWithFormatOptions\n */\n\n/**\n * Encode certain characters in `value`.\n *\n * @param {string} value\n * @param {CoreWithFormatOptions} options\n * @returns {string}\n */\nexport function core(value, options) {\n  value = value.replace(\n    options.subset ? charactersToExpression(options.subset) : /[\"&'<>`]/g,\n    basic\n  )\n\n  if (options.subset || options.escapeOnly) {\n    return value\n  }\n\n  return (\n    value\n      // Surrogate pairs.\n      .replace(/[\\uD800-\\uDBFF][\\uDC00-\\uDFFF]/g, surrogate)\n      // BMP control characters (C0 except for LF, CR, SP; DEL; and some more\n      // non-ASCII ones).\n      .replace(\n        // eslint-disable-next-line no-control-regex, unicorn/no-hex-escape\n        /[\\x01-\\t\\v\\f\\x0E-\\x1F\\x7F\\x81\\x8D\\x8F\\x90\\x9D\\xA0-\\uFFFF]/g,\n        basic\n      )\n  )\n\n  /**\n   * @param {string} pair\n   * @param {number} index\n   * @param {string} all\n   */\n  function surrogate(pair, index, all) {\n    return options.format(\n      (pair.charCodeAt(0) - 0xd800) * 0x400 +\n        pair.charCodeAt(1) -\n        0xdc00 +\n        0x10000,\n      all.charCodeAt(index + 2),\n      options\n    )\n  }\n\n  /**\n   * @param {string} character\n   * @param {number} index\n   * @param {string} all\n   */\n  function basic(character, index, all) {\n    return options.format(\n      character.charCodeAt(0),\n      all.charCodeAt(index + 1),\n      options\n    )\n  }\n}\n\n/**\n * @param {Array<string>} subset\n * @returns {RegExp}\n */\nfunction charactersToExpression(subset) {\n  /** @type {Array<string>} */\n  const groups = []\n  let index = -1\n\n  while (++index < subset.length) {\n    groups.push(subset[index].replace(/[|\\\\{}()[\\]^$+*?.]/g, '\\\\$&'))\n  }\n\n  return new RegExp('(?:' + groups.join('|') + ')', 'g')\n}\n",
+      "start": 1712268127672,
+      "end": 1712268127683,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127683,
+      "end": 1712268127683,
+      "order": "normal"
+    }
+  ]
+}

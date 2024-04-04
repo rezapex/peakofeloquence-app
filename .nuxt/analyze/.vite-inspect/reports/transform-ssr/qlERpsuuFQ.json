@@ -1,0 +1,280 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/footer/Footer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <footer :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <div v-if=\"$slots.top\" :class=\"ui.top.wrapper\">\n      <UContainer :class=\"ui.top.container\">\n        <slot name=\"top\" />\n      </UContainer>\n    </div>\n\n    <div :class=\"ui.bottom.wrapper\">\n      <UContainer :class=\"ui.bottom.container\">\n        <div :class=\"ui.bottom.right\">\n          <slot name=\"right\" />\n        </div>\n\n        <div :class=\"ui.bottom.center\">\n          <slot name=\"center\">\n            <UFooterLinks :links=\"links\" />\n          </slot>\n        </div>\n\n        <div :class=\"ui.bottom.left\">\n          <slot name=\"left\" />\n        </div>\n      </UContainer>\n    </div>\n  </footer>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\nimport type { FooterLink } from '#ui-pro/types'\n\nconst config = {\n  wrapper: 'relative',\n  top: {\n    wrapper: '',\n    container: 'py-8 lg:py-12'\n  },\n  bottom: {\n    wrapper: '',\n    container: 'py-8 lg:py-4 lg:flex lg:items-center lg:justify-between lg:gap-x-3',\n    left: 'flex items-center justify-center lg:justify-start lg:flex-1 gap-x-1.5 mt-3 lg:mt-0 lg:order-1',\n    center: 'mt-3 lg:mt-0 lg:order-2 flex items-center justify-center',\n    right: 'lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5 lg:order-3'\n  }\n}\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  links: {\n    type: Array as PropType<FooterLink[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config>>,\n    default: () => ({})\n  }\n})\n\nconst { ui, attrs } = useUI('footer', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n</script>\n",
+      "start": 1712268134129,
+      "end": 1712268134147,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268134147,
+      "end": 1712268134147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/footer/Footer.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/components/footer/Footer.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"node_modules/@nuxt/ui-pro/components/footer/Footer.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1712268134147,
+      "end": 1712268134205,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268134205,
+      "end": 1712268134205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268134206,
+      "end": 1712268134206,
+      "order": "normal"
+    }
+  ]
+}

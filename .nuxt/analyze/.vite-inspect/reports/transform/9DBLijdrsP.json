@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark-core-commonmark/lib/list.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-util-types').Code} Code\n * @typedef {import('micromark-util-types').Construct} Construct\n * @typedef {import('micromark-util-types').ContainerState} ContainerState\n * @typedef {import('micromark-util-types').Exiter} Exiter\n * @typedef {import('micromark-util-types').State} State\n * @typedef {import('micromark-util-types').TokenizeContext} TokenizeContext\n * @typedef {import('micromark-util-types').Tokenizer} Tokenizer\n */\n\nimport {factorySpace} from 'micromark-factory-space'\nimport {asciiDigit, markdownSpace} from 'micromark-util-character'\nimport {blankLine} from './blank-line.js'\nimport {thematicBreak} from './thematic-break.js'\n\n/** @type {Construct} */\nexport const list = {\n  name: 'list',\n  tokenize: tokenizeListStart,\n  continuation: {\n    tokenize: tokenizeListContinuation\n  },\n  exit: tokenizeListEnd\n}\n\n/** @type {Construct} */\nconst listItemPrefixWhitespaceConstruct = {\n  tokenize: tokenizeListItemPrefixWhitespace,\n  partial: true\n}\n\n/** @type {Construct} */\nconst indentConstruct = {\n  tokenize: tokenizeIndent,\n  partial: true\n}\n\n// To do: `markdown-rs` parses list items on their own and later stitches them\n// together.\n\n/**\n * @type {Tokenizer}\n * @this {TokenizeContext}\n */\nfunction tokenizeListStart(effects, ok, nok) {\n  const self = this\n  const tail = self.events[self.events.length - 1]\n  let initialSize =\n    tail && tail[1].type === 'linePrefix'\n      ? tail[2].sliceSerialize(tail[1], true).length\n      : 0\n  let size = 0\n  return start\n\n  /** @type {State} */\n  function start(code) {\n    const kind =\n      self.containerState.type ||\n      (code === 42 || code === 43 || code === 45\n        ? 'listUnordered'\n        : 'listOrdered')\n    if (\n      kind === 'listUnordered'\n        ? !self.containerState.marker || code === self.containerState.marker\n        : asciiDigit(code)\n    ) {\n      if (!self.containerState.type) {\n        self.containerState.type = kind\n        effects.enter(kind, {\n          _container: true\n        })\n      }\n      if (kind === 'listUnordered') {\n        effects.enter('listItemPrefix')\n        return code === 42 || code === 45\n          ? effects.check(thematicBreak, nok, atMarker)(code)\n          : atMarker(code)\n      }\n      if (!self.interrupt || code === 49) {\n        effects.enter('listItemPrefix')\n        effects.enter('listItemValue')\n        return inside(code)\n      }\n    }\n    return nok(code)\n  }\n\n  /** @type {State} */\n  function inside(code) {\n    if (asciiDigit(code) && ++size < 10) {\n      effects.consume(code)\n      return inside\n    }\n    if (\n      (!self.interrupt || size < 2) &&\n      (self.containerState.marker\n        ? code === self.containerState.marker\n        : code === 41 || code === 46)\n    ) {\n      effects.exit('listItemValue')\n      return atMarker(code)\n    }\n    return nok(code)\n  }\n\n  /**\n   * @type {State}\n   **/\n  function atMarker(code) {\n    effects.enter('listItemMarker')\n    effects.consume(code)\n    effects.exit('listItemMarker')\n    self.containerState.marker = self.containerState.marker || code\n    return effects.check(\n      blankLine,\n      // Can’t be empty when interrupting.\n      self.interrupt ? nok : onBlank,\n      effects.attempt(\n        listItemPrefixWhitespaceConstruct,\n        endOfPrefix,\n        otherPrefix\n      )\n    )\n  }\n\n  /** @type {State} */\n  function onBlank(code) {\n    self.containerState.initialBlankLine = true\n    initialSize++\n    return endOfPrefix(code)\n  }\n\n  /** @type {State} */\n  function otherPrefix(code) {\n    if (markdownSpace(code)) {\n      effects.enter('listItemPrefixWhitespace')\n      effects.consume(code)\n      effects.exit('listItemPrefixWhitespace')\n      return endOfPrefix\n    }\n    return nok(code)\n  }\n\n  /** @type {State} */\n  function endOfPrefix(code) {\n    self.containerState.size =\n      initialSize +\n      self.sliceSerialize(effects.exit('listItemPrefix'), true).length\n    return ok(code)\n  }\n}\n\n/**\n * @type {Tokenizer}\n * @this {TokenizeContext}\n */\nfunction tokenizeListContinuation(effects, ok, nok) {\n  const self = this\n  self.containerState._closeFlow = undefined\n  return effects.check(blankLine, onBlank, notBlank)\n\n  /** @type {State} */\n  function onBlank(code) {\n    self.containerState.furtherBlankLines =\n      self.containerState.furtherBlankLines ||\n      self.containerState.initialBlankLine\n\n    // We have a blank line.\n    // Still, try to consume at most the items size.\n    return factorySpace(\n      effects,\n      ok,\n      'listItemIndent',\n      self.containerState.size + 1\n    )(code)\n  }\n\n  /** @type {State} */\n  function notBlank(code) {\n    if (self.containerState.furtherBlankLines || !markdownSpace(code)) {\n      self.containerState.furtherBlankLines = undefined\n      self.containerState.initialBlankLine = undefined\n      return notInCurrentItem(code)\n    }\n    self.containerState.furtherBlankLines = undefined\n    self.containerState.initialBlankLine = undefined\n    return effects.attempt(indentConstruct, ok, notInCurrentItem)(code)\n  }\n\n  /** @type {State} */\n  function notInCurrentItem(code) {\n    // While we do continue, we signal that the flow should be closed.\n    self.containerState._closeFlow = true\n    // As we’re closing flow, we’re no longer interrupting.\n    self.interrupt = undefined\n    // Always populated by defaults.\n\n    return factorySpace(\n      effects,\n      effects.attempt(list, ok, nok),\n      'linePrefix',\n      self.parser.constructs.disable.null.includes('codeIndented')\n        ? undefined\n        : 4\n    )(code)\n  }\n}\n\n/**\n * @type {Tokenizer}\n * @this {TokenizeContext}\n */\nfunction tokenizeIndent(effects, ok, nok) {\n  const self = this\n  return factorySpace(\n    effects,\n    afterPrefix,\n    'listItemIndent',\n    self.containerState.size + 1\n  )\n\n  /** @type {State} */\n  function afterPrefix(code) {\n    const tail = self.events[self.events.length - 1]\n    return tail &&\n      tail[1].type === 'listItemIndent' &&\n      tail[2].sliceSerialize(tail[1], true).length === self.containerState.size\n      ? ok(code)\n      : nok(code)\n  }\n}\n\n/**\n * @type {Exiter}\n * @this {TokenizeContext}\n */\nfunction tokenizeListEnd(effects) {\n  effects.exit(this.containerState.type)\n}\n\n/**\n * @type {Tokenizer}\n * @this {TokenizeContext}\n */\nfunction tokenizeListItemPrefixWhitespace(effects, ok, nok) {\n  const self = this\n\n  // Always populated by defaults.\n\n  return factorySpace(\n    effects,\n    afterPrefix,\n    'listItemPrefixWhitespace',\n    self.parser.constructs.disable.null.includes('codeIndented')\n      ? undefined\n      : 4 + 1\n  )\n\n  /** @type {State} */\n  function afterPrefix(code) {\n    const tail = self.events[self.events.length - 1]\n    return !markdownSpace(code) &&\n      tail &&\n      tail[1].type === 'listItemPrefixWhitespace'\n      ? ok(code)\n      : nok(code)\n  }\n}\n",
+      "start": 1712268127581,
+      "end": 1712268127620,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127620,
+      "end": 1712268127620,
+      "order": "normal"
+    }
+  ]
+}

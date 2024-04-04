@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/shiki/dist/langs/toml.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const lang = Object.freeze({ \"displayName\": \"TOML\", \"fileTypes\": [\"toml\"], \"name\": \"toml\", \"patterns\": [{ \"include\": \"#comments\" }, { \"include\": \"#groups\" }, { \"include\": \"#key_pair\" }, { \"include\": \"#invalid\" }], \"repository\": { \"comments\": { \"begin\": \"(^[ \\\\t]+)?(?=#)\", \"beginCaptures\": { \"1\": { \"name\": \"punctuation.whitespace.comment.leading.toml\" } }, \"end\": \"(?!\\\\G)\", \"patterns\": [{ \"begin\": \"#\", \"beginCaptures\": { \"0\": { \"name\": \"punctuation.definition.comment.toml\" } }, \"end\": \"\\\\n\", \"name\": \"comment.line.number-sign.toml\" }] }, \"groups\": { \"patterns\": [{ \"captures\": { \"1\": { \"name\": \"punctuation.definition.section.begin.toml\" }, \"2\": { \"patterns\": [{ \"match\": \"[^\\\\s.]+\", \"name\": \"entity.name.section.toml\" }] }, \"3\": { \"name\": \"punctuation.definition.section.begin.toml\" } }, \"match\": \"^\\\\s*(\\\\[)([^\\\\[\\\\]]*)(\\\\])\", \"name\": \"meta.group.toml\" }, { \"captures\": { \"1\": { \"name\": \"punctuation.definition.section.begin.toml\" }, \"2\": { \"patterns\": [{ \"match\": \"[^\\\\s.]+\", \"name\": \"entity.name.section.toml\" }] }, \"3\": { \"name\": \"punctuation.definition.section.begin.toml\" } }, \"match\": \"^\\\\s*(\\\\[\\\\[)([^\\\\[\\\\]]*)(\\\\]\\\\])\", \"name\": \"meta.group.double.toml\" }] }, \"invalid\": { \"match\": \"\\\\S+(\\\\s*(?=\\\\S))?\", \"name\": \"invalid.illegal.not-allowed-here.toml\" }, \"key_pair\": { \"patterns\": [{ \"begin\": \"([A-Za-z0-9_-]+)\\\\s*(=)\\\\s*\", \"captures\": { \"1\": { \"name\": \"variable.other.key.toml\" }, \"2\": { \"name\": \"punctuation.separator.key-value.toml\" } }, \"end\": \"(?<=\\\\S)(?<!=)|$\", \"patterns\": [{ \"include\": \"#primatives\" }] }, { \"begin\": '((\")(.*?)(\"))\\\\s*(=)\\\\s*', \"captures\": { \"1\": { \"name\": \"variable.other.key.toml\" }, \"2\": { \"name\": \"punctuation.definition.variable.begin.toml\" }, \"3\": { \"patterns\": [{ \"match\": '\\\\\\\\([btnfr\"\\\\\\\\]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})', \"name\": \"constant.character.escape.toml\" }, { \"match\": '\\\\\\\\[^btnfr\"\\\\\\\\]', \"name\": \"invalid.illegal.escape.toml\" }, { \"match\": '\"', \"name\": \"invalid.illegal.not-allowed-here.toml\" }] }, \"4\": { \"name\": \"punctuation.definition.variable.end.toml\" }, \"5\": { \"name\": \"punctuation.separator.key-value.toml\" } }, \"end\": \"(?<=\\\\S)(?<!=)|$\", \"patterns\": [{ \"include\": \"#primatives\" }] }, { \"begin\": \"((')([^']*)('))\\\\s*(=)\\\\s*\", \"captures\": { \"1\": { \"name\": \"variable.other.key.toml\" }, \"2\": { \"name\": \"punctuation.definition.variable.begin.toml\" }, \"4\": { \"name\": \"punctuation.definition.variable.end.toml\" }, \"5\": { \"name\": \"punctuation.separator.key-value.toml\" } }, \"end\": \"(?<=\\\\S)(?<!=)|$\", \"patterns\": [{ \"include\": \"#primatives\" }] }, { \"begin\": `(?x)\n(\n(\n(?:\n[A-Za-z0-9_-]+\n| \"  (?:[^\"\\\\\\\\]|\\\\\\\\.)* \"\n| ' [^']*          '\n)\n(?:\n\\\\s* \\\\. \\\\s*\n| (?= \\\\s* =)\n)\n){2,}\n)\n\\\\s*(=)\\\\s*\n`, \"captures\": { \"1\": { \"name\": \"variable.other.key.toml\", \"patterns\": [{ \"match\": \"\\\\.\", \"name\": \"punctuation.separator.variable.toml\" }, { \"captures\": { \"1\": { \"name\": \"punctuation.definition.variable.begin.toml\" }, \"2\": { \"patterns\": [{ \"match\": '\\\\\\\\([btnfr\"\\\\\\\\]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})', \"name\": \"constant.character.escape.toml\" }, { \"match\": '\\\\\\\\[^btnfr\"\\\\\\\\]', \"name\": \"invalid.illegal.escape.toml\" }] }, \"3\": { \"name\": \"punctuation.definition.variable.end.toml\" } }, \"match\": '(\")((?:[^\"\\\\\\\\]|\\\\\\\\.)*)(\")' }, { \"captures\": { \"1\": { \"name\": \"punctuation.definition.variable.begin.toml\" }, \"2\": { \"name\": \"punctuation.definition.variable.end.toml\" } }, \"match\": \"(')[^']*(')\" }] }, \"3\": { \"name\": \"punctuation.separator.key-value.toml\" } }, \"comment\": \"Dotted key\", \"end\": \"(?<=\\\\S)(?<!=)|$\", \"patterns\": [{ \"include\": \"#primatives\" }] }] }, \"primatives\": { \"patterns\": [{ \"begin\": '\\\\G\"\"\"', \"beginCaptures\": { \"0\": { \"name\": \"punctuation.definition.string.begin.toml\" } }, \"end\": '\"{3,5}', \"endCaptures\": { \"0\": { \"name\": \"punctuation.definition.string.end.toml\" } }, \"name\": \"string.quoted.triple.double.toml\", \"patterns\": [{ \"match\": '\\\\\\\\([btnfr\"\\\\\\\\]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})', \"name\": \"constant.character.escape.toml\" }, { \"match\": '\\\\\\\\[^btnfr\"\\\\\\\\\\\\n]', \"name\": \"invalid.illegal.escape.toml\" }] }, { \"begin\": '\\\\G\"', \"beginCaptures\": { \"0\": { \"name\": \"punctuation.definition.string.begin.toml\" } }, \"end\": '\"', \"endCaptures\": { \"0\": { \"name\": \"punctuation.definition.string.end.toml\" } }, \"name\": \"string.quoted.double.toml\", \"patterns\": [{ \"match\": '\\\\\\\\([btnfr\"\\\\\\\\]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})', \"name\": \"constant.character.escape.toml\" }, { \"match\": '\\\\\\\\[^btnfr\"\\\\\\\\]', \"name\": \"invalid.illegal.escape.toml\" }] }, { \"begin\": \"\\\\G'''\", \"beginCaptures\": { \"0\": { \"name\": \"punctuation.definition.string.begin.toml\" } }, \"end\": \"'{3,5}\", \"endCaptures\": { \"0\": { \"name\": \"punctuation.definition.string.end.toml\" } }, \"name\": \"string.quoted.triple.single.toml\" }, { \"begin\": \"\\\\G'\", \"beginCaptures\": { \"0\": { \"name\": \"punctuation.definition.string.begin.toml\" } }, \"end\": \"'\", \"endCaptures\": { \"0\": { \"name\": \"punctuation.definition.string.end.toml\" } }, \"name\": \"string.quoted.single.toml\" }, { \"match\": \"\\\\G(?x)\\n[0-9]{4}\\n-\\n(0[1-9]|1[012])\\n-\\n(?!00|3[2-9])[0-3][0-9]\\n(\\n[Tt ]\\n(?!2[5-9])[0-2][0-9]\\n:\\n[0-5][0-9]\\n:\\n(?!6[1-9])[0-6][0-9]\\n(\\\\.[0-9]+)?\\n(\\nZ\\n| [+-](?!2[5-9])[0-2][0-9]:[0-5][0-9]\\n)?\\n)?\\n\", \"name\": \"constant.other.date.toml\" }, { \"match\": \"\\\\G(?x)\\n(?!2[5-9])[0-2][0-9]\\n:\\n[0-5][0-9]\\n:\\n(?!6[1-9])[0-6][0-9]\\n(\\\\.[0-9]+)?\\n\", \"name\": \"constant.other.time.toml\" }, { \"match\": \"\\\\G(true|false)\", \"name\": \"constant.language.boolean.toml\" }, { \"match\": \"\\\\G0x\\\\h(\\\\h|_\\\\h)*\", \"name\": \"constant.numeric.hex.toml\" }, { \"match\": \"\\\\G0o[0-7]([0-7]|_[0-7])*\", \"name\": \"constant.numeric.octal.toml\" }, { \"match\": \"\\\\G0b[01]([01]|_[01])*\", \"name\": \"constant.numeric.binary.toml\" }, { \"match\": \"\\\\G[+-]?(inf|nan)\", \"name\": \"constant.numeric.toml\" }, { \"match\": \"(?x)\\n\\\\G\\n(\\n[+-]?\\n(\\n0\\n| ([1-9](([0-9]|_[0-9])+)?)\\n)\\n)\\n(?=[.eE])\\n(\\n\\\\.\\n([0-9](([0-9]|_[0-9])+)?)\\n)?\\n(\\n[eE]\\n([+-]?[0-9](([0-9]|_[0-9])+)?)\\n)?\\n\", \"name\": \"constant.numeric.float.toml\" }, { \"match\": \"(?x)\\n\\\\G\\n(\\n[+-]?\\n(\\n0\\n| ([1-9](([0-9]|_[0-9])+)?)\\n)\\n)\\n\", \"name\": \"constant.numeric.integer.toml\" }, { \"begin\": \"\\\\G\\\\[\", \"beginCaptures\": { \"0\": { \"name\": \"punctuation.definition.array.begin.toml\" } }, \"end\": \"\\\\]\", \"endCaptures\": { \"0\": { \"name\": \"punctuation.definition.array.end.toml\" } }, \"name\": \"meta.array.toml\", \"patterns\": [{ \"begin\": `(?=[\"'']|[+-]?[0-9]|[+-]?(inf|nan)|true|false|\\\\[|\\\\{)`, \"end\": \",|(?=])\", \"endCaptures\": { \"0\": { \"name\": \"punctuation.separator.array.toml\" } }, \"patterns\": [{ \"include\": \"#primatives\" }, { \"include\": \"#comments\" }, { \"include\": \"#invalid\" }] }, { \"include\": \"#comments\" }, { \"include\": \"#invalid\" }] }, { \"begin\": \"\\\\G\\\\{\", \"beginCaptures\": { \"0\": { \"name\": \"punctuation.definition.inline-table.begin.toml\" } }, \"end\": \"\\\\}\", \"endCaptures\": { \"0\": { \"name\": \"punctuation.definition.inline-table.end.toml\" } }, \"name\": \"meta.inline-table.toml\", \"patterns\": [{ \"begin\": \"(?=\\\\S)\", \"end\": \",|(?=})\", \"endCaptures\": { \"0\": { \"name\": \"punctuation.separator.inline-table.toml\" } }, \"patterns\": [{ \"include\": \"#key_pair\" }] }, { \"include\": \"#comments\" }] }] } }, \"scopeName\": \"source.toml\" });\nvar toml = [\n  lang\n];\n\nexport { toml as default };\n",
+      "start": 1712268127831,
+      "end": 1712268127854,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127854,
+      "end": 1712268127854,
+      "order": "normal"
+    }
+  ]
+}

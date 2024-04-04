@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/parse5/dist/common/error-codes.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export var ERR;\n(function (ERR) {\n    ERR[\"controlCharacterInInputStream\"] = \"control-character-in-input-stream\";\n    ERR[\"noncharacterInInputStream\"] = \"noncharacter-in-input-stream\";\n    ERR[\"surrogateInInputStream\"] = \"surrogate-in-input-stream\";\n    ERR[\"nonVoidHtmlElementStartTagWithTrailingSolidus\"] = \"non-void-html-element-start-tag-with-trailing-solidus\";\n    ERR[\"endTagWithAttributes\"] = \"end-tag-with-attributes\";\n    ERR[\"endTagWithTrailingSolidus\"] = \"end-tag-with-trailing-solidus\";\n    ERR[\"unexpectedSolidusInTag\"] = \"unexpected-solidus-in-tag\";\n    ERR[\"unexpectedNullCharacter\"] = \"unexpected-null-character\";\n    ERR[\"unexpectedQuestionMarkInsteadOfTagName\"] = \"unexpected-question-mark-instead-of-tag-name\";\n    ERR[\"invalidFirstCharacterOfTagName\"] = \"invalid-first-character-of-tag-name\";\n    ERR[\"unexpectedEqualsSignBeforeAttributeName\"] = \"unexpected-equals-sign-before-attribute-name\";\n    ERR[\"missingEndTagName\"] = \"missing-end-tag-name\";\n    ERR[\"unexpectedCharacterInAttributeName\"] = \"unexpected-character-in-attribute-name\";\n    ERR[\"unknownNamedCharacterReference\"] = \"unknown-named-character-reference\";\n    ERR[\"missingSemicolonAfterCharacterReference\"] = \"missing-semicolon-after-character-reference\";\n    ERR[\"unexpectedCharacterAfterDoctypeSystemIdentifier\"] = \"unexpected-character-after-doctype-system-identifier\";\n    ERR[\"unexpectedCharacterInUnquotedAttributeValue\"] = \"unexpected-character-in-unquoted-attribute-value\";\n    ERR[\"eofBeforeTagName\"] = \"eof-before-tag-name\";\n    ERR[\"eofInTag\"] = \"eof-in-tag\";\n    ERR[\"missingAttributeValue\"] = \"missing-attribute-value\";\n    ERR[\"missingWhitespaceBetweenAttributes\"] = \"missing-whitespace-between-attributes\";\n    ERR[\"missingWhitespaceAfterDoctypePublicKeyword\"] = \"missing-whitespace-after-doctype-public-keyword\";\n    ERR[\"missingWhitespaceBetweenDoctypePublicAndSystemIdentifiers\"] = \"missing-whitespace-between-doctype-public-and-system-identifiers\";\n    ERR[\"missingWhitespaceAfterDoctypeSystemKeyword\"] = \"missing-whitespace-after-doctype-system-keyword\";\n    ERR[\"missingQuoteBeforeDoctypePublicIdentifier\"] = \"missing-quote-before-doctype-public-identifier\";\n    ERR[\"missingQuoteBeforeDoctypeSystemIdentifier\"] = \"missing-quote-before-doctype-system-identifier\";\n    ERR[\"missingDoctypePublicIdentifier\"] = \"missing-doctype-public-identifier\";\n    ERR[\"missingDoctypeSystemIdentifier\"] = \"missing-doctype-system-identifier\";\n    ERR[\"abruptDoctypePublicIdentifier\"] = \"abrupt-doctype-public-identifier\";\n    ERR[\"abruptDoctypeSystemIdentifier\"] = \"abrupt-doctype-system-identifier\";\n    ERR[\"cdataInHtmlContent\"] = \"cdata-in-html-content\";\n    ERR[\"incorrectlyOpenedComment\"] = \"incorrectly-opened-comment\";\n    ERR[\"eofInScriptHtmlCommentLikeText\"] = \"eof-in-script-html-comment-like-text\";\n    ERR[\"eofInDoctype\"] = \"eof-in-doctype\";\n    ERR[\"nestedComment\"] = \"nested-comment\";\n    ERR[\"abruptClosingOfEmptyComment\"] = \"abrupt-closing-of-empty-comment\";\n    ERR[\"eofInComment\"] = \"eof-in-comment\";\n    ERR[\"incorrectlyClosedComment\"] = \"incorrectly-closed-comment\";\n    ERR[\"eofInCdata\"] = \"eof-in-cdata\";\n    ERR[\"absenceOfDigitsInNumericCharacterReference\"] = \"absence-of-digits-in-numeric-character-reference\";\n    ERR[\"nullCharacterReference\"] = \"null-character-reference\";\n    ERR[\"surrogateCharacterReference\"] = \"surrogate-character-reference\";\n    ERR[\"characterReferenceOutsideUnicodeRange\"] = \"character-reference-outside-unicode-range\";\n    ERR[\"controlCharacterReference\"] = \"control-character-reference\";\n    ERR[\"noncharacterCharacterReference\"] = \"noncharacter-character-reference\";\n    ERR[\"missingWhitespaceBeforeDoctypeName\"] = \"missing-whitespace-before-doctype-name\";\n    ERR[\"missingDoctypeName\"] = \"missing-doctype-name\";\n    ERR[\"invalidCharacterSequenceAfterDoctypeName\"] = \"invalid-character-sequence-after-doctype-name\";\n    ERR[\"duplicateAttribute\"] = \"duplicate-attribute\";\n    ERR[\"nonConformingDoctype\"] = \"non-conforming-doctype\";\n    ERR[\"missingDoctype\"] = \"missing-doctype\";\n    ERR[\"misplacedDoctype\"] = \"misplaced-doctype\";\n    ERR[\"endTagWithoutMatchingOpenElement\"] = \"end-tag-without-matching-open-element\";\n    ERR[\"closingOfElementWithOpenChildElements\"] = \"closing-of-element-with-open-child-elements\";\n    ERR[\"disallowedContentInNoscriptInHead\"] = \"disallowed-content-in-noscript-in-head\";\n    ERR[\"openElementsLeftAfterEof\"] = \"open-elements-left-after-eof\";\n    ERR[\"abandonedHeadElementChild\"] = \"abandoned-head-element-child\";\n    ERR[\"misplacedStartTagForHeadElement\"] = \"misplaced-start-tag-for-head-element\";\n    ERR[\"nestedNoscriptInHead\"] = \"nested-noscript-in-head\";\n    ERR[\"eofInElementThatCanContainOnlyText\"] = \"eof-in-element-that-can-contain-only-text\";\n})(ERR = ERR || (ERR = {}));\n//# sourceMappingURL=error-codes.js.map",
+      "start": 1712268127883,
+      "end": 1712268127903,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127903,
+      "end": 1712268127903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127903,
+      "end": 1712268127904,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127904,
+      "end": 1712268127904,
+      "order": "normal"
+    }
+  ]
+}

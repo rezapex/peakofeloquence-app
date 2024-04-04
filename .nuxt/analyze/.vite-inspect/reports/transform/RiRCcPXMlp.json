@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/mdast-util-to-markdown/lib/util/container-phrasing.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('../types.js').Handle} Handle\n * @typedef {import('../types.js').Info} Info\n * @typedef {import('../types.js').PhrasingParents} PhrasingParents\n * @typedef {import('../types.js').State} State\n */\n\n/**\n * Serialize the children of a parent that contains phrasing children.\n *\n * These children will be joined flush together.\n *\n * @param {PhrasingParents} parent\n *   Parent of flow nodes.\n * @param {State} state\n *   Info passed around about the current state.\n * @param {Info} info\n *   Info on where we are in the document we are generating.\n * @returns {string}\n *   Serialized children, joined together.\n */\nexport function containerPhrasing(parent, state, info) {\n  const indexStack = state.indexStack\n  const children = parent.children || []\n  /** @type {Array<string>} */\n  const results = []\n  let index = -1\n  let before = info.before\n\n  indexStack.push(-1)\n  let tracker = state.createTracker(info)\n\n  while (++index < children.length) {\n    const child = children[index]\n    /** @type {string} */\n    let after\n\n    indexStack[indexStack.length - 1] = index\n\n    if (index + 1 < children.length) {\n      /** @type {Handle} */\n      // @ts-expect-error: hush, it’s actually a `zwitch`.\n      let handle = state.handle.handlers[children[index + 1].type]\n      /** @type {Handle} */\n      // @ts-expect-error: hush, it’s actually a `zwitch`.\n      if (handle && handle.peek) handle = handle.peek\n      after = handle\n        ? handle(children[index + 1], parent, state, {\n            before: '',\n            after: '',\n            ...tracker.current()\n          }).charAt(0)\n        : ''\n    } else {\n      after = info.after\n    }\n\n    // In some cases, html (text) can be found in phrasing right after an eol.\n    // When we’d serialize that, in most cases that would be seen as html\n    // (flow).\n    // As we can’t escape or so to prevent it from happening, we take a somewhat\n    // reasonable approach: replace that eol with a space.\n    // See: <https://github.com/syntax-tree/mdast-util-to-markdown/issues/15>\n    if (\n      results.length > 0 &&\n      (before === '\\r' || before === '\\n') &&\n      child.type === 'html'\n    ) {\n      results[results.length - 1] = results[results.length - 1].replace(\n        /(\\r?\\n|\\r)$/,\n        ' '\n      )\n      before = ' '\n\n      // To do: does this work to reset tracker?\n      tracker = state.createTracker(info)\n      tracker.move(results.join(''))\n    }\n\n    results.push(\n      tracker.move(\n        state.handle(child, parent, state, {\n          ...tracker.current(),\n          before,\n          after\n        })\n      )\n    )\n\n    before = results[results.length - 1].slice(-1)\n  }\n\n  indexStack.pop()\n\n  return results.join('')\n}\n",
+      "start": 1712268127677,
+      "end": 1712268127691,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127691,
+      "end": 1712268127691,
+      "order": "normal"
+    }
+  ]
+}

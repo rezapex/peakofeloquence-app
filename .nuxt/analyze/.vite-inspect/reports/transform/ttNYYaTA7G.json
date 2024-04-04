@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/remark-emoji/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { get as getEmoji } from 'node-emoji';\nimport { emoticon } from 'emoticon';\nimport { findAndReplace } from 'mdast-util-find-and-replace';\n\nconst RE_EMOJI = /:\\+1:|:-1:|:[\\w-]+:/g;\nconst RE_SHORT = /[$@|*'\",;.=:\\-)([\\]\\\\/<>038BOopPsSdDxXzZ]{2,5}/g;\nconst RE_PUNCT = /(?:_|-(?!1))/g;\n\nconst DEFAULT_SETTINGS = {\n    padSpaceAfter: false,\n    emoticon: false,\n    accessible: false,\n};\n\nexport default function plugin(options) {\n    const settings = Object.assign({}, DEFAULT_SETTINGS, options);\n    const pad = !!settings.padSpaceAfter;\n    const emoticonEnable = !!settings.emoticon;\n    const accessible = !!settings.accessible;\n\n    function aria(text, label) {\n        // Creating HTML node in Markdown node is undocumented.\n        // https://github.com/syntax-tree/mdast-util-math/blob/e70bb824dc70f5423324b31b0b68581cf6698fe8/index.js#L44-L55\n        return {\n            type: 'text',\n            meta: null,\n            value: text,\n            data: {\n                hName: 'span',\n                hProperties: {\n                    role: 'img',\n                    ariaLabel: label,\n                },\n                hChildren: [{ type: 'text', value: text }],\n            },\n        };\n    }\n\n    function replaceEmoticon(match) {\n        // find emoji by shortcode - full match or with-out last char as it could be from text e.g. :-),\n        const iconFull = emoticon.find(e => e.emoticons.includes(match)); // full match\n        const iconPart = emoticon.find(e => e.emoticons.includes(match.slice(0, -1))); // second search pattern\n        const icon = iconFull || iconPart;\n        if (!icon) {\n            return false;\n        }\n        const trimmedChar = !iconFull && iconPart ? match.slice(-1) : '';\n        const addPad = pad ? ' ' : '';\n        const replaced = icon.emoji + addPad + trimmedChar;\n        if (accessible) {\n            return aria(replaced, icon.name + ' emoticon');\n        }\n        return replaced;\n    }\n\n    function replaceEmoji(match) {\n        let got = getEmoji(match);\n\n        if (typeof got === 'undefined') {\n            return false;\n        }\n\n        if (pad) {\n            got = got + ' ';\n        }\n\n        if (accessible) {\n            const label = match.slice(1, -1).replace(RE_PUNCT, ' ') + ' emoji';\n            return aria(got, label);\n        }\n\n        return got;\n    }\n\n    const replacers = [[RE_EMOJI, replaceEmoji]];\n    if (emoticonEnable) {\n        replacers.push([RE_SHORT, replaceEmoticon]);\n    }\n\n    function transformer(tree) {\n        findAndReplace(tree, replacers);\n    }\n\n    return transformer;\n}\n",
+      "start": 1712268127426,
+      "end": 1712268127445,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127445,
+      "end": 1712268127445,
+      "order": "normal"
+    }
+  ]
+}

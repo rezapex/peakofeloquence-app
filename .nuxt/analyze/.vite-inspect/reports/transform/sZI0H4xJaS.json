@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/mdast-util-to-markdown/lib/handle/list.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('mdast').List} List\n * @typedef {import('mdast').Parents} Parents\n * @typedef {import('../types.js').Info} Info\n * @typedef {import('../types.js').State} State\n */\n\nimport {checkBullet} from '../util/check-bullet.js'\nimport {checkBulletOther} from '../util/check-bullet-other.js'\nimport {checkBulletOrdered} from '../util/check-bullet-ordered.js'\nimport {checkRule} from '../util/check-rule.js'\n\n/**\n * @param {List} node\n * @param {Parents | undefined} parent\n * @param {State} state\n * @param {Info} info\n * @returns {string}\n */\nexport function list(node, parent, state, info) {\n  const exit = state.enter('list')\n  const bulletCurrent = state.bulletCurrent\n  /** @type {string} */\n  let bullet = node.ordered ? checkBulletOrdered(state) : checkBullet(state)\n  /** @type {string} */\n  const bulletOther = node.ordered\n    ? bullet === '.'\n      ? ')'\n      : '.'\n    : checkBulletOther(state)\n  let useDifferentMarker =\n    parent && state.bulletLastUsed ? bullet === state.bulletLastUsed : false\n\n  if (!node.ordered) {\n    const firstListItem = node.children ? node.children[0] : undefined\n\n    // If there’s an empty first list item directly in two list items,\n    // we have to use a different bullet:\n    //\n    // ```markdown\n    // * - *\n    // ```\n    //\n    // …because otherwise it would become one big thematic break.\n    if (\n      // Bullet could be used as a thematic break marker:\n      (bullet === '*' || bullet === '-') &&\n      // Empty first list item:\n      firstListItem &&\n      (!firstListItem.children || !firstListItem.children[0]) &&\n      // Directly in two other list items:\n      state.stack[state.stack.length - 1] === 'list' &&\n      state.stack[state.stack.length - 2] === 'listItem' &&\n      state.stack[state.stack.length - 3] === 'list' &&\n      state.stack[state.stack.length - 4] === 'listItem' &&\n      // That are each the first child.\n      state.indexStack[state.indexStack.length - 1] === 0 &&\n      state.indexStack[state.indexStack.length - 2] === 0 &&\n      state.indexStack[state.indexStack.length - 3] === 0\n    ) {\n      useDifferentMarker = true\n    }\n\n    // If there’s a thematic break at the start of the first list item,\n    // we have to use a different bullet:\n    //\n    // ```markdown\n    // * ---\n    // ```\n    //\n    // …because otherwise it would become one big thematic break.\n    if (checkRule(state) === bullet && firstListItem) {\n      let index = -1\n\n      while (++index < node.children.length) {\n        const item = node.children[index]\n\n        if (\n          item &&\n          item.type === 'listItem' &&\n          item.children &&\n          item.children[0] &&\n          item.children[0].type === 'thematicBreak'\n        ) {\n          useDifferentMarker = true\n          break\n        }\n      }\n    }\n  }\n\n  if (useDifferentMarker) {\n    bullet = bulletOther\n  }\n\n  state.bulletCurrent = bullet\n  const value = state.containerFlow(node, info)\n  state.bulletLastUsed = bullet\n  state.bulletCurrent = bulletCurrent\n  exit()\n  return value\n}\n",
+      "start": 1712268127694,
+      "end": 1712268127709,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127709,
+      "end": 1712268127709,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127709,
+      "end": 1712268127709,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127709,
+      "end": 1712268127709,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127709,
+      "end": 1712268127709,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127709,
+      "end": 1712268127709,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127709,
+      "end": 1712268127709,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127710,
+      "end": 1712268127710,
+      "order": "normal"
+    }
+  ]
+}

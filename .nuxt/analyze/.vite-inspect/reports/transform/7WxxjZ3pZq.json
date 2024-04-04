@@ -1,0 +1,243 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Shortcut.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport type { PropType } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Shortcut',\n  props: {\n  value: {\n    type: String,\n    required: true\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: '!my-0 align-text-top'\n}\n\n\n\nconst props = __props\n\nconst { metaSymbol } = useShortcuts()\nconst { ui, attrs } = useUI('content.shortcut', undefined, config, toRef(props, 'class'), true)\n\nconst shortcut = computed(() => props.value === 'meta' ? metaSymbol.value : props.value)\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UKbd = _resolveComponent(\"UKbd\")!\n\n  return (_openBlock(), _createBlock(_component_UKbd, _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), {\n    default: _withCtx(() => [\n      _createTextVNode(_toDisplayString(_unref(shortcut)), 1)\n    ]),\n    _: 1\n  }, 16, [\"class\"]))\n}\n}\n\n})",
+      "start": 1712268126783,
+      "end": 1712268126783
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268126783,
+      "end": 1712268126783,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268126783,
+      "end": 1712268126783,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268126783,
+      "end": 1712268126783,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268126783,
+      "end": 1712268126783,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268126783,
+      "end": 1712268126783,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Shortcut\",\n  props: {\n    value: {\n      type: String,\n      required: true\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"!my-0 align-text-top\"\n    };\n    const props = __props;\n    const { metaSymbol } = useShortcuts();\n    const { ui, attrs } = useUI(\"content.shortcut\", void 0, config, toRef(props, \"class\"), true);\n    const shortcut = computed(() => props.value === \"meta\" ? metaSymbol.value : props.value);\n    return (_ctx, _cache) => {\n      const _component_UKbd = _resolveComponent(\"UKbd\");\n      return _openBlock(), _createBlock(_component_UKbd, _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_unref(shortcut)), 1)\n        ]),\n        _: 1\n      }, 16, [\"class\"]);\n    };\n  }\n});\n",
+      "start": 1712268126783,
+      "end": 1712268126963,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Shortcut.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport type { PropType } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Shortcut',\n  props: {\n  value: {\n    type: String,\n    required: true\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: '!my-0 align-text-top'\n}\n\n\n\nconst props = __props\n\nconst { metaSymbol } = useShortcuts()\nconst { ui, attrs } = useUI('content.shortcut', undefined, config, toRef(props, 'class'), true)\n\nconst shortcut = computed(() => props.value === 'meta' ? metaSymbol.value : props.value)\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UKbd = _resolveComponent(\"UKbd\")!\n\n  return (_openBlock(), _createBlock(_component_UKbd, _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), {\n    default: _withCtx(() => [\n      _createTextVNode(_toDisplayString(_unref(shortcut)), 1)\n    ]),\n    _: 1\n  }, 16, [\"class\"]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,SAAS,QAAQ,mBAAmB,kBAAkB,mBAAmB,kBAAkB,oBAAoB,mBAAmB,cAAc,aAAa,WAAW,UAAU,aAAa,YAAY,eAAe,oBAAoB;AAKvP,eAA4B,iCAAiB;AAAA,EAC3C,GAAG;AAAA,IACH,cAAc;AAAA,EAChB;AAAA,EACE,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,OAAO;AAAA,MACL,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,IACA,OAAO;AAAA,MACL,MAAM,CAAC,QAAQ,QAAQ,KAAK;AAAA,MAC5B,SAAS;AAAA,IACX;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,SAAS;AAAA,MACb,SAAS;AAAA,IACX;AAIA,UAAM,QAAQ;AAEd,UAAM,EAAE,WAAW,IAAI,aAAa;AACpC,UAAM,EAAE,IAAI,MAAM,IAAI,MAAM,oBAAoB,QAAW,QAAQ,MAAM,OAAO,OAAO,GAAG,IAAI;AAE9F,UAAM,WAAW,SAAS,MAAM,MAAM,UAAU,SAAS,WAAW,QAAQ,MAAM,KAAK;AAEvF,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,kBAAkB,kBAAkB,MAAM;AAEhD,aAAQ,WAAW,GAAG,aAAa,iBAAiB,YAAY;AAAA,QAC9D,OAAO,OAAO,EAAE,EAAE;AAAA,MACpB,GAAG,OAAO,KAAK,CAAC,GAAG;AAAA,QACjB,SAAS,SAAS,MAAM;AAAA,UACtB,iBAAiB,iBAAiB,OAAO,QAAQ,CAAC,GAAG,CAAC;AAAA,QACxD,CAAC;AAAA,QACD,GAAG;AAAA,MACL,GAAG,IAAI,CAAC,OAAO,CAAC;AAAA,IAClB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268126963,
+      "end": 1712268126963,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268126964,
+      "end": 1712268126964,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useShortcuts } from '/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts.mjs';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef, computed } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Shortcut\",\n  props: {\n    value: {\n      type: String,\n      required: true\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"!my-0 align-text-top\"\n    };\n    const props = __props;\n    const { metaSymbol } = useShortcuts();\n    const { ui, attrs } = useUI(\"content.shortcut\", void 0, config, toRef(props, \"class\"), true);\n    const shortcut = computed(() => props.value === \"meta\" ? metaSymbol.value : props.value);\n    return (_ctx, _cache) => {\n      const _component_UKbd = _resolveComponent(\"UKbd\");\n      return _openBlock(), _createBlock(_component_UKbd, _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_unref(shortcut)), 1)\n        ]),\n        _: 1\n      }, 16, [\"class\"]);\n    };\n  }\n});\n",
+      "start": 1712268126964,
+      "end": 1712268126965,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,C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,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268126965,
+      "end": 1712268126965,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268126965,
+      "end": 1712268126965,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268126965,
+      "end": 1712268126965,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268126965,
+      "end": 1712268126965,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui/dist/runtime/components/elements/Kbd.vue\";\nimport { useShortcuts } from '/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts.mjs';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef, computed } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Shortcut\",\n  props: {\n    value: {\n      type: String,\n      required: true\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"!my-0 align-text-top\"\n    };\n    const props = __props;\n    const { metaSymbol } = useShortcuts();\n    const { ui, attrs } = useUI(\"content.shortcut\", void 0, config, toRef(props, \"class\"), true);\n    const shortcut = computed(() => props.value === \"meta\" ? metaSymbol.value : props.value);\n    return (_ctx, _cache) => {\n      const _component_UKbd = __nuxt_component_0;\n      return _openBlock(), _createBlock(_component_UKbd, _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_unref(shortcut)), 1)\n        ]),\n        _: 1\n      }, 16, [\"class\"]);\n    };\n  }\n});\n",
+      "start": 1712268126965,
+      "end": 1712268126965,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268126965,
+      "end": 1712268126965,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268126965,
+      "end": 1712268126965,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268126965,
+      "end": 1712268126965,
+      "order": "normal"
+    }
+  ]
+}

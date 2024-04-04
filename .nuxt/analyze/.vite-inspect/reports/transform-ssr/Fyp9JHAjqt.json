@@ -1,0 +1,308 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/composables/useSharedMouseInElement.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defaultWindow, watchThrottled, unrefElement } from '@vueuse/core'\nimport type { MaybeElementRef, MouseInElementOptions } from '@vueuse/core'\n\nexport function useSharedMouseInElement (\n  target?: MaybeElementRef,\n  options: MouseInElementOptions = {}\n) {\n  const { x, y } = useSharedMouse(options)\n\n  const targetRef = ref(target ?? window?.document.body)\n  const elementX = ref(0)\n  const elementY = ref(0)\n\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef)\n        if (!el) { return }\n\n        const { left, top } = el.getBoundingClientRect()\n\n        const eX = x.value - (left + defaultWindow!.scrollX)\n        const eY = y.value - (top + defaultWindow!.scrollY)\n\n        // We don't update the value when the mouse to too far away\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow!.screen.width <= 800) {\n          return\n        }\n\n        elementX.value = eX\n        elementY.value = eY\n      },\n      { immediate: true, throttle: 50 }\n    )\n  }\n\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  }\n}\n",
+      "start": 1712268134207,
+      "end": 1712268134213,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268134213,
+      "end": 1712268134213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defaultWindow, watchThrottled, unrefElement } from \"@vueuse/core\";\nexport function useSharedMouseInElement(target, options = {}) {\n  const { x, y } = useSharedMouse(options);\n  const targetRef = ref(target ?? window?.document.body);\n  const elementX = ref(0);\n  const elementY = ref(0);\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef);\n        if (!el) {\n          return;\n        }\n        const { left, top } = el.getBoundingClientRect();\n        const eX = x.value - (left + defaultWindow.scrollX);\n        const eY = y.value - (top + defaultWindow.scrollY);\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow.screen.width <= 800) {\n          return;\n        }\n        elementX.value = eX;\n        elementY.value = eY;\n      },\n      { immediate: true, throttle: 50 }\n    );\n  }\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  };\n}\n",
+      "start": 1712268134213,
+      "end": 1712268134258,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/composables/useSharedMouseInElement.ts"
+        ],
+        "sourcesContent": [
+          "import { defaultWindow, watchThrottled, unrefElement } from '@vueuse/core'\nimport type { MaybeElementRef, MouseInElementOptions } from '@vueuse/core'\n\nexport function useSharedMouseInElement (\n  target?: MaybeElementRef,\n  options: MouseInElementOptions = {}\n) {\n  const { x, y } = useSharedMouse(options)\n\n  const targetRef = ref(target ?? window?.document.body)\n  const elementX = ref(0)\n  const elementY = ref(0)\n\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef)\n        if (!el) { return }\n\n        const { left, top } = el.getBoundingClientRect()\n\n        const eX = x.value - (left + defaultWindow!.scrollX)\n        const eY = y.value - (top + defaultWindow!.scrollY)\n\n        // We don't update the value when the mouse to too far away\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow!.screen.width <= 800) {\n          return\n        }\n\n        elementX.value = eX\n        elementY.value = eY\n      },\n      { immediate: true, throttle: 50 }\n    )\n  }\n\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  }\n}\n"
+        ],
+        "mappings": "AAAA,SAAS,eAAe,gBAAgB,oBAAoB;AAGrD,gBAAS,wBACd,QACA,UAAiC,CAAC,GAClC;AACA,QAAM,EAAE,GAAG,EAAE,IAAI,eAAe,OAAO;AAEvC,QAAM,YAAY,IAAI,UAAU,QAAQ,SAAS,IAAI;AACrD,QAAM,WAAW,IAAI,CAAC;AACtB,QAAM,WAAW,IAAI,CAAC;AAEtB,MAAI,eAAe;AACjB;AAAA,MACE,CAAC,WAAW,GAAG,CAAC;AAAA,MAChB,MAAM;AACJ,cAAM,KAAK,aAAa,SAAS;AACjC,YAAI,CAAC,IAAI;AAAE;AAAA,QAAO;AAElB,cAAM,EAAE,MAAM,IAAI,IAAI,GAAG,sBAAsB;AAE/C,cAAM,KAAK,EAAE,SAAS,OAAO,cAAe;AAC5C,cAAM,KAAK,EAAE,SAAS,MAAM,cAAe;AAG3C,YAAI,KAAK,IAAI,EAAE,IAAI,QAAQ,KAAK,IAAI,EAAE,IAAI,QAAQ,cAAe,OAAO,SAAS,KAAK;AACpF;AAAA,QACF;AAEA,iBAAS,QAAQ;AACjB,iBAAS,QAAQ;AAAA,MACnB;AAAA,MACA,EAAE,WAAW,MAAM,UAAU,GAAG;AAAA,IAClC;AAAA,EACF;AAEA,SAAO;AAAA,IACL;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,EACF;AACF;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268134258,
+      "end": 1712268134258,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { defaultWindow, watchThrottled, unrefElement } from \"@vueuse/core\";\nexport function useSharedMouseInElement(target, options = {}) {\n  const { x, y } = useSharedMouse(options);\n  const targetRef = ref(target ?? void 0);\n  const elementX = ref(0);\n  const elementY = ref(0);\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef);\n        if (!el) {\n          return;\n        }\n        const { left, top } = el.getBoundingClientRect();\n        const eX = x.value - (left + defaultWindow.scrollX);\n        const eY = y.value - (top + defaultWindow.scrollY);\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow.screen.width <= 800) {\n          return;\n        }\n        elementX.value = eX;\n        elementY.value = eY;\n      },\n      { immediate: true, throttle: 50 }\n    );\n  }\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  };\n}\n",
+      "start": 1712268134258,
+      "end": 1712268134269,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/composables/useSharedMouseInElement.ts\"],\n  \"sourcesContent\": [\"import { defaultWindow, watchThrottled, unrefElement } from \\\"@vueuse/core\\\";\\nexport function useSharedMouseInElement(target, options = {}) {\\n  const { x, y } = useSharedMouse(options);\\n  const targetRef = ref(target ?? window?.document.body);\\n  const elementX = ref(0);\\n  const elementY = ref(0);\\n  if (defaultWindow) {\\n    watchThrottled(\\n      [targetRef, x, y],\\n      () => {\\n        const el = unrefElement(targetRef);\\n        if (!el) {\\n          return;\\n        }\\n        const { left, top } = el.getBoundingClientRect();\\n        const eX = x.value - (left + defaultWindow.scrollX);\\n        const eY = y.value - (top + defaultWindow.scrollY);\\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow.screen.width <= 800) {\\n          return;\\n        }\\n        elementX.value = eX;\\n        elementY.value = eY;\\n      },\\n      { immediate: true, throttle: 50 }\\n    );\\n  }\\n  return {\\n    x,\\n    y,\\n    elementX,\\n    elementY\\n  };\\n}\\n\"],\n  \"mappings\": \"AAAA,SAAS,eAAe,gBAAgB,oBAAoB;AACrD,gBAAS,wBAAwB,QAAQ,UAAU,CAAC,GAAG;AAC5D,QAAM,EAAE,GAAG,EAAE,IAAI,eAAe,OAAO;AACvC,QAAM,YAAY,IAAI,UAAU,MAAqB;AACrD,QAAM,WAAW,IAAI,CAAC;AACtB,QAAM,WAAW,IAAI,CAAC;AACtB,MAAI,eAAe;AACjB;AAAA,MACE,CAAC,WAAW,GAAG,CAAC;AAAA,MAChB,MAAM;AACJ,cAAM,KAAK,aAAa,SAAS;AACjC,YAAI,CAAC,IAAI;AACP;AAAA,QACF;AACA,cAAM,EAAE,MAAM,IAAI,IAAI,GAAG,sBAAsB;AAC/C,cAAM,KAAK,EAAE,SAAS,OAAO,cAAc;AAC3C,cAAM,KAAK,EAAE,SAAS,MAAM,cAAc;AAC1C,YAAI,KAAK,IAAI,EAAE,IAAI,QAAQ,KAAK,IAAI,EAAE,IAAI,QAAQ,cAAc,OAAO,SAAS,KAAK;AACnF;AAAA,QACF;AACA,iBAAS,QAAQ;AACjB,iBAAS,QAAQ;AAAA,MACnB;AAAA,MACA,EAAE,WAAW,MAAM,UAAU,GAAG;AAAA,IAClC;AAAA,EACF;AACA,SAAO;AAAA,IACL;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,EACF;AACF;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268134302,
+      "end": 1712268134302,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268134303,
+      "end": 1712268134303,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268134303,
+      "end": 1712268134303,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268134303,
+      "end": 1712268134303,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268134303,
+      "end": 1712268134303,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268134304,
+      "end": 1712268134304,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268134304,
+      "end": 1712268134304,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134304,
+      "end": 1712268134304,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268134304,
+      "end": 1712268134304,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useSharedMouse } from '/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/composables/useSharedMouse.ts';\nimport { ref } from 'vue';\nimport { defaultWindow, watchThrottled, unrefElement } from \"@vueuse/core\";\nexport function useSharedMouseInElement(target, options = {}) {\n  const { x, y } = useSharedMouse(options);\n  const targetRef = ref(target ?? void 0);\n  const elementX = ref(0);\n  const elementY = ref(0);\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef);\n        if (!el) {\n          return;\n        }\n        const { left, top } = el.getBoundingClientRect();\n        const eX = x.value - (left + defaultWindow.scrollX);\n        const eY = y.value - (top + defaultWindow.scrollY);\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow.screen.width <= 800) {\n          return;\n        }\n        elementX.value = eX;\n        elementY.value = eY;\n      },\n      { immediate: true, throttle: 50 }\n    );\n  }\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  };\n}\n",
+      "start": 1712268134304,
+      "end": 1712268134304,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useSharedMouse } from '/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/composables/useSharedMouse.ts';\nimport { ref } from 'vue';\nimport { defaultWindow, watchThrottled, unrefElement } from \"@vueuse/core\";\nexport function useSharedMouseInElement(target, options = {}) {\n  const { x, y } = useSharedMouse(options);\n  const targetRef = ref(target ?? void 0);\n  const elementX = ref(0);\n  const elementY = ref(0);\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef);\n        if (!el) {\n          return;\n        }\n        const { left, top } = el.getBoundingClientRect();\n        const eX = x.value - (left + defaultWindow.scrollX);\n        const eY = y.value - (top + defaultWindow.scrollY);\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow.screen.width <= 800) {\n          return;\n        }\n        elementX.value = eX;\n        elementY.value = eY;\n      },\n      { immediate: true, throttle: 50 }\n    );\n  }\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  };\n}\n",
+      "start": 1712268134304,
+      "end": 1712268134304,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268134305,
+      "end": 1712268134305,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/mdast-util-from-markdown/lib/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('mdast').Break} Break\n * @typedef {import('mdast').Blockquote} Blockquote\n * @typedef {import('mdast').Code} Code\n * @typedef {import('mdast').Definition} Definition\n * @typedef {import('mdast').Emphasis} Emphasis\n * @typedef {import('mdast').Heading} Heading\n * @typedef {import('mdast').Html} Html\n * @typedef {import('mdast').Image} Image\n * @typedef {import('mdast').InlineCode} InlineCode\n * @typedef {import('mdast').Link} Link\n * @typedef {import('mdast').List} List\n * @typedef {import('mdast').ListItem} ListItem\n * @typedef {import('mdast').Nodes} Nodes\n * @typedef {import('mdast').Paragraph} Paragraph\n * @typedef {import('mdast').Parent} Parent\n * @typedef {import('mdast').PhrasingContent} PhrasingContent\n * @typedef {import('mdast').ReferenceType} ReferenceType\n * @typedef {import('mdast').Root} Root\n * @typedef {import('mdast').Strong} Strong\n * @typedef {import('mdast').Text} Text\n * @typedef {import('mdast').ThematicBreak} ThematicBreak\n *\n * @typedef {import('micromark-util-types').Encoding} Encoding\n * @typedef {import('micromark-util-types').Event} Event\n * @typedef {import('micromark-util-types').ParseOptions} ParseOptions\n * @typedef {import('micromark-util-types').Token} Token\n * @typedef {import('micromark-util-types').TokenizeContext} TokenizeContext\n * @typedef {import('micromark-util-types').Value} Value\n *\n * @typedef {import('unist').Point} Point\n *\n * @typedef {import('../index.js').CompileData} CompileData\n */\n\n/**\n * @typedef {Omit<Parent, 'children' | 'type'> & {type: 'fragment', children: Array<PhrasingContent>}} Fragment\n */\n\n/**\n * @callback Transform\n *   Extra transform, to change the AST afterwards.\n * @param {Root} tree\n *   Tree to transform.\n * @returns {Root | null | undefined | void}\n *   New tree or nothing (in which case the current tree is used).\n *\n * @callback Handle\n *   Handle a token.\n * @param {CompileContext} this\n *   Context.\n * @param {Token} token\n *   Current token.\n * @returns {undefined | void}\n *   Nothing.\n *\n * @typedef {Record<string, Handle>} Handles\n *   Token types mapping to handles\n *\n * @callback OnEnterError\n *   Handle the case where the `right` token is open, but it is closed (by the\n *   `left` token) or because we reached the end of the document.\n * @param {Omit<CompileContext, 'sliceSerialize'>} this\n *   Context.\n * @param {Token | undefined} left\n *   Left token.\n * @param {Token} right\n *   Right token.\n * @returns {undefined}\n *   Nothing.\n *\n * @callback OnExitError\n *   Handle the case where the `right` token is open but it is closed by\n *   exiting the `left` token.\n * @param {Omit<CompileContext, 'sliceSerialize'>} this\n *   Context.\n * @param {Token} left\n *   Left token.\n * @param {Token} right\n *   Right token.\n * @returns {undefined}\n *   Nothing.\n *\n * @typedef {[Token, OnEnterError | undefined]} TokenTuple\n *   Open token on the stack, with an optional error handler for when\n *   that token isn’t closed properly.\n */\n\n/**\n * @typedef Config\n *   Configuration.\n *\n *   We have our defaults, but extensions will add more.\n * @property {Array<string>} canContainEols\n *   Token types where line endings are used.\n * @property {Handles} enter\n *   Opening handles.\n * @property {Handles} exit\n *   Closing handles.\n * @property {Array<Transform>} transforms\n *   Tree transforms.\n *\n * @typedef {Partial<Config>} Extension\n *   Change how markdown tokens from micromark are turned into mdast.\n *\n * @typedef CompileContext\n *   mdast compiler context.\n * @property {Array<Fragment | Nodes>} stack\n *   Stack of nodes.\n * @property {Array<TokenTuple>} tokenStack\n *   Stack of tokens.\n * @property {(this: CompileContext) => undefined} buffer\n *   Capture some of the output data.\n * @property {(this: CompileContext) => string} resume\n *   Stop capturing and access the output data.\n * @property {(this: CompileContext, node: Nodes, token: Token, onError?: OnEnterError) => undefined} enter\n *   Enter a node.\n * @property {(this: CompileContext, token: Token, onError?: OnExitError) => undefined} exit\n *   Exit a node.\n * @property {TokenizeContext['sliceSerialize']} sliceSerialize\n *   Get the string value of a token.\n * @property {Config} config\n *   Configuration.\n * @property {CompileData} data\n *   Info passed around; key/value store.\n *\n * @typedef FromMarkdownOptions\n *   Configuration for how to build mdast.\n * @property {Array<Extension | Array<Extension>> | null | undefined} [mdastExtensions]\n *   Extensions for this utility to change how tokens are turned into a tree.\n *\n * @typedef {ParseOptions & FromMarkdownOptions} Options\n *   Configuration.\n */\n\nimport {toString} from 'mdast-util-to-string'\nimport {parse, postprocess, preprocess} from 'micromark'\nimport {decodeNumericCharacterReference} from 'micromark-util-decode-numeric-character-reference'\nimport {decodeString} from 'micromark-util-decode-string'\nimport {normalizeIdentifier} from 'micromark-util-normalize-identifier'\nimport {decodeNamedCharacterReference} from 'decode-named-character-reference'\nimport {stringifyPosition} from 'unist-util-stringify-position'\nconst own = {}.hasOwnProperty\n\n/**\n * Turn markdown into a syntax tree.\n *\n * @overload\n * @param {Value} value\n * @param {Encoding | null | undefined} [encoding]\n * @param {Options | null | undefined} [options]\n * @returns {Root}\n *\n * @overload\n * @param {Value} value\n * @param {Options | null | undefined} [options]\n * @returns {Root}\n *\n * @param {Value} value\n *   Markdown to parse.\n * @param {Encoding | Options | null | undefined} [encoding]\n *   Character encoding for when `value` is `Buffer`.\n * @param {Options | null | undefined} [options]\n *   Configuration.\n * @returns {Root}\n *   mdast tree.\n */\nexport function fromMarkdown(value, encoding, options) {\n  if (typeof encoding !== 'string') {\n    options = encoding\n    encoding = undefined\n  }\n  return compiler(options)(\n    postprocess(\n      parse(options).document().write(preprocess()(value, encoding, true))\n    )\n  )\n}\n\n/**\n * Note this compiler only understand complete buffering, not streaming.\n *\n * @param {Options | null | undefined} [options]\n */\nfunction compiler(options) {\n  /** @type {Config} */\n  const config = {\n    transforms: [],\n    canContainEols: ['emphasis', 'fragment', 'heading', 'paragraph', 'strong'],\n    enter: {\n      autolink: opener(link),\n      autolinkProtocol: onenterdata,\n      autolinkEmail: onenterdata,\n      atxHeading: opener(heading),\n      blockQuote: opener(blockQuote),\n      characterEscape: onenterdata,\n      characterReference: onenterdata,\n      codeFenced: opener(codeFlow),\n      codeFencedFenceInfo: buffer,\n      codeFencedFenceMeta: buffer,\n      codeIndented: opener(codeFlow, buffer),\n      codeText: opener(codeText, buffer),\n      codeTextData: onenterdata,\n      data: onenterdata,\n      codeFlowValue: onenterdata,\n      definition: opener(definition),\n      definitionDestinationString: buffer,\n      definitionLabelString: buffer,\n      definitionTitleString: buffer,\n      emphasis: opener(emphasis),\n      hardBreakEscape: opener(hardBreak),\n      hardBreakTrailing: opener(hardBreak),\n      htmlFlow: opener(html, buffer),\n      htmlFlowData: onenterdata,\n      htmlText: opener(html, buffer),\n      htmlTextData: onenterdata,\n      image: opener(image),\n      label: buffer,\n      link: opener(link),\n      listItem: opener(listItem),\n      listItemValue: onenterlistitemvalue,\n      listOrdered: opener(list, onenterlistordered),\n      listUnordered: opener(list),\n      paragraph: opener(paragraph),\n      reference: onenterreference,\n      referenceString: buffer,\n      resourceDestinationString: buffer,\n      resourceTitleString: buffer,\n      setextHeading: opener(heading),\n      strong: opener(strong),\n      thematicBreak: opener(thematicBreak)\n    },\n    exit: {\n      atxHeading: closer(),\n      atxHeadingSequence: onexitatxheadingsequence,\n      autolink: closer(),\n      autolinkEmail: onexitautolinkemail,\n      autolinkProtocol: onexitautolinkprotocol,\n      blockQuote: closer(),\n      characterEscapeValue: onexitdata,\n      characterReferenceMarkerHexadecimal: onexitcharacterreferencemarker,\n      characterReferenceMarkerNumeric: onexitcharacterreferencemarker,\n      characterReferenceValue: onexitcharacterreferencevalue,\n      codeFenced: closer(onexitcodefenced),\n      codeFencedFence: onexitcodefencedfence,\n      codeFencedFenceInfo: onexitcodefencedfenceinfo,\n      codeFencedFenceMeta: onexitcodefencedfencemeta,\n      codeFlowValue: onexitdata,\n      codeIndented: closer(onexitcodeindented),\n      codeText: closer(onexitcodetext),\n      codeTextData: onexitdata,\n      data: onexitdata,\n      definition: closer(),\n      definitionDestinationString: onexitdefinitiondestinationstring,\n      definitionLabelString: onexitdefinitionlabelstring,\n      definitionTitleString: onexitdefinitiontitlestring,\n      emphasis: closer(),\n      hardBreakEscape: closer(onexithardbreak),\n      hardBreakTrailing: closer(onexithardbreak),\n      htmlFlow: closer(onexithtmlflow),\n      htmlFlowData: onexitdata,\n      htmlText: closer(onexithtmltext),\n      htmlTextData: onexitdata,\n      image: closer(onexitimage),\n      label: onexitlabel,\n      labelText: onexitlabeltext,\n      lineEnding: onexitlineending,\n      link: closer(onexitlink),\n      listItem: closer(),\n      listOrdered: closer(),\n      listUnordered: closer(),\n      paragraph: closer(),\n      referenceString: onexitreferencestring,\n      resourceDestinationString: onexitresourcedestinationstring,\n      resourceTitleString: onexitresourcetitlestring,\n      resource: onexitresource,\n      setextHeading: closer(onexitsetextheading),\n      setextHeadingLineSequence: onexitsetextheadinglinesequence,\n      setextHeadingText: onexitsetextheadingtext,\n      strong: closer(),\n      thematicBreak: closer()\n    }\n  }\n  configure(config, (options || {}).mdastExtensions || [])\n\n  /** @type {CompileData} */\n  const data = {}\n  return compile\n\n  /**\n   * Turn micromark events into an mdast tree.\n   *\n   * @param {Array<Event>} events\n   *   Events.\n   * @returns {Root}\n   *   mdast tree.\n   */\n  function compile(events) {\n    /** @type {Root} */\n    let tree = {\n      type: 'root',\n      children: []\n    }\n    /** @type {Omit<CompileContext, 'sliceSerialize'>} */\n    const context = {\n      stack: [tree],\n      tokenStack: [],\n      config,\n      enter,\n      exit,\n      buffer,\n      resume,\n      data\n    }\n    /** @type {Array<number>} */\n    const listStack = []\n    let index = -1\n    while (++index < events.length) {\n      // We preprocess lists to add `listItem` tokens, and to infer whether\n      // items the list itself are spread out.\n      if (\n        events[index][1].type === 'listOrdered' ||\n        events[index][1].type === 'listUnordered'\n      ) {\n        if (events[index][0] === 'enter') {\n          listStack.push(index)\n        } else {\n          const tail = listStack.pop()\n          index = prepareList(events, tail, index)\n        }\n      }\n    }\n    index = -1\n    while (++index < events.length) {\n      const handler = config[events[index][0]]\n      if (own.call(handler, events[index][1].type)) {\n        handler[events[index][1].type].call(\n          Object.assign(\n            {\n              sliceSerialize: events[index][2].sliceSerialize\n            },\n            context\n          ),\n          events[index][1]\n        )\n      }\n    }\n\n    // Handle tokens still being open.\n    if (context.tokenStack.length > 0) {\n      const tail = context.tokenStack[context.tokenStack.length - 1]\n      const handler = tail[1] || defaultOnError\n      handler.call(context, undefined, tail[0])\n    }\n\n    // Figure out `root` position.\n    tree.position = {\n      start: point(\n        events.length > 0\n          ? events[0][1].start\n          : {\n              line: 1,\n              column: 1,\n              offset: 0\n            }\n      ),\n      end: point(\n        events.length > 0\n          ? events[events.length - 2][1].end\n          : {\n              line: 1,\n              column: 1,\n              offset: 0\n            }\n      )\n    }\n\n    // Call transforms.\n    index = -1\n    while (++index < config.transforms.length) {\n      tree = config.transforms[index](tree) || tree\n    }\n    return tree\n  }\n\n  /**\n   * @param {Array<Event>} events\n   * @param {number} start\n   * @param {number} length\n   * @returns {number}\n   */\n  function prepareList(events, start, length) {\n    let index = start - 1\n    let containerBalance = -1\n    let listSpread = false\n    /** @type {Token | undefined} */\n    let listItem\n    /** @type {number | undefined} */\n    let lineIndex\n    /** @type {number | undefined} */\n    let firstBlankLineIndex\n    /** @type {boolean | undefined} */\n    let atMarker\n    while (++index <= length) {\n      const event = events[index]\n      switch (event[1].type) {\n        case 'listUnordered':\n        case 'listOrdered':\n        case 'blockQuote': {\n          if (event[0] === 'enter') {\n            containerBalance++\n          } else {\n            containerBalance--\n          }\n          atMarker = undefined\n          break\n        }\n        case 'lineEndingBlank': {\n          if (event[0] === 'enter') {\n            if (\n              listItem &&\n              !atMarker &&\n              !containerBalance &&\n              !firstBlankLineIndex\n            ) {\n              firstBlankLineIndex = index\n            }\n            atMarker = undefined\n          }\n          break\n        }\n        case 'linePrefix':\n        case 'listItemValue':\n        case 'listItemMarker':\n        case 'listItemPrefix':\n        case 'listItemPrefixWhitespace': {\n          // Empty.\n\n          break\n        }\n        default: {\n          atMarker = undefined\n        }\n      }\n      if (\n        (!containerBalance &&\n          event[0] === 'enter' &&\n          event[1].type === 'listItemPrefix') ||\n        (containerBalance === -1 &&\n          event[0] === 'exit' &&\n          (event[1].type === 'listUnordered' ||\n            event[1].type === 'listOrdered'))\n      ) {\n        if (listItem) {\n          let tailIndex = index\n          lineIndex = undefined\n          while (tailIndex--) {\n            const tailEvent = events[tailIndex]\n            if (\n              tailEvent[1].type === 'lineEnding' ||\n              tailEvent[1].type === 'lineEndingBlank'\n            ) {\n              if (tailEvent[0] === 'exit') continue\n              if (lineIndex) {\n                events[lineIndex][1].type = 'lineEndingBlank'\n                listSpread = true\n              }\n              tailEvent[1].type = 'lineEnding'\n              lineIndex = tailIndex\n            } else if (\n              tailEvent[1].type === 'linePrefix' ||\n              tailEvent[1].type === 'blockQuotePrefix' ||\n              tailEvent[1].type === 'blockQuotePrefixWhitespace' ||\n              tailEvent[1].type === 'blockQuoteMarker' ||\n              tailEvent[1].type === 'listItemIndent'\n            ) {\n              // Empty\n            } else {\n              break\n            }\n          }\n          if (\n            firstBlankLineIndex &&\n            (!lineIndex || firstBlankLineIndex < lineIndex)\n          ) {\n            listItem._spread = true\n          }\n\n          // Fix position.\n          listItem.end = Object.assign(\n            {},\n            lineIndex ? events[lineIndex][1].start : event[1].end\n          )\n          events.splice(lineIndex || index, 0, ['exit', listItem, event[2]])\n          index++\n          length++\n        }\n\n        // Create a new list item.\n        if (event[1].type === 'listItemPrefix') {\n          /** @type {Token} */\n          const item = {\n            type: 'listItem',\n            _spread: false,\n            start: Object.assign({}, event[1].start),\n            // @ts-expect-error: we’ll add `end` in a second.\n            end: undefined\n          }\n          listItem = item\n          events.splice(index, 0, ['enter', item, event[2]])\n          index++\n          length++\n          firstBlankLineIndex = undefined\n          atMarker = true\n        }\n      }\n    }\n    events[start][1]._spread = listSpread\n    return length\n  }\n\n  /**\n   * Create an opener handle.\n   *\n   * @param {(token: Token) => Nodes} create\n   *   Create a node.\n   * @param {Handle | undefined} [and]\n   *   Optional function to also run.\n   * @returns {Handle}\n   *   Handle.\n   */\n  function opener(create, and) {\n    return open\n\n    /**\n     * @this {CompileContext}\n     * @param {Token} token\n     * @returns {undefined}\n     */\n    function open(token) {\n      enter.call(this, create(token), token)\n      if (and) and.call(this, token)\n    }\n  }\n\n  /**\n   * @this {CompileContext}\n   * @returns {undefined}\n   */\n  function buffer() {\n    this.stack.push({\n      type: 'fragment',\n      children: []\n    })\n  }\n\n  /**\n   * @this {CompileContext}\n   *   Context.\n   * @param {Nodes} node\n   *   Node to enter.\n   * @param {Token} token\n   *   Corresponding token.\n   * @param {OnEnterError | undefined} [errorHandler]\n   *   Handle the case where this token is open, but it is closed by something else.\n   * @returns {undefined}\n   *   Nothing.\n   */\n  function enter(node, token, errorHandler) {\n    const parent = this.stack[this.stack.length - 1]\n    /** @type {Array<Nodes>} */\n    const siblings = parent.children\n    siblings.push(node)\n    this.stack.push(node)\n    this.tokenStack.push([token, errorHandler])\n    node.position = {\n      start: point(token.start),\n      // @ts-expect-error: `end` will be patched later.\n      end: undefined\n    }\n  }\n\n  /**\n   * Create a closer handle.\n   *\n   * @param {Handle | undefined} [and]\n   *   Optional function to also run.\n   * @returns {Handle}\n   *   Handle.\n   */\n  function closer(and) {\n    return close\n\n    /**\n     * @this {CompileContext}\n     * @param {Token} token\n     * @returns {undefined}\n     */\n    function close(token) {\n      if (and) and.call(this, token)\n      exit.call(this, token)\n    }\n  }\n\n  /**\n   * @this {CompileContext}\n   *   Context.\n   * @param {Token} token\n   *   Corresponding token.\n   * @param {OnExitError | undefined} [onExitError]\n   *   Handle the case where another token is open.\n   * @returns {undefined}\n   *   Nothing.\n   */\n  function exit(token, onExitError) {\n    const node = this.stack.pop()\n    const open = this.tokenStack.pop()\n    if (!open) {\n      throw new Error(\n        'Cannot close `' +\n          token.type +\n          '` (' +\n          stringifyPosition({\n            start: token.start,\n            end: token.end\n          }) +\n          '): it’s not open'\n      )\n    } else if (open[0].type !== token.type) {\n      if (onExitError) {\n        onExitError.call(this, token, open[0])\n      } else {\n        const handler = open[1] || defaultOnError\n        handler.call(this, token, open[0])\n      }\n    }\n    node.position.end = point(token.end)\n  }\n\n  /**\n   * @this {CompileContext}\n   * @returns {string}\n   */\n  function resume() {\n    return toString(this.stack.pop())\n  }\n\n  //\n  // Handlers.\n  //\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onenterlistordered() {\n    this.data.expectingFirstListItemValue = true\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onenterlistitemvalue(token) {\n    if (this.data.expectingFirstListItemValue) {\n      const ancestor = this.stack[this.stack.length - 2]\n      ancestor.start = Number.parseInt(this.sliceSerialize(token), 10)\n      this.data.expectingFirstListItemValue = undefined\n    }\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitcodefencedfenceinfo() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.lang = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitcodefencedfencemeta() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.meta = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitcodefencedfence() {\n    // Exit if this is the closing fence.\n    if (this.data.flowCodeInside) return\n    this.buffer()\n    this.data.flowCodeInside = true\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitcodefenced() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.value = data.replace(/^(\\r?\\n|\\r)|(\\r?\\n|\\r)$/g, '')\n    this.data.flowCodeInside = undefined\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitcodeindented() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.value = data.replace(/(\\r?\\n|\\r)$/g, '')\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitdefinitionlabelstring(token) {\n    const label = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.label = label\n    node.identifier = normalizeIdentifier(\n      this.sliceSerialize(token)\n    ).toLowerCase()\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitdefinitiontitlestring() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.title = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitdefinitiondestinationstring() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.url = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitatxheadingsequence(token) {\n    const node = this.stack[this.stack.length - 1]\n    if (!node.depth) {\n      const depth = this.sliceSerialize(token).length\n      node.depth = depth\n    }\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitsetextheadingtext() {\n    this.data.setextHeadingSlurpLineEnding = true\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitsetextheadinglinesequence(token) {\n    const node = this.stack[this.stack.length - 1]\n    node.depth = this.sliceSerialize(token).codePointAt(0) === 61 ? 1 : 2\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitsetextheading() {\n    this.data.setextHeadingSlurpLineEnding = undefined\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onenterdata(token) {\n    const node = this.stack[this.stack.length - 1]\n    /** @type {Array<Nodes>} */\n    const siblings = node.children\n    let tail = siblings[siblings.length - 1]\n    if (!tail || tail.type !== 'text') {\n      // Add a new text node.\n      tail = text()\n      tail.position = {\n        start: point(token.start),\n        // @ts-expect-error: we’ll add `end` later.\n        end: undefined\n      }\n      siblings.push(tail)\n    }\n    this.stack.push(tail)\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitdata(token) {\n    const tail = this.stack.pop()\n    tail.value += this.sliceSerialize(token)\n    tail.position.end = point(token.end)\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitlineending(token) {\n    const context = this.stack[this.stack.length - 1]\n    // If we’re at a hard break, include the line ending in there.\n    if (this.data.atHardBreak) {\n      const tail = context.children[context.children.length - 1]\n      tail.position.end = point(token.end)\n      this.data.atHardBreak = undefined\n      return\n    }\n    if (\n      !this.data.setextHeadingSlurpLineEnding &&\n      config.canContainEols.includes(context.type)\n    ) {\n      onenterdata.call(this, token)\n      onexitdata.call(this, token)\n    }\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexithardbreak() {\n    this.data.atHardBreak = true\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexithtmlflow() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.value = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexithtmltext() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.value = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitcodetext() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.value = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitlink() {\n    const node = this.stack[this.stack.length - 1]\n    // Note: there are also `identifier` and `label` fields on this link node!\n    // These are used / cleaned here.\n    // To do: clean.\n    if (this.data.inReference) {\n      /** @type {ReferenceType} */\n      const referenceType = this.data.referenceType || 'shortcut'\n      node.type += 'Reference'\n      // @ts-expect-error: mutate.\n      node.referenceType = referenceType\n      // @ts-expect-error: mutate.\n      delete node.url\n      delete node.title\n    } else {\n      // @ts-expect-error: mutate.\n      delete node.identifier\n      // @ts-expect-error: mutate.\n      delete node.label\n    }\n    this.data.referenceType = undefined\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitimage() {\n    const node = this.stack[this.stack.length - 1]\n    // Note: there are also `identifier` and `label` fields on this link node!\n    // These are used / cleaned here.\n    // To do: clean.\n    if (this.data.inReference) {\n      /** @type {ReferenceType} */\n      const referenceType = this.data.referenceType || 'shortcut'\n      node.type += 'Reference'\n      // @ts-expect-error: mutate.\n      node.referenceType = referenceType\n      // @ts-expect-error: mutate.\n      delete node.url\n      delete node.title\n    } else {\n      // @ts-expect-error: mutate.\n      delete node.identifier\n      // @ts-expect-error: mutate.\n      delete node.label\n    }\n    this.data.referenceType = undefined\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitlabeltext(token) {\n    const string = this.sliceSerialize(token)\n    const ancestor = this.stack[this.stack.length - 2]\n    // @ts-expect-error: stash this on the node, as it might become a reference\n    // later.\n    ancestor.label = decodeString(string)\n    // @ts-expect-error: same as above.\n    ancestor.identifier = normalizeIdentifier(string).toLowerCase()\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitlabel() {\n    const fragment = this.stack[this.stack.length - 1]\n    const value = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    // Assume a reference.\n    this.data.inReference = true\n    if (node.type === 'link') {\n      /** @type {Array<PhrasingContent>} */\n      const children = fragment.children\n      node.children = children\n    } else {\n      node.alt = value\n    }\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitresourcedestinationstring() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.url = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitresourcetitlestring() {\n    const data = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    node.title = data\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitresource() {\n    this.data.inReference = undefined\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onenterreference() {\n    this.data.referenceType = 'collapsed'\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitreferencestring(token) {\n    const label = this.resume()\n    const node = this.stack[this.stack.length - 1]\n    // @ts-expect-error: stash this on the node, as it might become a reference\n    // later.\n    node.label = label\n    // @ts-expect-error: same as above.\n    node.identifier = normalizeIdentifier(\n      this.sliceSerialize(token)\n    ).toLowerCase()\n    this.data.referenceType = 'full'\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n\n  function onexitcharacterreferencemarker(token) {\n    this.data.characterReferenceType = token.type\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitcharacterreferencevalue(token) {\n    const data = this.sliceSerialize(token)\n    const type = this.data.characterReferenceType\n    /** @type {string} */\n    let value\n    if (type) {\n      value = decodeNumericCharacterReference(\n        data,\n        type === 'characterReferenceMarkerNumeric' ? 10 : 16\n      )\n      this.data.characterReferenceType = undefined\n    } else {\n      const result = decodeNamedCharacterReference(data)\n      value = result\n    }\n    const tail = this.stack.pop()\n    tail.value += value\n    tail.position.end = point(token.end)\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitautolinkprotocol(token) {\n    onexitdata.call(this, token)\n    const node = this.stack[this.stack.length - 1]\n    node.url = this.sliceSerialize(token)\n  }\n\n  /**\n   * @this {CompileContext}\n   * @type {Handle}\n   */\n  function onexitautolinkemail(token) {\n    onexitdata.call(this, token)\n    const node = this.stack[this.stack.length - 1]\n    node.url = 'mailto:' + this.sliceSerialize(token)\n  }\n\n  //\n  // Creaters.\n  //\n\n  /** @returns {Blockquote} */\n  function blockQuote() {\n    return {\n      type: 'blockquote',\n      children: []\n    }\n  }\n\n  /** @returns {Code} */\n  function codeFlow() {\n    return {\n      type: 'code',\n      lang: null,\n      meta: null,\n      value: ''\n    }\n  }\n\n  /** @returns {InlineCode} */\n  function codeText() {\n    return {\n      type: 'inlineCode',\n      value: ''\n    }\n  }\n\n  /** @returns {Definition} */\n  function definition() {\n    return {\n      type: 'definition',\n      identifier: '',\n      label: null,\n      title: null,\n      url: ''\n    }\n  }\n\n  /** @returns {Emphasis} */\n  function emphasis() {\n    return {\n      type: 'emphasis',\n      children: []\n    }\n  }\n\n  /** @returns {Heading} */\n  function heading() {\n    return {\n      type: 'heading',\n      // @ts-expect-error `depth` will be set later.\n      depth: 0,\n      children: []\n    }\n  }\n\n  /** @returns {Break} */\n  function hardBreak() {\n    return {\n      type: 'break'\n    }\n  }\n\n  /** @returns {Html} */\n  function html() {\n    return {\n      type: 'html',\n      value: ''\n    }\n  }\n\n  /** @returns {Image} */\n  function image() {\n    return {\n      type: 'image',\n      title: null,\n      url: '',\n      alt: null\n    }\n  }\n\n  /** @returns {Link} */\n  function link() {\n    return {\n      type: 'link',\n      title: null,\n      url: '',\n      children: []\n    }\n  }\n\n  /**\n   * @param {Token} token\n   * @returns {List}\n   */\n  function list(token) {\n    return {\n      type: 'list',\n      ordered: token.type === 'listOrdered',\n      start: null,\n      spread: token._spread,\n      children: []\n    }\n  }\n\n  /**\n   * @param {Token} token\n   * @returns {ListItem}\n   */\n  function listItem(token) {\n    return {\n      type: 'listItem',\n      spread: token._spread,\n      checked: null,\n      children: []\n    }\n  }\n\n  /** @returns {Paragraph} */\n  function paragraph() {\n    return {\n      type: 'paragraph',\n      children: []\n    }\n  }\n\n  /** @returns {Strong} */\n  function strong() {\n    return {\n      type: 'strong',\n      children: []\n    }\n  }\n\n  /** @returns {Text} */\n  function text() {\n    return {\n      type: 'text',\n      value: ''\n    }\n  }\n\n  /** @returns {ThematicBreak} */\n  function thematicBreak() {\n    return {\n      type: 'thematicBreak'\n    }\n  }\n}\n\n/**\n * Copy a point-like value.\n *\n * @param {Point} d\n *   Point-like value.\n * @returns {Point}\n *   unist point.\n */\nfunction point(d) {\n  return {\n    line: d.line,\n    column: d.column,\n    offset: d.offset\n  }\n}\n\n/**\n * @param {Config} combined\n * @param {Array<Array<Extension> | Extension>} extensions\n * @returns {undefined}\n */\nfunction configure(combined, extensions) {\n  let index = -1\n  while (++index < extensions.length) {\n    const value = extensions[index]\n    if (Array.isArray(value)) {\n      configure(combined, value)\n    } else {\n      extension(combined, value)\n    }\n  }\n}\n\n/**\n * @param {Config} combined\n * @param {Extension} extension\n * @returns {undefined}\n */\nfunction extension(combined, extension) {\n  /** @type {keyof Extension} */\n  let key\n  for (key in extension) {\n    if (own.call(extension, key)) {\n      switch (key) {\n        case 'canContainEols': {\n          const right = extension[key]\n          if (right) {\n            combined[key].push(...right)\n          }\n          break\n        }\n        case 'transforms': {\n          const right = extension[key]\n          if (right) {\n            combined[key].push(...right)\n          }\n          break\n        }\n        case 'enter':\n        case 'exit': {\n          const right = extension[key]\n          if (right) {\n            Object.assign(combined[key], right)\n          }\n          break\n        }\n        // No default\n      }\n    }\n  }\n}\n\n/** @type {OnEnterError} */\nfunction defaultOnError(left, right) {\n  if (left) {\n    throw new Error(\n      'Cannot close `' +\n        left.type +\n        '` (' +\n        stringifyPosition({\n          start: left.start,\n          end: left.end\n        }) +\n        '): a different token (`' +\n        right.type +\n        '`, ' +\n        stringifyPosition({\n          start: right.start,\n          end: right.end\n        }) +\n        ') is open'\n    )\n  } else {\n    throw new Error(\n      'Cannot close document, a token (`' +\n        right.type +\n        '`, ' +\n        stringifyPosition({\n          start: right.start,\n          end: right.end\n        }) +\n        ') is still open'\n    )\n  }\n}\n",
+      "start": 1712268127583,
+      "end": 1712268127621,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127621,
+      "end": 1712268127621,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127621,
+      "end": 1712268127622,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127622,
+      "end": 1712268127622,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127622,
+      "end": 1712268127622,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127622,
+      "end": 1712268127623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127623,
+      "end": 1712268127623,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-site/node_modules/micromark-extension-gfm-strikethrough/lib/syntax.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * @typedef {import('micromark-util-types').Event} Event\n * @typedef {import('micromark-util-types').Extension} Extension\n * @typedef {import('micromark-util-types').Resolver} Resolver\n * @typedef {import('micromark-util-types').State} State\n * @typedef {import('micromark-util-types').Token} Token\n * @typedef {import('micromark-util-types').TokenizeContext} TokenizeContext\n * @typedef {import('micromark-util-types').Tokenizer} Tokenizer\n *\n * @typedef Options\n *   Configuration (optional).\n * @property {boolean | null | undefined} [singleTilde=true]\n *   Whether to support strikethrough with a single tilde (default: `true`).\n *\n *   Single tildes work on github.com, but are technically prohibited by the\n *   GFM spec.\n */\n\nimport {splice} from 'micromark-util-chunked'\nimport {classifyCharacter} from 'micromark-util-classify-character'\nimport {resolveAll} from 'micromark-util-resolve-all'\n/**\n * Create an extension for `micromark` to enable GFM strikethrough syntax.\n *\n * @param {Options | null | undefined} [options={}]\n *   Configuration.\n * @returns {Extension}\n *   Extension for `micromark` that can be passed in `extensions`, to\n *   enable GFM strikethrough syntax.\n */\nexport function gfmStrikethrough(options) {\n  const options_ = options || {}\n  let single = options_.singleTilde\n  const tokenizer = {\n    tokenize: tokenizeStrikethrough,\n    resolveAll: resolveAllStrikethrough\n  }\n  if (single === null || single === undefined) {\n    single = true\n  }\n  return {\n    text: {\n      [126]: tokenizer\n    },\n    insideSpan: {\n      null: [tokenizer]\n    },\n    attentionMarkers: {\n      null: [126]\n    }\n  }\n\n  /**\n   * Take events and resolve strikethrough.\n   *\n   * @type {Resolver}\n   */\n  function resolveAllStrikethrough(events, context) {\n    let index = -1\n\n    // Walk through all events.\n    while (++index < events.length) {\n      // Find a token that can close.\n      if (\n        events[index][0] === 'enter' &&\n        events[index][1].type === 'strikethroughSequenceTemporary' &&\n        events[index][1]._close\n      ) {\n        let open = index\n\n        // Now walk back to find an opener.\n        while (open--) {\n          // Find a token that can open the closer.\n          if (\n            events[open][0] === 'exit' &&\n            events[open][1].type === 'strikethroughSequenceTemporary' &&\n            events[open][1]._open &&\n            // If the sizes are the same:\n            events[index][1].end.offset - events[index][1].start.offset ===\n              events[open][1].end.offset - events[open][1].start.offset\n          ) {\n            events[index][1].type = 'strikethroughSequence'\n            events[open][1].type = 'strikethroughSequence'\n\n            /** @type {Token} */\n            const strikethrough = {\n              type: 'strikethrough',\n              start: Object.assign({}, events[open][1].start),\n              end: Object.assign({}, events[index][1].end)\n            }\n\n            /** @type {Token} */\n            const text = {\n              type: 'strikethroughText',\n              start: Object.assign({}, events[open][1].end),\n              end: Object.assign({}, events[index][1].start)\n            }\n\n            // Opening.\n            /** @type {Array<Event>} */\n            const nextEvents = [\n              ['enter', strikethrough, context],\n              ['enter', events[open][1], context],\n              ['exit', events[open][1], context],\n              ['enter', text, context]\n            ]\n            const insideSpan = context.parser.constructs.insideSpan.null\n            if (insideSpan) {\n              // Between.\n              splice(\n                nextEvents,\n                nextEvents.length,\n                0,\n                resolveAll(insideSpan, events.slice(open + 1, index), context)\n              )\n            }\n\n            // Closing.\n            splice(nextEvents, nextEvents.length, 0, [\n              ['exit', text, context],\n              ['enter', events[index][1], context],\n              ['exit', events[index][1], context],\n              ['exit', strikethrough, context]\n            ])\n            splice(events, open - 1, index - open + 3, nextEvents)\n            index = open + nextEvents.length - 2\n            break\n          }\n        }\n      }\n    }\n    index = -1\n    while (++index < events.length) {\n      if (events[index][1].type === 'strikethroughSequenceTemporary') {\n        events[index][1].type = 'data'\n      }\n    }\n    return events\n  }\n\n  /**\n   * @this {TokenizeContext}\n   * @type {Tokenizer}\n   */\n  function tokenizeStrikethrough(effects, ok, nok) {\n    const previous = this.previous\n    const events = this.events\n    let size = 0\n    return start\n\n    /** @type {State} */\n    function start(code) {\n      if (\n        previous === 126 &&\n        events[events.length - 1][1].type !== 'characterEscape'\n      ) {\n        return nok(code)\n      }\n      effects.enter('strikethroughSequenceTemporary')\n      return more(code)\n    }\n\n    /** @type {State} */\n    function more(code) {\n      const before = classifyCharacter(previous)\n      if (code === 126) {\n        // If this is the third marker, exit.\n        if (size > 1) return nok(code)\n        effects.consume(code)\n        size++\n        return more\n      }\n      if (size < 2 && !single) return nok(code)\n      const token = effects.exit('strikethroughSequenceTemporary')\n      const after = classifyCharacter(code)\n      token._open = !after || (after === 2 && Boolean(before))\n      token._close = !before || (before === 2 && Boolean(after))\n      return ok(code)\n    }\n  }\n}\n",
+      "start": 1712268127820,
+      "end": 1712268127833,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1712268127833,
+      "end": 1712268127833,
+      "order": "normal"
+    }
+  ]
+}
