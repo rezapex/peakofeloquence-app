@@ -2,7 +2,7 @@ export default defineAppConfig({
   ui: {
     primary: 'yellow',
     gray: 'stone',
-    button: {
+    button: { 
       rounded: 'rounded-full',
       default: {
         size: 'md'

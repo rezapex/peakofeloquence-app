@@ -5,7 +5,7 @@
       <NuxtImg
         width="1792"
         height="1024" 
-        src="/landing.webp"
+        src="public/landing.webp"
         class="absolute inset-0 h-full w-full object-cover rounded-lg" 
       />
     </div>
