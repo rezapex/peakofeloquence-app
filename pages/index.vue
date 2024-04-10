@@ -5,7 +5,7 @@ if (!page.value) {
 }
 
 useSeoMeta({
-  titleTemplate: '',
+  titleTemplate: 'PeakofEloquence.org',
   title: page.value.title,
   ogTitle: page.value.title,
   description: page.value.description,

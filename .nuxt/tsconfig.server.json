@@ -15,6 +15,22 @@
       "#imports": [
         "./types/nitro-imports"
       ],
+      "~/*": [
+        "../*",
+        "../*"
+      ],
+      "@/*": [
+        "../*",
+        "../*"
+      ],
+      "~~/*": [
+        "../*",
+        "../*"
+      ],
+      "@@/*": [
+        "../*",
+        "../*"
+      ],
       "nitropack": [
         "../node_modules/nitropack"
       ],
@@ -24,11 +40,26 @@
       "h3": [
         "../node_modules/h3"
       ],
+      "consola": [
+        "../node_modules/consola"
+      ],
+      "ofetch": [
+        "../node_modules/ofetch"
+      ],
       "@unhead/vue": [
         "../node_modules/@unhead/vue"
       ],
       "vue": [
         "../node_modules/vue"
+      ],
+      "@vue/runtime-core": [
+        "../node_modules/@vue/runtime-core"
+      ],
+      "@vue/compiler-sfc": [
+        "../node_modules/@vue/compiler-sfc"
+      ],
+      "@vue/runtime-dom": [
+        "../node_modules/@vue/runtime-dom"
       ],
       "vue-router": [
         "../node_modules/vue-router"
@@ -39,38 +70,20 @@
       "nuxt": [
         "../node_modules/nuxt"
       ],
-      "consola": [
-        "../node_modules/consola"
-      ],
-      "ofetch": [
-        "../node_modules/ofetch"
-      ],
-      "#paths": [
+      "#internal/nuxt/paths": [
         "../node_modules/nuxt/dist/core/runtime/nitro/paths"
       ],
       "~": [
         "./.."
       ],
-      "~/*": [
-        "../*"
-      ],
       "@": [
         "./.."
-      ],
-      "@/*": [
-        "../*"
       ],
       "~~": [
         "./.."
       ],
-      "~~/*": [
-        "../*"
-      ],
       "@@": [
         "./.."
-      ],
-      "@@/*": [
-        "../*"
       ],
       "assets": [
         "../assets"
@@ -96,6 +109,12 @@
       "#mdc-imports": [
         "./mdc-imports"
       ],
+      "#image": [
+        "../node_modules/@nuxt/image/dist/runtime"
+      ],
+      "#image/*": [
+        "../node_modules/@nuxt/image/dist/runtime/*"
+      ],
       "#ui": [
         "../node_modules/@nuxt/ui/dist/runtime"
       ],
@@ -117,12 +136,6 @@
       "#tailwind-config/*": [
         "./tailwind.config/*"
       ],
-      "#nuxt-component-meta": [
-        "./component-meta"
-      ],
-      "#nuxt-component-meta/types": [
-        "./component-meta.d"
-      ],
       "#internal/nuxt-site-config": [
         "../node_modules/nuxt-site-config/dist/runtime/nitro/composables"
       ],
@@ -139,13 +152,14 @@
     "../node_modules/@nuxt/ui-pro/modules/pro/runtime/server",
     "../node_modules/@nuxtjs/mdc/runtime/server",
     "../node_modules/@nuxt/content/runtime/server",
+    "../node_modules/@nuxt/image/runtime/server",
     "../node_modules/nuxt-icon/runtime/server",
     "../node_modules/@nuxtjs/color-mode/runtime/server",
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxt/ui/runtime/server",
     "../node_modules/@nuxt/fonts/runtime/server",
-    "../node_modules/nuxt-component-meta/runtime/server",
     "../node_modules/@nuxthq/studio/runtime/server",
+    "../node_modules/@vueuse/nuxt/runtime/server",
     "../node_modules/nuxt-site-config/dist/module.mjs/runtime/server",
     "../node_modules/nuxt-og-image/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",

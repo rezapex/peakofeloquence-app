@@ -19,9 +19,9 @@ useHead({
 })
 
 useSeoMeta({
-  titleTemplate: '%s - Nuxt UI Pro - SaaS template',
-  ogImage: 'https://saas-template.nuxt.dev/social-card.png',
-  twitterImage: 'https://saas-template.nuxt.dev/social-card.png',
+  titleTemplate: 'peakofeloquence.org',
+  ogImage: 'imgs/landing.webp',
+  twitterImage: '/landing.webp',
   twitterCard: 'summary_large_image'
 })
 </script>

@@ -1,12 +1,12 @@
 
 import type { CustomAppConfig } from 'nuxt/schema'
 import type { Defu } from 'defu'
-import cfg0 from "/Users/rezajafar/peakofeloquence-site/app.config"
-import cfg1 from "/Users/rezajafar/peakofeloquence-site/node_modules/@nuxt/ui-pro/app.config"
+import cfg0 from "/Users/rezajafar/peakofeloquence-app/app.config"
+import cfg1 from "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/app.config"
 
 declare const inlineConfig = {
   "nuxt": {
-    "buildId": "ac309457-8feb-4b4b-9cf4-b7e2df2bf8a0"
+    "buildId": "dev"
   },
   "ui": {
     "primary": "green",
