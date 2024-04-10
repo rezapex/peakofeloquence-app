@@ -10,7 +10,7 @@ hero:
     icon: i-heroicons-book-open-20-solid
   links:
     - label: Start Exploring
-      to: '/sermons'
+      to: '/docs'
       size: xl
       color: black
       icon: i-heroicons-arrow-right-20-solid
@@ -19,7 +19,7 @@ hero:
       icon: i-heroicons-information-circle-20-solid
       size: xl
       color: gray
-      to: /about
+      to: /docs
 sections:
   - title: The Profound Teachings of Nahj al-Balagha
     description: Nahj al-Balagha is a collection of sermons, letters, and sayings attributed to Ali ibn Abi Talib, offering invaluable insights into Islamic principles and wisdom.
