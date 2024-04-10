@@ -18,14 +18,18 @@ const links = [{
 <template>
   <UHeader :links="links">
     <template #logo>
-      Peak of Eloquence <UBadge label=".org" variant="subtle" class="mb-0.5" />
+      <div class="flex items-center">
+        <img src="/favicon.ico" alt="Logo" class="h-8 w-auto mr-2" />
+        <span>
+          Peak of Eloquence
+          <UBadge label=".org" variant="subtle" class="mb-0.5" />
+        </span>
+      </div>
     </template>
-
-    <!-- <template #right>
+    <template #right>
       <UButton label="Sign in" color="gray" to="/login" />
       <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" />
-    </template> -->
-
+    </template>
     <template #panel>
       <UNavigationTree :links="mapContentNavigation(navigation)" default-open />
     </template>

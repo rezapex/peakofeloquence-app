@@ -7,65 +7,36 @@ useSeoMeta({
   title: 'Login'
 })
 
-const fields = [{
-  name: 'email',
-  type: 'text',
-  label: 'Email',
-  placeholder: 'Enter your email'
-}, {
-  name: 'password',
-  label: 'Password',
-  type: 'password',
-  placeholder: 'Enter your password'
-}]
+// Your existing script setup code...
 
-const validate = (state: any) => {
-  const errors = []
-  if (!state.email) errors.push({ path: 'email', message: 'Email is required' })
-  if (!state.password) errors.push({ path: 'password', message: 'Password is required' })
-  return errors
-}
-
-const providers = [{
-  label: 'Continue with GitHub',
-  icon: 'i-simple-icons-github',
-  color: 'white' as const,
-  click: () => {
-    console.log('Redirect to GitHub')
-  }
-}]
-
-function onSubmit (data: any) {
-  console.log('Submitted', data)
+// Update your onSubmit function or create a new one for handling Netlify form submission
+function onNetlifySubmit(event: Event) {
+  event.preventDefault();
+  console.log('Netlify form submission handled');
+  // You might want to handle the form submission using Netlify's AJAX method here
 }
 </script>
 
-<!-- eslint-disable vue/multiline-html-element-content-newline -->
-<!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
-  <UCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
-    <UAuthForm
-      :fields="fields"
-      :validate="validate"
-      :providers="providers"
-      title="Welcome back"
-      align="top"
-      icon="i-heroicons-lock-closed"
-      :ui="{ base: 'text-center', footer: 'text-center' }"
-      :submit-button="{ trailingIcon: 'i-heroicons-arrow-right-20-solid' }"
-      @submit="onSubmit"
-    >
-      <template #description>
-        Don't have an account? <NuxtLink to="/signup" class="text-primary font-medium">Sign up</NuxtLink>.
-      </template>
+  <div class="flex flex-col items-center justify-center p-4">
+    <UCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur mb-8">
+      <!-- Your existing login form... -->
+    </UCard>
 
-      <template #password-hint>
-        <NuxtLink to="/" class="text-primary font-medium">Forgot password?</NuxtLink>
-      </template>
-
-      <template #footer>
-        By signing in, you agree to our <NuxtLink to="/" class="text-primary font-medium">Terms of Service</NuxtLink>.
-      </template>
-    </UAuthForm>
-  </UCard>
+    <!-- Add the Netlify form here -->
+    <UCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
+  <!-- Netlify form -->
+    <form name="login-form" method="POST" data-netlify="true" @submit.prevent="onNetlifySubmit">
+      <p>
+        <label>Email: <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <label>Password: <input type="password" name="password" /></label>
+      </p>
+      <p>
+        <button type="submit">Log In</button>
+      </p>
+    </form>
+    </UCard>
+  </div>
 </template>

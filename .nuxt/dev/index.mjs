@@ -247,7 +247,7 @@ const _inlineRuntimeConfig = {
           "to": "/docs/getting-started",
           "statusCode": 307
         },
-        "prerender": false
+        "prerender": true
       },
       "/_nuxt/builds/meta/**": {
         "headers": {

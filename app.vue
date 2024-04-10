@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
-//const color = computed(() => colorMode.value === 'dark' ? '#111827' : 'white')
-const color = computed(() => colorMode.value === '' ? '#' : '#')
+const color = computed(() => colorMode.value === 'dark' ? '#111827' : 'white')
+//const color = computed(() => colorMode.value === '' ? '#' : '#')
 
 useHead({
   meta: [
@@ -20,8 +20,8 @@ useHead({
 
 useSeoMeta({
   titleTemplate: 'peakofeloquence.org',
-  ogImage: '/landing.png',
-  twitterImage: '/landing/png',
+  ogImage: '/landing.jpg',
+  twitterImage: '/landing.jpg',
   twitterCard: 'summary_large_image'
 })
 </script>
