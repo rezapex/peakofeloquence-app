@@ -20,8 +20,8 @@ useHead({
 
 useSeoMeta({
   titleTemplate: 'peakofeloquence.org',
-  ogImage: 'imgs/landing.webp',
-  twitterImage: '/landing.webp',
+  ogImage: '/landing.png',
+  twitterImage: '/landing/png',
   twitterCard: 'summary_large_image'
 })
 </script>
