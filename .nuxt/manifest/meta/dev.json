@@ -1,1 +1,1 @@
-{"id":"dev","timestamp":1712782419186,"matcher":{"static":{"/api/search.json":{"prerender":true},"/docs":{"redirect":"/docs/getting-started"}},"wildcard":{},"dynamic":{}},"prerendered":[]}
+{"id":"dev","timestamp":1712784772217,"matcher":{"static":{"/api/search.json":{"prerender":true},"/docs":{"redirect":"/docs/getting-started"}},"wildcard":{},"dynamic":{}},"prerendered":[]}
