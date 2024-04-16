@@ -1,0 +1,1 @@
+{"parsed":{"_id":"content:1.docs:3. letters:letters:letter_60.txt","body":"[ An order to Maalik al-Ashtar. ]"},"hash":"QTAu2IiFnb"}
