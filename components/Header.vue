@@ -8,13 +8,13 @@ const links = [{
   to: '/docs'
 }, {
   label: 'Sermons',
-  to: '/sermons'
+  to: '/sermons/sermon_1'
 }, {
   label: 'Letters',
-  to: '/letters'
+  to: '/letters/letter_1'
 }, {
   label: 'Sayings',
-  to: '/sayings'
+  to: '/sayings/sayings'
 }]
 </script>
 
