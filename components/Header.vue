@@ -12,9 +12,13 @@ const links = [{
 }, {
   label: 'Letters',
   to: '/letters/letter_1'
-}, {
+},{
   label: 'Sayings',
   to: '/sayings/sayings'
+}, 
+{
+  label: 'Resources',
+  to: '/resources/'
 }]
 </script>
 
@@ -30,8 +34,8 @@ const links = [{
       </div>
     </template>
     <template #right>
-      <UButton label="Sign in" color="gray" to="/login" />
-      <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" />
+      <!-- <UButton label="Sign in" color="gray" to="/login" /> -->
+      <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" /> -->
     </template>
     <template #panel>
       <UNavigationTree :links="mapContentNavigation(navigation)" default-open />
