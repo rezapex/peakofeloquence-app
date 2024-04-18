@@ -1,1 +1,0 @@
-{"parsed":{"_id":"content:dev:nahj:bin:pip3.12","body":"#!/Users/rezajafar/peakofeloquence-app/content/dev/nahj/bin/python3.12\n# -*- coding: utf-8 -*-\nimport re\nimport sys\nfrom pip._internal.cli.main import main\nif __name__ == '__main__':\n    sys.argv[0] = re.sub(r'(-script\\.pyw|\\.exe)?$', '', sys.argv[0])\n    sys.exit(main())\n"},"hash":"rrgy3lqPTt"}
