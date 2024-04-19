@@ -34,7 +34,7 @@ const links = [{
       </div>
     </template>
     <template #right>
-      <!-- <UButton label="Sign in" color="gray" to="/login" /> -->
+      <UButton label="Donate" color="gray" to="/donate" />
       <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" /> -->
     </template>
     <template #panel>

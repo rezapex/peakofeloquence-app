@@ -5481,6 +5481,11 @@ koa@^2.14.2:
     type-is "^1.6.16"
     vary "^1.1.2"
 
+kofi@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/kofi/-/kofi-0.6.1.tgz#de3896733344b445646c55ebcce28a75154affd1"
+  integrity sha512-YKuuPTVSUVm8jl3+WjI6/TMA01LoE9xBf0R3Ui/ESk5AW89YoP6g4sdan1UuykTN9XAPfjHHoSViYl9x17vXAA==
+
 kolorist@^1.8.0:
   version "1.8.0"
   resolved "https://registry.npmjs.org/kolorist/-/kolorist-1.8.0.tgz"

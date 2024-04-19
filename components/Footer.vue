@@ -2,7 +2,8 @@
 const links = [{
   label: 'Resources',
   children: [{
-    label: 'Help center'
+    label: 'Donate',
+    to: 'https://ko-fi.com/peakofeloquence'
   }, {
     label: 'Docs'
   }, {

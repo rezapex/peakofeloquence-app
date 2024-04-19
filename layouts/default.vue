@@ -9,7 +9,11 @@ provide('navigation', navigation)
 
 <template>
   <div>
+      <!-- Header-->
     <Header />
+
+    <!-- Ko-fi Donation Widget Iframe -->
+    <!-- <KoFiButton /> -->
 
     <UMain>
       <slot />

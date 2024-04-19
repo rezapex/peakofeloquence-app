@@ -2,6 +2,7 @@
 interface _GlobalComponents {
       'Footer': typeof import("../components/Footer.vue")['default']
     'Header': typeof import("../components/Header.vue")['default']
+    'KoFiButton': typeof import("../components/KoFiButton.vue")['default']
     'Placeholder': typeof import("../components/Placeholder.vue")['default']
     'UAside': typeof import("../node_modules/@nuxt/ui-pro/components/aside/Aside.vue")['default']
     'UAsideLinks': typeof import("../node_modules/@nuxt/ui-pro/components/aside/AsideLinks.vue")['default']
@@ -205,6 +206,7 @@ interface _GlobalComponents {
     'USlideovers': typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
       'LazyFooter': typeof import("../components/Footer.vue")['default']
     'LazyHeader': typeof import("../components/Header.vue")['default']
+    'LazyKoFiButton': typeof import("../components/KoFiButton.vue")['default']
     'LazyPlaceholder': typeof import("../components/Placeholder.vue")['default']
     'LazyUAside': typeof import("../node_modules/@nuxt/ui-pro/components/aside/Aside.vue")['default']
     'LazyUAsideLinks': typeof import("../node_modules/@nuxt/ui-pro/components/aside/AsideLinks.vue")['default']
@@ -422,6 +424,7 @@ declare module 'vue' {
 
 export const Footer: typeof import("../components/Footer.vue")['default']
 export const Header: typeof import("../components/Header.vue")['default']
+export const KoFiButton: typeof import("../components/KoFiButton.vue")['default']
 export const Placeholder: typeof import("../components/Placeholder.vue")['default']
 export const UAside: typeof import("../node_modules/@nuxt/ui-pro/components/aside/Aside.vue")['default']
 export const UAsideLinks: typeof import("../node_modules/@nuxt/ui-pro/components/aside/AsideLinks.vue")['default']
@@ -625,6 +628,7 @@ export const UModals: typeof import("../node_modules/nuxt/dist/app/components/se
 export const USlideovers: typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
 export const LazyFooter: typeof import("../components/Footer.vue")['default']
 export const LazyHeader: typeof import("../components/Header.vue")['default']
+export const LazyKoFiButton: typeof import("../components/KoFiButton.vue")['default']
 export const LazyPlaceholder: typeof import("../components/Placeholder.vue")['default']
 export const LazyUAside: typeof import("../node_modules/@nuxt/ui-pro/components/aside/Aside.vue")['default']
 export const LazyUAsideLinks: typeof import("../node_modules/@nuxt/ui-pro/components/aside/AsideLinks.vue")['default']
