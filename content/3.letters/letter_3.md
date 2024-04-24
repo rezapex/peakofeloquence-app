@@ -1,6 +1,9 @@
 ---
 description: Letter 3 of Nahjul Balagha
 ---
+
+# Letter 3 of Nahjul Balagha
+
 Shurayh bin Haarith had been holding an important post during the previous regimes. Imam
 Ali (a) had also appointed him as a Qadhi (Chief Judge) of Kufa. It was brought to the notice
 of Imam Ali (a) that he had purchased a house for himself in the city (rather a costly and
