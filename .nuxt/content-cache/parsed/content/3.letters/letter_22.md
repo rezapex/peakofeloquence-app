@@ -1,1 +1,15 @@
-{"parsed":{"_path":"/letters/letter_22","_dir":"letters","_draft":false,"_partial":false,"_locale":"","title":"Letter22","description":"The following is a letter to one of his governors. It speaks volumes about the ways of Divine Rule. It shows how Imam Ali (a) was training the Muslims to behave tolerantly towards other religions, how...","body":{"type":"root","children":[{"type":"element","tag":"p","props":{},"children":[{"type":"text","value":"After invoking Allah and praising the Holy Prophet (s) be it known to you that villagers and\nfarmers of the provinces under you, complain of your harshness, arrogance and cruelty. They\ncomplain that you consider them mean, humble and insignificant and treat them scornfully. I\ndeliberated over their complaint and found that if, on account of their paganism they do not\ndeserve any favourable treatment of extra privileges, they do not deserve to be treated cruelly\nand harshly either. They are governed by us, they have made certain agreements with us and\nwe are obliged to respect and honour the terms of those agreements.\nTherefore, be kind to them in future, tolerate them and give them due respect, but at the same\ntime keep your prestige and guard well the position and honour of the authority which you\nhold. Always govern with a soft but strong hand. Treat them as they individually deserve,\nkindly or harshly and with respect or with contempt."}]}],"toc":{"title":"","searchDepth":2,"depth":2,"links":[]}},"_type":"markdown","_id":"content:3.letters:letter_22.md","_source":"content","_file":"3.letters/letter_22.md","_extension":"md"},"hash":"k9cx5akOQg"}
+---
+description: The following is a letter to one of his governors. It speaks volumes about the ways of Divine Rule. It shows how Imam Ali (a) was training the Muslims to behave tolerantly towards other religions, how...
+---
+
+After invoking Allah and praising the Holy Prophet (s) be it known to you that villagers and 
+farmers of the provinces under you, complain of your harshness, arrogance and cruelty. They 
+complain that you consider them mean, humble and insignificant and treat them scornfully. I 
+deliberated over their complaint and found that if, on account of their paganism they do not 
+deserve any favourable treatment of extra privileges, they do not deserve to be treated cruelly 
+and harshly either. They are governed by us, they have made certain agreements with us and 
+we are obliged to respect and honour the terms of those agreements. 
+Therefore, be kind to them in future, tolerate them and give them due respect, but at the same 
+time keep your prestige and guard well the position and honour of the authority which you 
+hold. Always govern with a soft but strong hand. Treat them as they individually deserve, 
+kindly or harshly and with respect or with contempt.

@@ -1,1 +1,10 @@
-{"parsed":{"_path":"/letters/letter_8","_dir":"letters","_draft":false,"_partial":false,"_locale":"","title":"Letter8","description":"Jarir bin Abdullah Bajali was sent to Damascus. He was carrying a letter for Mu'awiya. Some delay occurred in his return. Imam Ali (a) felt anxious about his safety and wrote the following letter to h...","body":{"type":"root","children":[{"type":"element","tag":"p","props":{},"children":[{"type":"text","value":"After praising Allah and the Holy Prophet (s) I want to advise you that as soon as you receive\nthis letter of mine, force Mu'awiya for a reply to my letter written to him. Compel him to\ncome to a decision and to give a final reply. He must decide between two things. Either war\nor obedience. If it is going to be a war then I shall get ready to fight against him, and if it is\ngoing to be peace then you must make him swear the oath of allegiance to me and then you\nmust return."}]}],"toc":{"title":"","searchDepth":2,"depth":2,"links":[]}},"_type":"markdown","_id":"content:3.letters:letter_8.md","_source":"content","_file":"3.letters/letter_8.md","_extension":"md"},"hash":"sQAkus5A8D"}
+---
+description: Jarir bin Abdullah Bajali was sent to Damascus. He was carrying a letter for Mu'awiya. Some delay occurred in his return. Imam Ali (a) felt anxious about his safety and wrote the following letter to h...
+---
+
+After praising Allah and the Holy Prophet (s) I want to advise you that as soon as you receive 
+this letter of mine, force Mu'awiya for a reply to my letter written to him. Compel him to 
+come to a decision and to give a final reply. He must decide between two things. Either war 
+or obedience. If it is going to be a war then I shall get ready to fight against him, and if it is 
+going to be peace then you must make him swear the oath of allegiance to me and then you 
+must return.

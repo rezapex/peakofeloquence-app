@@ -1,1 +1,10 @@
-{"parsed":{"_path":"/letters/letter_16","_dir":"letters","_draft":false,"_partial":false,"_locale":"","title":"Letter16","description":"Whenever Imam Ali (a) faced an enemy he invoked Allah in the following words.","body":{"type":"root","children":[{"type":"element","tag":"p","props":{},"children":[{"type":"text","value":"O Lord! Our hearts seek Your Protection, our faces turn to You, our eyes look towards You,\nour feet move towards Your path and our bodies sincerely submit to Your command. O Lord!\nHidden hostilities and concealed spite are exposed, hearts are boiling over with envy and\nmalice. O Lord! We place before You our difficulties, the absence of the Holy Prophet (s)\nfrom amongst us, the abundance of enemies, the disappointments and frustrations which face\nus. O Lord! Let truth prevail and let our people realize justice, honesty and piety of our case."}]}],"toc":{"title":"","searchDepth":2,"depth":2,"links":[]}},"_type":"markdown","_id":"content:3.letters:letter_16.md","_source":"content","_file":"3.letters/letter_16.md","_extension":"md"},"hash":"qupteIjuPl"}
+---
+description: Whenever Imam Ali (a) faced an enemy he invoked Allah in the following words.
+---
+
+O Lord! Our hearts seek Your Protection, our faces turn to You, our eyes look towards You, 
+our feet move towards Your path and our bodies sincerely submit to Your command. O Lord! 
+Hidden hostilities and concealed spite are exposed, hearts are boiling over with envy and 
+malice. O Lord! We place before You our difficulties, the absence of the Holy Prophet (s) 
+from amongst us, the abundance of enemies, the disappointments and frustrations which face 
+us. O Lord! Let truth prevail and let our people realize justice, honesty and piety of our case.

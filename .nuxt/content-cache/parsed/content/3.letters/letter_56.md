@@ -1,1 +1,10 @@
-{"parsed":{"_path":"/letters/letter_56","_dir":"letters","_draft":false,"_partial":false,"_locale":"","title":"Letter56","description":"A letter to Mu'awiya.","body":{"type":"root","children":[{"type":"element","tag":"p","props":{},"children":[{"type":"text","value":"This vicious world will try to turn a man away from religion and from having faith in the\nHereafter. And when a worldly-minded person grasp a little of it, it always opens before him\nvistas of false hopes, ambitions, temptations and greed, so that he is never satisfied with what\nhe has grabbed and will always covet for more. The result often is that he loses what he has\nalready amassed and his plans do not work out. If you take a lesson from the past then you\ncan guard your future very well."}]}],"toc":{"title":"","searchDepth":2,"depth":2,"links":[]}},"_type":"markdown","_id":"content:3.letters:letter_56.md","_source":"content","_file":"3.letters/letter_56.md","_extension":"md"},"hash":"clLorgSSer"}
+---
+description: A letter to Mu'awiya.
+---
+
+This vicious world will try to turn a man away from religion and from having faith in the 
+Hereafter. And when a worldly-minded person grasp a little of it, it always opens before him 
+vistas of false hopes, ambitions, temptations and greed, so that he is never satisfied with what 
+he has grabbed and will always covet for more. The result often is that he loses what he has 
+already amassed and his plans do not work out. If you take a lesson from the past then you 
+can guard your future very well.
