@@ -107,7 +107,7 @@ const defineAppConfig = (config) => config;
 
 const appConfig0 = defineAppConfig({
   ui: {
-    primary: "purple",
+    primary: "yellow",
     gray: "stone",
     button: {
       rounded: "rounded-full",
