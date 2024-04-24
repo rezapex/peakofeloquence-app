@@ -4,7 +4,6 @@ export default defineAppConfig({
     gray: 'stone',
     button: { 
       rounded: 'rounded-full',
-      font: 'sans-serif',
       default: {
         size: 'md'
       }

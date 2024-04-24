@@ -42,5 +42,3 @@ const links = [{
     </template>
   </UHeader>
 </template>
-
-<style> </style>
