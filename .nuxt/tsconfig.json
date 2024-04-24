@@ -125,12 +125,6 @@
       "#tailwind-config/*": [
         "./tailwind.config/*"
       ],
-      "#nuxt-component-meta": [
-        "./component-meta"
-      ],
-      "#nuxt-component-meta/types": [
-        "./component-meta.d"
-      ],
       "#vue-router": [
         "./vue-router-stub"
       ],
@@ -138,7 +132,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/65d1ce74-9425-42a2-9976-c87634e899bf.json"
+        "./manifest/meta/dev.json"
       ],
       "#build": [
         "."
@@ -183,7 +177,6 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime",
     "../node_modules/@nuxt/ui/runtime",
     "../node_modules/@nuxt/fonts/runtime",
-    "../node_modules/nuxt-component-meta/runtime",
     "../node_modules/@nuxthq/studio/runtime",
     "../node_modules/@vueuse/nuxt/runtime",
     "../node_modules/nuxt-site-config/dist/runtime",
@@ -206,7 +199,6 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxt/ui/runtime/server",
     "../node_modules/@nuxt/fonts/runtime/server",
-    "../node_modules/nuxt-component-meta/runtime/server",
     "../node_modules/@nuxthq/studio/runtime/server",
     "../node_modules/@vueuse/nuxt/runtime/server",
     "../node_modules/nuxt-site-config/dist/runtime/server",

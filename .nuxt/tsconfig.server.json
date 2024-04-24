@@ -136,12 +136,6 @@
       "#tailwind-config/*": [
         "./tailwind.config/*"
       ],
-      "#nuxt-component-meta": [
-        "./component-meta"
-      ],
-      "#nuxt-component-meta/types": [
-        "./component-meta.d"
-      ],
       "#internal/nuxt-site-config": [
         "../node_modules/nuxt-site-config/dist/runtime/nitro/composables"
       ],
@@ -164,7 +158,6 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxt/ui/runtime/server",
     "../node_modules/@nuxt/fonts/runtime/server",
-    "../node_modules/nuxt-component-meta/runtime/server",
     "../node_modules/@nuxthq/studio/runtime/server",
     "../node_modules/@vueuse/nuxt/runtime/server",
     "../node_modules/nuxt-site-config/dist/module.mjs/runtime/server",

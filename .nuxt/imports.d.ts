@@ -46,7 +46,6 @@ export { slidOverInjectionKey, useSlideover } from '../node_modules/@nuxt/ui/dis
 export { useTimer } from '../node_modules/@nuxt/ui/dist/runtime/composables/useTimer';
 export { useToast } from '../node_modules/@nuxt/ui/dist/runtime/composables/useToast';
 export { useUI } from '../node_modules/@nuxt/ui/dist/runtime/composables/useUI';
-export { __getComponentMeta, useComponentMeta } from '../node_modules/nuxt-component-meta/dist/runtime/composables/useComponentMeta';
 export { queryContent } from '../node_modules/@nuxt/content/dist/runtime/legacy/composables/query';
 export { useContentHelpers } from '../node_modules/@nuxt/content/dist/runtime/composables/helpers';
 export { useContentHead } from '../node_modules/@nuxt/content/dist/runtime/composables/head';
@@ -63,4 +62,5 @@ export { updateSiteConfig } from '../node_modules/nuxt-site-config/dist/runtime/
 export { useNitroOrigin } from '../node_modules/nuxt-site-config/dist/runtime/composables/useNitroOrigin';
 export { createSitePathResolver, withSiteTrailingSlash, withSiteUrl } from '../node_modules/nuxt-site-config/dist/runtime/composables/utils';
 export { defineOgImageDynamic, defineOgImageStatic, defineOgImage, defineOgImageCached, defineOgImageWithoutCache, defineOgImageScreenshot } from '../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';
+export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
