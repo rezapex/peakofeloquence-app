@@ -1,1 +1,1 @@
-export { default } from "file:///Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

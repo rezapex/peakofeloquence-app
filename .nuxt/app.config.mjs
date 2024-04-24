@@ -40,7 +40,7 @@ if (import.meta.hot) {
   })
 }
 
-import cfg0 from "/Users/rezajafar/peakofeloquence-app/app.config.ts"
-import cfg1 from "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/app.config.ts"
+import cfg0 from "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/app.config.ts"
+import cfg1 from "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/node_modules/@nuxt/ui-pro/app.config.ts"
 
 export default /*@__PURE__*/ defuFn(cfg0, cfg1, inlineConfig)

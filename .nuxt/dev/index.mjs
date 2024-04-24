@@ -3,65 +3,65 @@ import { tmpdir } from 'node:os';
 import { join as join$1 } from 'node:path';
 import { existsSync, promises, mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHost, getRequestProtocol, getQuery as getQuery$1, setHeader, getRequestHeaders, getCookie, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, readBody, getResponseStatusText } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/h3/dist/index.mjs';
-import { visit } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unist-util-visit/index.js';
-import { toString } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/hast-util-to-string/index.js';
-import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { stringify, uneval } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/devalue/index.js';
-import destr, { destr as destr$1 } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/destr/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, hasProtocol, withHttps, joinRelativeURL, withoutProtocol, withoutLeadingSlash, withoutTrailingSlash, withBase, withLeadingSlash, isRelative } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/ufo/dist/index.mjs';
-import { renderToString } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/vue/server-renderer/index.mjs';
-import { hash } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/ohash/dist/index.mjs';
-import { renderSSRHead } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/@unhead/ssr/dist/index.mjs';
-import { toValue, version, unref } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/vue/index.mjs';
-import { createServerHead as createServerHead$1, createHeadCore } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unhead/dist/index.mjs';
-import { defineHeadPlugin } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/@unhead/shared/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHost, getRequestProtocol, getQuery as getQuery$1, setHeader, getRequestHeaders, getCookie, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, readBody, getResponseStatusText } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/h3/dist/index.mjs';
+import { visit } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/unist-util-visit/index.js';
+import { toString } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/hast-util-to-string/index.js';
+import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { stringify, uneval } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/devalue/index.js';
+import destr, { destr as destr$1 } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/destr/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, hasProtocol, withHttps, joinRelativeURL, withoutProtocol, withoutLeadingSlash, withoutTrailingSlash, withBase, withLeadingSlash, isRelative } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/ufo/dist/index.mjs';
+import { renderToString } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/vue/server-renderer/index.mjs';
+import { hash } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/ohash/dist/index.mjs';
+import { renderSSRHead } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/@unhead/ssr/dist/index.mjs';
+import { toValue, version, unref } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/vue/index.mjs';
+import { createServerHead as createServerHead$1, createHeadCore } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/unhead/dist/index.mjs';
+import { defineHeadPlugin } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/@unhead/shared/dist/index.mjs';
 import { Buffer as Buffer$1 } from 'node:buffer';
-import twemoji from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/twemoji/dist/twemoji.npm.js';
-import defu, { defuFn, defu as defu$1, createDefu } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/defu/dist/defu.mjs';
-import { inline } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/css-inline/css_inline.js';
-import { html as html$3 } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/satori-html/dist/index.js';
-import sizeOf from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/image-size/dist/index.js';
-import { Resvg } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/@resvg/resvg-js/index.js';
-import satori$2 from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/satori/dist/index.js';
-import { createStorage, prefixStorage } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unstorage/drivers/fs.mjs';
-import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/ofetch/dist/node.mjs';
-import { createCall, createFetch } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/hookable/dist/index.mjs';
-import { klona } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/klona/dist/index.mjs';
-import { snakeCase, kebabCase, pascalCase, camelCase } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/scule/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/radix3/dist/index.mjs';
+import twemoji from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/twemoji/dist/twemoji.npm.js';
+import defu, { defuFn, defu as defu$1, createDefu } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/defu/dist/defu.mjs';
+import { inline } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/css-inline/css_inline.js';
+import { html as html$3 } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/satori-html/dist/index.js';
+import sizeOf from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/image-size/dist/index.js';
+import { Resvg } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/@resvg/resvg-js/index.js';
+import satori$2 from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/satori/dist/index.js';
+import { createStorage, prefixStorage } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/unstorage/drivers/fs.mjs';
+import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/ofetch/dist/node.mjs';
+import { createCall, createFetch } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/hookable/dist/index.mjs';
+import { klona } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/klona/dist/index.mjs';
+import { snakeCase, kebabCase, pascalCase, camelCase } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/scule/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/radix3/dist/index.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { consola } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/consola/dist/index.mjs';
-import { getContext } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unctx/dist/index.mjs';
-import devalue from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/devalue/dist/devalue.mjs';
-import { isSpecialLang, isSpecialTheme, addClassToHast, getHighlighterCore } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/core.mjs';
-import { transformerNotationDiff, transformerNotationFocus, transformerNotationHighlight, transformerNotationErrorLevel } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/@shikijs/transformers/dist/index.mjs';
-import { join, extname, isAbsolute } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/pathe/dist/index.mjs';
-import { unified } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unified/index.js';
-import { toString as toString$1 } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/mdast-util-to-string/index.js';
-import { postprocess, preprocess } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/micromark/dev/index.js';
-import { stringifyPosition } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unist-util-stringify-position/index.js';
-import { markdownLineEnding, markdownSpace } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/micromark-util-character/dev/index.js';
-import { push, splice } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/micromark-util-chunked/dev/index.js';
-import { resolveAll } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/micromark-util-resolve-all/index.js';
-import { normalizeUri } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/micromark-util-sanitize-uri/dev/index.js';
-import slugify from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/slugify/slugify.js';
-import remarkParse from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/remark-parse/index.js';
-import remark2rehype from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/remark-rehype/index.js';
-import remarkMDC, { parseFrontMatter } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/remark-mdc/dist/index.mjs';
-import Slugger from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/github-slugger/index.js';
-import { detab } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/detab/index.js';
-import remarkEmoji from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/remark-emoji/index.js';
-import remarkGFM from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/remark-gfm/index.js';
-import rehypeExternalLinks from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/rehype-external-links/index.js';
-import rehypeSortAttributeValues from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/rehype-sort-attribute-values/index.js';
-import rehypeSortAttributes from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/rehype-sort-attributes/index.js';
-import rehypeRaw from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/rehype-raw/index.js';
+import { consola } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/consola/dist/index.mjs';
+import { getContext } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/unctx/dist/index.mjs';
+import devalue from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/@nuxt/devalue/dist/devalue.mjs';
+import { isSpecialLang, isSpecialTheme, addClassToHast, getHighlighterCore } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/core.mjs';
+import { transformerNotationDiff, transformerNotationFocus, transformerNotationHighlight, transformerNotationErrorLevel } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/@shikijs/transformers/dist/index.mjs';
+import { join, extname, isAbsolute } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/pathe/dist/index.mjs';
+import { unified } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/unified/index.js';
+import { toString as toString$1 } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/mdast-util-to-string/index.js';
+import { postprocess, preprocess } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/micromark/dev/index.js';
+import { stringifyPosition } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/unist-util-stringify-position/index.js';
+import { markdownLineEnding, markdownSpace } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/micromark-util-character/dev/index.js';
+import { push, splice } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/micromark-util-chunked/dev/index.js';
+import { resolveAll } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/micromark-util-resolve-all/index.js';
+import { normalizeUri } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/micromark-util-sanitize-uri/dev/index.js';
+import slugify from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/slugify/slugify.js';
+import remarkParse from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/remark-parse/index.js';
+import remark2rehype from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/remark-rehype/index.js';
+import remarkMDC, { parseFrontMatter } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/remark-mdc/dist/index.mjs';
+import Slugger from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/github-slugger/index.js';
+import { detab } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/detab/index.js';
+import remarkEmoji from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/remark-emoji/index.js';
+import remarkGFM from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/remark-gfm/index.js';
+import rehypeExternalLinks from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/rehype-external-links/index.js';
+import rehypeSortAttributeValues from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/rehype-sort-attribute-values/index.js';
+import rehypeSortAttributes from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/rehype-sort-attributes/index.js';
+import rehypeRaw from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/rehype-raw/index.js';
 import { fileURLToPath } from 'node:url';
-import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/ipx/dist/index.mjs';
-import playwrightCore from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/playwright-core/index.mjs';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/ipx/dist/index.mjs';
+import playwrightCore from 'file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/playwright-core/index.mjs';
 
 const r$1=Object.create(null),E=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r$1:globalThis),s=new Proxy(r$1,{get(e,o){return E()[o]??r$1[o]},has(e,o){const i=E();return o in i||o in r$1},set(e,o,i){const g=E(!0);return g[o]=i,!0},deleteProperty(e,o){if(!o)return !1;const i=E(!0);return delete i[o],!0},ownKeys(){const e=E(!0);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",p=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:!0}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:!0}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:!1}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:!1}],["VERCEL","VERCEL_ENV",{ci:!1}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:!1}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:!0}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"]];function B(){if(globalThis.process?.env)for(const e of p){const o=e[1]||e[0];if(globalThis.process?.env[o])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:!1}:{name:"",ci:!1}}const l=B(),d=l.name;function n(e){return e?e!=="false":!1}const I=globalThis.process?.platform||"",T=n(s.CI)||l.ci!==!1,R=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(s.DEBUG);const C=t==="test"||n(s.TEST);n(s.MINIMAL)||T||C||!R;const a=/^win/i.test(I);!n(s.NO_COLOR)&&(n(s.FORCE_COLOR)||(R||a)&&s.TERM!=="dumb"||T);const _=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(_?.split(".")[0])||null;const W=globalThis.process||Object.create(null),c={versions:{}};new Proxy(W,{get(e,o){if(o==="env")return s;if(o in e)return e[o];if(o in c)return c[o]}});const A=globalThis.process?.release?.name==="node",L=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,O=!!globalThis.fastly,S=!!globalThis.Netlify,N=!!globalThis.EdgeRuntime,u=globalThis.navigator?.userAgent==="Cloudflare-Workers",b=!!globalThis.__lagon__,F=[[S,"netlify"],[N,"edge-light"],[u,"workerd"],[O,"fastly"],[D,"deno"],[L,"bun"],[A,"node"],[b,"lagon"]];function G(){const e=F.find(o=>o[0]);if(e)return {name:e[1]}}const P=G();P?.name||"";
 
@@ -562,7 +562,7 @@ const _inlineRuntimeConfig = {
       {
         "_context": "system",
         "_priority": -15,
-        "name": "peakofeloquence-app",
+        "name": "peakofeloquence-app 12.55.43 AM",
         "env": "development"
       },
       {
@@ -599,13 +599,13 @@ const _inlineRuntimeConfig = {
       }
     ],
     "assetDirs": [
-      "/Users/rezajafar/peakofeloquence-app/public",
-      "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/public-assets",
-      "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/inter-font",
-      "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/inter-font",
-      "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/resvg",
-      "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/yoga",
-      "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/svg2png"
+      "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/public",
+      "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/node_modules/nuxt-og-image/dist/runtime/public-assets",
+      "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/inter-font",
+      "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/inter-font",
+      "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/resvg",
+      "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/yoga",
+      "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/node_modules/nuxt-og-image/dist/runtime/public-assets-optional/svg2png"
     ]
   },
   "appConfigSchema": {
@@ -912,7 +912,7 @@ const _inlineRuntimeConfig = {
     "alias": {},
     "fs": {
       "dir": [
-        "/Users/rezajafar/peakofeloquence-app/public"
+        "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/public"
       ]
     },
     "http": {
@@ -975,7 +975,7 @@ new Proxy(/* @__PURE__ */ Object.create(null), {
   }
 });
 
-const serverAssets = [{"baseName":"server","dir":"/Users/rezajafar/peakofeloquence-app/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/server/assets"}];
 
 const assets = createStorage();
 
@@ -987,13 +987,13 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('content:source:content', unstorage_47drivers_47fs({"name":"content:source:content","driver":"fs","base":"/Users/rezajafar/peakofeloquence-app/content","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache:content', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/rezajafar/peakofeloquence-app/.nuxt/content-cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/rezajafar/peakofeloquence-app","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/rezajafar/peakofeloquence-app/server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/rezajafar/peakofeloquence-app/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/rezajafar/peakofeloquence-app/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/rezajafar/peakofeloquence-app/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('content:source:content', unstorage_47drivers_47fs({"name":"content:source:content","driver":"fs","base":"/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/content","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache:content', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/.nuxt/content-cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -1440,16 +1440,16 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _muekpUeocA = (function(nitro) {
+const _Y8GQGfgK4b = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script$1}<\/script>`);
   });
 });
 
-const rootDir = "/Users/rezajafar/peakofeloquence-app";
+const rootDir = "/Users/rezajafar/.Trash/peakofeloquence-app 12.55.43 AM";
 
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _u6hEZdC5Zp = (nitroApp) => {
+const _FZCJ31pT70 = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -2444,7 +2444,7 @@ const InjectStatePlugin = async (nitroApp) => {
     }
   });
 };
-const _zRVT6OETvZ = InjectStatePlugin;
+const _4r0ieE1mMa = InjectStatePlugin;
 
 function decodeHtml(html) {
   return html.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&cent;/g, "\xA2").replace(/&pound;/g, "\xA3").replace(/&yen;/g, "\xA5").replace(/&euro;/g, "\u20AC").replace(/&copy;/g, "\xA9").replace(/&reg;/g, "\xAE").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#x27;/g, "'").replace(/&#x2F;/g, "/").replace(/&#([0-9]+);/g, (full, int) => {
@@ -2537,22 +2537,22 @@ async function useNitroCache(e, module, options) {
 const OgImagePrenderNitroPlugin = async (nitroApp) => {
   return;
 };
-const _4JPrQ6mTLf = OgImagePrenderNitroPlugin;
+const _ZKRZ2GYsFx = OgImagePrenderNitroPlugin;
 
 const script = "\"use strict\";(()=>{const a=window,e=document.documentElement,c=window.localStorage,d=[\"dark\",\"light\"],n=c&&c.getItem&&c.getItem(\"nuxt-color-mode\")||\"system\";let l=n===\"system\"?f():n;const i=e.getAttribute(\"data-color-mode-forced\");i&&(l=i),r(l),a[\"__NUXT_COLOR_MODE__\"]={preference:n,value:l,getColorScheme:f,addColorScheme:r,removeColorScheme:u};function r(o){const t=\"\"+o+\"\",s=\"\";e.classList?e.classList.add(t):e.className+=\" \"+t,s&&e.setAttribute(\"data-\"+s,o)}function u(o){const t=\"\"+o+\"\",s=\"\";e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp(t,\"g\"),\"\"),s&&e.removeAttribute(\"data-\"+s)}function m(o){return a.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function f(){if(a.matchMedia&&m(\"\").media!==\"not all\"){for(const o of d)if(m(\":\"+o).matches)return o}return\"light\"}})();\n";
 
-const _uQfewAg3fc = (function(nitro) {
+const _HRaGyu65nO = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
 const plugins = [
-  _muekpUeocA,
-_u6hEZdC5Zp,
-_zRVT6OETvZ,
-_4JPrQ6mTLf,
-_uQfewAg3fc
+  _Y8GQGfgK4b,
+_FZCJ31pT70,
+_4r0ieE1mMa,
+_ZKRZ2GYsFx,
+_HRaGyu65nO
 ];
 
 const errorHandler = (async function errorhandler(error, event) {
@@ -2643,7 +2643,7 @@ function createShikiHighlighter({
     const shiki2 = await getHighlighterCore({
       langs,
       themes,
-      loadWasm: () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/wasm.mjs')
+      loadWasm: () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/wasm.mjs')
     });
     for await (const config of await getConfigs()) {
       await config.shiki?.setup?.(shiki2);
@@ -2783,34 +2783,34 @@ function createShikiHighlighter({
 }
 
 const bundledLangs = {
-"javascript": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/javascript.mjs'),
-"js": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/javascript.mjs'),
-"jsx": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/jsx.mjs'),
-"json": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/json.mjs'),
-"typescript": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/typescript.mjs'),
-"ts": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/typescript.mjs'),
-"tsx": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/tsx.mjs'),
-"vue": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/vue.mjs'),
-"css": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/css.mjs'),
-"html": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/html.mjs'),
-"shellscript": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/shellscript.mjs'),
-"bash": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/shellscript.mjs'),
-"sh": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/shellscript.mjs'),
-"shell": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/shellscript.mjs'),
-"zsh": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/shellscript.mjs'),
-"markdown": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/markdown.mjs'),
-"md": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/markdown.mjs'),
-"mdc": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/mdc.mjs'),
-"yaml": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/yaml.mjs'),
-"yml": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/yaml.mjs'),
-"diff": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/diff.mjs'),
-"ini": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/ini.mjs'),
-"properties": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/langs/ini.mjs'),
+"javascript": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/javascript.mjs'),
+"js": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/javascript.mjs'),
+"jsx": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/jsx.mjs'),
+"json": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/json.mjs'),
+"typescript": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/typescript.mjs'),
+"ts": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/typescript.mjs'),
+"tsx": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/tsx.mjs'),
+"vue": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/vue.mjs'),
+"css": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/css.mjs'),
+"html": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/html.mjs'),
+"shellscript": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/shellscript.mjs'),
+"bash": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/shellscript.mjs'),
+"sh": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/shellscript.mjs'),
+"shell": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/shellscript.mjs'),
+"zsh": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/shellscript.mjs'),
+"markdown": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/markdown.mjs'),
+"md": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/markdown.mjs'),
+"mdc": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/mdc.mjs'),
+"yaml": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/yaml.mjs'),
+"yml": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/yaml.mjs'),
+"diff": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/diff.mjs'),
+"ini": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/ini.mjs'),
+"properties": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/langs/ini.mjs'),
 };
 const bundledThemes = {
-"material-theme-lighter": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/themes/material-theme-lighter.mjs').then(r => r.default),
-"material-theme": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/themes/material-theme.mjs').then(r => r.default),
-"material-theme-palenight": () => import('file:///Users/rezajafar/peakofeloquence-app/node_modules/shiki/dist/themes/material-theme-palenight.mjs').then(r => r.default),
+"material-theme-lighter": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/themes/material-theme-lighter.mjs').then(r => r.default),
+"material-theme": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/themes/material-theme.mjs').then(r => r.default),
+"material-theme-palenight": () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/shiki/dist/themes/material-theme-palenight.mjs').then(r => r.default),
 };
 const options$2 = {"theme":{"light":"material-theme-lighter","default":"material-theme","dark":"material-theme-palenight"}};
 const highlighter = createShikiHighlighter({ bundledLangs, bundledThemes, options: options$2, getMdcConfigs });
@@ -2821,7 +2821,7 @@ const mdcHighlighter = /*#__PURE__*/Object.freeze({
   default: highlighter
 });
 
-const _loh5dA = eventHandler(async (event) => {
+const _0ndHfT = eventHandler(async (event) => {
   const { code, lang, theme: themeString, options: optionsStr } = getQuery$1(event);
   const theme = JSON.parse(themeString);
   const options = optionsStr ? JSON.parse(optionsStr) : {};
@@ -2838,7 +2838,7 @@ function getEnv(config) {
   if (publicKey in env)
     return env[publicKey];
 }
-const _K1dF3l = defineEventHandler((e) => {
+const _fAYTJH = defineEventHandler((e) => {
   const config = useRuntimeConfig()["nuxt-site-config"];
   const siteConfig = e.context.siteConfig || createSiteConfigStack({
     debug: config.debug
@@ -2891,7 +2891,7 @@ const _K1dF3l = defineEventHandler((e) => {
   e.context.siteConfig = siteConfig;
 });
 
-const _ubivWw = defineEventHandler(async (e) => {
+const _hJUl2G = defineEventHandler(async (e) => {
   const siteConfig = useSiteConfig(e);
   const nitroOrigin = useNitroOrigin(e);
   const { public: publicRuntimeConfig } = useRuntimeConfig();
@@ -2973,7 +2973,7 @@ function toBase64Image(fileName, data) {
   return `data:${type};base64,${base64}`;
 }
 
-const _R5TW4B = defineEventHandler(async (e) => {
+const _YUAyu2 = defineEventHandler(async (e) => {
   const path = withoutTrailingSlash(parseURL(e.path).pathname);
   if (!path.endsWith("/__og_image__"))
     return;
@@ -4041,7 +4041,7 @@ const json = defineTransformer({
     let parsed;
     if (typeof content === "string") {
       if (_id.endsWith("json5")) {
-        parsed = (await import('file:///Users/rezajafar/peakofeloquence-app/node_modules/json5/lib/index.js').then((m) => m.default || m)).parse(content);
+        parsed = (await import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/node_modules/json5/lib/index.js').then((m) => m.default || m)).parse(content);
       } else if (_id.endsWith("json")) {
         parsed = destr$1(content);
       }
@@ -4644,7 +4644,7 @@ const getContentQuery = (event) => {
   return query;
 };
 
-const _UCdZGl = defineEventHandler(async (event) => {
+const _nwbplo = defineEventHandler(async (event) => {
   const query = getContentQuery(event);
   const { advanceQuery } = useRuntimeConfig().public.content.experimental;
   if (query.first) {
@@ -4673,7 +4673,7 @@ const _UCdZGl = defineEventHandler(async (event) => {
   return serverQueryContent$1(event, query).find();
 });
 
-const _l6MDMm = defineEventHandler(async (event) => {
+const _QFPQSw = defineEventHandler(async (event) => {
   const { content } = useRuntimeConfig();
   const now = Date.now();
   const contents = await serverQueryContent$1(event).find();
@@ -4781,7 +4781,7 @@ function isObject(obj) {
   return Object.prototype.toString.call(obj) === "[object Object]";
 }
 
-const _3cNoJ4 = defineEventHandler(async (event) => {
+const _XNmhvS = defineEventHandler(async (event) => {
   const query = getContentQuery(event);
   if (!isPreview(event) && Object.keys(query).length === 0) {
     const cache = await cacheStorage.getItem("content-navigation.json");
@@ -4818,7 +4818,7 @@ const _3cNoJ4 = defineEventHandler(async (event) => {
   return createNav(contents?.result || contents, configs);
 });
 
-const _yd3HXQ = lazyEventHandler(() => {
+const _2Cb1fa = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
   const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
@@ -4836,37 +4836,37 @@ const _yd3HXQ = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-const _lazy_cu2Ofs = () => Promise.resolve().then(function () { return search_json_get$1; });
-const _lazy_w7jOJ7 = () => Promise.resolve().then(function () { return renderer$1; });
-const _lazy_CekMsU = () => Promise.resolve().then(function () { return og_png$1; });
-const _lazy_s8GuZA = () => Promise.resolve().then(function () { return html$1; });
-const _lazy_gdmeZo = () => Promise.resolve().then(function () { return options$1; });
-const _lazy_w3gIma = () => Promise.resolve().then(function () { return svg$1; });
-const _lazy_t6XrSo = () => Promise.resolve().then(function () { return vnode$1; });
-const _lazy_9YIl5b = () => Promise.resolve().then(function () { return font$1; });
+const _lazy_wmjPaB = () => Promise.resolve().then(function () { return search_json_get$1; });
+const _lazy_se3DLH = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_SxGpKq = () => Promise.resolve().then(function () { return og_png$1; });
+const _lazy_ClD52R = () => Promise.resolve().then(function () { return html$1; });
+const _lazy_11mfC6 = () => Promise.resolve().then(function () { return options$1; });
+const _lazy_MMoxkr = () => Promise.resolve().then(function () { return svg$1; });
+const _lazy_TDhmMU = () => Promise.resolve().then(function () { return vnode$1; });
+const _lazy_ewbIVT = () => Promise.resolve().then(function () { return font$1; });
 
 const handlers = [
-  { route: '/api/search.json', handler: _lazy_cu2Ofs, lazy: true, middleware: false, method: "get" },
-  { route: '/__nuxt_error', handler: _lazy_w7jOJ7, lazy: true, middleware: false, method: undefined },
-  { route: '/api/_mdc/highlight', handler: _loh5dA, lazy: false, middleware: false, method: undefined },
-  { route: '', handler: _K1dF3l, lazy: false, middleware: true, method: undefined },
-  { route: '/__site-config__/debug.json', handler: _ubivWw, lazy: false, middleware: false, method: undefined },
-  { route: '', handler: _lazy_CekMsU, lazy: true, middleware: false, method: undefined },
-  { route: '/api/og-image-html', handler: _lazy_s8GuZA, lazy: true, middleware: false, method: undefined },
-  { route: '/api/og-image-options', handler: _lazy_gdmeZo, lazy: true, middleware: false, method: undefined },
-  { route: '/api/og-image-svg', handler: _lazy_w3gIma, lazy: true, middleware: false, method: undefined },
-  { route: '/api/og-image-vnode', handler: _lazy_t6XrSo, lazy: true, middleware: false, method: undefined },
-  { route: '/api/og-image-font', handler: _lazy_9YIl5b, lazy: true, middleware: false, method: undefined },
-  { route: '', handler: _R5TW4B, lazy: false, middleware: false, method: undefined },
-  { route: '/api/_content/query/:qid/**:params', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/query/:qid', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/query', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache.json', handler: _l6MDMm, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation/:qid/**:params', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation/:qid', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },
-  { route: '/_ipx/**', handler: _yd3HXQ, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_w7jOJ7, lazy: true, middleware: false, method: undefined }
+  { route: '/api/search.json', handler: _lazy_wmjPaB, lazy: true, middleware: false, method: "get" },
+  { route: '/__nuxt_error', handler: _lazy_se3DLH, lazy: true, middleware: false, method: undefined },
+  { route: '/api/_mdc/highlight', handler: _0ndHfT, lazy: false, middleware: false, method: undefined },
+  { route: '', handler: _fAYTJH, lazy: false, middleware: true, method: undefined },
+  { route: '/__site-config__/debug.json', handler: _hJUl2G, lazy: false, middleware: false, method: undefined },
+  { route: '', handler: _lazy_SxGpKq, lazy: true, middleware: false, method: undefined },
+  { route: '/api/og-image-html', handler: _lazy_ClD52R, lazy: true, middleware: false, method: undefined },
+  { route: '/api/og-image-options', handler: _lazy_11mfC6, lazy: true, middleware: false, method: undefined },
+  { route: '/api/og-image-svg', handler: _lazy_MMoxkr, lazy: true, middleware: false, method: undefined },
+  { route: '/api/og-image-vnode', handler: _lazy_TDhmMU, lazy: true, middleware: false, method: undefined },
+  { route: '/api/og-image-font', handler: _lazy_ewbIVT, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _YUAyu2, lazy: false, middleware: false, method: undefined },
+  { route: '/api/_content/query/:qid/**:params', handler: _nwbplo, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/query/:qid', handler: _nwbplo, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/query', handler: _nwbplo, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache.json', handler: _QFPQSw, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation/:qid/**:params', handler: _XNmhvS, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation/:qid', handler: _XNmhvS, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation', handler: _XNmhvS, lazy: false, middleware: false, method: "get" },
+  { route: '/_ipx/**', handler: _2Cb1fa, lazy: false, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_se3DLH, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -5203,8 +5203,8 @@ const appTeleportId = "teleports";
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
-const getClientManifest = () => import('file:///Users/rezajafar/peakofeloquence-app/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-const getServerEntry = () => import('file:///Users/rezajafar/peakofeloquence-app/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file:///Users/rezajafar/.Trash/peakofeloquence-app%2012.55.43%E2%80%AFAM/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
