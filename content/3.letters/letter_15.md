@@ -1,4 +1,5 @@
 ---
+title: Letter 15
 description: At Siffin Imam Ali (a) gave the following instructions to his soldiers before the battle.
 ---
 

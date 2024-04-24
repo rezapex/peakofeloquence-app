@@ -1,4 +1,5 @@
 ---
+title: Letter 5
 description: Ash'ath bin Qays was a hypocrite and time-sever. For sometime he attached himself to Imam Ali (a) pretending to be his sincere follower. The ulterior motive behind this was to amass wealth and to gras...
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 48
 description: The following is a letter written to a Governor who left Imam Ali (a) and ran away with Public Treasury, this man was a cousin of Imam Ali (a) and was his confidant. Some historians say that he was Ab...
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 66
 description: When Imam Ali (a) appointed Shuray bin Hani as commanding officer of the vanguard of his army, which was marching towards Syria, he gave Hani the following instructions.
 ---
 

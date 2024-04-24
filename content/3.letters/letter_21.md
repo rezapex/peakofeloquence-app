@@ -1,4 +1,5 @@
 ---
+title: Letter 21
 description: When Abdullah bin Abbas was the Governor of Basra, Imam Ali (a) wrote the following letter to him. The cause of this letter was the behaviour of Ibn Abbas towards the clan of Bani Tamim. Ibn Abbas hat...
 ---
 

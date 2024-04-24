@@ -1,4 +1,5 @@
 ---
+title: Letter 81
 description: Imam Ali (a) had entrusted to Munzir bin Jarud Abdi something which he misappropriated. Thereupon Imam Ali (a) wrote the following letter to him.
 ---
 

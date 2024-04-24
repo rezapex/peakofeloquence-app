@@ -1,4 +1,5 @@
 ---
+title: Letter 70
 description: The following is a circular-letter sent to those governors and State officers, through whose territory the armies of Imam Ali (a) were to pass.
 ---
 

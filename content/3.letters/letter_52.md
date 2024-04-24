@@ -1,4 +1,5 @@
 ---
+title: Letter 52
 description: Uthman bin Hunayf was the Governor of Basra. He was one of those persons who were held in respect by Imam Ali (a). During his governorship Ibn Hunayf once attended a feast given by a rich man of Basra...
 ---
 

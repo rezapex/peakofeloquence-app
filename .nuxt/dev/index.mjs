@@ -111,7 +111,6 @@ const appConfig0 = defineAppConfig({
     gray: "stone",
     button: {
       rounded: "rounded-full",
-      font: "sans-serif",
       default: {
         size: "md"
       }

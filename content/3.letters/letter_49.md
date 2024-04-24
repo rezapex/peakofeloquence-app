@@ -1,4 +1,5 @@
 ---
+title: Letter 49
 description: The following is a letter which Imam Ali (a) wrote to Umar bin Abi Salama Mukhzumi when Imam Ali (a) called him back from the Governorship of Bahrain and appointed Nu'man bin Ajlan Zuraqi in his place...
 ---
 

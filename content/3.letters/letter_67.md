@@ -1,4 +1,5 @@
 ---
+title: Letter 67
 description: While leaving Madina for Basra, Imam Ali (a) wrote the following letter to the people of Kufa. It is a wonderful epistle. It invites people to judge his intentions and actions.
 ---
 

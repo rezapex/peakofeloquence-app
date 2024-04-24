@@ -1,4 +1,5 @@
 ---
+title: Letter 61
 description: Maalik al-Ashtar was a famous companion of Imam Ali (a). He was the head of the Bani Nakha'i clan. He was a faithful disciple of Imam Ali (a). He was a brave warrior and had acted as a Commander-in-Ch...
 ---
 

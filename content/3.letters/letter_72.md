@@ -1,4 +1,5 @@
 ---
+title: Letter 72
 description: A letter to the Egyptians which Imam Ali (a) handed over to Maalik bin Haarith Ashtar to take with him when he was appointed as the Governor of that province.
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 39
 description: A letter to Mu'awiya.
 ---
 

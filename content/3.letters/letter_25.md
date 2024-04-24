@@ -1,4 +1,5 @@
 ---
+title: Letter 25
 description: Ibn Abbas says that once Imam Ali (a) advised him in the following words, and except for the advice of the Holy Prophet (s) no advice has been so beneficial to him as this.
 ---
 

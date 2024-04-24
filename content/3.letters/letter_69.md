@@ -1,4 +1,5 @@
 ---
+title: Letter 69
 description: To Aswad bin Qatiba, the Governor of Hulwan.
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 59
 description: A circular about prayers to the governors of all the provinces.
 ---
 

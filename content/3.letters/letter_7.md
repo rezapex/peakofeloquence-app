@@ -1,4 +1,5 @@
 ---
+title: Letter 7
 description: A letter to Mu'awiya, on receiving letters from him based on hypocritical advice and false accusations.
 ---
 

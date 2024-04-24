@@ -1,4 +1,5 @@
 ---
+title: Letter 78
 description: Imam Ali (a) wrote this letter to Salman al-Farsi, before his caliphate.
 ---
 

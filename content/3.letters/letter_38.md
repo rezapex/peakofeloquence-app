@@ -1,4 +1,5 @@
 ---
+title: Letter 38
 description: After returning from the Battle of Siffin, Imam Ali (a) gave certain pieces of advice to one of his sons. Some historians consider him to be Imam Hasan (a) while others are of the opinion that he was ...
 ---
 

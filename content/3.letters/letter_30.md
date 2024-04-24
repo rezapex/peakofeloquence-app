@@ -1,4 +1,5 @@
 ---
+title: Letter 30
 description: When Imam Ali (a) appointed Muhammad bin Abu Bakr as the Governor of Egypt, he gave him the following instructions.
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 82
 description: A letter to Abdullah bin Abbas.
 ---
 

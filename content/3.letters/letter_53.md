@@ -1,4 +1,5 @@
 ---
+title: Letter 53
 description: A letter from Imam Ali (a) to one of his governors.
 ---
 

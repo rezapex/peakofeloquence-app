@@ -1,4 +1,5 @@
 ---
+title: Letter 45
 description: A letter to the people of Egypt, telling them about Maalik when Imam Ali (a) appointed him as their Governor.
 ---
 

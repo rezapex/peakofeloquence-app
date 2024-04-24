@@ -1,4 +1,5 @@
 ---
+title: Letter 74
 description: A reply to Mu'awiya's letter.
 ---
 

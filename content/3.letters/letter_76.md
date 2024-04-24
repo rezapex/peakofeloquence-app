@@ -1,4 +1,5 @@
 ---
+title: Letter 76
 description: A letter to Abdullah bin Abbas. Ibn Abbas said that except the advice and sayings of the Holy Prophet (s) no other advice benefited him more than this. A variation of this letter has appeared earlier ...
 ---
 

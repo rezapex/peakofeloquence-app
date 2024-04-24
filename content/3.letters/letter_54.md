@@ -1,4 +1,5 @@
 ---
+title: Letter 54
 description: When Abd al-Rahman bin Muljam wounded Imam Ali (a) who was then offering the morning prayers in the Mosque of Kufa, Imam Ali (a) advised Imam Hasan (a) and Imam Husayn (a) in the following words.
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 50
 description: A letter to Masqala bin Hubayra al-Shaybani who was governor of Ardshir Khurra (Iran).
 ---
 

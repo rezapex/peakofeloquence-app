@@ -1,4 +1,5 @@
 ---
+title: Letter 42
 description: When Muhammad bin Abi Bakr was killed in Egypt by the guerrillas of Mu'awiya through disloyalty of his (Muhammad's) own companions and officers, Imam Ali (a) felt sad and wrote the following letter to...
 ---
 

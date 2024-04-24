@@ -1,4 +1,5 @@
 ---
+title: Letter 40
 description: The following letter was written to Qutham bin Abbas, the brother of Abdullah bin Abbas, who was the Governor of Imam Ali (a) in the province of Hijaz.
 ---
 

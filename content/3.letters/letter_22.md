@@ -1,4 +1,5 @@
 ---
+title: Letter 22
 description: The following is a letter to one of his governors. It speaks volumes about the ways of Divine Rule. It shows how Imam Ali (a) was training the Muslims to behave tolerantly towards other religions, how...
 ---
 

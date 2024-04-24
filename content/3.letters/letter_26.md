@@ -1,4 +1,5 @@
 ---
+title: Letter 26
 description: Imam Ali (a) passed the following instructions to his family a little before his martyrdom.
 ---
 

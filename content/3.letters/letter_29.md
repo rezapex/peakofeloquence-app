@@ -1,4 +1,5 @@
 ---
+title: Letter 29
 description: The following are his (a) instructions to Zakat collectors.
 ---
 

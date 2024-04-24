@@ -1,4 +1,5 @@
 ---
+title: Letter 80
 description: A letter written to Suhayl bin Hunayf, the Governor of Madina (and brother of Uthman bin Hunayf) about some Madinites who had left him and gone over to Mu'awiya. The two brothers, Uthman & Suhayl, wer...
 ---
 

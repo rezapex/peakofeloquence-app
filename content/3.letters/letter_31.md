@@ -1,4 +1,5 @@
 ---
+title: Letter 31
 description: The following is a famous reply of Imam Ali (a) to the letter of Mu'awiya. It throws ample light on many phases of the history of Islam from the time of its dawn up to the time of Imam Ali (a).
 ---
 

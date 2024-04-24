@@ -1,4 +1,5 @@
 ---
+title: Letter 68
 description: A letter sent by Imam Ali (a) to the people of various provinces, giving them the causes of the Battle of Siffin.
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 36
 description: The following is a letter to the people of Basra.
 ---
 

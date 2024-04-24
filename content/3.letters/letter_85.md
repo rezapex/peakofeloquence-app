@@ -1,4 +1,5 @@
 ---
+title: Letter 85
 description: After the Muslims took oath of allegiance to Imam Ali (a), he wrote the following letter to Mu'awiya. Waqidi has quoted this letter in his book, al-Jamal.
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 63
 description: This is a letter written by Imam Ali (a) to Talha and Zubayr and sent to them through Imran bin Hasin Khuza'i. Imran was a companion of the Holy Prophet (s). He had embraced Islam before the Battle of...
 ---
 

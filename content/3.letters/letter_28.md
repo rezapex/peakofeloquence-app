@@ -1,4 +1,5 @@
 ---
+title: Letter 28
 description: Directions to assessors and collectors of Zakat.
 ---
 

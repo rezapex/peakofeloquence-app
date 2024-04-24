@@ -1,4 +1,5 @@
 ---
+title: Letter 58
 description: A letter to the collectors of taxes and revenues.
 ---
 

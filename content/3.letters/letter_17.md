@@ -1,4 +1,5 @@
 ---
+title: Letter 17
 description: During a battle Imam Ali (a) used to advise his followers in these words.
 ---
 

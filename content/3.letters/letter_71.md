@@ -1,4 +1,5 @@
 ---
+title: Letter 71
 description: A letter from Imam Ali (a) to Kumayl bin Ziyad Nakha'i, expressing his displeasure and rebuking him in leaving his province unguarded and allowing the army of the enemy to enter and carry on loot. He ...
 ---
 

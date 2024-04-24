@@ -1,4 +1,5 @@
 ---
+title: Letter 43
 description: The following is a letter written by Imam Ali (a) to his brother Aqil. It so happened that Zahaak bin Qays Fahri was sent to Makkah by Mu'awiya with a force of guerrillas to ravage the city. Imam Ali ...
 ---
 

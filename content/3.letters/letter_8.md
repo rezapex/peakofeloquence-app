@@ -1,4 +1,5 @@
 ---
+title: Letter 8
 description: Jarir bin Abdullah Bajali was sent to Damascus. He was carrying a letter for Mu'awiya. Some delay occurred in his return. Imam Ali (a) felt anxious about his safety and wrote the following letter to h...
 ---
 

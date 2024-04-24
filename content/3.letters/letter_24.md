@@ -1,4 +1,5 @@
 ---
+title: Letter 24
 description: The following is a letter from Imam Ali (a) to Ziyad.
 ---
 

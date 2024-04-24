@@ -1,4 +1,5 @@
 ---
+title: Letter 86
 description: When Imam Ali (a) sent Ibn Abbas as his representative to Basra, he gave him the following instructions.
 ---
 

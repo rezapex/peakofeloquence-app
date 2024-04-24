@@ -1,4 +1,5 @@
 ---
+title: Letter 6
 description: The following is a letter to Mu'awiya and in it Imam Ali (a) has used the same principle that he applied on Talha and Zubayr. Imam Ali (a) in this letter has raised all the points which were once quot...
 ---
 

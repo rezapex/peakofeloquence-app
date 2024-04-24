@@ -1,4 +1,5 @@
 ---
+title: Letter 47
 description: A letter to a commissioner of a province. It could not be ascertained as to whom it was addressed.
 ---
 

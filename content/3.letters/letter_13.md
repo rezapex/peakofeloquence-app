@@ -1,4 +1,5 @@
 ---
+title: Letter 13
 description: When Imam Ali (a) sent an expedition of 3000 soldiers under Ma'qil bin Qays Riyahi against the Syrians, he issued the following instructions.
 ---
 

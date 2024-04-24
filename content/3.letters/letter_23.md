@@ -1,4 +1,5 @@
 ---
+title: Letter 23
 description: The following is a letter from Imam Ali (a) to Ziyad who was appointed as the Commissioner of Basra by Abdullah bin Abbas, the Governor of the provinces of Ahwaz, Basra, Kirman and Fars. Ziyad was fro...
 ---
 

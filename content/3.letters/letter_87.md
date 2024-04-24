@@ -1,4 +1,5 @@
 ---
+title: Letter 87
 description: When Imam Ali (a) sent Ibn Abbas for discussions with the Kharijites, he, peace be upon him, gave him the following instructions.
 ---
 

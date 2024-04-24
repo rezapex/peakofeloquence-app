@@ -1,4 +1,5 @@
 ---
+title: Letter 1
 description: The following is the letter sent by Imam Ali (a) through Imam Husayn (a) and Ammar Yasir to the people of Kufa before he proceeded to Basra for the Battle of Jamal.
 ---
 

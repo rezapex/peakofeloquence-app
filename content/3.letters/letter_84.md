@@ -1,4 +1,5 @@
 ---
+title: Letter 84
 description: A treaty which Imam Ali (a) has worded for Bani Rabi'a tribe and the Yemenites to agree upon. Husham bin Sa'ib Kalbi has quoted this treaty.
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Letter 73
 description: Abdullah bin Qays, better known in history as Abu Musa Ash'ari, was a man with weak faith, more inclined to look after his worldly interest than the cause of religion. At the beginning of the Caliphat...
 ---
 

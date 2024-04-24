@@ -1,4 +1,5 @@
 ---
+title: Letter 88
 description: Abu Musa Ash'ari (Abdullah bin Qays) wrote a letter to Imam Ali (a) from the place where decision of the arbitration took place. Imam Ali (a) wrote to him the following letter in reply. Sayyid bin Yah...
 ---
 

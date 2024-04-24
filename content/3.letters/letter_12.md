@@ -1,4 +1,5 @@
 ---
+title: Letter 12
 description: Part of instructions to his marshal when Imam Ali (a) sent him to a battle.
 ---
 

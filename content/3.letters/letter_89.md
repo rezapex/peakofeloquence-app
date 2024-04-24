@@ -1,4 +1,5 @@
 ---
+title: Letter 89
 description: This is the order issued by Imam Ali (a) to his generals when he took over rulership of the Muslim State.
 ---
 

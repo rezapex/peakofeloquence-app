@@ -1,4 +1,5 @@
 ---
+title: Letter 27
 description: The following is the will of Imam Ali (a) in which he has left instructions as to how to treat his property and estate. It was written after his return from the Battle of Siffin.
 ---
 
