@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-
 const links = [
   {
     label: 'Resources',
@@ -48,7 +47,6 @@ function onSubmit () {
     formState.email = ''
   }, 1000)
 }
-
 </script>
 
 <template>
@@ -61,6 +59,7 @@ function onSubmit () {
             name="newsletter"
             method="POST"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
             @submit.prevent="onSubmit"
           >
             <input type="hidden" name="form-name" value="newsletter" />
@@ -94,17 +93,14 @@ function onSubmit () {
               </UInput>
             </UFormGroup>
           </form>
-
         </template>
       </UFooterColumns>
     </template>
-
     <template #left>
       <p class="text-gray-500 dark:text-gray-400 text-sm">
         Copyright © {{ new Date().getFullYear() }}. All rights reserved.
       </p>
     </template>
-    
     <template #right>
       <UColorModeButton size="sm" />
       <UButton
