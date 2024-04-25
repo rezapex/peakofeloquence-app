@@ -35,47 +35,51 @@ const links = [{
   }]
 }]
 
-import { ref } from 'vue';
-
 const toast = useToast()
 const form = ref(null);  // Reference to the form element
 const email = ref('')
 const loading = ref(false)
 
-function onSubmit ()  {
+async function onSubmit() {
+  console.log("Form submission started"); // Check if function is called
   if (!form.value) {
+    console.log("Form reference is missing");
     return;
   }
 
   loading.value = true;
-  // Simulate form submission to Netlify
   const formData = new FormData(form.value);
 
-  fetch(form.value, {
-    method: 'POST',
-    body: formData,
-  }).then(response => {
+  try {
+    const response = await fetch(form.value.action, {
+      method: 'POST',
+      body: formData,
+    });
+    console.log("Response received", response);
+
     if (response.ok) {
       toast.add({
         title: 'Subscribed!',
-        description: 'You\'ve been subscribed to our newsletter.'
+        description: 'You\'ve been subscribed to our newsletter.',
       });
-      email.value = '';  // Clear the input after successful submission
+      email.value = '';
     } else {
       toast.add({
         title: 'Error',
-        description: 'There was a problem subscribing to the newsletter.'
+        description: 'There was a problem subscribing to the newsletter.',
       });
     }
-  }).catch(error => {
+  } catch (error) {
+    console.error("Submission error", error);
     toast.add({
       title: 'Network Error',
-      description: 'Please check your network connection.'
+      description: 'Please check your network connection.',
     });
-  }).finally(() => {
+  } finally {
     loading.value = false;
-  });
+  }
 }
+
 </script>
 
 <template>
