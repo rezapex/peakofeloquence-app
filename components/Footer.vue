@@ -57,10 +57,10 @@ function onSubmit () {
       <UFooterColumns :links="links">
         <template #right>
           <form
+            netlify
             name="newsletter"
             method="POST"
             data-netlify="true"
-            data-netlify-honeypot="bot-field"
             @submit.prevent="onSubmit"
           >
             <input type="hidden" name="form-name" value="newsletter" />
@@ -108,7 +108,7 @@ function onSubmit () {
     <template #right>
       <UColorModeButton size="sm" />
       <UButton
-        to="https://github.com/nuxt-ui-pro/saas"
+        to="https://github.com/rezapex/peakofeloquence-app"
         target="_blank"
         icon="i-simple-icons-github"
         aria-label="GitHub"
