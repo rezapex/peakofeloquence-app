@@ -2,7 +2,6 @@
 const colorMode = useColorMode()
 
 const color = computed(() => colorMode.value === 'dark' ? '#111827' : 'white')
-//const color = computed(() => colorMode.value === '' ? '#' : '#')
 
 useHead(() => ({
   meta: [

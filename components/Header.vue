@@ -17,10 +17,10 @@ const links = [
   label: 'Sayings',
   to: '/sayings/sayings'
 }, 
-// {
-//   label: 'Resources',
-//   to: '/resources/'
-// }
+ {
+   label: 'Blog',
+   to: '/blog'
+ }
 ]
 </script>
 
@@ -36,7 +36,7 @@ const links = [
       </div>
     </template>
     <template #right>
-      <UButton label="Donate" color="gray" to="/donate" />
+      <UButton label="Support" color="gray" to="/donate" />
       <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" /> -->
     </template>
     <template #panel>

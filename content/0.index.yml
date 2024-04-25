@@ -149,8 +149,5 @@ cta:
     - label: Explore Now
       size: xl
       color: black
-      to: /explore
-
-
-
-
+      to: /docs/getting-started
+      icon: i-heroicons-arrow-right-20-solid

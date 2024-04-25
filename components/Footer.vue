@@ -59,7 +59,8 @@ function onSubmit () {
     <template #top>
       <UFooterColumns :links="links">
         <template #right>
-          <form @submit.prevent="onSubmit">
+        <!-- FORM -->
+          <form data-netlify="true" @submit.prevent="onSubmit">
             <UFormGroup label="Subscribe to our newsletter" :ui="{ container: 'mt-3' }">
               <UInput v-model="email" type="email" placeholder="Enter your email" :ui="{ icon: { trailing: { pointer: '' } } }" required size="xl" autocomplete="off" class="max-w-sm" input-class="rounded-full">
                 <template #trailing>
@@ -68,6 +69,7 @@ function onSubmit () {
               </UInput>
             </UFormGroup>
           </form>
+          <!-- Form End -->
         </template>
       </UFooterColumns>
     </template>
