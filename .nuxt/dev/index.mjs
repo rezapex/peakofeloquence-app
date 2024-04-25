@@ -403,7 +403,7 @@ const _inlineRuntimeConfig = {
           "ini"
         ]
       },
-      "wsUrl": "ws://localhost:4000/",
+      "wsUrl": "ws://localhost:4001/",
       "documentDriven": false,
       "host": "",
       "trailingSlash": false,
