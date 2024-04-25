@@ -1,0 +1,318 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCard.vue?vue&type=style&index=0&scoped=53db7729&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.background-gradient::before {\n  background: radial-gradient(\n    250px circle at var(--x) var(--y),\n    v-bind(colorLight) 0%,\n    transparent 100%\n  );\n  will-change: background;\n}\n\n.dark {\n  .background-gradient::before {\n    background: radial-gradient(\n      250px circle at var(--x) var(--y),\n      v-bind(colorDark) 0%,\n      transparent 100%\n    );\n  }\n}\n",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCard.vue"
+        ],
+        "names": [],
+        "mappings": ";AA6IA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACzB,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC;IACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;EACjB,CAAC;EACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB;;AAEA,CAAC,CAAC,CAAC,CAAC,EAAE;EACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;IAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MACzB,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC;MACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;IACjB,CAAC;EACH;AACF",
+        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCard.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div\n    ref=\"el\"\n    :style=\"{\n      '--x': `${elementX}px`,\n      '--y': `${elementY}px`,\n    }\"\n    :class=\"[ui.wrapper, to && ui.to]\"\n    v-bind=\"attrs\"\n  >\n    <UCard :ui=\"ui\">\n      <div :class=\"ui.container\">\n        <NuxtLink v-if=\"to\" :aria-label=\"ariaLabel\" v-bind=\"nuxtLinkBind\" class=\"focus:outline-none\" tabindex=\"-1\">\n          <span class=\"absolute inset-0\" aria-hidden=\"true\" />\n        </NuxtLink>\n\n        <div v-if=\"icon || $slots.icon\" :class=\"ui.icon.wrapper\">\n          <slot name=\"icon\">\n            <UIcon :name=\"(icon as string)\" :class=\"ui.icon.base\" />\n          </slot>\n        </div>\n\n        <p v-if=\"title || $slots.title\" :class=\"ui.title\">\n          <slot name=\"title\">\n            {{ title }}\n          </slot>\n        </p>\n\n        <p v-if=\"description || $slots.description\" :class=\"ui.description\">\n          <slot name=\"description\">\n            {{ description }}\n          </slot>\n        </p>\n\n        <slot name=\"container\" />\n      </div>\n\n      <slot v-if=\"$slots.default\" />\n    </UCard>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport { nuxtLinkProps, getNuxtLinkProps } from '#ui/utils'\nimport { getSlotChildrenText } from '../../lib/slots'\nimport colors from '#tailwind-config/theme/colors'\nimport uiColors from '#ui-colors'\nimport { card as cardConfig } from '#ui/ui.config'\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  ...nuxtLinkProps,\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  icon: {\n    type: String,\n    default: undefined\n  },\n  color: {\n    type: String as PropType<typeof uiColors[number]>,\n    default: 'primary'\n  },\n  orientation: {\n    type: String as PropType<'vertical' | 'horizontal'>,\n    default: 'vertical'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value & typeof cardConfig>>,\n    default: () => ({})\n  }\n})\n\nconst colorLight = computed(() => {\n  if (props.color === 'primary') {\n    return 'rgb(var(--color-primary-DEFAULT))'\n  }\n  // @ts-ignore\n  return colors[props.color]?.['500'] || colors[props.color] || props.color\n})\nconst colorDark = computed(() => {\n  if (props.color === 'primary') {\n    return 'rgb(var(--color-primary-DEFAULT))'\n  }\n  // @ts-ignore\n  return colors[props.color]?.['400'] || colors[props.color] || props.color\n})\n\nconst config = computed(() => {\n  const base = twJoin(\n    'gap-x-8 gap-y-4 rounded-xl flex-1',\n    props.orientation === 'vertical' && 'flex flex-col',\n    !!slots.default && props.orientation === 'horizontal' && 'grid lg:grid-cols-2 lg:items-center'\n  )\n\n  return {\n    wrapper: 'relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow',\n    to: 'hover:ring-primary-500 dark:hover:ring-primary-400 transition-shadow duration-200',\n    base: 'flex-1 flex flex-col overflow-hidden',\n    container: '',\n    body: {\n      base\n    },\n    background: 'bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]',\n    ring: '',\n    rounded: 'rounded-xl',\n    shadow: '',\n    icon: {\n      wrapper: 'mb-2 pointer-events-none',\n      base: 'w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white'\n    },\n    title: 'text-gray-900 dark:text-white text-base font-bold truncate',\n    description: 'text-[15px] text-gray-500 dark:text-gray-400 mt-1'\n  }\n})\n\nconst el = ref<HTMLDivElement>()\n\nconst slots = useSlots()\nconst { elementX, elementY } = useSharedMouseInElement(el)\nconst { ui, attrs } = useUI('landing.card', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst nuxtLinkBind = computed(() => getNuxtLinkProps(props))\nconst ariaLabel = computed(() => (props.title || (slots.title && getSlotChildrenText(slots.title())) || 'Card link').trim())\n</script>\n\n<style scoped>\n.background-gradient::before {\n  background: radial-gradient(\n    250px circle at var(--x) var(--y),\n    v-bind(colorLight) 0%,\n    transparent 100%\n  );\n  will-change: background;\n}\n\n.dark {\n  .background-gradient::before {\n    background: radial-gradient(\n      250px circle at var(--x) var(--y),\n      v-bind(colorDark) 0%,\n      transparent 100%\n    );\n  }\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1714025110231,
+      "end": 1714025110231,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".background-gradient:before{background:radial-gradient(250px circle at var(--x) var(--y),v-bind(colorLight) 0,transparent 100%);will-change:background}.dark .background-gradient:before{background:radial-gradient(250px circle at var(--x) var(--y),v-bind(colorDark) 0,transparent 100%)}",
+      "start": 1714025110231,
+      "end": 1714025110250,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCard.vue",
+        "mappings": "AACA,4BACE,mGAIC,CACD,sBACF,CAGE,kCACE,kGAKF",
+        "names": [],
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCard.vue"
+        ],
+        "sourcesContent": [
+          "\n.background-gradient::before {\n  background: radial-gradient(\n    250px circle at var(--x) var(--y),\n    v-bind(colorLight) 0%,\n    transparent 100%\n  );\n  will-change: background;\n}\n\n.dark {\n  .background-gradient::before {\n    background: radial-gradient(\n      250px circle at var(--x) var(--y),\n      v-bind(colorDark) 0%,\n      transparent 100%\n    );\n  }\n}\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1714025110250,
+      "end": 1714025110250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1714025110250,
+      "end": 1714025110250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714025110250,
+      "end": 1714025110250,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".background-gradient[data-v-53db7729]:before{background:radial-gradient(250px circle at var(--x) var(--y),var(--fb9dae28) 0,transparent 100%);will-change:background}.dark .background-gradient[data-v-53db7729]:before{background:radial-gradient(250px circle at var(--x) var(--y),var(--674828e0) 0,transparent 100%)}",
+      "start": 1714025110250,
+      "end": 1714025110251,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCard.vue",
+        "mappings": "AAAA,6CAA4B,gGAAmG,CAAC,sBAAsB,CAAC,mDAAkC,gGAAkG",
+        "names": [],
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCard.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714025110251,
+      "end": 1714025110251,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/@headlessui/vue/dist/hooks/use-event-listener.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import{watchEffect as i}from\"vue\";import{env as a}from'../utils/env.js';function E(n,e,o,r){a.isServer||i(t=>{n=n!=null?n:window,n.addEventListener(e,o,r),t(()=>n.removeEventListener(e,o,r))})}export{E as useEventListener};\n",
+      "start": 1714025109584,
+      "end": 1714025109640,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714025109640,
+      "end": 1714025109640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { watchEffect as i } from \"vue\";\nimport { env as a } from \"../utils/env.js\";\nfunction E(n, e, o, r) {\n  a.isServer || i((t) => {\n    n = n != null ? n : void 0, n.addEventListener(e, o, r), t(() => n.removeEventListener(e, o, r));\n  });\n}\nexport { E as useEventListener };\n",
+      "start": 1714025109640,
+      "end": 1714025110116,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/rezajafar/peakofeloquence-app/node_modules/@headlessui/vue/dist/hooks/use-event-listener.js\"],\n  \"sourcesContent\": [\"import{watchEffect as i}from\\\"vue\\\";import{env as a}from'../utils/env.js';function E(n,e,o,r){a.isServer||i(t=>{n=n!=null?n:window,n.addEventListener(e,o,r),t(()=>n.removeEventListener(e,o,r))})}export{E as useEventListener};\\n\"],\n  \"mappings\": \"AAAA,SAAO,eAAe,SAAM;AAAM,SAAO,OAAO,SAAM;AAAkB,SAAS,EAAE,GAAE,GAAE,GAAE,GAAE;AAAC,IAAE,YAAU,EAAE,OAAG;AAAC,QAAE,KAAG,OAAK,IAAE,QAAO,EAAE,iBAAiB,GAAE,GAAE,CAAC,GAAE,EAAE,MAAI,EAAE,oBAAoB,GAAE,GAAE,CAAC,CAAC;AAAA,EAAC,CAAC;AAAC;AAAC,SAAO,KAAK;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714025110116,
+      "end": 1714025110116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714025110116,
+      "end": 1714025110116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714025110116,
+      "end": 1714025110116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714025110116,
+      "end": 1714025110116,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714025110116,
+      "end": 1714025110117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714025110117,
+      "end": 1714025110117,
+      "order": "normal"
+    }
+  ]
+}

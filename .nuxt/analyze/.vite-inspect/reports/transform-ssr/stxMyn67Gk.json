@@ -1,0 +1,306 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/app.config.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default defineAppConfig({\n  ui: {\n    primary: 'yellow',\n    gray: 'stone',\n    button: { \n      rounded: 'rounded-full',\n      default: {\n        size: 'md'\n      }\n    },\n    input: {\n      default: {\n        size: 'md'\n      }\n    },\n    card: {\n      rounded: 'rounded-xl'\n    },\n    footer: {\n      top: {\n        wrapper: 'border-t border-gray-200 dark:border-gray-800',\n        container: 'py-8 lg:py-16'\n      },\n      bottom: {\n        wrapper: 'border-t border-gray-200 dark:border-gray-800'\n      }\n    },\n    page: {\n      hero: {\n        wrapper: 'lg:py-24'\n      }\n    }\n  }\n})\n",
+      "start": 1714025109687,
+      "end": 1714025109732,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714025109732,
+      "end": 1714025109732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default defineAppConfig({\n  ui: {\n    primary: \"yellow\",\n    gray: \"stone\",\n    button: {\n      rounded: \"rounded-full\",\n      default: {\n        size: \"md\"\n      }\n    },\n    input: {\n      default: {\n        size: \"md\"\n      }\n    },\n    card: {\n      rounded: \"rounded-xl\"\n    },\n    footer: {\n      top: {\n        wrapper: \"border-t border-gray-200 dark:border-gray-800\",\n        container: \"py-8 lg:py-16\"\n      },\n      bottom: {\n        wrapper: \"border-t border-gray-200 dark:border-gray-800\"\n      }\n    },\n    page: {\n      hero: {\n        wrapper: \"lg:py-24\"\n      }\n    }\n  }\n});\n",
+      "start": 1714025109732,
+      "end": 1714025110147,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/app.config.ts"
+        ],
+        "sourcesContent": [
+          "export default defineAppConfig({\n  ui: {\n    primary: 'yellow',\n    gray: 'stone',\n    button: { \n      rounded: 'rounded-full',\n      default: {\n        size: 'md'\n      }\n    },\n    input: {\n      default: {\n        size: 'md'\n      }\n    },\n    card: {\n      rounded: 'rounded-xl'\n    },\n    footer: {\n      top: {\n        wrapper: 'border-t border-gray-200 dark:border-gray-800',\n        container: 'py-8 lg:py-16'\n      },\n      bottom: {\n        wrapper: 'border-t border-gray-200 dark:border-gray-800'\n      }\n    },\n    page: {\n      hero: {\n        wrapper: 'lg:py-24'\n      }\n    }\n  }\n})\n"
+        ],
+        "mappings": "AAAA,eAAe,gBAAgB;AAAA,EAC7B,IAAI;AAAA,IACF,SAAS;AAAA,IACT,MAAM;AAAA,IACN,QAAQ;AAAA,MACN,SAAS;AAAA,MACT,SAAS;AAAA,QACP,MAAM;AAAA,MACR;AAAA,IACF;AAAA,IACA,OAAO;AAAA,MACL,SAAS;AAAA,QACP,MAAM;AAAA,MACR;AAAA,IACF;AAAA,IACA,MAAM;AAAA,MACJ,SAAS;AAAA,IACX;AAAA,IACA,QAAQ;AAAA,MACN,KAAK;AAAA,QACH,SAAS;AAAA,QACT,WAAW;AAAA,MACb;AAAA,MACA,QAAQ;AAAA,QACN,SAAS;AAAA,MACX;AAAA,IACF;AAAA,IACA,MAAM;AAAA,MACJ,MAAM;AAAA,QACJ,SAAS;AAAA,MACX;AAAA,IACF;AAAA,EACF;AACF,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1714025110147,
+      "end": 1714025110147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714025110147,
+      "end": 1714025110147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714025110147,
+      "end": 1714025110147,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714025110147,
+      "end": 1714025110147,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110147,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110147,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineAppConfig } from '#app/nuxt';\nexport default defineAppConfig({\n  ui: {\n    primary: \"yellow\",\n    gray: \"stone\",\n    button: {\n      rounded: \"rounded-full\",\n      default: {\n        size: \"md\"\n      }\n    },\n    input: {\n      default: {\n        size: \"md\"\n      }\n    },\n    card: {\n      rounded: \"rounded-xl\"\n    },\n    footer: {\n      top: {\n        wrapper: \"border-t border-gray-200 dark:border-gray-800\",\n        container: \"py-8 lg:py-16\"\n      },\n      bottom: {\n        wrapper: \"border-t border-gray-200 dark:border-gray-800\"\n      }\n    },\n    page: {\n      hero: {\n        wrapper: \"lg:py-24\"\n      }\n    }\n  }\n});\n",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineAppConfig } from '#app/nuxt';\nexport default defineAppConfig({\n  ui: {\n    primary: \"yellow\",\n    gray: \"stone\",\n    button: {\n      rounded: \"rounded-full\",\n      default: {\n        size: \"md\"\n      }\n    },\n    input: {\n      default: {\n        size: \"md\"\n      }\n    },\n    card: {\n      rounded: \"rounded-xl\"\n    },\n    footer: {\n      top: {\n        wrapper: \"border-t border-gray-200 dark:border-gray-800\",\n        container: \"py-8 lg:py-16\"\n      },\n      bottom: {\n        wrapper: \"border-t border-gray-200 dark:border-gray-800\"\n      }\n    },\n    page: {\n      hero: {\n        wrapper: \"lg:py-24\"\n      }\n    }\n  }\n});\n",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714025110148,
+      "end": 1714025110148,
+      "order": "normal"
+    }
+  ]
+}

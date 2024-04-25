@@ -1,0 +1,278 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/@popperjs/core/lib/dom-utils/getWindow.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default function getWindow(node) {\n  if (node == null) {\n    return window;\n  }\n\n  if (node.toString() !== '[object Window]') {\n    var ownerDocument = node.ownerDocument;\n    return ownerDocument ? ownerDocument.defaultView || window : window;\n  }\n\n  return node;\n}",
+      "start": 1714025110944,
+      "end": 1714025110962,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714025110962,
+      "end": 1714025110962,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714025110963,
+      "end": 1714025110963,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714025110963,
+      "end": 1714025110963,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714025110963,
+      "end": 1714025110963,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714025110963,
+      "end": 1714025110963,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714025110963,
+      "end": 1714025110963,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "export default function getWindow(node) {\n  if (node == null) {\n    return void 0;\n  }\n  if (node.toString() !== \"[object Window]\") {\n    var ownerDocument = node.ownerDocument;\n    return ownerDocument ? ownerDocument.defaultView || void 0 : void 0;\n  }\n  return node;\n}\n",
+      "start": 1714025110963,
+      "end": 1714025110976,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/rezajafar/peakofeloquence-app/node_modules/@popperjs/core/lib/dom-utils/getWindow.js\"],\n  \"sourcesContent\": [\"export default function getWindow(node) {\\n  if (node == null) {\\n    return window;\\n  }\\n\\n  if (node.toString() !== '[object Window]') {\\n    var ownerDocument = node.ownerDocument;\\n    return ownerDocument ? ownerDocument.defaultView || window : window;\\n  }\\n\\n  return node;\\n}\"],\n  \"mappings\": \"AAAA,wBAAwB,UAAU,MAAM;AACtC,MAAI,QAAQ,MAAM;AAChB,WAAO;AAAA,EACT;AAEA,MAAI,KAAK,SAAS,MAAM,mBAAmB;AACzC,QAAI,gBAAgB,KAAK;AACzB,WAAO,gBAAgB,cAAc,eAAe,SAAS;AAAA,EAC/D;AAEA,SAAO;AACT;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714025110976,
+      "end": 1714025110976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714025110976,
+      "end": 1714025110976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714025110976,
+      "end": 1714025110976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714025110976,
+      "end": 1714025110976,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714025110976,
+      "end": 1714025110976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714025110976,
+      "end": 1714025110976,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714025110976,
+      "end": 1714025110976,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714025110976,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714025110976,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714025110977,
+      "end": 1714025110977,
+      "order": "normal"
+    }
+  ]
+}
