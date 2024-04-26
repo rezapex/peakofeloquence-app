@@ -9,12 +9,12 @@ const links = computed(
 </script>
 
 <template>
-  <UContainer class="font-serif">
+  <UContainer class="">
     <UPage>
       <template #left>
         <UAside>
           <template #top>
-            <UContentSearchButton class="rounded-md" size="md" />
+            <UContentSearchButton class="rounded-md" size="sm" />
           </template>
 
           <UNavigationTree :links="mapContentNavigation(links)" />

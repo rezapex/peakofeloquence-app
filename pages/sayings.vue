@@ -9,7 +9,7 @@ const links = computed(
 </script>
 
 <template>
-  <UContainer class="font-serif">
+  <UContainer class="">
     <UPage>
       <template #left>
         <UAside>
