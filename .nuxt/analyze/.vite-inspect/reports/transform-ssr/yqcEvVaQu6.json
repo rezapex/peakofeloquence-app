@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\nimport type { TocLink } from '@nuxt/content/dist/runtime/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'ContentToc',\n  __ssrInlineRender: true,\n  props: {\n  title: {\n    type: String,\n    default: 'Table of Contents'\n  },\n  links: {\n    type: Array as PropType<TocLink[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  wrapper: 'sticky top-[--header-height] bg-background/75 backdrop-blur -mx-4 sm:-mx-6 px-4 sm:px-6 lg:px-4 lg:-mx-4 overflow-y-auto max-h-[calc(100vh-var(--header-height))]',\n  container: {\n    base: 'py-3 lg:py-8 border-b border-dashed border-gray-200 dark:border-gray-800 lg:border-0 space-y-3',\n    empty: 'lg:py-8 space-y-3'\n  },\n  button: {\n    base: 'flex items-center gap-1.5 lg:cursor-text lg:select-text w-full group',\n    label: 'font-semibold text-sm/6 truncate',\n    trailingIcon: {\n      name: appConfig.ui.icons.chevron,\n      base: 'w-5 h-5 ms-auto transform transition-transform duration-200 flex-shrink-0 mr-1.5',\n      active: 'text-gray-700 dark:text-gray-200',\n      inactive: 'text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 -rotate-90'\n    }\n  },\n  links: {}\n}))\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('content.toc', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst open = ref(false)\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_UContentTocLinks = _resolveComponent(\"UContentTocLinks\")!\n\n  _push(`<nav${\n    _ssrRenderAttrs(_mergeProps({\n      class: _unref(ui).wrapper\n    }, _unref(attrs), _attrs))\n  }><div class=\"${\n    _ssrRenderClass([__props.links?.length ? _unref(ui).container.base : _unref(ui).container.empty])\n  }\">`)\n  _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent)\n  if (__props.links?.length) {\n    _push(`<button class=\"${\n      _ssrRenderClass(_unref(ui).button.base)\n    }\" tabindex=\"-1\"><span class=\"${\n      _ssrRenderClass(_unref(ui).button.label)\n    }\">${\n      _ssrInterpolate(__props.title)\n    }</span>`)\n    _push(_ssrRenderComponent(_component_UIcon, {\n      name: _unref(ui).button.trailingIcon.name,\n      class: [\"lg:!hidden\", [_unref(ui).button.trailingIcon.base, _unref(open) ? _unref(ui).button.trailingIcon.active : _unref(ui).button.trailingIcon.inactive]]\n    }, null, _parent))\n    _push(`</button>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(_ssrRenderComponent(_component_UContentTocLinks, {\n    links: __props.links,\n    ui: _unref(ui).links,\n    class: [_unref(open) ? 'lg:block' : 'hidden lg:block']\n  }, null, _parent))\n  _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent)\n  _push(`</div></nav>`)\n}\n}\n\n})",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025110260,
-      "end": 1714025110260,
+      "start": 1714172189719,
+      "end": 1714172189719,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentToc\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      default: \"Table of Contents\"\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"sticky top-[--header-height] bg-background/75 backdrop-blur -mx-4 sm:-mx-6 px-4 sm:px-6 lg:px-4 lg:-mx-4 overflow-y-auto max-h-[calc(100vh-var(--header-height))]\",\n      container: {\n        base: \"py-3 lg:py-8 border-b border-dashed border-gray-200 dark:border-gray-800 lg:border-0 space-y-3\",\n        empty: \"lg:py-8 space-y-3\"\n      },\n      button: {\n        base: \"flex items-center gap-1.5 lg:cursor-text lg:select-text w-full group\",\n        label: \"font-semibold text-sm/6 truncate\",\n        trailingIcon: {\n          name: appConfig.ui.icons.chevron,\n          base: \"w-5 h-5 ms-auto transform transition-transform duration-200 flex-shrink-0 mr-1.5\",\n          active: \"text-gray-700 dark:text-gray-200\",\n          inactive: \"text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 -rotate-90\"\n        }\n      },\n      links: {}\n    }));\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.toc\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const open = ref(false);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UContentTocLinks = _resolveComponent(\"UContentTocLinks\");\n      _push(`<nav${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass([__props.links?.length ? _unref(ui).container.base : _unref(ui).container.empty])}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent);\n      if (__props.links?.length) {\n        _push(`<button class=\"${_ssrRenderClass(_unref(ui).button.base)}\" tabindex=\"-1\"><span class=\"${_ssrRenderClass(_unref(ui).button.label)}\">${_ssrInterpolate(__props.title)}</span>`);\n        _push(_ssrRenderComponent(_component_UIcon, {\n          name: _unref(ui).button.trailingIcon.name,\n          class: [\"lg:!hidden\", [_unref(ui).button.trailingIcon.base, _unref(open) ? _unref(ui).button.trailingIcon.active : _unref(ui).button.trailingIcon.inactive]]\n        }, null, _parent));\n        _push(`</button>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(_ssrRenderComponent(_component_UContentTocLinks, {\n        links: __props.links,\n        ui: _unref(ui).links,\n        class: [_unref(open) ? \"lg:block\" : \"hidden lg:block\"]\n      }, null, _parent));\n      _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent);\n      _push(`</div></nav>`);\n    };\n  }\n});\n",
-      "start": 1714025110260,
-      "end": 1714025110436,
+      "start": 1714172189719,
+      "end": 1714172189875,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -92,147 +92,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189875,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189875,
+      "end": 1714172189876,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110436,
-      "end": 1714025110436,
+      "start": 1714172189876,
+      "end": 1714172189876,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { computed, toRef, ref } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentToc\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      default: \"Table of Contents\"\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"sticky top-[--header-height] bg-background/75 backdrop-blur -mx-4 sm:-mx-6 px-4 sm:px-6 lg:px-4 lg:-mx-4 overflow-y-auto max-h-[calc(100vh-var(--header-height))]\",\n      container: {\n        base: \"py-3 lg:py-8 border-b border-dashed border-gray-200 dark:border-gray-800 lg:border-0 space-y-3\",\n        empty: \"lg:py-8 space-y-3\"\n      },\n      button: {\n        base: \"flex items-center gap-1.5 lg:cursor-text lg:select-text w-full group\",\n        label: \"font-semibold text-sm/6 truncate\",\n        trailingIcon: {\n          name: appConfig.ui.icons.chevron,\n          base: \"w-5 h-5 ms-auto transform transition-transform duration-200 flex-shrink-0 mr-1.5\",\n          active: \"text-gray-700 dark:text-gray-200\",\n          inactive: \"text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 -rotate-90\"\n        }\n      },\n      links: {}\n    }));\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.toc\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const open = ref(false);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UContentTocLinks = _resolveComponent(\"UContentTocLinks\");\n      _push(`<nav${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass([__props.links?.length ? _unref(ui).container.base : _unref(ui).container.empty])}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent);\n      if (__props.links?.length) {\n        _push(`<button class=\"${_ssrRenderClass(_unref(ui).button.base)}\" tabindex=\"-1\"><span class=\"${_ssrRenderClass(_unref(ui).button.label)}\">${_ssrInterpolate(__props.title)}</span>`);\n        _push(_ssrRenderComponent(_component_UIcon, {\n          name: _unref(ui).button.trailingIcon.name,\n          class: [\"lg:!hidden\", [_unref(ui).button.trailingIcon.base, _unref(open) ? _unref(ui).button.trailingIcon.active : _unref(ui).button.trailingIcon.inactive]]\n        }, null, _parent));\n        _push(`</button>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(_ssrRenderComponent(_component_UContentTocLinks, {\n        links: __props.links,\n        ui: _unref(ui).links,\n        class: [_unref(open) ? \"lg:block\" : \"hidden lg:block\"]\n      }, null, _parent));\n      _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent);\n      _push(`</div></nav>`);\n    };\n  }\n});\n",
-      "start": 1714025110436,
-      "end": 1714025110442,
+      "start": 1714172189876,
+      "end": 1714172189877,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -246,8 +246,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { computed, toRef, ref } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentToc\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      default: \"Table of Contents\"\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"sticky top-[--header-height] bg-background/75 backdrop-blur -mx-4 sm:-mx-6 px-4 sm:px-6 lg:px-4 lg:-mx-4 overflow-y-auto max-h-[calc(100vh-var(--header-height))]\",\n      container: {\n        base: \"py-3 lg:py-8 border-b border-dashed border-gray-200 dark:border-gray-800 lg:border-0 space-y-3\",\n        empty: \"lg:py-8 space-y-3\"\n      },\n      button: {\n        base: \"flex items-center gap-1.5 lg:cursor-text lg:select-text w-full group\",\n        label: \"font-semibold text-sm/6 truncate\",\n        trailingIcon: {\n          name: appConfig.ui.icons.chevron,\n          base: \"w-5 h-5 ms-auto transform transition-transform duration-200 flex-shrink-0 mr-1.5\",\n          active: \"text-gray-700 dark:text-gray-200\",\n          inactive: \"text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 -rotate-90\"\n        }\n      },\n      links: {}\n    }));\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.toc\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const open = ref(false);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UContentTocLinks = _resolveComponent(\"UContentTocLinks\");\n      _push(`<nav${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass([__props.links?.length ? _unref(ui).container.base : _unref(ui).container.empty])}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent);\n      if (__props.links?.length) {\n        _push(`<button class=\"${_ssrRenderClass(_unref(ui).button.base)}\" tabindex=\"-1\"><span class=\"${_ssrRenderClass(_unref(ui).button.label)}\">${_ssrInterpolate(__props.title)}</span>`);\n        _push(_ssrRenderComponent(_component_UIcon, {\n          name: _unref(ui).button.trailingIcon.name,\n          class: [\"lg:!hidden\", [_unref(ui).button.trailingIcon.base, _unref(open) ? _unref(ui).button.trailingIcon.active : _unref(ui).button.trailingIcon.inactive]]\n        }, null, _parent));\n        _push(`</button>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(_ssrRenderComponent(_component_UContentTocLinks, {\n        links: __props.links,\n        ui: _unref(ui).links,\n        class: [_unref(open) ? \"lg:block\" : \"hidden lg:block\"]\n      }, null, _parent));\n      _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent);\n      _push(`</div></nav>`);\n    };\n  }\n});\n",
-      "start": 1714025110436,
-      "end": 1714025110442,
+      "start": 1714172189876,
+      "end": 1714172189877,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -260,39 +260,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/content/ContentTocLinks.vue\";\nimport { useAppConfig } from '#app/config';\nimport { computed, toRef, ref } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentToc\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      default: \"Table of Contents\"\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"sticky top-[--header-height] bg-background/75 backdrop-blur -mx-4 sm:-mx-6 px-4 sm:px-6 lg:px-4 lg:-mx-4 overflow-y-auto max-h-[calc(100vh-var(--header-height))]\",\n      container: {\n        base: \"py-3 lg:py-8 border-b border-dashed border-gray-200 dark:border-gray-800 lg:border-0 space-y-3\",\n        empty: \"lg:py-8 space-y-3\"\n      },\n      button: {\n        base: \"flex items-center gap-1.5 lg:cursor-text lg:select-text w-full group\",\n        label: \"font-semibold text-sm/6 truncate\",\n        trailingIcon: {\n          name: appConfig.ui.icons.chevron,\n          base: \"w-5 h-5 ms-auto transform transition-transform duration-200 flex-shrink-0 mr-1.5\",\n          active: \"text-gray-700 dark:text-gray-200\",\n          inactive: \"text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 -rotate-90\"\n        }\n      },\n      links: {}\n    }));\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.toc\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const open = ref(false);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UIcon = __nuxt_component_0;\n      const _component_UContentTocLinks = __nuxt_component_1;\n      _push(`<nav${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass([__props.links?.length ? _unref(ui).container.base : _unref(ui).container.empty])}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent);\n      if (__props.links?.length) {\n        _push(`<button class=\"${_ssrRenderClass(_unref(ui).button.base)}\" tabindex=\"-1\"><span class=\"${_ssrRenderClass(_unref(ui).button.label)}\">${_ssrInterpolate(__props.title)}</span>`);\n        _push(_ssrRenderComponent(_component_UIcon, {\n          name: _unref(ui).button.trailingIcon.name,\n          class: [\"lg:!hidden\", [_unref(ui).button.trailingIcon.base, _unref(open) ? _unref(ui).button.trailingIcon.active : _unref(ui).button.trailingIcon.inactive]]\n        }, null, _parent));\n        _push(`</button>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(_ssrRenderComponent(_component_UContentTocLinks, {\n        links: __props.links,\n        ui: _unref(ui).links,\n        class: [_unref(open) ? \"lg:block\" : \"hidden lg:block\"]\n      }, null, _parent));\n      _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent);\n      _push(`</div></nav>`);\n    };\n  }\n});\n",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -305,20 +305,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025110442,
-      "end": 1714025110442,
+      "start": 1714172189877,
+      "end": 1714172189877,
       "order": "normal"
     }
   ]

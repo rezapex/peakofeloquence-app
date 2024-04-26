@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <Transition appear v-bind=\"ui.transition\">\n    <div\n      :class=\"wrapperClass\"\n      role=\"status\"\n      v-bind=\"attrs\"\n      @mouseover=\"onMouseover\"\n      @mouseleave=\"onMouseleave\"\n    >\n      <div :class=\"[ui.container, ui.rounded, ui.ring]\">\n        <div class=\"flex\" :class=\"[ui.padding, ui.gap, { 'items-start': description || $slots.description, 'items-center': !description && !$slots.description }]\">\n          <UIcon v-if=\"icon\" :name=\"icon\" :class=\"iconClass\" />\n          <UAvatar v-if=\"avatar\" v-bind=\"{ size: ui.avatar.size, ...avatar }\" :class=\"ui.avatar.base\" />\n\n          <div :class=\"ui.inner\">\n            <p v-if=\"(title || $slots.title)\" :class=\"ui.title\">\n              <slot name=\"title\" :title=\"title\">\n                {{ title }}\n              </slot>\n            </p>\n            <p v-if=\"(description || $slots.description)\" :class=\"twMerge(ui.description, !(title && $slots.title) && 'mt-0 leading-5')\">\n              <slot name=\"description\" :description=\"description\">\n                {{ description }}\n              </slot>\n            </p>\n\n            <div v-if=\"(description || $slots.description) && actions.length\" :class=\"ui.actions\">\n              <UButton v-for=\"(action, index) of actions\" :key=\"index\" v-bind=\"{ ...(ui.default.actionButton || {}), ...action }\" @click.stop=\"onAction(action)\" />\n            </div>\n          </div>\n          <div v-if=\"closeButton || (!description && !$slots.description && actions.length)\" :class=\"twMerge(ui.actions, 'mt-0')\">\n            <template v-if=\"!description && !$slots.description && actions.length\">\n              <UButton v-for=\"(action, index) of actions\" :key=\"index\" v-bind=\"{ ...(ui.default.actionButton || {}), ...action }\" @click.stop=\"onAction(action)\" />\n            </template>\n\n            <UButton v-if=\"closeButton\" aria-label=\"Close\" v-bind=\"{ ...(ui.default.closeButton || {}), ...closeButton }\" @click.stop=\"onClose\" />\n          </div>\n        </div>\n        <div v-if=\"timeout\" :class=\"progressClass\" :style=\"progressStyle\" />\n      </div>\n    </div>\n  </Transition>\n</template>\n\n<script>\nimport { ref, computed, toRef, onMounted, onUnmounted, watchEffect, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UButton from \"../elements/Button.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useTimer } from \"../../composables/useTimer\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { notification } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notification, notification);\nexport default defineComponent({\n  components: {\n    UIcon,\n    UAvatar,\n    UButton\n  },\n  inheritAttrs: false,\n  props: {\n    id: {\n      type: [String, Number],\n      required: true\n    },\n    title: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: () => config.default.icon\n    },\n    avatar: {\n      type: Object,\n      default: null\n    },\n    closeButton: {\n      type: Object,\n      default: () => config.default.closeButton\n    },\n    timeout: {\n      type: Number,\n      default: () => config.default.timeout\n    },\n    actions: {\n      type: Array,\n      default: () => []\n    },\n    callback: {\n      type: Function,\n      default: null\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [\"gray\", ...appConfig.ui.colors].includes(value);\n      }\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"close\"],\n  setup(props, { emit }) {\n    const { ui, attrs } = useUI(\"notification\", toRef(props, \"ui\"), config);\n    let timer = null;\n    const remaining = ref(props.timeout);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        ui.value.background?.replaceAll(\"{color}\", props.color),\n        ui.value.rounded,\n        ui.value.shadow\n      ), props.class);\n    });\n    const progressClass = computed(() => {\n      return twJoin(\n        ui.value.progress.base,\n        ui.value.progress.background?.replaceAll(\"{color}\", props.color)\n      );\n    });\n    const progressStyle = computed(() => {\n      const remainingPercent = remaining.value / props.timeout * 100;\n      return { width: `${remainingPercent || 0}%` };\n    });\n    const iconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        ui.value.icon.color?.replaceAll(\"{color}\", props.color)\n      );\n    });\n    function onMouseover() {\n      if (timer) {\n        timer.pause();\n      }\n    }\n    function onMouseleave() {\n      if (timer) {\n        timer.resume();\n      }\n    }\n    function onClose() {\n      if (timer) {\n        timer.stop();\n      }\n      if (props.callback) {\n        props.callback();\n      }\n      emit(\"close\");\n    }\n    function onAction(action) {\n      if (timer) {\n        timer.stop();\n      }\n      if (action.click) {\n        action.click();\n      }\n      emit(\"close\");\n    }\n    onMounted(() => {\n      if (!props.timeout) {\n        return;\n      }\n      timer = useTimer(() => {\n        onClose();\n      }, props.timeout);\n      watchEffect(() => {\n        remaining.value = timer.remaining.value;\n      });\n    });\n    onUnmounted(() => {\n      if (timer) {\n        timer.stop();\n      }\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      progressClass,\n      progressStyle,\n      iconClass,\n      onMouseover,\n      onMouseleave,\n      onClose,\n      onAction,\n      twMerge\n    };\n  }\n});\n</script>\n",
-      "start": 1714025109719,
-      "end": 1714025109739,
+      "start": 1714172189603,
+      "end": 1714172189604,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025109739,
-      "end": 1714025109739,
+      "start": 1714172189604,
+      "end": 1714172189604,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { ref, computed, toRef, onMounted, onUnmounted, watchEffect, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UButton from \"../elements/Button.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useTimer } from \"../../composables/useTimer\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { notification } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notification, notification);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon,\n    UAvatar,\n    UButton\n  },\n  inheritAttrs: false,\n  props: {\n    id: {\n      type: [String, Number],\n      required: true\n    },\n    title: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: () => config.default.icon\n    },\n    avatar: {\n      type: Object,\n      default: null\n    },\n    closeButton: {\n      type: Object,\n      default: () => config.default.closeButton\n    },\n    timeout: {\n      type: Number,\n      default: () => config.default.timeout\n    },\n    actions: {\n      type: Array,\n      default: () => []\n    },\n    callback: {\n      type: Function,\n      default: null\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [\"gray\", ...appConfig.ui.colors].includes(value);\n      }\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"close\"],\n  setup(props, { emit }) {\n    const { ui, attrs } = useUI(\"notification\", toRef(props, \"ui\"), config);\n    let timer = null;\n    const remaining = ref(props.timeout);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        ui.value.background?.replaceAll(\"{color}\", props.color),\n        ui.value.rounded,\n        ui.value.shadow\n      ), props.class);\n    });\n    const progressClass = computed(() => {\n      return twJoin(\n        ui.value.progress.base,\n        ui.value.progress.background?.replaceAll(\"{color}\", props.color)\n      );\n    });\n    const progressStyle = computed(() => {\n      const remainingPercent = remaining.value / props.timeout * 100;\n      return { width: `${remainingPercent || 0}%` };\n    });\n    const iconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        ui.value.icon.color?.replaceAll(\"{color}\", props.color)\n      );\n    });\n    function onMouseover() {\n      if (timer) {\n        timer.pause();\n      }\n    }\n    function onMouseleave() {\n      if (timer) {\n        timer.resume();\n      }\n    }\n    function onClose() {\n      if (timer) {\n        timer.stop();\n      }\n      if (props.callback) {\n        props.callback();\n      }\n      emit(\"close\");\n    }\n    function onAction(action) {\n      if (timer) {\n        timer.stop();\n      }\n      if (action.click) {\n        action.click();\n      }\n      emit(\"close\");\n    }\n    onMounted(() => {\n      if (!props.timeout) {\n        return;\n      }\n      timer = useTimer(() => {\n        onClose();\n      }, props.timeout);\n      watchEffect(() => {\n        remaining.value = timer.remaining.value;\n      });\n    });\n    onUnmounted(() => {\n      if (timer) {\n        timer.stop();\n      }\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      progressClass,\n      progressStyle,\n      iconClass,\n      onMouseover,\n      onMouseleave,\n      onClose,\n      onAction,\n      twMerge\n    };\n  }\n});\n\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = _resolveComponent(\"UIcon\")\n  const _component_UAvatar = _resolveComponent(\"UAvatar\")\n  const _component_UButton = _resolveComponent(\"UButton\")\n\n  _push(`<template><div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.wrapperClass,\n      role: \"status\"\n    }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass([_ctx.ui.container, _ctx.ui.rounded, _ctx.ui.ring])\n  }\"><div class=\"${\n    _ssrRenderClass([[_ctx.ui.padding, _ctx.ui.gap, { 'items-start': _ctx.description || _ctx.$slots.description, 'items-center': !_ctx.description && !_ctx.$slots.description }], \"flex\"])\n  }\">`)\n  if (_ctx.icon) {\n    _push(_ssrRenderComponent(_component_UIcon, {\n      name: _ctx.icon,\n      class: _ctx.iconClass\n    }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.avatar) {\n    _push(_ssrRenderComponent(_component_UAvatar, _mergeProps({ size: _ctx.ui.avatar.size, ..._ctx.avatar }, {\n      class: _ctx.ui.avatar.base\n    }), null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"${_ssrRenderClass(_ctx.ui.inner)}\">`)\n  if ((_ctx.title || _ctx.$slots.title)) {\n    _push(`<p class=\"${_ssrRenderClass(_ctx.ui.title)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"title\", { title: _ctx.title }, () => {\n      _push(`${_ssrInterpolate(_ctx.title)}`)\n    }, _push, _parent)\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.description || _ctx.$slots.description)) {\n    _push(`<p class=\"${_ssrRenderClass(_ctx.twMerge(_ctx.ui.description, !(_ctx.title && _ctx.$slots.title) && 'mt-0 leading-5'))}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"description\", { description: _ctx.description }, () => {\n      _push(`${_ssrInterpolate(_ctx.description)}`)\n    }, _push, _parent)\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.description || _ctx.$slots.description) && _ctx.actions.length) {\n    _push(`<div class=\"${_ssrRenderClass(_ctx.ui.actions)}\"><!--[-->`)\n    _ssrRenderList(_ctx.actions, (action, index) => {\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...(_ctx.ui.default.actionButton || {}), ...action }, {\n        onClick: $event => (_ctx.onAction(action))\n      }), null, _parent))\n    })\n    _push(`<!--]--></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (_ctx.closeButton || (!_ctx.description && !_ctx.$slots.description && _ctx.actions.length)) {\n    _push(`<div class=\"${_ssrRenderClass(_ctx.twMerge(_ctx.ui.actions, 'mt-0'))}\">`)\n    if (!_ctx.description && !_ctx.$slots.description && _ctx.actions.length) {\n      _push(`<!--[-->`)\n      _ssrRenderList(_ctx.actions, (action, index) => {\n        _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...(_ctx.ui.default.actionButton || {}), ...action }, {\n          onClick: $event => (_ctx.onAction(action))\n        }), null, _parent))\n      })\n      _push(`<!--]-->`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_ctx.closeButton) {\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ \"aria-label\": \"Close\" }, { ...(_ctx.ui.default.closeButton || {}), ..._ctx.closeButton }, { onClick: _ctx.onClose }), null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (_ctx.timeout) {\n    _push(`<div class=\"${\n      _ssrRenderClass(_ctx.progressClass)\n    }\" style=\"${\n      _ssrRenderStyle(_ctx.progressStyle)\n    }\"></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div></template>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/overlays/Notification.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714025109739,
-      "end": 1714025109743,
+      "start": 1714172189604,
+      "end": 1714172189607,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -101,171 +101,171 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189607,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189607,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025109743,
-      "end": 1714025109743,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714025109743,
-      "end": 1714025109744,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714025109743,
-      "end": 1714025109744,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025109744,
-      "end": 1714025109744,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025109744,
-      "end": 1714025109744,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025109744,
-      "end": 1714025109744,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025109744,
-      "end": 1714025109744,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025109744,
-      "end": 1714025109744,
+      "start": 1714172189608,
+      "end": 1714172189608,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\n\nimport { ref, computed, toRef, onMounted, onUnmounted, watchEffect, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UButton from \"../elements/Button.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useTimer } from \"../../composables/useTimer\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { notification } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notification, notification);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon,\n    UAvatar,\n    UButton\n  },\n  inheritAttrs: false,\n  props: {\n    id: {\n      type: [String, Number],\n      required: true\n    },\n    title: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: () => config.default.icon\n    },\n    avatar: {\n      type: Object,\n      default: null\n    },\n    closeButton: {\n      type: Object,\n      default: () => config.default.closeButton\n    },\n    timeout: {\n      type: Number,\n      default: () => config.default.timeout\n    },\n    actions: {\n      type: Array,\n      default: () => []\n    },\n    callback: {\n      type: Function,\n      default: null\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [\"gray\", ...appConfig.ui.colors].includes(value);\n      }\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"close\"],\n  setup(props, { emit }) {\n    const { ui, attrs } = useUI(\"notification\", toRef(props, \"ui\"), config);\n    let timer = null;\n    const remaining = ref(props.timeout);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        ui.value.background?.replaceAll(\"{color}\", props.color),\n        ui.value.rounded,\n        ui.value.shadow\n      ), props.class);\n    });\n    const progressClass = computed(() => {\n      return twJoin(\n        ui.value.progress.base,\n        ui.value.progress.background?.replaceAll(\"{color}\", props.color)\n      );\n    });\n    const progressStyle = computed(() => {\n      const remainingPercent = remaining.value / props.timeout * 100;\n      return { width: `${remainingPercent || 0}%` };\n    });\n    const iconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        ui.value.icon.color?.replaceAll(\"{color}\", props.color)\n      );\n    });\n    function onMouseover() {\n      if (timer) {\n        timer.pause();\n      }\n    }\n    function onMouseleave() {\n      if (timer) {\n        timer.resume();\n      }\n    }\n    function onClose() {\n      if (timer) {\n        timer.stop();\n      }\n      if (props.callback) {\n        props.callback();\n      }\n      emit(\"close\");\n    }\n    function onAction(action) {\n      if (timer) {\n        timer.stop();\n      }\n      if (action.click) {\n        action.click();\n      }\n      emit(\"close\");\n    }\n    onMounted(() => {\n      if (!props.timeout) {\n        return;\n      }\n      timer = useTimer(() => {\n        onClose();\n      }, props.timeout);\n      watchEffect(() => {\n        remaining.value = timer.remaining.value;\n      });\n    });\n    onUnmounted(() => {\n      if (timer) {\n        timer.stop();\n      }\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      progressClass,\n      progressStyle,\n      iconClass,\n      onMouseover,\n      onMouseleave,\n      onClose,\n      onAction,\n      twMerge\n    };\n  }\n});\n\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = __nuxt_component_0\n  const _component_UAvatar = __nuxt_component_1\n  const _component_UButton = __nuxt_component_2\n\n  _push(`<template><div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.wrapperClass,\n      role: \"status\"\n    }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass([_ctx.ui.container, _ctx.ui.rounded, _ctx.ui.ring])\n  }\"><div class=\"${\n    _ssrRenderClass([[_ctx.ui.padding, _ctx.ui.gap, { 'items-start': _ctx.description || _ctx.$slots.description, 'items-center': !_ctx.description && !_ctx.$slots.description }], \"flex\"])\n  }\">`)\n  if (_ctx.icon) {\n    _push(_ssrRenderComponent(_component_UIcon, {\n      name: _ctx.icon,\n      class: _ctx.iconClass\n    }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.avatar) {\n    _push(_ssrRenderComponent(_component_UAvatar, _mergeProps({ size: _ctx.ui.avatar.size, ..._ctx.avatar }, {\n      class: _ctx.ui.avatar.base\n    }), null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"${_ssrRenderClass(_ctx.ui.inner)}\">`)\n  if ((_ctx.title || _ctx.$slots.title)) {\n    _push(`<p class=\"${_ssrRenderClass(_ctx.ui.title)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"title\", { title: _ctx.title }, () => {\n      _push(`${_ssrInterpolate(_ctx.title)}`)\n    }, _push, _parent)\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.description || _ctx.$slots.description)) {\n    _push(`<p class=\"${_ssrRenderClass(_ctx.twMerge(_ctx.ui.description, !(_ctx.title && _ctx.$slots.title) && 'mt-0 leading-5'))}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"description\", { description: _ctx.description }, () => {\n      _push(`${_ssrInterpolate(_ctx.description)}`)\n    }, _push, _parent)\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.description || _ctx.$slots.description) && _ctx.actions.length) {\n    _push(`<div class=\"${_ssrRenderClass(_ctx.ui.actions)}\"><!--[-->`)\n    _ssrRenderList(_ctx.actions, (action, index) => {\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...(_ctx.ui.default.actionButton || {}), ...action }, {\n        onClick: $event => (_ctx.onAction(action))\n      }), null, _parent))\n    })\n    _push(`<!--]--></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (_ctx.closeButton || (!_ctx.description && !_ctx.$slots.description && _ctx.actions.length)) {\n    _push(`<div class=\"${_ssrRenderClass(_ctx.twMerge(_ctx.ui.actions, 'mt-0'))}\">`)\n    if (!_ctx.description && !_ctx.$slots.description && _ctx.actions.length) {\n      _push(`<!--[-->`)\n      _ssrRenderList(_ctx.actions, (action, index) => {\n        _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...(_ctx.ui.default.actionButton || {}), ...action }, {\n          onClick: $event => (_ctx.onAction(action))\n        }), null, _parent))\n      })\n      _push(`<!--]-->`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_ctx.closeButton) {\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ \"aria-label\": \"Close\" }, { ...(_ctx.ui.default.closeButton || {}), ..._ctx.closeButton }, { onClick: _ctx.onClose }), null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (_ctx.timeout) {\n    _push(`<div class=\"${\n      _ssrRenderClass(_ctx.progressClass)\n    }\" style=\"${\n      _ssrRenderStyle(_ctx.progressStyle)\n    }\"></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div></template>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/overlays/Notification.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714025109744,
-      "end": 1714025109744,
+      "start": 1714172189608,
+      "end": 1714172189609,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -279,8 +279,8 @@
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\n\nimport { ref, computed, toRef, onMounted, onUnmounted, watchEffect, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UButton from \"../elements/Button.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useTimer } from \"../../composables/useTimer\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { notification } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notification, notification);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon,\n    UAvatar,\n    UButton\n  },\n  inheritAttrs: false,\n  props: {\n    id: {\n      type: [String, Number],\n      required: true\n    },\n    title: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: () => config.default.icon\n    },\n    avatar: {\n      type: Object,\n      default: null\n    },\n    closeButton: {\n      type: Object,\n      default: () => config.default.closeButton\n    },\n    timeout: {\n      type: Number,\n      default: () => config.default.timeout\n    },\n    actions: {\n      type: Array,\n      default: () => []\n    },\n    callback: {\n      type: Function,\n      default: null\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [\"gray\", ...appConfig.ui.colors].includes(value);\n      }\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"close\"],\n  setup(props, { emit }) {\n    const { ui, attrs } = useUI(\"notification\", toRef(props, \"ui\"), config);\n    let timer = null;\n    const remaining = ref(props.timeout);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        ui.value.background?.replaceAll(\"{color}\", props.color),\n        ui.value.rounded,\n        ui.value.shadow\n      ), props.class);\n    });\n    const progressClass = computed(() => {\n      return twJoin(\n        ui.value.progress.base,\n        ui.value.progress.background?.replaceAll(\"{color}\", props.color)\n      );\n    });\n    const progressStyle = computed(() => {\n      const remainingPercent = remaining.value / props.timeout * 100;\n      return { width: `${remainingPercent || 0}%` };\n    });\n    const iconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        ui.value.icon.color?.replaceAll(\"{color}\", props.color)\n      );\n    });\n    function onMouseover() {\n      if (timer) {\n        timer.pause();\n      }\n    }\n    function onMouseleave() {\n      if (timer) {\n        timer.resume();\n      }\n    }\n    function onClose() {\n      if (timer) {\n        timer.stop();\n      }\n      if (props.callback) {\n        props.callback();\n      }\n      emit(\"close\");\n    }\n    function onAction(action) {\n      if (timer) {\n        timer.stop();\n      }\n      if (action.click) {\n        action.click();\n      }\n      emit(\"close\");\n    }\n     false && /*@__PURE__*/ onMounted(() => {\n      if (!props.timeout) {\n        return;\n      }\n      timer = useTimer(() => {\n        onClose();\n      }, props.timeout);\n      watchEffect(() => {\n        remaining.value = timer.remaining.value;\n      });\n    });\n    onUnmounted(() => {\n      if (timer) {\n        timer.stop();\n      }\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      progressClass,\n      progressStyle,\n      iconClass,\n      onMouseover,\n      onMouseleave,\n      onClose,\n      onAction,\n      twMerge\n    };\n  }\n});\n\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = __nuxt_component_0\n  const _component_UAvatar = __nuxt_component_1\n  const _component_UButton = __nuxt_component_2\n\n  _push(`<template><div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.wrapperClass,\n      role: \"status\"\n    }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass([_ctx.ui.container, _ctx.ui.rounded, _ctx.ui.ring])\n  }\"><div class=\"${\n    _ssrRenderClass([[_ctx.ui.padding, _ctx.ui.gap, { 'items-start': _ctx.description || _ctx.$slots.description, 'items-center': !_ctx.description && !_ctx.$slots.description }], \"flex\"])\n  }\">`)\n  if (_ctx.icon) {\n    _push(_ssrRenderComponent(_component_UIcon, {\n      name: _ctx.icon,\n      class: _ctx.iconClass\n    }, null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.avatar) {\n    _push(_ssrRenderComponent(_component_UAvatar, _mergeProps({ size: _ctx.ui.avatar.size, ..._ctx.avatar }, {\n      class: _ctx.ui.avatar.base\n    }), null, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"${_ssrRenderClass(_ctx.ui.inner)}\">`)\n  if ((_ctx.title || _ctx.$slots.title)) {\n    _push(`<p class=\"${_ssrRenderClass(_ctx.ui.title)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"title\", { title: _ctx.title }, () => {\n      _push(`${_ssrInterpolate(_ctx.title)}`)\n    }, _push, _parent)\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.description || _ctx.$slots.description)) {\n    _push(`<p class=\"${_ssrRenderClass(_ctx.twMerge(_ctx.ui.description, !(_ctx.title && _ctx.$slots.title) && 'mt-0 leading-5'))}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"description\", { description: _ctx.description }, () => {\n      _push(`${_ssrInterpolate(_ctx.description)}`)\n    }, _push, _parent)\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.description || _ctx.$slots.description) && _ctx.actions.length) {\n    _push(`<div class=\"${_ssrRenderClass(_ctx.ui.actions)}\"><!--[-->`)\n    _ssrRenderList(_ctx.actions, (action, index) => {\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...(_ctx.ui.default.actionButton || {}), ...action }, {\n        onClick: $event => (_ctx.onAction(action))\n      }), null, _parent))\n    })\n    _push(`<!--]--></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (_ctx.closeButton || (!_ctx.description && !_ctx.$slots.description && _ctx.actions.length)) {\n    _push(`<div class=\"${_ssrRenderClass(_ctx.twMerge(_ctx.ui.actions, 'mt-0'))}\">`)\n    if (!_ctx.description && !_ctx.$slots.description && _ctx.actions.length) {\n      _push(`<!--[-->`)\n      _ssrRenderList(_ctx.actions, (action, index) => {\n        _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...(_ctx.ui.default.actionButton || {}), ...action }, {\n          onClick: $event => (_ctx.onAction(action))\n        }), null, _parent))\n      })\n      _push(`<!--]-->`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_ctx.closeButton) {\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ \"aria-label\": \"Close\" }, { ...(_ctx.ui.default.closeButton || {}), ..._ctx.closeButton }, { onClick: _ctx.onClose }), null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (_ctx.timeout) {\n    _push(`<div class=\"${\n      _ssrRenderClass(_ctx.progressClass)\n    }\" style=\"${\n      _ssrRenderStyle(_ctx.progressStyle)\n    }\"></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div></template>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/overlays/Notification.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714025109744,
-      "end": 1714025109746,
+      "start": 1714172189609,
+      "end": 1714172189610,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -293,14 +293,14 @@
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025109746,
-      "end": 1714025109746,
+      "start": 1714172189610,
+      "end": 1714172189610,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025109746,
-      "end": 1714025109746,
+      "start": 1714172189610,
+      "end": 1714172189610,
       "order": "normal"
     }
   ]

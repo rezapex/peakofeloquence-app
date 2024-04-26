@@ -1,0 +1,242 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { key: 0 }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"code\", null, \"script\", -1)\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"code\", null, \"ProseScript\", -1)\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ProseScript',\n  props: {\n  src: {\n    type: String,\n    default: ''\n  }\n},\n  setup(__props) {\n\n\nconst isDev = import.meta.dev\n\nreturn (_ctx: any,_cache: any) => {\n  return (_unref(isDev))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createTextVNode(\" Rendering the \"),\n        _hoisted_2,\n        _createTextVNode(\" element is dangerous and is disabled by default. Consider implementing your own \"),\n        _hoisted_3,\n        _createTextVNode(\" element to have control over script rendering. \")\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n})",
+      "start": 1714172179022,
+      "end": 1714172179022
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172179022,
+      "end": 1714172179022,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172179022,
+      "end": 1714172179022,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172179022,
+      "end": 1714172179022,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172179022,
+      "end": 1714172179022,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172179022,
+      "end": 1714172179022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { key: 0 };\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"code\", null, \"script\", -1);\nconst _hoisted_3 = /* @__PURE__ */ _createElementVNode(\"code\", null, \"ProseScript\", -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ProseScript\",\n  props: {\n    src: {\n      type: String,\n      default: \"\"\n    }\n  },\n  setup(__props) {\n    const isDev = import.meta.dev;\n    return (_ctx, _cache) => {\n      return _unref(isDev) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createTextVNode(\" Rendering the \"),\n        _hoisted_2,\n        _createTextVNode(\" element is dangerous and is disabled by default. Consider implementing your own \"),\n        _hoisted_3,\n        _createTextVNode(\" element to have control over script rendering. \")\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
+      "start": 1714172179022,
+      "end": 1714172179606,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { key: 0 }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"code\", null, \"script\", -1)\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"code\", null, \"ProseScript\", -1)\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ProseScript',\n  props: {\n  src: {\n    type: String,\n    default: ''\n  }\n},\n  setup(__props) {\n\n\nconst isDev = import.meta.dev\n\nreturn (_ctx: any,_cache: any) => {\n  return (_unref(isDev))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createTextVNode(\" Rendering the \"),\n        _hoisted_2,\n        _createTextVNode(\" element is dangerous and is disabled by default. Consider implementing your own \"),\n        _hoisted_3,\n        _createTextVNode(\" element to have control over script rendering. \")\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,SAAS,QAAQ,sBAAsB,qBAAqB,mBAAmB,kBAAkB,aAAa,YAAY,sBAAsB,qBAAqB,sBAAsB,2BAA2B;AAE/N,MAAM,aAAa,EAAE,KAAK,EAAE;AAC5B,MAAM,aAA0B,oCAAoB,QAAQ,MAAM,UAAU,EAAE;AAC9E,MAAM,aAA0B,oCAAoB,QAAQ,MAAM,eAAe,EAAE;AAGnF,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,KAAK;AAAA,MACH,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAGjB,UAAM,QAAQ,YAAY;AAE1B,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,OAAO,KAAK,KACf,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QACpD,iBAAiB,iBAAiB;AAAA,QAClC;AAAA,QACA,iBAAiB,mFAAmF;AAAA,QACpG;AAAA,QACA,iBAAiB,kDAAkD;AAAA,MACrE,CAAC,KACD,oBAAoB,IAAI,IAAI;AAAA,IAClC;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { key: 0 };\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"code\", null, \"script\", -1);\nconst _hoisted_3 = /* @__PURE__ */ _createElementVNode(\"code\", null, \"ProseScript\", -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ProseScript\",\n  props: {\n    src: {\n      type: String,\n      default: \"\"\n    }\n  },\n  setup(__props) {\n    const isDev = false;\n    return (_ctx, _cache) => {\n      return _unref(isDev) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createTextVNode(\" Rendering the \"),\n        _hoisted_2,\n        _createTextVNode(\" element is dangerous and is disabled by default. Consider implementing your own \"),\n        _hoisted_3,\n        _createTextVNode(\" element to have control over script rendering. \")\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrO,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,KAAe,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9G,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714172179606,
+      "end": 1714172179606,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172179607,
+      "end": 1714172179607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172179607,
+      "end": 1714172179607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1714172179607,
+      "end": 1714172179607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1714172179607,
+      "end": 1714172179607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714172179607,
+      "end": 1714172179607,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714172179607,
+      "end": 1714172179607,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714172179607,
+      "end": 1714172179607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172179607,
+      "end": 1714172179607,
+      "order": "normal"
+    }
+  ]
+}

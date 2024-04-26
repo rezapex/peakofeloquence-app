@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div :class=\"ui.wrapper\">\n    <input\n      :id=\"inputId\"\n      ref=\"input\"\n      :name=\"name\"\n      :value=\"modelValue\"\n      :type=\"type\"\n      :required=\"required\"\n      :placeholder=\"placeholder\"\n      :disabled=\"disabled\"\n      :class=\"inputClass\"\n      v-bind=\"attrs\"\n      @input=\"onInput\"\n      @blur=\"onBlur\"\n      @change=\"onChange\"\n    >\n    <slot />\n\n    <span v-if=\"(isLeading && leadingIconName) || $slots.leading\" :class=\"leadingWrapperIconClass\">\n      <slot name=\"leading\" :disabled=\"disabled\" :loading=\"loading\">\n        <UIcon :name=\"leadingIconName\" :class=\"leadingIconClass\" />\n      </slot>\n    </span>\n\n    <span v-if=\"(isTrailing && trailingIconName) || $slots.trailing\" :class=\"trailingWrapperIconClass\">\n      <slot name=\"trailing\" :disabled=\"disabled\" :loading=\"loading\">\n        <UIcon :name=\"trailingIconName\" :class=\"trailingIconClass\" />\n      </slot>\n    </span>\n  </div>\n</template>\n\n<script>\nimport { ref, computed, toRef, onMounted, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport { defu } from \"defu\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useFormGroup } from \"../../composables/useFormGroup\";\nimport { mergeConfig, looseToNumber } from \"../../utils\";\nimport { useInjectButtonGroup } from \"../../composables/useButtonGroup\";\nimport appConfig from \"#build/app.config\";\nimport { input } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.input, input);\nexport default defineComponent({\n  components: {\n    UIcon\n  },\n  inheritAttrs: false,\n  props: {\n    modelValue: {\n      type: [String, Number],\n      default: \"\"\n    },\n    type: {\n      type: String,\n      default: \"text\"\n    },\n    id: {\n      type: String,\n      default: null\n    },\n    name: {\n      type: String,\n      default: null\n    },\n    placeholder: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    autofocus: {\n      type: Boolean,\n      default: false\n    },\n    autofocusDelay: {\n      type: Number,\n      default: 100\n    },\n    icon: {\n      type: String,\n      default: null\n    },\n    loadingIcon: {\n      type: String,\n      default: () => config.default.loadingIcon\n    },\n    leadingIcon: {\n      type: String,\n      default: null\n    },\n    trailingIcon: {\n      type: String,\n      default: null\n    },\n    trailing: {\n      type: Boolean,\n      default: false\n    },\n    leading: {\n      type: Boolean,\n      default: false\n    },\n    loading: {\n      type: Boolean,\n      default: false\n    },\n    padded: {\n      type: Boolean,\n      default: true\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [...appConfig.ui.colors, ...Object.keys(config.color)].includes(value);\n      }\n    },\n    variant: {\n      type: String,\n      default: () => config.default.variant,\n      validator(value) {\n        return [\n          ...Object.keys(config.variant),\n          ...Object.values(config.color).flatMap((value2) => Object.keys(value2))\n        ].includes(value);\n      }\n    },\n    inputClass: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    modelModifiers: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\", \"blur\", \"change\"],\n  setup(props, { emit, slots }) {\n    const { ui, attrs } = useUI(\"input\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const { size: sizeButtonGroup, rounded } = useInjectButtonGroup({ ui, props });\n    const { emitFormBlur, emitFormInput, size: sizeFormGroup, color, inputId, name } = useFormGroup(props, config);\n    const size = computed(() => sizeButtonGroup.value || sizeFormGroup.value);\n    const modelModifiers = ref(defu({}, props.modelModifiers, { trim: false, lazy: false, number: false }));\n    const input2 = ref(null);\n    const autoFocus = () => {\n      if (props.autofocus) {\n        input2.value?.focus();\n      }\n    };\n    const updateInput = (value) => {\n      if (modelModifiers.value.trim) {\n        value = value.trim();\n      }\n      if (modelModifiers.value.number || props.type === \"number\") {\n        value = looseToNumber(value);\n      }\n      emit(\"update:modelValue\", value);\n      emitFormInput();\n    };\n    const onInput = (event) => {\n      if (!modelModifiers.value.lazy) {\n        updateInput(event.target.value);\n      }\n    };\n    const onChange = (event) => {\n      if (props.type === \"file\") {\n        const value = event.target.files;\n        emit(\"change\", value);\n      } else {\n        const value = event.target.value;\n        emit(\"change\", value);\n        if (modelModifiers.value.lazy) {\n          updateInput(value);\n        }\n        if (modelModifiers.value.trim) {\n          event.target.value = value.trim();\n        }\n      }\n    };\n    const onBlur = (event) => {\n      emitFormBlur();\n      emit(\"blur\", event);\n    };\n    onMounted(() => {\n      setTimeout(() => {\n        autoFocus();\n      }, props.autofocusDelay);\n    });\n    const inputClass = computed(() => {\n      const variant = ui.value.color?.[color.value]?.[props.variant] || ui.value.variant[props.variant];\n      return twMerge(twJoin(\n        ui.value.base,\n        ui.value.form,\n        rounded.value,\n        ui.value.placeholder,\n        props.type === \"file\" && [ui.value.file.base, ui.value.file.padding[size.value]],\n        ui.value.size[size.value],\n        props.padded ? ui.value.padding[size.value] : \"p-0\",\n        variant?.replaceAll(\"{color}\", color.value),\n        (isLeading.value || slots.leading) && ui.value.leading.padding[size.value],\n        (isTrailing.value || slots.trailing) && ui.value.trailing.padding[size.value]\n      ), props.inputClass);\n    });\n    const isLeading = computed(() => {\n      return props.icon && props.leading || props.icon && !props.trailing || props.loading && !props.trailing || props.leadingIcon;\n    });\n    const isTrailing = computed(() => {\n      return props.icon && props.trailing || props.loading && props.trailing || props.trailingIcon;\n    });\n    const leadingIconName = computed(() => {\n      if (props.loading) {\n        return props.loadingIcon;\n      }\n      return props.leadingIcon || props.icon;\n    });\n    const trailingIconName = computed(() => {\n      if (props.loading && !isLeading.value) {\n        return props.loadingIcon;\n      }\n      return props.trailingIcon || props.icon;\n    });\n    const leadingWrapperIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.leading.wrapper,\n        ui.value.icon.leading.pointer,\n        ui.value.icon.leading.padding[size.value]\n      );\n    });\n    const leadingIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        color.value && appConfig.ui.colors.includes(color.value) && ui.value.icon.color.replaceAll(\"{color}\", color.value),\n        ui.value.icon.size[size.value],\n        props.loading && ui.value.icon.loading\n      );\n    });\n    const trailingWrapperIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.trailing.wrapper,\n        ui.value.icon.trailing.pointer,\n        ui.value.icon.trailing.padding[size.value]\n      );\n    });\n    const trailingIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        color.value && appConfig.ui.colors.includes(color.value) && ui.value.icon.color.replaceAll(\"{color}\", color.value),\n        ui.value.icon.size[size.value],\n        props.loading && !isLeading.value && ui.value.icon.loading\n      );\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      // eslint-disable-next-line vue/no-dupe-keys\n      name,\n      inputId,\n      input: input2,\n      isLeading,\n      isTrailing,\n      // eslint-disable-next-line vue/no-dupe-keys\n      inputClass,\n      leadingIconName,\n      leadingIconClass,\n      leadingWrapperIconClass,\n      trailingIconName,\n      trailingIconClass,\n      trailingWrapperIconClass,\n      onInput,\n      onChange,\n      onBlur\n    };\n  }\n});\n</script>\n",
-      "start": 1714025110297,
-      "end": 1714025110330,
+      "start": 1714172189925,
+      "end": 1714172189952,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025110330,
-      "end": 1714025110330,
+      "start": 1714172189952,
+      "end": 1714172189952,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { ref, computed, toRef, onMounted, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport { defu } from \"defu\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useFormGroup } from \"../../composables/useFormGroup\";\nimport { mergeConfig, looseToNumber } from \"../../utils\";\nimport { useInjectButtonGroup } from \"../../composables/useButtonGroup\";\nimport appConfig from \"#build/app.config\";\nimport { input } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.input, input);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon\n  },\n  inheritAttrs: false,\n  props: {\n    modelValue: {\n      type: [String, Number],\n      default: \"\"\n    },\n    type: {\n      type: String,\n      default: \"text\"\n    },\n    id: {\n      type: String,\n      default: null\n    },\n    name: {\n      type: String,\n      default: null\n    },\n    placeholder: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    autofocus: {\n      type: Boolean,\n      default: false\n    },\n    autofocusDelay: {\n      type: Number,\n      default: 100\n    },\n    icon: {\n      type: String,\n      default: null\n    },\n    loadingIcon: {\n      type: String,\n      default: () => config.default.loadingIcon\n    },\n    leadingIcon: {\n      type: String,\n      default: null\n    },\n    trailingIcon: {\n      type: String,\n      default: null\n    },\n    trailing: {\n      type: Boolean,\n      default: false\n    },\n    leading: {\n      type: Boolean,\n      default: false\n    },\n    loading: {\n      type: Boolean,\n      default: false\n    },\n    padded: {\n      type: Boolean,\n      default: true\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [...appConfig.ui.colors, ...Object.keys(config.color)].includes(value);\n      }\n    },\n    variant: {\n      type: String,\n      default: () => config.default.variant,\n      validator(value) {\n        return [\n          ...Object.keys(config.variant),\n          ...Object.values(config.color).flatMap((value2) => Object.keys(value2))\n        ].includes(value);\n      }\n    },\n    inputClass: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    modelModifiers: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\", \"blur\", \"change\"],\n  setup(props, { emit, slots }) {\n    const { ui, attrs } = useUI(\"input\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const { size: sizeButtonGroup, rounded } = useInjectButtonGroup({ ui, props });\n    const { emitFormBlur, emitFormInput, size: sizeFormGroup, color, inputId, name } = useFormGroup(props, config);\n    const size = computed(() => sizeButtonGroup.value || sizeFormGroup.value);\n    const modelModifiers = ref(defu({}, props.modelModifiers, { trim: false, lazy: false, number: false }));\n    const input2 = ref(null);\n    const autoFocus = () => {\n      if (props.autofocus) {\n        input2.value?.focus();\n      }\n    };\n    const updateInput = (value) => {\n      if (modelModifiers.value.trim) {\n        value = value.trim();\n      }\n      if (modelModifiers.value.number || props.type === \"number\") {\n        value = looseToNumber(value);\n      }\n      emit(\"update:modelValue\", value);\n      emitFormInput();\n    };\n    const onInput = (event) => {\n      if (!modelModifiers.value.lazy) {\n        updateInput(event.target.value);\n      }\n    };\n    const onChange = (event) => {\n      if (props.type === \"file\") {\n        const value = event.target.files;\n        emit(\"change\", value);\n      } else {\n        const value = event.target.value;\n        emit(\"change\", value);\n        if (modelModifiers.value.lazy) {\n          updateInput(value);\n        }\n        if (modelModifiers.value.trim) {\n          event.target.value = value.trim();\n        }\n      }\n    };\n    const onBlur = (event) => {\n      emitFormBlur();\n      emit(\"blur\", event);\n    };\n    onMounted(() => {\n      setTimeout(() => {\n        autoFocus();\n      }, props.autofocusDelay);\n    });\n    const inputClass = computed(() => {\n      const variant = ui.value.color?.[color.value]?.[props.variant] || ui.value.variant[props.variant];\n      return twMerge(twJoin(\n        ui.value.base,\n        ui.value.form,\n        rounded.value,\n        ui.value.placeholder,\n        props.type === \"file\" && [ui.value.file.base, ui.value.file.padding[size.value]],\n        ui.value.size[size.value],\n        props.padded ? ui.value.padding[size.value] : \"p-0\",\n        variant?.replaceAll(\"{color}\", color.value),\n        (isLeading.value || slots.leading) && ui.value.leading.padding[size.value],\n        (isTrailing.value || slots.trailing) && ui.value.trailing.padding[size.value]\n      ), props.inputClass);\n    });\n    const isLeading = computed(() => {\n      return props.icon && props.leading || props.icon && !props.trailing || props.loading && !props.trailing || props.leadingIcon;\n    });\n    const isTrailing = computed(() => {\n      return props.icon && props.trailing || props.loading && props.trailing || props.trailingIcon;\n    });\n    const leadingIconName = computed(() => {\n      if (props.loading) {\n        return props.loadingIcon;\n      }\n      return props.leadingIcon || props.icon;\n    });\n    const trailingIconName = computed(() => {\n      if (props.loading && !isLeading.value) {\n        return props.loadingIcon;\n      }\n      return props.trailingIcon || props.icon;\n    });\n    const leadingWrapperIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.leading.wrapper,\n        ui.value.icon.leading.pointer,\n        ui.value.icon.leading.padding[size.value]\n      );\n    });\n    const leadingIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        color.value && appConfig.ui.colors.includes(color.value) && ui.value.icon.color.replaceAll(\"{color}\", color.value),\n        ui.value.icon.size[size.value],\n        props.loading && ui.value.icon.loading\n      );\n    });\n    const trailingWrapperIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.trailing.wrapper,\n        ui.value.icon.trailing.pointer,\n        ui.value.icon.trailing.padding[size.value]\n      );\n    });\n    const trailingIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        color.value && appConfig.ui.colors.includes(color.value) && ui.value.icon.color.replaceAll(\"{color}\", color.value),\n        ui.value.icon.size[size.value],\n        props.loading && !isLeading.value && ui.value.icon.loading\n      );\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      // eslint-disable-next-line vue/no-dupe-keys\n      name,\n      inputId,\n      input: input2,\n      isLeading,\n      isTrailing,\n      // eslint-disable-next-line vue/no-dupe-keys\n      inputClass,\n      leadingIconName,\n      leadingIconClass,\n      leadingWrapperIconClass,\n      trailingIconName,\n      trailingIconClass,\n      trailingWrapperIconClass,\n      onInput,\n      onChange,\n      onBlur\n    };\n  }\n});\n\nimport { mergeProps as _mergeProps, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = _resolveComponent(\"UIcon\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.ui.wrapper\n    }, _attrs))\n  }><input${\n    _ssrRenderAttrs(_mergeProps({\n      id: _ctx.inputId,\n      ref: \"input\",\n      name: _ctx.name,\n      value: _ctx.modelValue,\n      type: _ctx.type,\n      required: _ctx.required,\n      placeholder: _ctx.placeholder,\n      disabled: _ctx.disabled,\n      class: _ctx.inputClass\n    }, _ctx.attrs))\n  }>`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  if ((_ctx.isLeading && _ctx.leadingIconName) || _ctx.$slots.leading) {\n    _push(`<span class=\"${_ssrRenderClass(_ctx.leadingWrapperIconClass)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"leading\", {\n      disabled: _ctx.disabled,\n      loading: _ctx.loading\n    }, () => {\n      _push(_ssrRenderComponent(_component_UIcon, {\n        name: _ctx.leadingIconName,\n        class: _ctx.leadingIconClass\n      }, null, _parent))\n    }, _push, _parent)\n    _push(`</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.isTrailing && _ctx.trailingIconName) || _ctx.$slots.trailing) {\n    _push(`<span class=\"${_ssrRenderClass(_ctx.trailingWrapperIconClass)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"trailing\", {\n      disabled: _ctx.disabled,\n      loading: _ctx.loading\n    }, () => {\n      _push(_ssrRenderComponent(_component_UIcon, {\n        name: _ctx.trailingIconName,\n        class: _ctx.trailingIconClass\n      }, null, _parent))\n    }, _push, _parent)\n    _push(`</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/forms/Input.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714025110330,
-      "end": 1714025110333,
+      "start": 1714172189952,
+      "end": 1714172189959,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -101,171 +101,171 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110333,
-      "end": 1714025110333,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025110333,
-      "end": 1714025110334,
+      "start": 1714172189959,
+      "end": 1714172189959,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189959,
+      "end": 1714172189960,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025110334,
-      "end": 1714025110334,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\n\nimport { ref, computed, toRef, onMounted, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport { defu } from \"defu\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useFormGroup } from \"../../composables/useFormGroup\";\nimport { mergeConfig, looseToNumber } from \"../../utils\";\nimport { useInjectButtonGroup } from \"../../composables/useButtonGroup\";\nimport appConfig from \"#build/app.config\";\nimport { input } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.input, input);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon\n  },\n  inheritAttrs: false,\n  props: {\n    modelValue: {\n      type: [String, Number],\n      default: \"\"\n    },\n    type: {\n      type: String,\n      default: \"text\"\n    },\n    id: {\n      type: String,\n      default: null\n    },\n    name: {\n      type: String,\n      default: null\n    },\n    placeholder: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    autofocus: {\n      type: Boolean,\n      default: false\n    },\n    autofocusDelay: {\n      type: Number,\n      default: 100\n    },\n    icon: {\n      type: String,\n      default: null\n    },\n    loadingIcon: {\n      type: String,\n      default: () => config.default.loadingIcon\n    },\n    leadingIcon: {\n      type: String,\n      default: null\n    },\n    trailingIcon: {\n      type: String,\n      default: null\n    },\n    trailing: {\n      type: Boolean,\n      default: false\n    },\n    leading: {\n      type: Boolean,\n      default: false\n    },\n    loading: {\n      type: Boolean,\n      default: false\n    },\n    padded: {\n      type: Boolean,\n      default: true\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [...appConfig.ui.colors, ...Object.keys(config.color)].includes(value);\n      }\n    },\n    variant: {\n      type: String,\n      default: () => config.default.variant,\n      validator(value) {\n        return [\n          ...Object.keys(config.variant),\n          ...Object.values(config.color).flatMap((value2) => Object.keys(value2))\n        ].includes(value);\n      }\n    },\n    inputClass: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    modelModifiers: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\", \"blur\", \"change\"],\n  setup(props, { emit, slots }) {\n    const { ui, attrs } = useUI(\"input\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const { size: sizeButtonGroup, rounded } = useInjectButtonGroup({ ui, props });\n    const { emitFormBlur, emitFormInput, size: sizeFormGroup, color, inputId, name } = useFormGroup(props, config);\n    const size = computed(() => sizeButtonGroup.value || sizeFormGroup.value);\n    const modelModifiers = ref(defu({}, props.modelModifiers, { trim: false, lazy: false, number: false }));\n    const input2 = ref(null);\n    const autoFocus = () => {\n      if (props.autofocus) {\n        input2.value?.focus();\n      }\n    };\n    const updateInput = (value) => {\n      if (modelModifiers.value.trim) {\n        value = value.trim();\n      }\n      if (modelModifiers.value.number || props.type === \"number\") {\n        value = looseToNumber(value);\n      }\n      emit(\"update:modelValue\", value);\n      emitFormInput();\n    };\n    const onInput = (event) => {\n      if (!modelModifiers.value.lazy) {\n        updateInput(event.target.value);\n      }\n    };\n    const onChange = (event) => {\n      if (props.type === \"file\") {\n        const value = event.target.files;\n        emit(\"change\", value);\n      } else {\n        const value = event.target.value;\n        emit(\"change\", value);\n        if (modelModifiers.value.lazy) {\n          updateInput(value);\n        }\n        if (modelModifiers.value.trim) {\n          event.target.value = value.trim();\n        }\n      }\n    };\n    const onBlur = (event) => {\n      emitFormBlur();\n      emit(\"blur\", event);\n    };\n    onMounted(() => {\n      setTimeout(() => {\n        autoFocus();\n      }, props.autofocusDelay);\n    });\n    const inputClass = computed(() => {\n      const variant = ui.value.color?.[color.value]?.[props.variant] || ui.value.variant[props.variant];\n      return twMerge(twJoin(\n        ui.value.base,\n        ui.value.form,\n        rounded.value,\n        ui.value.placeholder,\n        props.type === \"file\" && [ui.value.file.base, ui.value.file.padding[size.value]],\n        ui.value.size[size.value],\n        props.padded ? ui.value.padding[size.value] : \"p-0\",\n        variant?.replaceAll(\"{color}\", color.value),\n        (isLeading.value || slots.leading) && ui.value.leading.padding[size.value],\n        (isTrailing.value || slots.trailing) && ui.value.trailing.padding[size.value]\n      ), props.inputClass);\n    });\n    const isLeading = computed(() => {\n      return props.icon && props.leading || props.icon && !props.trailing || props.loading && !props.trailing || props.leadingIcon;\n    });\n    const isTrailing = computed(() => {\n      return props.icon && props.trailing || props.loading && props.trailing || props.trailingIcon;\n    });\n    const leadingIconName = computed(() => {\n      if (props.loading) {\n        return props.loadingIcon;\n      }\n      return props.leadingIcon || props.icon;\n    });\n    const trailingIconName = computed(() => {\n      if (props.loading && !isLeading.value) {\n        return props.loadingIcon;\n      }\n      return props.trailingIcon || props.icon;\n    });\n    const leadingWrapperIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.leading.wrapper,\n        ui.value.icon.leading.pointer,\n        ui.value.icon.leading.padding[size.value]\n      );\n    });\n    const leadingIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        color.value && appConfig.ui.colors.includes(color.value) && ui.value.icon.color.replaceAll(\"{color}\", color.value),\n        ui.value.icon.size[size.value],\n        props.loading && ui.value.icon.loading\n      );\n    });\n    const trailingWrapperIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.trailing.wrapper,\n        ui.value.icon.trailing.pointer,\n        ui.value.icon.trailing.padding[size.value]\n      );\n    });\n    const trailingIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        color.value && appConfig.ui.colors.includes(color.value) && ui.value.icon.color.replaceAll(\"{color}\", color.value),\n        ui.value.icon.size[size.value],\n        props.loading && !isLeading.value && ui.value.icon.loading\n      );\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      // eslint-disable-next-line vue/no-dupe-keys\n      name,\n      inputId,\n      input: input2,\n      isLeading,\n      isTrailing,\n      // eslint-disable-next-line vue/no-dupe-keys\n      inputClass,\n      leadingIconName,\n      leadingIconClass,\n      leadingWrapperIconClass,\n      trailingIconName,\n      trailingIconClass,\n      trailingWrapperIconClass,\n      onInput,\n      onChange,\n      onBlur\n    };\n  }\n});\n\nimport { mergeProps as _mergeProps, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = __nuxt_component_0\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.ui.wrapper\n    }, _attrs))\n  }><input${\n    _ssrRenderAttrs(_mergeProps({\n      id: _ctx.inputId,\n      ref: \"input\",\n      name: _ctx.name,\n      value: _ctx.modelValue,\n      type: _ctx.type,\n      required: _ctx.required,\n      placeholder: _ctx.placeholder,\n      disabled: _ctx.disabled,\n      class: _ctx.inputClass\n    }, _ctx.attrs))\n  }>`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  if ((_ctx.isLeading && _ctx.leadingIconName) || _ctx.$slots.leading) {\n    _push(`<span class=\"${_ssrRenderClass(_ctx.leadingWrapperIconClass)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"leading\", {\n      disabled: _ctx.disabled,\n      loading: _ctx.loading\n    }, () => {\n      _push(_ssrRenderComponent(_component_UIcon, {\n        name: _ctx.leadingIconName,\n        class: _ctx.leadingIconClass\n      }, null, _parent))\n    }, _push, _parent)\n    _push(`</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.isTrailing && _ctx.trailingIconName) || _ctx.$slots.trailing) {\n    _push(`<span class=\"${_ssrRenderClass(_ctx.trailingWrapperIconClass)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"trailing\", {\n      disabled: _ctx.disabled,\n      loading: _ctx.loading\n    }, () => {\n      _push(_ssrRenderComponent(_component_UIcon, {\n        name: _ctx.trailingIconName,\n        class: _ctx.trailingIconClass\n      }, null, _parent))\n    }, _push, _parent)\n    _push(`</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/forms/Input.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714025110334,
-      "end": 1714025110335,
+      "start": 1714172189960,
+      "end": 1714172189960,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -279,8 +279,8 @@
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\n\nimport { ref, computed, toRef, onMounted, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport { defu } from \"defu\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useFormGroup } from \"../../composables/useFormGroup\";\nimport { mergeConfig, looseToNumber } from \"../../utils\";\nimport { useInjectButtonGroup } from \"../../composables/useButtonGroup\";\nimport appConfig from \"#build/app.config\";\nimport { input } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.input, input);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon\n  },\n  inheritAttrs: false,\n  props: {\n    modelValue: {\n      type: [String, Number],\n      default: \"\"\n    },\n    type: {\n      type: String,\n      default: \"text\"\n    },\n    id: {\n      type: String,\n      default: null\n    },\n    name: {\n      type: String,\n      default: null\n    },\n    placeholder: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    autofocus: {\n      type: Boolean,\n      default: false\n    },\n    autofocusDelay: {\n      type: Number,\n      default: 100\n    },\n    icon: {\n      type: String,\n      default: null\n    },\n    loadingIcon: {\n      type: String,\n      default: () => config.default.loadingIcon\n    },\n    leadingIcon: {\n      type: String,\n      default: null\n    },\n    trailingIcon: {\n      type: String,\n      default: null\n    },\n    trailing: {\n      type: Boolean,\n      default: false\n    },\n    leading: {\n      type: Boolean,\n      default: false\n    },\n    loading: {\n      type: Boolean,\n      default: false\n    },\n    padded: {\n      type: Boolean,\n      default: true\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [...appConfig.ui.colors, ...Object.keys(config.color)].includes(value);\n      }\n    },\n    variant: {\n      type: String,\n      default: () => config.default.variant,\n      validator(value) {\n        return [\n          ...Object.keys(config.variant),\n          ...Object.values(config.color).flatMap((value2) => Object.keys(value2))\n        ].includes(value);\n      }\n    },\n    inputClass: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    modelModifiers: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\", \"blur\", \"change\"],\n  setup(props, { emit, slots }) {\n    const { ui, attrs } = useUI(\"input\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const { size: sizeButtonGroup, rounded } = useInjectButtonGroup({ ui, props });\n    const { emitFormBlur, emitFormInput, size: sizeFormGroup, color, inputId, name } = useFormGroup(props, config);\n    const size = computed(() => sizeButtonGroup.value || sizeFormGroup.value);\n    const modelModifiers = ref(defu({}, props.modelModifiers, { trim: false, lazy: false, number: false }));\n    const input2 = ref(null);\n    const autoFocus = () => {\n      if (props.autofocus) {\n        input2.value?.focus();\n      }\n    };\n    const updateInput = (value) => {\n      if (modelModifiers.value.trim) {\n        value = value.trim();\n      }\n      if (modelModifiers.value.number || props.type === \"number\") {\n        value = looseToNumber(value);\n      }\n      emit(\"update:modelValue\", value);\n      emitFormInput();\n    };\n    const onInput = (event) => {\n      if (!modelModifiers.value.lazy) {\n        updateInput(event.target.value);\n      }\n    };\n    const onChange = (event) => {\n      if (props.type === \"file\") {\n        const value = event.target.files;\n        emit(\"change\", value);\n      } else {\n        const value = event.target.value;\n        emit(\"change\", value);\n        if (modelModifiers.value.lazy) {\n          updateInput(value);\n        }\n        if (modelModifiers.value.trim) {\n          event.target.value = value.trim();\n        }\n      }\n    };\n    const onBlur = (event) => {\n      emitFormBlur();\n      emit(\"blur\", event);\n    };\n     false && /*@__PURE__*/ onMounted(() => {\n      setTimeout(() => {\n        autoFocus();\n      }, props.autofocusDelay);\n    });\n    const inputClass = computed(() => {\n      const variant = ui.value.color?.[color.value]?.[props.variant] || ui.value.variant[props.variant];\n      return twMerge(twJoin(\n        ui.value.base,\n        ui.value.form,\n        rounded.value,\n        ui.value.placeholder,\n        props.type === \"file\" && [ui.value.file.base, ui.value.file.padding[size.value]],\n        ui.value.size[size.value],\n        props.padded ? ui.value.padding[size.value] : \"p-0\",\n        variant?.replaceAll(\"{color}\", color.value),\n        (isLeading.value || slots.leading) && ui.value.leading.padding[size.value],\n        (isTrailing.value || slots.trailing) && ui.value.trailing.padding[size.value]\n      ), props.inputClass);\n    });\n    const isLeading = computed(() => {\n      return props.icon && props.leading || props.icon && !props.trailing || props.loading && !props.trailing || props.leadingIcon;\n    });\n    const isTrailing = computed(() => {\n      return props.icon && props.trailing || props.loading && props.trailing || props.trailingIcon;\n    });\n    const leadingIconName = computed(() => {\n      if (props.loading) {\n        return props.loadingIcon;\n      }\n      return props.leadingIcon || props.icon;\n    });\n    const trailingIconName = computed(() => {\n      if (props.loading && !isLeading.value) {\n        return props.loadingIcon;\n      }\n      return props.trailingIcon || props.icon;\n    });\n    const leadingWrapperIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.leading.wrapper,\n        ui.value.icon.leading.pointer,\n        ui.value.icon.leading.padding[size.value]\n      );\n    });\n    const leadingIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        color.value && appConfig.ui.colors.includes(color.value) && ui.value.icon.color.replaceAll(\"{color}\", color.value),\n        ui.value.icon.size[size.value],\n        props.loading && ui.value.icon.loading\n      );\n    });\n    const trailingWrapperIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.trailing.wrapper,\n        ui.value.icon.trailing.pointer,\n        ui.value.icon.trailing.padding[size.value]\n      );\n    });\n    const trailingIconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        color.value && appConfig.ui.colors.includes(color.value) && ui.value.icon.color.replaceAll(\"{color}\", color.value),\n        ui.value.icon.size[size.value],\n        props.loading && !isLeading.value && ui.value.icon.loading\n      );\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      // eslint-disable-next-line vue/no-dupe-keys\n      name,\n      inputId,\n      input: input2,\n      isLeading,\n      isTrailing,\n      // eslint-disable-next-line vue/no-dupe-keys\n      inputClass,\n      leadingIconName,\n      leadingIconClass,\n      leadingWrapperIconClass,\n      trailingIconName,\n      trailingIconClass,\n      trailingWrapperIconClass,\n      onInput,\n      onChange,\n      onBlur\n    };\n  }\n});\n\nimport { mergeProps as _mergeProps, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = __nuxt_component_0\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.ui.wrapper\n    }, _attrs))\n  }><input${\n    _ssrRenderAttrs(_mergeProps({\n      id: _ctx.inputId,\n      ref: \"input\",\n      name: _ctx.name,\n      value: _ctx.modelValue,\n      type: _ctx.type,\n      required: _ctx.required,\n      placeholder: _ctx.placeholder,\n      disabled: _ctx.disabled,\n      class: _ctx.inputClass\n    }, _ctx.attrs))\n  }>`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  if ((_ctx.isLeading && _ctx.leadingIconName) || _ctx.$slots.leading) {\n    _push(`<span class=\"${_ssrRenderClass(_ctx.leadingWrapperIconClass)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"leading\", {\n      disabled: _ctx.disabled,\n      loading: _ctx.loading\n    }, () => {\n      _push(_ssrRenderComponent(_component_UIcon, {\n        name: _ctx.leadingIconName,\n        class: _ctx.leadingIconClass\n      }, null, _parent))\n    }, _push, _parent)\n    _push(`</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if ((_ctx.isTrailing && _ctx.trailingIconName) || _ctx.$slots.trailing) {\n    _push(`<span class=\"${_ssrRenderClass(_ctx.trailingWrapperIconClass)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"trailing\", {\n      disabled: _ctx.disabled,\n      loading: _ctx.loading\n    }, () => {\n      _push(_ssrRenderComponent(_component_UIcon, {\n        name: _ctx.trailingIconName,\n        class: _ctx.trailingIconClass\n      }, null, _parent))\n    }, _push, _parent)\n    _push(`</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/forms/Input.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714025110335,
-      "end": 1714025110336,
+      "start": 1714172189960,
+      "end": 1714172189962,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -293,14 +293,14 @@
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025110336,
-      "end": 1714025110336,
+      "start": 1714172189962,
+      "end": 1714172189962,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025110336,
-      "end": 1714025110336,
+      "start": 1714172189962,
+      "end": 1714172189962,
       "order": "normal"
     }
   ]

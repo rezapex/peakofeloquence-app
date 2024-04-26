@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <span :class=\"wrapperClass\">\n    <component\n      :is=\"as\"\n      v-if=\"url && !error\"\n      :class=\"imgClass\"\n      :alt=\"alt\"\n      :src=\"url\"\n      v-bind=\"attrs\"\n      @error=\"onError\"\n    />\n    <span v-else-if=\"text\" :class=\"ui.text\">{{ text }}</span>\n    <UIcon v-else-if=\"icon\" :name=\"icon\" :class=\"iconClass\" />\n    <span v-else-if=\"placeholder\" :class=\"ui.placeholder\">{{ placeholder }}</span>\n\n    <span v-if=\"chipColor\" :class=\"chipClass\">\n      {{ chipText }}\n    </span>\n    <slot />\n  </span>\n</template>\n\n<script>\nimport { defineComponent, ref, computed, toRef, watch } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { avatar } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.avatar, avatar);\nexport default defineComponent({\n  components: {\n    UIcon\n  },\n  inheritAttrs: false,\n  props: {\n    as: {\n      type: [String, Object],\n      default: \"img\"\n    },\n    src: {\n      type: [String, Boolean],\n      default: null\n    },\n    alt: {\n      type: String,\n      default: null\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: () => config.default.icon\n    },\n    size: {\n      type: String,\n      default: () => config.default.size,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    chipColor: {\n      type: String,\n      default: () => config.default.chipColor,\n      validator(value) {\n        return [\"gray\", ...appConfig.ui.colors].includes(value);\n      }\n    },\n    chipPosition: {\n      type: String,\n      default: () => config.default.chipPosition,\n      validator(value) {\n        return Object.keys(config.chip.position).includes(value);\n      }\n    },\n    chipText: {\n      type: [String, Number],\n      default: null\n    },\n    imgClass: {\n      type: String,\n      default: \"\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"avatar\", toRef(props, \"ui\"), config);\n    const url = computed(() => {\n      if (typeof props.src === \"boolean\") {\n        return null;\n      }\n      return props.src;\n    });\n    const placeholder = computed(() => {\n      return (props.alt || \"\").split(\" \").map((word) => word.charAt(0)).join(\"\").substring(0, 2);\n    });\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        (error.value || !url.value) && ui.value.background,\n        ui.value.rounded,\n        ui.value.size[props.size]\n      ), props.class);\n    });\n    const imgClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.rounded,\n        ui.value.size[props.size]\n      ), props.imgClass);\n    });\n    const iconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        ui.value.icon.size[props.size]\n      );\n    });\n    const chipClass = computed(() => {\n      return twJoin(\n        ui.value.chip.base,\n        ui.value.chip.size[props.size],\n        ui.value.chip.position[props.chipPosition],\n        ui.value.chip.background.replaceAll(\"{color}\", props.chipColor)\n      );\n    });\n    const error = ref(false);\n    watch(() => props.src, () => {\n      if (error.value) {\n        error.value = false;\n      }\n    });\n    function onError() {\n      error.value = true;\n    }\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      // eslint-disable-next-line vue/no-dupe-keys\n      imgClass,\n      iconClass,\n      chipClass,\n      url,\n      placeholder,\n      error,\n      onError\n    };\n  }\n});\n</script>\n",
-      "start": 1714025109755,
-      "end": 1714025109768,
+      "start": 1714172189325,
+      "end": 1714172189339,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025109768,
-      "end": 1714025109768,
+      "start": 1714172189339,
+      "end": 1714172189339,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { defineComponent, ref, computed, toRef, watch } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { avatar } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.avatar, avatar);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon\n  },\n  inheritAttrs: false,\n  props: {\n    as: {\n      type: [String, Object],\n      default: \"img\"\n    },\n    src: {\n      type: [String, Boolean],\n      default: null\n    },\n    alt: {\n      type: String,\n      default: null\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: () => config.default.icon\n    },\n    size: {\n      type: String,\n      default: () => config.default.size,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    chipColor: {\n      type: String,\n      default: () => config.default.chipColor,\n      validator(value) {\n        return [\"gray\", ...appConfig.ui.colors].includes(value);\n      }\n    },\n    chipPosition: {\n      type: String,\n      default: () => config.default.chipPosition,\n      validator(value) {\n        return Object.keys(config.chip.position).includes(value);\n      }\n    },\n    chipText: {\n      type: [String, Number],\n      default: null\n    },\n    imgClass: {\n      type: String,\n      default: \"\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"avatar\", toRef(props, \"ui\"), config);\n    const url = computed(() => {\n      if (typeof props.src === \"boolean\") {\n        return null;\n      }\n      return props.src;\n    });\n    const placeholder = computed(() => {\n      return (props.alt || \"\").split(\" \").map((word) => word.charAt(0)).join(\"\").substring(0, 2);\n    });\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        (error.value || !url.value) && ui.value.background,\n        ui.value.rounded,\n        ui.value.size[props.size]\n      ), props.class);\n    });\n    const imgClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.rounded,\n        ui.value.size[props.size]\n      ), props.imgClass);\n    });\n    const iconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        ui.value.icon.size[props.size]\n      );\n    });\n    const chipClass = computed(() => {\n      return twJoin(\n        ui.value.chip.base,\n        ui.value.chip.size[props.size],\n        ui.value.chip.position[props.chipPosition],\n        ui.value.chip.background.replaceAll(\"{color}\", props.chipColor)\n      );\n    });\n    const error = ref(false);\n    watch(() => props.src, () => {\n      if (error.value) {\n        error.value = false;\n      }\n    });\n    function onError() {\n      error.value = true;\n    }\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      // eslint-disable-next-line vue/no-dupe-keys\n      imgClass,\n      iconClass,\n      chipClass,\n      url,\n      placeholder,\n      error,\n      onError\n    };\n  }\n});\n\nimport { resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, createVNode as _createVNode, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderVNode as _ssrRenderVNode, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = _resolveComponent(\"UIcon\")\n\n  _push(`<span${_ssrRenderAttrs(_mergeProps({ class: _ctx.wrapperClass }, _attrs))}>`)\n  if (_ctx.url && !_ctx.error) {\n    _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_ctx.as), _mergeProps({\n      class: _ctx.imgClass,\n      alt: _ctx.alt,\n      src: _ctx.url\n    }, _ctx.attrs, { onError: _ctx.onError }), null), _parent)\n  } else if (_ctx.text) {\n    _push(`<span class=\"${\n      _ssrRenderClass(_ctx.ui.text)\n    }\">${\n      _ssrInterpolate(_ctx.text)\n    }</span>`)\n  } else if (_ctx.icon) {\n    _push(_ssrRenderComponent(_component_UIcon, {\n      name: _ctx.icon,\n      class: _ctx.iconClass\n    }, null, _parent))\n  } else if (_ctx.placeholder) {\n    _push(`<span class=\"${\n      _ssrRenderClass(_ctx.ui.placeholder)\n    }\">${\n      _ssrInterpolate(_ctx.placeholder)\n    }</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.chipColor) {\n    _push(`<span class=\"${\n      _ssrRenderClass(_ctx.chipClass)\n    }\">${\n      _ssrInterpolate(_ctx.chipText)\n    }</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(`</span>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714025109768,
-      "end": 1714025109770,
+      "start": 1714172189339,
+      "end": 1714172189341,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -101,171 +101,171 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025109770,
-      "end": 1714025109770,
+      "start": 1714172189341,
+      "end": 1714172189341,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025109770,
-      "end": 1714025109771,
+      "start": 1714172189341,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\n\nimport { defineComponent, ref, computed, toRef, watch } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { avatar } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.avatar, avatar);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon\n  },\n  inheritAttrs: false,\n  props: {\n    as: {\n      type: [String, Object],\n      default: \"img\"\n    },\n    src: {\n      type: [String, Boolean],\n      default: null\n    },\n    alt: {\n      type: String,\n      default: null\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: () => config.default.icon\n    },\n    size: {\n      type: String,\n      default: () => config.default.size,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    chipColor: {\n      type: String,\n      default: () => config.default.chipColor,\n      validator(value) {\n        return [\"gray\", ...appConfig.ui.colors].includes(value);\n      }\n    },\n    chipPosition: {\n      type: String,\n      default: () => config.default.chipPosition,\n      validator(value) {\n        return Object.keys(config.chip.position).includes(value);\n      }\n    },\n    chipText: {\n      type: [String, Number],\n      default: null\n    },\n    imgClass: {\n      type: String,\n      default: \"\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"avatar\", toRef(props, \"ui\"), config);\n    const url = computed(() => {\n      if (typeof props.src === \"boolean\") {\n        return null;\n      }\n      return props.src;\n    });\n    const placeholder = computed(() => {\n      return (props.alt || \"\").split(\" \").map((word) => word.charAt(0)).join(\"\").substring(0, 2);\n    });\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        (error.value || !url.value) && ui.value.background,\n        ui.value.rounded,\n        ui.value.size[props.size]\n      ), props.class);\n    });\n    const imgClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.rounded,\n        ui.value.size[props.size]\n      ), props.imgClass);\n    });\n    const iconClass = computed(() => {\n      return twJoin(\n        ui.value.icon.base,\n        ui.value.icon.size[props.size]\n      );\n    });\n    const chipClass = computed(() => {\n      return twJoin(\n        ui.value.chip.base,\n        ui.value.chip.size[props.size],\n        ui.value.chip.position[props.chipPosition],\n        ui.value.chip.background.replaceAll(\"{color}\", props.chipColor)\n      );\n    });\n    const error = ref(false);\n    watch(() => props.src, () => {\n      if (error.value) {\n        error.value = false;\n      }\n    });\n    function onError() {\n      error.value = true;\n    }\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      // eslint-disable-next-line vue/no-dupe-keys\n      imgClass,\n      iconClass,\n      chipClass,\n      url,\n      placeholder,\n      error,\n      onError\n    };\n  }\n});\n\nimport { resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, createVNode as _createVNode, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderVNode as _ssrRenderVNode, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = __nuxt_component_0\n\n  _push(`<span${_ssrRenderAttrs(_mergeProps({ class: _ctx.wrapperClass }, _attrs))}>`)\n  if (_ctx.url && !_ctx.error) {\n    _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_ctx.as), _mergeProps({\n      class: _ctx.imgClass,\n      alt: _ctx.alt,\n      src: _ctx.url\n    }, _ctx.attrs, { onError: _ctx.onError }), null), _parent)\n  } else if (_ctx.text) {\n    _push(`<span class=\"${\n      _ssrRenderClass(_ctx.ui.text)\n    }\">${\n      _ssrInterpolate(_ctx.text)\n    }</span>`)\n  } else if (_ctx.icon) {\n    _push(_ssrRenderComponent(_component_UIcon, {\n      name: _ctx.icon,\n      class: _ctx.iconClass\n    }, null, _parent))\n  } else if (_ctx.placeholder) {\n    _push(`<span class=\"${\n      _ssrRenderClass(_ctx.ui.placeholder)\n    }\">${\n      _ssrInterpolate(_ctx.placeholder)\n    }</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.chipColor) {\n    _push(`<span class=\"${\n      _ssrRenderClass(_ctx.chipClass)\n    }\">${\n      _ssrInterpolate(_ctx.chipText)\n    }</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(`</span>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -278,20 +278,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025109771,
-      "end": 1714025109771,
+      "start": 1714172189342,
+      "end": 1714172189342,
       "order": "normal"
     }
   ]

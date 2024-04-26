@@ -1,0 +1,226 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Tabs.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <div :class=\"ui.header\">\n      <div :class=\"ui.border\" />\n\n      <button\n        v-for=\"(tab, index) in tabs\"\n        :key=\"index\"\n        :class=\"[ui.tab.base, selectedIndex === index ? ui.tab.active : ui.tab.inactive]\"\n        @click=\"selectedIndex = index\"\n      >\n        <UIcon v-if=\"tab.icon\" :name=\"tab.icon\" :class=\"ui.tab.icon.base\" />\n\n        <span>{{ tab.label }}</span>\n      </button>\n    </div>\n\n    <div\n      v-for=\"(tab, index) in tabs\"\n      v-show=\"selectedIndex === index\"\n      :key=\"index\"\n    >\n      <component :is=\"tab.component\" />\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\n\nconst config = {\n  wrapper: 'relative my-5 space-y-6',\n  header: 'flex items-center relative',\n  border: 'absolute bottom-0 inset-x-0 w-full h-px bg-gray-200 dark:bg-gray-800',\n  tab: {\n    base: 'px-4 py-2.5 font-semibold text-sm/6 flex items-center gap-1.5 border-b z-[1] focus-visible:outline-primary',\n    active: 'text-primary border-primary',\n    inactive: 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 border-transparent hover:border-gray-300 dark:hover:border-gray-700',\n    icon: {\n      base: 'w-5 h-5 flex-shrink-0'\n    }\n  }\n}\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  selectedIndex: {\n    type: Number,\n    default: 0\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n})\n\nconst slots = useSlots()\nconst { ui, attrs } = useUI('content.tabs', undefined, config, toRef(props, 'class'), true)\n\nconst selectedIndex = ref(props.selectedIndex || 0)\n\nconst rerenderCounter = ref(1)\n\n// Computed\n\nconst tabs = computed(() => {\n  rerenderCounter.value\n  return slots.default?.().map((slot, index) => {\n    return {\n      index,\n      label: slot.props?.label || `${index}`,\n      icon: slot.props?.icon,\n      component: slot\n    }\n  }) || []\n})\n\nonBeforeUpdate(() => {\n  rerenderCounter.value += 1\n})\n</script>\n",
+      "start": 1714172178601,
+      "end": 1714172178633,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172178633,
+      "end": 1714172178633,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172178633,
+      "end": 1714172178633,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172178633,
+      "end": 1714172178633,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172178633,
+      "end": 1714172178633,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172178633,
+      "end": 1714172178633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1714172178633,
+      "end": 1714172178633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172178633,
+      "end": 1714172178633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172178633,
+      "end": 1714172178633,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Tabs.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Tabs.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1714172178633,
+      "end": 1714172178713,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172178713,
+      "end": 1714172178713,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172178713,
+      "end": 1714172178713,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172178713,
+      "end": 1714172178713,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172178713,
+      "end": 1714172178713,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1714172178713,
+      "end": 1714172178713,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714172178713,
+      "end": 1714172178713,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172178713,
+      "end": 1714172178714,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172178714,
+      "end": 1714172178714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172178714,
+      "end": 1714172178714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172178714,
+      "end": 1714172178714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172178714,
+      "end": 1714172178714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172178714,
+      "end": 1714172178714,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172178714,
+      "end": 1714172178714,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172178715,
+      "end": 1714172178715,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172178715,
+      "end": 1714172178715,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172178715,
+      "end": 1714172178716,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172178717,
+      "end": 1714172178717,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714172178717,
+      "end": 1714172178719,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172178719,
+      "end": 1714172178719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172178719,
+      "end": 1714172178719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1714172178719,
+      "end": 1714172178719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1714172178719,
+      "end": 1714172178719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714172178719,
+      "end": 1714172178719,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714172178719,
+      "end": 1714172178720,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714172178720,
+      "end": 1714172178720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172178720,
+      "end": 1714172178720,
+      "order": "normal"
+    }
+  ]
+}

@@ -4,69 +4,69 @@
     {
       "name": "vite:load-fallback",
       "result": "/**\n * Scrollspy allows you to watch visible headings in a specific page.\n * Useful for table of contents live style updates.\n */\nexport const useScrollspy = () => {\n  const observer = ref<IntersectionObserver>()\n  const visibleHeadings = ref<string[]>([])\n  const activeHeadings = ref<string[]>([])\n\n  const observerCallback = (entries: IntersectionObserverEntry[]) => {\n    entries.forEach((entry) => {\n      const id = entry.target.id\n\n      if (entry.isIntersecting) {\n        visibleHeadings.value = [...visibleHeadings.value, id]\n      } else {\n        visibleHeadings.value = visibleHeadings.value.filter(h => h !== id)\n      }\n    })\n  }\n\n  const updateHeadings = (headings: Element[]) => {\n    headings.forEach((heading) => {\n      if (!observer.value) {\n        return\n      }\n\n      observer.value.observe(heading)\n    })\n  }\n\n  watch(visibleHeadings, (val, oldVal) => {\n    if (val.length === 0) {\n      activeHeadings.value = oldVal\n    } else {\n      activeHeadings.value = val\n    }\n  })\n\n  // Create intersection observer\n  onBeforeMount(() => (observer.value = new IntersectionObserver(observerCallback)))\n\n  // Destroy it\n  onBeforeUnmount(() => observer.value?.disconnect())\n\n  return {\n    visibleHeadings,\n    activeHeadings,\n    updateHeadings\n  }\n}\n",
-      "start": 1714025110739,
-      "end": 1714025110848,
+      "start": 1714172190140,
+      "end": 1714172190159,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025110848,
-      "end": 1714025110848,
+      "start": 1714172190159,
+      "end": 1714172190159,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "export const useScrollspy = () => {\n  const observer = ref();\n  const visibleHeadings = ref([]);\n  const activeHeadings = ref([]);\n  const observerCallback = (entries) => {\n    entries.forEach((entry) => {\n      const id = entry.target.id;\n      if (entry.isIntersecting) {\n        visibleHeadings.value = [...visibleHeadings.value, id];\n      } else {\n        visibleHeadings.value = visibleHeadings.value.filter((h) => h !== id);\n      }\n    });\n  };\n  const updateHeadings = (headings) => {\n    headings.forEach((heading) => {\n      if (!observer.value) {\n        return;\n      }\n      observer.value.observe(heading);\n    });\n  };\n  watch(visibleHeadings, (val, oldVal) => {\n    if (val.length === 0) {\n      activeHeadings.value = oldVal;\n    } else {\n      activeHeadings.value = val;\n    }\n  });\n  onBeforeMount(() => observer.value = new IntersectionObserver(observerCallback));\n  onBeforeUnmount(() => observer.value?.disconnect());\n  return {\n    visibleHeadings,\n    activeHeadings,\n    updateHeadings\n  };\n};\n",
-      "start": 1714025110848,
-      "end": 1714025110852,
+      "start": 1714172190159,
+      "end": 1714172190178,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -82,147 +82,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110853,
-      "end": 1714025110853,
+      "start": 1714172190178,
+      "end": 1714172190178,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { ref, h, watch, onBeforeMount, onBeforeUnmount } from 'vue';\nexport const useScrollspy = () => {\n  const observer = ref();\n  const visibleHeadings = ref([]);\n  const activeHeadings = ref([]);\n  const observerCallback = (entries) => {\n    entries.forEach((entry) => {\n      const id = entry.target.id;\n      if (entry.isIntersecting) {\n        visibleHeadings.value = [...visibleHeadings.value, id];\n      } else {\n        visibleHeadings.value = visibleHeadings.value.filter((h) => h !== id);\n      }\n    });\n  };\n  const updateHeadings = (headings) => {\n    headings.forEach((heading) => {\n      if (!observer.value) {\n        return;\n      }\n      observer.value.observe(heading);\n    });\n  };\n  watch(visibleHeadings, (val, oldVal) => {\n    if (val.length === 0) {\n      activeHeadings.value = oldVal;\n    } else {\n      activeHeadings.value = val;\n    }\n  });\n  onBeforeMount(() => observer.value = new IntersectionObserver(observerCallback));\n  onBeforeUnmount(() => observer.value?.disconnect());\n  return {\n    visibleHeadings,\n    activeHeadings,\n    updateHeadings\n  };\n};\n",
-      "start": 1714025110853,
-      "end": 1714025110854,
+      "start": 1714172190178,
+      "end": 1714172190179,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -236,8 +236,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { ref, h, watch, onBeforeMount, onBeforeUnmount } from 'vue';\nexport const useScrollspy = () => {\n  const observer = ref();\n  const visibleHeadings = ref([]);\n  const activeHeadings = ref([]);\n  const observerCallback = (entries) => {\n    entries.forEach((entry) => {\n      const id = entry.target.id;\n      if (entry.isIntersecting) {\n        visibleHeadings.value = [...visibleHeadings.value, id];\n      } else {\n        visibleHeadings.value = visibleHeadings.value.filter((h) => h !== id);\n      }\n    });\n  };\n  const updateHeadings = (headings) => {\n    headings.forEach((heading) => {\n      if (!observer.value) {\n        return;\n      }\n      observer.value.observe(heading);\n    });\n  };\n  watch(visibleHeadings, (val, oldVal) => {\n    if (val.length === 0) {\n      activeHeadings.value = oldVal;\n    } else {\n      activeHeadings.value = val;\n    }\n  });\n  onBeforeMount(() => observer.value = new IntersectionObserver(observerCallback));\n  onBeforeUnmount(() => observer.value?.disconnect());\n  return {\n    visibleHeadings,\n    activeHeadings,\n    updateHeadings\n  };\n};\n",
-      "start": 1714025110853,
-      "end": 1714025110854,
+      "start": 1714172190178,
+      "end": 1714172190179,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -250,45 +250,45 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { ref, h, watch, onBeforeMount, onBeforeUnmount } from 'vue';\nexport const useScrollspy = () => {\n  const observer = ref();\n  const visibleHeadings = ref([]);\n  const activeHeadings = ref([]);\n  const observerCallback = (entries) => {\n    entries.forEach((entry) => {\n      const id = entry.target.id;\n      if (entry.isIntersecting) {\n        visibleHeadings.value = [...visibleHeadings.value, id];\n      } else {\n        visibleHeadings.value = visibleHeadings.value.filter((h) => h !== id);\n      }\n    });\n  };\n  const updateHeadings = (headings) => {\n    headings.forEach((heading) => {\n      if (!observer.value) {\n        return;\n      }\n      observer.value.observe(heading);\n    });\n  };\n  watch(visibleHeadings, (val, oldVal) => {\n    if (val.length === 0) {\n      activeHeadings.value = oldVal;\n    } else {\n      activeHeadings.value = val;\n    }\n  });\n   false && /*@__PURE__*/ onBeforeMount(() => observer.value = new IntersectionObserver(observerCallback));\n   false && /*@__PURE__*/ onBeforeUnmount(() => observer.value?.disconnect());\n  return {\n    visibleHeadings,\n    activeHeadings,\n    updateHeadings\n  };\n};\n",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -301,14 +301,14 @@
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025110854,
-      "end": 1714025110854,
+      "start": 1714172190179,
+      "end": 1714172190179,
       "order": "normal"
     }
   ]

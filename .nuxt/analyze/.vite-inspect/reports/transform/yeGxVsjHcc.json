@@ -1,0 +1,243 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/components/Header.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/gold-icon.png'\nimport _imports_1 from '/anotherone.png'\n\n\nconst _hoisted_1 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1)\n\nimport type { NavItem } from \"@nuxt/content/dist/runtime/types\";\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Header',\n  setup(__props) {\n\nconst navigation = inject<Ref<NavItem[]>>(\"navigation\", ref([]));\n\nconst links = [\n  {\n    label: \"About\",\n    to: \"/about/introduction\",\n  },\n  {\n    label: \"Sermons\",\n    to: \"/sermons/sermon_1\",\n  },\n  {\n    label: \"Letters\",\n    to: \"/letters/letter_1\",\n  },\n  {\n    label: \"Sayings\",\n    to: \"/sayings/sayings\",\n  },\n  {\n    label: \"Blog\",\n    to: \"/blog\",\n  },\n];\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UButton = _resolveComponent(\"UButton\")!\n  const _component_UNavigationTree = _resolveComponent(\"UNavigationTree\")!\n  const _component_UHeader = _resolveComponent(\"UHeader\")!\n\n  return (_openBlock(), _createBlock(_component_UHeader, { links: links }, {\n    logo: _withCtx(() => [\n      _hoisted_1\n    ]),\n    right: _withCtx(() => [\n      _createVNode(_component_UButton, {\n        label: \"Support\",\n        color: \"gray\",\n        to: \"/donate\"\n      })\n    ]),\n    panel: _withCtx(() => [\n      _createVNode(_component_UNavigationTree, {\n        links: _ctx.mapContentNavigation(_unref(navigation)),\n        \"default-open\": \"\"\n      }, null, 8, [\"links\"])\n    ]),\n    _: 1\n  }))\n}\n}\n\n})",
+      "start": 1714172179678,
+      "end": 1714172179679
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172179679,
+      "end": 1714172179679,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172179679,
+      "end": 1714172179679,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172179679,
+      "end": 1714172179679,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172179679,
+      "end": 1714172179679,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172179679,
+      "end": 1714172179679,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport _imports_0 from \"/gold-icon.png\";\nimport _imports_1 from \"/anotherone.png\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Header\",\n  setup(__props) {\n    const navigation = inject(\"navigation\", ref([]));\n    const links = [\n      {\n        label: \"About\",\n        to: \"/about/introduction\"\n      },\n      {\n        label: \"Sermons\",\n        to: \"/sermons/sermon_1\"\n      },\n      {\n        label: \"Letters\",\n        to: \"/letters/letter_1\"\n      },\n      {\n        label: \"Sayings\",\n        to: \"/sayings/sayings\"\n      },\n      {\n        label: \"Blog\",\n        to: \"/blog\"\n      }\n    ];\n    return (_ctx, _cache) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UNavigationTree = _resolveComponent(\"UNavigationTree\");\n      const _component_UHeader = _resolveComponent(\"UHeader\");\n      return _openBlock(), _createBlock(_component_UHeader, { links }, {\n        logo: _withCtx(() => [\n          _hoisted_1\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UButton, {\n            label: \"Support\",\n            color: \"gray\",\n            to: \"/donate\"\n          })\n        ]),\n        panel: _withCtx(() => [\n          _createVNode(_component_UNavigationTree, {\n            links: _ctx.mapContentNavigation(_unref(navigation)),\n            \"default-open\": \"\"\n          }, null, 8, [\"links\"])\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
+      "start": 1714172179679,
+      "end": 1714172179789,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/components/Header.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/gold-icon.png'\nimport _imports_1 from '/anotherone.png'\n\n\nconst _hoisted_1 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1)\n\nimport type { NavItem } from \"@nuxt/content/dist/runtime/types\";\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Header',\n  setup(__props) {\n\nconst navigation = inject<Ref<NavItem[]>>(\"navigation\", ref([]));\n\nconst links = [\n  {\n    label: \"About\",\n    to: \"/about/introduction\",\n  },\n  {\n    label: \"Sermons\",\n    to: \"/sermons/sermon_1\",\n  },\n  {\n    label: \"Letters\",\n    to: \"/letters/letter_1\",\n  },\n  {\n    label: \"Sayings\",\n    to: \"/sayings/sayings\",\n  },\n  {\n    label: \"Blog\",\n    to: \"/blog\",\n  },\n];\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UButton = _resolveComponent(\"UButton\")!\n  const _component_UNavigationTree = _resolveComponent(\"UNavigationTree\")!\n  const _component_UHeader = _resolveComponent(\"UHeader\")!\n\n  return (_openBlock(), _createBlock(_component_UHeader, { links: links }, {\n    logo: _withCtx(() => [\n      _hoisted_1\n    ]),\n    right: _withCtx(() => [\n      _createVNode(_component_UButton, {\n        label: \"Support\",\n        color: \"gray\",\n        to: \"/donate\"\n      })\n    ]),\n    panel: _withCtx(() => [\n      _createVNode(_component_UNavigationTree, {\n        links: _ctx.mapContentNavigation(_unref(navigation)),\n        \"default-open\": \"\"\n      }, null, 8, [\"links\"])\n    ]),\n    _: 1\n  }))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,sBAAsB,qBAAqB,oBAAoB,mBAAmB,eAAe,cAAc,SAAS,QAAQ,WAAW,UAAU,aAAa,YAAY,eAAe,oBAAoB;AAC1N,OAAO,gBAAgB;AACvB,OAAO,gBAAgB;AAGvB,MAAM,aAA0B,oCAAoB,OAAO,EAAE,OAAO,oBAAoB,GAAG;AAAA,EAC5E,oCAAoB,OAAO;AAAA,IACtC,KAAK;AAAA,IACL,KAAK;AAAA,IACL,OAAO;AAAA,EACT,CAAC;AAAA,EACY,oCAAoB,OAAO;AAAA,IACtC,KAAK;AAAA,IACL,KAAK;AAAA,IACL,OAAO;AAAA,EACT,CAAC;AACH,GAAG,EAAE;AAKL,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,UAAM,aAAa,OAAuB,cAAc,IAAI,CAAC,CAAC,CAAC;AAE/D,UAAM,QAAQ;AAAA,MACZ;AAAA,QACE,OAAO;AAAA,QACP,IAAI;AAAA,MACN;AAAA,MACA;AAAA,QACE,OAAO;AAAA,QACP,IAAI;AAAA,MACN;AAAA,MACA;AAAA,QACE,OAAO;AAAA,QACP,IAAI;AAAA,MACN;AAAA,MACA;AAAA,QACE,OAAO;AAAA,QACP,IAAI;AAAA,MACN;AAAA,MACA;AAAA,QACE,OAAO;AAAA,QACP,IAAI;AAAA,MACN;AAAA,IACF;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,qBAAqB,kBAAkB,SAAS;AACtD,YAAM,6BAA6B,kBAAkB,iBAAiB;AACtE,YAAM,qBAAqB,kBAAkB,SAAS;AAEtD,aAAQ,WAAW,GAAG,aAAa,oBAAoB,EAAE,MAAa,GAAG;AAAA,QACvE,MAAM,SAAS,MAAM;AAAA,UACnB;AAAA,QACF,CAAC;AAAA,QACD,OAAO,SAAS,MAAM;AAAA,UACpB,aAAa,oBAAoB;AAAA,YAC/B,OAAO;AAAA,YACP,OAAO;AAAA,YACP,IAAI;AAAA,UACN,CAAC;AAAA,QACH,CAAC;AAAA,QACD,OAAO,SAAS,MAAM;AAAA,UACpB,aAAa,4BAA4B;AAAA,YACvC,OAAO,KAAK,qBAAqB,OAAO,UAAU,CAAC;AAAA,YACnD,gBAAgB;AAAA,UAClB,GAAG,MAAM,GAAG,CAAC,OAAO,CAAC;AAAA,QACvB,CAAC;AAAA,QACD,GAAG;AAAA,MACL,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172179789,
+      "end": 1714172179789,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { inject, ref } from 'vue';\nimport { mapContentNavigation as __unimport_mapContentNavigation } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { unref as __unimport_unref_ } from 'vue';import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport _imports_0 from \"/gold-icon.png\";\nimport _imports_1 from \"/anotherone.png\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Header\",\n  setup(__props) {\n    const navigation = inject(\"navigation\", ref([]));\n    const links = [\n      {\n        label: \"About\",\n        to: \"/about/introduction\"\n      },\n      {\n        label: \"Sermons\",\n        to: \"/sermons/sermon_1\"\n      },\n      {\n        label: \"Letters\",\n        to: \"/letters/letter_1\"\n      },\n      {\n        label: \"Sayings\",\n        to: \"/sayings/sayings\"\n      },\n      {\n        label: \"Blog\",\n        to: \"/blog\"\n      }\n    ];\n    return (_ctx, _cache) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UNavigationTree = _resolveComponent(\"UNavigationTree\");\n      const _component_UHeader = _resolveComponent(\"UHeader\");\n      return _openBlock(), _createBlock(_component_UHeader, { links }, {\n        logo: _withCtx(() => [\n          _hoisted_1\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UButton, {\n            label: \"Support\",\n            color: \"gray\",\n            to: \"/donate\"\n          })\n        ]),\n        panel: _withCtx(() => [\n          _createVNode(_component_UNavigationTree, {\n            links: (\"mapContentNavigation\" in _ctx ? _ctx.mapContentNavigation : __unimport_unref_(__unimport_mapContentNavigation))(_unref(navigation)),\n            \"default-open\": \"\"\n          }, null, 8, [\"links\"])\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
+      "start": 1714172179789,
+      "end": 1714172179790,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;iDAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChO,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,iHAAyB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172179790,
+      "end": 1714172179790,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172179790,
+      "end": 1714172179790,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1714172179790,
+      "end": 1714172179790,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1714172179790,
+      "end": 1714172179790,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/navigation/NavigationTree.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/header/Header.vue\";\nimport { inject, ref } from 'vue';\nimport { mapContentNavigation as __unimport_mapContentNavigation } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { unref as __unimport_unref_ } from 'vue';import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport _imports_0 from \"/gold-icon.png\";\nimport _imports_1 from \"/anotherone.png\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Header\",\n  setup(__props) {\n    const navigation = inject(\"navigation\", ref([]));\n    const links = [\n      {\n        label: \"About\",\n        to: \"/about/introduction\"\n      },\n      {\n        label: \"Sermons\",\n        to: \"/sermons/sermon_1\"\n      },\n      {\n        label: \"Letters\",\n        to: \"/letters/letter_1\"\n      },\n      {\n        label: \"Sayings\",\n        to: \"/sayings/sayings\"\n      },\n      {\n        label: \"Blog\",\n        to: \"/blog\"\n      }\n    ];\n    return (_ctx, _cache) => {\n      const _component_UButton = __nuxt_component_0;\n      const _component_UNavigationTree = __nuxt_component_1;\n      const _component_UHeader = __nuxt_component_2;\n      return _openBlock(), _createBlock(_component_UHeader, { links }, {\n        logo: _withCtx(() => [\n          _hoisted_1\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UButton, {\n            label: \"Support\",\n            color: \"gray\",\n            to: \"/donate\"\n          })\n        ]),\n        panel: _withCtx(() => [\n          _createVNode(_component_UNavigationTree, {\n            links: (\"mapContentNavigation\" in _ctx ? _ctx.mapContentNavigation : __unimport_unref_(__unimport_mapContentNavigation))(_unref(navigation)),\n            \"default-open\": \"\"\n          }, null, 8, [\"links\"])\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
+      "start": 1714172179790,
+      "end": 1714172179790,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714172179790,
+      "end": 1714172179790,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714172179790,
+      "end": 1714172179790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172179790,
+      "end": 1714172179790,
+      "order": "normal"
+    }
+  ]
+}

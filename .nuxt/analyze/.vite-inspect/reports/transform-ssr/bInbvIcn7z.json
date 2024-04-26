@@ -4,261 +4,261 @@
     {
       "name": "vite:load-fallback",
       "result": "import { ref, onMounted, watchEffect } from \"vue\";\nimport { popperGenerator, defaultModifiers } from \"@popperjs/core/lib/popper-lite\";\nimport flip from \"@popperjs/core/lib/modifiers/flip\";\nimport offset from \"@popperjs/core/lib/modifiers/offset\";\nimport preventOverflow from \"@popperjs/core/lib/modifiers/preventOverflow\";\nimport computeStyles from \"@popperjs/core/lib/modifiers/computeStyles\";\nimport eventListeners from \"@popperjs/core/lib/modifiers/eventListeners\";\nimport arrowModifier from \"@popperjs/core/lib/modifiers/arrow\";\nimport { unrefElement } from \"@vueuse/core\";\nexport const createPopper = popperGenerator({\n  defaultModifiers: [...defaultModifiers, offset, flip, preventOverflow, computeStyles, eventListeners, arrowModifier]\n});\nexport function usePopper({\n  locked = false,\n  overflowPadding = 8,\n  offsetDistance = 8,\n  offsetSkid = 0,\n  gpuAcceleration = true,\n  adaptive = true,\n  scroll = true,\n  resize = true,\n  arrow = false,\n  placement,\n  strategy\n}, virtualReference) {\n  const reference = ref(null);\n  const popper = ref(null);\n  const instance = ref(null);\n  onMounted(() => {\n    watchEffect((onInvalidate) => {\n      if (!popper.value) {\n        return;\n      }\n      if (!reference.value && !virtualReference?.value) {\n        return;\n      }\n      const popperEl = unrefElement(popper);\n      const referenceEl = virtualReference?.value || unrefElement(reference);\n      if (!(popperEl instanceof HTMLElement)) {\n        return;\n      }\n      if (!referenceEl) {\n        return;\n      }\n      const config = {\n        modifiers: [\n          {\n            name: \"flip\",\n            enabled: !locked\n          },\n          {\n            name: \"preventOverflow\",\n            options: {\n              padding: overflowPadding\n            }\n          },\n          {\n            name: \"offset\",\n            options: {\n              offset: [offsetSkid, offsetDistance]\n            }\n          },\n          {\n            name: \"computeStyles\",\n            options: {\n              adaptive,\n              gpuAcceleration\n            }\n          },\n          {\n            name: \"eventListeners\",\n            options: {\n              scroll,\n              resize\n            }\n          },\n          {\n            name: \"arrow\",\n            enabled: arrow\n          }\n        ]\n      };\n      if (placement) {\n        config.placement = placement;\n      }\n      if (strategy) {\n        config.strategy = strategy;\n      }\n      instance.value = createPopper(referenceEl, popperEl, config);\n      onInvalidate(instance.value.destroy);\n    });\n  });\n  return [reference, popper, instance];\n}\n",
-      "start": 1714025110905,
-      "end": 1714025110914,
+      "start": 1714172190418,
+      "end": 1714172190419,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110914,
-      "end": 1714025110914,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110914,
-      "end": 1714025110915,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190419,
+      "end": 1714172190419,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190419,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { ref, onMounted, watchEffect } from \"vue\";\nimport { popperGenerator, defaultModifiers } from \"@popperjs/core/lib/popper-lite\";\nimport flip from \"@popperjs/core/lib/modifiers/flip\";\nimport offset from \"@popperjs/core/lib/modifiers/offset\";\nimport preventOverflow from \"@popperjs/core/lib/modifiers/preventOverflow\";\nimport computeStyles from \"@popperjs/core/lib/modifiers/computeStyles\";\nimport eventListeners from \"@popperjs/core/lib/modifiers/eventListeners\";\nimport arrowModifier from \"@popperjs/core/lib/modifiers/arrow\";\nimport { unrefElement } from \"@vueuse/core\";\nexport const createPopper = popperGenerator({\n  defaultModifiers: [...defaultModifiers, offset, flip, preventOverflow, computeStyles, eventListeners, arrowModifier]\n});\nexport function usePopper({\n  locked = false,\n  overflowPadding = 8,\n  offsetDistance = 8,\n  offsetSkid = 0,\n  gpuAcceleration = true,\n  adaptive = true,\n  scroll = true,\n  resize = true,\n  arrow = false,\n  placement,\n  strategy\n}, virtualReference) {\n  const reference = ref(null);\n  const popper = ref(null);\n  const instance = ref(null);\n   false && /*@__PURE__*/ onMounted(() => {\n    watchEffect((onInvalidate) => {\n      if (!popper.value) {\n        return;\n      }\n      if (!reference.value && !virtualReference?.value) {\n        return;\n      }\n      const popperEl = unrefElement(popper);\n      const referenceEl = virtualReference?.value || unrefElement(reference);\n      if (!(popperEl instanceof HTMLElement)) {\n        return;\n      }\n      if (!referenceEl) {\n        return;\n      }\n      const config = {\n        modifiers: [\n          {\n            name: \"flip\",\n            enabled: !locked\n          },\n          {\n            name: \"preventOverflow\",\n            options: {\n              padding: overflowPadding\n            }\n          },\n          {\n            name: \"offset\",\n            options: {\n              offset: [offsetSkid, offsetDistance]\n            }\n          },\n          {\n            name: \"computeStyles\",\n            options: {\n              adaptive,\n              gpuAcceleration\n            }\n          },\n          {\n            name: \"eventListeners\",\n            options: {\n              scroll,\n              resize\n            }\n          },\n          {\n            name: \"arrow\",\n            enabled: arrow\n          }\n        ]\n      };\n      if (placement) {\n        config.placement = placement;\n      }\n      if (strategy) {\n        config.strategy = strategy;\n      }\n      instance.value = createPopper(referenceEl, popperEl, config);\n      onInvalidate(instance.value.destroy);\n    });\n  });\n  return [reference, popper, instance];\n}\n",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -271,14 +271,14 @@
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025110915,
-      "end": 1714025110915,
+      "start": 1714172190420,
+      "end": 1714172190420,
       "order": "normal"
     }
   ]

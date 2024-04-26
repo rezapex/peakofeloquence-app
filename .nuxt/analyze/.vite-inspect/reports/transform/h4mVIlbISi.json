@@ -1,0 +1,17 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/.nuxt/nuxt-fonts-global.css",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "",
+      "start": 1714172176295,
+      "end": 1714172176295
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172176295,
+      "end": 1714172176295,
+      "order": "normal"
+    }
+  ]
+}

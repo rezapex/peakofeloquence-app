@@ -1,0 +1,226 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/components/OgImage/index.mjs?nuxt_component=async&nuxt_component_name=OgImage&nuxt_component_export=default",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent } from \"vue\";\nimport { defineOgImage } from \"#imports\";\nexport default defineComponent({\n  name: \"OgImage\",\n  async setup(_, { attrs }) {\n    if (process.server)\n      await defineOgImage(attrs);\n    return () => null;\n  }\n});\n",
+      "start": 1714172176966,
+      "end": 1714172178542,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/components/OgImage/index.mjs\").then(r => r[\"default\"] || r.default || r))",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/components/OgImage/index.mjs\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r[\"default\"] || r.default || r))",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172178542,
+      "end": 1714172178542,
+      "order": "normal"
+    }
+  ]
+}

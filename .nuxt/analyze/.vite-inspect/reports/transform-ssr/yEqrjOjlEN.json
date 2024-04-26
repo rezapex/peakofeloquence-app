@@ -1,0 +1,306 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/plugins/presets.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig()\n\n  return {\n    provide: {\n      ui: appConfig.ui.presets\n    }\n  }\n})\n",
+      "start": 1714172183143,
+      "end": 1714172185293,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172185293,
+      "end": 1714172185293,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172185293,
+      "end": 1714172185293,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172185293,
+      "end": 1714172185294,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172185293,
+      "end": 1714172185294,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172185294,
+      "end": 1714172185294,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172185294,
+      "end": 1714172185294,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172185294,
+      "end": 1714172185294,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1714172185294,
+      "end": 1714172185294,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172185294,
+      "end": 1714172185294,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig();\n  return {\n    provide: {\n      ui: appConfig.ui.presets\n    }\n  };\n});\n",
+      "start": 1714172185294,
+      "end": 1714172185351,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/plugins/presets.ts"
+        ],
+        "sourcesContent": [
+          "export default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig()\n\n  return {\n    provide: {\n      ui: appConfig.ui.presets\n    }\n  }\n})\n"
+        ],
+        "mappings": "AAAA,eAAe,iBAAiB,MAAM;AACpC,QAAM,YAAY,aAAa;AAE/B,SAAO;AAAA,IACL,SAAS;AAAA,MACP,IAAI,UAAU,GAAG;AAAA,IACnB;AAAA,EACF;AACF,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172185351,
+      "end": 1714172185351,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172185351,
+      "end": 1714172185351,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714172185351,
+      "end": 1714172185351,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172185351,
+      "end": 1714172185351,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172185352,
+      "end": 1714172185352,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172185352,
+      "end": 1714172185352,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172185352,
+      "end": 1714172185352,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172185352,
+      "end": 1714172185352,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172185352,
+      "end": 1714172185352,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172185352,
+      "end": 1714172185352,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714172185353,
+      "end": 1714172185353,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172185353,
+      "end": 1714172185353,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172185354,
+      "end": 1714172185354,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172185354,
+      "end": 1714172185354,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172185354,
+      "end": 1714172185354,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172185354,
+      "end": 1714172185354,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172185354,
+      "end": 1714172185355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172185355,
+      "end": 1714172185355,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172185355,
+      "end": 1714172185355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172185355,
+      "end": 1714172185355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172185355,
+      "end": 1714172185355,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172185355,
+      "end": 1714172185355,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172185355,
+      "end": 1714172185355,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nimport { useAppConfig } from '#app/config';\nexport default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig();\n  return {\n    provide: {\n      ui: appConfig.ui.presets\n    }\n  };\n});\n",
+      "start": 1714172185355,
+      "end": 1714172185356,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nimport { useAppConfig } from '#app/config';\nexport default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig();\n  return {\n    provide: {\n      ui: appConfig.ui.presets\n    }\n  };\n});\n",
+      "start": 1714172185355,
+      "end": 1714172185356,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172185356,
+      "end": 1714172185356,
+      "order": "normal"
+    }
+  ]
+}

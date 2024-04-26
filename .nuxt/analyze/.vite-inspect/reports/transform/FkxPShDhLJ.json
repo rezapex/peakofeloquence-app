@@ -1,0 +1,244 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/pages/signup.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'signup',\n  setup(__props) {\n\ndefinePageMeta({\n  layout: 'auth'\n})\n\nuseSeoMeta({\n  title: 'Sign up'\n})\n\nconst fields = [{\n  name: 'name',\n  type: 'text',\n  label: 'Name',\n  placeholder: 'Enter your name'\n}, {\n  name: 'email',\n  type: 'text',\n  label: 'Email',\n  placeholder: 'Enter your email'\n}, {\n  name: 'password',\n  label: 'Password',\n  type: 'password',\n  placeholder: 'Enter your password'\n}]\n\nconst validate = (state: any) => {\n  const errors = []\n  if (!state.email) errors.push({ path: 'email', message: 'Email is required' })\n  if (!state.password) errors.push({ path: 'password', message: 'Password is required' })\n  return errors\n}\n\nconst providers = [{\n  label: 'Continue with GitHub',\n  icon: 'i-simple-icons-github',\n  color: 'gray' as const,\n  click: () => {\n    console.log('Redirect to GitHub')\n  }\n}]\n\nfunction onSubmit (data: any) {\n  console.log('Submitted', data)\n}\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n  const _component_UAuthForm = _resolveComponent(\"UAuthForm\")!\n  const _component_UCard = _resolveComponent(\"UCard\")!\n\n  return (_openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n    default: _withCtx(() => [\n      _createVNode(_component_UAuthForm, {\n        fields: fields,\n        validate: validate,\n        providers: providers,\n        align: \"top\",\n        title: \"Create an account\",\n        ui: { base: 'text-center', footer: 'text-center' },\n        \"submit-button\": { label: 'Create account' },\n        onSubmit: onSubmit\n      }, {\n        description: _withCtx(() => [\n          _createTextVNode(\" Already have an account? \"),\n          _createVNode(_component_NuxtLink, {\n            to: \"/login\",\n            class: \"text-primary font-medium\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\"Login\")\n            ]),\n            _: 1\n          }),\n          _createTextVNode(\". \")\n        ]),\n        footer: _withCtx(() => [\n          _createTextVNode(\" By signing up, you agree to our \"),\n          _createVNode(_component_NuxtLink, {\n            to: \"/\",\n            class: \"text-primary font-medium\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\"Terms of Service\")\n            ]),\n            _: 1\n          }),\n          _createTextVNode(\". \")\n        ]),\n        _: 1\n      })\n    ]),\n    _: 1\n  }))\n}\n}\n\n})",
+      "start": 1714172179015,
+      "end": 1714172179015
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172179015,
+      "end": 1714172179015,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172179015,
+      "end": 1714172179015,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172179015,
+      "end": 1714172179015,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172179015,
+      "end": 1714172179015,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172179015,
+      "end": 1714172179015,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"signup\",\n  setup(__props) {\n    definePageMeta({\n      layout: \"auth\"\n    });\n    useSeoMeta({\n      title: \"Sign up\"\n    });\n    const fields = [{\n      name: \"name\",\n      type: \"text\",\n      label: \"Name\",\n      placeholder: \"Enter your name\"\n    }, {\n      name: \"email\",\n      type: \"text\",\n      label: \"Email\",\n      placeholder: \"Enter your email\"\n    }, {\n      name: \"password\",\n      label: \"Password\",\n      type: \"password\",\n      placeholder: \"Enter your password\"\n    }];\n    const validate = (state) => {\n      const errors = [];\n      if (!state.email)\n        errors.push({ path: \"email\", message: \"Email is required\" });\n      if (!state.password)\n        errors.push({ path: \"password\", message: \"Password is required\" });\n      return errors;\n    };\n    const providers = [{\n      label: \"Continue with GitHub\",\n      icon: \"i-simple-icons-github\",\n      color: \"gray\",\n      click: () => {\n        console.log(\"Redirect to GitHub\");\n      }\n    }];\n    function onSubmit(data) {\n      console.log(\"Submitted\", data);\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UAuthForm = _resolveComponent(\"UAuthForm\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UAuthForm, {\n            fields,\n            validate,\n            providers,\n            align: \"top\",\n            title: \"Create an account\",\n            ui: { base: \"text-center\", footer: \"text-center\" },\n            \"submit-button\": { label: \"Create account\" },\n            onSubmit\n          }, {\n            description: _withCtx(() => [\n              _createTextVNode(\" Already have an account? \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/login\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Login\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            footer: _withCtx(() => [\n              _createTextVNode(\" By signing up, you agree to our \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Terms of Service\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
+      "start": 1714172179015,
+      "end": 1714172179629,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/pages/signup.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'signup',\n  setup(__props) {\n\ndefinePageMeta({\n  layout: 'auth'\n})\n\nuseSeoMeta({\n  title: 'Sign up'\n})\n\nconst fields = [{\n  name: 'name',\n  type: 'text',\n  label: 'Name',\n  placeholder: 'Enter your name'\n}, {\n  name: 'email',\n  type: 'text',\n  label: 'Email',\n  placeholder: 'Enter your email'\n}, {\n  name: 'password',\n  label: 'Password',\n  type: 'password',\n  placeholder: 'Enter your password'\n}]\n\nconst validate = (state: any) => {\n  const errors = []\n  if (!state.email) errors.push({ path: 'email', message: 'Email is required' })\n  if (!state.password) errors.push({ path: 'password', message: 'Password is required' })\n  return errors\n}\n\nconst providers = [{\n  label: 'Continue with GitHub',\n  icon: 'i-simple-icons-github',\n  color: 'gray' as const,\n  click: () => {\n    console.log('Redirect to GitHub')\n  }\n}]\n\nfunction onSubmit (data: any) {\n  console.log('Submitted', data)\n}\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n  const _component_UAuthForm = _resolveComponent(\"UAuthForm\")!\n  const _component_UCard = _resolveComponent(\"UCard\")!\n\n  return (_openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n    default: _withCtx(() => [\n      _createVNode(_component_UAuthForm, {\n        fields: fields,\n        validate: validate,\n        providers: providers,\n        align: \"top\",\n        title: \"Create an account\",\n        ui: { base: 'text-center', footer: 'text-center' },\n        \"submit-button\": { label: 'Create account' },\n        onSubmit: onSubmit\n      }, {\n        description: _withCtx(() => [\n          _createTextVNode(\" Already have an account? \"),\n          _createVNode(_component_NuxtLink, {\n            to: \"/login\",\n            class: \"text-primary font-medium\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\"Login\")\n            ]),\n            _: 1\n          }),\n          _createTextVNode(\". \")\n        ]),\n        footer: _withCtx(() => [\n          _createTextVNode(\" By signing up, you agree to our \"),\n          _createVNode(_component_NuxtLink, {\n            to: \"/\",\n            class: \"text-primary font-medium\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\"Terms of Service\")\n            ]),\n            _: 1\n          }),\n          _createTextVNode(\". \")\n        ]),\n        _: 1\n      })\n    ]),\n    _: 1\n  }))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,mBAAmB,kBAAkB,oBAAoB,mBAAmB,WAAW,UAAU,eAAe,cAAc,aAAa,YAAY,eAAe,oBAAoB;AAGnM,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,mBAAe;AAAA,MACb,QAAQ;AAAA,IACV,CAAC;AAED,eAAW;AAAA,MACT,OAAO;AAAA,IACT,CAAC;AAED,UAAM,SAAS,CAAC;AAAA,MACd,MAAM;AAAA,MACN,MAAM;AAAA,MACN,OAAO;AAAA,MACP,aAAa;AAAA,IACf,GAAG;AAAA,MACD,MAAM;AAAA,MACN,MAAM;AAAA,MACN,OAAO;AAAA,MACP,aAAa;AAAA,IACf,GAAG;AAAA,MACD,MAAM;AAAA,MACN,OAAO;AAAA,MACP,MAAM;AAAA,MACN,aAAa;AAAA,IACf,CAAC;AAED,UAAM,WAAW,CAAC,UAAe;AAC/B,YAAM,SAAS,CAAC;AAChB,UAAI,CAAC,MAAM;AAAO,eAAO,KAAK,EAAE,MAAM,SAAS,SAAS,oBAAoB,CAAC;AAC7E,UAAI,CAAC,MAAM;AAAU,eAAO,KAAK,EAAE,MAAM,YAAY,SAAS,uBAAuB,CAAC;AACtF,aAAO;AAAA,IACT;AAEA,UAAM,YAAY,CAAC;AAAA,MACjB,OAAO;AAAA,MACP,MAAM;AAAA,MACN,OAAO;AAAA,MACP,OAAO,MAAM;AACX,gBAAQ,IAAI,oBAAoB;AAAA,MAClC;AAAA,IACF,CAAC;AAED,aAAS,SAAU,MAAW;AAC5B,cAAQ,IAAI,aAAa,IAAI;AAAA,IAC/B;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,sBAAsB,kBAAkB,UAAU;AACxD,YAAM,uBAAuB,kBAAkB,WAAW;AAC1D,YAAM,mBAAmB,kBAAkB,OAAO;AAElD,aAAQ,WAAW,GAAG,aAAa,kBAAkB,EAAE,OAAO,4DAA4D,GAAG;AAAA,QAC3H,SAAS,SAAS,MAAM;AAAA,UACtB,aAAa,sBAAsB;AAAA,YACjC;AAAA,YACA;AAAA,YACA;AAAA,YACA,OAAO;AAAA,YACP,OAAO;AAAA,YACP,IAAI,EAAE,MAAM,eAAe,QAAQ,cAAc;AAAA,YACjD,iBAAiB,EAAE,OAAO,iBAAiB;AAAA,YAC3C;AAAA,UACF,GAAG;AAAA,YACD,aAAa,SAAS,MAAM;AAAA,cAC1B,iBAAiB,4BAA4B;AAAA,cAC7C,aAAa,qBAAqB;AAAA,gBAChC,IAAI;AAAA,gBACJ,OAAO;AAAA,cACT,GAAG;AAAA,gBACD,SAAS,SAAS,MAAM;AAAA,kBACtB,iBAAiB,OAAO;AAAA,gBAC1B,CAAC;AAAA,gBACD,GAAG;AAAA,cACL,CAAC;AAAA,cACD,iBAAiB,IAAI;AAAA,YACvB,CAAC;AAAA,YACD,QAAQ,SAAS,MAAM;AAAA,cACrB,iBAAiB,mCAAmC;AAAA,cACpD,aAAa,qBAAqB;AAAA,gBAChC,IAAI;AAAA,gBACJ,OAAO;AAAA,cACT,GAAG;AAAA,gBACD,SAAS,SAAS,MAAM;AAAA,kBACtB,iBAAiB,kBAAkB;AAAA,gBACrC,CAAC;AAAA,gBACD,GAAG;AAAA,cACL,CAAC;AAAA,cACD,iBAAiB,IAAI;AAAA,YACvB,CAAC;AAAA,YACD,GAAG;AAAA,UACL,CAAC;AAAA,QACH,CAAC;AAAA,QACD,GAAG;AAAA,MACL,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172179629,
+      "end": 1714172179629,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172179629,
+      "end": 1714172179629,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714172179629,
+      "end": 1714172179629,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172179629,
+      "end": 1714172179629,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179629,
+      "end": 1714172179629,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172179629,
+      "end": 1714172179629,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172179629,
+      "end": 1714172179629,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1714172179629,
+      "end": 1714172179629,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714172179629,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { definePageMeta } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/pages/runtime/composables';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"signup\",\n  setup(__props) {\n    definePageMeta({\n      layout: \"auth\"\n    });\n    useSeoMeta({\n      title: \"Sign up\"\n    });\n    const fields = [{\n      name: \"name\",\n      type: \"text\",\n      label: \"Name\",\n      placeholder: \"Enter your name\"\n    }, {\n      name: \"email\",\n      type: \"text\",\n      label: \"Email\",\n      placeholder: \"Enter your email\"\n    }, {\n      name: \"password\",\n      label: \"Password\",\n      type: \"password\",\n      placeholder: \"Enter your password\"\n    }];\n    const validate = (state) => {\n      const errors = [];\n      if (!state.email)\n        errors.push({ path: \"email\", message: \"Email is required\" });\n      if (!state.password)\n        errors.push({ path: \"password\", message: \"Password is required\" });\n      return errors;\n    };\n    const providers = [{\n      label: \"Continue with GitHub\",\n      icon: \"i-simple-icons-github\",\n      color: \"gray\",\n      click: () => {\n        console.log(\"Redirect to GitHub\");\n      }\n    }];\n    function onSubmit(data) {\n      console.log(\"Submitted\", data);\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UAuthForm = _resolveComponent(\"UAuthForm\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UAuthForm, {\n            fields,\n            validate,\n            providers,\n            align: \"top\",\n            title: \"Create an account\",\n            ui: { base: \"text-center\", footer: \"text-center\" },\n            \"submit-button\": { label: \"Create account\" },\n            onSubmit\n          }, {\n            description: _withCtx(() => [\n              _createTextVNode(\" Already have an account? \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/login\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Login\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            footer: _withCtx(() => [\n              _createTextVNode(\" By signing up, you agree to our \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Terms of Service\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
+      "start": 1714172179630,
+      "end": 1714172179630,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172179630,
+      "end": 1714172179631,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172179631,
+      "end": 1714172179631,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1714172179631,
+      "end": 1714172179631,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1714172179631,
+      "end": 1714172179631,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/auth/AuthForm.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Card.vue\";\nimport { definePageMeta } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/pages/runtime/composables';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"signup\",\n  setup(__props) {\n    definePageMeta({\n      layout: \"auth\"\n    });\n    useSeoMeta({\n      title: \"Sign up\"\n    });\n    const fields = [{\n      name: \"name\",\n      type: \"text\",\n      label: \"Name\",\n      placeholder: \"Enter your name\"\n    }, {\n      name: \"email\",\n      type: \"text\",\n      label: \"Email\",\n      placeholder: \"Enter your email\"\n    }, {\n      name: \"password\",\n      label: \"Password\",\n      type: \"password\",\n      placeholder: \"Enter your password\"\n    }];\n    const validate = (state) => {\n      const errors = [];\n      if (!state.email)\n        errors.push({ path: \"email\", message: \"Email is required\" });\n      if (!state.password)\n        errors.push({ path: \"password\", message: \"Password is required\" });\n      return errors;\n    };\n    const providers = [{\n      label: \"Continue with GitHub\",\n      icon: \"i-simple-icons-github\",\n      color: \"gray\",\n      click: () => {\n        console.log(\"Redirect to GitHub\");\n      }\n    }];\n    function onSubmit(data) {\n      console.log(\"Submitted\", data);\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = __nuxt_component_0;\n      const _component_UAuthForm = __nuxt_component_1;\n      const _component_UCard = __nuxt_component_2;\n      return _openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UAuthForm, {\n            fields,\n            validate,\n            providers,\n            align: \"top\",\n            title: \"Create an account\",\n            ui: { base: \"text-center\", footer: \"text-center\" },\n            \"submit-button\": { label: \"Create account\" },\n            onSubmit\n          }, {\n            description: _withCtx(() => [\n              _createTextVNode(\" Already have an account? \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/login\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Login\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            footer: _withCtx(() => [\n              _createTextVNode(\" By signing up, you agree to our \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Terms of Service\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
+      "start": 1714172179631,
+      "end": 1714172179631,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/auth/AuthForm.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Card.vue\";\nimport { definePageMeta } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/pages/runtime/composables';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"signup\",\n  setup(__props) {\n     false && /*@__PURE__*/ definePageMeta({\n      layout: \"auth\"\n    });\n    useSeoMeta({\n      title: \"Sign up\"\n    });\n    const fields = [{\n      name: \"name\",\n      type: \"text\",\n      label: \"Name\",\n      placeholder: \"Enter your name\"\n    }, {\n      name: \"email\",\n      type: \"text\",\n      label: \"Email\",\n      placeholder: \"Enter your email\"\n    }, {\n      name: \"password\",\n      label: \"Password\",\n      type: \"password\",\n      placeholder: \"Enter your password\"\n    }];\n    const validate = (state) => {\n      const errors = [];\n      if (!state.email)\n        errors.push({ path: \"email\", message: \"Email is required\" });\n      if (!state.password)\n        errors.push({ path: \"password\", message: \"Password is required\" });\n      return errors;\n    };\n    const providers = [{\n      label: \"Continue with GitHub\",\n      icon: \"i-simple-icons-github\",\n      color: \"gray\",\n      click: () => {\n        console.log(\"Redirect to GitHub\");\n      }\n    }];\n    function onSubmit(data) {\n      console.log(\"Submitted\", data);\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = __nuxt_component_0;\n      const _component_UAuthForm = __nuxt_component_1;\n      const _component_UCard = __nuxt_component_2;\n      return _openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UAuthForm, {\n            fields,\n            validate,\n            providers,\n            align: \"top\",\n            title: \"Create an account\",\n            ui: { base: \"text-center\", footer: \"text-center\" },\n            \"submit-button\": { label: \"Create account\" },\n            onSubmit\n          }, {\n            description: _withCtx(() => [\n              _createTextVNode(\" Already have an account? \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/login\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Login\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            footer: _withCtx(() => [\n              _createTextVNode(\" By signing up, you agree to our \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Terms of Service\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
+      "start": 1714172179631,
+      "end": 1714172179631,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714172179631,
+      "end": 1714172179631,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172179631,
+      "end": 1714172179631,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, computed } from \"vue\";\nimport { logicAnd, logicNot } from \"@vueuse/math\";\nimport { useEventListener, useDebounceFn } from \"@vueuse/core\";\nimport { useShortcuts } from \"./useShortcuts.mjs\";\nconst chainedShortcutRegex = /^[^-]+.*-.*[^-]+$/;\nconst combinedShortcutRegex = /^[^_]+.*_.*[^_]+$/;\nexport const defineShortcuts = (config, options = {}) => {\n  const { macOS, usingInput } = useShortcuts();\n  let shortcuts = [];\n  const chainedInputs = ref([]);\n  const clearChainedInput = () => {\n    chainedInputs.value.splice(0, chainedInputs.value.length);\n  };\n  const debouncedClearChainedInput = useDebounceFn(clearChainedInput, options.chainDelay ?? 800);\n  const onKeyDown = (e) => {\n    if (!e.key) {\n      return;\n    }\n    const alphabeticalKey = /^[a-z]{1}$/i.test(e.key);\n    let chainedKey;\n    chainedInputs.value.push(e.key);\n    if (chainedInputs.value.length >= 2) {\n      chainedKey = chainedInputs.value.slice(-2).join(\"-\");\n      for (const shortcut of shortcuts.filter((s) => s.chained)) {\n        if (shortcut.key !== chainedKey) {\n          continue;\n        }\n        if (shortcut.condition.value) {\n          e.preventDefault();\n          shortcut.handler();\n        }\n        clearChainedInput();\n        return;\n      }\n    }\n    for (const shortcut of shortcuts.filter((s) => !s.chained)) {\n      if (e.key.toLowerCase() !== shortcut.key) {\n        continue;\n      }\n      if (e.metaKey !== shortcut.metaKey) {\n        continue;\n      }\n      if (e.ctrlKey !== shortcut.ctrlKey) {\n        continue;\n      }\n      if (alphabeticalKey && e.shiftKey !== shortcut.shiftKey) {\n        continue;\n      }\n      if (shortcut.condition.value) {\n        e.preventDefault();\n        shortcut.handler();\n      }\n      clearChainedInput();\n      return;\n    }\n    debouncedClearChainedInput();\n  };\n  shortcuts = Object.entries(config).map(([key, shortcutConfig]) => {\n    if (!shortcutConfig) {\n      return null;\n    }\n    let shortcut;\n    if (key.includes(\"-\") && key !== \"-\" && !key.match(chainedShortcutRegex)?.length) {\n      console.trace(`[Shortcut] Invalid key: \"${key}\"`);\n    }\n    if (key.includes(\"_\") && key !== \"_\" && !key.match(combinedShortcutRegex)?.length) {\n      console.trace(`[Shortcut] Invalid key: \"${key}\"`);\n    }\n    const chained = key.includes(\"-\") && key !== \"-\";\n    if (chained) {\n      shortcut = {\n        key: key.toLowerCase(),\n        metaKey: false,\n        ctrlKey: false,\n        shiftKey: false,\n        altKey: false\n      };\n    } else {\n      const keySplit = key.toLowerCase().split(\"_\").map((k) => k);\n      shortcut = {\n        key: keySplit.filter((k) => ![\"meta\", \"ctrl\", \"shift\", \"alt\"].includes(k)).join(\"_\"),\n        metaKey: keySplit.includes(\"meta\"),\n        ctrlKey: keySplit.includes(\"ctrl\"),\n        shiftKey: keySplit.includes(\"shift\"),\n        altKey: keySplit.includes(\"alt\")\n      };\n    }\n    shortcut.chained = chained;\n    if (!macOS.value && shortcut.metaKey && !shortcut.ctrlKey) {\n      shortcut.metaKey = false;\n      shortcut.ctrlKey = true;\n    }\n    if (typeof shortcutConfig === \"function\") {\n      shortcut.handler = shortcutConfig;\n    } else if (typeof shortcutConfig === \"object\") {\n      shortcut = { ...shortcut, handler: shortcutConfig.handler };\n    }\n    if (!shortcut.handler) {\n      console.trace(\"[Shortcut] Invalid value\");\n      return null;\n    }\n    const conditions = [];\n    if (!shortcutConfig.usingInput) {\n      conditions.push(logicNot(usingInput));\n    } else if (typeof shortcutConfig.usingInput === \"string\") {\n      conditions.push(computed(() => usingInput.value === shortcutConfig.usingInput));\n    }\n    shortcut.condition = logicAnd(...conditions, ...shortcutConfig.whenever || []);\n    return shortcut;\n  }).filter(Boolean);\n  useEventListener(\"keydown\", onKeyDown);\n};\n",
+      "start": 1714172179828,
+      "end": 1714172179874,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172179874,
+      "end": 1714172179874,
+      "order": "normal"
+    }
+  ]
+}

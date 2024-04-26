@@ -1,0 +1,17 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/types.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "",
+      "start": 1714172178942,
+      "end": 1714172178942
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172178942,
+      "end": 1714172178942,
+      "order": "normal"
+    }
+  ]
+}

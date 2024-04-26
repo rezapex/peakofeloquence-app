@@ -1,0 +1,282 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue?nuxt_component=async&nuxt_component_name=Field&nuxt_component_export=default",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <div :class=\"ui.container\">\n      <div :class=\"ui.label\">\n        <span :class=\"ui.name\">{{ name }}</span>\n        <span v-if=\"required\" :class=\"ui.required\">required</span>\n      </div>\n\n      <div v-if=\"type\" :class=\"ui.type\">\n        {{ type }}\n      </div>\n    </div>\n\n    <div v-if=\"$slots.default || description\" :class=\"ui.description\">\n      <slot>\n        {{ description }}\n      </slot>\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\n\nconst config = {\n  wrapper: 'mt-5',\n  container: 'flex items-start gap-x-2.5 font-mono text-sm',\n  name: 'rounded-md font-semibold text-primary',\n  required: 'text-gray-500 dark:text-gray-400',\n  type: 'text-right',\n  label: 'flex flex-1 gap-x-2.5',\n  description: 'mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3'\n}\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  name: {\n    type: String,\n    required: true\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  type: {\n    type: String,\n    default: undefined\n  },\n  required: {\n    type: Boolean,\n    default: false\n  },\n  default: {\n    type: String,\n    default: undefined\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n})\n\nconst { ui, attrs } = useUI('content.field', undefined, config, toRef(props, 'class'), true)\n</script>\n",
+      "start": 1714172184805,
+      "end": 1714172185773,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172185773,
+      "end": 1714172185773,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172185773,
+      "end": 1714172185773,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172185773,
+      "end": 1714172185774,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172185773,
+      "end": 1714172185774,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172185774,
+      "end": 1714172185774,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172185774,
+      "end": 1714172185774,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172185774,
+      "end": 1714172185774,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1714172185774,
+      "end": 1714172185774,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172185774,
+      "end": 1714172185774,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1714172185774,
+      "end": 1714172185774,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172185774,
+      "end": 1714172185774,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172185774,
+      "end": 1714172185774,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1714172185774,
+      "end": 1714172188422,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue\").then(r => r[\"default\"] || r.default || r))",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714172188422,
+      "end": 1714172188422,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172188422,
+      "end": 1714172188423,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172188422,
+      "end": 1714172188423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172188423,
+      "end": 1714172188423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172188423,
+      "end": 1714172188423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1714172188423,
+      "end": 1714172188423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714172188423,
+      "end": 1714172188423,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714172188423,
+      "end": 1714172188423,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714172188423,
+      "end": 1714172188423,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172188423,
+      "end": 1714172188423,
+      "order": "normal"
+    }
+  ]
+}

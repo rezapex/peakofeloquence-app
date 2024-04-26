@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport type { Button } from '#ui/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'LandingHero',\n  __ssrInlineRender: true,\n  props: {\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  links: {\n    type: Array as PropType<(Button & { click?: Function })[]>,\n    default: () => []\n  },\n  orientation: {\n    type: String as PropType<'vertical' | 'horizontal'>,\n    default: 'vertical'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\n\n\nconst props = __props\n\nconst config = computed(() => {\n  const container: string = twJoin(\n    'gap-16 sm:gap-y-24',\n    props.orientation === 'vertical' && 'flex flex-col',\n    props.orientation === 'horizontal' && 'grid lg:grid-cols-2 lg:items-center'\n  )\n\n  const base: string = props.orientation === 'vertical' ? 'text-center' : ''\n\n  const links: string = twJoin(\n    'mt-10 flex flex-wrap gap-x-6 gap-y-3',\n    props.orientation === 'vertical' && 'justify-center'\n  )\n\n  return {\n    wrapper: 'py-24 sm:py-32 md:py-40 relative',\n    container,\n    base,\n    headline: 'mb-10',\n    title: 'text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl',\n    description: 'mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300',\n    links\n  }\n})\n\nconst { ui, attrs } = useUI('landing.hero', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UContainer = _resolveComponent(\"UContainer\")!\n  const _component_UButton = _resolveComponent(\"UButton\")!\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs), _attrs))}>`)\n  _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent)\n  _push(_ssrRenderComponent(_component_UContainer, {\n    class: _unref(ui).container\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div class=\"${\n          _ssrRenderClass(_unref(ui).base)\n        }\"${\n          _scopeId\n        }>`)\n        if (_ctx.$slots.headline) {\n          _push(`<div class=\"${\n            _ssrRenderClass(_unref(ui).headline)\n          }\"${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"headline\", {}, null, _push, _parent, _scopeId)\n          _push(`</div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        _push(`<h1 class=\"${\n          _ssrRenderClass(_unref(ui).title)\n        }\"${\n          _scopeId\n        }>`)\n        _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n          _push(`${_ssrInterpolate(__props.title)}`)\n        }, _push, _parent, _scopeId)\n        _push(`</h1>`)\n        if (__props.description || _ctx.$slots.description) {\n          _push(`<p class=\"${\n            _ssrRenderClass(_unref(ui).description)\n          }\"${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n            _push(`${_ssrInterpolate(__props.description)}`)\n          }, _push, _parent, _scopeId)\n          _push(`</p>`)\n        } else {\n          _push(`<!---->`)\n        }\n        if (__props.links?.length || _ctx.$slots.links) {\n          _push(`<div class=\"${\n            _ssrRenderClass(_unref(ui).links)\n          }\"${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n            _push(`<!--[-->`)\n            _ssrRenderList(__props.links, (link, index) => {\n              _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, link, {\n                onClick: link.click\n              }), null, _parent, _scopeId))\n            })\n            _push(`<!--]-->`)\n          }, _push, _parent, _scopeId)\n          _push(`</div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        _push(`</div>`)\n        _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent, _scopeId)\n      } else {\n        return [\n          _createVNode(\"div\", {\n            class: _unref(ui).base\n          }, [\n            (_ctx.$slots.headline)\n              ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).headline\n                }, [\n                  _renderSlot(_ctx.$slots, \"headline\")\n                ], 2))\n              : _createCommentVNode(\"\", true),\n            _createVNode(\"h1\", {\n              class: _unref(ui).title\n            }, [\n              _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.title), 1)\n              ])\n            ], 2),\n            (__props.description || _ctx.$slots.description)\n              ? (_openBlock(), _createBlock(\"p\", {\n                  key: 1,\n                  class: _unref(ui).description\n                }, [\n                  _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.description), 1)\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true),\n            (__props.links?.length || _ctx.$slots.links)\n              ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).links\n                }, [\n                  _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                      return (_openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                        onClick: link.click\n                      }), null, 16, [\"onClick\"]))\n                    }), 128))\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true)\n          ], 2),\n          _renderSlot(_ctx.$slots, \"default\")\n        ]\n      }\n    }),\n    _: 3\n  }, _parent))\n  _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent)\n  _push(`</div>`)\n}\n}\n\n})",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025110207,
-      "end": 1714025110207,
+      "start": 1714172189744,
+      "end": 1714172189744,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingHero\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-16 sm:gap-y-24\",\n        props.orientation === \"vertical\" && \"flex flex-col\",\n        props.orientation === \"horizontal\" && \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      const base = props.orientation === \"vertical\" ? \"text-center\" : \"\";\n      const links = twJoin(\n        \"mt-10 flex flex-wrap gap-x-6 gap-y-3\",\n        props.orientation === \"vertical\" && \"justify-center\"\n      );\n      return {\n        wrapper: \"py-24 sm:py-32 md:py-40 relative\",\n        container,\n        base,\n        headline: \"mb-10\",\n        title: \"text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl\",\n        description: \"mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300\",\n        links\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.hero\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent);\n      _push(_ssrRenderComponent(_component_UContainer, {\n        class: _unref(ui).container\n      }, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"${_ssrRenderClass(_unref(ui).base)}\"${_scopeId}>`);\n            if (_ctx.$slots.headline) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"headline\", {}, null, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<h1 class=\"${_ssrRenderClass(_unref(ui).title)}\"${_scopeId}>`);\n            _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n              _push2(`${_ssrInterpolate(__props.title)}`);\n            }, _push2, _parent2, _scopeId);\n            _push2(`</h1>`);\n            if (__props.description || _ctx.$slots.description) {\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.description)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</p>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.links?.length || _ctx.$slots.links) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n                _push2(`<!--[-->`);\n                _ssrRenderList(__props.links, (link, index) => {\n                  _push2(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, link, {\n                    onClick: link.click\n                  }), null, _parent2, _scopeId));\n                });\n                _push2(`<!--]-->`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _createVNode(\"div\", {\n                class: _unref(ui).base\n              }, [\n                _ctx.$slots.headline ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).headline\n                }, [\n                  _renderSlot(_ctx.$slots, \"headline\")\n                ], 2)) : _createCommentVNode(\"\", true),\n                _createVNode(\"h1\", {\n                  class: _unref(ui).title\n                }, [\n                  _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.title), 1)\n                  ])\n                ], 2),\n                __props.description || _ctx.$slots.description ? (_openBlock(), _createBlock(\"p\", {\n                  key: 1,\n                  class: _unref(ui).description\n                }, [\n                  _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.description), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.links?.length || _ctx.$slots.links ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).links\n                }, [\n                  _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                      return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                        onClick: link.click\n                      }), null, 16, [\"onClick\"]);\n                    }), 128))\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ], 2),\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent);\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110207,
-      "end": 1714025110361,
+      "start": 1714172189744,
+      "end": 1714172189918,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -95,147 +95,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189918,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025110361,
-      "end": 1714025110361,
+      "start": 1714172189918,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025110361,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110362,
-      "end": 1714025110362,
+      "start": 1714172189919,
+      "end": 1714172189919,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingHero\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-16 sm:gap-y-24\",\n        props.orientation === \"vertical\" && \"flex flex-col\",\n        props.orientation === \"horizontal\" && \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      const base = props.orientation === \"vertical\" ? \"text-center\" : \"\";\n      const links = twJoin(\n        \"mt-10 flex flex-wrap gap-x-6 gap-y-3\",\n        props.orientation === \"vertical\" && \"justify-center\"\n      );\n      return {\n        wrapper: \"py-24 sm:py-32 md:py-40 relative\",\n        container,\n        base,\n        headline: \"mb-10\",\n        title: \"text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl\",\n        description: \"mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300\",\n        links\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.hero\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent);\n      _push(_ssrRenderComponent(_component_UContainer, {\n        class: _unref(ui).container\n      }, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"${_ssrRenderClass(_unref(ui).base)}\"${_scopeId}>`);\n            if (_ctx.$slots.headline) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"headline\", {}, null, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<h1 class=\"${_ssrRenderClass(_unref(ui).title)}\"${_scopeId}>`);\n            _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n              _push2(`${_ssrInterpolate(__props.title)}`);\n            }, _push2, _parent2, _scopeId);\n            _push2(`</h1>`);\n            if (__props.description || _ctx.$slots.description) {\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.description)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</p>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.links?.length || _ctx.$slots.links) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n                _push2(`<!--[-->`);\n                _ssrRenderList(__props.links, (link, index) => {\n                  _push2(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, link, {\n                    onClick: link.click\n                  }), null, _parent2, _scopeId));\n                });\n                _push2(`<!--]-->`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _createVNode(\"div\", {\n                class: _unref(ui).base\n              }, [\n                _ctx.$slots.headline ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).headline\n                }, [\n                  _renderSlot(_ctx.$slots, \"headline\")\n                ], 2)) : _createCommentVNode(\"\", true),\n                _createVNode(\"h1\", {\n                  class: _unref(ui).title\n                }, [\n                  _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.title), 1)\n                  ])\n                ], 2),\n                __props.description || _ctx.$slots.description ? (_openBlock(), _createBlock(\"p\", {\n                  key: 1,\n                  class: _unref(ui).description\n                }, [\n                  _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.description), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.links?.length || _ctx.$slots.links ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).links\n                }, [\n                  _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                      return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                        onClick: link.click\n                      }), null, 16, [\"onClick\"]);\n                    }), 128))\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ], 2),\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent);\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110362,
-      "end": 1714025110363,
+      "start": 1714172189919,
+      "end": 1714172189920,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -249,8 +249,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingHero\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-16 sm:gap-y-24\",\n        props.orientation === \"vertical\" && \"flex flex-col\",\n        props.orientation === \"horizontal\" && \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      const base = props.orientation === \"vertical\" ? \"text-center\" : \"\";\n      const links = twJoin(\n        \"mt-10 flex flex-wrap gap-x-6 gap-y-3\",\n        props.orientation === \"vertical\" && \"justify-center\"\n      );\n      return {\n        wrapper: \"py-24 sm:py-32 md:py-40 relative\",\n        container,\n        base,\n        headline: \"mb-10\",\n        title: \"text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl\",\n        description: \"mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300\",\n        links\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.hero\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent);\n      _push(_ssrRenderComponent(_component_UContainer, {\n        class: _unref(ui).container\n      }, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"${_ssrRenderClass(_unref(ui).base)}\"${_scopeId}>`);\n            if (_ctx.$slots.headline) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"headline\", {}, null, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<h1 class=\"${_ssrRenderClass(_unref(ui).title)}\"${_scopeId}>`);\n            _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n              _push2(`${_ssrInterpolate(__props.title)}`);\n            }, _push2, _parent2, _scopeId);\n            _push2(`</h1>`);\n            if (__props.description || _ctx.$slots.description) {\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.description)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</p>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.links?.length || _ctx.$slots.links) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n                _push2(`<!--[-->`);\n                _ssrRenderList(__props.links, (link, index) => {\n                  _push2(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, link, {\n                    onClick: link.click\n                  }), null, _parent2, _scopeId));\n                });\n                _push2(`<!--]-->`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _createVNode(\"div\", {\n                class: _unref(ui).base\n              }, [\n                _ctx.$slots.headline ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).headline\n                }, [\n                  _renderSlot(_ctx.$slots, \"headline\")\n                ], 2)) : _createCommentVNode(\"\", true),\n                _createVNode(\"h1\", {\n                  class: _unref(ui).title\n                }, [\n                  _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.title), 1)\n                  ])\n                ], 2),\n                __props.description || _ctx.$slots.description ? (_openBlock(), _createBlock(\"p\", {\n                  key: 1,\n                  class: _unref(ui).description\n                }, [\n                  _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.description), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.links?.length || _ctx.$slots.links ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).links\n                }, [\n                  _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                      return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                        onClick: link.click\n                      }), null, 16, [\"onClick\"]);\n                    }), 128))\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ], 2),\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent);\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110362,
-      "end": 1714025110363,
+      "start": 1714172189919,
+      "end": 1714172189920,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -263,39 +263,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110363,
-      "end": 1714025110363,
+      "start": 1714172189920,
+      "end": 1714172189920,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110363,
-      "end": 1714025110363,
+      "start": 1714172189920,
+      "end": 1714172189920,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110363,
-      "end": 1714025110363,
+      "start": 1714172189920,
+      "end": 1714172189921,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110363,
-      "end": 1714025110363,
+      "start": 1714172189920,
+      "end": 1714172189921,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025110363,
-      "end": 1714025110363,
+      "start": 1714172189921,
+      "end": 1714172189921,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Container.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingHero\",\n  __ssrInlineRender: true,\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-16 sm:gap-y-24\",\n        props.orientation === \"vertical\" && \"flex flex-col\",\n        props.orientation === \"horizontal\" && \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      const base = props.orientation === \"vertical\" ? \"text-center\" : \"\";\n      const links = twJoin(\n        \"mt-10 flex flex-wrap gap-x-6 gap-y-3\",\n        props.orientation === \"vertical\" && \"justify-center\"\n      );\n      return {\n        wrapper: \"py-24 sm:py-32 md:py-40 relative\",\n        container,\n        base,\n        headline: \"mb-10\",\n        title: \"text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl\",\n        description: \"mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300\",\n        links\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.hero\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UContainer = __nuxt_component_0;\n      const _component_UButton = __nuxt_component_1;\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      _ssrRenderSlot(_ctx.$slots, \"top\", {}, null, _push, _parent);\n      _push(_ssrRenderComponent(_component_UContainer, {\n        class: _unref(ui).container\n      }, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div class=\"${_ssrRenderClass(_unref(ui).base)}\"${_scopeId}>`);\n            if (_ctx.$slots.headline) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"headline\", {}, null, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<h1 class=\"${_ssrRenderClass(_unref(ui).title)}\"${_scopeId}>`);\n            _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n              _push2(`${_ssrInterpolate(__props.title)}`);\n            }, _push2, _parent2, _scopeId);\n            _push2(`</h1>`);\n            if (__props.description || _ctx.$slots.description) {\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.description)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</p>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.links?.length || _ctx.$slots.links) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n                _push2(`<!--[-->`);\n                _ssrRenderList(__props.links, (link, index) => {\n                  _push2(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, link, {\n                    onClick: link.click\n                  }), null, _parent2, _scopeId));\n                });\n                _push2(`<!--]-->`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _createVNode(\"div\", {\n                class: _unref(ui).base\n              }, [\n                _ctx.$slots.headline ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).headline\n                }, [\n                  _renderSlot(_ctx.$slots, \"headline\")\n                ], 2)) : _createCommentVNode(\"\", true),\n                _createVNode(\"h1\", {\n                  class: _unref(ui).title\n                }, [\n                  _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.title), 1)\n                  ])\n                ], 2),\n                __props.description || _ctx.$slots.description ? (_openBlock(), _createBlock(\"p\", {\n                  key: 1,\n                  class: _unref(ui).description\n                }, [\n                  _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.description), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.links?.length || _ctx.$slots.links ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).links\n                }, [\n                  _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                      return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                        onClick: link.click\n                      }), null, 16, [\"onClick\"]);\n                    }), 128))\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ], 2),\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _ssrRenderSlot(_ctx.$slots, \"bottom\", {}, null, _push, _parent);\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110363,
-      "end": 1714025110364,
+      "start": 1714172189921,
+      "end": 1714172189921,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -308,20 +308,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714025110364,
-      "end": 1714025110364,
+      "start": 1714172189921,
+      "end": 1714172189921,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025110364,
-      "end": 1714025110364,
+      "start": 1714172189921,
+      "end": 1714172189921,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025110364,
-      "end": 1714025110364,
+      "start": 1714172189921,
+      "end": 1714172189921,
       "order": "normal"
     }
   ]

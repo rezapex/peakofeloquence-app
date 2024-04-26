@@ -1,0 +1,243 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/app.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'app',\n  setup(__props) {\n\nconst colorMode = useColorMode();\n\nconst color = computed(() => (colorMode.value === \"dark\" ? \"#111827\" : \"white\"));\n\nuseHead(() => ({\n  meta: [\n    { charset: \"utf-8\" },\n    { name: \"viewport\", content: \"width=device-width, initial-scale=1\" },\n    { key: \"theme-color\", name: \"theme-color\", content: color.value }, // Ensure to use .value here\n  ],\n  link: [{ rel: \"icon\", href: \"/gold-icon.png\" }],\n  htmlAttrs: {\n    lang: \"en\",\n  },\n}));\n\nuseSeoMeta({\n  titleTemplate: \"PeakofEloquence.org\",\n  ogImage: \"/landing.jpg\",\n  twitterImage: \"/landing.jpg\",\n  twitterCard: \"summary_large_image\",\n});\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLoadingIndicator = _resolveComponent(\"NuxtLoadingIndicator\")!\n  const _component_NuxtPage = _resolveComponent(\"NuxtPage\")!\n  const _component_NuxtLayout = _resolveComponent(\"NuxtLayout\")!\n  const _component_UNotifications = _resolveComponent(\"UNotifications\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_NuxtLoadingIndicator),\n    _createVNode(_component_NuxtLayout, null, {\n      default: _withCtx(() => [\n        _createVNode(_component_NuxtPage)\n      ]),\n      _: 1\n    }),\n    _createVNode(_component_UNotifications)\n  ]))\n}\n}\n\n})",
+      "start": 1714172178890,
+      "end": 1714172178890
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714172178890,
+      "end": 1714172178890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714172178890,
+      "end": 1714172178890,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714172178890,
+      "end": 1714172178890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714172178890,
+      "end": 1714172178890,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1714172178890,
+      "end": 1714172178890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"app\",\n  setup(__props) {\n    const colorMode = useColorMode();\n    const color = computed(() => colorMode.value === \"dark\" ? \"#111827\" : \"white\");\n    useHead(() => ({\n      meta: [\n        { charset: \"utf-8\" },\n        { name: \"viewport\", content: \"width=device-width, initial-scale=1\" },\n        { key: \"theme-color\", name: \"theme-color\", content: color.value }\n        // Ensure to use .value here\n      ],\n      link: [{ rel: \"icon\", href: \"/gold-icon.png\" }],\n      htmlAttrs: {\n        lang: \"en\"\n      }\n    }));\n    useSeoMeta({\n      titleTemplate: \"PeakofEloquence.org\",\n      ogImage: \"/landing.jpg\",\n      twitterImage: \"/landing.jpg\",\n      twitterCard: \"summary_large_image\"\n    });\n    return (_ctx, _cache) => {\n      const _component_NuxtLoadingIndicator = _resolveComponent(\"NuxtLoadingIndicator\");\n      const _component_NuxtPage = _resolveComponent(\"NuxtPage\");\n      const _component_NuxtLayout = _resolveComponent(\"NuxtLayout\");\n      const _component_UNotifications = _resolveComponent(\"UNotifications\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_NuxtLoadingIndicator),\n        _createVNode(_component_NuxtLayout, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_NuxtPage)\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_UNotifications)\n      ]);\n    };\n  }\n});\n",
+      "start": 1714172178890,
+      "end": 1714172179349,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/app.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'app',\n  setup(__props) {\n\nconst colorMode = useColorMode();\n\nconst color = computed(() => (colorMode.value === \"dark\" ? \"#111827\" : \"white\"));\n\nuseHead(() => ({\n  meta: [\n    { charset: \"utf-8\" },\n    { name: \"viewport\", content: \"width=device-width, initial-scale=1\" },\n    { key: \"theme-color\", name: \"theme-color\", content: color.value }, // Ensure to use .value here\n  ],\n  link: [{ rel: \"icon\", href: \"/gold-icon.png\" }],\n  htmlAttrs: {\n    lang: \"en\",\n  },\n}));\n\nuseSeoMeta({\n  titleTemplate: \"PeakofEloquence.org\",\n  ogImage: \"/landing.jpg\",\n  twitterImage: \"/landing.jpg\",\n  twitterCard: \"summary_large_image\",\n});\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLoadingIndicator = _resolveComponent(\"NuxtLoadingIndicator\")!\n  const _component_NuxtPage = _resolveComponent(\"NuxtPage\")!\n  const _component_NuxtLayout = _resolveComponent(\"NuxtLayout\")!\n  const _component_UNotifications = _resolveComponent(\"UNotifications\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_NuxtLoadingIndicator),\n    _createVNode(_component_NuxtLayout, null, {\n      default: _withCtx(() => [\n        _createVNode(_component_NuxtPage)\n      ]),\n      _: 1\n    }),\n    _createVNode(_component_UNotifications)\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,oBAAoB,mBAAmB,eAAe,cAAc,WAAW,UAAU,aAAa,YAAY,sBAAsB,2BAA2B;AAG5K,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,UAAM,YAAY,aAAa;AAE/B,UAAM,QAAQ,SAAS,MAAO,UAAU,UAAU,SAAS,YAAY,OAAQ;AAE/E,YAAQ,OAAO;AAAA,MACb,MAAM;AAAA,QACJ,EAAE,SAAS,QAAQ;AAAA,QACnB,EAAE,MAAM,YAAY,SAAS,sCAAsC;AAAA,QACnE,EAAE,KAAK,eAAe,MAAM,eAAe,SAAS,MAAM,MAAM;AAAA;AAAA,MAClE;AAAA,MACA,MAAM,CAAC,EAAE,KAAK,QAAQ,MAAM,iBAAiB,CAAC;AAAA,MAC9C,WAAW;AAAA,QACT,MAAM;AAAA,MACR;AAAA,IACF,EAAE;AAEF,eAAW;AAAA,MACT,eAAe;AAAA,MACf,SAAS;AAAA,MACT,cAAc;AAAA,MACd,aAAa;AAAA,IACf,CAAC;AAED,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,kCAAkC,kBAAkB,sBAAsB;AAChF,YAAM,sBAAsB,kBAAkB,UAAU;AACxD,YAAM,wBAAwB,kBAAkB,YAAY;AAC5D,YAAM,4BAA4B,kBAAkB,gBAAgB;AAEpE,aAAQ,WAAW,GAAG,oBAAoB,OAAO,MAAM;AAAA,QACrD,aAAa,+BAA+B;AAAA,QAC5C,aAAa,uBAAuB,MAAM;AAAA,UACxC,SAAS,SAAS,MAAM;AAAA,YACtB,aAAa,mBAAmB;AAAA,UAClC,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC;AAAA,QACD,aAAa,yBAAyB;AAAA,MACxC,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714172179349,
+      "end": 1714172179349,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useColorMode } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/color-mode/dist/runtime/composables';\nimport { computed } from 'vue';\nimport { useHead, useSeoMeta } from '@unhead/vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"app\",\n  setup(__props) {\n    const colorMode = useColorMode();\n    const color = computed(() => colorMode.value === \"dark\" ? \"#111827\" : \"white\");\n    useHead(() => ({\n      meta: [\n        { charset: \"utf-8\" },\n        { name: \"viewport\", content: \"width=device-width, initial-scale=1\" },\n        { key: \"theme-color\", name: \"theme-color\", content: color.value }\n        // Ensure to use .value here\n      ],\n      link: [{ rel: \"icon\", href: \"/gold-icon.png\" }],\n      htmlAttrs: {\n        lang: \"en\"\n      }\n    }));\n    useSeoMeta({\n      titleTemplate: \"PeakofEloquence.org\",\n      ogImage: \"/landing.jpg\",\n      twitterImage: \"/landing.jpg\",\n      twitterCard: \"summary_large_image\"\n    });\n    return (_ctx, _cache) => {\n      const _component_NuxtLoadingIndicator = _resolveComponent(\"NuxtLoadingIndicator\");\n      const _component_NuxtPage = _resolveComponent(\"NuxtPage\");\n      const _component_NuxtLayout = _resolveComponent(\"NuxtLayout\");\n      const _component_UNotifications = _resolveComponent(\"UNotifications\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_NuxtLoadingIndicator),\n        _createVNode(_component_NuxtLayout, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_NuxtPage)\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_UNotifications)\n      ]);\n    };\n  }\n});\n",
+      "start": 1714172179349,
+      "end": 1714172179350,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714172179350,
+      "end": 1714172179350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714172179350,
+      "end": 1714172179350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1714172179350,
+      "end": 1714172179350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1714172179350,
+      "end": 1714172179350,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-loading-indicator\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/pages/runtime/page\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-layout\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/overlays/Notifications.vue\";\nimport { useColorMode } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/color-mode/dist/runtime/composables';\nimport { computed } from 'vue';\nimport { useHead, useSeoMeta } from '@unhead/vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"app\",\n  setup(__props) {\n    const colorMode = useColorMode();\n    const color = computed(() => colorMode.value === \"dark\" ? \"#111827\" : \"white\");\n    useHead(() => ({\n      meta: [\n        { charset: \"utf-8\" },\n        { name: \"viewport\", content: \"width=device-width, initial-scale=1\" },\n        { key: \"theme-color\", name: \"theme-color\", content: color.value }\n        // Ensure to use .value here\n      ],\n      link: [{ rel: \"icon\", href: \"/gold-icon.png\" }],\n      htmlAttrs: {\n        lang: \"en\"\n      }\n    }));\n    useSeoMeta({\n      titleTemplate: \"PeakofEloquence.org\",\n      ogImage: \"/landing.jpg\",\n      twitterImage: \"/landing.jpg\",\n      twitterCard: \"summary_large_image\"\n    });\n    return (_ctx, _cache) => {\n      const _component_NuxtLoadingIndicator = __nuxt_component_0;\n      const _component_NuxtPage = __nuxt_component_1;\n      const _component_NuxtLayout = __nuxt_component_2;\n      const _component_UNotifications = __nuxt_component_3;\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_NuxtLoadingIndicator),\n        _createVNode(_component_NuxtLayout, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_NuxtPage)\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_UNotifications)\n      ]);\n    };\n  }\n});\n",
+      "start": 1714172179350,
+      "end": 1714172179351,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714172179351,
+      "end": 1714172179351,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714172179351,
+      "end": 1714172179351,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714172179351,
+      "end": 1714172179351,
+      "order": "normal"
+    }
+  ]
+}

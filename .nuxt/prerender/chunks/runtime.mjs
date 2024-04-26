@@ -12,7 +12,6 @@ import { createStorage, defineDriver, prefixStorage } from 'file:///Users/rezaja
 import unstorage_47drivers_47fs from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unstorage/drivers/fs.mjs';
 import fsDriver from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unstorage/drivers/fs-lite.mjs';
 import lruCache from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unstorage/drivers/lru-cache.mjs';
-import unstorage_47drivers_47memory from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/unstorage/drivers/memory.mjs';
 import { toRouteMatcher, createRouter } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/radix3/dist/index.mjs';
 import { toValue } from 'file:///Users/rezajafar/peakofeloquence-app/node_modules/vue/index.mjs';
 import { promises } from 'node:fs';
@@ -85,8 +84,8 @@ const defineAppConfig = (config) => config;
 
 const appConfig0 = defineAppConfig({
   ui: {
-    primary: "yellow",
-    gray: "stone",
+    primary: "amber",
+    gray: "cool",
     button: {
       rounded: "rounded-full",
       default: {
@@ -174,7 +173,7 @@ const appConfig1 = defineAppConfig({
 
 const inlineAppConfig = {
   "nuxt": {
-    "buildId": "426d65ed-fe4f-4f27-a4af-3e905e1aea89"
+    "buildId": "a4e6e74f-371b-47f3-8d9a-5da3da009fb2"
   },
   "ui": {
     "primary": "green",
@@ -220,9 +219,9 @@ const _inlineRuntimeConfig = {
       "/api/search.json": {
         "prerender": true
       },
-      "/docs": {
+      "/about": {
         "redirect": {
-          "to": "/docs/getting-started",
+          "to": "/about/introduction",
           "statusCode": 307
         },
         "prerender": true
@@ -294,7 +293,7 @@ const _inlineRuntimeConfig = {
     "content": {
       "locales": [],
       "defaultLocale": "",
-      "integrity": 1714025085859,
+      "integrity": 1714172164796,
       "experimental": {
         "stripQueryParameters": false,
         "advanceQuery": false,
@@ -1006,7 +1005,6 @@ const storage = createStorage({});
 storage.mount('/assets', assets$1);
 
 storage.mount('internal:nuxt:prerender', _47Users_47rezajafar_47peakofeloquence_45app_47node_modules_47nuxt_47dist_47core_47runtime_47nitro_47cache_45driver_46js({"driver":"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/core/runtime/nitro/cache-driver.js","base":"/Users/rezajafar/peakofeloquence-app/.nuxt/cache/nitro/prerender"}));
-storage.mount('og-image', unstorage_47drivers_47memory({"driver":"memory"}));
 storage.mount('data', fsDriver({"driver":"fsLite","base":"/Users/rezajafar/peakofeloquence-app/.data/kv"}));
 storage.mount('content:source:content', unstorage_47drivers_47fs({"name":"content:source:content","driver":"fs","base":"/Users/rezajafar/peakofeloquence-app/content","ignore":["**/node_modules/**","**/.git/**"]}));
 storage.mount('cache:content', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/rezajafar/peakofeloquence-app/.nuxt/content-cache","ignore":["**/node_modules/**","**/.git/**"]}));
@@ -4269,19 +4267,19 @@ const components = {
           }
         },
         {
-          "name": "class",
-          "type": "any",
+          "name": "name",
+          "type": "string",
           "description": "",
           "declarations": [
             {
               "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
               "range": [
-                1240,
-                1327
+                953,
+                1001
               ]
             }
           ],
-          "schema": "any"
+          "schema": "string"
         },
         {
           "name": "type",
@@ -4306,6 +4304,21 @@ const components = {
           }
         },
         {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
+              "range": [
+                1240,
+                1327
+              ]
+            }
+          ],
+          "schema": "any"
+        },
+        {
           "name": "required",
           "type": "boolean",
           "description": "",
@@ -4326,21 +4339,6 @@ const components = {
               "true"
             ]
           }
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
-              "range": [
-                953,
-                1001
-              ]
-            }
-          ],
-          "schema": "string"
         },
         {
           "name": "description",
@@ -4735,32 +4733,6 @@ const components = {
           "default": "undefined"
         },
         {
-          "name": "filename",
-          "global": false,
-          "description": "",
-          "tags": [],
-          "required": false,
-          "type": "string | undefined",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
-              "range": [
-                305,
-                361
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
-            ]
-          },
-          "default": "undefined"
-        },
-        {
           "name": "language",
           "global": false,
           "description": "",
@@ -4812,6 +4784,32 @@ const components = {
             ]
           },
           "default": "false"
+        },
+        {
+          "name": "filename",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+              "range": [
+                305,
+                361
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
+            ]
+          },
+          "default": "undefined"
         },
         {
           "name": "highlights",
@@ -4966,28 +4964,6 @@ const components = {
           }
         },
         {
-          "name": "filename",
-          "type": "string | undefined",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
-              "range": [
-                305,
-                361
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
-            ]
-          }
-        },
-        {
           "name": "language",
           "type": "string | undefined",
           "description": "",
@@ -5028,6 +5004,28 @@ const components = {
             "schema": [
               "false",
               "true"
+            ]
+          }
+        },
+        {
+          "name": "filename",
+          "type": "string | undefined",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+              "range": [
+                305,
+                361
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
             ]
           }
         },
@@ -7664,65 +7662,6 @@ const components = {
           }
         },
         {
-          "name": "tag",
-          "type": "string",
-          "description": "The tag to use for the renderer element if it is used.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3494,
-                3606
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
-          "name": "excerpt",
-          "type": "boolean",
-          "description": "Whether or not to render the excerpt.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3714,
-                3803
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "boolean",
-            "schema": [
-              "false",
-              "true"
-            ]
-          }
-        },
-        {
-          "name": "path",
-          "type": "string | undefined",
-          "description": "The path of the content to load from content source.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3983,
-                4099
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
-            ]
-          }
-        },
-        {
           "name": "query",
           "type": "QueryBuilderParams | undefined",
           "description": "A query builder params object to be passed to <ContentQuery /> component.",
@@ -8700,6 +8639,65 @@ const components = {
                   }
                 }
               }
+            ]
+          }
+        },
+        {
+          "name": "tag",
+          "type": "string",
+          "description": "The tag to use for the renderer element if it is used.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3494,
+                3606
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "excerpt",
+          "type": "boolean",
+          "description": "Whether or not to render the excerpt.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3714,
+                3803
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "boolean",
+            "schema": [
+              "false",
+              "true"
+            ]
+          }
+        },
+        {
+          "name": "path",
+          "type": "string | undefined",
+          "description": "The path of the content to load from content source.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3983,
+                4099
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
             ]
           }
         },
@@ -10592,28 +10590,6 @@ const components = {
           }
         },
         {
-          "name": "path",
-          "type": "string | undefined",
-          "description": "The path of the content to load from content source.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
-              "range": [
-                1975,
-                2091
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
-            ]
-          }
-        },
-        {
           "name": "query",
           "type": "QueryBuilderParams | undefined",
           "description": "A query builder params object to be passed to <ContentQuery /> component.",
@@ -11591,6 +11567,28 @@ const components = {
                   }
                 }
               }
+            ]
+          }
+        },
+        {
+          "name": "path",
+          "type": "string | undefined",
+          "description": "The path of the content to load from content source.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "range": [
+                1975,
+                2091
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
             ]
           }
         }
@@ -17643,7 +17641,7 @@ const components = {
           "default": "\"\""
         },
         {
-          "name": "filename",
+          "name": "language",
           "global": false,
           "description": "",
           "tags": [],
@@ -17653,8 +17651,8 @@ const components = {
             {
               "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
-                352,
-                403
+                297,
+                348
               ]
             }
           ],
@@ -17669,7 +17667,7 @@ const components = {
           "default": "null"
         },
         {
-          "name": "language",
+          "name": "filename",
           "global": false,
           "description": "",
           "tags": [],
@@ -17679,8 +17677,8 @@ const components = {
             {
               "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
-                297,
-                348
+                352,
+                403
               ]
             }
           ],
@@ -17862,21 +17860,6 @@ const components = {
           "schema": "string"
         },
         {
-          "name": "filename",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
-              "range": [
-                352,
-                403
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
           "name": "language",
           "type": "string",
           "description": "",
@@ -17886,6 +17869,21 @@ const components = {
               "range": [
                 297,
                 348
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "range": [
+                352,
+                403
               ]
             }
           ],
@@ -20462,6 +20460,33 @@ const components = {
           "schema": "any"
         },
         {
+          "name": "size",
+          "type": "ButtonSize | undefined",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "range": [
+                4985,
+                5106
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "ButtonSize | undefined",
+            "schema": [
+              "undefined",
+              "\"md\"",
+              "\"2xs\"",
+              "\"xs\"",
+              "\"sm\"",
+              "\"lg\"",
+              "\"xl\""
+            ]
+          }
+        },
+        {
           "name": "block",
           "type": "boolean",
           "description": "",
@@ -20561,33 +20586,6 @@ const components = {
             "schema": [
               "false",
               "true"
-            ]
-          }
-        },
-        {
-          "name": "size",
-          "type": "ButtonSize | undefined",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
-              "range": [
-                4985,
-                5106
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "ButtonSize | undefined",
-            "schema": [
-              "undefined",
-              "\"md\"",
-              "\"2xs\"",
-              "\"xs\"",
-              "\"sm\"",
-              "\"lg\"",
-              "\"xl\""
             ]
           }
         },
@@ -21226,21 +21224,6 @@ const components = {
           }
         },
         {
-          "name": "size",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/Icon.vue",
-              "range": [
-                721,
-                766
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
           "name": "name",
           "type": "string",
           "description": "",
@@ -21250,6 +21233,21 @@ const components = {
               "range": [
                 669,
                 717
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+              "range": [
+                721,
+                766
               ]
             }
           ],
@@ -21331,21 +21329,6 @@ const components = {
       "events": [],
       "exposed": [
         {
-          "name": "size",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
-              "range": [
-                439,
-                484
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
           "name": "name",
           "type": "string",
           "description": "",
@@ -21355,6 +21338,21 @@ const components = {
               "range": [
                 387,
                 435
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+              "range": [
+                439,
+                484
               ]
             }
           ],
@@ -23330,7 +23328,7 @@ const handlers = [
   { route: '/api/_content/query/:qid/**:params', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query/:qid', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache.1714025085859.json', handler: _l6MDMm, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache.1714172164796.json', handler: _l6MDMm, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid/**:params', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },

@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport type { BlogPost } from '~/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'index',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp: any, __restore: any\n\nconst { data: page } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData('blog', () => queryContent('/blog').findOne()))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!page.value) {\n  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })\n}\n\nconst { data: posts } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData('posts', () => queryContent<BlogPost>('/blog')\n  .where({ _extension: 'md' })\n  .sort({ date: -1 })\n  .find()))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\nuseSeoMeta({\n  title: page.value.title,\n  ogTitle: page.value.title,\n  description: page.value.description,\n  ogDescription: page.value.description\n})\n\ndefineOgImage({\n  component: 'Saas',\n  title: page.value.title,\n  description: page.value.description\n})\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UContainer = _resolveComponent(\"UContainer\")!\n  const _component_UPageHeader = _resolveComponent(\"UPageHeader\")!\n  const _component_UPageBody = _resolveComponent(\"UPageBody\")!\n  const _component_UBlogList = _resolveComponent(\"UBlogList\")!\n  const _component_UBlogPost = _resolveComponent(\"UBlogPost\")!\n\n  _push(_ssrRenderComponent(_component_UContainer, _attrs, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, _parent, _scopeId))\n        _push(_ssrRenderComponent(_component_UPageBody, null, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(_ssrRenderComponent(_component_UBlogList, null, {\n                default: _withCtx((_, _push, _parent, _scopeId) => {\n                  if (_push) {\n                    _push(`<!--[-->`)\n                    _ssrRenderList(_unref(posts), (post, index) => {\n                      _push(_ssrRenderComponent(_component_UBlogPost, {\n                        key: index,\n                        to: post._path,\n                        title: post.title,\n                        description: post.description,\n                        image: post.image,\n                        date: new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }),\n                        authors: post.authors,\n                        badge: post.badge,\n                        orientation: index === 0 ? 'horizontal' : 'vertical',\n                        class: [index === 0 && 'col-span-full'],\n                        ui: {\n            description: 'line-clamp-2'\n          }\n                      }, null, _parent, _scopeId))\n                    })\n                    _push(`<!--]-->`)\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                        return (_openBlock(), _createBlock(_component_UBlogPost, {\n                          key: index,\n                          to: post._path,\n                          title: post.title,\n                          description: post.description,\n                          image: post.image,\n                          date: new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }),\n                          authors: post.authors,\n                          badge: post.badge,\n                          orientation: index === 0 ? 'horizontal' : 'vertical',\n                          class: [index === 0 && 'col-span-full'],\n                          ui: {\n            description: 'line-clamp-2'\n          }\n                        }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]))\n                      }), 128))\n                    ]\n                  }\n                }),\n                _: 1\n              }, _parent, _scopeId))\n            } else {\n              return [\n                _createVNode(_component_UBlogList, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                      return (_openBlock(), _createBlock(_component_UBlogPost, {\n                        key: index,\n                        to: post._path,\n                        title: post.title,\n                        description: post.description,\n                        image: post.image,\n                        date: new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }),\n                        authors: post.authors,\n                        badge: post.badge,\n                        orientation: index === 0 ? 'horizontal' : 'vertical',\n                        class: [index === 0 && 'col-span-full'],\n                        ui: {\n            description: 'line-clamp-2'\n          }\n                      }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]))\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ]\n            }\n          }),\n          _: 1\n        }, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, 16),\n          _createVNode(_component_UPageBody, null, {\n            default: _withCtx(() => [\n              _createVNode(_component_UBlogList, null, {\n                default: _withCtx(() => [\n                  (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                    return (_openBlock(), _createBlock(_component_UBlogPost, {\n                      key: index,\n                      to: post._path,\n                      title: post.title,\n                      description: post.description,\n                      image: post.image,\n                      date: new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }),\n                      authors: post.authors,\n                      badge: post.badge,\n                      orientation: index === 0 ? 'horizontal' : 'vertical',\n                      class: [index === 0 && 'col-span-full'],\n                      ui: {\n            description: 'line-clamp-2'\n          }\n                    }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]))\n                  }), 128))\n                ]),\n                _: 1\n              })\n            ]),\n            _: 1\n          })\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n}\n}\n\n})",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025109230,
-      "end": 1714025109230,
+      "start": 1714172188850,
+      "end": 1714172188850,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"blog\", () => queryContent(\"/blog\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: posts } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"posts\", () => queryContent(\"/blog\").where({ _extension: \"md\" }).sort({ date: -1 }).find())), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_UBlogList = _resolveComponent(\"UBlogList\");\n      const _component_UBlogPost = _resolveComponent(\"UBlogPost\");\n      _push(_ssrRenderComponent(_component_UContainer, _attrs, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, _parent2, _scopeId));\n            _push2(_ssrRenderComponent(_component_UPageBody, null, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_UBlogList, null, {\n                    default: _withCtx((_3, _push4, _parent4, _scopeId3) => {\n                      if (_push4) {\n                        _push4(`<!--[-->`);\n                        _ssrRenderList(_unref(posts), (post, index) => {\n                          _push4(_ssrRenderComponent(_component_UBlogPost, {\n                            key: index,\n                            to: post._path,\n                            title: post.title,\n                            description: post.description,\n                            image: post.image,\n                            date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                            authors: post.authors,\n                            badge: post.badge,\n                            orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                            class: [index === 0 && \"col-span-full\"],\n                            ui: {\n                              description: \"line-clamp-2\"\n                            }\n                          }, null, _parent4, _scopeId3));\n                        });\n                        _push4(`<!--]-->`);\n                      } else {\n                        return [\n                          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                            return _openBlock(), _createBlock(_component_UBlogPost, {\n                              key: index,\n                              to: post._path,\n                              title: post.title,\n                              description: post.description,\n                              image: post.image,\n                              date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                              authors: post.authors,\n                              badge: post.badge,\n                              orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                              class: [index === 0 && \"col-span-full\"],\n                              ui: {\n                                description: \"line-clamp-2\"\n                              }\n                            }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                          }), 128))\n                        ];\n                      }\n                    }),\n                    _: 1\n                  }, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_UBlogList, null, {\n                      default: _withCtx(() => [\n                        (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                          return _openBlock(), _createBlock(_component_UBlogPost, {\n                            key: index,\n                            to: post._path,\n                            title: post.title,\n                            description: post.description,\n                            image: post.image,\n                            date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                            authors: post.authors,\n                            badge: post.badge,\n                            orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                            class: [index === 0 && \"col-span-full\"],\n                            ui: {\n                              description: \"line-clamp-2\"\n                            }\n                          }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                        }), 128))\n                      ]),\n                      _: 1\n                    })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, 16),\n              _createVNode(_component_UPageBody, null, {\n                default: _withCtx(() => [\n                  _createVNode(_component_UBlogList, null, {\n                    default: _withCtx(() => [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                        return _openBlock(), _createBlock(_component_UBlogPost, {\n                          key: index,\n                          to: post._path,\n                          title: post.title,\n                          description: post.description,\n                          image: post.image,\n                          date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                          authors: post.authors,\n                          badge: post.badge,\n                          orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                          class: [index === 0 && \"col-span-full\"],\n                          ui: {\n                            description: \"line-clamp-2\"\n                          }\n                        }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                      }), 128))\n                    ]),\n                    _: 1\n                  })\n                ]),\n                _: 1\n              })\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714025109230,
-      "end": 1714025110010,
+      "start": 1714172188850,
+      "end": 1714172189358,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -97,147 +97,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025110010,
-      "end": 1714025110010,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025110010,
-      "end": 1714025110011,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025110011,
-      "end": 1714025110011,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025110011,
-      "end": 1714025110011,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025110011,
-      "end": 1714025110011,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025110011,
-      "end": 1714025110011,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025110011,
-      "end": 1714025110011,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025110011,
-      "end": 1714025110011,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025110011,
-      "end": 1714025110011,
+      "start": 1714172189359,
+      "end": 1714172189359,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110011,
-      "end": 1714025110012,
+      "start": 1714172189359,
+      "end": 1714172189360,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110011,
-      "end": 1714025110012,
+      "start": 1714172189359,
+      "end": 1714172189360,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"blog\", () => queryContent(\"/blog\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: posts } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"posts\", () => queryContent(\"/blog\").where({ _extension: \"md\" }).sort({ date: -1 }).find())), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_UBlogList = _resolveComponent(\"UBlogList\");\n      const _component_UBlogPost = _resolveComponent(\"UBlogPost\");\n      _push(_ssrRenderComponent(_component_UContainer, _attrs, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, _parent2, _scopeId));\n            _push2(_ssrRenderComponent(_component_UPageBody, null, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_UBlogList, null, {\n                    default: _withCtx((_3, _push4, _parent4, _scopeId3) => {\n                      if (_push4) {\n                        _push4(`<!--[-->`);\n                        _ssrRenderList(_unref(posts), (post, index) => {\n                          _push4(_ssrRenderComponent(_component_UBlogPost, {\n                            key: index,\n                            to: post._path,\n                            title: post.title,\n                            description: post.description,\n                            image: post.image,\n                            date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                            authors: post.authors,\n                            badge: post.badge,\n                            orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                            class: [index === 0 && \"col-span-full\"],\n                            ui: {\n                              description: \"line-clamp-2\"\n                            }\n                          }, null, _parent4, _scopeId3));\n                        });\n                        _push4(`<!--]-->`);\n                      } else {\n                        return [\n                          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                            return _openBlock(), _createBlock(_component_UBlogPost, {\n                              key: index,\n                              to: post._path,\n                              title: post.title,\n                              description: post.description,\n                              image: post.image,\n                              date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                              authors: post.authors,\n                              badge: post.badge,\n                              orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                              class: [index === 0 && \"col-span-full\"],\n                              ui: {\n                                description: \"line-clamp-2\"\n                              }\n                            }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                          }), 128))\n                        ];\n                      }\n                    }),\n                    _: 1\n                  }, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_UBlogList, null, {\n                      default: _withCtx(() => [\n                        (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                          return _openBlock(), _createBlock(_component_UBlogPost, {\n                            key: index,\n                            to: post._path,\n                            title: post.title,\n                            description: post.description,\n                            image: post.image,\n                            date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                            authors: post.authors,\n                            badge: post.badge,\n                            orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                            class: [index === 0 && \"col-span-full\"],\n                            ui: {\n                              description: \"line-clamp-2\"\n                            }\n                          }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                        }), 128))\n                      ]),\n                      _: 1\n                    })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, 16),\n              _createVNode(_component_UPageBody, null, {\n                default: _withCtx(() => [\n                  _createVNode(_component_UBlogList, null, {\n                    default: _withCtx(() => [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                        return _openBlock(), _createBlock(_component_UBlogPost, {\n                          key: index,\n                          to: post._path,\n                          title: post.title,\n                          description: post.description,\n                          image: post.image,\n                          date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                          authors: post.authors,\n                          badge: post.badge,\n                          orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                          class: [index === 0 && \"col-span-full\"],\n                          ui: {\n                            description: \"line-clamp-2\"\n                          }\n                        }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                      }), 128))\n                    ]),\n                    _: 1\n                  })\n                ]),\n                _: 1\n              })\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714025110012,
-      "end": 1714025110013,
+      "start": 1714172189360,
+      "end": 1714172189362,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -251,8 +251,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"blog\", () => queryContent(\"/blog\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: posts } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"posts\", () => queryContent(\"/blog\").where({ _extension: \"md\" }).sort({ date: -1 }).find())), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_UBlogList = _resolveComponent(\"UBlogList\");\n      const _component_UBlogPost = _resolveComponent(\"UBlogPost\");\n      _push(_ssrRenderComponent(_component_UContainer, _attrs, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, _parent2, _scopeId));\n            _push2(_ssrRenderComponent(_component_UPageBody, null, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_UBlogList, null, {\n                    default: _withCtx((_3, _push4, _parent4, _scopeId3) => {\n                      if (_push4) {\n                        _push4(`<!--[-->`);\n                        _ssrRenderList(_unref(posts), (post, index) => {\n                          _push4(_ssrRenderComponent(_component_UBlogPost, {\n                            key: index,\n                            to: post._path,\n                            title: post.title,\n                            description: post.description,\n                            image: post.image,\n                            date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                            authors: post.authors,\n                            badge: post.badge,\n                            orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                            class: [index === 0 && \"col-span-full\"],\n                            ui: {\n                              description: \"line-clamp-2\"\n                            }\n                          }, null, _parent4, _scopeId3));\n                        });\n                        _push4(`<!--]-->`);\n                      } else {\n                        return [\n                          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                            return _openBlock(), _createBlock(_component_UBlogPost, {\n                              key: index,\n                              to: post._path,\n                              title: post.title,\n                              description: post.description,\n                              image: post.image,\n                              date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                              authors: post.authors,\n                              badge: post.badge,\n                              orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                              class: [index === 0 && \"col-span-full\"],\n                              ui: {\n                                description: \"line-clamp-2\"\n                              }\n                            }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                          }), 128))\n                        ];\n                      }\n                    }),\n                    _: 1\n                  }, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_UBlogList, null, {\n                      default: _withCtx(() => [\n                        (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                          return _openBlock(), _createBlock(_component_UBlogPost, {\n                            key: index,\n                            to: post._path,\n                            title: post.title,\n                            description: post.description,\n                            image: post.image,\n                            date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                            authors: post.authors,\n                            badge: post.badge,\n                            orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                            class: [index === 0 && \"col-span-full\"],\n                            ui: {\n                              description: \"line-clamp-2\"\n                            }\n                          }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                        }), 128))\n                      ]),\n                      _: 1\n                    })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, 16),\n              _createVNode(_component_UPageBody, null, {\n                default: _withCtx(() => [\n                  _createVNode(_component_UBlogList, null, {\n                    default: _withCtx(() => [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                        return _openBlock(), _createBlock(_component_UBlogPost, {\n                          key: index,\n                          to: post._path,\n                          title: post.title,\n                          description: post.description,\n                          image: post.image,\n                          date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                          authors: post.authors,\n                          badge: post.badge,\n                          orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                          class: [index === 0 && \"col-span-full\"],\n                          ui: {\n                            description: \"line-clamp-2\"\n                          }\n                        }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                      }), 128))\n                    ]),\n                    _: 1\n                  })\n                ]),\n                _: 1\n              })\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714025110012,
-      "end": 1714025110013,
+      "start": 1714172189360,
+      "end": 1714172189362,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -265,39 +265,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110013,
-      "end": 1714025110013,
+      "start": 1714172189362,
+      "end": 1714172189362,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110013,
-      "end": 1714025110013,
+      "start": 1714172189362,
+      "end": 1714172189362,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110013,
-      "end": 1714025110013,
+      "start": 1714172189362,
+      "end": 1714172189362,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110013,
-      "end": 1714025110013,
+      "start": 1714172189362,
+      "end": 1714172189362,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025110013,
-      "end": 1714025110013,
+      "start": 1714172189362,
+      "end": 1714172189362,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Container.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageHeader.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageBody.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/blog/BlogList.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/blog/BlogPost.vue\";\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, unref as _unref, mergeProps as _mergeProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"blog\", () => queryContent(\"/blog\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: posts } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"posts\", () => queryContent(\"/blog\").where({ _extension: \"md\" }).sort({ date: -1 }).find())), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UContainer = __nuxt_component_0;\n      const _component_UPageHeader = __nuxt_component_1;\n      const _component_UPageBody = __nuxt_component_2;\n      const _component_UBlogList = __nuxt_component_3;\n      const _component_UBlogPost = __nuxt_component_4;\n      _push(_ssrRenderComponent(_component_UContainer, _attrs, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, _parent2, _scopeId));\n            _push2(_ssrRenderComponent(_component_UPageBody, null, {\n              default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                if (_push3) {\n                  _push3(_ssrRenderComponent(_component_UBlogList, null, {\n                    default: _withCtx((_3, _push4, _parent4, _scopeId3) => {\n                      if (_push4) {\n                        _push4(`<!--[-->`);\n                        _ssrRenderList(_unref(posts), (post, index) => {\n                          _push4(_ssrRenderComponent(_component_UBlogPost, {\n                            key: index,\n                            to: post._path,\n                            title: post.title,\n                            description: post.description,\n                            image: post.image,\n                            date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                            authors: post.authors,\n                            badge: post.badge,\n                            orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                            class: [index === 0 && \"col-span-full\"],\n                            ui: {\n                              description: \"line-clamp-2\"\n                            }\n                          }, null, _parent4, _scopeId3));\n                        });\n                        _push4(`<!--]-->`);\n                      } else {\n                        return [\n                          (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                            return _openBlock(), _createBlock(_component_UBlogPost, {\n                              key: index,\n                              to: post._path,\n                              title: post.title,\n                              description: post.description,\n                              image: post.image,\n                              date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                              authors: post.authors,\n                              badge: post.badge,\n                              orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                              class: [index === 0 && \"col-span-full\"],\n                              ui: {\n                                description: \"line-clamp-2\"\n                              }\n                            }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                          }), 128))\n                        ];\n                      }\n                    }),\n                    _: 1\n                  }, _parent3, _scopeId2));\n                } else {\n                  return [\n                    _createVNode(_component_UBlogList, null, {\n                      default: _withCtx(() => [\n                        (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                          return _openBlock(), _createBlock(_component_UBlogPost, {\n                            key: index,\n                            to: post._path,\n                            title: post.title,\n                            description: post.description,\n                            image: post.image,\n                            date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                            authors: post.authors,\n                            badge: post.badge,\n                            orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                            class: [index === 0 && \"col-span-full\"],\n                            ui: {\n                              description: \"line-clamp-2\"\n                            }\n                          }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                        }), 128))\n                      ]),\n                      _: 1\n                    })\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, 16),\n              _createVNode(_component_UPageBody, null, {\n                default: _withCtx(() => [\n                  _createVNode(_component_UBlogList, null, {\n                    default: _withCtx(() => [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                        return _openBlock(), _createBlock(_component_UBlogPost, {\n                          key: index,\n                          to: post._path,\n                          title: post.title,\n                          description: post.description,\n                          image: post.image,\n                          date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                          authors: post.authors,\n                          badge: post.badge,\n                          orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                          class: [index === 0 && \"col-span-full\"],\n                          ui: {\n                            description: \"line-clamp-2\"\n                          }\n                        }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                      }), 128))\n                    ]),\n                    _: 1\n                  })\n                ]),\n                _: 1\n              })\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714025110013,
-      "end": 1714025110014,
+      "start": 1714172189362,
+      "end": 1714172189363,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -310,20 +310,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714025110014,
-      "end": 1714025110014,
+      "start": 1714172189363,
+      "end": 1714172189363,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025110014,
-      "end": 1714025110014,
+      "start": 1714172189363,
+      "end": 1714172189363,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025110014,
-      "end": 1714025110014,
+      "start": 1714172189363,
+      "end": 1714172189363,
       "order": "normal"
     }
   ]

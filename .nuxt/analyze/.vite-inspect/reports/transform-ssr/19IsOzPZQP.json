@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\nimport type { Button } from '#ui/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'PageHeader',\n  __ssrInlineRender: true,\n  props: {\n  headline: {\n    type: String,\n    default: undefined\n  },\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  icon: {\n    type: String,\n    default: undefined\n  },\n  links: {\n    type: Array as PropType<(Button & { click?: Function })[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'relative border-b border-gray-200 dark:border-gray-800 py-8',\n  container: 'flex flex-col lg:flex-row lg:items-center lg:justify-between',\n  headline: 'mb-3 text-sm/6 font-semibold text-primary flex items-center gap-1.5',\n  title: 'text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight',\n  description: 'mt-4 text-lg text-gray-500 dark:text-gray-400',\n  icon: {\n    wrapper: 'flex',\n    base: 'w-10 h-10 flex-shrink-0 text-primary'\n  },\n  links: 'flex flex-wrap items-center gap-1.5 mt-4 lg:mt-0'\n}\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('page.header', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_UButton = _resolveComponent(\"UButton\")!\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs), _attrs))}>`)\n  if (__props.headline || _ctx.$slots.headline) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"headline\", {}, () => {\n      _push(`${_ssrInterpolate(__props.headline)}`)\n    }, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"flex flex-col lg:flex-row items-start gap-6\">`)\n  if (__props.icon || _ctx.$slots.icon) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n      _push(_ssrRenderComponent(_component_UIcon, {\n        name: (__props.icon as string),\n        class: _unref(ui).icon.base\n      }, null, _parent))\n    }, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"flex-1\"><div class=\"${\n    _ssrRenderClass(_unref(ui).container)\n  }\"><h1 class=\"${\n    _ssrRenderClass(_unref(ui).title)\n  }\">`)\n  _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n    _push(`${_ssrInterpolate(__props.title)}`)\n  }, _push, _parent)\n  _push(`</h1>`)\n  if (__props.links?.length || _ctx.$slots.links) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n      _push(`<!--[-->`)\n      _ssrRenderList(__props.links, (link, index) => {\n        _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...link, target: link.target || '_blank', color: link.color || 'white' }, {\n          onClick: link.click\n        }), null, _parent))\n      })\n      _push(`<!--]-->`)\n    }, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (__props.description || _ctx.$slots.description) {\n    _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n      _push(`${_ssrInterpolate(__props.description)}`)\n    }, _push, _parent)\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(`</div></div></div>`)\n}\n}\n\n})",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025110259,
-      "end": 1714025110259,
+      "start": 1714172189716,
+      "end": 1714172189716,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageHeader\",\n  __ssrInlineRender: true,\n  props: {\n    headline: {\n      type: String,\n      default: void 0\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"relative border-b border-gray-200 dark:border-gray-800 py-8\",\n      container: \"flex flex-col lg:flex-row lg:items-center lg:justify-between\",\n      headline: \"mb-3 text-sm/6 font-semibold text-primary flex items-center gap-1.5\",\n      title: \"text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight\",\n      description: \"mt-4 text-lg text-gray-500 dark:text-gray-400\",\n      icon: {\n        wrapper: \"flex\",\n        base: \"w-10 h-10 flex-shrink-0 text-primary\"\n      },\n      links: \"flex flex-wrap items-center gap-1.5 mt-4 lg:mt-0\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"page.header\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (__props.headline || _ctx.$slots.headline) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"headline\", {}, () => {\n          _push(`${_ssrInterpolate(__props.headline)}`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"flex flex-col lg:flex-row items-start gap-6\">`);\n      if (__props.icon || _ctx.$slots.icon) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n          _push(_ssrRenderComponent(_component_UIcon, {\n            name: __props.icon,\n            class: _unref(ui).icon.base\n          }, null, _parent));\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"flex-1\"><div class=\"${_ssrRenderClass(_unref(ui).container)}\"><h1 class=\"${_ssrRenderClass(_unref(ui).title)}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n        _push(`${_ssrInterpolate(__props.title)}`);\n      }, _push, _parent);\n      _push(`</h1>`);\n      if (__props.links?.length || _ctx.$slots.links) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n          _push(`<!--[-->`);\n          _ssrRenderList(__props.links, (link, index) => {\n            _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...link, target: link.target || \"_blank\", color: link.color || \"white\" }, {\n              onClick: link.click\n            }), null, _parent));\n          });\n          _push(`<!--]-->`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (__props.description || _ctx.$slots.description) {\n        _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</p>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div></div></div>`);\n    };\n  }\n});\n",
-      "start": 1714025110259,
-      "end": 1714025110418,
+      "start": 1714172189716,
+      "end": 1714172189870,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -92,147 +92,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189870,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189870,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714025110418,
-      "end": 1714025110418,
+      "start": 1714172189871,
+      "end": 1714172189871,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageHeader\",\n  __ssrInlineRender: true,\n  props: {\n    headline: {\n      type: String,\n      default: void 0\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"relative border-b border-gray-200 dark:border-gray-800 py-8\",\n      container: \"flex flex-col lg:flex-row lg:items-center lg:justify-between\",\n      headline: \"mb-3 text-sm/6 font-semibold text-primary flex items-center gap-1.5\",\n      title: \"text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight\",\n      description: \"mt-4 text-lg text-gray-500 dark:text-gray-400\",\n      icon: {\n        wrapper: \"flex\",\n        base: \"w-10 h-10 flex-shrink-0 text-primary\"\n      },\n      links: \"flex flex-wrap items-center gap-1.5 mt-4 lg:mt-0\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"page.header\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (__props.headline || _ctx.$slots.headline) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"headline\", {}, () => {\n          _push(`${_ssrInterpolate(__props.headline)}`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"flex flex-col lg:flex-row items-start gap-6\">`);\n      if (__props.icon || _ctx.$slots.icon) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n          _push(_ssrRenderComponent(_component_UIcon, {\n            name: __props.icon,\n            class: _unref(ui).icon.base\n          }, null, _parent));\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"flex-1\"><div class=\"${_ssrRenderClass(_unref(ui).container)}\"><h1 class=\"${_ssrRenderClass(_unref(ui).title)}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n        _push(`${_ssrInterpolate(__props.title)}`);\n      }, _push, _parent);\n      _push(`</h1>`);\n      if (__props.links?.length || _ctx.$slots.links) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n          _push(`<!--[-->`);\n          _ssrRenderList(__props.links, (link, index) => {\n            _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...link, target: link.target || \"_blank\", color: link.color || \"white\" }, {\n              onClick: link.click\n            }), null, _parent));\n          });\n          _push(`<!--]-->`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (__props.description || _ctx.$slots.description) {\n        _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</p>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div></div></div>`);\n    };\n  }\n});\n",
-      "start": 1714025110418,
-      "end": 1714025110419,
+      "start": 1714172189871,
+      "end": 1714172189872,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -246,8 +246,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageHeader\",\n  __ssrInlineRender: true,\n  props: {\n    headline: {\n      type: String,\n      default: void 0\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"relative border-b border-gray-200 dark:border-gray-800 py-8\",\n      container: \"flex flex-col lg:flex-row lg:items-center lg:justify-between\",\n      headline: \"mb-3 text-sm/6 font-semibold text-primary flex items-center gap-1.5\",\n      title: \"text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight\",\n      description: \"mt-4 text-lg text-gray-500 dark:text-gray-400\",\n      icon: {\n        wrapper: \"flex\",\n        base: \"w-10 h-10 flex-shrink-0 text-primary\"\n      },\n      links: \"flex flex-wrap items-center gap-1.5 mt-4 lg:mt-0\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"page.header\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (__props.headline || _ctx.$slots.headline) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"headline\", {}, () => {\n          _push(`${_ssrInterpolate(__props.headline)}`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"flex flex-col lg:flex-row items-start gap-6\">`);\n      if (__props.icon || _ctx.$slots.icon) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n          _push(_ssrRenderComponent(_component_UIcon, {\n            name: __props.icon,\n            class: _unref(ui).icon.base\n          }, null, _parent));\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"flex-1\"><div class=\"${_ssrRenderClass(_unref(ui).container)}\"><h1 class=\"${_ssrRenderClass(_unref(ui).title)}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n        _push(`${_ssrInterpolate(__props.title)}`);\n      }, _push, _parent);\n      _push(`</h1>`);\n      if (__props.links?.length || _ctx.$slots.links) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n          _push(`<!--[-->`);\n          _ssrRenderList(__props.links, (link, index) => {\n            _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...link, target: link.target || \"_blank\", color: link.color || \"white\" }, {\n              onClick: link.click\n            }), null, _parent));\n          });\n          _push(`<!--]-->`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (__props.description || _ctx.$slots.description) {\n        _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</p>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div></div></div>`);\n    };\n  }\n});\n",
-      "start": 1714025110418,
-      "end": 1714025110419,
+      "start": 1714172189871,
+      "end": 1714172189872,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -260,39 +260,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110419,
-      "end": 1714025110419,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110419,
-      "end": 1714025110419,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110419,
-      "end": 1714025110419,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110419,
-      "end": 1714025110419,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714025110419,
-      "end": 1714025110419,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageHeader\",\n  __ssrInlineRender: true,\n  props: {\n    headline: {\n      type: String,\n      default: void 0\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"relative border-b border-gray-200 dark:border-gray-800 py-8\",\n      container: \"flex flex-col lg:flex-row lg:items-center lg:justify-between\",\n      headline: \"mb-3 text-sm/6 font-semibold text-primary flex items-center gap-1.5\",\n      title: \"text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight\",\n      description: \"mt-4 text-lg text-gray-500 dark:text-gray-400\",\n      icon: {\n        wrapper: \"flex\",\n        base: \"w-10 h-10 flex-shrink-0 text-primary\"\n      },\n      links: \"flex flex-wrap items-center gap-1.5 mt-4 lg:mt-0\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"page.header\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UIcon = __nuxt_component_0;\n      const _component_UButton = __nuxt_component_1;\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (__props.headline || _ctx.$slots.headline) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).headline)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"headline\", {}, () => {\n          _push(`${_ssrInterpolate(__props.headline)}`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"flex flex-col lg:flex-row items-start gap-6\">`);\n      if (__props.icon || _ctx.$slots.icon) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n          _push(_ssrRenderComponent(_component_UIcon, {\n            name: __props.icon,\n            class: _unref(ui).icon.base\n          }, null, _parent));\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"flex-1\"><div class=\"${_ssrRenderClass(_unref(ui).container)}\"><h1 class=\"${_ssrRenderClass(_unref(ui).title)}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n        _push(`${_ssrInterpolate(__props.title)}`);\n      }, _push, _parent);\n      _push(`</h1>`);\n      if (__props.links?.length || _ctx.$slots.links) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).links)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"links\", {}, () => {\n          _push(`<!--[-->`);\n          _ssrRenderList(__props.links, (link, index) => {\n            _push(_ssrRenderComponent(_component_UButton, _mergeProps({ key: index }, { ...link, target: link.target || \"_blank\", color: link.color || \"white\" }, {\n              onClick: link.click\n            }), null, _parent));\n          });\n          _push(`<!--]-->`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (__props.description || _ctx.$slots.description) {\n        _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</p>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div></div></div>`);\n    };\n  }\n});\n",
-      "start": 1714025110419,
-      "end": 1714025110420,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -305,20 +305,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714025110420,
-      "end": 1714025110420,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025110420,
-      "end": 1714025110420,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025110420,
-      "end": 1714025110420,
+      "start": 1714172189872,
+      "end": 1714172189872,
       "order": "normal"
     }
   ]

@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, renderSlot as _renderSlot, unref as _unref, createVNode as _createVNode } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport type { ParsedContent } from '@nuxt/content/dist/runtime/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'default',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp: any, __restore: any\n\nconst { data: navigation } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nconst { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', { default: () => [], server: false })\n\nprovide('navigation', navigation)\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_Header = _resolveComponent(\"Header\")!\n  const _component_UMain = _resolveComponent(\"UMain\")!\n  const _component_Footer = _resolveComponent(\"Footer\")!\n  const _component_ClientOnly = _resolveComponent(\"ClientOnly\")!\n  const _component_LazyUContentSearch = _resolveComponent(\"LazyUContentSearch\")!\n\n  _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n  _push(_ssrRenderComponent(_component_Header, null, null, _parent))\n  _push(_ssrRenderComponent(_component_UMain, null, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent, _scopeId)\n      } else {\n        return [\n          _renderSlot(_ctx.$slots, \"default\")\n        ]\n      }\n    }),\n    _: 3\n  }, _parent))\n  _push(_ssrRenderComponent(_component_Footer, null, null, _parent))\n  _push(_ssrRenderComponent(_component_ClientOnly, null, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(_ssrRenderComponent(_component_LazyUContentSearch, {\n          files: _unref(files),\n          navigation: _unref(navigation)\n        }, null, _parent, _scopeId))\n      } else {\n        return [\n          _createVNode(_component_LazyUContentSearch, {\n            files: _unref(files),\n            navigation: _unref(navigation)\n          }, null, 8, [\"files\", \"navigation\"])\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div>`)\n}\n}\n\n})",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714025110150,
-      "end": 1714025110150,
+      "start": 1714172189825,
+      "end": 1714172189825,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, renderSlot as _renderSlot, unref as _unref, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: navigation } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"navigation\", () => fetchContentNavigation(), { default: () => [] })), __temp = await __temp, __restore(), __temp);\n    const { data: files } = useLazyFetch(\"/api/search.json\", { default: () => [], server: false });\n    provide(\"navigation\", navigation);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Header = _resolveComponent(\"Header\");\n      const _component_UMain = _resolveComponent(\"UMain\");\n      const _component_Footer = _resolveComponent(\"Footer\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      const _component_LazyUContentSearch = _resolveComponent(\"LazyUContentSearch\");\n      _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n      _push(_ssrRenderComponent(_component_Header, null, null, _parent));\n      _push(_ssrRenderComponent(_component_UMain, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _push(_ssrRenderComponent(_component_Footer, null, null, _parent));\n      _push(_ssrRenderComponent(_component_ClientOnly, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_LazyUContentSearch, {\n              files: _unref(files),\n              navigation: _unref(navigation)\n            }, null, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_LazyUContentSearch, {\n                files: _unref(files),\n                navigation: _unref(navigation)\n              }, null, 8, [\"files\", \"navigation\"])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110150,
-      "end": 1714025110307,
+      "start": 1714172189825,
+      "end": 1714172190048,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -95,135 +95,135 @@
     },
     {
       "name": "vite:json",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714025110307,
-      "end": 1714025110307,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, renderSlot as _renderSlot, unref as _unref, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: navigation } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"navigation\", () => fetchContentNavigation(), { default: () => [] })), __temp = await __temp, __restore(), __temp);\n    const { data: files } = useLazyFetch(\"/api/search.json\", { default: () => [], server: false }, '$i9bCpVDU6M');\n    provide(\"navigation\", navigation);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Header = _resolveComponent(\"Header\");\n      const _component_UMain = _resolveComponent(\"UMain\");\n      const _component_Footer = _resolveComponent(\"Footer\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      const _component_LazyUContentSearch = _resolveComponent(\"LazyUContentSearch\");\n      _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n      _push(_ssrRenderComponent(_component_Header, null, null, _parent));\n      _push(_ssrRenderComponent(_component_UMain, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _push(_ssrRenderComponent(_component_Footer, null, null, _parent));\n      _push(_ssrRenderComponent(_component_ClientOnly, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_LazyUContentSearch, {\n              files: _unref(files),\n              navigation: _unref(navigation)\n            }, null, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_LazyUContentSearch, {\n                files: _unref(files),\n                navigation: _unref(navigation)\n              }, null, 8, [\"files\", \"navigation\"])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110307,
-      "end": 1714025110308,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -237,8 +237,8 @@
     {
       "name": "nuxt:composable-keys",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, renderSlot as _renderSlot, unref as _unref, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: navigation } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"navigation\", () => fetchContentNavigation(), { default: () => [] })), __temp = await __temp, __restore(), __temp);\n    const { data: files } = useLazyFetch(\"/api/search.json\", { default: () => [], server: false }, '$i9bCpVDU6M');\n    provide(\"navigation\", navigation);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Header = _resolveComponent(\"Header\");\n      const _component_UMain = _resolveComponent(\"UMain\");\n      const _component_Footer = _resolveComponent(\"Footer\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      const _component_LazyUContentSearch = _resolveComponent(\"LazyUContentSearch\");\n      _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n      _push(_ssrRenderComponent(_component_Header, null, null, _parent));\n      _push(_ssrRenderComponent(_component_UMain, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _push(_ssrRenderComponent(_component_Footer, null, null, _parent));\n      _push(_ssrRenderComponent(_component_ClientOnly, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_LazyUContentSearch, {\n              files: _unref(files),\n              navigation: _unref(navigation)\n            }, null, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_LazyUContentSearch, {\n                files: _unref(files),\n                navigation: _unref(navigation)\n              }, null, 8, [\"files\", \"navigation\"])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110307,
-      "end": 1714025110308,
+      "start": 1714172190048,
+      "end": 1714172190048,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -252,8 +252,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { fetchContentNavigation } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/navigation';\nimport { useLazyFetch } from '#app/composables/fetch';\nimport { provide } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, renderSlot as _renderSlot, unref as _unref, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: navigation } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"navigation\", () => fetchContentNavigation(), { default: () => [] })), __temp = await __temp, __restore(), __temp);\n    const { data: files } = useLazyFetch(\"/api/search.json\", { default: () => [], server: false }, '$i9bCpVDU6M');\n    provide(\"navigation\", navigation);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Header = _resolveComponent(\"Header\");\n      const _component_UMain = _resolveComponent(\"UMain\");\n      const _component_Footer = _resolveComponent(\"Footer\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      const _component_LazyUContentSearch = _resolveComponent(\"LazyUContentSearch\");\n      _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n      _push(_ssrRenderComponent(_component_Header, null, null, _parent));\n      _push(_ssrRenderComponent(_component_UMain, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _push(_ssrRenderComponent(_component_Footer, null, null, _parent));\n      _push(_ssrRenderComponent(_component_ClientOnly, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_LazyUContentSearch, {\n              files: _unref(files),\n              navigation: _unref(navigation)\n            }, null, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_LazyUContentSearch, {\n                files: _unref(files),\n                navigation: _unref(navigation)\n              }, null, 8, [\"files\", \"navigation\"])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110308,
-      "end": 1714025110309,
+      "start": 1714172190049,
+      "end": 1714172190049,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -267,8 +267,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { fetchContentNavigation } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/navigation';\nimport { useLazyFetch } from '#app/composables/fetch';\nimport { provide } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, renderSlot as _renderSlot, unref as _unref, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: navigation } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"navigation\", () => fetchContentNavigation(), { default: () => [] })), __temp = await __temp, __restore(), __temp);\n    const { data: files } = useLazyFetch(\"/api/search.json\", { default: () => [], server: false }, '$i9bCpVDU6M');\n    provide(\"navigation\", navigation);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Header = _resolveComponent(\"Header\");\n      const _component_UMain = _resolveComponent(\"UMain\");\n      const _component_Footer = _resolveComponent(\"Footer\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      const _component_LazyUContentSearch = _resolveComponent(\"LazyUContentSearch\");\n      _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n      _push(_ssrRenderComponent(_component_Header, null, null, _parent));\n      _push(_ssrRenderComponent(_component_UMain, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _push(_ssrRenderComponent(_component_Footer, null, null, _parent));\n      _push(_ssrRenderComponent(_component_ClientOnly, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(_ssrRenderComponent(_component_LazyUContentSearch, {\n              files: _unref(files),\n              navigation: _unref(navigation)\n            }, null, _parent2, _scopeId));\n          } else {\n            return [\n              _createVNode(_component_LazyUContentSearch, {\n                files: _unref(files),\n                navigation: _unref(navigation)\n              }, null, 8, [\"files\", \"navigation\"])\n            ];\n          }\n        }),\n        _: 1\n      }, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110308,
-      "end": 1714025110309,
+      "start": 1714172190049,
+      "end": 1714172190049,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -281,33 +281,33 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110309,
-      "end": 1714025110309,
+      "start": 1714172190049,
+      "end": 1714172190049,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714025110309,
-      "end": 1714025110309,
+      "start": 1714172190049,
+      "end": 1714172190049,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110309,
-      "end": 1714025110309,
+      "start": 1714172190049,
+      "end": 1714172190049,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714025110309,
-      "end": 1714025110309,
+      "start": 1714172190049,
+      "end": 1714172190049,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { fetchContentNavigation } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/navigation';\nimport { useLazyFetch } from '#app/composables/fetch';\nimport { provide } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, renderSlot as _renderSlot, unref as _unref, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: navigation } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"navigation\", () => fetchContentNavigation(), { default: () => [] })), __temp = await __temp, __restore(), __temp);\n    const { data: files } = useLazyFetch(\"/api/search.json\", { default: () => [], server: false }, '$i9bCpVDU6M');\n    provide(\"navigation\", navigation);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Header = _resolveComponent(\"Header\");\n      const _component_UMain = _resolveComponent(\"UMain\");\n      const _component_Footer = _resolveComponent(\"Footer\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n            _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n      _push(_ssrRenderComponent(_component_Header, null, null, _parent));\n      _push(_ssrRenderComponent(_component_UMain, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _push(_ssrRenderComponent(_component_Footer, null, null, _parent));\n      _push(_ssrRenderComponent(_component_ClientOnly, null, {\n        \n              }, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110309,
-      "end": 1714025110310,
+      "start": 1714172190049,
+      "end": 1714172190050,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -321,8 +321,8 @@
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/components/Header.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/main/Main.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/components/Footer.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/client-only\";\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { fetchContentNavigation } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/navigation';\nimport { useLazyFetch } from '#app/composables/fetch';\nimport { provide } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, renderSlot as _renderSlot, unref as _unref, createVNode as _createVNode } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"default\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: navigation } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"navigation\", () => fetchContentNavigation(), { default: () => [] })), __temp = await __temp, __restore(), __temp);\n    const { data: files } = useLazyFetch(\"/api/search.json\", { default: () => [], server: false }, '$i9bCpVDU6M');\n    provide(\"navigation\", navigation);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_Header = __nuxt_component_0;\n      const _component_UMain = __nuxt_component_1;\n      const _component_Footer = __nuxt_component_2;\n      const _component_ClientOnly = __nuxt_component_3;\n            _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n      _push(_ssrRenderComponent(_component_Header, null, null, _parent));\n      _push(_ssrRenderComponent(_component_UMain, null, {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push2, _parent2, _scopeId);\n          } else {\n            return [\n              _renderSlot(_ctx.$slots, \"default\")\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n      _push(_ssrRenderComponent(_component_Footer, null, null, _parent));\n      _push(_ssrRenderComponent(_component_ClientOnly, null, {\n        \n              }, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714025110310,
-      "end": 1714025110310,
+      "start": 1714172190050,
+      "end": 1714172190050,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -335,20 +335,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714025110310,
-      "end": 1714025110310,
+      "start": 1714172190050,
+      "end": 1714172190050,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714025110310,
-      "end": 1714025110310,
+      "start": 1714172190050,
+      "end": 1714172190050,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714025110310,
-      "end": 1714025110310,
+      "start": 1714172190050,
+      "end": 1714172190050,
       "order": "normal"
     }
   ]
