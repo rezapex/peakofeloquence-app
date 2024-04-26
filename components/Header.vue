@@ -28,7 +28,7 @@ const links = [
   <UHeader :links="links">
     <template #logo>
       <div class="flex items-center">
-        <img src="/favicon.ico" alt="Logo" class="h-8 w-auto mr-2" />
+        <img src="/favicon.png" alt="Logo" class="h-7 w-auto mr-3" />
         <span>
           Peak of Eloquence
           <UBadge label=".org" variant="subtle" class="mb-0.5" />

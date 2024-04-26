@@ -16,7 +16,6 @@
 /// <reference path="types/content.d.ts" />
 /// <reference path="ui.colors.d.ts" />
 /// <reference path="types/tailwind.config.d.ts" />
-/// <reference path="component-meta.d.ts" />
 /// <reference path="module/nuxt-site-config.d.ts" />
 /// <reference path="module/nuxt-og-image.d.ts" />
 /// <reference path="vue-router-stub.d.ts" />
