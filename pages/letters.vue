@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content/dist/runtime/types'
+import type { NavItem } from "@nuxt/content/dist/runtime/types";
 
-const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
+const navigation = inject<Ref<NavItem[]>>("navigation", ref([]));
 
-const links = computed(() => navigation.value.find((item) => item._path === '/letters')?.children ?? [])
+const links = computed(
+  () => navigation.value.find((item) => item._path === "/letters")?.children ?? []
+);
 </script>
 
 <template>
-  <UContainer>
+  <UContainer class="font-serif">
     <UPage>
       <template #left>
         <UAside>
           <template #top>
-            <UContentSearchButton class="rounded-md" size="sm" />
+            <UContentSearchButton class="rounded-md" size="md" />
           </template>
 
           <UNavigationTree :links="mapContentNavigation(links)" />

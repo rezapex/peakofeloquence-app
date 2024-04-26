@@ -19,7 +19,7 @@ hero:
       icon: i-heroicons-arrow-right-20-solid
       size: xl
       color: black
-      to: /docs/getting-started
+      to: /sermons/sermon_1
       trailing: true
 sections:
   - title: The Profound Teachings of Nahj al-Balagha
