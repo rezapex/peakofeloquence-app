@@ -9,7 +9,7 @@ const navigation = inject<Ref<NavItem[]>>("navigation", ref([]));
 const links = [
   {
     label: "About",
-    to: "/about/getting-started",
+    to: "/about/introduction",
   },
   {
     label: "Sermons",

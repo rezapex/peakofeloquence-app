@@ -108,7 +108,7 @@ const defineAppConfig = (config) => config;
 const appConfig0 = defineAppConfig({
   ui: {
     primary: "amber",
-    gray: "stone",
+    gray: "cool",
     button: {
       rounded: "rounded-full",
       default: {
@@ -242,9 +242,9 @@ const _inlineRuntimeConfig = {
       "/api/search.json": {
         "prerender": true
       },
-      "/docs": {
+      "/about": {
         "redirect": {
-          "to": "/docs/getting-started",
+          "to": "/about/introduction",
           "statusCode": 307
         },
         "prerender": true
@@ -424,10 +424,34 @@ const _inlineRuntimeConfig = {
           "markdown",
           "yaml",
           "bash",
+          "ini",
+          "json",
+          "js",
+          "ts",
+          "html",
+          "css",
+          "vue",
+          "diff",
+          "shell",
+          "markdown",
+          "yaml",
+          "bash",
+          "ini",
+          "json",
+          "js",
+          "ts",
+          "html",
+          "css",
+          "vue",
+          "diff",
+          "shell",
+          "markdown",
+          "yaml",
+          "bash",
           "ini"
         ]
       },
-      "wsUrl": "ws://localhost:4000/",
+      "wsUrl": "ws://localhost:4001/",
       "documentDriven": false,
       "host": "",
       "trailingSlash": false,
@@ -501,6 +525,30 @@ const _inlineRuntimeConfig = {
         "md",
         "mdc",
         "yaml",
+        "json",
+        "js",
+        "ts",
+        "html",
+        "css",
+        "vue",
+        "diff",
+        "shell",
+        "markdown",
+        "yaml",
+        "bash",
+        "ini",
+        "json",
+        "js",
+        "ts",
+        "html",
+        "css",
+        "vue",
+        "diff",
+        "shell",
+        "markdown",
+        "yaml",
+        "bash",
+        "ini",
         "json",
         "js",
         "ts",
