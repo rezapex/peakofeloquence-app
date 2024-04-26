@@ -6,7 +6,7 @@ import cfg1 from "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro
 
 declare const inlineConfig = {
   "nuxt": {
-    "buildId": "ecbcb557-dd98-433f-ad1c-3fb2bd1e40a2"
+    "buildId": "dev"
   },
   "ui": {
     "primary": "green",

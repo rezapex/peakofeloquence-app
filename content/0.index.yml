@@ -10,7 +10,7 @@ hero:
     icon: i-heroicons-book-open-20-solid
   links:
     - label: About Peak of Eloquence
-      to: '/docs'
+      to: '/about'
       size: xl
       color: gray
       icon: i-heroicons-academic-cap
@@ -149,5 +149,5 @@ cta:
     - label: Explore Now
       size: xl
       color: black
-      to: /docs/getting-started
+      to: /sermons/sermon_1
       icon: i-heroicons-arrow-right-20-solid
