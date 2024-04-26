@@ -26,10 +26,6 @@ export default defineNuxtConfig({
     '/about': { redirect: '/about/introduction', prerender: true }
   },
   devtools: {
-    enabled: true,
-
-    timeline: {
-      enabled: true
-    }
+    enabled: true
   }
 })
