@@ -1,0 +1,318 @@
+{
+  "resolvedId": "/Users/rezajafar/peakofeloquence-app/pages/about/index.vue?vue&type=style&index=0&scoped=dfc34404&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.landing-grid {\n  background-size: 100px 100px;\n  background-image: linear-gradient(\n      to right,\n      rgb(var(--color-gray-200)) 1px,\n      transparent 1px\n    ),\n    linear-gradient(to bottom, rgb(var(--color-gray-200)) 1px, transparent 1px);\n}\n.dark {\n  .landing-grid {\n    background-image: linear-gradient(\n        to right,\n        rgb(var(--color-gray-800)) 1px,\n        transparent 1px\n      ),\n      linear-gradient(to bottom, rgb(var(--color-gray-800)) 1px, transparent 1px);\n  }\n}\n",
+      "start": 1714175013277,
+      "end": 1714175013277,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/pages/about/index.vue"
+        ],
+        "names": [],
+        "mappings": ";AA6GA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;EAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MAC7B,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;MACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;MAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC;IAChB,CAAC;IACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;AAC/E;AACA,CAAC,CAAC,CAAC,CAAC,EAAE;EACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;IACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;QAC7B,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;QACR,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;QAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC;MAChB,CAAC;MACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EAC/E;AACF",
+        "file": "/Users/rezajafar/peakofeloquence-app/pages/about/index.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\nconst { data: page } = await useAsyncData(\"index\", () => queryContent(\"/\").findOne());\nif (!page.value) {\n  throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n}\n\nuseSeoMeta({\n  titleTemplate: \"PeakofEloquence.org\",\n  title: page.value.title,\n  ogTitle: page.value.title,\n  description: page.value.description,\n  ogDescription: page.value.description,\n});\n</script>\n\n<template>\n  <div v-if=\"page\">\n    <ULandingHero\n      :title=\"page.hero.title\"\n      :description=\"page.hero.description\"\n      :links=\"page.hero.links\"\n    >\n      <div\n        class=\"absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]\"\n      />\n      <template #title>\n        <h1 class=\"font-serif font-light\">{{ page.hero.title }}</h1>\n      </template>\n      <template #headline>\n        <UBadge\n          v-if=\"page.hero.headline\"\n          variant=\"subtle\"\n          size=\"lg\"\n          class=\"relative rounded-full font-semibold\"\n        >\n          <NuxtLink\n            :to=\"page.hero.headline.to\"\n            target=\"_blank\"\n            class=\"focus:outline-none\"\n            tabindex=\"-1\"\n          >\n            <span class=\"absolute inset-0\" aria-hidden=\"true\" />\n          </NuxtLink>\n\n          {{ page.hero.headline.label }}\n\n          <UIcon\n            v-if=\"page.hero.headline.icon\"\n            :name=\"page.hero.headline.icon\"\n            class=\"ml-1 w-4 h-4 pointer-events-none\"\n          />\n        </UBadge>\n      </template>\n    </ULandingHero>\n\n    <ULandingSection class=\"!pt-0 font-serif\">\n      <Placeholder />\n    </ULandingSection>\n\n    <ULandingSection\n      v-for=\"(section, index) in page.sections\"\n      :key=\"index\"\n      :title=\"section.title\"\n      :description=\"section.description\"\n      :align=\"section.align\"\n      :features=\"section.features\"\n    >\n      <Placeholder />\n    </ULandingSection>\n\n    <ULandingSection\n      :title=\"page.features.title\"\n      :description=\"page.features.description\"\n    >\n      <UPageGrid>\n        <ULandingCard\n          v-for=\"(item, index) in page.features.items\"\n          :key=\"index\"\n          v-bind=\"item\"\n        />\n      </UPageGrid>\n    </ULandingSection>\n\n    <ULandingSection\n      :headline=\"page.testimonials.headline\"\n      :title=\"page.testimonials.title\"\n      :description=\"page.testimonials.description\"\n    >\n      <UPageColumns class=\"xl:columns-4\">\n        <div\n          v-for=\"(testimonial, index) in page.testimonials.items\"\n          :key=\"index\"\n          class=\"break-inside-avoid\"\n        >\n          <ULandingTestimonial\n            v-bind=\"testimonial\"\n            class=\"bg-gray-100/50 dark:bg-gray-800/50\"\n          />\n        </div>\n      </UPageColumns>\n    </ULandingSection>\n\n    <ULandingSection>\n      <ULandingCTA v-bind=\"page.cta\" class=\"bg-gray-100/50 dark:bg-gray-800/50\" />\n    </ULandingSection>\n  </div>\n</template>\n\n<style scoped>\n.landing-grid {\n  background-size: 100px 100px;\n  background-image: linear-gradient(\n      to right,\n      rgb(var(--color-gray-200)) 1px,\n      transparent 1px\n    ),\n    linear-gradient(to bottom, rgb(var(--color-gray-200)) 1px, transparent 1px);\n}\n.dark {\n  .landing-grid {\n    background-image: linear-gradient(\n        to right,\n        rgb(var(--color-gray-800)) 1px,\n        transparent 1px\n      ),\n      linear-gradient(to bottom, rgb(var(--color-gray-800)) 1px, transparent 1px);\n  }\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714175013278,
+      "end": 1714175013278,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1714175013278,
+      "end": 1714175013278,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714175013278,
+      "end": 1714175013278,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1714175013278,
+      "end": 1714175013278,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714175013278,
+      "end": 1714175013278,
+      "order": "pre"
+    },
+    {
+      "name": "content-slot",
+      "start": 1714175013278,
+      "end": 1714175013278,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1714175013278,
+      "end": 1714175013278,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1714175013278,
+      "end": 1714175013278,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".landing-grid{background-image:linear-gradient(to right,rgb(var(--color-gray-200)) 1px,transparent 1px),linear-gradient(to bottom,rgb(var(--color-gray-200)) 1px,transparent 1px);background-size:100px 100px}.dark .landing-grid{background-image:linear-gradient(to right,rgb(var(--color-gray-800)) 1px,transparent 1px),linear-gradient(to bottom,rgb(var(--color-gray-800)) 1px,transparent 1px)}",
+      "start": 1714175013278,
+      "end": 1714175013299,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/rezajafar/peakofeloquence-app/pages/about/index.vue",
+        "mappings": "AACA,cAEE,mKAK6E,CAN7E,2BAOF,CAEE,oBACE,mKAMF",
+        "names": [],
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/pages/about/index.vue"
+        ],
+        "sourcesContent": [
+          "\n.landing-grid {\n  background-size: 100px 100px;\n  background-image: linear-gradient(\n      to right,\n      rgb(var(--color-gray-200)) 1px,\n      transparent 1px\n    ),\n    linear-gradient(to bottom, rgb(var(--color-gray-200)) 1px, transparent 1px);\n}\n.dark {\n  .landing-grid {\n    background-image: linear-gradient(\n        to right,\n        rgb(var(--color-gray-800)) 1px,\n        transparent 1px\n      ),\n      linear-gradient(to bottom, rgb(var(--color-gray-800)) 1px, transparent 1px);\n  }\n}\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1714175013299,
+      "end": 1714175013299,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1714175013299,
+      "end": 1714175013299,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1714175013299,
+      "end": 1714175013299,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".landing-grid[data-v-dfc34404]{background-image:linear-gradient(to right,rgb(var(--color-gray-200)) 1px,transparent 1px),linear-gradient(to bottom,rgb(var(--color-gray-200)) 1px,transparent 1px);background-size:100px 100px}.dark .landing-grid[data-v-dfc34404]{background-image:linear-gradient(to right,rgb(var(--color-gray-800)) 1px,transparent 1px),linear-gradient(to bottom,rgb(var(--color-gray-800)) 1px,transparent 1px)}",
+      "start": 1714175013299,
+      "end": 1714175013299,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/rezajafar/peakofeloquence-app/pages/about/index.vue",
+        "mappings": "AAAA,+BAAc,mKAAmK,CAAC,2BAA2B,CAAC,qCAAoB,mKAAmK",
+        "names": [],
+        "sources": [
+          "/Users/rezajafar/peakofeloquence-app/pages/about/index.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1714175013299,
+      "end": 1714175013299,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714175013299,
+      "end": 1714175013299,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714175013299,
+      "end": 1714175013299,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714175013299,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1714175013299,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:fonts:font-family-injection",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1714175013300,
+      "end": 1714175013300,
+      "order": "normal"
+    }
+  ]
+}

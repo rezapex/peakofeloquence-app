@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <span :class=\"badgeClass\" v-bind=\"attrs\">\n    <slot>{{ label }}</slot>\n  </span>\n</template>\n\n<script>\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport { useInjectButtonGroup } from \"../../composables/useButtonGroup\";\nimport appConfig from \"#build/app.config\";\nimport { badge } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.badge, badge);\nexport default defineComponent({\n  inheritAttrs: false,\n  props: {\n    size: {\n      type: String,\n      default: () => config.default.size,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [...appConfig.ui.colors, ...Object.keys(config.color)].includes(value);\n      }\n    },\n    variant: {\n      type: String,\n      default: () => config.default.variant,\n      validator(value) {\n        return [\n          ...Object.keys(config.variant),\n          ...Object.values(config.color).flatMap((value2) => Object.keys(value2))\n        ].includes(value);\n      }\n    },\n    label: {\n      type: [String, Number],\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"badge\", toRef(props, \"ui\"), config);\n    const { size, rounded } = useInjectButtonGroup({ ui, props });\n    const badgeClass = computed(() => {\n      const variant = ui.value.color?.[props.color]?.[props.variant] || ui.value.variant[props.variant];\n      return twMerge(twJoin(\n        ui.value.base,\n        ui.value.font,\n        rounded.value,\n        ui.value.size[size.value],\n        variant?.replaceAll(\"{color}\", props.color)\n      ), props.class);\n    });\n    return {\n      attrs,\n      badgeClass\n    };\n  }\n});\n</script>\n",
-      "start": 1714173353124,
-      "end": 1714173353140,
+      "start": 1714175002695,
+      "end": 1714175002713,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173353140,
-      "end": 1714173353140,
+      "start": 1714175002713,
+      "end": 1714175002713,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173353140,
-      "end": 1714173353140,
+      "start": 1714175002713,
+      "end": 1714175002713,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173353140,
-      "end": 1714173353140,
+      "start": 1714175002713,
+      "end": 1714175002713,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173353140,
-      "end": 1714173353140,
+      "start": 1714175002713,
+      "end": 1714175002713,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173353140,
-      "end": 1714173353140,
+      "start": 1714175002713,
+      "end": 1714175002713,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714173353140,
-      "end": 1714173353140,
+      "start": 1714175002713,
+      "end": 1714175002713,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714173353140,
-      "end": 1714173353140,
+      "start": 1714175002713,
+      "end": 1714175002713,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173353140,
-      "end": 1714173353140,
+      "start": 1714175002713,
+      "end": 1714175002713,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport { useInjectButtonGroup } from \"../../composables/useButtonGroup\";\nimport appConfig from \"#build/app.config\";\nimport { badge } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.badge, badge);\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    size: {\n      type: String,\n      default: () => config.default.size,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    color: {\n      type: String,\n      default: () => config.default.color,\n      validator(value) {\n        return [...appConfig.ui.colors, ...Object.keys(config.color)].includes(value);\n      }\n    },\n    variant: {\n      type: String,\n      default: () => config.default.variant,\n      validator(value) {\n        return [\n          ...Object.keys(config.variant),\n          ...Object.values(config.color).flatMap((value2) => Object.keys(value2))\n        ].includes(value);\n      }\n    },\n    label: {\n      type: [String, Number],\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"badge\", toRef(props, \"ui\"), config);\n    const { size, rounded } = useInjectButtonGroup({ ui, props });\n    const badgeClass = computed(() => {\n      const variant = ui.value.color?.[props.color]?.[props.variant] || ui.value.variant[props.variant];\n      return twMerge(twJoin(\n        ui.value.base,\n        ui.value.font,\n        rounded.value,\n        ui.value.size[size.value],\n        variant?.replaceAll(\"{color}\", props.color)\n      ), props.class);\n    });\n    return {\n      attrs,\n      badgeClass\n    };\n  }\n});\n\nimport { renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, mergeProps as _mergeProps, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (_openBlock(), _createElementBlock(\"span\", _mergeProps({ class: _ctx.badgeClass }, _ctx.attrs), [\n    _renderSlot(_ctx.$slots, \"default\", {}, () => [\n      _createTextVNode(_toDisplayString(_ctx.label), 1)\n    ])\n  ], 16))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714173353140,
-      "end": 1714173353141,
+      "start": 1714175002713,
+      "end": 1714175002714,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,158 +68,158 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173353141,
-      "end": 1714173353141,
+      "start": 1714175002714,
+      "end": 1714175002714,
       "order": "normal"
     }
   ]

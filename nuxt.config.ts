@@ -23,7 +23,6 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/api/search.json': { prerender: true },
-    '/about': { redirect: '/about/introduction', prerender: true }
   },
   devtools: {
     enabled: true

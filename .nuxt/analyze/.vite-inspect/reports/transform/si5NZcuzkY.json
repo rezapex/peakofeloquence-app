@@ -4,105 +4,105 @@
     {
       "name": "vite:load-fallback",
       "result": "import { appendHeader } from \"h3\";\nimport { useRequestEvent } from \"#imports\";\nexport function prerenderStaticImages(src = \"\", srcset = \"\") {\n  if (!import.meta.server || !process.env.prerender) {\n    return;\n  }\n  const paths = [\n    src,\n    ...srcset.split(\", \").map((s) => s.trim().split(\" \")[0].trim())\n  ].filter((s) => s && s.includes(\"/_ipx/\"));\n  if (!paths.length) {\n    return;\n  }\n  appendHeader(\n    useRequestEvent(),\n    \"x-nitro-prerender\",\n    paths.map((p) => encodeURIComponent(p)).join(\", \")\n  );\n}\n",
-      "start": 1714173353566,
-      "end": 1714173353587,
+      "start": 1714175002943,
+      "end": 1714175002964,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "replace",
       "result": "import { appendHeader } from \"h3\";\nimport { useRequestEvent } from \"#imports\";\nexport function prerenderStaticImages(src = \"\", srcset = \"\") {\n  if (!false || !process.env.prerender) {\n    return;\n  }\n  const paths = [\n    src,\n    ...srcset.split(\", \").map((s) => s.trim().split(\" \")[0].trim())\n  ].filter((s) => s && s.includes(\"/_ipx/\"));\n  if (!paths.length) {\n    return;\n  }\n  appendHeader(\n    useRequestEvent(),\n    \"x-nitro-prerender\",\n    paths.map((p) => encodeURIComponent(p)).join(\", \")\n  );\n}\n",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -115,71 +115,71 @@
     },
     {
       "name": "ssr-styles",
-      "start": 1714173353587,
-      "end": 1714173353587,
+      "start": 1714175002964,
+      "end": 1714175002964,
       "order": "normal"
     },
     {
       "name": "vite:define",
       "result": "import { appendHeader } from \"h3\";\nimport { useRequestEvent } from \"#imports\";\nexport function prerenderStaticImages(src = \"\", srcset = \"\") {\n  if (true) {\n    return;\n  }\n  const paths = [\n    src,\n    ...srcset.split(\", \").map((s) => s.trim().split(\" \")[0].trim())\n  ].filter((s) => s && s.includes(\"/_ipx/\"));\n  if (!paths.length) {\n    return;\n  }\n  appendHeader(\n    useRequestEvent(),\n    \"x-nitro-prerender\",\n    paths.map((p) => encodeURIComponent(p)).join(\", \")\n  );\n}\n",
-      "start": 1714173353587,
-      "end": 1714173353798,
+      "start": 1714175002964,
+      "end": 1714175003213,
       "order": "normal",
       "sourcemaps": null
     },
     {
       "name": "vite:css-post",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useRequestEvent } from '#app/composables/ssr';\nimport { appendHeader } from \"h3\";\nexport function prerenderStaticImages(src = \"\", srcset = \"\") {\n  if (true) {\n    return;\n  }\n  const paths = [\n    src,\n    ...srcset.split(\", \").map((s) => s.trim().split(\" \")[0].trim())\n  ].filter((s) => s && s.includes(\"/_ipx/\"));\n  if (!paths.length) {\n    return;\n  }\n  appendHeader(\n    useRequestEvent(),\n    \"x-nitro-prerender\",\n    paths.map((p) => encodeURIComponent(p)).join(\", \")\n  );\n}\n",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,50 +192,50 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173353798,
-      "end": 1714173353798,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714173353799,
-      "end": 1714173353799,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173353799,
-      "end": 1714173353799,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173353799,
-      "end": 1714173353799,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173353799,
-      "end": 1714173353799,
+      "start": 1714175003214,
+      "end": 1714175003214,
       "order": "normal"
     }
   ]

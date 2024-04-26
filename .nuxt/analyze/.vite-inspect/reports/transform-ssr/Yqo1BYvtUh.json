@@ -4,213 +4,213 @@
     {
       "name": "vite:load-fallback",
       "result": "import { computed } from \"vue\";\nimport { parseSize } from \"../utils/index.mjs\";\nimport { useImage } from \"#imports\";\nexport const baseImageProps = {\n  // input source\n  src: { type: String, required: true },\n  // modifiers\n  format: { type: String, default: void 0 },\n  quality: { type: [Number, String], default: void 0 },\n  background: { type: String, default: void 0 },\n  fit: { type: String, default: void 0 },\n  modifiers: { type: Object, default: void 0 },\n  // options\n  preset: { type: String, default: void 0 },\n  provider: { type: String, default: void 0 },\n  sizes: { type: [Object, String], default: void 0 },\n  densities: { type: String, default: void 0 },\n  preload: { type: Boolean, default: void 0 },\n  // <img> attributes\n  width: { type: [String, Number], default: void 0 },\n  height: { type: [String, Number], default: void 0 },\n  alt: { type: String, default: void 0 },\n  referrerpolicy: { type: String, default: void 0 },\n  usemap: { type: String, default: void 0 },\n  longdesc: { type: String, default: void 0 },\n  ismap: { type: Boolean, default: void 0 },\n  loading: {\n    type: String,\n    default: void 0,\n    validator: (val) => [\"lazy\", \"eager\"].includes(val)\n  },\n  crossorigin: {\n    type: [Boolean, String],\n    default: void 0,\n    validator: (val) => [\"anonymous\", \"use-credentials\", \"\", true, false].includes(val)\n  },\n  decoding: {\n    type: String,\n    default: void 0,\n    validator: (val) => [\"async\", \"auto\", \"sync\"].includes(val)\n  },\n  // csp\n  nonce: { type: [String], default: void 0 }\n};\nexport const useBaseImage = (props) => {\n  const options = computed(() => {\n    return {\n      provider: props.provider,\n      preset: props.preset\n    };\n  });\n  const attrs = computed(() => {\n    return {\n      width: parseSize(props.width),\n      height: parseSize(props.height),\n      alt: props.alt,\n      referrerpolicy: props.referrerpolicy,\n      usemap: props.usemap,\n      longdesc: props.longdesc,\n      ismap: props.ismap,\n      crossorigin: props.crossorigin === true ? \"anonymous\" : props.crossorigin || void 0,\n      loading: props.loading,\n      decoding: props.decoding,\n      nonce: props.nonce\n    };\n  });\n  const $img = useImage();\n  const modifiers = computed(() => {\n    return {\n      ...props.modifiers,\n      width: parseSize(props.width),\n      height: parseSize(props.height),\n      format: props.format,\n      quality: props.quality || $img.options.quality,\n      background: props.background,\n      fit: props.fit\n    };\n  });\n  return {\n    options,\n    attrs,\n    modifiers\n  };\n};\n",
-      "start": 1714173365625,
-      "end": 1714173365714,
+      "start": 1714175014048,
+      "end": 1714175014059,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014059,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014059,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/image/dist/runtime/composables';\nimport { computed } from \"vue\";\nimport { parseSize } from \"../utils/index.mjs\";\nexport const baseImageProps = {\n  // input source\n  src: { type: String, required: true },\n  // modifiers\n  format: { type: String, default: void 0 },\n  quality: { type: [Number, String], default: void 0 },\n  background: { type: String, default: void 0 },\n  fit: { type: String, default: void 0 },\n  modifiers: { type: Object, default: void 0 },\n  // options\n  preset: { type: String, default: void 0 },\n  provider: { type: String, default: void 0 },\n  sizes: { type: [Object, String], default: void 0 },\n  densities: { type: String, default: void 0 },\n  preload: { type: Boolean, default: void 0 },\n  // <img> attributes\n  width: { type: [String, Number], default: void 0 },\n  height: { type: [String, Number], default: void 0 },\n  alt: { type: String, default: void 0 },\n  referrerpolicy: { type: String, default: void 0 },\n  usemap: { type: String, default: void 0 },\n  longdesc: { type: String, default: void 0 },\n  ismap: { type: Boolean, default: void 0 },\n  loading: {\n    type: String,\n    default: void 0,\n    validator: (val) => [\"lazy\", \"eager\"].includes(val)\n  },\n  crossorigin: {\n    type: [Boolean, String],\n    default: void 0,\n    validator: (val) => [\"anonymous\", \"use-credentials\", \"\", true, false].includes(val)\n  },\n  decoding: {\n    type: String,\n    default: void 0,\n    validator: (val) => [\"async\", \"auto\", \"sync\"].includes(val)\n  },\n  // csp\n  nonce: { type: [String], default: void 0 }\n};\nexport const useBaseImage = (props) => {\n  const options = computed(() => {\n    return {\n      provider: props.provider,\n      preset: props.preset\n    };\n  });\n  const attrs = computed(() => {\n    return {\n      width: parseSize(props.width),\n      height: parseSize(props.height),\n      alt: props.alt,\n      referrerpolicy: props.referrerpolicy,\n      usemap: props.usemap,\n      longdesc: props.longdesc,\n      ismap: props.ismap,\n      crossorigin: props.crossorigin === true ? \"anonymous\" : props.crossorigin || void 0,\n      loading: props.loading,\n      decoding: props.decoding,\n      nonce: props.nonce\n    };\n  });\n  const $img = useImage();\n  const modifiers = computed(() => {\n    return {\n      ...props.modifiers,\n      width: parseSize(props.width),\n      height: parseSize(props.height),\n      format: props.format,\n      quality: props.quality || $img.options.quality,\n      background: props.background,\n      fit: props.fit\n    };\n  });\n  return {\n    options,\n    attrs,\n    modifiers\n  };\n};\n",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -224,8 +224,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/image/dist/runtime/composables';\nimport { computed } from \"vue\";\nimport { parseSize } from \"../utils/index.mjs\";\nexport const baseImageProps = {\n  // input source\n  src: { type: String, required: true },\n  // modifiers\n  format: { type: String, default: void 0 },\n  quality: { type: [Number, String], default: void 0 },\n  background: { type: String, default: void 0 },\n  fit: { type: String, default: void 0 },\n  modifiers: { type: Object, default: void 0 },\n  // options\n  preset: { type: String, default: void 0 },\n  provider: { type: String, default: void 0 },\n  sizes: { type: [Object, String], default: void 0 },\n  densities: { type: String, default: void 0 },\n  preload: { type: Boolean, default: void 0 },\n  // <img> attributes\n  width: { type: [String, Number], default: void 0 },\n  height: { type: [String, Number], default: void 0 },\n  alt: { type: String, default: void 0 },\n  referrerpolicy: { type: String, default: void 0 },\n  usemap: { type: String, default: void 0 },\n  longdesc: { type: String, default: void 0 },\n  ismap: { type: Boolean, default: void 0 },\n  loading: {\n    type: String,\n    default: void 0,\n    validator: (val) => [\"lazy\", \"eager\"].includes(val)\n  },\n  crossorigin: {\n    type: [Boolean, String],\n    default: void 0,\n    validator: (val) => [\"anonymous\", \"use-credentials\", \"\", true, false].includes(val)\n  },\n  decoding: {\n    type: String,\n    default: void 0,\n    validator: (val) => [\"async\", \"auto\", \"sync\"].includes(val)\n  },\n  // csp\n  nonce: { type: [String], default: void 0 }\n};\nexport const useBaseImage = (props) => {\n  const options = computed(() => {\n    return {\n      provider: props.provider,\n      preset: props.preset\n    };\n  });\n  const attrs = computed(() => {\n    return {\n      width: parseSize(props.width),\n      height: parseSize(props.height),\n      alt: props.alt,\n      referrerpolicy: props.referrerpolicy,\n      usemap: props.usemap,\n      longdesc: props.longdesc,\n      ismap: props.ismap,\n      crossorigin: props.crossorigin === true ? \"anonymous\" : props.crossorigin || void 0,\n      loading: props.loading,\n      decoding: props.decoding,\n      nonce: props.nonce\n    };\n  });\n  const $img = useImage();\n  const modifiers = computed(() => {\n    return {\n      ...props.modifiers,\n      width: parseSize(props.width),\n      height: parseSize(props.height),\n      format: props.format,\n      quality: props.quality || $img.options.quality,\n      background: props.background,\n      fit: props.fit\n    };\n  });\n  return {\n    options,\n    attrs,\n    modifiers\n  };\n};\n",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -238,56 +238,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173365714,
-      "end": 1714173365714,
+      "start": 1714175014060,
+      "end": 1714175014060,
       "order": "normal"
     }
   ]

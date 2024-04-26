@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, resolveDynamicComponent as _resolveDynamicComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderVNode as _ssrRenderVNode, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'CodeGroup',\n  __ssrInlineRender: true,\n  props: {\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n},\n  setup(__props, { expose: __expose }) {\n\nconst config = {\n  wrapper: 'relative [&>div:last-child]:!my-0 [&>div:last-child]:!static my-5',\n  header: 'flex items-center gap-1 border border-gray-200 dark:border-gray-700 border-b-0 rounded-t-md overflow-hidden p-2',\n  tab: {\n    base: 'px-2 py-1.5 focus:outline-none text-gray-700 dark:text-gray-200 text-sm rounded-md flex items-center gap-1.5',\n    active: 'bg-gray-100 dark:bg-gray-800',\n    inactive: 'hover:bg-gray-50 dark:hover:bg-gray-800/50',\n    icon: {\n      base: ''\n    }\n  }\n}\n\n\n\nconst props = __props\n\nconst slots = useSlots()\nconst { ui, attrs } = useUI('content.codeGroup', undefined, config, toRef(props, 'class'), true)\n\nconst selectedIndex = ref(0)\n__expose({ selectedIndex })\n\nfunction transformSlot (slot: any, index: number) {\n  if (typeof slot.type === 'symbol') {\n    return slot.children?.map(transformSlot)\n  }\n\n  return {\n    label: slot.props?.filename || slot.props?.label || `${index}`,\n    icon: slot.props?.icon,\n    component: slot\n  }\n}\n\n// Computed\n\nconst tabs = computed(() => slots.default?.()?.flatMap(transformSlot).filter(Boolean) || [])\n\nconst selectedTab = computed(() => tabs.value.find((_, index) => index === selectedIndex.value))\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_ProseCodeIcon = _resolveComponent(\"ProseCodeIcon\")!\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _unref(ui).wrapper\n    }, _unref(attrs), _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_unref(ui).header)\n  }\"><!--[-->`)\n  _ssrRenderList(_unref(tabs), (tab, index) => {\n    _push(`<button tabindex=\"-1\" class=\"${_ssrRenderClass([_unref(ui).tab.base, _unref(selectedIndex) === index ? _unref(ui).tab.active : _unref(ui).tab.inactive])}\">`)\n    _push(_ssrRenderComponent(_component_ProseCodeIcon, {\n      icon: tab.icon,\n      filename: tab.label,\n      class: _unref(ui).tab.icon.base\n    }, null, _parent))\n    _push(`<span>${_ssrInterpolate(tab.label)}</span></button>`)\n  })\n  _push(`<!--]--></div>`)\n  _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_unref(selectedTab)?.component), {\n    key: _unref(selectedIndex),\n    \"hide-header\": \"\"\n  }, null), _parent)\n  _push(`</div>`)\n}\n}\n\n})",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013056,
+      "end": 1714175013057,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173364319,
-      "end": 1714173364319,
+      "start": 1714175013057,
+      "end": 1714175013057,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, resolveDynamicComponent as _resolveDynamicComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderVNode as _ssrRenderVNode, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"CodeGroup\",\n  __ssrInlineRender: true,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props, { expose: __expose }) {\n    const config = {\n      wrapper: \"relative [&>div:last-child]:!my-0 [&>div:last-child]:!static my-5\",\n      header: \"flex items-center gap-1 border border-gray-200 dark:border-gray-700 border-b-0 rounded-t-md overflow-hidden p-2\",\n      tab: {\n        base: \"px-2 py-1.5 focus:outline-none text-gray-700 dark:text-gray-200 text-sm rounded-md flex items-center gap-1.5\",\n        active: \"bg-gray-100 dark:bg-gray-800\",\n        inactive: \"hover:bg-gray-50 dark:hover:bg-gray-800/50\",\n        icon: {\n          base: \"\"\n        }\n      }\n    };\n    const props = __props;\n    const slots = useSlots();\n    const { ui, attrs } = useUI(\"content.codeGroup\", void 0, config, toRef(props, \"class\"), true);\n    const selectedIndex = ref(0);\n    __expose({ selectedIndex });\n    function transformSlot(slot, index) {\n      if (typeof slot.type === \"symbol\") {\n        return slot.children?.map(transformSlot);\n      }\n      return {\n        label: slot.props?.filename || slot.props?.label || `${index}`,\n        icon: slot.props?.icon,\n        component: slot\n      };\n    }\n    const tabs = computed(() => slots.default?.()?.flatMap(transformSlot).filter(Boolean) || []);\n    const selectedTab = computed(() => tabs.value.find((_, index) => index === selectedIndex.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_ProseCodeIcon = _resolveComponent(\"ProseCodeIcon\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass(_unref(ui).header)}\"><!--[-->`);\n      _ssrRenderList(_unref(tabs), (tab, index) => {\n        _push(`<button tabindex=\"-1\" class=\"${_ssrRenderClass([_unref(ui).tab.base, _unref(selectedIndex) === index ? _unref(ui).tab.active : _unref(ui).tab.inactive])}\">`);\n        _push(_ssrRenderComponent(_component_ProseCodeIcon, {\n          icon: tab.icon,\n          filename: tab.label,\n          class: _unref(ui).tab.icon.base\n        }, null, _parent));\n        _push(`<span>${_ssrInterpolate(tab.label)}</span></button>`);\n      });\n      _push(`<!--]--></div>`);\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_unref(selectedTab)?.component), {\n        key: _unref(selectedIndex),\n        \"hide-header\": \"\"\n      }, null), _parent);\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714173364319,
-      "end": 1714173364564,
+      "start": 1714175013057,
+      "end": 1714175013466,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -92,147 +92,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013466,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013466,
+      "end": 1714175013467,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173364564,
-      "end": 1714173364564,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173364565,
-      "end": 1714173364565,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173364565,
-      "end": 1714173364565,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173364565,
-      "end": 1714173364565,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSlots, toRef, ref, computed } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, resolveDynamicComponent as _resolveDynamicComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderVNode as _ssrRenderVNode, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"CodeGroup\",\n  __ssrInlineRender: true,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props, { expose: __expose }) {\n    const config = {\n      wrapper: \"relative [&>div:last-child]:!my-0 [&>div:last-child]:!static my-5\",\n      header: \"flex items-center gap-1 border border-gray-200 dark:border-gray-700 border-b-0 rounded-t-md overflow-hidden p-2\",\n      tab: {\n        base: \"px-2 py-1.5 focus:outline-none text-gray-700 dark:text-gray-200 text-sm rounded-md flex items-center gap-1.5\",\n        active: \"bg-gray-100 dark:bg-gray-800\",\n        inactive: \"hover:bg-gray-50 dark:hover:bg-gray-800/50\",\n        icon: {\n          base: \"\"\n        }\n      }\n    };\n    const props = __props;\n    const slots = useSlots();\n    const { ui, attrs } = useUI(\"content.codeGroup\", void 0, config, toRef(props, \"class\"), true);\n    const selectedIndex = ref(0);\n    __expose({ selectedIndex });\n    function transformSlot(slot, index) {\n      if (typeof slot.type === \"symbol\") {\n        return slot.children?.map(transformSlot);\n      }\n      return {\n        label: slot.props?.filename || slot.props?.label || `${index}`,\n        icon: slot.props?.icon,\n        component: slot\n      };\n    }\n    const tabs = computed(() => slots.default?.()?.flatMap(transformSlot).filter(Boolean) || []);\n    const selectedTab = computed(() => tabs.value.find((_, index) => index === selectedIndex.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_ProseCodeIcon = _resolveComponent(\"ProseCodeIcon\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass(_unref(ui).header)}\"><!--[-->`);\n      _ssrRenderList(_unref(tabs), (tab, index) => {\n        _push(`<button tabindex=\"-1\" class=\"${_ssrRenderClass([_unref(ui).tab.base, _unref(selectedIndex) === index ? _unref(ui).tab.active : _unref(ui).tab.inactive])}\">`);\n        _push(_ssrRenderComponent(_component_ProseCodeIcon, {\n          icon: tab.icon,\n          filename: tab.label,\n          class: _unref(ui).tab.icon.base\n        }, null, _parent));\n        _push(`<span>${_ssrInterpolate(tab.label)}</span></button>`);\n      });\n      _push(`<!--]--></div>`);\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_unref(selectedTab)?.component), {\n        key: _unref(selectedIndex),\n        \"hide-header\": \"\"\n      }, null), _parent);\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714173364565,
-      "end": 1714173364566,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -246,8 +246,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSlots, toRef, ref, computed } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, resolveDynamicComponent as _resolveDynamicComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderVNode as _ssrRenderVNode, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"CodeGroup\",\n  __ssrInlineRender: true,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props, { expose: __expose }) {\n    const config = {\n      wrapper: \"relative [&>div:last-child]:!my-0 [&>div:last-child]:!static my-5\",\n      header: \"flex items-center gap-1 border border-gray-200 dark:border-gray-700 border-b-0 rounded-t-md overflow-hidden p-2\",\n      tab: {\n        base: \"px-2 py-1.5 focus:outline-none text-gray-700 dark:text-gray-200 text-sm rounded-md flex items-center gap-1.5\",\n        active: \"bg-gray-100 dark:bg-gray-800\",\n        inactive: \"hover:bg-gray-50 dark:hover:bg-gray-800/50\",\n        icon: {\n          base: \"\"\n        }\n      }\n    };\n    const props = __props;\n    const slots = useSlots();\n    const { ui, attrs } = useUI(\"content.codeGroup\", void 0, config, toRef(props, \"class\"), true);\n    const selectedIndex = ref(0);\n    __expose({ selectedIndex });\n    function transformSlot(slot, index) {\n      if (typeof slot.type === \"symbol\") {\n        return slot.children?.map(transformSlot);\n      }\n      return {\n        label: slot.props?.filename || slot.props?.label || `${index}`,\n        icon: slot.props?.icon,\n        component: slot\n      };\n    }\n    const tabs = computed(() => slots.default?.()?.flatMap(transformSlot).filter(Boolean) || []);\n    const selectedTab = computed(() => tabs.value.find((_, index) => index === selectedIndex.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_ProseCodeIcon = _resolveComponent(\"ProseCodeIcon\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass(_unref(ui).header)}\"><!--[-->`);\n      _ssrRenderList(_unref(tabs), (tab, index) => {\n        _push(`<button tabindex=\"-1\" class=\"${_ssrRenderClass([_unref(ui).tab.base, _unref(selectedIndex) === index ? _unref(ui).tab.active : _unref(ui).tab.inactive])}\">`);\n        _push(_ssrRenderComponent(_component_ProseCodeIcon, {\n          icon: tab.icon,\n          filename: tab.label,\n          class: _unref(ui).tab.icon.base\n        }, null, _parent));\n        _push(`<span>${_ssrInterpolate(tab.label)}</span></button>`);\n      });\n      _push(`<!--]--></div>`);\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_unref(selectedTab)?.component), {\n        key: _unref(selectedIndex),\n        \"hide-header\": \"\"\n      }, null), _parent);\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714173364565,
-      "end": 1714173364566,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -260,39 +260,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173364566,
-      "end": 1714173364566,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173364566,
-      "end": 1714173364566,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173364566,
-      "end": 1714173364566,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173364566,
-      "end": 1714173364566,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714173364566,
-      "end": 1714173364566,
+      "start": 1714175013467,
+      "end": 1714175013467,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCodeIcon.vue\";\nimport { useSlots, toRef, ref, computed } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, resolveDynamicComponent as _resolveDynamicComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderVNode as _ssrRenderVNode, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"CodeGroup\",\n  __ssrInlineRender: true,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props, { expose: __expose }) {\n    const config = {\n      wrapper: \"relative [&>div:last-child]:!my-0 [&>div:last-child]:!static my-5\",\n      header: \"flex items-center gap-1 border border-gray-200 dark:border-gray-700 border-b-0 rounded-t-md overflow-hidden p-2\",\n      tab: {\n        base: \"px-2 py-1.5 focus:outline-none text-gray-700 dark:text-gray-200 text-sm rounded-md flex items-center gap-1.5\",\n        active: \"bg-gray-100 dark:bg-gray-800\",\n        inactive: \"hover:bg-gray-50 dark:hover:bg-gray-800/50\",\n        icon: {\n          base: \"\"\n        }\n      }\n    };\n    const props = __props;\n    const slots = useSlots();\n    const { ui, attrs } = useUI(\"content.codeGroup\", void 0, config, toRef(props, \"class\"), true);\n    const selectedIndex = ref(0);\n    __expose({ selectedIndex });\n    function transformSlot(slot, index) {\n      if (typeof slot.type === \"symbol\") {\n        return slot.children?.map(transformSlot);\n      }\n      return {\n        label: slot.props?.filename || slot.props?.label || `${index}`,\n        icon: slot.props?.icon,\n        component: slot\n      };\n    }\n    const tabs = computed(() => slots.default?.()?.flatMap(transformSlot).filter(Boolean) || []);\n    const selectedTab = computed(() => tabs.value.find((_, index) => index === selectedIndex.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_ProseCodeIcon = __nuxt_component_0;\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass(_unref(ui).header)}\"><!--[-->`);\n      _ssrRenderList(_unref(tabs), (tab, index) => {\n        _push(`<button tabindex=\"-1\" class=\"${_ssrRenderClass([_unref(ui).tab.base, _unref(selectedIndex) === index ? _unref(ui).tab.active : _unref(ui).tab.inactive])}\">`);\n        _push(_ssrRenderComponent(_component_ProseCodeIcon, {\n          icon: tab.icon,\n          filename: tab.label,\n          class: _unref(ui).tab.icon.base\n        }, null, _parent));\n        _push(`<span>${_ssrInterpolate(tab.label)}</span></button>`);\n      });\n      _push(`<!--]--></div>`);\n      _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_unref(selectedTab)?.component), {\n        key: _unref(selectedIndex),\n        \"hide-header\": \"\"\n      }, null), _parent);\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714173364566,
-      "end": 1714173364567,
+      "start": 1714175013467,
+      "end": 1714175013468,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -305,20 +305,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173364567,
-      "end": 1714173364567,
+      "start": 1714175013468,
+      "end": 1714175013468,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173364567,
-      "end": 1714173364567,
+      "start": 1714175013468,
+      "end": 1714175013468,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173364567,
-      "end": 1714173364567,
+      "start": 1714175013468,
+      "end": 1714175013468,
       "order": "normal"
     }
   ]

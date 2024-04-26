@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps } from \"vue\"\n\nimport type { PropType } from 'vue'\nimport type { FooterLink } from '#ui-pro/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Footer',\n  props: {\n  links: {\n    type: Array as PropType<FooterLink[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'relative',\n  top: {\n    wrapper: '',\n    container: 'py-8 lg:py-12'\n  },\n  bottom: {\n    wrapper: '',\n    container: 'py-8 lg:py-4 lg:flex lg:items-center lg:justify-between lg:gap-x-3',\n    left: 'flex items-center justify-center lg:justify-start lg:flex-1 gap-x-1.5 mt-3 lg:mt-0 lg:order-1',\n    center: 'mt-3 lg:mt-0 lg:order-2 flex items-center justify-center',\n    right: 'lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5 lg:order-3'\n  }\n}\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('footer', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UContainer = _resolveComponent(\"UContainer\")!\n  const _component_UFooterLinks = _resolveComponent(\"UFooterLinks\")!\n\n  return (_openBlock(), _createElementBlock(\"footer\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    (_ctx.$slots.top)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).top.wrapper)\n        }, [\n          _createVNode(_component_UContainer, {\n            class: _normalizeClass(_unref(ui).top.container)\n          }, {\n            default: _withCtx(() => [\n              _renderSlot(_ctx.$slots, \"top\")\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ], 2))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", {\n      class: _normalizeClass(_unref(ui).bottom.wrapper)\n    }, [\n      _createVNode(_component_UContainer, {\n        class: _normalizeClass(_unref(ui).bottom.container)\n      }, {\n        default: _withCtx(() => [\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).bottom.right)\n          }, [\n            _renderSlot(_ctx.$slots, \"right\")\n          ], 2),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).bottom.center)\n          }, [\n            _renderSlot(_ctx.$slots, \"center\", {}, () => [\n              _createVNode(_component_UFooterLinks, { links: __props.links }, null, 8, [\"links\"])\n            ])\n          ], 2),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).bottom.left)\n          }, [\n            _renderSlot(_ctx.$slots, \"left\")\n          ], 2)\n        ]),\n        _: 3\n      }, 8, [\"class\"])\n    ], 2)\n  ], 16))\n}\n}\n\n})",
-      "start": 1714173353816,
-      "end": 1714173353816
+      "start": 1714175003220,
+      "end": 1714175003220
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173353816,
-      "end": 1714173353816,
+      "start": 1714175003220,
+      "end": 1714175003220,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173353816,
-      "end": 1714173353816,
+      "start": 1714175003220,
+      "end": 1714175003220,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173353816,
-      "end": 1714173353816,
+      "start": 1714175003220,
+      "end": 1714175003220,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173353816,
-      "end": 1714173353816,
+      "start": 1714175003220,
+      "end": 1714175003220,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173353816,
-      "end": 1714173353816,
+      "start": 1714175003220,
+      "end": 1714175003220,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Footer\",\n  props: {\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"relative\",\n      top: {\n        wrapper: \"\",\n        container: \"py-8 lg:py-12\"\n      },\n      bottom: {\n        wrapper: \"\",\n        container: \"py-8 lg:py-4 lg:flex lg:items-center lg:justify-between lg:gap-x-3\",\n        left: \"flex items-center justify-center lg:justify-start lg:flex-1 gap-x-1.5 mt-3 lg:mt-0 lg:order-1\",\n        center: \"mt-3 lg:mt-0 lg:order-2 flex items-center justify-center\",\n        right: \"lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5 lg:order-3\"\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"footer\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UFooterLinks = _resolveComponent(\"UFooterLinks\");\n      return _openBlock(), _createElementBlock(\"footer\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _ctx.$slots.top ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).top.wrapper)\n        }, [\n          _createVNode(_component_UContainer, {\n            class: _normalizeClass(_unref(ui).top.container)\n          }, {\n            default: _withCtx(() => [\n              _renderSlot(_ctx.$slots, \"top\")\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ], 2)) : _createCommentVNode(\"\", true),\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).bottom.wrapper)\n        }, [\n          _createVNode(_component_UContainer, {\n            class: _normalizeClass(_unref(ui).bottom.container)\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.right)\n              }, [\n                _renderSlot(_ctx.$slots, \"right\")\n              ], 2),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.center)\n              }, [\n                _renderSlot(_ctx.$slots, \"center\", {}, () => [\n                  _createVNode(_component_UFooterLinks, { links: __props.links }, null, 8, [\"links\"])\n                ])\n              ], 2),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.left)\n              }, [\n                _renderSlot(_ctx.$slots, \"left\")\n              ], 2)\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ], 2)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714173353816,
-      "end": 1714173353894,
+      "start": 1714175003220,
+      "end": 1714175003233,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173353894,
-      "end": 1714173353894,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173353894,
-      "end": 1714173353894,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173353894,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173353895,
-      "end": 1714173353895,
+      "start": 1714175003233,
+      "end": 1714175003233,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Footer\",\n  props: {\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"relative\",\n      top: {\n        wrapper: \"\",\n        container: \"py-8 lg:py-12\"\n      },\n      bottom: {\n        wrapper: \"\",\n        container: \"py-8 lg:py-4 lg:flex lg:items-center lg:justify-between lg:gap-x-3\",\n        left: \"flex items-center justify-center lg:justify-start lg:flex-1 gap-x-1.5 mt-3 lg:mt-0 lg:order-1\",\n        center: \"mt-3 lg:mt-0 lg:order-2 flex items-center justify-center\",\n        right: \"lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5 lg:order-3\"\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"footer\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UFooterLinks = _resolveComponent(\"UFooterLinks\");\n      return _openBlock(), _createElementBlock(\"footer\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _ctx.$slots.top ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).top.wrapper)\n        }, [\n          _createVNode(_component_UContainer, {\n            class: _normalizeClass(_unref(ui).top.container)\n          }, {\n            default: _withCtx(() => [\n              _renderSlot(_ctx.$slots, \"top\")\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ], 2)) : _createCommentVNode(\"\", true),\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).bottom.wrapper)\n        }, [\n          _createVNode(_component_UContainer, {\n            class: _normalizeClass(_unref(ui).bottom.container)\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.right)\n              }, [\n                _renderSlot(_ctx.$slots, \"right\")\n              ], 2),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.center)\n              }, [\n                _renderSlot(_ctx.$slots, \"center\", {}, () => [\n                  _createVNode(_component_UFooterLinks, { links: __props.links }, null, 8, [\"links\"])\n                ])\n              ], 2),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.left)\n              }, [\n                _renderSlot(_ctx.$slots, \"left\")\n              ], 2)\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ], 2)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714173353895,
-      "end": 1714173353896,
+      "start": 1714175003233,
+      "end": 1714175003234,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173353896,
-      "end": 1714173353896,
+      "start": 1714175003234,
+      "end": 1714175003234,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173353896,
-      "end": 1714173353896,
+      "start": 1714175003234,
+      "end": 1714175003234,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173353896,
-      "end": 1714173353896,
+      "start": 1714175003234,
+      "end": 1714175003234,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173353896,
-      "end": 1714173353896,
+      "start": 1714175003234,
+      "end": 1714175003234,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Container.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/footer/FooterLinks.vue\";\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Footer\",\n  props: {\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"relative\",\n      top: {\n        wrapper: \"\",\n        container: \"py-8 lg:py-12\"\n      },\n      bottom: {\n        wrapper: \"\",\n        container: \"py-8 lg:py-4 lg:flex lg:items-center lg:justify-between lg:gap-x-3\",\n        left: \"flex items-center justify-center lg:justify-start lg:flex-1 gap-x-1.5 mt-3 lg:mt-0 lg:order-1\",\n        center: \"mt-3 lg:mt-0 lg:order-2 flex items-center justify-center\",\n        right: \"lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5 lg:order-3\"\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"footer\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UContainer = __nuxt_component_0;\n      const _component_UFooterLinks = __nuxt_component_1;\n      return _openBlock(), _createElementBlock(\"footer\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _ctx.$slots.top ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).top.wrapper)\n        }, [\n          _createVNode(_component_UContainer, {\n            class: _normalizeClass(_unref(ui).top.container)\n          }, {\n            default: _withCtx(() => [\n              _renderSlot(_ctx.$slots, \"top\")\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ], 2)) : _createCommentVNode(\"\", true),\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).bottom.wrapper)\n        }, [\n          _createVNode(_component_UContainer, {\n            class: _normalizeClass(_unref(ui).bottom.container)\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.right)\n              }, [\n                _renderSlot(_ctx.$slots, \"right\")\n              ], 2),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.center)\n              }, [\n                _renderSlot(_ctx.$slots, \"center\", {}, () => [\n                  _createVNode(_component_UFooterLinks, { links: __props.links }, null, 8, [\"links\"])\n                ])\n              ], 2),\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_unref(ui).bottom.left)\n              }, [\n                _renderSlot(_ctx.$slots, \"left\")\n              ], 2)\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ], 2)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714173353896,
-      "end": 1714173353897,
+      "start": 1714175003234,
+      "end": 1714175003234,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173353897,
-      "end": 1714173353897,
+      "start": 1714175003234,
+      "end": 1714175003234,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173353897,
-      "end": 1714173353897,
+      "start": 1714175003234,
+      "end": 1714175003234,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173353897,
-      "end": 1714173353897,
+      "start": 1714175003234,
+      "end": 1714175003234,
       "order": "normal"
     }
   ]

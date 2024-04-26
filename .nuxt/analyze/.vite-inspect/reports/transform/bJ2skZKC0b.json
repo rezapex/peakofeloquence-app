@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, withModifiers as _withModifiers, toDisplayString as _toDisplayString, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = /*#__PURE__*/_createElementVNode(\"input\", {\n  type: \"hidden\",\n  name: \"form-name\",\n  value: \"newsletter\"\n}, null, -1)\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"p\", { hidden: \"\" }, [\n  /*#__PURE__*/_createElementVNode(\"label\", null, [\n    /*#__PURE__*/_createTextVNode(\" Don't fill this out: \"),\n    /*#__PURE__*/_createElementVNode(\"input\", { name: \"bot-field\" })\n  ])\n], -1)\nconst _hoisted_3 = { class: \"text-gray-500 dark:text-gray-400 text-sm\" }\n\nimport { ref, reactive } from 'vue'\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Footer',\n  setup(__props) {\n\nconst links = [\n  {\n    label: 'Resources',\n    children: [\n      { label: 'Help center' },\n      { label: 'Docs' },\n      { label: 'Roadmap' },\n      { label: 'Changelog' }\n    ]\n  },\n  {\n    label: 'Features',\n    children: [\n      { label: 'Affiliates' },\n      { label: 'Portal' },\n      { label: 'Jobs' },\n      { label: 'Sponsors' }\n    ]\n  },\n  {\n    label: 'Company',\n    children: [\n      { label: 'About' },\n      { label: 'Pricing' },\n      { label: 'Careers' },\n      { label: 'Blog' }\n    ]\n  }\n]\n\nconst toast = useToast()\nconst formState = reactive({\n  email: '',\n  loading: false,\n})\n\nfunction onSubmit () {\n  formState.loading = true\n  setTimeout(() => {\n    toast.add({\n      title: 'Subscribed!',\n      description: \"You've been subscribed to our newsletter.\"\n    })\n    formState.loading = false\n    formState.email = ''\n  }, 1000)\n}\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UButton = _resolveComponent(\"UButton\")!\n  const _component_UInput = _resolveComponent(\"UInput\")!\n  const _component_UFormGroup = _resolveComponent(\"UFormGroup\")!\n  const _component_UFooterColumns = _resolveComponent(\"UFooterColumns\")!\n  const _component_UColorModeButton = _resolveComponent(\"UColorModeButton\")!\n  const _component_UFooter = _resolveComponent(\"UFooter\")!\n\n  return (_openBlock(), _createBlock(_component_UFooter, null, {\n    top: _withCtx(() => [\n      _createVNode(_component_UFooterColumns, { links: links }, {\n        right: _withCtx(() => [\n          _createElementVNode(\"form\", {\n            netlify: \"\",\n            name: \"newsletter\",\n            method: \"POST\",\n            \"data-netlify\": \"true\",\n            \"data-netlify-honeypot\": \"bot-field\",\n            onSubmit: _withModifiers(onSubmit, [\"prevent\"])\n          }, [\n            _hoisted_1,\n            _hoisted_2,\n            _createVNode(_component_UFormGroup, {\n              label: \"Subscribe to our newsletter\",\n              ui: { container: 'mt-3' }\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_UInput, {\n                  modelValue: formState.email,\n                  \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event: any) => ((formState.email) = $event)),\n                  type: \"email\",\n                  placeholder: \"Enter your email\",\n                  ui: { icon: { trailing: { pointer: '' } } },\n                  required: \"\",\n                  size: \"xl\",\n                  autocomplete: \"off\",\n                  class: \"max-w-sm\",\n                  \"input-class\": \"rounded-full\",\n                  name: \"email\"\n                }, {\n                  trailing: _withCtx(() => [\n                    _createVNode(_component_UButton, {\n                      type: \"submit\",\n                      size: \"xs\",\n                      color: \"primary\",\n                      label: formState.loading ? 'Subscribing' : 'Subscribe',\n                      loading: formState.loading\n                    }, null, 8, [\"label\", \"loading\"])\n                  ]),\n                  _: 1\n                }, 8, [\"modelValue\"])\n              ]),\n              _: 1\n            })\n          ], 32)\n        ]),\n        _: 1\n      })\n    ]),\n    left: _withCtx(() => [\n      _createElementVNode(\"p\", _hoisted_3, \" Copyright © \" + _toDisplayString(new Date().getFullYear()) + \". All rights reserved. \", 1)\n    ]),\n    right: _withCtx(() => [\n      _createVNode(_component_UColorModeButton, { size: \"sm\" }),\n      _createVNode(_component_UButton, {\n        to: \"https://github.com/rezapex/peakofeloquence-app\",\n        target: \"_blank\",\n        icon: \"i-simple-icons-github\",\n        \"aria-label\": \"GitHub\",\n        color: \"gray\",\n        variant: \"ghost\"\n      })\n    ]),\n    _: 1\n  }))\n}\n}\n\n})",
-      "start": 1714173353567,
-      "end": 1714173353567
+      "start": 1714175002832,
+      "end": 1714175002832
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173353567,
-      "end": 1714173353567,
+      "start": 1714175002832,
+      "end": 1714175002832,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173353567,
-      "end": 1714173353567,
+      "start": 1714175002832,
+      "end": 1714175002832,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173353567,
-      "end": 1714173353567,
+      "start": 1714175002832,
+      "end": 1714175002832,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173353567,
-      "end": 1714173353567,
+      "start": 1714175002832,
+      "end": 1714175002832,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173353567,
-      "end": 1714173353567,
+      "start": 1714175002832,
+      "end": 1714175002832,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, withModifiers as _withModifiers, toDisplayString as _toDisplayString, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"input\", {\n  type: \"hidden\",\n  name: \"form-name\",\n  value: \"newsletter\"\n}, null, -1);\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"p\", { hidden: \"\" }, [\n  /* @__PURE__ */ _createElementVNode(\"label\", null, [\n    /* @__PURE__ */ _createTextVNode(\" Don't fill this out: \"),\n    /* @__PURE__ */ _createElementVNode(\"input\", { name: \"bot-field\" })\n  ])\n], -1);\nconst _hoisted_3 = { class: \"text-gray-500 dark:text-gray-400 text-sm\" };\nimport { reactive } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Footer\",\n  setup(__props) {\n    const links = [\n      {\n        label: \"Resources\",\n        children: [\n          { label: \"Help center\" },\n          { label: \"Docs\" },\n          { label: \"Roadmap\" },\n          { label: \"Changelog\" }\n        ]\n      },\n      {\n        label: \"Features\",\n        children: [\n          { label: \"Affiliates\" },\n          { label: \"Portal\" },\n          { label: \"Jobs\" },\n          { label: \"Sponsors\" }\n        ]\n      },\n      {\n        label: \"Company\",\n        children: [\n          { label: \"About\" },\n          { label: \"Pricing\" },\n          { label: \"Careers\" },\n          { label: \"Blog\" }\n        ]\n      }\n    ];\n    const toast = useToast();\n    const formState = reactive({\n      email: \"\",\n      loading: false\n    });\n    function onSubmit() {\n      formState.loading = true;\n      setTimeout(() => {\n        toast.add({\n          title: \"Subscribed!\",\n          description: \"You've been subscribed to our newsletter.\"\n        });\n        formState.loading = false;\n        formState.email = \"\";\n      }, 1e3);\n    }\n    return (_ctx, _cache) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UInput = _resolveComponent(\"UInput\");\n      const _component_UFormGroup = _resolveComponent(\"UFormGroup\");\n      const _component_UFooterColumns = _resolveComponent(\"UFooterColumns\");\n      const _component_UColorModeButton = _resolveComponent(\"UColorModeButton\");\n      const _component_UFooter = _resolveComponent(\"UFooter\");\n      return _openBlock(), _createBlock(_component_UFooter, null, {\n        top: _withCtx(() => [\n          _createVNode(_component_UFooterColumns, { links }, {\n            right: _withCtx(() => [\n              _createElementVNode(\"form\", {\n                netlify: \"\",\n                name: \"newsletter\",\n                method: \"POST\",\n                \"data-netlify\": \"true\",\n                \"data-netlify-honeypot\": \"bot-field\",\n                onSubmit: _withModifiers(onSubmit, [\"prevent\"])\n              }, [\n                _hoisted_1,\n                _hoisted_2,\n                _createVNode(_component_UFormGroup, {\n                  label: \"Subscribe to our newsletter\",\n                  ui: { container: \"mt-3\" }\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_UInput, {\n                      modelValue: formState.email,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => formState.email = $event),\n                      type: \"email\",\n                      placeholder: \"Enter your email\",\n                      ui: { icon: { trailing: { pointer: \"\" } } },\n                      required: \"\",\n                      size: \"xl\",\n                      autocomplete: \"off\",\n                      class: \"max-w-sm\",\n                      \"input-class\": \"rounded-full\",\n                      name: \"email\"\n                    }, {\n                      trailing: _withCtx(() => [\n                        _createVNode(_component_UButton, {\n                          type: \"submit\",\n                          size: \"xs\",\n                          color: \"primary\",\n                          label: formState.loading ? \"Subscribing\" : \"Subscribe\",\n                          loading: formState.loading\n                        }, null, 8, [\"label\", \"loading\"])\n                      ]),\n                      _: 1\n                    }, 8, [\"modelValue\"])\n                  ]),\n                  _: 1\n                })\n              ], 32)\n            ]),\n            _: 1\n          })\n        ]),\n        left: _withCtx(() => [\n          _createElementVNode(\"p\", _hoisted_3, \" Copyright © \" + _toDisplayString((/* @__PURE__ */ new Date()).getFullYear()) + \". All rights reserved. \", 1)\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UColorModeButton, { size: \"sm\" }),\n          _createVNode(_component_UButton, {\n            to: \"https://github.com/rezapex/peakofeloquence-app\",\n            target: \"_blank\",\n            icon: \"i-simple-icons-github\",\n            \"aria-label\": \"GitHub\",\n            color: \"gray\",\n            variant: \"ghost\"\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714173353567,
-      "end": 1714173353724,
+      "start": 1714175002832,
+      "end": 1714175002959,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173353724,
-      "end": 1714173353724,
+      "start": 1714175002959,
+      "end": 1714175002959,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useToast } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useToast.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, withModifiers as _withModifiers, toDisplayString as _toDisplayString, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"input\", {\n  type: \"hidden\",\n  name: \"form-name\",\n  value: \"newsletter\"\n}, null, -1);\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"p\", { hidden: \"\" }, [\n  /* @__PURE__ */ _createElementVNode(\"label\", null, [\n    /* @__PURE__ */ _createTextVNode(\" Don't fill this out: \"),\n    /* @__PURE__ */ _createElementVNode(\"input\", { name: \"bot-field\" })\n  ])\n], -1);\nconst _hoisted_3 = { class: \"text-gray-500 dark:text-gray-400 text-sm\" };\nimport { reactive } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Footer\",\n  setup(__props) {\n    const links = [\n      {\n        label: \"Resources\",\n        children: [\n          { label: \"Help center\" },\n          { label: \"Docs\" },\n          { label: \"Roadmap\" },\n          { label: \"Changelog\" }\n        ]\n      },\n      {\n        label: \"Features\",\n        children: [\n          { label: \"Affiliates\" },\n          { label: \"Portal\" },\n          { label: \"Jobs\" },\n          { label: \"Sponsors\" }\n        ]\n      },\n      {\n        label: \"Company\",\n        children: [\n          { label: \"About\" },\n          { label: \"Pricing\" },\n          { label: \"Careers\" },\n          { label: \"Blog\" }\n        ]\n      }\n    ];\n    const toast = useToast();\n    const formState = reactive({\n      email: \"\",\n      loading: false\n    });\n    function onSubmit() {\n      formState.loading = true;\n      setTimeout(() => {\n        toast.add({\n          title: \"Subscribed!\",\n          description: \"You've been subscribed to our newsletter.\"\n        });\n        formState.loading = false;\n        formState.email = \"\";\n      }, 1e3);\n    }\n    return (_ctx, _cache) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UInput = _resolveComponent(\"UInput\");\n      const _component_UFormGroup = _resolveComponent(\"UFormGroup\");\n      const _component_UFooterColumns = _resolveComponent(\"UFooterColumns\");\n      const _component_UColorModeButton = _resolveComponent(\"UColorModeButton\");\n      const _component_UFooter = _resolveComponent(\"UFooter\");\n      return _openBlock(), _createBlock(_component_UFooter, null, {\n        top: _withCtx(() => [\n          _createVNode(_component_UFooterColumns, { links }, {\n            right: _withCtx(() => [\n              _createElementVNode(\"form\", {\n                netlify: \"\",\n                name: \"newsletter\",\n                method: \"POST\",\n                \"data-netlify\": \"true\",\n                \"data-netlify-honeypot\": \"bot-field\",\n                onSubmit: _withModifiers(onSubmit, [\"prevent\"])\n              }, [\n                _hoisted_1,\n                _hoisted_2,\n                _createVNode(_component_UFormGroup, {\n                  label: \"Subscribe to our newsletter\",\n                  ui: { container: \"mt-3\" }\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_UInput, {\n                      modelValue: formState.email,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => formState.email = $event),\n                      type: \"email\",\n                      placeholder: \"Enter your email\",\n                      ui: { icon: { trailing: { pointer: \"\" } } },\n                      required: \"\",\n                      size: \"xl\",\n                      autocomplete: \"off\",\n                      class: \"max-w-sm\",\n                      \"input-class\": \"rounded-full\",\n                      name: \"email\"\n                    }, {\n                      trailing: _withCtx(() => [\n                        _createVNode(_component_UButton, {\n                          type: \"submit\",\n                          size: \"xs\",\n                          color: \"primary\",\n                          label: formState.loading ? \"Subscribing\" : \"Subscribe\",\n                          loading: formState.loading\n                        }, null, 8, [\"label\", \"loading\"])\n                      ]),\n                      _: 1\n                    }, 8, [\"modelValue\"])\n                  ]),\n                  _: 1\n                })\n              ], 32)\n            ]),\n            _: 1\n          })\n        ]),\n        left: _withCtx(() => [\n          _createElementVNode(\"p\", _hoisted_3, \" Copyright © \" + _toDisplayString((/* @__PURE__ */ new Date()).getFullYear()) + \". All rights reserved. \", 1)\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UColorModeButton, { size: \"sm\" }),\n          _createVNode(_component_UButton, {\n            to: \"https://github.com/rezapex/peakofeloquence-app\",\n            target: \"_blank\",\n            icon: \"i-simple-icons-github\",\n            \"aria-label\": \"GitHub\",\n            color: \"gray\",\n            variant: \"ghost\"\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714173353724,
-      "end": 1714173353725,
+      "start": 1714175002959,
+      "end": 1714175002960,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173353725,
-      "end": 1714173353725,
+      "start": 1714175002960,
+      "end": 1714175002960,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173353725,
-      "end": 1714173353725,
+      "start": 1714175002960,
+      "end": 1714175002960,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173353725,
-      "end": 1714173353725,
+      "start": 1714175002960,
+      "end": 1714175002960,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173353725,
-      "end": 1714173353725,
+      "start": 1714175002960,
+      "end": 1714175002960,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/forms/Input.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/forms/FormGroup.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/footer/FooterColumns.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/color-mode/ColorModeButton.vue\";\nimport { default as __nuxt_component_5 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/footer/Footer.vue\";\nimport { useToast } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useToast.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, withModifiers as _withModifiers, toDisplayString as _toDisplayString, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"input\", {\n  type: \"hidden\",\n  name: \"form-name\",\n  value: \"newsletter\"\n}, null, -1);\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"p\", { hidden: \"\" }, [\n  /* @__PURE__ */ _createElementVNode(\"label\", null, [\n    /* @__PURE__ */ _createTextVNode(\" Don't fill this out: \"),\n    /* @__PURE__ */ _createElementVNode(\"input\", { name: \"bot-field\" })\n  ])\n], -1);\nconst _hoisted_3 = { class: \"text-gray-500 dark:text-gray-400 text-sm\" };\nimport { reactive } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Footer\",\n  setup(__props) {\n    const links = [\n      {\n        label: \"Resources\",\n        children: [\n          { label: \"Help center\" },\n          { label: \"Docs\" },\n          { label: \"Roadmap\" },\n          { label: \"Changelog\" }\n        ]\n      },\n      {\n        label: \"Features\",\n        children: [\n          { label: \"Affiliates\" },\n          { label: \"Portal\" },\n          { label: \"Jobs\" },\n          { label: \"Sponsors\" }\n        ]\n      },\n      {\n        label: \"Company\",\n        children: [\n          { label: \"About\" },\n          { label: \"Pricing\" },\n          { label: \"Careers\" },\n          { label: \"Blog\" }\n        ]\n      }\n    ];\n    const toast = useToast();\n    const formState = reactive({\n      email: \"\",\n      loading: false\n    });\n    function onSubmit() {\n      formState.loading = true;\n      setTimeout(() => {\n        toast.add({\n          title: \"Subscribed!\",\n          description: \"You've been subscribed to our newsletter.\"\n        });\n        formState.loading = false;\n        formState.email = \"\";\n      }, 1e3);\n    }\n    return (_ctx, _cache) => {\n      const _component_UButton = __nuxt_component_0;\n      const _component_UInput = __nuxt_component_1;\n      const _component_UFormGroup = __nuxt_component_2;\n      const _component_UFooterColumns = __nuxt_component_3;\n      const _component_UColorModeButton = __nuxt_component_4;\n      const _component_UFooter = __nuxt_component_5;\n      return _openBlock(), _createBlock(_component_UFooter, null, {\n        top: _withCtx(() => [\n          _createVNode(_component_UFooterColumns, { links }, {\n            right: _withCtx(() => [\n              _createElementVNode(\"form\", {\n                netlify: \"\",\n                name: \"newsletter\",\n                method: \"POST\",\n                \"data-netlify\": \"true\",\n                \"data-netlify-honeypot\": \"bot-field\",\n                onSubmit: _withModifiers(onSubmit, [\"prevent\"])\n              }, [\n                _hoisted_1,\n                _hoisted_2,\n                _createVNode(_component_UFormGroup, {\n                  label: \"Subscribe to our newsletter\",\n                  ui: { container: \"mt-3\" }\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_UInput, {\n                      modelValue: formState.email,\n                      \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => formState.email = $event),\n                      type: \"email\",\n                      placeholder: \"Enter your email\",\n                      ui: { icon: { trailing: { pointer: \"\" } } },\n                      required: \"\",\n                      size: \"xl\",\n                      autocomplete: \"off\",\n                      class: \"max-w-sm\",\n                      \"input-class\": \"rounded-full\",\n                      name: \"email\"\n                    }, {\n                      trailing: _withCtx(() => [\n                        _createVNode(_component_UButton, {\n                          type: \"submit\",\n                          size: \"xs\",\n                          color: \"primary\",\n                          label: formState.loading ? \"Subscribing\" : \"Subscribe\",\n                          loading: formState.loading\n                        }, null, 8, [\"label\", \"loading\"])\n                      ]),\n                      _: 1\n                    }, 8, [\"modelValue\"])\n                  ]),\n                  _: 1\n                })\n              ], 32)\n            ]),\n            _: 1\n          })\n        ]),\n        left: _withCtx(() => [\n          _createElementVNode(\"p\", _hoisted_3, \" Copyright © \" + _toDisplayString((/* @__PURE__ */ new Date()).getFullYear()) + \". All rights reserved. \", 1)\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UColorModeButton, { size: \"sm\" }),\n          _createVNode(_component_UButton, {\n            to: \"https://github.com/rezapex/peakofeloquence-app\",\n            target: \"_blank\",\n            icon: \"i-simple-icons-github\",\n            \"aria-label\": \"GitHub\",\n            color: \"gray\",\n            variant: \"ghost\"\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714173353725,
-      "end": 1714173353725,
+      "start": 1714175002960,
+      "end": 1714175002960,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173353725,
-      "end": 1714173353725,
+      "start": 1714175002960,
+      "end": 1714175002960,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173353725,
-      "end": 1714173353725,
+      "start": 1714175002960,
+      "end": 1714175002961,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173353725,
-      "end": 1714173353725,
+      "start": 1714175002961,
+      "end": 1714175002961,
       "order": "normal"
     }
   ]

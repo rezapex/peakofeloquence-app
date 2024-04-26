@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, createElementBlock as _createElementBlock, mergeProps as _mergeProps, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-24ca66b4\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { key: 0 }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"div\", { class: \"absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]\" }, null, -1))\nconst _hoisted_3 = { class: \"font-serif font-light\" }\nconst _hoisted_4 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1))\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp: any, __restore: any\n\nconst { data: page } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData(\"index\", () => queryContent(\"/\").findOne()))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\nif (!page.value) {\n  throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n}\n\nuseSeoMeta({\n  titleTemplate: \"PeakofEloquence.org\",\n  title: page.value.title,\n  ogTitle: page.value.title,\n  description: page.value.description,\n  ogDescription: page.value.description,\n});\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_UBadge = _resolveComponent(\"UBadge\")!\n  const _component_ULandingHero = _resolveComponent(\"ULandingHero\")!\n  const _component_Placeholder = _resolveComponent(\"Placeholder\")!\n  const _component_ULandingSection = _resolveComponent(\"ULandingSection\")!\n  const _component_ULandingCard = _resolveComponent(\"ULandingCard\")!\n  const _component_UPageGrid = _resolveComponent(\"UPageGrid\")!\n  const _component_ULandingTestimonial = _resolveComponent(\"ULandingTestimonial\")!\n  const _component_UPageColumns = _resolveComponent(\"UPageColumns\")!\n  const _component_ULandingCTA = _resolveComponent(\"ULandingCTA\")!\n\n  return (_unref(page))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_ULandingHero, {\n          title: _unref(page).hero.title,\n          description: _unref(page).hero.description,\n          links: _unref(page).hero.links\n        }, {\n          title: _withCtx(() => [\n            _createElementVNode(\"h1\", _hoisted_3, _toDisplayString(_unref(page).hero.title), 1)\n          ]),\n          headline: _withCtx(() => [\n            (_unref(page).hero.headline)\n              ? (_openBlock(), _createBlock(_component_UBadge, {\n                  key: 0,\n                  variant: \"subtle\",\n                  size: \"lg\",\n                  class: \"relative rounded-full font-semibold\"\n                }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_NuxtLink, {\n                      to: _unref(page).hero.headline.to,\n                      target: \"_blank\",\n                      class: \"focus:outline-none\",\n                      tabindex: \"-1\"\n                    }, {\n                      default: _withCtx(() => [\n                        _hoisted_4\n                      ]),\n                      _: 1\n                    }, 8, [\"to\"]),\n                    _createTextVNode(\" \" + _toDisplayString(_unref(page).hero.headline.label) + \" \", 1),\n                    (_unref(page).hero.headline.icon)\n                      ? (_openBlock(), _createBlock(_component_UIcon, {\n                          key: 0,\n                          name: _unref(page).hero.headline.icon,\n                          class: \"ml-1 w-4 h-4 pointer-events-none\"\n                        }, null, 8, [\"name\"]))\n                      : _createCommentVNode(\"\", true)\n                  ]),\n                  _: 1\n                }))\n              : _createCommentVNode(\"\", true)\n          ]),\n          default: _withCtx(() => [\n            _hoisted_2\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\", \"links\"]),\n        _createVNode(_component_ULandingSection, { class: \"!pt-0 font-serif\" }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Placeholder)\n          ]),\n          _: 1\n        }),\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).sections, (section, index) => {\n          return (_openBlock(), _createBlock(_component_ULandingSection, {\n            key: index,\n            title: section.title,\n            description: section.description,\n            align: section.align,\n            features: section.features\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Placeholder)\n            ]),\n            _: 2\n          }, 1032, [\"title\", \"description\", \"align\", \"features\"]))\n        }), 128)),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).features.title,\n          description: _unref(page).features.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPageGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).features.items, (item, index) => {\n                  return (_openBlock(), _createBlock(_component_ULandingCard, _mergeProps({ key: index }, item), null, 16))\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"]),\n        _createVNode(_component_ULandingSection, {\n          headline: _unref(page).testimonials.headline,\n          title: _unref(page).testimonials.title,\n          description: _unref(page).testimonials.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPageColumns, { class: \"xl:columns-4\" }, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).testimonials.items, (testimonial, index) => {\n                  return (_openBlock(), _createElementBlock(\"div\", {\n                    key: index,\n                    class: \"break-inside-avoid\"\n                  }, [\n                    _createVNode(_component_ULandingTestimonial, _mergeProps(testimonial, { class: \"bg-gray-100/50 dark:bg-gray-800/50\" }), null, 16)\n                  ]))\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }, 8, [\"headline\", \"title\", \"description\"]),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingCTA, _mergeProps(_unref(page).cta, { class: \"bg-gray-100/50 dark:bg-gray-800/50\" }), null, 16)\n          ]),\n          _: 1\n        })\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n})",
-      "start": 1714173352559,
-      "end": 1714173352559
+      "start": 1714175002187,
+      "end": 1714175002187
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173352559,
-      "end": 1714173352559,
+      "start": 1714175002187,
+      "end": 1714175002187,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173352559,
-      "end": 1714173352559,
+      "start": 1714175002187,
+      "end": 1714175002187,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173352559,
-      "end": 1714173352559,
+      "start": 1714175002187,
+      "end": 1714175002187,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173352559,
-      "end": 1714173352559,
+      "start": 1714175002187,
+      "end": 1714175002187,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173352559,
-      "end": 1714173352559,
+      "start": 1714175002187,
+      "end": 1714175002187,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, createElementBlock as _createElementBlock, mergeProps as _mergeProps, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-24ca66b4\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = { key: 0 };\nconst _hoisted_2 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"div\", { class: \"absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]\" }, null, -1));\nconst _hoisted_3 = { class: \"font-serif font-light\" };\nconst _hoisted_4 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1));\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"index\", () => queryContent(\"/\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      titleTemplate: \"PeakofEloquence.org\",\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UBadge = _resolveComponent(\"UBadge\");\n      const _component_ULandingHero = _resolveComponent(\"ULandingHero\");\n      const _component_Placeholder = _resolveComponent(\"Placeholder\");\n      const _component_ULandingSection = _resolveComponent(\"ULandingSection\");\n      const _component_ULandingCard = _resolveComponent(\"ULandingCard\");\n      const _component_UPageGrid = _resolveComponent(\"UPageGrid\");\n      const _component_ULandingTestimonial = _resolveComponent(\"ULandingTestimonial\");\n      const _component_UPageColumns = _resolveComponent(\"UPageColumns\");\n      const _component_ULandingCTA = _resolveComponent(\"ULandingCTA\");\n      return _unref(page) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_ULandingHero, {\n          title: _unref(page).hero.title,\n          description: _unref(page).hero.description,\n          links: _unref(page).hero.links\n        }, {\n          title: _withCtx(() => [\n            _createElementVNode(\"h1\", _hoisted_3, _toDisplayString(_unref(page).hero.title), 1)\n          ]),\n          headline: _withCtx(() => [\n            _unref(page).hero.headline ? (_openBlock(), _createBlock(_component_UBadge, {\n              key: 0,\n              variant: \"subtle\",\n              size: \"lg\",\n              class: \"relative rounded-full font-semibold\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_NuxtLink, {\n                  to: _unref(page).hero.headline.to,\n                  target: \"_blank\",\n                  class: \"focus:outline-none\",\n                  tabindex: \"-1\"\n                }, {\n                  default: _withCtx(() => [\n                    _hoisted_4\n                  ]),\n                  _: 1\n                }, 8, [\"to\"]),\n                _createTextVNode(\" \" + _toDisplayString(_unref(page).hero.headline.label) + \" \", 1),\n                _unref(page).hero.headline.icon ? (_openBlock(), _createBlock(_component_UIcon, {\n                  key: 0,\n                  name: _unref(page).hero.headline.icon,\n                  class: \"ml-1 w-4 h-4 pointer-events-none\"\n                }, null, 8, [\"name\"])) : _createCommentVNode(\"\", true)\n              ]),\n              _: 1\n            })) : _createCommentVNode(\"\", true)\n          ]),\n          default: _withCtx(() => [\n            _hoisted_2\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\", \"links\"]),\n        _createVNode(_component_ULandingSection, { class: \"!pt-0 font-serif\" }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Placeholder)\n          ]),\n          _: 1\n        }),\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).sections, (section, index) => {\n          return _openBlock(), _createBlock(_component_ULandingSection, {\n            key: index,\n            title: section.title,\n            description: section.description,\n            align: section.align,\n            features: section.features\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Placeholder)\n            ]),\n            _: 2\n          }, 1032, [\"title\", \"description\", \"align\", \"features\"]);\n        }), 128)),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).features.title,\n          description: _unref(page).features.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPageGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).features.items, (item, index) => {\n                  return _openBlock(), _createBlock(_component_ULandingCard, _mergeProps({ key: index }, item), null, 16);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"]),\n        _createVNode(_component_ULandingSection, {\n          headline: _unref(page).testimonials.headline,\n          title: _unref(page).testimonials.title,\n          description: _unref(page).testimonials.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPageColumns, { class: \"xl:columns-4\" }, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).testimonials.items, (testimonial, index) => {\n                  return _openBlock(), _createElementBlock(\"div\", {\n                    key: index,\n                    class: \"break-inside-avoid\"\n                  }, [\n                    _createVNode(_component_ULandingTestimonial, _mergeProps(testimonial, { class: \"bg-gray-100/50 dark:bg-gray-800/50\" }), null, 16)\n                  ]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }, 8, [\"headline\", \"title\", \"description\"]),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingCTA, _mergeProps(_unref(page).cta, { class: \"bg-gray-100/50 dark:bg-gray-800/50\" }), null, 16)\n          ]),\n          _: 1\n        })\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
-      "start": 1714173352559,
-      "end": 1714173353133,
+      "start": 1714175002210,
+      "end": 1714175002729,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173353133,
-      "end": 1714173353133,
+      "start": 1714175002729,
+      "end": 1714175002729,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173353133,
-      "end": 1714173353134,
+      "start": 1714175002729,
+      "end": 1714175002731,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, createElementBlock as _createElementBlock, mergeProps as _mergeProps, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-24ca66b4\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = { key: 0 };\nconst _hoisted_2 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"div\", { class: \"absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]\" }, null, -1));\nconst _hoisted_3 = { class: \"font-serif font-light\" };\nconst _hoisted_4 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1));\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"index\", () => queryContent(\"/\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      titleTemplate: \"PeakofEloquence.org\",\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UBadge = _resolveComponent(\"UBadge\");\n      const _component_ULandingHero = _resolveComponent(\"ULandingHero\");\n      const _component_Placeholder = _resolveComponent(\"Placeholder\");\n      const _component_ULandingSection = _resolveComponent(\"ULandingSection\");\n      const _component_ULandingCard = _resolveComponent(\"ULandingCard\");\n      const _component_UPageGrid = _resolveComponent(\"UPageGrid\");\n      const _component_ULandingTestimonial = _resolveComponent(\"ULandingTestimonial\");\n      const _component_UPageColumns = _resolveComponent(\"UPageColumns\");\n      const _component_ULandingCTA = _resolveComponent(\"ULandingCTA\");\n      return _unref(page) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_ULandingHero, {\n          title: _unref(page).hero.title,\n          description: _unref(page).hero.description,\n          links: _unref(page).hero.links\n        }, {\n          title: _withCtx(() => [\n            _createElementVNode(\"h1\", _hoisted_3, _toDisplayString(_unref(page).hero.title), 1)\n          ]),\n          headline: _withCtx(() => [\n            _unref(page).hero.headline ? (_openBlock(), _createBlock(_component_UBadge, {\n              key: 0,\n              variant: \"subtle\",\n              size: \"lg\",\n              class: \"relative rounded-full font-semibold\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_NuxtLink, {\n                  to: _unref(page).hero.headline.to,\n                  target: \"_blank\",\n                  class: \"focus:outline-none\",\n                  tabindex: \"-1\"\n                }, {\n                  default: _withCtx(() => [\n                    _hoisted_4\n                  ]),\n                  _: 1\n                }, 8, [\"to\"]),\n                _createTextVNode(\" \" + _toDisplayString(_unref(page).hero.headline.label) + \" \", 1),\n                _unref(page).hero.headline.icon ? (_openBlock(), _createBlock(_component_UIcon, {\n                  key: 0,\n                  name: _unref(page).hero.headline.icon,\n                  class: \"ml-1 w-4 h-4 pointer-events-none\"\n                }, null, 8, [\"name\"])) : _createCommentVNode(\"\", true)\n              ]),\n              _: 1\n            })) : _createCommentVNode(\"\", true)\n          ]),\n          default: _withCtx(() => [\n            _hoisted_2\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\", \"links\"]),\n        _createVNode(_component_ULandingSection, { class: \"!pt-0 font-serif\" }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Placeholder)\n          ]),\n          _: 1\n        }),\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).sections, (section, index) => {\n          return _openBlock(), _createBlock(_component_ULandingSection, {\n            key: index,\n            title: section.title,\n            description: section.description,\n            align: section.align,\n            features: section.features\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Placeholder)\n            ]),\n            _: 2\n          }, 1032, [\"title\", \"description\", \"align\", \"features\"]);\n        }), 128)),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).features.title,\n          description: _unref(page).features.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPageGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).features.items, (item, index) => {\n                  return _openBlock(), _createBlock(_component_ULandingCard, _mergeProps({ key: index }, item), null, 16);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"]),\n        _createVNode(_component_ULandingSection, {\n          headline: _unref(page).testimonials.headline,\n          title: _unref(page).testimonials.title,\n          description: _unref(page).testimonials.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPageColumns, { class: \"xl:columns-4\" }, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).testimonials.items, (testimonial, index) => {\n                  return _openBlock(), _createElementBlock(\"div\", {\n                    key: index,\n                    class: \"break-inside-avoid\"\n                  }, [\n                    _createVNode(_component_ULandingTestimonial, _mergeProps(testimonial, { class: \"bg-gray-100/50 dark:bg-gray-800/50\" }), null, 16)\n                  ]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }, 8, [\"headline\", \"title\", \"description\"]),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingCTA, _mergeProps(_unref(page).cta, { class: \"bg-gray-100/50 dark:bg-gray-800/50\" }), null, 16)\n          ]),\n          _: 1\n        })\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
-      "start": 1714173353134,
-      "end": 1714173353136,
+      "start": 1714175002731,
+      "end": 1714175002732,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173353136,
-      "end": 1714173353136,
+      "start": 1714175002732,
+      "end": 1714175002732,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173353136,
-      "end": 1714173353136,
+      "start": 1714175002732,
+      "end": 1714175002732,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173353136,
-      "end": 1714173353136,
+      "start": 1714175002732,
+      "end": 1714175002732,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173353136,
-      "end": 1714173353136,
+      "start": 1714175002732,
+      "end": 1714175002732,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Badge.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingHero.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/components/Placeholder.vue\";\nimport { default as __nuxt_component_5 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingSection.vue\";\nimport { default as __nuxt_component_6 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCard.vue\";\nimport { default as __nuxt_component_7 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageGrid.vue\";\nimport { default as __nuxt_component_8 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingTestimonial.vue\";\nimport { default as __nuxt_component_9 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageColumns.vue\";\nimport { default as __nuxt_component_10 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingCTA.vue\";\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, createElementBlock as _createElementBlock, mergeProps as _mergeProps, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-24ca66b4\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = { key: 0 };\nconst _hoisted_2 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"div\", { class: \"absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]\" }, null, -1));\nconst _hoisted_3 = { class: \"font-serif font-light\" };\nconst _hoisted_4 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1));\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"index\", () => queryContent(\"/\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      titleTemplate: \"PeakofEloquence.org\",\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = __nuxt_component_0;\n      const _component_UIcon = __nuxt_component_1;\n      const _component_UBadge = __nuxt_component_2;\n      const _component_ULandingHero = __nuxt_component_3;\n      const _component_Placeholder = __nuxt_component_4;\n      const _component_ULandingSection = __nuxt_component_5;\n      const _component_ULandingCard = __nuxt_component_6;\n      const _component_UPageGrid = __nuxt_component_7;\n      const _component_ULandingTestimonial = __nuxt_component_8;\n      const _component_UPageColumns = __nuxt_component_9;\n      const _component_ULandingCTA = __nuxt_component_10;\n      return _unref(page) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_ULandingHero, {\n          title: _unref(page).hero.title,\n          description: _unref(page).hero.description,\n          links: _unref(page).hero.links\n        }, {\n          title: _withCtx(() => [\n            _createElementVNode(\"h1\", _hoisted_3, _toDisplayString(_unref(page).hero.title), 1)\n          ]),\n          headline: _withCtx(() => [\n            _unref(page).hero.headline ? (_openBlock(), _createBlock(_component_UBadge, {\n              key: 0,\n              variant: \"subtle\",\n              size: \"lg\",\n              class: \"relative rounded-full font-semibold\"\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_component_NuxtLink, {\n                  to: _unref(page).hero.headline.to,\n                  target: \"_blank\",\n                  class: \"focus:outline-none\",\n                  tabindex: \"-1\"\n                }, {\n                  default: _withCtx(() => [\n                    _hoisted_4\n                  ]),\n                  _: 1\n                }, 8, [\"to\"]),\n                _createTextVNode(\" \" + _toDisplayString(_unref(page).hero.headline.label) + \" \", 1),\n                _unref(page).hero.headline.icon ? (_openBlock(), _createBlock(_component_UIcon, {\n                  key: 0,\n                  name: _unref(page).hero.headline.icon,\n                  class: \"ml-1 w-4 h-4 pointer-events-none\"\n                }, null, 8, [\"name\"])) : _createCommentVNode(\"\", true)\n              ]),\n              _: 1\n            })) : _createCommentVNode(\"\", true)\n          ]),\n          default: _withCtx(() => [\n            _hoisted_2\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\", \"links\"]),\n        _createVNode(_component_ULandingSection, { class: \"!pt-0 font-serif\" }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Placeholder)\n          ]),\n          _: 1\n        }),\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).sections, (section, index) => {\n          return _openBlock(), _createBlock(_component_ULandingSection, {\n            key: index,\n            title: section.title,\n            description: section.description,\n            align: section.align,\n            features: section.features\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_Placeholder)\n            ]),\n            _: 2\n          }, 1032, [\"title\", \"description\", \"align\", \"features\"]);\n        }), 128)),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).features.title,\n          description: _unref(page).features.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPageGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).features.items, (item, index) => {\n                  return _openBlock(), _createBlock(_component_ULandingCard, _mergeProps({ key: index }, item), null, 16);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"]),\n        _createVNode(_component_ULandingSection, {\n          headline: _unref(page).testimonials.headline,\n          title: _unref(page).testimonials.title,\n          description: _unref(page).testimonials.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPageColumns, { class: \"xl:columns-4\" }, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).testimonials.items, (testimonial, index) => {\n                  return _openBlock(), _createElementBlock(\"div\", {\n                    key: index,\n                    class: \"break-inside-avoid\"\n                  }, [\n                    _createVNode(_component_ULandingTestimonial, _mergeProps(testimonial, { class: \"bg-gray-100/50 dark:bg-gray-800/50\" }), null, 16)\n                  ]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }, 8, [\"headline\", \"title\", \"description\"]),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingCTA, _mergeProps(_unref(page).cta, { class: \"bg-gray-100/50 dark:bg-gray-800/50\" }), null, 16)\n          ]),\n          _: 1\n        })\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
-      "start": 1714173353136,
-      "end": 1714173353136,
+      "start": 1714175002732,
+      "end": 1714175002733,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173353136,
-      "end": 1714173353136,
+      "start": 1714175002733,
+      "end": 1714175002733,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173353136,
-      "end": 1714173353137,
+      "start": 1714175002733,
+      "end": 1714175002733,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173353137,
-      "end": 1714173353137,
+      "start": 1714175002733,
+      "end": 1714175002733,
       "order": "normal"
     }
   ]

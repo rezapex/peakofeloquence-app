@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Page',\n  __ssrInlineRender: true,\n  props: {\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'flex flex-col lg:grid lg:grid-cols-10 lg:gap-8',\n  left: 'lg:col-span-2',\n  center: {\n    narrow: 'lg:col-span-6',\n    base: 'lg:col-span-8',\n    full: 'lg:col-span-10'\n  },\n  right: 'lg:col-span-2 order-first lg:order-last'\n}\n\n\n\nconst props = __props\n\nconst slots = useSlots()\nconst { ui, attrs } = useUI('page', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst centerClass = computed(() => {\n  if (slots.left && slots.right) {\n    return ui.value.center.narrow\n  } else if (slots.left || slots.right) {\n    return ui.value.center.base\n  }\n\n  return ui.value.center.full\n})\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs), _attrs))}>`)\n  if (_ctx.$slots.left) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).left)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"left\", {}, null, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"${_ssrRenderClass(_unref(centerClass))}\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(`</div>`)\n  if (_ctx.$slots.right) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).right)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"right\", {}, null, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n})",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173365676,
-      "end": 1714173365676,
+      "start": 1714175014413,
+      "end": 1714175014413,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Page\",\n  __ssrInlineRender: true,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"flex flex-col lg:grid lg:grid-cols-10 lg:gap-8\",\n      left: \"lg:col-span-2\",\n      center: {\n        narrow: \"lg:col-span-6\",\n        base: \"lg:col-span-8\",\n        full: \"lg:col-span-10\"\n      },\n      right: \"lg:col-span-2 order-first lg:order-last\"\n    };\n    const props = __props;\n    const slots = useSlots();\n    const { ui, attrs } = useUI(\"page\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const centerClass = computed(() => {\n      if (slots.left && slots.right) {\n        return ui.value.center.narrow;\n      } else if (slots.left || slots.right) {\n        return ui.value.center.base;\n      }\n      return ui.value.center.full;\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (_ctx.$slots.left) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).left)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"left\", {}, null, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"${_ssrRenderClass(_unref(centerClass))}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div>`);\n      if (_ctx.$slots.right) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).right)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"right\", {}, null, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714173365676,
-      "end": 1714173365931,
+      "start": 1714175014413,
+      "end": 1714175014544,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -92,147 +92,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365931,
-      "end": 1714173365931,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173365931,
-      "end": 1714173365932,
+      "start": 1714175014544,
+      "end": 1714175014544,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014544,
+      "end": 1714175014545,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173365932,
-      "end": 1714173365932,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSlots, toRef, computed } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Page\",\n  __ssrInlineRender: true,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"flex flex-col lg:grid lg:grid-cols-10 lg:gap-8\",\n      left: \"lg:col-span-2\",\n      center: {\n        narrow: \"lg:col-span-6\",\n        base: \"lg:col-span-8\",\n        full: \"lg:col-span-10\"\n      },\n      right: \"lg:col-span-2 order-first lg:order-last\"\n    };\n    const props = __props;\n    const slots = useSlots();\n    const { ui, attrs } = useUI(\"page\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const centerClass = computed(() => {\n      if (slots.left && slots.right) {\n        return ui.value.center.narrow;\n      } else if (slots.left || slots.right) {\n        return ui.value.center.base;\n      }\n      return ui.value.center.full;\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (_ctx.$slots.left) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).left)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"left\", {}, null, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"${_ssrRenderClass(_unref(centerClass))}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div>`);\n      if (_ctx.$slots.right) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).right)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"right\", {}, null, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714173365932,
-      "end": 1714173365933,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -246,8 +246,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSlots, toRef, computed } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Page\",\n  __ssrInlineRender: true,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"flex flex-col lg:grid lg:grid-cols-10 lg:gap-8\",\n      left: \"lg:col-span-2\",\n      center: {\n        narrow: \"lg:col-span-6\",\n        base: \"lg:col-span-8\",\n        full: \"lg:col-span-10\"\n      },\n      right: \"lg:col-span-2 order-first lg:order-last\"\n    };\n    const props = __props;\n    const slots = useSlots();\n    const { ui, attrs } = useUI(\"page\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const centerClass = computed(() => {\n      if (slots.left && slots.right) {\n        return ui.value.center.narrow;\n      } else if (slots.left || slots.right) {\n        return ui.value.center.base;\n      }\n      return ui.value.center.full;\n    });\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (_ctx.$slots.left) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).left)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"left\", {}, null, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"${_ssrRenderClass(_unref(centerClass))}\">`);\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div>`);\n      if (_ctx.$slots.right) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).right)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"right\", {}, null, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714173365932,
-      "end": 1714173365933,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -260,56 +260,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173365933,
-      "end": 1714173365933,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173365933,
-      "end": 1714173365933,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173365933,
-      "end": 1714173365933,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173365933,
-      "end": 1714173365933,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714173365933,
-      "end": 1714173365933,
+      "start": 1714175014545,
+      "end": 1714175014545,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714173365933,
-      "end": 1714173365933,
+      "start": 1714175014545,
+      "end": 1714175014546,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173365933,
-      "end": 1714173365933,
+      "start": 1714175014546,
+      "end": 1714175014546,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173365933,
-      "end": 1714173365933,
+      "start": 1714175014546,
+      "end": 1714175014546,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173365934,
-      "end": 1714173365934,
+      "start": 1714175014546,
+      "end": 1714175014546,
       "order": "normal"
     }
   ]

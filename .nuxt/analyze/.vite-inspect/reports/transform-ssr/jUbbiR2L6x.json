@@ -4,69 +4,69 @@
     {
       "name": "vite:load-fallback",
       "result": "import type { RouterConfig } from '@nuxt/schema'\n\nfunction findHashPosition (hash: string): { el: any, behavior: ScrollBehavior, top: number } | undefined {\n  const el = document.querySelector(hash)\n  // vue-router does not incorporate scroll-margin-top on its own.\n  if (el) {\n    const top = parseFloat(getComputedStyle(el).scrollMarginTop)\n\n    return {\n      el: hash,\n      behavior: 'smooth',\n      top\n    }\n  }\n}\n\n// https://router.vuejs.org/api/#routeroptions\nexport default <RouterConfig>{\n  scrollBehavior (to, from, savedPosition) {\n    const nuxtApp = useNuxtApp()\n\n    if (history.state && history.state.stop) {\n      return\n    }\n    if (history.state && history.state.smooth) {\n      return {\n        el: history.state.smooth,\n        behavior: 'smooth'\n      }\n    }\n\n    // If history back\n    if (savedPosition) {\n      // Handle Suspense resolution\n      return new Promise((resolve) => {\n        nuxtApp.hooks.hookOnce('page:finish', () => {\n          setTimeout(() => resolve(savedPosition), 50)\n        })\n      })\n    }\n\n    // Scroll to heading on click\n    if (to.hash) {\n      return new Promise((resolve) => {\n        if (to.path === from.path) {\n          setTimeout(() => resolve(findHashPosition(to.hash)), 50)\n        } else {\n          nuxtApp.hooks.hookOnce('page:finish', () => {\n            setTimeout(() => resolve(findHashPosition(to.hash)), 50)\n          })\n        }\n      })\n    }\n\n    // Scroll to top of window\n    return { top: 0 }\n  }\n}\n",
-      "start": 1714173364165,
-      "end": 1714173364228,
+      "start": 1714175013046,
+      "end": 1714175013139,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173364228,
-      "end": 1714173364228,
+      "start": 1714175013139,
+      "end": 1714175013139,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "function findHashPosition(hash) {\n  const el = document.querySelector(hash);\n  if (el) {\n    const top = parseFloat(getComputedStyle(el).scrollMarginTop);\n    return {\n      el: hash,\n      behavior: \"smooth\",\n      top\n    };\n  }\n}\nexport default {\n  scrollBehavior(to, from, savedPosition) {\n    const nuxtApp = useNuxtApp();\n    if (history.state && history.state.stop) {\n      return;\n    }\n    if (history.state && history.state.smooth) {\n      return {\n        el: history.state.smooth,\n        behavior: \"smooth\"\n      };\n    }\n    if (savedPosition) {\n      return new Promise((resolve) => {\n        nuxtApp.hooks.hookOnce(\"page:finish\", () => {\n          setTimeout(() => resolve(savedPosition), 50);\n        });\n      });\n    }\n    if (to.hash) {\n      return new Promise((resolve) => {\n        if (to.path === from.path) {\n          setTimeout(() => resolve(findHashPosition(to.hash)), 50);\n        } else {\n          nuxtApp.hooks.hookOnce(\"page:finish\", () => {\n            setTimeout(() => resolve(findHashPosition(to.hash)), 50);\n          });\n        }\n      });\n    }\n    return { top: 0 };\n  }\n};\n",
-      "start": 1714173364228,
-      "end": 1714173364555,
+      "start": 1714175013140,
+      "end": 1714175013792,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -82,149 +82,149 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173364555,
-      "end": 1714173364555,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173364555,
-      "end": 1714173364555,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173364555,
-      "end": 1714173364555,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173364555,
-      "end": 1714173364555,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173364555,
-      "end": 1714173364555,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173364555,
-      "end": 1714173364555,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173364556,
-      "end": 1714173364556,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173364556,
-      "end": 1714173364556,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173364556,
-      "end": 1714173364556,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173364556,
-      "end": 1714173364556,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173364556,
-      "end": 1714173364556,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173364556,
-      "end": 1714173364556,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173364556,
-      "end": 1714173364556,
+      "start": 1714175013792,
+      "end": 1714175013792,
       "order": "normal"
     },
     {
       "name": "vite:define",
       "result": "function findHashPosition(hash) {\n  const el = (void 0).querySelector(hash);\n  if (el) {\n    const top = parseFloat(getComputedStyle(el).scrollMarginTop);\n    return {\n      el: hash,\n      behavior: \"smooth\",\n      top\n    };\n  }\n}\nexport default {\n  scrollBehavior(to, from, savedPosition) {\n    const nuxtApp = useNuxtApp();\n    if (history.state && history.state.stop) {\n      return;\n    }\n    if (history.state && history.state.smooth) {\n      return {\n        el: history.state.smooth,\n        behavior: \"smooth\"\n      };\n    }\n    if (savedPosition) {\n      return new Promise((resolve) => {\n        nuxtApp.hooks.hookOnce(\"page:finish\", () => {\n          setTimeout(() => resolve(savedPosition), 50);\n        });\n      });\n    }\n    if (to.hash) {\n      return new Promise((resolve) => {\n        if (to.path === from.path) {\n          setTimeout(() => resolve(findHashPosition(to.hash)), 50);\n        } else {\n          nuxtApp.hooks.hookOnce(\"page:finish\", () => {\n            setTimeout(() => resolve(findHashPosition(to.hash)), 50);\n          });\n        }\n      });\n    }\n    return { top: 0 };\n  }\n};\n",
-      "start": 1714173364556,
-      "end": 1714173365272,
+      "start": 1714175013792,
+      "end": 1714175014344,
       "order": "normal",
       "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/app/router.options.ts\"],\n  \"sourcesContent\": [\"function findHashPosition(hash) {\\n  const el = document.querySelector(hash);\\n  if (el) {\\n    const top = parseFloat(getComputedStyle(el).scrollMarginTop);\\n    return {\\n      el: hash,\\n      behavior: \\\"smooth\\\",\\n      top\\n    };\\n  }\\n}\\nexport default {\\n  scrollBehavior(to, from, savedPosition) {\\n    const nuxtApp = useNuxtApp();\\n    if (history.state && history.state.stop) {\\n      return;\\n    }\\n    if (history.state && history.state.smooth) {\\n      return {\\n        el: history.state.smooth,\\n        behavior: \\\"smooth\\\"\\n      };\\n    }\\n    if (savedPosition) {\\n      return new Promise((resolve) => {\\n        nuxtApp.hooks.hookOnce(\\\"page:finish\\\", () => {\\n          setTimeout(() => resolve(savedPosition), 50);\\n        });\\n      });\\n    }\\n    if (to.hash) {\\n      return new Promise((resolve) => {\\n        if (to.path === from.path) {\\n          setTimeout(() => resolve(findHashPosition(to.hash)), 50);\\n        } else {\\n          nuxtApp.hooks.hookOnce(\\\"page:finish\\\", () => {\\n            setTimeout(() => resolve(findHashPosition(to.hash)), 50);\\n          });\\n        }\\n      });\\n    }\\n    return { top: 0 };\\n  }\\n};\\n\"],\n  \"mappings\": \"AAAA,SAAS,iBAAiB,MAAM;AAC9B,QAAM,KAAK,SAAS,cAAc,IAAI;AACtC,MAAI,IAAI;AACN,UAAM,MAAM,WAAW,iBAAiB,EAAE,EAAE,eAAe;AAC3D,WAAO;AAAA,MACL,IAAI;AAAA,MACJ,UAAU;AAAA,MACV;AAAA,IACF;AAAA,EACF;AACF;AACA,eAAe;AAAA,EACb,eAAe,IAAI,MAAM,eAAe;AACtC,UAAM,UAAU,WAAW;AAC3B,QAAI,QAAQ,SAAS,QAAQ,MAAM,MAAM;AACvC;AAAA,IACF;AACA,QAAI,QAAQ,SAAS,QAAQ,MAAM,QAAQ;AACzC,aAAO;AAAA,QACL,IAAI,QAAQ,MAAM;AAAA,QAClB,UAAU;AAAA,MACZ;AAAA,IACF;AACA,QAAI,eAAe;AACjB,aAAO,IAAI,QAAQ,CAAC,YAAY;AAC9B,gBAAQ,MAAM,SAAS,eAAe,MAAM;AAC1C,qBAAW,MAAM,QAAQ,aAAa,GAAG,EAAE;AAAA,QAC7C,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AACA,QAAI,GAAG,MAAM;AACX,aAAO,IAAI,QAAQ,CAAC,YAAY;AAC9B,YAAI,GAAG,SAAS,KAAK,MAAM;AACzB,qBAAW,MAAM,QAAQ,iBAAiB,GAAG,IAAI,CAAC,GAAG,EAAE;AAAA,QACzD,OAAO;AACL,kBAAQ,MAAM,SAAS,eAAe,MAAM;AAC1C,uBAAW,MAAM,QAAQ,iBAAiB,GAAG,IAAI,CAAC,GAAG,EAAE;AAAA,UACzD,CAAC;AAAA,QACH;AAAA,MACF,CAAC;AAAA,IACH;AACA,WAAO,EAAE,KAAK,EAAE;AAAA,EAClB;AACF;\",\n  \"names\": []\n}\n"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173365272,
-      "end": 1714173365272,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useNuxtApp } from '#app/nuxt';\nfunction findHashPosition(hash) {\n  const el = (void 0).querySelector(hash);\n  if (el) {\n    const top = parseFloat(getComputedStyle(el).scrollMarginTop);\n    return {\n      el: hash,\n      behavior: \"smooth\",\n      top\n    };\n  }\n}\nexport default {\n  scrollBehavior(to, from, savedPosition) {\n    const nuxtApp = useNuxtApp();\n    if (history.state && history.state.stop) {\n      return;\n    }\n    if (history.state && history.state.smooth) {\n      return {\n        el: history.state.smooth,\n        behavior: \"smooth\"\n      };\n    }\n    if (savedPosition) {\n      return new Promise((resolve) => {\n        nuxtApp.hooks.hookOnce(\"page:finish\", () => {\n          setTimeout(() => resolve(savedPosition), 50);\n        });\n      });\n    }\n    if (to.hash) {\n      return new Promise((resolve) => {\n        if (to.path === from.path) {\n          setTimeout(() => resolve(findHashPosition(to.hash)), 50);\n        } else {\n          nuxtApp.hooks.hookOnce(\"page:finish\", () => {\n            setTimeout(() => resolve(findHashPosition(to.hash)), 50);\n          });\n        }\n      });\n    }\n    return { top: 0 };\n  }\n};\n",
-      "start": 1714173365272,
-      "end": 1714173365273,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -238,8 +238,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useNuxtApp } from '#app/nuxt';\nfunction findHashPosition(hash) {\n  const el = (void 0).querySelector(hash);\n  if (el) {\n    const top = parseFloat(getComputedStyle(el).scrollMarginTop);\n    return {\n      el: hash,\n      behavior: \"smooth\",\n      top\n    };\n  }\n}\nexport default {\n  scrollBehavior(to, from, savedPosition) {\n    const nuxtApp = useNuxtApp();\n    if (history.state && history.state.stop) {\n      return;\n    }\n    if (history.state && history.state.smooth) {\n      return {\n        el: history.state.smooth,\n        behavior: \"smooth\"\n      };\n    }\n    if (savedPosition) {\n      return new Promise((resolve) => {\n        nuxtApp.hooks.hookOnce(\"page:finish\", () => {\n          setTimeout(() => resolve(savedPosition), 50);\n        });\n      });\n    }\n    if (to.hash) {\n      return new Promise((resolve) => {\n        if (to.path === from.path) {\n          setTimeout(() => resolve(findHashPosition(to.hash)), 50);\n        } else {\n          nuxtApp.hooks.hookOnce(\"page:finish\", () => {\n            setTimeout(() => resolve(findHashPosition(to.hash)), 50);\n          });\n        }\n      });\n    }\n    return { top: 0 };\n  }\n};\n",
-      "start": 1714173365272,
-      "end": 1714173365273,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -252,56 +252,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014344,
+      "end": 1714175014344,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014345,
+      "end": 1714175014345,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014345,
+      "end": 1714175014345,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014345,
+      "end": 1714175014345,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173365273,
-      "end": 1714173365273,
+      "start": 1714175014346,
+      "end": 1714175014346,
       "order": "normal"
     }
   ]

@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\n\nimport type { PropType } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Field',\n  props: {\n  name: {\n    type: String,\n    required: true\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  type: {\n    type: String,\n    default: undefined\n  },\n  required: {\n    type: Boolean,\n    default: false\n  },\n  default: {\n    type: String,\n    default: undefined\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'mt-5',\n  container: 'flex items-start gap-x-2.5 font-mono text-sm',\n  name: 'rounded-md font-semibold text-primary',\n  required: 'text-gray-500 dark:text-gray-400',\n  type: 'text-right',\n  label: 'flex flex-1 gap-x-2.5',\n  description: 'mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3'\n}\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('content.field', undefined, config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    _createElementVNode(\"div\", {\n      class: _normalizeClass(_unref(ui).container)\n    }, [\n      _createElementVNode(\"div\", {\n        class: _normalizeClass(_unref(ui).label)\n      }, [\n        _createElementVNode(\"span\", {\n          class: _normalizeClass(_unref(ui).name)\n        }, _toDisplayString(__props.name), 3),\n        (__props.required)\n          ? (_openBlock(), _createElementBlock(\"span\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).required)\n            }, \"required\", 2))\n          : _createCommentVNode(\"\", true)\n      ], 2),\n      (__props.type)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).type)\n          }, _toDisplayString(__props.type), 3))\n        : _createCommentVNode(\"\", true)\n    ], 2),\n    (_ctx.$slots.default || __props.description)\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).description)\n        }, [\n          _renderSlot(_ctx.$slots, \"default\", {}, () => [\n            _createTextVNode(_toDisplayString(__props.description), 1)\n          ])\n        ], 2))\n      : _createCommentVNode(\"\", true)\n  ], 16))\n}\n}\n\n})",
-      "start": 1714173352393,
-      "end": 1714173352393
+      "start": 1714175001916,
+      "end": 1714175001916
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173352393,
-      "end": 1714173352393,
+      "start": 1714175001916,
+      "end": 1714175001916,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173352393,
-      "end": 1714173352393,
+      "start": 1714175001916,
+      "end": 1714175001916,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173352393,
-      "end": 1714173352393,
+      "start": 1714175001916,
+      "end": 1714175001916,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173352393,
-      "end": 1714173352393,
+      "start": 1714175001916,
+      "end": 1714175001916,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173352394,
-      "end": 1714173352394,
+      "start": 1714175001917,
+      "end": 1714175001917,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Field\",\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    type: {\n      type: String,\n      default: void 0\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    default: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"mt-5\",\n      container: \"flex items-start gap-x-2.5 font-mono text-sm\",\n      name: \"rounded-md font-semibold text-primary\",\n      required: \"text-gray-500 dark:text-gray-400\",\n      type: \"text-right\",\n      label: \"flex flex-1 gap-x-2.5\",\n      description: \"mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.field\", void 0, config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).label)\n          }, [\n            _createElementVNode(\"span\", {\n              class: _normalizeClass(_unref(ui).name)\n            }, _toDisplayString(__props.name), 3),\n            __props.required ? (_openBlock(), _createElementBlock(\"span\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).required)\n            }, \"required\", 2)) : _createCommentVNode(\"\", true)\n          ], 2),\n          __props.type ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).type)\n          }, _toDisplayString(__props.type), 3)) : _createCommentVNode(\"\", true)\n        ], 2),\n        _ctx.$slots.default || __props.description ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).description)\n        }, [\n          _renderSlot(_ctx.$slots, \"default\", {}, () => [\n            _createTextVNode(_toDisplayString(__props.description), 1)\n          ])\n        ], 2)) : _createCommentVNode(\"\", true)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714173352394,
-      "end": 1714173352827,
+      "start": 1714175001917,
+      "end": 1714175002257,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173352827,
-      "end": 1714173352827,
+      "start": 1714175002257,
+      "end": 1714175002257,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Field\",\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    type: {\n      type: String,\n      default: void 0\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    default: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"mt-5\",\n      container: \"flex items-start gap-x-2.5 font-mono text-sm\",\n      name: \"rounded-md font-semibold text-primary\",\n      required: \"text-gray-500 dark:text-gray-400\",\n      type: \"text-right\",\n      label: \"flex flex-1 gap-x-2.5\",\n      description: \"mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.field\", void 0, config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).label)\n          }, [\n            _createElementVNode(\"span\", {\n              class: _normalizeClass(_unref(ui).name)\n            }, _toDisplayString(__props.name), 3),\n            __props.required ? (_openBlock(), _createElementBlock(\"span\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).required)\n            }, \"required\", 2)) : _createCommentVNode(\"\", true)\n          ], 2),\n          __props.type ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).type)\n          }, _toDisplayString(__props.type), 3)) : _createCommentVNode(\"\", true)\n        ], 2),\n        _ctx.$slots.default || __props.description ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).description)\n        }, [\n          _renderSlot(_ctx.$slots, \"default\", {}, () => [\n            _createTextVNode(_toDisplayString(__props.description), 1)\n          ])\n        ], 2)) : _createCommentVNode(\"\", true)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714173352827,
-      "end": 1714173352828,
+      "start": 1714175002257,
+      "end": 1714175002258,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,50 +192,50 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173352828,
-      "end": 1714173352828,
+      "start": 1714175002258,
+      "end": 1714175002258,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173352828,
-      "end": 1714173352828,
+      "start": 1714175002258,
+      "end": 1714175002258,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173352828,
-      "end": 1714173352828,
+      "start": 1714175002258,
+      "end": 1714175002258,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173352828,
-      "end": 1714173352828,
+      "start": 1714175002258,
+      "end": 1714175002258,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714173352828,
-      "end": 1714173352828,
+      "start": 1714175002258,
+      "end": 1714175002259,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173352828,
-      "end": 1714173352828,
+      "start": 1714175002259,
+      "end": 1714175002259,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173352828,
-      "end": 1714173352828,
+      "start": 1714175002259,
+      "end": 1714175002259,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173352828,
-      "end": 1714173352828,
+      "start": 1714175002259,
+      "end": 1714175002259,
       "order": "normal"
     }
   ]

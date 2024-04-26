@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps, createBlock as _createBlock, withCtx as _withCtx, createSlots as _createSlots, createElementVNode as _createElementVNode } from \"vue\"\n\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport { omit } from '#ui/utils'\nimport type { Button, FormError, FormEventType, FormGroupSize } from '#ui/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'AuthForm',\n  props: {\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  icon: {\n    type: String,\n    default: undefined\n  },\n  align: {\n    type: String as PropType<'top' | 'bottom'>,\n    default: 'bottom'\n  },\n  loading: {\n    type: Boolean,\n    default: false\n  },\n  fields: {\n    type: Array as PropType<{\n      name: string\n      type: string\n      label: string\n      description?: string\n      help?: string\n      hint?: string\n      size?: FormGroupSize\n      placeholder?: string\n      required?: boolean\n      value?: string | number\n      readonly?: boolean\n    }[]>,\n    default: () => []\n  },\n  providers: {\n    type: Array as PropType<(Button & { click?: Function })[]>,\n    default: () => []\n  },\n  submitButton: {\n    type: Object as PropType<Button>,\n    default: () => ({})\n  },\n  schema: {\n    type: Object as PropType<any>,\n    default: undefined\n  },\n  validate: {\n    type: [Function, Array] as PropType<((state: any) => Promise<FormError[]>) | ((state: any) => FormError[])>,\n    default: undefined\n  },\n  validateOn: {\n    type: Array as PropType<FormEventType[]>,\n    default: () => ['submit']\n  },\n  divider: {\n    type: String,\n    default: 'or'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  emits: ['submit'],\n  setup(__props, { expose: __expose }) {\n\n\n\nconst props = __props\n\n\n\nconst config = computed(() => {\n  const container: string = twJoin(\n    'gap-y-6 flex flex-col',\n    props.align === 'top' && 'flex-col-reverse'\n  )\n\n  return {\n    wrapper: 'w-full max-w-sm space-y-6',\n    base: '',\n    container,\n    title: 'text-2xl text-gray-900 dark:text-white font-bold',\n    description: 'text-gray-500 dark:text-gray-400 mt-1',\n    icon: {\n      wrapper: 'mb-2 pointer-events-none',\n      base: 'w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white'\n    },\n    providers: 'space-y-3',\n    form: 'space-y-6',\n    footer: 'text-sm text-gray-500 dark:text-gray-400 mt-2',\n    default: {\n      submitButton: {\n        label: 'Continue'\n      }\n    }\n  }\n})\n\nconst formRef = ref<HTMLElement>()\n\nconst { ui, attrs } = useUI('auth.form', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst state = reactive(Object.values(props.fields).reduce((acc, { name, value }) => {\n  acc[name] = value\n  return acc\n}, {} as Record<string, any>))\n\n// Expose\n\n__expose({\n  formRef,\n  state\n})\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_UButton = _resolveComponent(\"UButton\")!\n  const _component_UDivider = _resolveComponent(\"UDivider\")!\n  const _component_UInput = _resolveComponent(\"UInput\")!\n  const _component_UFormGroup = _resolveComponent(\"UFormGroup\")!\n  const _component_UForm = _resolveComponent(\"UForm\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    ((__props.icon || _ctx.$slots.icon) || (__props.title || _ctx.$slots.title) || (__props.description || _ctx.$slots.description))\n      ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).base)\n        }, [\n          (__props.icon || _ctx.$slots.icon)\n            ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).icon.wrapper)\n              }, [\n                _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                  _createVNode(_component_UIcon, {\n                    name: (__props.icon as string),\n                    class: _normalizeClass(_unref(ui).icon.base)\n                  }, null, 8, [\"name\", \"class\"])\n                ])\n              ], 2))\n            : _createCommentVNode(\"\", true),\n          (__props.title || _ctx.$slots.title)\n            ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ])\n              ], 2))\n            : _createCommentVNode(\"\", true),\n          (__props.description || _ctx.$slots.description)\n            ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 2,\n                class: _normalizeClass(_unref(ui).description)\n              }, [\n                _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.description), 1)\n                ])\n              ], 2))\n            : _createCommentVNode(\"\", true)\n        ], 2))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", {\n      class: _normalizeClass(_unref(ui).container)\n    }, [\n      (__props.providers?.length)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).providers)\n          }, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.providers, (provider, index) => {\n              return (_openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, provider, {\n                block: \"\",\n                onClick: provider.click\n              }), null, 16, [\"onClick\"]))\n            }), 128))\n          ], 2))\n        : _createCommentVNode(\"\", true),\n      (__props.providers?.length && __props.fields?.length)\n        ? (_openBlock(), _createBlock(_component_UDivider, {\n            key: 1,\n            label: __props.divider\n          }, null, 8, [\"label\"]))\n        : _createCommentVNode(\"\", true),\n      (__props.fields?.length)\n        ? (_openBlock(), _createBlock(_component_UForm, {\n            key: 2,\n            ref_key: \"formRef\",\n            ref: formRef,\n            state: _unref(state),\n            schema: __props.schema,\n            validate: __props.validate,\n            \"validate-on\": __props.validateOn,\n            class: _normalizeClass(_unref(ui).form),\n            onSubmit: _cache[0] || (_cache[0] = ($event: any) => (_ctx.$emit('submit', $event.data)))\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.fields, (field) => {\n                return (_openBlock(), _createBlock(_component_UFormGroup, {\n                  key: field.name,\n                  label: field.label,\n                  description: field.description,\n                  help: field.help,\n                  hint: field.hint,\n                  name: field.name,\n                  size: field.size\n                }, _createSlots({\n                  default: _withCtx(() => [\n                    _createVNode(_component_UInput, _mergeProps({\n                      modelValue: _unref(state)[field.name],\n                      \"onUpdate:modelValue\": ($event: any) => ((_unref(state)[field.name]) = $event)\n                    }, _unref(omit)(field, ['label', 'description', 'help', 'hint', 'size'])), null, 16, [\"modelValue\", \"onUpdate:modelValue\"])\n                  ]),\n                  _: 2\n                }, [\n                  (_ctx.$slots[`${field.name}-label`])\n                    ? {\n                        name: \"label\",\n                        fn: _withCtx(() => [\n                          _renderSlot(_ctx.$slots, `${field.name}-label`)\n                        ]),\n                        key: \"0\"\n                      }\n                    : undefined,\n                  (_ctx.$slots[`${field.name}-description`])\n                    ? {\n                        name: \"description\",\n                        fn: _withCtx(() => [\n                          _renderSlot(_ctx.$slots, `${field.name}-description`)\n                        ]),\n                        key: \"1\"\n                      }\n                    : undefined,\n                  (_ctx.$slots[`${field.name}-hint`])\n                    ? {\n                        name: \"hint\",\n                        fn: _withCtx(() => [\n                          _renderSlot(_ctx.$slots, `${field.name}-hint`)\n                        ]),\n                        key: \"2\"\n                      }\n                    : undefined,\n                  (_ctx.$slots[`${field.name}-help`])\n                    ? {\n                        name: \"help\",\n                        fn: _withCtx(() => [\n                          _renderSlot(_ctx.$slots, `${field.name}-help`)\n                        ]),\n                        key: \"3\"\n                      }\n                    : undefined\n                ]), 1032, [\"label\", \"description\", \"help\", \"hint\", \"name\", \"size\"]))\n              }), 128)),\n              _renderSlot(_ctx.$slots, \"validation\"),\n              _createVNode(_component_UButton, _mergeProps({\n                type: \"submit\",\n                block: \"\",\n                loading: __props.loading\n              }, { ..._unref(ui).default.submitButton, ...__props.submitButton }), null, 16, [\"loading\"])\n            ]),\n            _: 3\n          }, 8, [\"state\", \"schema\", \"validate\", \"validate-on\", \"class\"]))\n        : _createCommentVNode(\"\", true)\n    ], 2),\n    (_ctx.$slots.footer)\n      ? (_openBlock(), _createElementBlock(\"p\", {\n          key: 1,\n          class: _normalizeClass(_unref(ui).footer)\n        }, [\n          _renderSlot(_ctx.$slots, \"footer\")\n        ], 2))\n      : _createCommentVNode(\"\", true)\n  ], 16))\n}\n}\n\n})",
-      "start": 1714173353577,
-      "end": 1714173353577
+      "start": 1714175002892,
+      "end": 1714175002892
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173353577,
-      "end": 1714173353577,
+      "start": 1714175002892,
+      "end": 1714175002892,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173353577,
-      "end": 1714173353577,
+      "start": 1714175002892,
+      "end": 1714175002892,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173353577,
-      "end": 1714173353577,
+      "start": 1714175002892,
+      "end": 1714175002892,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173353577,
-      "end": 1714173353577,
+      "start": 1714175002892,
+      "end": 1714175002892,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173353577,
-      "end": 1714173353577,
+      "start": 1714175002892,
+      "end": 1714175002892,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps, createBlock as _createBlock, withCtx as _withCtx, createSlots as _createSlots, createElementVNode as _createElementVNode } from \"vue\";\nimport { twJoin } from \"tailwind-merge\";\nimport { omit } from \"#ui/utils\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"AuthForm\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    align: {\n      type: String,\n      default: \"bottom\"\n    },\n    loading: {\n      type: Boolean,\n      default: false\n    },\n    fields: {\n      type: Array,\n      default: () => []\n    },\n    providers: {\n      type: Array,\n      default: () => []\n    },\n    submitButton: {\n      type: Object,\n      default: () => ({})\n    },\n    schema: {\n      type: Object,\n      default: void 0\n    },\n    validate: {\n      type: [Function, Array],\n      default: void 0\n    },\n    validateOn: {\n      type: Array,\n      default: () => [\"submit\"]\n    },\n    divider: {\n      type: String,\n      default: \"or\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"submit\"],\n  setup(__props, { expose: __expose }) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-y-6 flex flex-col\",\n        props.align === \"top\" && \"flex-col-reverse\"\n      );\n      return {\n        wrapper: \"w-full max-w-sm space-y-6\",\n        base: \"\",\n        container,\n        title: \"text-2xl text-gray-900 dark:text-white font-bold\",\n        description: \"text-gray-500 dark:text-gray-400 mt-1\",\n        icon: {\n          wrapper: \"mb-2 pointer-events-none\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        providers: \"space-y-3\",\n        form: \"space-y-6\",\n        footer: \"text-sm text-gray-500 dark:text-gray-400 mt-2\",\n        default: {\n          submitButton: {\n            label: \"Continue\"\n          }\n        }\n      };\n    });\n    const formRef = ref();\n    const { ui, attrs } = useUI(\"auth.form\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const state = reactive(Object.values(props.fields).reduce((acc, { name, value }) => {\n      acc[name] = value;\n      return acc;\n    }, {}));\n    __expose({\n      formRef,\n      state\n    });\n    return (_ctx, _cache) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UDivider = _resolveComponent(\"UDivider\");\n      const _component_UInput = _resolveComponent(\"UInput\");\n      const _component_UFormGroup = _resolveComponent(\"UFormGroup\");\n      const _component_UForm = _resolveComponent(\"UForm\");\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        __props.icon || _ctx.$slots.icon || (__props.title || _ctx.$slots.title) || (__props.description || _ctx.$slots.description) ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).base)\n        }, [\n          __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).icon.wrapper)\n          }, [\n            _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n              _createVNode(_component_UIcon, {\n                name: __props.icon,\n                class: _normalizeClass(_unref(ui).icon.base)\n              }, null, 8, [\"name\", \"class\"])\n            ])\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 1,\n            class: _normalizeClass(_unref(ui).title)\n          }, [\n            _renderSlot(_ctx.$slots, \"title\", {}, () => [\n              _createTextVNode(_toDisplayString(__props.title), 1)\n            ])\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 2,\n            class: _normalizeClass(_unref(ui).description)\n          }, [\n            _renderSlot(_ctx.$slots, \"description\", {}, () => [\n              _createTextVNode(_toDisplayString(__props.description), 1)\n            ])\n          ], 2)) : _createCommentVNode(\"\", true)\n        ], 2)) : _createCommentVNode(\"\", true),\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          __props.providers?.length ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).providers)\n          }, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.providers, (provider, index) => {\n              return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, provider, {\n                block: \"\",\n                onClick: provider.click\n              }), null, 16, [\"onClick\"]);\n            }), 128))\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.providers?.length && __props.fields?.length ? (_openBlock(), _createBlock(_component_UDivider, {\n            key: 1,\n            label: __props.divider\n          }, null, 8, [\"label\"])) : _createCommentVNode(\"\", true),\n          __props.fields?.length ? (_openBlock(), _createBlock(_component_UForm, {\n            key: 2,\n            ref_key: \"formRef\",\n            ref: formRef,\n            state: _unref(state),\n            schema: __props.schema,\n            validate: __props.validate,\n            \"validate-on\": __props.validateOn,\n            class: _normalizeClass(_unref(ui).form),\n            onSubmit: _cache[0] || (_cache[0] = ($event) => _ctx.$emit(\"submit\", $event.data))\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.fields, (field) => {\n                return _openBlock(), _createBlock(_component_UFormGroup, {\n                  key: field.name,\n                  label: field.label,\n                  description: field.description,\n                  help: field.help,\n                  hint: field.hint,\n                  name: field.name,\n                  size: field.size\n                }, _createSlots({\n                  default: _withCtx(() => [\n                    _createVNode(_component_UInput, _mergeProps({\n                      modelValue: _unref(state)[field.name],\n                      \"onUpdate:modelValue\": ($event) => _unref(state)[field.name] = $event\n                    }, _unref(omit)(field, [\"label\", \"description\", \"help\", \"hint\", \"size\"])), null, 16, [\"modelValue\", \"onUpdate:modelValue\"])\n                  ]),\n                  _: 2\n                }, [\n                  _ctx.$slots[`${field.name}-label`] ? {\n                    name: \"label\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-label`)\n                    ]),\n                    key: \"0\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-description`] ? {\n                    name: \"description\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-description`)\n                    ]),\n                    key: \"1\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-hint`] ? {\n                    name: \"hint\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-hint`)\n                    ]),\n                    key: \"2\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-help`] ? {\n                    name: \"help\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-help`)\n                    ]),\n                    key: \"3\"\n                  } : void 0\n                ]), 1032, [\"label\", \"description\", \"help\", \"hint\", \"name\", \"size\"]);\n              }), 128)),\n              _renderSlot(_ctx.$slots, \"validation\"),\n              _createVNode(_component_UButton, _mergeProps({\n                type: \"submit\",\n                block: \"\",\n                loading: __props.loading\n              }, { ..._unref(ui).default.submitButton, ...__props.submitButton }), null, 16, [\"loading\"])\n            ]),\n            _: 3\n          }, 8, [\"state\", \"schema\", \"validate\", \"validate-on\", \"class\"])) : _createCommentVNode(\"\", true)\n        ], 2),\n        _ctx.$slots.footer ? (_openBlock(), _createElementBlock(\"p\", {\n          key: 1,\n          class: _normalizeClass(_unref(ui).footer)\n        }, [\n          _renderSlot(_ctx.$slots, \"footer\")\n        ], 2)) : _createCommentVNode(\"\", true)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714173353577,
-      "end": 1714173353771,
+      "start": 1714175002892,
+      "end": 1714175003158,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173353771,
-      "end": 1714173353771,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173353771,
-      "end": 1714173353772,
+      "start": 1714175003158,
+      "end": 1714175003158,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, ref, toRef, reactive } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps, createBlock as _createBlock, withCtx as _withCtx, createSlots as _createSlots, createElementVNode as _createElementVNode } from \"vue\";\nimport { twJoin } from \"tailwind-merge\";\nimport { omit } from \"#ui/utils\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"AuthForm\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    align: {\n      type: String,\n      default: \"bottom\"\n    },\n    loading: {\n      type: Boolean,\n      default: false\n    },\n    fields: {\n      type: Array,\n      default: () => []\n    },\n    providers: {\n      type: Array,\n      default: () => []\n    },\n    submitButton: {\n      type: Object,\n      default: () => ({})\n    },\n    schema: {\n      type: Object,\n      default: void 0\n    },\n    validate: {\n      type: [Function, Array],\n      default: void 0\n    },\n    validateOn: {\n      type: Array,\n      default: () => [\"submit\"]\n    },\n    divider: {\n      type: String,\n      default: \"or\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"submit\"],\n  setup(__props, { expose: __expose }) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-y-6 flex flex-col\",\n        props.align === \"top\" && \"flex-col-reverse\"\n      );\n      return {\n        wrapper: \"w-full max-w-sm space-y-6\",\n        base: \"\",\n        container,\n        title: \"text-2xl text-gray-900 dark:text-white font-bold\",\n        description: \"text-gray-500 dark:text-gray-400 mt-1\",\n        icon: {\n          wrapper: \"mb-2 pointer-events-none\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        providers: \"space-y-3\",\n        form: \"space-y-6\",\n        footer: \"text-sm text-gray-500 dark:text-gray-400 mt-2\",\n        default: {\n          submitButton: {\n            label: \"Continue\"\n          }\n        }\n      };\n    });\n    const formRef = ref();\n    const { ui, attrs } = useUI(\"auth.form\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const state = reactive(Object.values(props.fields).reduce((acc, { name, value }) => {\n      acc[name] = value;\n      return acc;\n    }, {}));\n    __expose({\n      formRef,\n      state\n    });\n    return (_ctx, _cache) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UDivider = _resolveComponent(\"UDivider\");\n      const _component_UInput = _resolveComponent(\"UInput\");\n      const _component_UFormGroup = _resolveComponent(\"UFormGroup\");\n      const _component_UForm = _resolveComponent(\"UForm\");\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        __props.icon || _ctx.$slots.icon || (__props.title || _ctx.$slots.title) || (__props.description || _ctx.$slots.description) ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).base)\n        }, [\n          __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).icon.wrapper)\n          }, [\n            _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n              _createVNode(_component_UIcon, {\n                name: __props.icon,\n                class: _normalizeClass(_unref(ui).icon.base)\n              }, null, 8, [\"name\", \"class\"])\n            ])\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 1,\n            class: _normalizeClass(_unref(ui).title)\n          }, [\n            _renderSlot(_ctx.$slots, \"title\", {}, () => [\n              _createTextVNode(_toDisplayString(__props.title), 1)\n            ])\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 2,\n            class: _normalizeClass(_unref(ui).description)\n          }, [\n            _renderSlot(_ctx.$slots, \"description\", {}, () => [\n              _createTextVNode(_toDisplayString(__props.description), 1)\n            ])\n          ], 2)) : _createCommentVNode(\"\", true)\n        ], 2)) : _createCommentVNode(\"\", true),\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          __props.providers?.length ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).providers)\n          }, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.providers, (provider, index) => {\n              return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, provider, {\n                block: \"\",\n                onClick: provider.click\n              }), null, 16, [\"onClick\"]);\n            }), 128))\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.providers?.length && __props.fields?.length ? (_openBlock(), _createBlock(_component_UDivider, {\n            key: 1,\n            label: __props.divider\n          }, null, 8, [\"label\"])) : _createCommentVNode(\"\", true),\n          __props.fields?.length ? (_openBlock(), _createBlock(_component_UForm, {\n            key: 2,\n            ref_key: \"formRef\",\n            ref: formRef,\n            state: _unref(state),\n            schema: __props.schema,\n            validate: __props.validate,\n            \"validate-on\": __props.validateOn,\n            class: _normalizeClass(_unref(ui).form),\n            onSubmit: _cache[0] || (_cache[0] = ($event) => _ctx.$emit(\"submit\", $event.data))\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.fields, (field) => {\n                return _openBlock(), _createBlock(_component_UFormGroup, {\n                  key: field.name,\n                  label: field.label,\n                  description: field.description,\n                  help: field.help,\n                  hint: field.hint,\n                  name: field.name,\n                  size: field.size\n                }, _createSlots({\n                  default: _withCtx(() => [\n                    _createVNode(_component_UInput, _mergeProps({\n                      modelValue: _unref(state)[field.name],\n                      \"onUpdate:modelValue\": ($event) => _unref(state)[field.name] = $event\n                    }, _unref(omit)(field, [\"label\", \"description\", \"help\", \"hint\", \"size\"])), null, 16, [\"modelValue\", \"onUpdate:modelValue\"])\n                  ]),\n                  _: 2\n                }, [\n                  _ctx.$slots[`${field.name}-label`] ? {\n                    name: \"label\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-label`)\n                    ]),\n                    key: \"0\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-description`] ? {\n                    name: \"description\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-description`)\n                    ]),\n                    key: \"1\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-hint`] ? {\n                    name: \"hint\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-hint`)\n                    ]),\n                    key: \"2\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-help`] ? {\n                    name: \"help\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-help`)\n                    ]),\n                    key: \"3\"\n                  } : void 0\n                ]), 1032, [\"label\", \"description\", \"help\", \"hint\", \"name\", \"size\"]);\n              }), 128)),\n              _renderSlot(_ctx.$slots, \"validation\"),\n              _createVNode(_component_UButton, _mergeProps({\n                type: \"submit\",\n                block: \"\",\n                loading: __props.loading\n              }, { ..._unref(ui).default.submitButton, ...__props.submitButton }), null, 16, [\"loading\"])\n            ]),\n            _: 3\n          }, 8, [\"state\", \"schema\", \"validate\", \"validate-on\", \"class\"])) : _createCommentVNode(\"\", true)\n        ], 2),\n        _ctx.$slots.footer ? (_openBlock(), _createElementBlock(\"p\", {\n          key: 1,\n          class: _normalizeClass(_unref(ui).footer)\n        }, [\n          _renderSlot(_ctx.$slots, \"footer\")\n        ], 2)) : _createCommentVNode(\"\", true)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714173353772,
-      "end": 1714173353774,
+      "start": 1714175003158,
+      "end": 1714175003160,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173353774,
-      "end": 1714173353774,
+      "start": 1714175003160,
+      "end": 1714175003160,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173353774,
-      "end": 1714173353774,
+      "start": 1714175003160,
+      "end": 1714175003160,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173353774,
-      "end": 1714173353774,
+      "start": 1714175003160,
+      "end": 1714175003160,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173353774,
-      "end": 1714173353774,
+      "start": 1714175003160,
+      "end": 1714175003160,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Divider.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/forms/Input.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/forms/FormGroup.vue\";\nimport { default as __nuxt_component_5 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/forms/Form.vue\";\nimport { computed, ref, toRef, reactive } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps, createBlock as _createBlock, withCtx as _withCtx, createSlots as _createSlots, createElementVNode as _createElementVNode } from \"vue\";\nimport { twJoin } from \"tailwind-merge\";\nimport { omit } from \"#ui/utils\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"AuthForm\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    align: {\n      type: String,\n      default: \"bottom\"\n    },\n    loading: {\n      type: Boolean,\n      default: false\n    },\n    fields: {\n      type: Array,\n      default: () => []\n    },\n    providers: {\n      type: Array,\n      default: () => []\n    },\n    submitButton: {\n      type: Object,\n      default: () => ({})\n    },\n    schema: {\n      type: Object,\n      default: void 0\n    },\n    validate: {\n      type: [Function, Array],\n      default: void 0\n    },\n    validateOn: {\n      type: Array,\n      default: () => [\"submit\"]\n    },\n    divider: {\n      type: String,\n      default: \"or\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"submit\"],\n  setup(__props, { expose: __expose }) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-y-6 flex flex-col\",\n        props.align === \"top\" && \"flex-col-reverse\"\n      );\n      return {\n        wrapper: \"w-full max-w-sm space-y-6\",\n        base: \"\",\n        container,\n        title: \"text-2xl text-gray-900 dark:text-white font-bold\",\n        description: \"text-gray-500 dark:text-gray-400 mt-1\",\n        icon: {\n          wrapper: \"mb-2 pointer-events-none\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        providers: \"space-y-3\",\n        form: \"space-y-6\",\n        footer: \"text-sm text-gray-500 dark:text-gray-400 mt-2\",\n        default: {\n          submitButton: {\n            label: \"Continue\"\n          }\n        }\n      };\n    });\n    const formRef = ref();\n    const { ui, attrs } = useUI(\"auth.form\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const state = reactive(Object.values(props.fields).reduce((acc, { name, value }) => {\n      acc[name] = value;\n      return acc;\n    }, {}));\n    __expose({\n      formRef,\n      state\n    });\n    return (_ctx, _cache) => {\n      const _component_UIcon = __nuxt_component_0;\n      const _component_UButton = __nuxt_component_1;\n      const _component_UDivider = __nuxt_component_2;\n      const _component_UInput = __nuxt_component_3;\n      const _component_UFormGroup = __nuxt_component_4;\n      const _component_UForm = __nuxt_component_5;\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        __props.icon || _ctx.$slots.icon || (__props.title || _ctx.$slots.title) || (__props.description || _ctx.$slots.description) ? (_openBlock(), _createElementBlock(\"div\", {\n          key: 0,\n          class: _normalizeClass(_unref(ui).base)\n        }, [\n          __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).icon.wrapper)\n          }, [\n            _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n              _createVNode(_component_UIcon, {\n                name: __props.icon,\n                class: _normalizeClass(_unref(ui).icon.base)\n              }, null, 8, [\"name\", \"class\"])\n            ])\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 1,\n            class: _normalizeClass(_unref(ui).title)\n          }, [\n            _renderSlot(_ctx.$slots, \"title\", {}, () => [\n              _createTextVNode(_toDisplayString(__props.title), 1)\n            ])\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 2,\n            class: _normalizeClass(_unref(ui).description)\n          }, [\n            _renderSlot(_ctx.$slots, \"description\", {}, () => [\n              _createTextVNode(_toDisplayString(__props.description), 1)\n            ])\n          ], 2)) : _createCommentVNode(\"\", true)\n        ], 2)) : _createCommentVNode(\"\", true),\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          __props.providers?.length ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).providers)\n          }, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.providers, (provider, index) => {\n              return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, provider, {\n                block: \"\",\n                onClick: provider.click\n              }), null, 16, [\"onClick\"]);\n            }), 128))\n          ], 2)) : _createCommentVNode(\"\", true),\n          __props.providers?.length && __props.fields?.length ? (_openBlock(), _createBlock(_component_UDivider, {\n            key: 1,\n            label: __props.divider\n          }, null, 8, [\"label\"])) : _createCommentVNode(\"\", true),\n          __props.fields?.length ? (_openBlock(), _createBlock(_component_UForm, {\n            key: 2,\n            ref_key: \"formRef\",\n            ref: formRef,\n            state: _unref(state),\n            schema: __props.schema,\n            validate: __props.validate,\n            \"validate-on\": __props.validateOn,\n            class: _normalizeClass(_unref(ui).form),\n            onSubmit: _cache[0] || (_cache[0] = ($event) => _ctx.$emit(\"submit\", $event.data))\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.fields, (field) => {\n                return _openBlock(), _createBlock(_component_UFormGroup, {\n                  key: field.name,\n                  label: field.label,\n                  description: field.description,\n                  help: field.help,\n                  hint: field.hint,\n                  name: field.name,\n                  size: field.size\n                }, _createSlots({\n                  default: _withCtx(() => [\n                    _createVNode(_component_UInput, _mergeProps({\n                      modelValue: _unref(state)[field.name],\n                      \"onUpdate:modelValue\": ($event) => _unref(state)[field.name] = $event\n                    }, _unref(omit)(field, [\"label\", \"description\", \"help\", \"hint\", \"size\"])), null, 16, [\"modelValue\", \"onUpdate:modelValue\"])\n                  ]),\n                  _: 2\n                }, [\n                  _ctx.$slots[`${field.name}-label`] ? {\n                    name: \"label\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-label`)\n                    ]),\n                    key: \"0\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-description`] ? {\n                    name: \"description\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-description`)\n                    ]),\n                    key: \"1\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-hint`] ? {\n                    name: \"hint\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-hint`)\n                    ]),\n                    key: \"2\"\n                  } : void 0,\n                  _ctx.$slots[`${field.name}-help`] ? {\n                    name: \"help\",\n                    fn: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, `${field.name}-help`)\n                    ]),\n                    key: \"3\"\n                  } : void 0\n                ]), 1032, [\"label\", \"description\", \"help\", \"hint\", \"name\", \"size\"]);\n              }), 128)),\n              _renderSlot(_ctx.$slots, \"validation\"),\n              _createVNode(_component_UButton, _mergeProps({\n                type: \"submit\",\n                block: \"\",\n                loading: __props.loading\n              }, { ..._unref(ui).default.submitButton, ...__props.submitButton }), null, 16, [\"loading\"])\n            ]),\n            _: 3\n          }, 8, [\"state\", \"schema\", \"validate\", \"validate-on\", \"class\"])) : _createCommentVNode(\"\", true)\n        ], 2),\n        _ctx.$slots.footer ? (_openBlock(), _createElementBlock(\"p\", {\n          key: 1,\n          class: _normalizeClass(_unref(ui).footer)\n        }, [\n          _renderSlot(_ctx.$slots, \"footer\")\n        ], 2)) : _createCommentVNode(\"\", true)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714173353774,
-      "end": 1714173353774,
+      "start": 1714175003160,
+      "end": 1714175003160,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173353774,
-      "end": 1714173353774,
+      "start": 1714175003160,
+      "end": 1714175003160,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173353774,
-      "end": 1714173353774,
+      "start": 1714175003160,
+      "end": 1714175003161,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173353774,
-      "end": 1714173353774,
+      "start": 1714175003161,
+      "end": 1714175003161,
       "order": "normal"
     }
   ]

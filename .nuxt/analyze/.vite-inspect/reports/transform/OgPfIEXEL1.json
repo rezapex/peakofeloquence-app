@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createCommentVNode as _createCommentVNode, normalizeStyle as _normalizeStyle, unref as _unref, createVNode as _createVNode, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"flex flex-row justify-between items-center\",\n  style: {\"margin-bottom\":\"100px\"}\n}\nconst _hoisted_2 = {\n  key: 0,\n  style: {\"width\":\"30%\"},\n  class: \"flex justify-end\"\n}\nconst _hoisted_3 = { class: \"flex flex-row absolute bottom-10 text-left items-start\" }\nconst _hoisted_4 = [\"src\"]\nconst _hoisted_5 = {\n  key: 1,\n  style: {\"font-size\":\"25px\"},\n  class: \"font-bold\"\n}\n\nimport { computed, resolveComponent } from 'vue'\nimport { useSiteConfig } from '#imports'\n\n// inherited attrs can mess up the satori parser\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false,\n},\n  __name: 'Fallback',\n  props: {\n  path: String,\n  title: {\n    type: String,\n    default: 'Og Image Template',\n  },\n  description: {\n    type: String,\n    default: 'Set a description to change me.',\n  },\n  color: {\n    type: String,\n  },\n  padding: {\n    type: String,\n    default: '0 100px',\n  },\n  titleFontSize: {\n    type: String,\n    default: '75px',\n  },\n  descriptionFontSize: {\n    type: String,\n    default: '35px',\n  },\n  icon: {\n    type: [String, Boolean],\n    default: false,\n  },\n  siteName: {\n    type: String,\n    required: false,\n  },\n  siteLogo: {\n    type: String,\n    required: false,\n  },\n},\n  setup(__props) {\n\n\n\nconst props = __props\n\nconst backgroundAttrs = computed(() => {\n  // we want to make a\n  // const isBackgroundTw = props.background?.startsWith('bg-')\n  return {\n    style: {\n      display: 'flex',\n      position: 'absolute',\n      width: '100%',\n      height: '100%',\n      background: 'rgba(5, 5, 5,1)',\n    },\n  }\n})\n\nconst backgroundFlareAttrs = computed(() => {\n  // we want to make a\n  // const isBackgroundTw = props.background?.startsWith('bg-')\n  return {\n    style: {\n      display: 'flex',\n      position: 'absolute',\n      right: '-100%',\n      top: '10%',\n      width: '200%',\n      height: '200%',\n      backgroundImage: 'radial-gradient(circle, rgba(0,220,130, 0.5) 0%,  rgba(5, 5, 5,0.3) 50%, rgba(5, 5, 5,0) 70%)',\n    },\n  }\n})\n\nconst containerAttrs = computed(() => {\n  const isColorTw = props.color?.startsWith('text-')\n\n  const classes = [\n    'w-full',\n    'h-full',\n    'flex',\n    'text-gray-100',\n    'relative',\n    'items-center',\n    'justify-center',\n  ]\n  const styles: Record<string, any> = {\n    padding: props.padding,\n  }\n  if (isColorTw)\n    classes.push(props.color)\n  else\n    styles.color = props.color\n  return { class: classes, style: styles }\n})\n\nconst titleAttrs = computed(() => {\n  const classes = []\n  const styles = {\n    fontWeight: 'bold',\n    marginBottom: '50px',\n    fontSize: props.titleFontSize,\n  }\n  return { class: classes, style: styles }\n})\n\nconst descriptionAttrs = computed(() => {\n  const classes = []\n  const styles = {\n    fontSize: props.descriptionFontSize,\n    lineHeight: `${props.descriptionFontSize.replace('px', '') * 1.5}px`,\n    opacity: '0.8',\n  }\n  return { class: classes, style: styles }\n})\n\nconst siteConfig = useSiteConfig()\nconst siteName = computed(() => {\n  return props.siteName || siteConfig.name\n})\nconst siteLogo = computed(() => {\n  return props.siteLogo || siteConfig.logo\n})\n\nconst MaybeIconComponent = resolveComponent('Icon')\nif (typeof props.icon === 'string' && typeof MaybeIconComponent === 'string' && process.dev) {\n  console.warn('Please install `nuxt-icon` to use icons with the fallback OG Image component.')\n  // eslint-disable-next-line no-console\n  console.log('npm add -D nuxt-icon')\n}\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundAttrs.value)), null, 16),\n    _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundFlareAttrs.value)), null, 16),\n    _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(containerAttrs.value)), [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", {\n          class: \"flex flex-col w-full\",\n          style: _normalizeStyle(__props.icon ? { width: '65%' } : {})\n        }, [\n          _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(titleAttrs.value)), _toDisplayString(__props.title || 'Null Title'), 17),\n          (__props.description)\n            ? (_openBlock(), _createElementBlock(\"div\", _normalizeProps(_mergeProps({ key: 0 }, descriptionAttrs.value)), _toDisplayString(__props.description), 17))\n            : _createCommentVNode(\"\", true)\n        ], 4),\n        (typeof __props.icon === 'string' && typeof _unref(MaybeIconComponent) !== 'string')\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n              _createVNode(_unref(MaybeIconComponent), {\n                name: __props.icon,\n                size: \"250px\",\n                style: {\"margin\":\"0 auto 0 100px\",\"opacity\":\"0.9\"}\n              }, null, 8, [\"name\"])\n            ]))\n          : _createCommentVNode(\"\", true)\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        (siteLogo.value)\n          ? (_openBlock(), _createElementBlock(\"img\", {\n              key: 0,\n              src: siteLogo.value,\n              height: \"30\"\n            }, null, 8, _hoisted_4))\n          : (siteName.value)\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_5, _toDisplayString(siteName.value), 1))\n            : _createCommentVNode(\"\", true)\n      ])\n    ], 16)\n  ], 64))\n}\n}\n\n})",
-      "start": 1714173353038,
-      "end": 1714173353038
+      "start": 1714175002254,
+      "end": 1714175002254
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173353038,
-      "end": 1714173353038,
+      "start": 1714175002254,
+      "end": 1714175002254,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173353038,
-      "end": 1714173353038,
+      "start": 1714175002254,
+      "end": 1714175002254,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173353038,
-      "end": 1714173353038,
+      "start": 1714175002254,
+      "end": 1714175002254,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173353038,
-      "end": 1714173353038,
+      "start": 1714175002254,
+      "end": 1714175002254,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173353038,
-      "end": 1714173353038,
+      "start": 1714175002254,
+      "end": 1714175002254,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createCommentVNode as _createCommentVNode, normalizeStyle as _normalizeStyle, unref as _unref, createVNode as _createVNode, Fragment as _Fragment } from \"vue\";\nconst _hoisted_1 = {\n  class: \"flex flex-row justify-between items-center\",\n  style: { \"margin-bottom\": \"100px\" }\n};\nconst _hoisted_2 = {\n  key: 0,\n  style: { \"width\": \"30%\" },\n  class: \"flex justify-end\"\n};\nconst _hoisted_3 = { class: \"flex flex-row absolute bottom-10 text-left items-start\" };\nconst _hoisted_4 = [\"src\"];\nconst _hoisted_5 = {\n  key: 1,\n  style: { \"font-size\": \"25px\" },\n  class: \"font-bold\"\n};\nimport { computed, resolveComponent } from \"vue\";\nimport { useSiteConfig } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Fallback\",\n  props: {\n    path: String,\n    title: {\n      type: String,\n      default: \"Og Image Template\"\n    },\n    description: {\n      type: String,\n      default: \"Set a description to change me.\"\n    },\n    color: {\n      type: String\n    },\n    padding: {\n      type: String,\n      default: \"0 100px\"\n    },\n    titleFontSize: {\n      type: String,\n      default: \"75px\"\n    },\n    descriptionFontSize: {\n      type: String,\n      default: \"35px\"\n    },\n    icon: {\n      type: [String, Boolean],\n      default: false\n    },\n    siteName: {\n      type: String,\n      required: false\n    },\n    siteLogo: {\n      type: String,\n      required: false\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const backgroundAttrs = computed(() => {\n      return {\n        style: {\n          display: \"flex\",\n          position: \"absolute\",\n          width: \"100%\",\n          height: \"100%\",\n          background: \"rgba(5, 5, 5,1)\"\n        }\n      };\n    });\n    const backgroundFlareAttrs = computed(() => {\n      return {\n        style: {\n          display: \"flex\",\n          position: \"absolute\",\n          right: \"-100%\",\n          top: \"10%\",\n          width: \"200%\",\n          height: \"200%\",\n          backgroundImage: \"radial-gradient(circle, rgba(0,220,130, 0.5) 0%,  rgba(5, 5, 5,0.3) 50%, rgba(5, 5, 5,0) 70%)\"\n        }\n      };\n    });\n    const containerAttrs = computed(() => {\n      const isColorTw = props.color?.startsWith(\"text-\");\n      const classes = [\n        \"w-full\",\n        \"h-full\",\n        \"flex\",\n        \"text-gray-100\",\n        \"relative\",\n        \"items-center\",\n        \"justify-center\"\n      ];\n      const styles = {\n        padding: props.padding\n      };\n      if (isColorTw)\n        classes.push(props.color);\n      else\n        styles.color = props.color;\n      return { class: classes, style: styles };\n    });\n    const titleAttrs = computed(() => {\n      const classes = [];\n      const styles = {\n        fontWeight: \"bold\",\n        marginBottom: \"50px\",\n        fontSize: props.titleFontSize\n      };\n      return { class: classes, style: styles };\n    });\n    const descriptionAttrs = computed(() => {\n      const classes = [];\n      const styles = {\n        fontSize: props.descriptionFontSize,\n        lineHeight: `${props.descriptionFontSize.replace(\"px\", \"\") * 1.5}px`,\n        opacity: \"0.8\"\n      };\n      return { class: classes, style: styles };\n    });\n    const siteConfig = useSiteConfig();\n    const siteName = computed(() => {\n      return props.siteName || siteConfig.name;\n    });\n    const siteLogo = computed(() => {\n      return props.siteLogo || siteConfig.logo;\n    });\n    const MaybeIconComponent = resolveComponent(\"Icon\");\n    if (typeof props.icon === \"string\" && typeof MaybeIconComponent === \"string\" && process.dev) {\n      console.warn(\"Please install `nuxt-icon` to use icons with the fallback OG Image component.\");\n      console.log(\"npm add -D nuxt-icon\");\n    }\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(_Fragment, null, [\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundAttrs.value)), null, 16),\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundFlareAttrs.value)), null, 16),\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(containerAttrs.value)), [\n          _createElementVNode(\"div\", _hoisted_1, [\n            _createElementVNode(\"div\", {\n              class: \"flex flex-col w-full\",\n              style: _normalizeStyle(__props.icon ? { width: \"65%\" } : {})\n            }, [\n              _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(titleAttrs.value)), _toDisplayString(__props.title || \"Null Title\"), 17),\n              __props.description ? (_openBlock(), _createElementBlock(\"div\", _normalizeProps(_mergeProps({ key: 0 }, descriptionAttrs.value)), _toDisplayString(__props.description), 17)) : _createCommentVNode(\"\", true)\n            ], 4),\n            typeof __props.icon === \"string\" && typeof _unref(MaybeIconComponent) !== \"string\" ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n              _createVNode(_unref(MaybeIconComponent), {\n                name: __props.icon,\n                size: \"250px\",\n                style: { \"margin\": \"0 auto 0 100px\", \"opacity\": \"0.9\" }\n              }, null, 8, [\"name\"])\n            ])) : _createCommentVNode(\"\", true)\n          ]),\n          _createElementVNode(\"div\", _hoisted_3, [\n            siteLogo.value ? (_openBlock(), _createElementBlock(\"img\", {\n              key: 0,\n              src: siteLogo.value,\n              height: \"30\"\n            }, null, 8, _hoisted_4)) : siteName.value ? (_openBlock(), _createElementBlock(\"div\", _hoisted_5, _toDisplayString(siteName.value), 1)) : _createCommentVNode(\"\", true)\n          ])\n        ], 16)\n      ], 64);\n    };\n  }\n});\n",
-      "start": 1714173353038,
-      "end": 1714173353504,
+      "start": 1714175002254,
+      "end": 1714175002776,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,131 +57,131 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173353504,
-      "end": 1714173353504,
+      "start": 1714175002776,
+      "end": 1714175002776,
       "order": "normal"
     },
     {
       "name": "vite:define",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createCommentVNode as _createCommentVNode, normalizeStyle as _normalizeStyle, unref as _unref, createVNode as _createVNode, Fragment as _Fragment } from \"vue\";\nconst _hoisted_1 = {\n  class: \"flex flex-row justify-between items-center\",\n  style: { \"margin-bottom\": \"100px\" }\n};\nconst _hoisted_2 = {\n  key: 0,\n  style: { \"width\": \"30%\" },\n  class: \"flex justify-end\"\n};\nconst _hoisted_3 = { class: \"flex flex-row absolute bottom-10 text-left items-start\" };\nconst _hoisted_4 = [\"src\"];\nconst _hoisted_5 = {\n  key: 1,\n  style: { \"font-size\": \"25px\" },\n  class: \"font-bold\"\n};\nimport { computed, resolveComponent } from \"vue\";\nimport { useSiteConfig } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Fallback\",\n  props: {\n    path: String,\n    title: {\n      type: String,\n      default: \"Og Image Template\"\n    },\n    description: {\n      type: String,\n      default: \"Set a description to change me.\"\n    },\n    color: {\n      type: String\n    },\n    padding: {\n      type: String,\n      default: \"0 100px\"\n    },\n    titleFontSize: {\n      type: String,\n      default: \"75px\"\n    },\n    descriptionFontSize: {\n      type: String,\n      default: \"35px\"\n    },\n    icon: {\n      type: [String, Boolean],\n      default: false\n    },\n    siteName: {\n      type: String,\n      required: false\n    },\n    siteLogo: {\n      type: String,\n      required: false\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const backgroundAttrs = computed(() => {\n      return {\n        style: {\n          display: \"flex\",\n          position: \"absolute\",\n          width: \"100%\",\n          height: \"100%\",\n          background: \"rgba(5, 5, 5,1)\"\n        }\n      };\n    });\n    const backgroundFlareAttrs = computed(() => {\n      return {\n        style: {\n          display: \"flex\",\n          position: \"absolute\",\n          right: \"-100%\",\n          top: \"10%\",\n          width: \"200%\",\n          height: \"200%\",\n          backgroundImage: \"radial-gradient(circle, rgba(0,220,130, 0.5) 0%,  rgba(5, 5, 5,0.3) 50%, rgba(5, 5, 5,0) 70%)\"\n        }\n      };\n    });\n    const containerAttrs = computed(() => {\n      const isColorTw = props.color?.startsWith(\"text-\");\n      const classes = [\n        \"w-full\",\n        \"h-full\",\n        \"flex\",\n        \"text-gray-100\",\n        \"relative\",\n        \"items-center\",\n        \"justify-center\"\n      ];\n      const styles = {\n        padding: props.padding\n      };\n      if (isColorTw)\n        classes.push(props.color);\n      else\n        styles.color = props.color;\n      return { class: classes, style: styles };\n    });\n    const titleAttrs = computed(() => {\n      const classes = [];\n      const styles = {\n        fontWeight: \"bold\",\n        marginBottom: \"50px\",\n        fontSize: props.titleFontSize\n      };\n      return { class: classes, style: styles };\n    });\n    const descriptionAttrs = computed(() => {\n      const classes = [];\n      const styles = {\n        fontSize: props.descriptionFontSize,\n        lineHeight: `${props.descriptionFontSize.replace(\"px\", \"\") * 1.5}px`,\n        opacity: \"0.8\"\n      };\n      return { class: classes, style: styles };\n    });\n    const siteConfig = useSiteConfig();\n    const siteName = computed(() => {\n      return props.siteName || siteConfig.name;\n    });\n    const siteLogo = computed(() => {\n      return props.siteLogo || siteConfig.logo;\n    });\n    const MaybeIconComponent = resolveComponent(\"Icon\");\n    if (typeof props.icon === \"string\" && typeof MaybeIconComponent === \"string\" && false) {\n      console.warn(\"Please install `nuxt-icon` to use icons with the fallback OG Image component.\");\n      console.log(\"npm add -D nuxt-icon\");\n    }\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(_Fragment, null, [\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundAttrs.value)), null, 16),\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundFlareAttrs.value)), null, 16),\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(containerAttrs.value)), [\n          _createElementVNode(\"div\", _hoisted_1, [\n            _createElementVNode(\"div\", {\n              class: \"flex flex-col w-full\",\n              style: _normalizeStyle(__props.icon ? { width: \"65%\" } : {})\n            }, [\n              _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(titleAttrs.value)), _toDisplayString(__props.title || \"Null Title\"), 17),\n              __props.description ? (_openBlock(), _createElementBlock(\"div\", _normalizeProps(_mergeProps({ key: 0 }, descriptionAttrs.value)), _toDisplayString(__props.description), 17)) : _createCommentVNode(\"\", true)\n            ], 4),\n            typeof __props.icon === \"string\" && typeof _unref(MaybeIconComponent) !== \"string\" ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n              _createVNode(_unref(MaybeIconComponent), {\n                name: __props.icon,\n                size: \"250px\",\n                style: { \"margin\": \"0 auto 0 100px\", \"opacity\": \"0.9\" }\n              }, null, 8, [\"name\"])\n            ])) : _createCommentVNode(\"\", true)\n          ]),\n          _createElementVNode(\"div\", _hoisted_3, [\n            siteLogo.value ? (_openBlock(), _createElementBlock(\"img\", {\n              key: 0,\n              src: siteLogo.value,\n              height: \"30\"\n            }, null, 8, _hoisted_4)) : siteName.value ? (_openBlock(), _createElementBlock(\"div\", _hoisted_5, _toDisplayString(siteName.value), 1)) : _createCommentVNode(\"\", true)\n          ])\n        ], 16)\n      ], 64);\n    };\n  }\n});\n",
-      "start": 1714173353504,
-      "end": 1714173353582,
+      "start": 1714175002776,
+      "end": 1714175002927,
       "order": "normal",
       "sourcemaps": null
     },
     {
       "name": "vite:css-post",
-      "start": 1714173353582,
-      "end": 1714173353582,
+      "start": 1714175002927,
+      "end": 1714175002927,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173353582,
-      "end": 1714173353582,
+      "start": 1714175002927,
+      "end": 1714175002927,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173353582,
-      "end": 1714173353582,
+      "start": 1714175002927,
+      "end": 1714175002927,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173353582,
-      "end": 1714173353582,
+      "start": 1714175002927,
+      "end": 1714175002927,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173353582,
-      "end": 1714173353582,
+      "start": 1714175002927,
+      "end": 1714175002927,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173353582,
-      "end": 1714173353582,
+      "start": 1714175002927,
+      "end": 1714175002927,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173353582,
-      "end": 1714173353582,
+      "start": 1714175002927,
+      "end": 1714175002927,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173353582,
-      "end": 1714173353582,
+      "start": 1714175002927,
+      "end": 1714175002928,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSiteConfig } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-site-config/dist/runtime/composables/useSiteConfig';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createCommentVNode as _createCommentVNode, normalizeStyle as _normalizeStyle, unref as _unref, createVNode as _createVNode, Fragment as _Fragment } from \"vue\";\nconst _hoisted_1 = {\n  class: \"flex flex-row justify-between items-center\",\n  style: { \"margin-bottom\": \"100px\" }\n};\nconst _hoisted_2 = {\n  key: 0,\n  style: { \"width\": \"30%\" },\n  class: \"flex justify-end\"\n};\nconst _hoisted_3 = { class: \"flex flex-row absolute bottom-10 text-left items-start\" };\nconst _hoisted_4 = [\"src\"];\nconst _hoisted_5 = {\n  key: 1,\n  style: { \"font-size\": \"25px\" },\n  class: \"font-bold\"\n};\nimport { computed, resolveComponent } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Fallback\",\n  props: {\n    path: String,\n    title: {\n      type: String,\n      default: \"Og Image Template\"\n    },\n    description: {\n      type: String,\n      default: \"Set a description to change me.\"\n    },\n    color: {\n      type: String\n    },\n    padding: {\n      type: String,\n      default: \"0 100px\"\n    },\n    titleFontSize: {\n      type: String,\n      default: \"75px\"\n    },\n    descriptionFontSize: {\n      type: String,\n      default: \"35px\"\n    },\n    icon: {\n      type: [String, Boolean],\n      default: false\n    },\n    siteName: {\n      type: String,\n      required: false\n    },\n    siteLogo: {\n      type: String,\n      required: false\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const backgroundAttrs = computed(() => {\n      return {\n        style: {\n          display: \"flex\",\n          position: \"absolute\",\n          width: \"100%\",\n          height: \"100%\",\n          background: \"rgba(5, 5, 5,1)\"\n        }\n      };\n    });\n    const backgroundFlareAttrs = computed(() => {\n      return {\n        style: {\n          display: \"flex\",\n          position: \"absolute\",\n          right: \"-100%\",\n          top: \"10%\",\n          width: \"200%\",\n          height: \"200%\",\n          backgroundImage: \"radial-gradient(circle, rgba(0,220,130, 0.5) 0%,  rgba(5, 5, 5,0.3) 50%, rgba(5, 5, 5,0) 70%)\"\n        }\n      };\n    });\n    const containerAttrs = computed(() => {\n      const isColorTw = props.color?.startsWith(\"text-\");\n      const classes = [\n        \"w-full\",\n        \"h-full\",\n        \"flex\",\n        \"text-gray-100\",\n        \"relative\",\n        \"items-center\",\n        \"justify-center\"\n      ];\n      const styles = {\n        padding: props.padding\n      };\n      if (isColorTw)\n        classes.push(props.color);\n      else\n        styles.color = props.color;\n      return { class: classes, style: styles };\n    });\n    const titleAttrs = computed(() => {\n      const classes = [];\n      const styles = {\n        fontWeight: \"bold\",\n        marginBottom: \"50px\",\n        fontSize: props.titleFontSize\n      };\n      return { class: classes, style: styles };\n    });\n    const descriptionAttrs = computed(() => {\n      const classes = [];\n      const styles = {\n        fontSize: props.descriptionFontSize,\n        lineHeight: `${props.descriptionFontSize.replace(\"px\", \"\") * 1.5}px`,\n        opacity: \"0.8\"\n      };\n      return { class: classes, style: styles };\n    });\n    const siteConfig = useSiteConfig();\n    const siteName = computed(() => {\n      return props.siteName || siteConfig.name;\n    });\n    const siteLogo = computed(() => {\n      return props.siteLogo || siteConfig.logo;\n    });\n    const MaybeIconComponent = resolveComponent(\"Icon\");\n    if (typeof props.icon === \"string\" && typeof MaybeIconComponent === \"string\" && false) {\n      console.warn(\"Please install `nuxt-icon` to use icons with the fallback OG Image component.\");\n      console.log(\"npm add -D nuxt-icon\");\n    }\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(_Fragment, null, [\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundAttrs.value)), null, 16),\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundFlareAttrs.value)), null, 16),\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(containerAttrs.value)), [\n          _createElementVNode(\"div\", _hoisted_1, [\n            _createElementVNode(\"div\", {\n              class: \"flex flex-col w-full\",\n              style: _normalizeStyle(__props.icon ? { width: \"65%\" } : {})\n            }, [\n              _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(titleAttrs.value)), _toDisplayString(__props.title || \"Null Title\"), 17),\n              __props.description ? (_openBlock(), _createElementBlock(\"div\", _normalizeProps(_mergeProps({ key: 0 }, descriptionAttrs.value)), _toDisplayString(__props.description), 17)) : _createCommentVNode(\"\", true)\n            ], 4),\n            typeof __props.icon === \"string\" && typeof _unref(MaybeIconComponent) !== \"string\" ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n              _createVNode(_unref(MaybeIconComponent), {\n                name: __props.icon,\n                size: \"250px\",\n                style: { \"margin\": \"0 auto 0 100px\", \"opacity\": \"0.9\" }\n              }, null, 8, [\"name\"])\n            ])) : _createCommentVNode(\"\", true)\n          ]),\n          _createElementVNode(\"div\", _hoisted_3, [\n            siteLogo.value ? (_openBlock(), _createElementBlock(\"img\", {\n              key: 0,\n              src: siteLogo.value,\n              height: \"30\"\n            }, null, 8, _hoisted_4)) : siteName.value ? (_openBlock(), _createElementBlock(\"div\", _hoisted_5, _toDisplayString(siteName.value), 1)) : _createCommentVNode(\"\", true)\n          ])\n        ], 16)\n      ], 64);\n    };\n  }\n});\n",
-      "start": 1714173353582,
-      "end": 1714173353584,
+      "start": 1714175002928,
+      "end": 1714175002929,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -194,51 +194,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173353584,
-      "end": 1714173353584,
+      "start": 1714175002929,
+      "end": 1714175002929,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173353584,
-      "end": 1714173353584,
+      "start": 1714175002929,
+      "end": 1714175002929,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173353584,
-      "end": 1714173353584,
+      "start": 1714175002929,
+      "end": 1714175002929,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173353584,
-      "end": 1714173353584,
+      "start": 1714175002929,
+      "end": 1714175002929,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { useSiteConfig } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-site-config/dist/runtime/composables/useSiteConfig';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createCommentVNode as _createCommentVNode, normalizeStyle as _normalizeStyle, unref as _unref, createVNode as _createVNode, Fragment as _Fragment } from \"vue\";\nconst _hoisted_1 = {\n  class: \"flex flex-row justify-between items-center\",\n  style: { \"margin-bottom\": \"100px\" }\n};\nconst _hoisted_2 = {\n  key: 0,\n  style: { \"width\": \"30%\" },\n  class: \"flex justify-end\"\n};\nconst _hoisted_3 = { class: \"flex flex-row absolute bottom-10 text-left items-start\" };\nconst _hoisted_4 = [\"src\"];\nconst _hoisted_5 = {\n  key: 1,\n  style: { \"font-size\": \"25px\" },\n  class: \"font-bold\"\n};\nimport { computed, resolveComponent } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Fallback\",\n  props: {\n    path: String,\n    title: {\n      type: String,\n      default: \"Og Image Template\"\n    },\n    description: {\n      type: String,\n      default: \"Set a description to change me.\"\n    },\n    color: {\n      type: String\n    },\n    padding: {\n      type: String,\n      default: \"0 100px\"\n    },\n    titleFontSize: {\n      type: String,\n      default: \"75px\"\n    },\n    descriptionFontSize: {\n      type: String,\n      default: \"35px\"\n    },\n    icon: {\n      type: [String, Boolean],\n      default: false\n    },\n    siteName: {\n      type: String,\n      required: false\n    },\n    siteLogo: {\n      type: String,\n      required: false\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const backgroundAttrs = computed(() => {\n      return {\n        style: {\n          display: \"flex\",\n          position: \"absolute\",\n          width: \"100%\",\n          height: \"100%\",\n          background: \"rgba(5, 5, 5,1)\"\n        }\n      };\n    });\n    const backgroundFlareAttrs = computed(() => {\n      return {\n        style: {\n          display: \"flex\",\n          position: \"absolute\",\n          right: \"-100%\",\n          top: \"10%\",\n          width: \"200%\",\n          height: \"200%\",\n          backgroundImage: \"radial-gradient(circle, rgba(0,220,130, 0.5) 0%,  rgba(5, 5, 5,0.3) 50%, rgba(5, 5, 5,0) 70%)\"\n        }\n      };\n    });\n    const containerAttrs = computed(() => {\n      const isColorTw = props.color?.startsWith(\"text-\");\n      const classes = [\n        \"w-full\",\n        \"h-full\",\n        \"flex\",\n        \"text-gray-100\",\n        \"relative\",\n        \"items-center\",\n        \"justify-center\"\n      ];\n      const styles = {\n        padding: props.padding\n      };\n      if (isColorTw)\n        classes.push(props.color);\n      else\n        styles.color = props.color;\n      return { class: classes, style: styles };\n    });\n    const titleAttrs = computed(() => {\n      const classes = [];\n      const styles = {\n        fontWeight: \"bold\",\n        marginBottom: \"50px\",\n        fontSize: props.titleFontSize\n      };\n      return { class: classes, style: styles };\n    });\n    const descriptionAttrs = computed(() => {\n      const classes = [];\n      const styles = {\n        fontSize: props.descriptionFontSize,\n        lineHeight: `${props.descriptionFontSize.replace(\"px\", \"\") * 1.5}px`,\n        opacity: \"0.8\"\n      };\n      return { class: classes, style: styles };\n    });\n    const siteConfig = useSiteConfig();\n    const siteName = computed(() => {\n      return props.siteName || siteConfig.name;\n    });\n    const siteLogo = computed(() => {\n      return props.siteLogo || siteConfig.logo;\n    });\n    const MaybeIconComponent = __nuxt_component_0;\n    if (typeof props.icon === \"string\" && typeof MaybeIconComponent === \"string\" && false) {\n      console.warn(\"Please install `nuxt-icon` to use icons with the fallback OG Image component.\");\n      console.log(\"npm add -D nuxt-icon\");\n    }\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(_Fragment, null, [\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundAttrs.value)), null, 16),\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(backgroundFlareAttrs.value)), null, 16),\n        _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(containerAttrs.value)), [\n          _createElementVNode(\"div\", _hoisted_1, [\n            _createElementVNode(\"div\", {\n              class: \"flex flex-col w-full\",\n              style: _normalizeStyle(__props.icon ? { width: \"65%\" } : {})\n            }, [\n              _createElementVNode(\"div\", _normalizeProps(_guardReactiveProps(titleAttrs.value)), _toDisplayString(__props.title || \"Null Title\"), 17),\n              __props.description ? (_openBlock(), _createElementBlock(\"div\", _normalizeProps(_mergeProps({ key: 0 }, descriptionAttrs.value)), _toDisplayString(__props.description), 17)) : _createCommentVNode(\"\", true)\n            ], 4),\n            typeof __props.icon === \"string\" && typeof _unref(MaybeIconComponent) !== \"string\" ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n              _createVNode(_unref(MaybeIconComponent), {\n                name: __props.icon,\n                size: \"250px\",\n                style: { \"margin\": \"0 auto 0 100px\", \"opacity\": \"0.9\" }\n              }, null, 8, [\"name\"])\n            ])) : _createCommentVNode(\"\", true)\n          ]),\n          _createElementVNode(\"div\", _hoisted_3, [\n            siteLogo.value ? (_openBlock(), _createElementBlock(\"img\", {\n              key: 0,\n              src: siteLogo.value,\n              height: \"30\"\n            }, null, 8, _hoisted_4)) : siteName.value ? (_openBlock(), _createElementBlock(\"div\", _hoisted_5, _toDisplayString(siteName.value), 1)) : _createCommentVNode(\"\", true)\n          ])\n        ], 16)\n      ], 64);\n    };\n  }\n});\n",
-      "start": 1714173353584,
-      "end": 1714173353584,
+      "start": 1714175002929,
+      "end": 1714175002930,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173353584,
-      "end": 1714173353584,
+      "start": 1714175002930,
+      "end": 1714175002930,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173353584,
-      "end": 1714173353584,
+      "start": 1714175002930,
+      "end": 1714175002930,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173353584,
-      "end": 1714173353584,
+      "start": 1714175002930,
+      "end": 1714175002930,
       "order": "normal"
     }
   ]

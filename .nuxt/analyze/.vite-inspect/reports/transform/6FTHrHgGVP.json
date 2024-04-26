@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <Teleport to=\"body\">\n    <div :class=\"wrapperClass\" role=\"region\" v-bind=\"attrs\">\n      <div v-if=\"notifications.length\" :class=\"ui.container\">\n        <div v-for=\"notification of notifications\" :key=\"notification.id\">\n          <UNotification\n            v-bind=\"notification\"\n            :class=\"notification.click && 'cursor-pointer'\"\n            @click=\"notification.click && notification.click(notification)\"\n            @close=\"toast.remove(notification.id)\"\n          >\n            <template v-for=\"(_, name) in $slots\" #[name]=\"slotData\">\n              <slot :name=\"name\" v-bind=\"slotData\" />\n            </template>\n          </UNotification>\n        </div>\n      </div>\n    </div>\n  </Teleport>\n</template>\n\n<script>\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UNotification from \"./Notification.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useToast } from \"../../composables/useToast\";\nimport { mergeConfig } from \"../../utils\";\nimport { useState } from \"#imports\";\nimport appConfig from \"#build/app.config\";\nimport { notifications } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notifications, notifications);\nexport default defineComponent({\n  components: {\n    UNotification\n  },\n  inheritAttrs: false,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"notifications\", toRef(props, \"ui\"), config);\n    const toast = useToast();\n    const notifications2 = useState(\"notifications\", () => []);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        ui.value.position,\n        ui.value.width\n      ), props.class);\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      toast,\n      notifications: notifications2,\n      wrapperClass\n    };\n  }\n});\n</script>\n",
-      "start": 1714173353247,
-      "end": 1714173353266,
+      "start": 1714175002372,
+      "end": 1714175002408,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173353266,
-      "end": 1714173353266,
+      "start": 1714175002408,
+      "end": 1714175002408,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173353266,
-      "end": 1714173353266,
+      "start": 1714175002408,
+      "end": 1714175002408,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173353266,
-      "end": 1714173353266,
+      "start": 1714175002408,
+      "end": 1714175002408,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173353266,
-      "end": 1714173353266,
+      "start": 1714175002408,
+      "end": 1714175002408,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173353266,
-      "end": 1714173353266,
+      "start": 1714175002408,
+      "end": 1714175002408,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714173353266,
-      "end": 1714173353266,
+      "start": 1714175002408,
+      "end": 1714175002408,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714173353266,
-      "end": 1714173353266,
+      "start": 1714175002408,
+      "end": 1714175002408,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173353266,
-      "end": 1714173353266,
+      "start": 1714175002408,
+      "end": 1714175002408,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UNotification from \"./Notification.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useToast } from \"../../composables/useToast\";\nimport { mergeConfig } from \"../../utils\";\nimport { useState } from \"#imports\";\nimport appConfig from \"#build/app.config\";\nimport { notifications } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notifications, notifications);\nconst _sfc_main = defineComponent({\n  components: {\n    UNotification\n  },\n  inheritAttrs: false,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"notifications\", toRef(props, \"ui\"), config);\n    const toast = useToast();\n    const notifications2 = useState(\"notifications\", () => []);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        ui.value.position,\n        ui.value.width\n      ), props.class);\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      toast,\n      notifications: notifications2,\n      wrapperClass\n    };\n  }\n});\n\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, renderSlot as _renderSlot, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createSlots as _createSlots, createVNode as _createVNode, normalizeClass as _normalizeClass, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, Teleport as _Teleport, createBlock as _createBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_UNotification = _resolveComponent(\"UNotification\")\n\n  return (_openBlock(), _createBlock(_Teleport, { to: \"body\" }, [\n    _createElementVNode(\"div\", _mergeProps({\n      class: _ctx.wrapperClass,\n      role: \"region\"\n    }, _ctx.attrs), [\n      (_ctx.notifications.length)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_ctx.ui.container)\n          }, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.notifications, (notification) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                key: notification.id\n              }, [\n                _createVNode(_component_UNotification, _mergeProps(notification, {\n                  class: notification.click && 'cursor-pointer',\n                  onClick: $event => (notification.click && notification.click(notification)),\n                  onClose: $event => (_ctx.toast.remove(notification.id))\n                }), _createSlots({ _: 2 }, [\n                  _renderList(_ctx.$slots, (_, name) => {\n                    return {\n                      name: name,\n                      fn: _withCtx((slotData) => [\n                        _renderSlot(_ctx.$slots, name, _normalizeProps(_guardReactiveProps(slotData)))\n                      ])\n                    }\n                  })\n                ]), 1040, [\"class\", \"onClick\", \"onClose\"])\n              ]))\n            }), 128))\n          ], 2))\n        : _createCommentVNode(\"\", true)\n    ], 16)\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714173353266,
-      "end": 1714173353269,
+      "start": 1714175002408,
+      "end": 1714175002409,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,111 +68,111 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002409,
+      "end": 1714175002409,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002409,
+      "end": 1714175002409,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002409,
+      "end": 1714175002409,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002409,
+      "end": 1714175002409,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002409,
+      "end": 1714175002409,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002409,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173353269,
-      "end": 1714173353269,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173353269,
-      "end": 1714173353270,
+      "start": 1714175002410,
+      "end": 1714175002410,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useState } from '#app/composables/state';\n\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UNotification from \"./Notification.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useToast } from \"../../composables/useToast\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { notifications } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notifications, notifications);\nconst _sfc_main = defineComponent({\n  components: {\n    UNotification\n  },\n  inheritAttrs: false,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"notifications\", toRef(props, \"ui\"), config);\n    const toast = useToast();\n    const notifications2 = useState(\"notifications\", () => []);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        ui.value.position,\n        ui.value.width\n      ), props.class);\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      toast,\n      notifications: notifications2,\n      wrapperClass\n    };\n  }\n});\n\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, renderSlot as _renderSlot, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createSlots as _createSlots, createVNode as _createVNode, normalizeClass as _normalizeClass, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, Teleport as _Teleport, createBlock as _createBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_UNotification = _resolveComponent(\"UNotification\")\n\n  return (_openBlock(), _createBlock(_Teleport, { to: \"body\" }, [\n    _createElementVNode(\"div\", _mergeProps({\n      class: _ctx.wrapperClass,\n      role: \"region\"\n    }, _ctx.attrs), [\n      (_ctx.notifications.length)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_ctx.ui.container)\n          }, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.notifications, (notification) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                key: notification.id\n              }, [\n                _createVNode(_component_UNotification, _mergeProps(notification, {\n                  class: notification.click && 'cursor-pointer',\n                  onClick: $event => (notification.click && notification.click(notification)),\n                  onClose: $event => (_ctx.toast.remove(notification.id))\n                }), _createSlots({ _: 2 }, [\n                  _renderList(_ctx.$slots, (_, name) => {\n                    return {\n                      name: name,\n                      fn: _withCtx((slotData) => [\n                        _renderSlot(_ctx.$slots, name, _normalizeProps(_guardReactiveProps(slotData)))\n                      ])\n                    }\n                  })\n                ]), 1040, [\"class\", \"onClick\", \"onClose\"])\n              ]))\n            }), 128))\n          ], 2))\n        : _createCommentVNode(\"\", true)\n    ], 16)\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714173353270,
-      "end": 1714173353275,
+      "start": 1714175002410,
+      "end": 1714175002411,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -185,51 +185,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173353275,
-      "end": 1714173353275,
+      "start": 1714175002411,
+      "end": 1714175002411,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173353275,
-      "end": 1714173353275,
+      "start": 1714175002411,
+      "end": 1714175002411,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714173353275,
-      "end": 1714173353275,
+      "start": 1714175002411,
+      "end": 1714175002411,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714173353275,
-      "end": 1714173353275,
+      "start": 1714175002411,
+      "end": 1714175002411,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/overlays/Notification.vue\";\nimport { useState } from '#app/composables/state';\n\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UNotification from \"./Notification.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { useToast } from \"../../composables/useToast\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { notifications } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notifications, notifications);\nconst _sfc_main = defineComponent({\n  components: {\n    UNotification\n  },\n  inheritAttrs: false,\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"notifications\", toRef(props, \"ui\"), config);\n    const toast = useToast();\n    const notifications2 = useState(\"notifications\", () => []);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper,\n        ui.value.position,\n        ui.value.width\n      ), props.class);\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      toast,\n      notifications: notifications2,\n      wrapperClass\n    };\n  }\n});\n\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, renderSlot as _renderSlot, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createSlots as _createSlots, createVNode as _createVNode, normalizeClass as _normalizeClass, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, Teleport as _Teleport, createBlock as _createBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_UNotification = __nuxt_component_0\n\n  return (_openBlock(), _createBlock(_Teleport, { to: \"body\" }, [\n    _createElementVNode(\"div\", _mergeProps({\n      class: _ctx.wrapperClass,\n      role: \"region\"\n    }, _ctx.attrs), [\n      (_ctx.notifications.length)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_ctx.ui.container)\n          }, [\n            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.notifications, (notification) => {\n              return (_openBlock(), _createElementBlock(\"div\", {\n                key: notification.id\n              }, [\n                _createVNode(_component_UNotification, _mergeProps(notification, {\n                  class: notification.click && 'cursor-pointer',\n                  onClick: $event => (notification.click && notification.click(notification)),\n                  onClose: $event => (_ctx.toast.remove(notification.id))\n                }), _createSlots({ _: 2 }, [\n                  _renderList(_ctx.$slots, (_, name) => {\n                    return {\n                      name: name,\n                      fn: _withCtx((slotData) => [\n                        _renderSlot(_ctx.$slots, name, _normalizeProps(_guardReactiveProps(slotData)))\n                      ])\n                    }\n                  })\n                ]), 1040, [\"class\", \"onClick\", \"onClose\"])\n              ]))\n            }), 128))\n          ], 2))\n        : _createCommentVNode(\"\", true)\n    ], 16)\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714173353275,
-      "end": 1714173353275,
+      "start": 1714175002411,
+      "end": 1714175002411,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173353275,
-      "end": 1714173353275,
+      "start": 1714175002411,
+      "end": 1714175002411,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173353275,
-      "end": 1714173353275,
+      "start": 1714175002411,
+      "end": 1714175002411,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173353275,
-      "end": 1714173353276,
+      "start": 1714175002411,
+      "end": 1714175002411,
       "order": "normal"
     }
   ]

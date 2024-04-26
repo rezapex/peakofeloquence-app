@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <div :class=\"ui.header\">\n      <button\n        v-for=\"(tab, index) in tabs\"\n        :key=\"index\"\n        tabindex=\"-1\"\n        :class=\"[ui.tab.base, selectedIndex === index ? ui.tab.active : ui.tab.inactive]\"\n        @click=\"selectedIndex = index\"\n      >\n        <ProseCodeIcon :icon=\"tab.icon\" :filename=\"tab.label\" :class=\"ui.tab.icon.base\" />\n        <span>{{ tab.label }}</span>\n      </button>\n    </div>\n\n    <component :is=\"selectedTab?.component\" :key=\"selectedIndex\" hide-header />\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\n\nconst config = {\n  wrapper: 'relative [&>div:last-child]:!my-0 [&>div:last-child]:!static my-5',\n  header: 'flex items-center gap-1 border border-gray-200 dark:border-gray-700 border-b-0 rounded-t-md overflow-hidden p-2',\n  tab: {\n    base: 'px-2 py-1.5 focus:outline-none text-gray-700 dark:text-gray-200 text-sm rounded-md flex items-center gap-1.5',\n    active: 'bg-gray-100 dark:bg-gray-800',\n    inactive: 'hover:bg-gray-50 dark:hover:bg-gray-800/50',\n    icon: {\n      base: ''\n    }\n  }\n}\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n})\n\nconst slots = useSlots()\nconst { ui, attrs } = useUI('content.codeGroup', undefined, config, toRef(props, 'class'), true)\n\nconst selectedIndex = ref(0)\ndefineExpose({ selectedIndex })\n\nfunction transformSlot (slot: any, index: number) {\n  if (typeof slot.type === 'symbol') {\n    return slot.children?.map(transformSlot)\n  }\n\n  return {\n    label: slot.props?.filename || slot.props?.label || `${index}`,\n    icon: slot.props?.icon,\n    component: slot\n  }\n}\n\n// Computed\n\nconst tabs = computed(() => slots.default?.()?.flatMap(transformSlot).filter(Boolean) || [])\n\nconst selectedTab = computed(() => tabs.value.find((_, index) => index === selectedIndex.value))\n</script>\n",
-      "start": 1714173357818,
-      "end": 1714173360219,
+      "start": 1714175006608,
+      "end": 1714175008715,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173360219,
-      "end": 1714173360219,
+      "start": 1714175008715,
+      "end": 1714175008715,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/CodeGroup.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/CodeGroup.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/CodeGroup.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
-      "start": 1714173360219,
-      "end": 1714173364021,
+      "start": 1714175008715,
+      "end": 1714175012778,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -92,190 +92,190 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
       "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/CodeGroup.vue\").then(r => r[\"default\"] || r.default || r))",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal",
       "sourcemaps": null
     },
     {
       "name": "replace",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173364021,
-      "end": 1714173364021,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173364022,
-      "end": 1714173364022,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173364022,
-      "end": 1714173364022,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173364022,
-      "end": 1714173364022,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173364022,
-      "end": 1714173364022,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173364022,
-      "end": 1714173364022,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173364022,
-      "end": 1714173364022,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173364022,
-      "end": 1714173364022,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173364022,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173364022,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173364023,
-      "end": 1714173364023,
+      "start": 1714175012778,
+      "end": 1714175012778,
       "order": "normal"
     }
   ]

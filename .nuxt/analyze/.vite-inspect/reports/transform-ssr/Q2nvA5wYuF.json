@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, createSlots as _createSlots, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ContentSearchButton',\n  __ssrInlineRender: true,\n  props: {\n  label: {\n    type: String,\n    default: 'Search...'\n  }\n},\n  setup(__props) {\n\nconst appConfig = useAppConfig()\nconst { toggleContentSearch } = useUIState()\nconst { metaSymbol } = useShortcuts()\n\n\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UButton = _resolveComponent(\"UButton\")!\n  const _component_UKbd = _resolveComponent(\"UKbd\")!\n\n  _push(_ssrRenderComponent(_component_UButton, _mergeProps({\n    icon: _unref(appConfig).ui.icons.search,\n    label: __props.label,\n    truncate: \"\"\n  }, ((!!__props.label ? _ctx.$ui?.button?.input : _ctx.$ui?.button?.secondary) as any), {\n    \"aria-label\": \"Search\",\n    class: [!!__props.label && 'flex-1'],\n    onClick: _unref(toggleContentSearch)\n  }, _attrs), _createSlots({ _: 2 }, [\n    (!!__props.label)\n      ? {\n          name: \"trailing\",\n          fn: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`<div class=\"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\"${_scopeId}>`)\n              _push(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_, _push, _parent, _scopeId) => {\n                  if (_push) {\n                    _push(`${_ssrInterpolate(_unref(metaSymbol))}`)\n                  } else {\n                    return [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ]\n                  }\n                }),\n                _: 1\n              }, _parent, _scopeId))\n              _push(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_, _push, _parent, _scopeId) => {\n                  if (_push) {\n                    _push(` K `)\n                  } else {\n                    return [\n                      _createTextVNode(\" K \")\n                    ]\n                  }\n                }),\n                _: 1\n              }, _parent, _scopeId))\n              _push(`</div>`)\n            } else {\n              return [\n                _createVNode(\"div\", { class: \"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\" }, [\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ]),\n                    _: 1\n                  }),\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(\" K \")\n                    ]),\n                    _: 1\n                  })\n                ])\n              ]\n            }\n          }),\n          key: \"0\"\n        }\n      : undefined\n  ]), _parent))\n}\n}\n\n})",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173365839,
-      "end": 1714173365839,
+      "start": 1714175014517,
+      "end": 1714175014517,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, createSlots as _createSlots, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ContentSearchButton\",\n  __ssrInlineRender: true,\n  props: {\n    label: {\n      type: String,\n      default: \"Search...\"\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const { toggleContentSearch } = useUIState();\n    const { metaSymbol } = useShortcuts();\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UKbd = _resolveComponent(\"UKbd\");\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({\n        icon: _unref(appConfig).ui.icons.search,\n        label: __props.label,\n        truncate: \"\"\n      }, !!__props.label ? _ctx.$ui?.button?.input : _ctx.$ui?.button?.secondary, {\n        \"aria-label\": \"Search\",\n        class: [!!__props.label && \"flex-1\"],\n        onClick: _unref(toggleContentSearch)\n      }, _attrs), _createSlots({ _: 2 }, [\n        !!__props.label ? {\n          name: \"trailing\",\n          fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<div class=\"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\"${_scopeId}>`);\n              _push2(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`${_ssrInterpolate(_unref(metaSymbol))}`);\n                  } else {\n                    return [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(` K `);\n                  } else {\n                    return [\n                      _createTextVNode(\" K \")\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n              _push2(`</div>`);\n            } else {\n              return [\n                _createVNode(\"div\", { class: \"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\" }, [\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ]),\n                    _: 1\n                  }),\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(\" K \")\n                    ]),\n                    _: 1\n                  })\n                ])\n              ];\n            }\n          }),\n          key: \"0\"\n        } : void 0\n      ]), _parent));\n    };\n  }\n});\n",
-      "start": 1714173365839,
-      "end": 1714173366046,
+      "start": 1714175014517,
+      "end": 1714175014700,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -97,147 +97,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173366046,
-      "end": 1714173366046,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173366046,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173366047,
-      "end": 1714173366047,
+      "start": 1714175014700,
+      "end": 1714175014700,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { useUIState } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useUIState.ts';\nimport { useShortcuts } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, createSlots as _createSlots, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ContentSearchButton\",\n  __ssrInlineRender: true,\n  props: {\n    label: {\n      type: String,\n      default: \"Search...\"\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const { toggleContentSearch } = useUIState();\n    const { metaSymbol } = useShortcuts();\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UKbd = _resolveComponent(\"UKbd\");\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({\n        icon: _unref(appConfig).ui.icons.search,\n        label: __props.label,\n        truncate: \"\"\n      }, !!__props.label ? _ctx.$ui?.button?.input : _ctx.$ui?.button?.secondary, {\n        \"aria-label\": \"Search\",\n        class: [!!__props.label && \"flex-1\"],\n        onClick: _unref(toggleContentSearch)\n      }, _attrs), _createSlots({ _: 2 }, [\n        !!__props.label ? {\n          name: \"trailing\",\n          fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<div class=\"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\"${_scopeId}>`);\n              _push2(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`${_ssrInterpolate(_unref(metaSymbol))}`);\n                  } else {\n                    return [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(` K `);\n                  } else {\n                    return [\n                      _createTextVNode(\" K \")\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n              _push2(`</div>`);\n            } else {\n              return [\n                _createVNode(\"div\", { class: \"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\" }, [\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ]),\n                    _: 1\n                  }),\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(\" K \")\n                    ]),\n                    _: 1\n                  })\n                ])\n              ];\n            }\n          }),\n          key: \"0\"\n        } : void 0\n      ]), _parent));\n    };\n  }\n});\n",
-      "start": 1714173366047,
-      "end": 1714173366048,
+      "start": 1714175014700,
+      "end": 1714175014701,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -251,8 +251,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { useUIState } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useUIState.ts';\nimport { useShortcuts } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, createSlots as _createSlots, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ContentSearchButton\",\n  __ssrInlineRender: true,\n  props: {\n    label: {\n      type: String,\n      default: \"Search...\"\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const { toggleContentSearch } = useUIState();\n    const { metaSymbol } = useShortcuts();\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UKbd = _resolveComponent(\"UKbd\");\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({\n        icon: _unref(appConfig).ui.icons.search,\n        label: __props.label,\n        truncate: \"\"\n      }, !!__props.label ? _ctx.$ui?.button?.input : _ctx.$ui?.button?.secondary, {\n        \"aria-label\": \"Search\",\n        class: [!!__props.label && \"flex-1\"],\n        onClick: _unref(toggleContentSearch)\n      }, _attrs), _createSlots({ _: 2 }, [\n        !!__props.label ? {\n          name: \"trailing\",\n          fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<div class=\"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\"${_scopeId}>`);\n              _push2(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`${_ssrInterpolate(_unref(metaSymbol))}`);\n                  } else {\n                    return [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(` K `);\n                  } else {\n                    return [\n                      _createTextVNode(\" K \")\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n              _push2(`</div>`);\n            } else {\n              return [\n                _createVNode(\"div\", { class: \"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\" }, [\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ]),\n                    _: 1\n                  }),\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(\" K \")\n                    ]),\n                    _: 1\n                  })\n                ])\n              ];\n            }\n          }),\n          key: \"0\"\n        } : void 0\n      ]), _parent));\n    };\n  }\n});\n",
-      "start": 1714173366047,
-      "end": 1714173366048,
+      "start": 1714175014700,
+      "end": 1714175014701,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -265,39 +265,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014701,
+      "end": 1714175014701,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014701,
+      "end": 1714175014701,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014701,
+      "end": 1714175014701,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014701,
+      "end": 1714175014701,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014701,
+      "end": 1714175014701,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Kbd.vue\";\nimport { useAppConfig } from '#app/config';\nimport { useUIState } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useUIState.ts';\nimport { useShortcuts } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createVNode as _createVNode, createSlots as _createSlots, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ContentSearchButton\",\n  __ssrInlineRender: true,\n  props: {\n    label: {\n      type: String,\n      default: \"Search...\"\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const { toggleContentSearch } = useUIState();\n    const { metaSymbol } = useShortcuts();\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UButton = __nuxt_component_0;\n      const _component_UKbd = __nuxt_component_1;\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({\n        icon: _unref(appConfig).ui.icons.search,\n        label: __props.label,\n        truncate: \"\"\n      }, !!__props.label ? _ctx.$ui?.button?.input : _ctx.$ui?.button?.secondary, {\n        \"aria-label\": \"Search\",\n        class: [!!__props.label && \"flex-1\"],\n        onClick: _unref(toggleContentSearch)\n      }, _attrs), _createSlots({ _: 2 }, [\n        !!__props.label ? {\n          name: \"trailing\",\n          fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<div class=\"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\"${_scopeId}>`);\n              _push2(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`${_ssrInterpolate(_unref(metaSymbol))}`);\n                  } else {\n                    return [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UKbd, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(` K `);\n                  } else {\n                    return [\n                      _createTextVNode(\" K \")\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n              _push2(`</div>`);\n            } else {\n              return [\n                _createVNode(\"div\", { class: \"hidden lg:flex items-center gap-0.5 ml-auto -my-1 flex-shrink-0\" }, [\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(_toDisplayString(_unref(metaSymbol)), 1)\n                    ]),\n                    _: 1\n                  }),\n                  _createVNode(_component_UKbd, null, {\n                    default: _withCtx(() => [\n                      _createTextVNode(\" K \")\n                    ]),\n                    _: 1\n                  })\n                ])\n              ];\n            }\n          }),\n          key: \"0\"\n        } : void 0\n      ]), _parent));\n    };\n  }\n});\n",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014701,
+      "end": 1714175014702,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -310,20 +310,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014702,
+      "end": 1714175014702,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014702,
+      "end": 1714175014702,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173366048,
-      "end": 1714173366048,
+      "start": 1714175014702,
+      "end": 1714175014702,
       "order": "normal"
     }
   ]

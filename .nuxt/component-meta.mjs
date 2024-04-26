@@ -1238,19 +1238,19 @@ export default {
           }
         },
         {
-          "name": "class",
-          "type": "any",
+          "name": "name",
+          "type": "string",
           "description": "",
           "declarations": [
             {
               "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
               "range": [
-                1240,
-                1327
+                953,
+                1001
               ]
             }
           ],
-          "schema": "any"
+          "schema": "string"
         },
         {
           "name": "type",
@@ -1275,6 +1275,21 @@ export default {
           }
         },
         {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
+              "range": [
+                1240,
+                1327
+              ]
+            }
+          ],
+          "schema": "any"
+        },
+        {
           "name": "required",
           "type": "boolean",
           "description": "",
@@ -1295,21 +1310,6 @@ export default {
               "true"
             ]
           }
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
-              "range": [
-                953,
-                1001
-              ]
-            }
-          ],
-          "schema": "string"
         },
         {
           "name": "description",
@@ -1704,6 +1704,32 @@ export default {
           "default": "undefined"
         },
         {
+          "name": "filename",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+              "range": [
+                305,
+                361
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
+            ]
+          },
+          "default": "undefined"
+        },
+        {
           "name": "language",
           "global": false,
           "description": "",
@@ -1755,32 +1781,6 @@ export default {
             ]
           },
           "default": "false"
-        },
-        {
-          "name": "filename",
-          "global": false,
-          "description": "",
-          "tags": [],
-          "required": false,
-          "type": "string | undefined",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
-              "range": [
-                305,
-                361
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
-            ]
-          },
-          "default": "undefined"
         },
         {
           "name": "highlights",
@@ -1898,21 +1898,6 @@ export default {
           }
         },
         {
-          "name": "code",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
-              "range": [
-                78,
-                126
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
           "name": "icon",
           "type": "string | undefined",
           "description": "",
@@ -1933,6 +1918,43 @@ export default {
               "string"
             ]
           }
+        },
+        {
+          "name": "filename",
+          "type": "string | undefined",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+              "range": [
+                305,
+                361
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
+            ]
+          }
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+              "range": [
+                78,
+                126
+              ]
+            }
+          ],
+          "schema": "string"
         },
         {
           "name": "language",
@@ -1975,28 +1997,6 @@ export default {
             "schema": [
               "false",
               "true"
-            ]
-          }
-        },
-        {
-          "name": "filename",
-          "type": "string | undefined",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
-              "range": [
-                305,
-                361
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
             ]
           }
         },
@@ -12683,9 +12683,9 @@ export default {
           "default": "false"
         },
         {
-          "name": "data",
+          "name": "components",
           "global": false,
-          "description": "",
+          "description": "The map of custom components to use for rendering.",
           "tags": [],
           "required": false,
           "type": "Record<string, any> | undefined",
@@ -12693,8 +12693,8 @@ export default {
             {
               "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
-                739,
-                792
+                675,
+                734
               ]
             }
           ],
@@ -12709,9 +12709,9 @@ export default {
           "default": "{}"
         },
         {
-          "name": "components",
+          "name": "data",
           "global": false,
-          "description": "The map of custom components to use for rendering.",
+          "description": "",
           "tags": [],
           "required": false,
           "type": "Record<string, any> | undefined",
@@ -12719,8 +12719,8 @@ export default {
             {
               "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
-                675,
-                734
+                739,
+                792
               ]
             }
           ],
@@ -12776,21 +12776,6 @@ export default {
           }
         },
         {
-          "name": "data",
-          "type": "Record<string, any>",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
-              "range": [
-                739,
-                792
-              ]
-            }
-          ],
-          "schema": "Record<string, any>"
-        },
-        {
           "name": "value",
           "type": "Record<string, any>",
           "description": "Content to render",
@@ -12815,6 +12800,21 @@ export default {
               "range": [
                 675,
                 734
+              ]
+            }
+          ],
+          "schema": "Record<string, any>"
+        },
+        {
+          "name": "data",
+          "type": "Record<string, any>",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "range": [
+                739,
+                792
               ]
             }
           ],
@@ -14586,6 +14586,32 @@ export default {
       "type": 1,
       "props": [
         {
+          "name": "filename",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "range": [
+                352,
+                403
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
+            ]
+          },
+          "default": "null"
+        },
+        {
           "name": "code",
           "global": false,
           "description": "",
@@ -14624,32 +14650,6 @@ export default {
               "range": [
                 297,
                 348
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
-            ]
-          },
-          "default": "null"
-        },
-        {
-          "name": "filename",
-          "global": false,
-          "description": "",
-          "tags": [],
-          "required": false,
-          "type": "string | undefined",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
-              "range": [
-                352,
-                403
               ]
             }
           ],
@@ -14816,6 +14816,21 @@ export default {
           }
         },
         {
+          "name": "filename",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "range": [
+                352,
+                403
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
           "name": "code",
           "type": "string",
           "description": "",
@@ -14840,21 +14855,6 @@ export default {
               "range": [
                 297,
                 348
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
-          "name": "filename",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
-              "range": [
-                352,
-                403
               ]
             }
           ],
@@ -18195,21 +18195,6 @@ export default {
           }
         },
         {
-          "name": "name",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/Icon.vue",
-              "range": [
-                669,
-                717
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
           "name": "size",
           "type": "string",
           "description": "",
@@ -18219,6 +18204,21 @@ export default {
               "range": [
                 721,
                 766
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+              "range": [
+                669,
+                717
               ]
             }
           ],
@@ -18300,21 +18300,6 @@ export default {
       "events": [],
       "exposed": [
         {
-          "name": "name",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
-              "range": [
-                387,
-                435
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
           "name": "size",
           "type": "string",
           "description": "",
@@ -18324,6 +18309,21 @@ export default {
               "range": [
                 439,
                 484
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+              "range": [
+                387,
+                435
               ]
             }
           ],

@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'pricing',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp: any, __restore: any\n\nconst { data: page } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData('pricing', () => queryContent('/pricing').findOne()))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!page.value) {\n  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })\n}\n\nuseSeoMeta({\n  title: page.value.title,\n  ogTitle: page.value.title,\n  description: page.value.description,\n  ogDescription: page.value.description\n})\n\ndefineOgImage({\n  component: 'Saas',\n  title: page.value.title,\n  description: page.value.description\n})\n\nconst isYearly = ref(false)\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UPageHero = _resolveComponent(\"UPageHero\")!\n  const _component_UPricingToggle = _resolveComponent(\"UPricingToggle\")!\n  const _component_UContainer = _resolveComponent(\"UContainer\")!\n  const _component_UPricingGrid = _resolveComponent(\"UPricingGrid\")!\n  const _component_UPricingCard = _resolveComponent(\"UPricingCard\")!\n  const _component_ULandingSection = _resolveComponent(\"ULandingSection\")!\n  const _component_ULandingLogos = _resolveComponent(\"ULandingLogos\")!\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_ULandingFAQ = _resolveComponent(\"ULandingFAQ\")!\n\n  if (_unref(page)) {\n    _push(`<div${_ssrRenderAttrs(_attrs)}>`)\n    _push(_ssrRenderComponent(_component_UPageHero, _unref(page).hero, {\n      links: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_UPricingToggle, {\n            modelValue: _unref(isYearly),\n            \"onUpdate:modelValue\": ($event: any) => (_isRef(isYearly) ? (isYearly).value = $event : null),\n            class: \"w-48\"\n          }, null, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_UPricingToggle, {\n              modelValue: _unref(isYearly),\n              \"onUpdate:modelValue\": ($event: any) => (_isRef(isYearly) ? (isYearly).value = $event : null),\n              class: \"w-48\"\n            }, null, 8, [\"modelValue\", \"onUpdate:modelValue\"])\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(_ssrRenderComponent(_component_UContainer, null, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_UPricingGrid, null, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                _push(`<!--[-->`)\n                _ssrRenderList(_unref(page).plans, (plan, index) => {\n                  _push(_ssrRenderComponent(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                    price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                    cycle: _unref(isYearly) ? '/year' : '/month'\n                  }), null, _parent, _scopeId))\n                })\n                _push(`<!--]-->`)\n              } else {\n                return [\n                  (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                    return (_openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                      price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                      cycle: _unref(isYearly) ? '/year' : '/month'\n                    }), null, 16, [\"price\", \"cycle\"]))\n                  }), 128))\n                ]\n              }\n            }),\n            _: 1\n          }, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_UPricingGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                  return (_openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                    price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                    cycle: _unref(isYearly) ? '/year' : '/month'\n                  }), null, 16, [\"price\", \"cycle\"]))\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(_ssrRenderComponent(_component_ULandingSection, null, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_ULandingLogos, null, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                _push(`<!--[-->`)\n                _ssrRenderList(_unref(page).logos.icons, (icon) => {\n                  _push(_ssrRenderComponent(_component_UIcon, {\n                    key: icon,\n                    name: icon,\n                    class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                  }, null, _parent, _scopeId))\n                })\n                _push(`<!--]-->`)\n              } else {\n                return [\n                  (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                    return (_openBlock(), _createBlock(_component_UIcon, {\n                      key: icon,\n                      name: icon,\n                      class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                    }, null, 8, [\"name\"]))\n                  }), 128))\n                ]\n              }\n            }),\n            _: 1\n          }, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_ULandingLogos, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                  return (_openBlock(), _createBlock(_component_UIcon, {\n                    key: icon,\n                    name: icon,\n                    class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                  }, null, 8, [\"name\"]))\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(_ssrRenderComponent(_component_ULandingSection, {\n      title: _unref(page).faq.title,\n      description: _unref(page).faq.description\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_ULandingFAQ, {\n            items: _unref(page).faq.items,\n            multiple: \"\",\n            \"default-open\": \"\",\n            class: \"max-w-4xl mx-auto\"\n          }, null, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_ULandingFAQ, {\n              items: _unref(page).faq.items,\n              multiple: \"\",\n              \"default-open\": \"\",\n              class: \"max-w-4xl mx-auto\"\n            }, null, 8, [\"items\"])\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n})",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714173364687,
-      "end": 1714173364687,
+      "start": 1714175013315,
+      "end": 1714175013315,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"pricing\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"pricing\", () => queryContent(\"/pricing\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const isYearly = ref(false);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPageHero = _resolveComponent(\"UPageHero\");\n      const _component_UPricingToggle = _resolveComponent(\"UPricingToggle\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UPricingGrid = _resolveComponent(\"UPricingGrid\");\n      const _component_UPricingCard = _resolveComponent(\"UPricingCard\");\n      const _component_ULandingSection = _resolveComponent(\"ULandingSection\");\n      const _component_ULandingLogos = _resolveComponent(\"ULandingLogos\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_ULandingFAQ = _resolveComponent(\"ULandingFAQ\");\n      if (_unref(page)) {\n        _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n        _push(_ssrRenderComponent(_component_UPageHero, _unref(page).hero, {\n          links: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPricingToggle, {\n                modelValue: _unref(isYearly),\n                \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n                class: \"w-48\"\n              }, null, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPricingToggle, {\n                  modelValue: _unref(isYearly),\n                  \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n                  class: \"w-48\"\n                }, null, 8, [\"modelValue\", \"onUpdate:modelValue\"])\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_UContainer, null, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPricingGrid, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`<!--[-->`);\n                    _ssrRenderList(_unref(page).plans, (plan, index) => {\n                      _push3(_ssrRenderComponent(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                        price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                        cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                      }), null, _parent3, _scopeId2));\n                    });\n                    _push3(`<!--]-->`);\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                        return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                          price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                          cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                        }), null, 16, [\"price\", \"cycle\"]);\n                      }), 128))\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPricingGrid, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                      return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                        price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                        cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                      }), null, 16, [\"price\", \"cycle\"]);\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_ULandingSection, null, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_ULandingLogos, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`<!--[-->`);\n                    _ssrRenderList(_unref(page).logos.icons, (icon) => {\n                      _push3(_ssrRenderComponent(_component_UIcon, {\n                        key: icon,\n                        name: icon,\n                        class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                      }, null, _parent3, _scopeId2));\n                    });\n                    _push3(`<!--]-->`);\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                        return _openBlock(), _createBlock(_component_UIcon, {\n                          key: icon,\n                          name: icon,\n                          class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                        }, null, 8, [\"name\"]);\n                      }), 128))\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_ULandingLogos, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                      return _openBlock(), _createBlock(_component_UIcon, {\n                        key: icon,\n                        name: icon,\n                        class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                      }, null, 8, [\"name\"]);\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_ULandingFAQ, {\n                items: _unref(page).faq.items,\n                multiple: \"\",\n                \"default-open\": \"\",\n                class: \"max-w-4xl mx-auto\"\n              }, null, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_ULandingFAQ, {\n                  items: _unref(page).faq.items,\n                  multiple: \"\",\n                  \"default-open\": \"\",\n                  class: \"max-w-4xl mx-auto\"\n                }, null, 8, [\"items\"])\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714173364687,
-      "end": 1714173365548,
+      "start": 1714175013315,
+      "end": 1714175014188,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -97,147 +97,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714173365548,
-      "end": 1714173365548,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714173365548,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714173365549,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714173365549,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714173365549,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714173365549,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714173365549,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714173365549,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714173365549,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714173365549,
-      "end": 1714173365549,
+      "start": 1714175014188,
+      "end": 1714175014188,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173365549,
-      "end": 1714173365550,
+      "start": 1714175014188,
+      "end": 1714175014189,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714173365549,
-      "end": 1714173365550,
+      "start": 1714175014188,
+      "end": 1714175014189,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"pricing\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"pricing\", () => queryContent(\"/pricing\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const isYearly = ref(false);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPageHero = _resolveComponent(\"UPageHero\");\n      const _component_UPricingToggle = _resolveComponent(\"UPricingToggle\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UPricingGrid = _resolveComponent(\"UPricingGrid\");\n      const _component_UPricingCard = _resolveComponent(\"UPricingCard\");\n      const _component_ULandingSection = _resolveComponent(\"ULandingSection\");\n      const _component_ULandingLogos = _resolveComponent(\"ULandingLogos\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_ULandingFAQ = _resolveComponent(\"ULandingFAQ\");\n      if (_unref(page)) {\n        _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n        _push(_ssrRenderComponent(_component_UPageHero, _unref(page).hero, {\n          links: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPricingToggle, {\n                modelValue: _unref(isYearly),\n                \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n                class: \"w-48\"\n              }, null, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPricingToggle, {\n                  modelValue: _unref(isYearly),\n                  \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n                  class: \"w-48\"\n                }, null, 8, [\"modelValue\", \"onUpdate:modelValue\"])\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_UContainer, null, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPricingGrid, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`<!--[-->`);\n                    _ssrRenderList(_unref(page).plans, (plan, index) => {\n                      _push3(_ssrRenderComponent(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                        price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                        cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                      }), null, _parent3, _scopeId2));\n                    });\n                    _push3(`<!--]-->`);\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                        return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                          price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                          cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                        }), null, 16, [\"price\", \"cycle\"]);\n                      }), 128))\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPricingGrid, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                      return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                        price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                        cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                      }), null, 16, [\"price\", \"cycle\"]);\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_ULandingSection, null, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_ULandingLogos, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`<!--[-->`);\n                    _ssrRenderList(_unref(page).logos.icons, (icon) => {\n                      _push3(_ssrRenderComponent(_component_UIcon, {\n                        key: icon,\n                        name: icon,\n                        class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                      }, null, _parent3, _scopeId2));\n                    });\n                    _push3(`<!--]-->`);\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                        return _openBlock(), _createBlock(_component_UIcon, {\n                          key: icon,\n                          name: icon,\n                          class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                        }, null, 8, [\"name\"]);\n                      }), 128))\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_ULandingLogos, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                      return _openBlock(), _createBlock(_component_UIcon, {\n                        key: icon,\n                        name: icon,\n                        class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                      }, null, 8, [\"name\"]);\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_ULandingFAQ, {\n                items: _unref(page).faq.items,\n                multiple: \"\",\n                \"default-open\": \"\",\n                class: \"max-w-4xl mx-auto\"\n              }, null, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_ULandingFAQ, {\n                  items: _unref(page).faq.items,\n                  multiple: \"\",\n                  \"default-open\": \"\",\n                  class: \"max-w-4xl mx-auto\"\n                }, null, 8, [\"items\"])\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714173365550,
-      "end": 1714173365553,
+      "start": 1714175014189,
+      "end": 1714175014191,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -251,8 +251,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"pricing\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"pricing\", () => queryContent(\"/pricing\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const isYearly = ref(false);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPageHero = _resolveComponent(\"UPageHero\");\n      const _component_UPricingToggle = _resolveComponent(\"UPricingToggle\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UPricingGrid = _resolveComponent(\"UPricingGrid\");\n      const _component_UPricingCard = _resolveComponent(\"UPricingCard\");\n      const _component_ULandingSection = _resolveComponent(\"ULandingSection\");\n      const _component_ULandingLogos = _resolveComponent(\"ULandingLogos\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_ULandingFAQ = _resolveComponent(\"ULandingFAQ\");\n      if (_unref(page)) {\n        _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n        _push(_ssrRenderComponent(_component_UPageHero, _unref(page).hero, {\n          links: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPricingToggle, {\n                modelValue: _unref(isYearly),\n                \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n                class: \"w-48\"\n              }, null, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPricingToggle, {\n                  modelValue: _unref(isYearly),\n                  \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n                  class: \"w-48\"\n                }, null, 8, [\"modelValue\", \"onUpdate:modelValue\"])\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_UContainer, null, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPricingGrid, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`<!--[-->`);\n                    _ssrRenderList(_unref(page).plans, (plan, index) => {\n                      _push3(_ssrRenderComponent(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                        price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                        cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                      }), null, _parent3, _scopeId2));\n                    });\n                    _push3(`<!--]-->`);\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                        return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                          price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                          cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                        }), null, 16, [\"price\", \"cycle\"]);\n                      }), 128))\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPricingGrid, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                      return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                        price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                        cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                      }), null, 16, [\"price\", \"cycle\"]);\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_ULandingSection, null, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_ULandingLogos, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`<!--[-->`);\n                    _ssrRenderList(_unref(page).logos.icons, (icon) => {\n                      _push3(_ssrRenderComponent(_component_UIcon, {\n                        key: icon,\n                        name: icon,\n                        class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                      }, null, _parent3, _scopeId2));\n                    });\n                    _push3(`<!--]-->`);\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                        return _openBlock(), _createBlock(_component_UIcon, {\n                          key: icon,\n                          name: icon,\n                          class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                        }, null, 8, [\"name\"]);\n                      }), 128))\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_ULandingLogos, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                      return _openBlock(), _createBlock(_component_UIcon, {\n                        key: icon,\n                        name: icon,\n                        class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                      }, null, 8, [\"name\"]);\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_ULandingFAQ, {\n                items: _unref(page).faq.items,\n                multiple: \"\",\n                \"default-open\": \"\",\n                class: \"max-w-4xl mx-auto\"\n              }, null, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_ULandingFAQ, {\n                  items: _unref(page).faq.items,\n                  multiple: \"\",\n                  \"default-open\": \"\",\n                  class: \"max-w-4xl mx-auto\"\n                }, null, 8, [\"items\"])\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714173365550,
-      "end": 1714173365553,
+      "start": 1714175014189,
+      "end": 1714175014191,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -265,39 +265,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714173365554,
-      "end": 1714173365554,
+      "start": 1714175014191,
+      "end": 1714175014191,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714173365554,
-      "end": 1714173365554,
+      "start": 1714175014191,
+      "end": 1714175014191,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173365554,
-      "end": 1714173365554,
+      "start": 1714175014191,
+      "end": 1714175014191,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714173365554,
-      "end": 1714173365554,
+      "start": 1714175014191,
+      "end": 1714175014191,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714173365554,
-      "end": 1714173365554,
+      "start": 1714175014191,
+      "end": 1714175014191,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageHero.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingToggle.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Container.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingGrid.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingCard.vue\";\nimport { default as __nuxt_component_5 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingSection.vue\";\nimport { default as __nuxt_component_6 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingLogos.vue\";\nimport { default as __nuxt_component_7 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_8 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingFAQ.vue\";\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"pricing\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"pricing\", () => queryContent(\"/pricing\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const isYearly = ref(false);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPageHero = __nuxt_component_0;\n      const _component_UPricingToggle = __nuxt_component_1;\n      const _component_UContainer = __nuxt_component_2;\n      const _component_UPricingGrid = __nuxt_component_3;\n      const _component_UPricingCard = __nuxt_component_4;\n      const _component_ULandingSection = __nuxt_component_5;\n      const _component_ULandingLogos = __nuxt_component_6;\n      const _component_UIcon = __nuxt_component_7;\n      const _component_ULandingFAQ = __nuxt_component_8;\n      if (_unref(page)) {\n        _push(`<div${_ssrRenderAttrs(_attrs)}>`);\n        _push(_ssrRenderComponent(_component_UPageHero, _unref(page).hero, {\n          links: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPricingToggle, {\n                modelValue: _unref(isYearly),\n                \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n                class: \"w-48\"\n              }, null, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPricingToggle, {\n                  modelValue: _unref(isYearly),\n                  \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n                  class: \"w-48\"\n                }, null, 8, [\"modelValue\", \"onUpdate:modelValue\"])\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_UContainer, null, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPricingGrid, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`<!--[-->`);\n                    _ssrRenderList(_unref(page).plans, (plan, index) => {\n                      _push3(_ssrRenderComponent(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                        price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                        cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                      }), null, _parent3, _scopeId2));\n                    });\n                    _push3(`<!--]-->`);\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                        return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                          price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                          cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                        }), null, 16, [\"price\", \"cycle\"]);\n                      }), 128))\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPricingGrid, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                      return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                        price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                        cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                      }), null, 16, [\"price\", \"cycle\"]);\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_ULandingSection, null, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_ULandingLogos, null, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    _push3(`<!--[-->`);\n                    _ssrRenderList(_unref(page).logos.icons, (icon) => {\n                      _push3(_ssrRenderComponent(_component_UIcon, {\n                        key: icon,\n                        name: icon,\n                        class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                      }, null, _parent3, _scopeId2));\n                    });\n                    _push3(`<!--]-->`);\n                  } else {\n                    return [\n                      (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                        return _openBlock(), _createBlock(_component_UIcon, {\n                          key: icon,\n                          name: icon,\n                          class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                        }, null, 8, [\"name\"]);\n                      }), 128))\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_ULandingLogos, null, {\n                  default: _withCtx(() => [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                      return _openBlock(), _createBlock(_component_UIcon, {\n                        key: icon,\n                        name: icon,\n                        class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                      }, null, 8, [\"name\"]);\n                    }), 128))\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(_ssrRenderComponent(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_ULandingFAQ, {\n                items: _unref(page).faq.items,\n                multiple: \"\",\n                \"default-open\": \"\",\n                class: \"max-w-4xl mx-auto\"\n              }, null, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_ULandingFAQ, {\n                  items: _unref(page).faq.items,\n                  multiple: \"\",\n                  \"default-open\": \"\",\n                  class: \"max-w-4xl mx-auto\"\n                }, null, 8, [\"items\"])\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714173365554,
-      "end": 1714173365555,
+      "start": 1714175014191,
+      "end": 1714175014192,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -310,20 +310,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714173365555,
-      "end": 1714173365555,
+      "start": 1714175014192,
+      "end": 1714175014192,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714173365555,
-      "end": 1714173365555,
+      "start": 1714175014192,
+      "end": 1714175014192,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714173365555,
-      "end": 1714173365555,
+      "start": 1714175014192,
+      "end": 1714175014192,
       "order": "normal"
     }
   ]
