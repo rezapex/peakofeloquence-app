@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <div :class=\"ui.inner\">\n      <div v-if=\"label || $slots.label\" :class=\"[ui.label.wrapper, size]\">\n        <label :for=\"inputId\" :class=\"[ui.label.base, required ? ui.label.required : '']\">\n          <slot v-if=\"$slots.label\" name=\"label\" v-bind=\"{ error, label, name, hint, description, help }\" />\n          <template v-else>{{ label }}</template>\n        </label>\n        <span v-if=\"hint || $slots.hint\" :class=\"[ui.hint]\">\n          <slot v-if=\"$slots.hint\" name=\"hint\" v-bind=\"{ error, label, name, hint, description, help }\" />\n          <template v-else>{{ hint }}</template>\n        </span>\n      </div>\n\n      <p v-if=\"description || $slots.description\" :class=\"[ui.description, size]\">\n        <slot v-if=\"$slots.description\" name=\"description\" v-bind=\"{ error, label, name, hint, description, help }\" />\n        <template v-else>\n          {{ description }}\n        </template>\n      </p>\n    </div>\n\n    <div :class=\"[label ? ui.container : '']\">\n      <slot v-bind=\"{ error }\" />\n\n      <p v-if=\"(typeof error === 'string' && error) || $slots.error\" :class=\"[ui.error, size]\">\n        <slot v-if=\"$slots.error\" name=\"error\" v-bind=\"{ error, label, name, hint, description, help }\" />\n        <template v-else>\n          {{ error }}\n        </template>\n      </p>\n      <p v-else-if=\"help || $slots.help\" :class=\"[ui.help, size]\">\n        <slot v-if=\"$slots.help\" name=\"help\" v-bind=\"{ error, label, name, hint, description, help }\" />\n        <template v-else>\n          {{ help }}\n        </template>\n      </p>\n    </div>\n  </div>\n</template>\n\n<script>\nimport { computed, defineComponent, provide, inject, ref, toRef } from \"vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { formGroup } from \"#ui/ui.config\";\nimport { useId } from \"#imports\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.formGroup, formGroup);\nexport default defineComponent({\n  inheritAttrs: false,\n  props: {\n    name: {\n      type: String,\n      default: null\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    label: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    help: {\n      type: String,\n      default: null\n    },\n    error: {\n      type: [String, Boolean],\n      default: null\n    },\n    hint: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    eagerValidation: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"formGroup\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const formErrors = inject(\"form-errors\", null);\n    const error = computed(() => {\n      return props.error && typeof props.error === \"string\" || typeof props.error === \"boolean\" ? props.error : formErrors?.value?.find((error2) => error2.path === props.name)?.message;\n    });\n    const size = computed(() => ui.value.size[props.size ?? config.default.size]);\n    const inputId = ref(useId());\n    provide(\"form-group\", {\n      error,\n      inputId,\n      name: computed(() => props.name),\n      size: computed(() => props.size),\n      eagerValidation: computed(() => props.eagerValidation)\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      inputId,\n      // eslint-disable-next-line vue/no-dupe-keys\n      size,\n      // eslint-disable-next-line vue/no-dupe-keys\n      error\n    };\n  }\n});\n</script>\n",
-      "start": 1714172189925,
-      "end": 1714172189937,
+      "start": 1714173365972,
+      "end": 1714173365987,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365987,
+      "end": 1714173365987,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365987,
+      "end": 1714173365987,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365987,
+      "end": 1714173365988,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365987,
+      "end": 1714173365988,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365988,
+      "end": 1714173365988,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365988,
+      "end": 1714173365988,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365988,
+      "end": 1714173365988,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365988,
+      "end": 1714173365988,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365988,
+      "end": 1714173365988,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365988,
+      "end": 1714173365988,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365988,
+      "end": 1714173365988,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172189937,
-      "end": 1714172189937,
+      "start": 1714173365988,
+      "end": 1714173365988,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { computed, defineComponent, provide, inject, ref, toRef } from \"vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { formGroup } from \"#ui/ui.config\";\nimport { useId } from \"#imports\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.formGroup, formGroup);\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    name: {\n      type: String,\n      default: null\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    label: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    help: {\n      type: String,\n      default: null\n    },\n    error: {\n      type: [String, Boolean],\n      default: null\n    },\n    hint: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    eagerValidation: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"formGroup\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const formErrors = inject(\"form-errors\", null);\n    const error = computed(() => {\n      return props.error && typeof props.error === \"string\" || typeof props.error === \"boolean\" ? props.error : formErrors?.value?.find((error2) => error2.path === props.name)?.message;\n    });\n    const size = computed(() => ui.value.size[props.size ?? config.default.size]);\n    const inputId = ref(useId());\n    provide(\"form-group\", {\n      error,\n      inputId,\n      name: computed(() => props.name),\n      size: computed(() => props.size),\n      eagerValidation: computed(() => props.eagerValidation)\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      inputId,\n      // eslint-disable-next-line vue/no-dupe-keys\n      size,\n      // eslint-disable-next-line vue/no-dupe-keys\n      error\n    };\n  }\n});\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.ui.wrapper\n    }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_ctx.ui.inner)\n  }\">`)\n  if (_ctx.label || _ctx.$slots.label) {\n    _push(`<div class=\"${\n      _ssrRenderClass([_ctx.ui.label.wrapper, _ctx.size])\n    }\"><label${\n      _ssrRenderAttr(\"for\", _ctx.inputId)\n    } class=\"${\n      _ssrRenderClass([_ctx.ui.label.base, _ctx.required ? _ctx.ui.label.required : ''])\n    }\">`)\n    if (_ctx.$slots.label) {\n      _ssrRenderSlot(_ctx.$slots, \"label\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.label)}<!--]-->`)\n    }\n    _push(`</label>`)\n    if (_ctx.hint || _ctx.$slots.hint) {\n      _push(`<span class=\"${_ssrRenderClass([_ctx.ui.hint])}\">`)\n      if (_ctx.$slots.hint) {\n        _ssrRenderSlot(_ctx.$slots, \"hint\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n      } else {\n        _push(`<!--[-->${_ssrInterpolate(_ctx.hint)}<!--]-->`)\n      }\n      _push(`</span>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.description || _ctx.$slots.description) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.description, _ctx.size])}\">`)\n    if (_ctx.$slots.description) {\n      _ssrRenderSlot(_ctx.$slots, \"description\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.description)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div><div class=\"${_ssrRenderClass([_ctx.label ? _ctx.ui.container : ''])}\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", { error: _ctx.error }, null, _push, _parent)\n  if ((typeof _ctx.error === 'string' && _ctx.error) || _ctx.$slots.error) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.error, _ctx.size])}\">`)\n    if (_ctx.$slots.error) {\n      _ssrRenderSlot(_ctx.$slots, \"error\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.error)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else if (_ctx.help || _ctx.$slots.help) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.help, _ctx.size])}\">`)\n    if (_ctx.$slots.help) {\n      _ssrRenderSlot(_ctx.$slots, \"help\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.help)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/forms/FormGroup.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714172189937,
-      "end": 1714172189939,
+      "start": 1714173365988,
+      "end": 1714173365991,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -101,117 +101,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172189939,
-      "end": 1714172189939,
+      "start": 1714173365991,
+      "end": 1714173365991,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172189939,
-      "end": 1714172189940,
+      "start": 1714173365991,
+      "end": 1714173365992,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172189940,
-      "end": 1714172189940,
+      "start": 1714173365992,
+      "end": 1714173365992,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172189940,
-      "end": 1714172189940,
+      "start": 1714173365992,
+      "end": 1714173365992,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172189940,
-      "end": 1714172189940,
+      "start": 1714173365992,
+      "end": 1714173365992,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172189940,
-      "end": 1714172189940,
+      "start": 1714173365992,
+      "end": 1714173365992,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172189940,
-      "end": 1714172189940,
+      "start": 1714173365992,
+      "end": 1714173365992,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172189940,
-      "end": 1714172189940,
+      "start": 1714173365992,
+      "end": 1714173365992,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172189940,
-      "end": 1714172189940,
+      "start": 1714173365992,
+      "end": 1714173365992,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "\nimport { computed, defineComponent, provide, inject, ref, toRef } from \"vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { formGroup } from \"#ui/ui.config\";\nimport { useId } from \"#imports\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.formGroup, formGroup);\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    name: {\n      type: String,\n      default: null\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    label: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    help: {\n      type: String,\n      default: null\n    },\n    error: {\n      type: [String, Boolean],\n      default: null\n    },\n    hint: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    eagerValidation: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"formGroup\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const formErrors = inject(\"form-errors\", null);\n    const error = computed(() => {\n      return props.error && typeof props.error === \"string\" || typeof props.error === \"boolean\" ? props.error : formErrors?.value?.find((error2) => error2.path === props.name)?.message;\n    });\n    const size = computed(() => ui.value.size[props.size ?? config.default.size]);\n    const inputId = ref(useId('$K7dDJpdOWE'));\n    provide(\"form-group\", {\n      error,\n      inputId,\n      name: computed(() => props.name),\n      size: computed(() => props.size),\n      eagerValidation: computed(() => props.eagerValidation)\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      inputId,\n      // eslint-disable-next-line vue/no-dupe-keys\n      size,\n      // eslint-disable-next-line vue/no-dupe-keys\n      error\n    };\n  }\n});\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.ui.wrapper\n    }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_ctx.ui.inner)\n  }\">`)\n  if (_ctx.label || _ctx.$slots.label) {\n    _push(`<div class=\"${\n      _ssrRenderClass([_ctx.ui.label.wrapper, _ctx.size])\n    }\"><label${\n      _ssrRenderAttr(\"for\", _ctx.inputId)\n    } class=\"${\n      _ssrRenderClass([_ctx.ui.label.base, _ctx.required ? _ctx.ui.label.required : ''])\n    }\">`)\n    if (_ctx.$slots.label) {\n      _ssrRenderSlot(_ctx.$slots, \"label\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.label)}<!--]-->`)\n    }\n    _push(`</label>`)\n    if (_ctx.hint || _ctx.$slots.hint) {\n      _push(`<span class=\"${_ssrRenderClass([_ctx.ui.hint])}\">`)\n      if (_ctx.$slots.hint) {\n        _ssrRenderSlot(_ctx.$slots, \"hint\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n      } else {\n        _push(`<!--[-->${_ssrInterpolate(_ctx.hint)}<!--]-->`)\n      }\n      _push(`</span>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.description || _ctx.$slots.description) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.description, _ctx.size])}\">`)\n    if (_ctx.$slots.description) {\n      _ssrRenderSlot(_ctx.$slots, \"description\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.description)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div><div class=\"${_ssrRenderClass([_ctx.label ? _ctx.ui.container : ''])}\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", { error: _ctx.error }, null, _push, _parent)\n  if ((typeof _ctx.error === 'string' && _ctx.error) || _ctx.$slots.error) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.error, _ctx.size])}\">`)\n    if (_ctx.$slots.error) {\n      _ssrRenderSlot(_ctx.$slots, \"error\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.error)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else if (_ctx.help || _ctx.$slots.help) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.help, _ctx.size])}\">`)\n    if (_ctx.$slots.help) {\n      _ssrRenderSlot(_ctx.$slots, \"help\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.help)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/forms/FormGroup.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714172189940,
-      "end": 1714172189941,
+      "start": 1714173365992,
+      "end": 1714173365993,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -225,8 +225,8 @@
     {
       "name": "nuxt:composable-keys",
       "result": "\nimport { computed, defineComponent, provide, inject, ref, toRef } from \"vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { formGroup } from \"#ui/ui.config\";\nimport { useId } from \"#imports\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.formGroup, formGroup);\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    name: {\n      type: String,\n      default: null\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    label: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    help: {\n      type: String,\n      default: null\n    },\n    error: {\n      type: [String, Boolean],\n      default: null\n    },\n    hint: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    eagerValidation: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"formGroup\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const formErrors = inject(\"form-errors\", null);\n    const error = computed(() => {\n      return props.error && typeof props.error === \"string\" || typeof props.error === \"boolean\" ? props.error : formErrors?.value?.find((error2) => error2.path === props.name)?.message;\n    });\n    const size = computed(() => ui.value.size[props.size ?? config.default.size]);\n    const inputId = ref(useId('$K7dDJpdOWE'));\n    provide(\"form-group\", {\n      error,\n      inputId,\n      name: computed(() => props.name),\n      size: computed(() => props.size),\n      eagerValidation: computed(() => props.eagerValidation)\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      inputId,\n      // eslint-disable-next-line vue/no-dupe-keys\n      size,\n      // eslint-disable-next-line vue/no-dupe-keys\n      error\n    };\n  }\n});\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.ui.wrapper\n    }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_ctx.ui.inner)\n  }\">`)\n  if (_ctx.label || _ctx.$slots.label) {\n    _push(`<div class=\"${\n      _ssrRenderClass([_ctx.ui.label.wrapper, _ctx.size])\n    }\"><label${\n      _ssrRenderAttr(\"for\", _ctx.inputId)\n    } class=\"${\n      _ssrRenderClass([_ctx.ui.label.base, _ctx.required ? _ctx.ui.label.required : ''])\n    }\">`)\n    if (_ctx.$slots.label) {\n      _ssrRenderSlot(_ctx.$slots, \"label\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.label)}<!--]-->`)\n    }\n    _push(`</label>`)\n    if (_ctx.hint || _ctx.$slots.hint) {\n      _push(`<span class=\"${_ssrRenderClass([_ctx.ui.hint])}\">`)\n      if (_ctx.$slots.hint) {\n        _ssrRenderSlot(_ctx.$slots, \"hint\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n      } else {\n        _push(`<!--[-->${_ssrInterpolate(_ctx.hint)}<!--]-->`)\n      }\n      _push(`</span>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.description || _ctx.$slots.description) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.description, _ctx.size])}\">`)\n    if (_ctx.$slots.description) {\n      _ssrRenderSlot(_ctx.$slots, \"description\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.description)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div><div class=\"${_ssrRenderClass([_ctx.label ? _ctx.ui.container : ''])}\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", { error: _ctx.error }, null, _push, _parent)\n  if ((typeof _ctx.error === 'string' && _ctx.error) || _ctx.$slots.error) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.error, _ctx.size])}\">`)\n    if (_ctx.$slots.error) {\n      _ssrRenderSlot(_ctx.$slots, \"error\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.error)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else if (_ctx.help || _ctx.$slots.help) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.help, _ctx.size])}\">`)\n    if (_ctx.$slots.help) {\n      _ssrRenderSlot(_ctx.$slots, \"help\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.help)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/forms/FormGroup.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714172189940,
-      "end": 1714172189941,
+      "start": 1714173365992,
+      "end": 1714173365993,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -240,8 +240,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useId } from '#app/composables/id';\n\nimport { computed, defineComponent, provide, inject, ref, toRef } from \"vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { formGroup } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.formGroup, formGroup);\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    name: {\n      type: String,\n      default: null\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    label: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    help: {\n      type: String,\n      default: null\n    },\n    error: {\n      type: [String, Boolean],\n      default: null\n    },\n    hint: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    eagerValidation: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"formGroup\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const formErrors = inject(\"form-errors\", null);\n    const error = computed(() => {\n      return props.error && typeof props.error === \"string\" || typeof props.error === \"boolean\" ? props.error : formErrors?.value?.find((error2) => error2.path === props.name)?.message;\n    });\n    const size = computed(() => ui.value.size[props.size ?? config.default.size]);\n    const inputId = ref(useId('$K7dDJpdOWE'));\n    provide(\"form-group\", {\n      error,\n      inputId,\n      name: computed(() => props.name),\n      size: computed(() => props.size),\n      eagerValidation: computed(() => props.eagerValidation)\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      inputId,\n      // eslint-disable-next-line vue/no-dupe-keys\n      size,\n      // eslint-disable-next-line vue/no-dupe-keys\n      error\n    };\n  }\n});\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.ui.wrapper\n    }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_ctx.ui.inner)\n  }\">`)\n  if (_ctx.label || _ctx.$slots.label) {\n    _push(`<div class=\"${\n      _ssrRenderClass([_ctx.ui.label.wrapper, _ctx.size])\n    }\"><label${\n      _ssrRenderAttr(\"for\", _ctx.inputId)\n    } class=\"${\n      _ssrRenderClass([_ctx.ui.label.base, _ctx.required ? _ctx.ui.label.required : ''])\n    }\">`)\n    if (_ctx.$slots.label) {\n      _ssrRenderSlot(_ctx.$slots, \"label\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.label)}<!--]-->`)\n    }\n    _push(`</label>`)\n    if (_ctx.hint || _ctx.$slots.hint) {\n      _push(`<span class=\"${_ssrRenderClass([_ctx.ui.hint])}\">`)\n      if (_ctx.$slots.hint) {\n        _ssrRenderSlot(_ctx.$slots, \"hint\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n      } else {\n        _push(`<!--[-->${_ssrInterpolate(_ctx.hint)}<!--]-->`)\n      }\n      _push(`</span>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.description || _ctx.$slots.description) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.description, _ctx.size])}\">`)\n    if (_ctx.$slots.description) {\n      _ssrRenderSlot(_ctx.$slots, \"description\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.description)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div><div class=\"${_ssrRenderClass([_ctx.label ? _ctx.ui.container : ''])}\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", { error: _ctx.error }, null, _push, _parent)\n  if ((typeof _ctx.error === 'string' && _ctx.error) || _ctx.$slots.error) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.error, _ctx.size])}\">`)\n    if (_ctx.$slots.error) {\n      _ssrRenderSlot(_ctx.$slots, \"error\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.error)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else if (_ctx.help || _ctx.$slots.help) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.help, _ctx.size])}\">`)\n    if (_ctx.$slots.help) {\n      _ssrRenderSlot(_ctx.$slots, \"help\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.help)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/forms/FormGroup.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714172189941,
-      "end": 1714172189942,
+      "start": 1714173365993,
+      "end": 1714173365995,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -255,8 +255,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useId } from '#app/composables/id';\n\nimport { computed, defineComponent, provide, inject, ref, toRef } from \"vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { formGroup } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.formGroup, formGroup);\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    name: {\n      type: String,\n      default: null\n    },\n    size: {\n      type: String,\n      default: null,\n      validator(value) {\n        return Object.keys(config.size).includes(value);\n      }\n    },\n    label: {\n      type: String,\n      default: null\n    },\n    description: {\n      type: String,\n      default: null\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    help: {\n      type: String,\n      default: null\n    },\n    error: {\n      type: [String, Boolean],\n      default: null\n    },\n    hint: {\n      type: String,\n      default: null\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    },\n    eagerValidation: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"formGroup\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const formErrors = inject(\"form-errors\", null);\n    const error = computed(() => {\n      return props.error && typeof props.error === \"string\" || typeof props.error === \"boolean\" ? props.error : formErrors?.value?.find((error2) => error2.path === props.name)?.message;\n    });\n    const size = computed(() => ui.value.size[props.size ?? config.default.size]);\n    const inputId = ref(useId('$K7dDJpdOWE'));\n    provide(\"form-group\", {\n      error,\n      inputId,\n      name: computed(() => props.name),\n      size: computed(() => props.size),\n      eagerValidation: computed(() => props.eagerValidation)\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      inputId,\n      // eslint-disable-next-line vue/no-dupe-keys\n      size,\n      // eslint-disable-next-line vue/no-dupe-keys\n      error\n    };\n  }\n});\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderAttr as _ssrRenderAttr, ssrRenderClass as _ssrRenderClass, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _ctx.ui.wrapper\n    }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_ctx.ui.inner)\n  }\">`)\n  if (_ctx.label || _ctx.$slots.label) {\n    _push(`<div class=\"${\n      _ssrRenderClass([_ctx.ui.label.wrapper, _ctx.size])\n    }\"><label${\n      _ssrRenderAttr(\"for\", _ctx.inputId)\n    } class=\"${\n      _ssrRenderClass([_ctx.ui.label.base, _ctx.required ? _ctx.ui.label.required : ''])\n    }\">`)\n    if (_ctx.$slots.label) {\n      _ssrRenderSlot(_ctx.$slots, \"label\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.label)}<!--]-->`)\n    }\n    _push(`</label>`)\n    if (_ctx.hint || _ctx.$slots.hint) {\n      _push(`<span class=\"${_ssrRenderClass([_ctx.ui.hint])}\">`)\n      if (_ctx.$slots.hint) {\n        _ssrRenderSlot(_ctx.$slots, \"hint\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n      } else {\n        _push(`<!--[-->${_ssrInterpolate(_ctx.hint)}<!--]-->`)\n      }\n      _push(`</span>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (_ctx.description || _ctx.$slots.description) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.description, _ctx.size])}\">`)\n    if (_ctx.$slots.description) {\n      _ssrRenderSlot(_ctx.$slots, \"description\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.description)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div><div class=\"${_ssrRenderClass([_ctx.label ? _ctx.ui.container : ''])}\">`)\n  _ssrRenderSlot(_ctx.$slots, \"default\", { error: _ctx.error }, null, _push, _parent)\n  if ((typeof _ctx.error === 'string' && _ctx.error) || _ctx.$slots.error) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.error, _ctx.size])}\">`)\n    if (_ctx.$slots.error) {\n      _ssrRenderSlot(_ctx.$slots, \"error\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.error)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else if (_ctx.help || _ctx.$slots.help) {\n    _push(`<p class=\"${_ssrRenderClass([_ctx.ui.help, _ctx.size])}\">`)\n    if (_ctx.$slots.help) {\n      _ssrRenderSlot(_ctx.$slots, \"help\", { error: _ctx.error, label: _ctx.label, name: _ctx.name, hint: _ctx.hint, description: _ctx.description, help: _ctx.help }, null, _push, _parent)\n    } else {\n      _push(`<!--[-->${_ssrInterpolate(_ctx.help)}<!--]-->`)\n    }\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/forms/FormGroup.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714172189941,
-      "end": 1714172189942,
+      "start": 1714173365993,
+      "end": 1714173365995,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -269,56 +269,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172189942,
-      "end": 1714172189942,
+      "start": 1714173365995,
+      "end": 1714173365995,
       "order": "normal"
     }
   ]

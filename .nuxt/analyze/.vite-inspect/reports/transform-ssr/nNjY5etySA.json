@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createSlots as _createSlots } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\nimport { withoutTrailingSlash } from 'ufo'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: '[...slug]',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp: any, __restore: any\n\nconst route = useRoute()\n\nconst { data: page } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData(route.path, () => queryContent(route.path).findOne()))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!page.value) {\n  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })\n}\n\nconst { data: surround } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData(`${route.path}-surround`, () => queryContent('/docs')\n  .where({ _extension: 'md', navigation: { $ne: false } })\n  .only(['title', 'description', '_path'])\n  .findSurround(withoutTrailingSlash(route.path))\n, { default: () => [] }))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\nuseSeoMeta({\n  title: page.value.title,\n  ogTitle: page.value.title,\n  description: page.value.description,\n  ogDescription: page.value.description\n})\n\ndefineOgImage({\n  component: 'Saas',\n  title: page.value.title,\n  description: page.value.description\n})\n\nconst headline = computed(() => findPageHeadline(page.value!))\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UPage = _resolveComponent(\"UPage\")!\n  const _component_UPageHeader = _resolveComponent(\"UPageHeader\")!\n  const _component_UPageBody = _resolveComponent(\"UPageBody\")!\n  const _component_ContentRenderer = _resolveComponent(\"ContentRenderer\")!\n  const _component_UContentSurround = _resolveComponent(\"UContentSurround\")!\n  const _component_UContentToc = _resolveComponent(\"UContentToc\")!\n\n  if (_unref(page)) {\n    _push(_ssrRenderComponent(_component_UPage, _attrs, _createSlots({\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(_ssrRenderComponent(_component_UPageHeader, {\n            title: _unref(page).title,\n            description: _unref(page).description,\n            links: _unref(page).links,\n            headline: _unref(headline)\n          }, null, _parent, _scopeId))\n          _push(_ssrRenderComponent(_component_UPageBody, { prose: \"\" }, {\n            default: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                if (_unref(page).body) {\n                  _push(_ssrRenderComponent(_component_ContentRenderer, { value: _unref(page) }, null, _parent, _scopeId))\n                } else {\n                  _push(`<!---->`)\n                }\n                if (_unref(surround)?.length) {\n                  _push(`<hr${_scopeId}>`)\n                } else {\n                  _push(`<!---->`)\n                }\n                _push(_ssrRenderComponent(_component_UContentSurround, { surround: _unref(surround) }, null, _parent, _scopeId))\n              } else {\n                return [\n                  (_unref(page).body)\n                    ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                        key: 0,\n                        value: _unref(page)\n                      }, null, 8, [\"value\"]))\n                    : _createCommentVNode(\"\", true),\n                  (_unref(surround)?.length)\n                    ? (_openBlock(), _createBlock(\"hr\", { key: 1 }))\n                    : _createCommentVNode(\"\", true),\n                  _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                ]\n              }\n            }),\n            _: 1\n          }, _parent, _scopeId))\n        } else {\n          return [\n            _createVNode(_component_UPageHeader, {\n              title: _unref(page).title,\n              description: _unref(page).description,\n              links: _unref(page).links,\n              headline: _unref(headline)\n            }, null, 8, [\"title\", \"description\", \"links\", \"headline\"]),\n            _createVNode(_component_UPageBody, { prose: \"\" }, {\n              default: _withCtx(() => [\n                (_unref(page).body)\n                  ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                      key: 0,\n                      value: _unref(page)\n                    }, null, 8, [\"value\"]))\n                  : _createCommentVNode(\"\", true),\n                (_unref(surround)?.length)\n                  ? (_openBlock(), _createBlock(\"hr\", { key: 1 }))\n                  : _createCommentVNode(\"\", true),\n                _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n              ]),\n              _: 1\n            })\n          ]\n        }\n      }),\n      _: 2\n    }, [\n      (_unref(page).toc !== false)\n        ? {\n            name: \"right\",\n            fn: _withCtx((_, _push, _parent, _scopeId) => {\n              if (_push) {\n                _push(_ssrRenderComponent(_component_UContentToc, {\n                  links: _unref(page).body?.toc?.links\n                }, null, _parent, _scopeId))\n              } else {\n                return [\n                  _createVNode(_component_UContentToc, {\n                    links: _unref(page).body?.toc?.links\n                  }, null, 8, [\"links\"])\n                ]\n              }\n            }),\n            key: \"0\"\n          }\n        : undefined\n    ]), _parent))\n  } else {\n    _push(`<!---->`)\n  }\n}\n}\n\n})",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364617,
+      "end": 1714173364617,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364617,
+      "end": 1714173364617,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364617,
+      "end": 1714173364617,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364617,
+      "end": 1714173364618,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364617,
+      "end": 1714173364618,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172188850,
-      "end": 1714172188850,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createSlots as _createSlots } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\";\nimport { withoutTrailingSlash } from \"ufo\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"[...slug]\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const route = useRoute();\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(route.path, () => queryContent(route.path).findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: surround } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\n      `${route.path}-surround`,\n      () => queryContent(\"/docs\").where({ _extension: \"md\", navigation: { $ne: false } }).only([\"title\", \"description\", \"_path\"]).findSurround(withoutTrailingSlash(route.path)),\n      { default: () => [] }\n    )), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const headline = computed(() => findPageHeadline(page.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPage = _resolveComponent(\"UPage\");\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_ContentRenderer = _resolveComponent(\"ContentRenderer\");\n      const _component_UContentSurround = _resolveComponent(\"UContentSurround\");\n      const _component_UContentToc = _resolveComponent(\"UContentToc\");\n      if (_unref(page)) {\n        _push(_ssrRenderComponent(_component_UPage, _attrs, _createSlots({\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPageHeader, {\n                title: _unref(page).title,\n                description: _unref(page).description,\n                links: _unref(page).links,\n                headline: _unref(headline)\n              }, null, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UPageBody, { prose: \"\" }, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    if (_unref(page).body) {\n                      _push3(_ssrRenderComponent(_component_ContentRenderer, { value: _unref(page) }, null, _parent3, _scopeId2));\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    if (_unref(surround)?.length) {\n                      _push3(`<hr${_scopeId2}>`);\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    _push3(_ssrRenderComponent(_component_UContentSurround, { surround: _unref(surround) }, null, _parent3, _scopeId2));\n                  } else {\n                    return [\n                      _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                        key: 0,\n                        value: _unref(page)\n                      }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                      _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                      _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPageHeader, {\n                  title: _unref(page).title,\n                  description: _unref(page).description,\n                  links: _unref(page).links,\n                  headline: _unref(headline)\n                }, null, 8, [\"title\", \"description\", \"links\", \"headline\"]),\n                _createVNode(_component_UPageBody, { prose: \"\" }, {\n                  default: _withCtx(() => [\n                    _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                      key: 0,\n                      value: _unref(page)\n                    }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                    _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                    _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 2\n        }, [\n          _unref(page).toc !== false ? {\n            name: \"right\",\n            fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(_ssrRenderComponent(_component_UContentToc, {\n                  links: _unref(page).body?.toc?.links\n                }, null, _parent2, _scopeId));\n              } else {\n                return [\n                  _createVNode(_component_UContentToc, {\n                    links: _unref(page).body?.toc?.links\n                  }, null, 8, [\"links\"])\n                ];\n              }\n            }),\n            key: \"0\"\n          } : void 0\n        ]), _parent));\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714172188850,
-      "end": 1714172189510,
+      "start": 1714173364618,
+      "end": 1714173365514,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -97,135 +97,135 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172189510,
-      "end": 1714172189510,
+      "start": 1714173365514,
+      "end": 1714173365514,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172189510,
-      "end": 1714172189510,
+      "start": 1714173365514,
+      "end": 1714173365514,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172189510,
-      "end": 1714172189510,
+      "start": 1714173365514,
+      "end": 1714173365514,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365514,
+      "end": 1714173365514,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365514,
+      "end": 1714173365514,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365514,
+      "end": 1714173365514,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365514,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365514,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172189511,
-      "end": 1714172189511,
+      "start": 1714173365515,
+      "end": 1714173365515,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createSlots as _createSlots } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\";\nimport { withoutTrailingSlash } from \"ufo\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"[...slug]\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const route = useRoute();\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(route.path, () => queryContent(route.path).findOne(), '$UMOUItaw9R')), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: surround } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\n      `${route.path}-surround`,\n      () => queryContent(\"/docs\").where({ _extension: \"md\", navigation: { $ne: false } }).only([\"title\", \"description\", \"_path\"]).findSurround(withoutTrailingSlash(route.path)),\n      { default: () => [] }\n    )), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const headline = computed(() => findPageHeadline(page.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPage = _resolveComponent(\"UPage\");\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_ContentRenderer = _resolveComponent(\"ContentRenderer\");\n      const _component_UContentSurround = _resolveComponent(\"UContentSurround\");\n      const _component_UContentToc = _resolveComponent(\"UContentToc\");\n      if (_unref(page)) {\n        _push(_ssrRenderComponent(_component_UPage, _attrs, _createSlots({\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPageHeader, {\n                title: _unref(page).title,\n                description: _unref(page).description,\n                links: _unref(page).links,\n                headline: _unref(headline)\n              }, null, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UPageBody, { prose: \"\" }, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    if (_unref(page).body) {\n                      _push3(_ssrRenderComponent(_component_ContentRenderer, { value: _unref(page) }, null, _parent3, _scopeId2));\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    if (_unref(surround)?.length) {\n                      _push3(`<hr${_scopeId2}>`);\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    _push3(_ssrRenderComponent(_component_UContentSurround, { surround: _unref(surround) }, null, _parent3, _scopeId2));\n                  } else {\n                    return [\n                      _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                        key: 0,\n                        value: _unref(page)\n                      }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                      _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                      _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPageHeader, {\n                  title: _unref(page).title,\n                  description: _unref(page).description,\n                  links: _unref(page).links,\n                  headline: _unref(headline)\n                }, null, 8, [\"title\", \"description\", \"links\", \"headline\"]),\n                _createVNode(_component_UPageBody, { prose: \"\" }, {\n                  default: _withCtx(() => [\n                    _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                      key: 0,\n                      value: _unref(page)\n                    }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                    _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                    _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 2\n        }, [\n          _unref(page).toc !== false ? {\n            name: \"right\",\n            fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(_ssrRenderComponent(_component_UContentToc, {\n                  links: _unref(page).body?.toc?.links\n                }, null, _parent2, _scopeId));\n              } else {\n                return [\n                  _createVNode(_component_UContentToc, {\n                    links: _unref(page).body?.toc?.links\n                  }, null, 8, [\"links\"])\n                ];\n              }\n            }),\n            key: \"0\"\n          } : void 0\n        ]), _parent));\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714172189511,
-      "end": 1714172189512,
+      "start": 1714173365515,
+      "end": 1714173365516,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -239,8 +239,8 @@
     {
       "name": "nuxt:composable-keys",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createSlots as _createSlots } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\";\nimport { withoutTrailingSlash } from \"ufo\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"[...slug]\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const route = useRoute();\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(route.path, () => queryContent(route.path).findOne(), '$UMOUItaw9R')), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: surround } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\n      `${route.path}-surround`,\n      () => queryContent(\"/docs\").where({ _extension: \"md\", navigation: { $ne: false } }).only([\"title\", \"description\", \"_path\"]).findSurround(withoutTrailingSlash(route.path)),\n      { default: () => [] }\n    )), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const headline = computed(() => findPageHeadline(page.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPage = _resolveComponent(\"UPage\");\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_ContentRenderer = _resolveComponent(\"ContentRenderer\");\n      const _component_UContentSurround = _resolveComponent(\"UContentSurround\");\n      const _component_UContentToc = _resolveComponent(\"UContentToc\");\n      if (_unref(page)) {\n        _push(_ssrRenderComponent(_component_UPage, _attrs, _createSlots({\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPageHeader, {\n                title: _unref(page).title,\n                description: _unref(page).description,\n                links: _unref(page).links,\n                headline: _unref(headline)\n              }, null, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UPageBody, { prose: \"\" }, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    if (_unref(page).body) {\n                      _push3(_ssrRenderComponent(_component_ContentRenderer, { value: _unref(page) }, null, _parent3, _scopeId2));\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    if (_unref(surround)?.length) {\n                      _push3(`<hr${_scopeId2}>`);\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    _push3(_ssrRenderComponent(_component_UContentSurround, { surround: _unref(surround) }, null, _parent3, _scopeId2));\n                  } else {\n                    return [\n                      _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                        key: 0,\n                        value: _unref(page)\n                      }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                      _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                      _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPageHeader, {\n                  title: _unref(page).title,\n                  description: _unref(page).description,\n                  links: _unref(page).links,\n                  headline: _unref(headline)\n                }, null, 8, [\"title\", \"description\", \"links\", \"headline\"]),\n                _createVNode(_component_UPageBody, { prose: \"\" }, {\n                  default: _withCtx(() => [\n                    _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                      key: 0,\n                      value: _unref(page)\n                    }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                    _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                    _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 2\n        }, [\n          _unref(page).toc !== false ? {\n            name: \"right\",\n            fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(_ssrRenderComponent(_component_UContentToc, {\n                  links: _unref(page).body?.toc?.links\n                }, null, _parent2, _scopeId));\n              } else {\n                return [\n                  _createVNode(_component_UContentToc, {\n                    links: _unref(page).body?.toc?.links\n                  }, null, 8, [\"links\"])\n                ];\n              }\n            }),\n            key: \"0\"\n          } : void 0\n        ]), _parent));\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714172189511,
-      "end": 1714172189512,
+      "start": 1714173365515,
+      "end": 1714173365516,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -254,8 +254,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useRoute } from '#app/composables/router';\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { computed } from 'vue';\nimport { findPageHeadline } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createSlots as _createSlots } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\";\nimport { withoutTrailingSlash } from \"ufo\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"[...slug]\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const route = useRoute();\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(route.path, () => queryContent(route.path).findOne(), '$UMOUItaw9R')), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: surround } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\n      `${route.path}-surround`,\n      () => queryContent(\"/docs\").where({ _extension: \"md\", navigation: { $ne: false } }).only([\"title\", \"description\", \"_path\"]).findSurround(withoutTrailingSlash(route.path)),\n      { default: () => [] }\n    )), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const headline = computed(() => findPageHeadline(page.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPage = _resolveComponent(\"UPage\");\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_ContentRenderer = _resolveComponent(\"ContentRenderer\");\n      const _component_UContentSurround = _resolveComponent(\"UContentSurround\");\n      const _component_UContentToc = _resolveComponent(\"UContentToc\");\n      if (_unref(page)) {\n        _push(_ssrRenderComponent(_component_UPage, _attrs, _createSlots({\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPageHeader, {\n                title: _unref(page).title,\n                description: _unref(page).description,\n                links: _unref(page).links,\n                headline: _unref(headline)\n              }, null, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UPageBody, { prose: \"\" }, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    if (_unref(page).body) {\n                      _push3(_ssrRenderComponent(_component_ContentRenderer, { value: _unref(page) }, null, _parent3, _scopeId2));\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    if (_unref(surround)?.length) {\n                      _push3(`<hr${_scopeId2}>`);\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    _push3(_ssrRenderComponent(_component_UContentSurround, { surround: _unref(surround) }, null, _parent3, _scopeId2));\n                  } else {\n                    return [\n                      _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                        key: 0,\n                        value: _unref(page)\n                      }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                      _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                      _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPageHeader, {\n                  title: _unref(page).title,\n                  description: _unref(page).description,\n                  links: _unref(page).links,\n                  headline: _unref(headline)\n                }, null, 8, [\"title\", \"description\", \"links\", \"headline\"]),\n                _createVNode(_component_UPageBody, { prose: \"\" }, {\n                  default: _withCtx(() => [\n                    _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                      key: 0,\n                      value: _unref(page)\n                    }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                    _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                    _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 2\n        }, [\n          _unref(page).toc !== false ? {\n            name: \"right\",\n            fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(_ssrRenderComponent(_component_UContentToc, {\n                  links: _unref(page).body?.toc?.links\n                }, null, _parent2, _scopeId));\n              } else {\n                return [\n                  _createVNode(_component_UContentToc, {\n                    links: _unref(page).body?.toc?.links\n                  }, null, 8, [\"links\"])\n                ];\n              }\n            }),\n            key: \"0\"\n          } : void 0\n        ]), _parent));\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714172189512,
-      "end": 1714172189513,
+      "start": 1714173365516,
+      "end": 1714173365518,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -269,8 +269,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useRoute } from '#app/composables/router';\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { computed } from 'vue';\nimport { findPageHeadline } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createSlots as _createSlots } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\";\nimport { withoutTrailingSlash } from \"ufo\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"[...slug]\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const route = useRoute();\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(route.path, () => queryContent(route.path).findOne(), '$UMOUItaw9R')), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: surround } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\n      `${route.path}-surround`,\n      () => queryContent(\"/docs\").where({ _extension: \"md\", navigation: { $ne: false } }).only([\"title\", \"description\", \"_path\"]).findSurround(withoutTrailingSlash(route.path)),\n      { default: () => [] }\n    )), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const headline = computed(() => findPageHeadline(page.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPage = _resolveComponent(\"UPage\");\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_ContentRenderer = _resolveComponent(\"ContentRenderer\");\n      const _component_UContentSurround = _resolveComponent(\"UContentSurround\");\n      const _component_UContentToc = _resolveComponent(\"UContentToc\");\n      if (_unref(page)) {\n        _push(_ssrRenderComponent(_component_UPage, _attrs, _createSlots({\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPageHeader, {\n                title: _unref(page).title,\n                description: _unref(page).description,\n                links: _unref(page).links,\n                headline: _unref(headline)\n              }, null, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UPageBody, { prose: \"\" }, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    if (_unref(page).body) {\n                      _push3(_ssrRenderComponent(_component_ContentRenderer, { value: _unref(page) }, null, _parent3, _scopeId2));\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    if (_unref(surround)?.length) {\n                      _push3(`<hr${_scopeId2}>`);\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    _push3(_ssrRenderComponent(_component_UContentSurround, { surround: _unref(surround) }, null, _parent3, _scopeId2));\n                  } else {\n                    return [\n                      _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                        key: 0,\n                        value: _unref(page)\n                      }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                      _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                      _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPageHeader, {\n                  title: _unref(page).title,\n                  description: _unref(page).description,\n                  links: _unref(page).links,\n                  headline: _unref(headline)\n                }, null, 8, [\"title\", \"description\", \"links\", \"headline\"]),\n                _createVNode(_component_UPageBody, { prose: \"\" }, {\n                  default: _withCtx(() => [\n                    _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                      key: 0,\n                      value: _unref(page)\n                    }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                    _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                    _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 2\n        }, [\n          _unref(page).toc !== false ? {\n            name: \"right\",\n            fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(_ssrRenderComponent(_component_UContentToc, {\n                  links: _unref(page).body?.toc?.links\n                }, null, _parent2, _scopeId));\n              } else {\n                return [\n                  _createVNode(_component_UContentToc, {\n                    links: _unref(page).body?.toc?.links\n                  }, null, 8, [\"links\"])\n                ];\n              }\n            }),\n            key: \"0\"\n          } : void 0\n        ]), _parent));\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714172189512,
-      "end": 1714172189513,
+      "start": 1714173365516,
+      "end": 1714173365518,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -283,39 +283,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172189513,
-      "end": 1714172189513,
+      "start": 1714173365518,
+      "end": 1714173365518,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172189513,
-      "end": 1714172189513,
+      "start": 1714173365518,
+      "end": 1714173365518,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172189513,
-      "end": 1714172189513,
+      "start": 1714173365518,
+      "end": 1714173365518,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172189513,
-      "end": 1714172189513,
+      "start": 1714173365518,
+      "end": 1714173365518,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714172189513,
-      "end": 1714172189513,
+      "start": 1714173365518,
+      "end": 1714173365518,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/Page.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageHeader.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageBody.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/content/ContentSurround.vue\";\nimport { default as __nuxt_component_5 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/content/ContentToc.vue\";\nimport { useRoute } from '#app/composables/router';\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { computed } from 'vue';\nimport { findPageHeadline } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createSlots as _createSlots } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\";\nimport { withoutTrailingSlash } from \"ufo\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"[...slug]\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const route = useRoute();\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(route.path, () => queryContent(route.path).findOne(), '$UMOUItaw9R')), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: surround } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\n      `${route.path}-surround`,\n      () => queryContent(\"/docs\").where({ _extension: \"md\", navigation: { $ne: false } }).only([\"title\", \"description\", \"_path\"]).findSurround(withoutTrailingSlash(route.path)),\n      { default: () => [] }\n    )), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const headline = computed(() => findPageHeadline(page.value));\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UPage = __nuxt_component_0;\n      const _component_UPageHeader = __nuxt_component_1;\n      const _component_UPageBody = __nuxt_component_2;\n      const _component_ContentRenderer = __nuxt_component_3;\n      const _component_UContentSurround = __nuxt_component_4;\n      const _component_UContentToc = __nuxt_component_5;\n      if (_unref(page)) {\n        _push(_ssrRenderComponent(_component_UPage, _attrs, _createSlots({\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(_ssrRenderComponent(_component_UPageHeader, {\n                title: _unref(page).title,\n                description: _unref(page).description,\n                links: _unref(page).links,\n                headline: _unref(headline)\n              }, null, _parent2, _scopeId));\n              _push2(_ssrRenderComponent(_component_UPageBody, { prose: \"\" }, {\n                default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                  if (_push3) {\n                    if (_unref(page).body) {\n                      _push3(_ssrRenderComponent(_component_ContentRenderer, { value: _unref(page) }, null, _parent3, _scopeId2));\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    if (_unref(surround)?.length) {\n                      _push3(`<hr${_scopeId2}>`);\n                    } else {\n                      _push3(`<!---->`);\n                    }\n                    _push3(_ssrRenderComponent(_component_UContentSurround, { surround: _unref(surround) }, null, _parent3, _scopeId2));\n                  } else {\n                    return [\n                      _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                        key: 0,\n                        value: _unref(page)\n                      }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                      _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                      _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                    ];\n                  }\n                }),\n                _: 1\n              }, _parent2, _scopeId));\n            } else {\n              return [\n                _createVNode(_component_UPageHeader, {\n                  title: _unref(page).title,\n                  description: _unref(page).description,\n                  links: _unref(page).links,\n                  headline: _unref(headline)\n                }, null, 8, [\"title\", \"description\", \"links\", \"headline\"]),\n                _createVNode(_component_UPageBody, { prose: \"\" }, {\n                  default: _withCtx(() => [\n                    _unref(page).body ? (_openBlock(), _createBlock(_component_ContentRenderer, {\n                      key: 0,\n                      value: _unref(page)\n                    }, null, 8, [\"value\"])) : _createCommentVNode(\"\", true),\n                    _unref(surround)?.length ? (_openBlock(), _createBlock(\"hr\", { key: 1 })) : _createCommentVNode(\"\", true),\n                    _createVNode(_component_UContentSurround, { surround: _unref(surround) }, null, 8, [\"surround\"])\n                  ]),\n                  _: 1\n                })\n              ];\n            }\n          }),\n          _: 2\n        }, [\n          _unref(page).toc !== false ? {\n            name: \"right\",\n            fn: _withCtx((_, _push2, _parent2, _scopeId) => {\n              if (_push2) {\n                _push2(_ssrRenderComponent(_component_UContentToc, {\n                  links: _unref(page).body?.toc?.links\n                }, null, _parent2, _scopeId));\n              } else {\n                return [\n                  _createVNode(_component_UContentToc, {\n                    links: _unref(page).body?.toc?.links\n                  }, null, 8, [\"links\"])\n                ];\n              }\n            }),\n            key: \"0\"\n          } : void 0\n        ]), _parent));\n      } else {\n        _push(`<!---->`);\n      }\n    };\n  }\n});\n",
-      "start": 1714172189513,
-      "end": 1714172189514,
+      "start": 1714173365518,
+      "end": 1714173365519,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -328,20 +328,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172189514,
-      "end": 1714172189514,
+      "start": 1714173365519,
+      "end": 1714173365519,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172189514,
-      "end": 1714172189514,
+      "start": 1714173365519,
+      "end": 1714173365519,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172189514,
-      "end": 1714172189514,
+      "start": 1714173365519,
+      "end": 1714173365519,
       "order": "normal"
     }
   ]

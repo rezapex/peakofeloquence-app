@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nimport type { PropType } from 'vue'\nimport { Dialog, DialogPanel, TransitionRoot, provideUseId } from '@headlessui/vue'\nimport { getSlotChildrenText } from '../../lib/slots'\nimport type { HeaderLink } from '#ui-pro/types'\nimport { useId } from '#imports'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Header',\n  props: {\n  to: {\n    type: String,\n    default: '/'\n  },\n  title: {\n    type: String,\n    default: undefined\n  },\n  links: {\n    type: Array as PropType<HeaderLink[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  wrapper: 'bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50',\n  container: 'flex items-center justify-between gap-3 h-[--header-height]',\n  left: 'lg:flex-1 flex items-center gap-1.5',\n  center: 'hidden lg:flex',\n  right: 'flex items-center justify-end lg:flex-1 gap-1.5',\n  logo: 'flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white flex items-end gap-1.5',\n  panel: {\n    wrapper: 'fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden',\n    header: 'px-4 sm:px-6',\n    body: 'px-4 sm:px-6 pt-3 pb-6'\n  },\n  button: {\n    base: 'lg:hidden',\n    icon: {\n      open: appConfig.ui.icons.menu,\n      close: appConfig.ui.icons.close\n    }\n  }\n}))\n\n\n\nconst props = __props\n\nconst route = useRoute()\nconst slots = useSlots()\nconst { isHeaderDialogOpen } = useUIState()\nconst { ui, attrs } = useUI('header', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst ariaLabel = computed(() => (props.title || (slots.title && getSlotChildrenText(slots.title())) || 'Logo').trim())\n\nwatch(() => route.fullPath, () => {\n  isHeaderDialogOpen.value = false\n})\n\nprovideUseId(() => useId())\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n  const _component_UHeaderLinks = _resolveComponent(\"UHeaderLinks\")!\n  const _component_UButton = _resolveComponent(\"UButton\")!\n  const _component_UContainer = _resolveComponent(\"UContainer\")!\n  const _component_UAsideLinks = _resolveComponent(\"UAsideLinks\")!\n\n  return (_openBlock(), _createElementBlock(\"header\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    _renderSlot(_ctx.$slots, \"top\"),\n    _createVNode(_component_UContainer, {\n      class: _normalizeClass(_unref(ui).container)\n    }, {\n      default: _withCtx(() => [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).left)\n        }, [\n          _renderSlot(_ctx.$slots, \"left\", {}, () => [\n            _createVNode(_component_NuxtLink, {\n              to: __props.to,\n              \"aria-label\": _unref(ariaLabel),\n              class: _normalizeClass(_unref(ui).logo)\n            }, {\n              default: _withCtx(() => [\n                _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title || 'Nuxt UI Pro'), 1)\n                ])\n              ]),\n              _: 3\n            }, 8, [\"to\", \"aria-label\", \"class\"])\n          ])\n        ], 2),\n        _renderSlot(_ctx.$slots, \"center\", {}, () => [\n          _createVNode(_component_UHeaderLinks, {\n            links: __props.links,\n            class: _normalizeClass(_unref(ui).center)\n          }, null, 8, [\"links\", \"class\"])\n        ]),\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).right)\n        }, [\n          _renderSlot(_ctx.$slots, \"right\"),\n          _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n            (__props.links.length || _ctx.$slots.panel)\n              ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({\n                  key: 0,\n                  class: _unref(ui).button.base\n                }, (_ctx.$ui?.button?.secondary as any), {\n                  \"aria-label\": `${_unref(isHeaderDialogOpen) ? 'Close' : 'Open'} Menu`,\n                  icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                  onClick: _cache[0] || (_cache[0] = ($event: any) => (isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen)))\n                }), null, 16, [\"class\", \"aria-label\", \"icon\"]))\n              : _createCommentVNode(\"\", true)\n          ])\n        ], 2)\n      ]),\n      _: 3\n    }, 8, [\"class\"]),\n    _renderSlot(_ctx.$slots, \"bottom\"),\n    _createVNode(_unref(TransitionRoot), {\n      show: _unref(isHeaderDialogOpen),\n      as: \"template\"\n    }, {\n      default: _withCtx(() => [\n        _createVNode(_unref(Dialog), {\n          as: \"div\",\n          onClose: _cache[2] || (_cache[2] = ($event: any) => (isHeaderDialogOpen.value = false))\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_unref(DialogPanel), {\n              class: _normalizeClass(_unref(ui).panel.wrapper)\n            }, {\n              default: _withCtx(() => [\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([_unref(ui).panel.header, _unref(ui).wrapper])\n                }, [\n                  _createElementVNode(\"div\", {\n                    class: _normalizeClass(_unref(ui).container)\n                  }, [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass(_unref(ui).left)\n                    }, [\n                      _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                        _createVNode(_component_NuxtLink, {\n                          to: __props.to,\n                          \"aria-label\": _unref(ariaLabel),\n                          class: _normalizeClass(_unref(ui).logo)\n                        }, {\n                          default: _withCtx(() => [\n                            _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                              _createTextVNode(_toDisplayString(__props.title || 'Nuxt UI Pro'), 1)\n                            ])\n                          ]),\n                          _: 3\n                        }, 8, [\"to\", \"aria-label\", \"class\"])\n                      ])\n                    ], 2),\n                    _renderSlot(_ctx.$slots, \"center\"),\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass(_unref(ui).right)\n                    }, [\n                      _renderSlot(_ctx.$slots, \"right\"),\n                      _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                        _createVNode(_component_UButton, _mergeProps({\n                          class: _unref(ui).button.base\n                        }, (_ctx.$ui?.button?.secondary as any), {\n                          \"aria-label\": `${_unref(isHeaderDialogOpen) ? 'Close' : 'Open'} Menu`,\n                          icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                          onClick: _cache[1] || (_cache[1] = ($event: any) => (isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen)))\n                        }), null, 16, [\"class\", \"aria-label\", \"icon\"])\n                      ])\n                    ], 2)\n                  ], 2)\n                ], 2),\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass(_unref(ui).panel.body)\n                }, [\n                  _renderSlot(_ctx.$slots, \"panel\", {}, () => [\n                    _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n                  ])\n                ], 2)\n              ]),\n              _: 3\n            }, 8, [\"class\"])\n          ]),\n          _: 3\n        })\n      ]),\n      _: 3\n    }, 8, [\"show\"])\n  ], 16))\n}\n}\n\n})",
-      "start": 1714172180009,
-      "end": 1714172180009
+      "start": 1714173353816,
+      "end": 1714173353816
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172180009,
-      "end": 1714172180009,
+      "start": 1714173353816,
+      "end": 1714173353816,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172180009,
-      "end": 1714172180009,
+      "start": 1714173353816,
+      "end": 1714173353816,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172180009,
-      "end": 1714172180009,
+      "start": 1714173353816,
+      "end": 1714173353816,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172180009,
-      "end": 1714172180009,
+      "start": 1714173353816,
+      "end": 1714173353816,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172180009,
-      "end": 1714172180009,
+      "start": 1714173353816,
+      "end": 1714173353816,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\";\nimport { Dialog, DialogPanel, TransitionRoot, provideUseId } from \"@headlessui/vue\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nimport { useId } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Header\",\n  props: {\n    to: {\n      type: String,\n      default: \"/\"\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50\",\n      container: \"flex items-center justify-between gap-3 h-[--header-height]\",\n      left: \"lg:flex-1 flex items-center gap-1.5\",\n      center: \"hidden lg:flex\",\n      right: \"flex items-center justify-end lg:flex-1 gap-1.5\",\n      logo: \"flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white flex items-end gap-1.5\",\n      panel: {\n        wrapper: \"fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden\",\n        header: \"px-4 sm:px-6\",\n        body: \"px-4 sm:px-6 pt-3 pb-6\"\n      },\n      button: {\n        base: \"lg:hidden\",\n        icon: {\n          open: appConfig.ui.icons.menu,\n          close: appConfig.ui.icons.close\n        }\n      }\n    }));\n    const props = __props;\n    const route = useRoute();\n    const slots = useSlots();\n    const { isHeaderDialogOpen } = useUIState();\n    const { ui, attrs } = useUI(\"header\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Logo\").trim());\n    watch(() => route.fullPath, () => {\n      isHeaderDialogOpen.value = false;\n    });\n    provideUseId(() => useId());\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UHeaderLinks = _resolveComponent(\"UHeaderLinks\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UAsideLinks = _resolveComponent(\"UAsideLinks\");\n      return _openBlock(), _createElementBlock(\"header\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _renderSlot(_ctx.$slots, \"top\"),\n        _createVNode(_component_UContainer, {\n          class: _normalizeClass(_unref(ui).container)\n        }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).left)\n            }, [\n              _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                _createVNode(_component_NuxtLink, {\n                  to: __props.to,\n                  \"aria-label\": _unref(ariaLabel),\n                  class: _normalizeClass(_unref(ui).logo)\n                }, {\n                  default: _withCtx(() => [\n                    _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                      _createTextVNode(_toDisplayString(__props.title || \"Nuxt UI Pro\"), 1)\n                    ])\n                  ]),\n                  _: 3\n                }, 8, [\"to\", \"aria-label\", \"class\"])\n              ])\n            ], 2),\n            _renderSlot(_ctx.$slots, \"center\", {}, () => [\n              _createVNode(_component_UHeaderLinks, {\n                links: __props.links,\n                class: _normalizeClass(_unref(ui).center)\n              }, null, 8, [\"links\", \"class\"])\n            ]),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).right)\n            }, [\n              _renderSlot(_ctx.$slots, \"right\"),\n              _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                __props.links.length || _ctx.$slots.panel ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({\n                  key: 0,\n                  class: _unref(ui).button.base\n                }, _ctx.$ui?.button?.secondary, {\n                  \"aria-label\": `${_unref(isHeaderDialogOpen) ? \"Close\" : \"Open\"} Menu`,\n                  icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                  onClick: _cache[0] || (_cache[0] = ($event) => isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen))\n                }), null, 16, [\"class\", \"aria-label\", \"icon\"])) : _createCommentVNode(\"\", true)\n              ])\n            ], 2)\n          ]),\n          _: 3\n        }, 8, [\"class\"]),\n        _renderSlot(_ctx.$slots, \"bottom\"),\n        _createVNode(_unref(TransitionRoot), {\n          show: _unref(isHeaderDialogOpen),\n          as: \"template\"\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_unref(Dialog), {\n              as: \"div\",\n              onClose: _cache[2] || (_cache[2] = ($event) => isHeaderDialogOpen.value = false)\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_unref(DialogPanel), {\n                  class: _normalizeClass(_unref(ui).panel.wrapper)\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([_unref(ui).panel.header, _unref(ui).wrapper])\n                    }, [\n                      _createElementVNode(\"div\", {\n                        class: _normalizeClass(_unref(ui).container)\n                      }, [\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(_unref(ui).left)\n                        }, [\n                          _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                            _createVNode(_component_NuxtLink, {\n                              to: __props.to,\n                              \"aria-label\": _unref(ariaLabel),\n                              class: _normalizeClass(_unref(ui).logo)\n                            }, {\n                              default: _withCtx(() => [\n                                _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                                  _createTextVNode(_toDisplayString(__props.title || \"Nuxt UI Pro\"), 1)\n                                ])\n                              ]),\n                              _: 3\n                            }, 8, [\"to\", \"aria-label\", \"class\"])\n                          ])\n                        ], 2),\n                        _renderSlot(_ctx.$slots, \"center\"),\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(_unref(ui).right)\n                        }, [\n                          _renderSlot(_ctx.$slots, \"right\"),\n                          _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                            _createVNode(_component_UButton, _mergeProps({\n                              class: _unref(ui).button.base\n                            }, _ctx.$ui?.button?.secondary, {\n                              \"aria-label\": `${_unref(isHeaderDialogOpen) ? \"Close\" : \"Open\"} Menu`,\n                              icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                              onClick: _cache[1] || (_cache[1] = ($event) => isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen))\n                            }), null, 16, [\"class\", \"aria-label\", \"icon\"])\n                          ])\n                        ], 2)\n                      ], 2)\n                    ], 2),\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass(_unref(ui).panel.body)\n                    }, [\n                      _renderSlot(_ctx.$slots, \"panel\", {}, () => [\n                        _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n                      ])\n                    ], 2)\n                  ]),\n                  _: 3\n                }, 8, [\"class\"])\n              ]),\n              _: 3\n            })\n          ]),\n          _: 3\n        }, 8, [\"show\"])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172180009,
-      "end": 1714172180048,
+      "start": 1714173353816,
+      "end": 1714173353904,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,123 +57,123 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353904,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353904,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353904,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353904,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353904,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353904,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353904,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353904,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353904,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172180048,
-      "end": 1714172180048,
+      "start": 1714173353905,
+      "end": 1714173353905,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\";\nimport { Dialog, DialogPanel, TransitionRoot, provideUseId } from \"@headlessui/vue\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nimport { useId } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Header\",\n  props: {\n    to: {\n      type: String,\n      default: \"/\"\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50\",\n      container: \"flex items-center justify-between gap-3 h-[--header-height]\",\n      left: \"lg:flex-1 flex items-center gap-1.5\",\n      center: \"hidden lg:flex\",\n      right: \"flex items-center justify-end lg:flex-1 gap-1.5\",\n      logo: \"flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white flex items-end gap-1.5\",\n      panel: {\n        wrapper: \"fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden\",\n        header: \"px-4 sm:px-6\",\n        body: \"px-4 sm:px-6 pt-3 pb-6\"\n      },\n      button: {\n        base: \"lg:hidden\",\n        icon: {\n          open: appConfig.ui.icons.menu,\n          close: appConfig.ui.icons.close\n        }\n      }\n    }));\n    const props = __props;\n    const route = useRoute();\n    const slots = useSlots();\n    const { isHeaderDialogOpen } = useUIState();\n    const { ui, attrs } = useUI(\"header\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Logo\").trim());\n    watch(() => route.fullPath, () => {\n      isHeaderDialogOpen.value = false;\n    });\n    provideUseId(() => useId('$Vr9J0fb80I'));\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UHeaderLinks = _resolveComponent(\"UHeaderLinks\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UAsideLinks = _resolveComponent(\"UAsideLinks\");\n      return _openBlock(), _createElementBlock(\"header\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _renderSlot(_ctx.$slots, \"top\"),\n        _createVNode(_component_UContainer, {\n          class: _normalizeClass(_unref(ui).container)\n        }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).left)\n            }, [\n              _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                _createVNode(_component_NuxtLink, {\n                  to: __props.to,\n                  \"aria-label\": _unref(ariaLabel),\n                  class: _normalizeClass(_unref(ui).logo)\n                }, {\n                  default: _withCtx(() => [\n                    _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                      _createTextVNode(_toDisplayString(__props.title || \"Nuxt UI Pro\"), 1)\n                    ])\n                  ]),\n                  _: 3\n                }, 8, [\"to\", \"aria-label\", \"class\"])\n              ])\n            ], 2),\n            _renderSlot(_ctx.$slots, \"center\", {}, () => [\n              _createVNode(_component_UHeaderLinks, {\n                links: __props.links,\n                class: _normalizeClass(_unref(ui).center)\n              }, null, 8, [\"links\", \"class\"])\n            ]),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).right)\n            }, [\n              _renderSlot(_ctx.$slots, \"right\"),\n              _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                __props.links.length || _ctx.$slots.panel ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({\n                  key: 0,\n                  class: _unref(ui).button.base\n                }, _ctx.$ui?.button?.secondary, {\n                  \"aria-label\": `${_unref(isHeaderDialogOpen) ? \"Close\" : \"Open\"} Menu`,\n                  icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                  onClick: _cache[0] || (_cache[0] = ($event) => isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen))\n                }), null, 16, [\"class\", \"aria-label\", \"icon\"])) : _createCommentVNode(\"\", true)\n              ])\n            ], 2)\n          ]),\n          _: 3\n        }, 8, [\"class\"]),\n        _renderSlot(_ctx.$slots, \"bottom\"),\n        _createVNode(_unref(TransitionRoot), {\n          show: _unref(isHeaderDialogOpen),\n          as: \"template\"\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_unref(Dialog), {\n              as: \"div\",\n              onClose: _cache[2] || (_cache[2] = ($event) => isHeaderDialogOpen.value = false)\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_unref(DialogPanel), {\n                  class: _normalizeClass(_unref(ui).panel.wrapper)\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([_unref(ui).panel.header, _unref(ui).wrapper])\n                    }, [\n                      _createElementVNode(\"div\", {\n                        class: _normalizeClass(_unref(ui).container)\n                      }, [\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(_unref(ui).left)\n                        }, [\n                          _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                            _createVNode(_component_NuxtLink, {\n                              to: __props.to,\n                              \"aria-label\": _unref(ariaLabel),\n                              class: _normalizeClass(_unref(ui).logo)\n                            }, {\n                              default: _withCtx(() => [\n                                _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                                  _createTextVNode(_toDisplayString(__props.title || \"Nuxt UI Pro\"), 1)\n                                ])\n                              ]),\n                              _: 3\n                            }, 8, [\"to\", \"aria-label\", \"class\"])\n                          ])\n                        ], 2),\n                        _renderSlot(_ctx.$slots, \"center\"),\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(_unref(ui).right)\n                        }, [\n                          _renderSlot(_ctx.$slots, \"right\"),\n                          _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                            _createVNode(_component_UButton, _mergeProps({\n                              class: _unref(ui).button.base\n                            }, _ctx.$ui?.button?.secondary, {\n                              \"aria-label\": `${_unref(isHeaderDialogOpen) ? \"Close\" : \"Open\"} Menu`,\n                              icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                              onClick: _cache[1] || (_cache[1] = ($event) => isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen))\n                            }), null, 16, [\"class\", \"aria-label\", \"icon\"])\n                          ])\n                        ], 2)\n                      ], 2)\n                    ], 2),\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass(_unref(ui).panel.body)\n                    }, [\n                      _renderSlot(_ctx.$slots, \"panel\", {}, () => [\n                        _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n                      ])\n                    ], 2)\n                  ]),\n                  _: 3\n                }, 8, [\"class\"])\n              ]),\n              _: 3\n            })\n          ]),\n          _: 3\n        }, 8, [\"show\"])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172180048,
-      "end": 1714172180050,
+      "start": 1714173353905,
+      "end": 1714173353906,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -187,8 +187,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { computed, useSlots, toRef, watch } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { useUIState } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useUIState.ts';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { useId } from '#app/composables/id';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\";\nimport { Dialog, DialogPanel, TransitionRoot, provideUseId } from \"@headlessui/vue\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Header\",\n  props: {\n    to: {\n      type: String,\n      default: \"/\"\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50\",\n      container: \"flex items-center justify-between gap-3 h-[--header-height]\",\n      left: \"lg:flex-1 flex items-center gap-1.5\",\n      center: \"hidden lg:flex\",\n      right: \"flex items-center justify-end lg:flex-1 gap-1.5\",\n      logo: \"flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white flex items-end gap-1.5\",\n      panel: {\n        wrapper: \"fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden\",\n        header: \"px-4 sm:px-6\",\n        body: \"px-4 sm:px-6 pt-3 pb-6\"\n      },\n      button: {\n        base: \"lg:hidden\",\n        icon: {\n          open: appConfig.ui.icons.menu,\n          close: appConfig.ui.icons.close\n        }\n      }\n    }));\n    const props = __props;\n    const route = useRoute();\n    const slots = useSlots();\n    const { isHeaderDialogOpen } = useUIState();\n    const { ui, attrs } = useUI(\"header\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Logo\").trim());\n    watch(() => route.fullPath, () => {\n      isHeaderDialogOpen.value = false;\n    });\n    provideUseId(() => useId('$Vr9J0fb80I'));\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UHeaderLinks = _resolveComponent(\"UHeaderLinks\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UAsideLinks = _resolveComponent(\"UAsideLinks\");\n      return _openBlock(), _createElementBlock(\"header\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _renderSlot(_ctx.$slots, \"top\"),\n        _createVNode(_component_UContainer, {\n          class: _normalizeClass(_unref(ui).container)\n        }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).left)\n            }, [\n              _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                _createVNode(_component_NuxtLink, {\n                  to: __props.to,\n                  \"aria-label\": _unref(ariaLabel),\n                  class: _normalizeClass(_unref(ui).logo)\n                }, {\n                  default: _withCtx(() => [\n                    _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                      _createTextVNode(_toDisplayString(__props.title || \"Nuxt UI Pro\"), 1)\n                    ])\n                  ]),\n                  _: 3\n                }, 8, [\"to\", \"aria-label\", \"class\"])\n              ])\n            ], 2),\n            _renderSlot(_ctx.$slots, \"center\", {}, () => [\n              _createVNode(_component_UHeaderLinks, {\n                links: __props.links,\n                class: _normalizeClass(_unref(ui).center)\n              }, null, 8, [\"links\", \"class\"])\n            ]),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).right)\n            }, [\n              _renderSlot(_ctx.$slots, \"right\"),\n              _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                __props.links.length || _ctx.$slots.panel ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({\n                  key: 0,\n                  class: _unref(ui).button.base\n                }, _ctx.$ui?.button?.secondary, {\n                  \"aria-label\": `${_unref(isHeaderDialogOpen) ? \"Close\" : \"Open\"} Menu`,\n                  icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                  onClick: _cache[0] || (_cache[0] = ($event) => isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen))\n                }), null, 16, [\"class\", \"aria-label\", \"icon\"])) : _createCommentVNode(\"\", true)\n              ])\n            ], 2)\n          ]),\n          _: 3\n        }, 8, [\"class\"]),\n        _renderSlot(_ctx.$slots, \"bottom\"),\n        _createVNode(_unref(TransitionRoot), {\n          show: _unref(isHeaderDialogOpen),\n          as: \"template\"\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_unref(Dialog), {\n              as: \"div\",\n              onClose: _cache[2] || (_cache[2] = ($event) => isHeaderDialogOpen.value = false)\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_unref(DialogPanel), {\n                  class: _normalizeClass(_unref(ui).panel.wrapper)\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([_unref(ui).panel.header, _unref(ui).wrapper])\n                    }, [\n                      _createElementVNode(\"div\", {\n                        class: _normalizeClass(_unref(ui).container)\n                      }, [\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(_unref(ui).left)\n                        }, [\n                          _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                            _createVNode(_component_NuxtLink, {\n                              to: __props.to,\n                              \"aria-label\": _unref(ariaLabel),\n                              class: _normalizeClass(_unref(ui).logo)\n                            }, {\n                              default: _withCtx(() => [\n                                _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                                  _createTextVNode(_toDisplayString(__props.title || \"Nuxt UI Pro\"), 1)\n                                ])\n                              ]),\n                              _: 3\n                            }, 8, [\"to\", \"aria-label\", \"class\"])\n                          ])\n                        ], 2),\n                        _renderSlot(_ctx.$slots, \"center\"),\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(_unref(ui).right)\n                        }, [\n                          _renderSlot(_ctx.$slots, \"right\"),\n                          _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                            _createVNode(_component_UButton, _mergeProps({\n                              class: _unref(ui).button.base\n                            }, _ctx.$ui?.button?.secondary, {\n                              \"aria-label\": `${_unref(isHeaderDialogOpen) ? \"Close\" : \"Open\"} Menu`,\n                              icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                              onClick: _cache[1] || (_cache[1] = ($event) => isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen))\n                            }), null, 16, [\"class\", \"aria-label\", \"icon\"])\n                          ])\n                        ], 2)\n                      ], 2)\n                    ], 2),\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass(_unref(ui).panel.body)\n                    }, [\n                      _renderSlot(_ctx.$slots, \"panel\", {}, () => [\n                        _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n                      ])\n                    ], 2)\n                  ]),\n                  _: 3\n                }, 8, [\"class\"])\n              ]),\n              _: 3\n            })\n          ]),\n          _: 3\n        }, 8, [\"show\"])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172180050,
-      "end": 1714172180052,
+      "start": 1714173353906,
+      "end": 1714173353909,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -201,51 +201,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172180052,
-      "end": 1714172180052,
+      "start": 1714173353909,
+      "end": 1714173353909,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172180052,
-      "end": 1714172180052,
+      "start": 1714173353909,
+      "end": 1714173353909,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172180052,
-      "end": 1714172180052,
+      "start": 1714173353909,
+      "end": 1714173353909,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172180052,
-      "end": 1714172180052,
+      "start": 1714173353909,
+      "end": 1714173353909,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/header/HeaderLinks.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Container.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/aside/AsideLinks.vue\";\nimport { useAppConfig } from '#app/config';\nimport { computed, useSlots, toRef, watch } from 'vue';\nimport { useRoute } from '#app/composables/router';\nimport { useUIState } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useUIState.ts';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { useId } from '#app/composables/id';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, withCtx as _withCtx, createVNode as _createVNode, createElementVNode as _createElementVNode, mergeProps as _mergeProps, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\";\nimport { Dialog, DialogPanel, TransitionRoot, provideUseId } from \"@headlessui/vue\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Header\",\n  props: {\n    to: {\n      type: String,\n      default: \"/\"\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50\",\n      container: \"flex items-center justify-between gap-3 h-[--header-height]\",\n      left: \"lg:flex-1 flex items-center gap-1.5\",\n      center: \"hidden lg:flex\",\n      right: \"flex items-center justify-end lg:flex-1 gap-1.5\",\n      logo: \"flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white flex items-end gap-1.5\",\n      panel: {\n        wrapper: \"fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden\",\n        header: \"px-4 sm:px-6\",\n        body: \"px-4 sm:px-6 pt-3 pb-6\"\n      },\n      button: {\n        base: \"lg:hidden\",\n        icon: {\n          open: appConfig.ui.icons.menu,\n          close: appConfig.ui.icons.close\n        }\n      }\n    }));\n    const props = __props;\n    const route = useRoute();\n    const slots = useSlots();\n    const { isHeaderDialogOpen } = useUIState();\n    const { ui, attrs } = useUI(\"header\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Logo\").trim());\n    watch(() => route.fullPath, () => {\n      isHeaderDialogOpen.value = false;\n    });\n    provideUseId(() => useId('$Vr9J0fb80I'));\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = __nuxt_component_0;\n      const _component_UHeaderLinks = __nuxt_component_1;\n      const _component_UButton = __nuxt_component_2;\n      const _component_UContainer = __nuxt_component_3;\n      const _component_UAsideLinks = __nuxt_component_4;\n      return _openBlock(), _createElementBlock(\"header\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _renderSlot(_ctx.$slots, \"top\"),\n        _createVNode(_component_UContainer, {\n          class: _normalizeClass(_unref(ui).container)\n        }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).left)\n            }, [\n              _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                _createVNode(_component_NuxtLink, {\n                  to: __props.to,\n                  \"aria-label\": _unref(ariaLabel),\n                  class: _normalizeClass(_unref(ui).logo)\n                }, {\n                  default: _withCtx(() => [\n                    _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                      _createTextVNode(_toDisplayString(__props.title || \"Nuxt UI Pro\"), 1)\n                    ])\n                  ]),\n                  _: 3\n                }, 8, [\"to\", \"aria-label\", \"class\"])\n              ])\n            ], 2),\n            _renderSlot(_ctx.$slots, \"center\", {}, () => [\n              _createVNode(_component_UHeaderLinks, {\n                links: __props.links,\n                class: _normalizeClass(_unref(ui).center)\n              }, null, 8, [\"links\", \"class\"])\n            ]),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).right)\n            }, [\n              _renderSlot(_ctx.$slots, \"right\"),\n              _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                __props.links.length || _ctx.$slots.panel ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({\n                  key: 0,\n                  class: _unref(ui).button.base\n                }, _ctx.$ui?.button?.secondary, {\n                  \"aria-label\": `${_unref(isHeaderDialogOpen) ? \"Close\" : \"Open\"} Menu`,\n                  icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                  onClick: _cache[0] || (_cache[0] = ($event) => isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen))\n                }), null, 16, [\"class\", \"aria-label\", \"icon\"])) : _createCommentVNode(\"\", true)\n              ])\n            ], 2)\n          ]),\n          _: 3\n        }, 8, [\"class\"]),\n        _renderSlot(_ctx.$slots, \"bottom\"),\n        _createVNode(_unref(TransitionRoot), {\n          show: _unref(isHeaderDialogOpen),\n          as: \"template\"\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_unref(Dialog), {\n              as: \"div\",\n              onClose: _cache[2] || (_cache[2] = ($event) => isHeaderDialogOpen.value = false)\n            }, {\n              default: _withCtx(() => [\n                _createVNode(_unref(DialogPanel), {\n                  class: _normalizeClass(_unref(ui).panel.wrapper)\n                }, {\n                  default: _withCtx(() => [\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass([_unref(ui).panel.header, _unref(ui).wrapper])\n                    }, [\n                      _createElementVNode(\"div\", {\n                        class: _normalizeClass(_unref(ui).container)\n                      }, [\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(_unref(ui).left)\n                        }, [\n                          _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                            _createVNode(_component_NuxtLink, {\n                              to: __props.to,\n                              \"aria-label\": _unref(ariaLabel),\n                              class: _normalizeClass(_unref(ui).logo)\n                            }, {\n                              default: _withCtx(() => [\n                                _renderSlot(_ctx.$slots, \"logo\", {}, () => [\n                                  _createTextVNode(_toDisplayString(__props.title || \"Nuxt UI Pro\"), 1)\n                                ])\n                              ]),\n                              _: 3\n                            }, 8, [\"to\", \"aria-label\", \"class\"])\n                          ])\n                        ], 2),\n                        _renderSlot(_ctx.$slots, \"center\"),\n                        _createElementVNode(\"div\", {\n                          class: _normalizeClass(_unref(ui).right)\n                        }, [\n                          _renderSlot(_ctx.$slots, \"right\"),\n                          _renderSlot(_ctx.$slots, \"panel-button\", { open: _unref(isHeaderDialogOpen) }, () => [\n                            _createVNode(_component_UButton, _mergeProps({\n                              class: _unref(ui).button.base\n                            }, _ctx.$ui?.button?.secondary, {\n                              \"aria-label\": `${_unref(isHeaderDialogOpen) ? \"Close\" : \"Open\"} Menu`,\n                              icon: _unref(isHeaderDialogOpen) ? _unref(ui).button.icon.close : _unref(ui).button.icon.open,\n                              onClick: _cache[1] || (_cache[1] = ($event) => isHeaderDialogOpen.value = !_unref(isHeaderDialogOpen))\n                            }), null, 16, [\"class\", \"aria-label\", \"icon\"])\n                          ])\n                        ], 2)\n                      ], 2)\n                    ], 2),\n                    _createElementVNode(\"div\", {\n                      class: _normalizeClass(_unref(ui).panel.body)\n                    }, [\n                      _renderSlot(_ctx.$slots, \"panel\", {}, () => [\n                        _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n                      ])\n                    ], 2)\n                  ]),\n                  _: 3\n                }, 8, [\"class\"])\n              ]),\n              _: 3\n            })\n          ]),\n          _: 3\n        }, 8, [\"show\"])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172180052,
-      "end": 1714172180052,
+      "start": 1714173353909,
+      "end": 1714173353909,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172180052,
-      "end": 1714172180052,
+      "start": 1714173353909,
+      "end": 1714173353909,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172180052,
-      "end": 1714172180052,
+      "start": 1714173353909,
+      "end": 1714173353909,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172180052,
-      "end": 1714172180052,
+      "start": 1714173353909,
+      "end": 1714173353909,
       "order": "normal"
     }
   ]

@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\nimport type { NuxtError } from '#app'\nimport type { Button } from '#ui/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'PageError',\n  __ssrInlineRender: true,\n  props: {\n  error: {\n    type: Object as PropType<Partial<NuxtError>>,\n    default: undefined\n  },\n  status: {\n    type: Number,\n    default: 404\n  },\n  name: {\n    type: String,\n    default: 'An error occurred'\n  },\n  message: {\n    type: String,\n    default: 'This is not the page you\\'re looking for.'\n  },\n  clearButton: {\n    type: Object as PropType<Button & { click?: Function }>,\n    default: () => ({})\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'min-h-[calc(100vh-var(--header-height))] flex flex-col items-center justify-center',\n  status: 'text-base font-semibold text-primary',\n  name: 'text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl',\n  message: 'mt-6 text-base/7 text-gray-500 dark:text-gray-400 text-center',\n  links: 'mt-10 flex items-center justify-center gap-x-6',\n  default: {\n    clearButton: {\n      label: 'Go back home',\n      color: 'primary' as const,\n      size: 'lg' as const\n    }\n  }\n}\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('page.error', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst handleError = () => clearError({ redirect: '/' })\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UButton = _resolveComponent(\"UButton\")!\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _unref(ui).wrapper\n    }, _unref(attrs), _attrs))\n  }><p class=\"${\n    _ssrRenderClass(_unref(ui).status)\n  }\">${\n    _ssrInterpolate(__props.error?.statusCode || __props.status)\n  }</p><h1 class=\"${\n    _ssrRenderClass(_unref(ui).name)\n  }\">${\n    _ssrInterpolate(__props.error?.name || __props.error?.statusMessage || __props.name)\n  }</h1><p class=\"${\n    _ssrRenderClass(_unref(ui).message)\n  }\">${\n    _ssrInterpolate(__props.error?.message && __props.error.message !== (__props.error.name || __props.error.statusMessage || __props.name) ? __props.error.message : __props.message)\n  }</p><div class=\"${\n    _ssrRenderClass(_unref(ui).links)\n  }\">`)\n  _push(_ssrRenderComponent(_component_UButton, _mergeProps({ ..._unref(ui).default.clearButton, ...__props.clearButton }, { onClick: handleError }), null, _parent))\n  _push(`</div></div>`)\n}\n}\n\n})",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172189782,
-      "end": 1714172189782,
+      "start": 1714173365641,
+      "end": 1714173365641,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageError\",\n  __ssrInlineRender: true,\n  props: {\n    error: {\n      type: Object,\n      default: void 0\n    },\n    status: {\n      type: Number,\n      default: 404\n    },\n    name: {\n      type: String,\n      default: \"An error occurred\"\n    },\n    message: {\n      type: String,\n      default: \"This is not the page you're looking for.\"\n    },\n    clearButton: {\n      type: Object,\n      default: () => ({})\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"min-h-[calc(100vh-var(--header-height))] flex flex-col items-center justify-center\",\n      status: \"text-base font-semibold text-primary\",\n      name: \"text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl\",\n      message: \"mt-6 text-base/7 text-gray-500 dark:text-gray-400 text-center\",\n      links: \"mt-10 flex items-center justify-center gap-x-6\",\n      default: {\n        clearButton: {\n          label: \"Go back home\",\n          color: \"primary\",\n          size: \"lg\"\n        }\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"page.error\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const handleError = () => clearError({ redirect: \"/\" });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><p class=\"${_ssrRenderClass(_unref(ui).status)}\">${_ssrInterpolate(__props.error?.statusCode || __props.status)}</p><h1 class=\"${_ssrRenderClass(_unref(ui).name)}\">${_ssrInterpolate(__props.error?.name || __props.error?.statusMessage || __props.name)}</h1><p class=\"${_ssrRenderClass(_unref(ui).message)}\">${_ssrInterpolate(__props.error?.message && __props.error.message !== (__props.error.name || __props.error.statusMessage || __props.name) ? __props.error.message : __props.message)}</p><div class=\"${_ssrRenderClass(_unref(ui).links)}\">`);\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ ..._unref(ui).default.clearButton, ...__props.clearButton }, { onClick: handleError }), null, _parent));\n      _push(`</div></div>`);\n    };\n  }\n});\n",
-      "start": 1714172189782,
-      "end": 1714172190030,
+      "start": 1714173365641,
+      "end": 1714173365926,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -92,147 +92,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172190030,
-      "end": 1714172190030,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172190030,
-      "end": 1714172190031,
+      "start": 1714173365926,
+      "end": 1714173365926,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365926,
+      "end": 1714173365927,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365927,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { clearError } from '#app/composables/error';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageError\",\n  __ssrInlineRender: true,\n  props: {\n    error: {\n      type: Object,\n      default: void 0\n    },\n    status: {\n      type: Number,\n      default: 404\n    },\n    name: {\n      type: String,\n      default: \"An error occurred\"\n    },\n    message: {\n      type: String,\n      default: \"This is not the page you're looking for.\"\n    },\n    clearButton: {\n      type: Object,\n      default: () => ({})\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"min-h-[calc(100vh-var(--header-height))] flex flex-col items-center justify-center\",\n      status: \"text-base font-semibold text-primary\",\n      name: \"text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl\",\n      message: \"mt-6 text-base/7 text-gray-500 dark:text-gray-400 text-center\",\n      links: \"mt-10 flex items-center justify-center gap-x-6\",\n      default: {\n        clearButton: {\n          label: \"Go back home\",\n          color: \"primary\",\n          size: \"lg\"\n        }\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"page.error\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const handleError = () => clearError({ redirect: \"/\" });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><p class=\"${_ssrRenderClass(_unref(ui).status)}\">${_ssrInterpolate(__props.error?.statusCode || __props.status)}</p><h1 class=\"${_ssrRenderClass(_unref(ui).name)}\">${_ssrInterpolate(__props.error?.name || __props.error?.statusMessage || __props.name)}</h1><p class=\"${_ssrRenderClass(_unref(ui).message)}\">${_ssrInterpolate(__props.error?.message && __props.error.message !== (__props.error.name || __props.error.statusMessage || __props.name) ? __props.error.message : __props.message)}</p><div class=\"${_ssrRenderClass(_unref(ui).links)}\">`);\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ ..._unref(ui).default.clearButton, ...__props.clearButton }, { onClick: handleError }), null, _parent));\n      _push(`</div></div>`);\n    };\n  }\n});\n",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365928,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -246,8 +246,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { clearError } from '#app/composables/error';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageError\",\n  __ssrInlineRender: true,\n  props: {\n    error: {\n      type: Object,\n      default: void 0\n    },\n    status: {\n      type: Number,\n      default: 404\n    },\n    name: {\n      type: String,\n      default: \"An error occurred\"\n    },\n    message: {\n      type: String,\n      default: \"This is not the page you're looking for.\"\n    },\n    clearButton: {\n      type: Object,\n      default: () => ({})\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"min-h-[calc(100vh-var(--header-height))] flex flex-col items-center justify-center\",\n      status: \"text-base font-semibold text-primary\",\n      name: \"text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl\",\n      message: \"mt-6 text-base/7 text-gray-500 dark:text-gray-400 text-center\",\n      links: \"mt-10 flex items-center justify-center gap-x-6\",\n      default: {\n        clearButton: {\n          label: \"Go back home\",\n          color: \"primary\",\n          size: \"lg\"\n        }\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"page.error\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const handleError = () => clearError({ redirect: \"/\" });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><p class=\"${_ssrRenderClass(_unref(ui).status)}\">${_ssrInterpolate(__props.error?.statusCode || __props.status)}</p><h1 class=\"${_ssrRenderClass(_unref(ui).name)}\">${_ssrInterpolate(__props.error?.name || __props.error?.statusMessage || __props.name)}</h1><p class=\"${_ssrRenderClass(_unref(ui).message)}\">${_ssrInterpolate(__props.error?.message && __props.error.message !== (__props.error.name || __props.error.statusMessage || __props.name) ? __props.error.message : __props.message)}</p><div class=\"${_ssrRenderClass(_unref(ui).links)}\">`);\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ ..._unref(ui).default.clearButton, ...__props.clearButton }, { onClick: handleError }), null, _parent));\n      _push(`</div></div>`);\n    };\n  }\n});\n",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365927,
+      "end": 1714173365928,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -260,39 +260,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714172190031,
-      "end": 1714172190031,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { clearError } from '#app/composables/error';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageError\",\n  __ssrInlineRender: true,\n  props: {\n    error: {\n      type: Object,\n      default: void 0\n    },\n    status: {\n      type: Number,\n      default: 404\n    },\n    name: {\n      type: String,\n      default: \"An error occurred\"\n    },\n    message: {\n      type: String,\n      default: \"This is not the page you're looking for.\"\n    },\n    clearButton: {\n      type: Object,\n      default: () => ({})\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"min-h-[calc(100vh-var(--header-height))] flex flex-col items-center justify-center\",\n      status: \"text-base font-semibold text-primary\",\n      name: \"text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl\",\n      message: \"mt-6 text-base/7 text-gray-500 dark:text-gray-400 text-center\",\n      links: \"mt-10 flex items-center justify-center gap-x-6\",\n      default: {\n        clearButton: {\n          label: \"Go back home\",\n          color: \"primary\",\n          size: \"lg\"\n        }\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"page.error\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const handleError = () => clearError({ redirect: \"/\" });\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UButton = __nuxt_component_0;\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><p class=\"${_ssrRenderClass(_unref(ui).status)}\">${_ssrInterpolate(__props.error?.statusCode || __props.status)}</p><h1 class=\"${_ssrRenderClass(_unref(ui).name)}\">${_ssrInterpolate(__props.error?.name || __props.error?.statusMessage || __props.name)}</h1><p class=\"${_ssrRenderClass(_unref(ui).message)}\">${_ssrInterpolate(__props.error?.message && __props.error.message !== (__props.error.name || __props.error.statusMessage || __props.name) ? __props.error.message : __props.message)}</p><div class=\"${_ssrRenderClass(_unref(ui).links)}\">`);\n      _push(_ssrRenderComponent(_component_UButton, _mergeProps({ ..._unref(ui).default.clearButton, ...__props.clearButton }, { onClick: handleError }), null, _parent));\n      _push(`</div></div>`);\n    };\n  }\n});\n",
-      "start": 1714172190031,
-      "end": 1714172190032,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -305,20 +305,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172190032,
-      "end": 1714172190032,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172190032,
-      "end": 1714172190032,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172190032,
-      "end": 1714172190032,
+      "start": 1714173365928,
+      "end": 1714173365928,
       "order": "normal"
     }
   ]

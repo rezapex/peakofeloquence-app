@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <Icon v-if=\"dynamic\" :name=\"name\" />\n  <span v-else :class=\"name\" />\n</template>\n\n<script>\nimport { defineComponent, computed } from \"vue\";\nimport { useAppConfig } from \"#imports\";\nexport default defineComponent({\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    dynamic: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const appConfig = useAppConfig();\n    const dynamic = computed(() => props.dynamic || appConfig.ui?.icons?.dynamic);\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      dynamic\n    };\n  }\n});\n</script>\n",
-      "start": 1714172178862,
-      "end": 1714172178917,
+      "start": 1714173352450,
+      "end": 1714173352480,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172178917,
-      "end": 1714172178917,
+      "start": 1714173352480,
+      "end": 1714173352480,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172178917,
-      "end": 1714172178917,
+      "start": 1714173352480,
+      "end": 1714173352480,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172178917,
-      "end": 1714172178917,
+      "start": 1714173352480,
+      "end": 1714173352480,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172178917,
-      "end": 1714172178917,
+      "start": 1714173352480,
+      "end": 1714173352481,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172178917,
-      "end": 1714172178917,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714172178917,
-      "end": 1714172178917,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714172178917,
-      "end": 1714172178917,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172178917,
-      "end": 1714172178917,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { defineComponent, computed } from \"vue\";\nimport { useAppConfig } from \"#imports\";\nconst _sfc_main = defineComponent({\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    dynamic: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const appConfig = useAppConfig();\n    const dynamic = computed(() => props.dynamic || appConfig.ui?.icons?.dynamic);\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      dynamic\n    };\n  }\n});\n\nimport { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, createElementBlock as _createElementBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_Icon = _resolveComponent(\"Icon\", true)\n\n  return (_ctx.dynamic)\n    ? (_openBlock(), _createBlock(_component_Icon, {\n        key: 0,\n        name: _ctx.name\n      }, null, 8, [\"name\"]))\n    : (_openBlock(), _createElementBlock(\"span\", {\n        key: 1,\n        class: _normalizeClass(_ctx.name)\n      }, null, 2))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172178917,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,111 +68,111 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352481,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\n\nimport { defineComponent, computed } from \"vue\";\nconst _sfc_main = defineComponent({\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    dynamic: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const appConfig = useAppConfig();\n    const dynamic = computed(() => props.dynamic || appConfig.ui?.icons?.dynamic);\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      dynamic\n    };\n  }\n});\n\nimport { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, createElementBlock as _createElementBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_Icon = _resolveComponent(\"Icon\", true)\n\n  return (_ctx.dynamic)\n    ? (_openBlock(), _createBlock(_component_Icon, {\n        key: 0,\n        name: _ctx.name\n      }, null, 8, [\"name\"]))\n    : (_openBlock(), _createElementBlock(\"span\", {\n        key: 1,\n        class: _normalizeClass(_ctx.name)\n      }, null, 2))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352481,
+      "end": 1714173352482,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -185,51 +185,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352482,
+      "end": 1714173352482,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352482,
+      "end": 1714173352482,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352482,
+      "end": 1714173352482,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352482,
+      "end": 1714173352482,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { useAppConfig } from '#app/config';\n\nimport { defineComponent, computed } from \"vue\";\nconst _sfc_main = defineComponent({\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    dynamic: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(props) {\n    const appConfig = useAppConfig();\n    const dynamic = computed(() => props.dynamic || appConfig.ui?.icons?.dynamic);\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      dynamic\n    };\n  }\n});\n\nimport { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, createElementBlock as _createElementBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_Icon = __nuxt_component_0\n\n  return (_ctx.dynamic)\n    ? (_openBlock(), _createBlock(_component_Icon, {\n        key: 0,\n        name: _ctx.name\n      }, null, 8, [\"name\"]))\n    : (_openBlock(), _createElementBlock(\"span\", {\n        key: 1,\n        class: _normalizeClass(_ctx.name)\n      }, null, 2))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352482,
+      "end": 1714173352482,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352482,
+      "end": 1714173352482,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352482,
+      "end": 1714173352482,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172178918,
-      "end": 1714172178918,
+      "start": 1714173352482,
+      "end": 1714173352482,
       "order": "normal"
     }
   ]

@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock, mergeProps as _mergeProps } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 1,\n  class: \"hidden sm:block\"\n}\n\nimport type { PropType } from 'vue'\nimport type { ParsedContent } from '@nuxt/content/dist/runtime/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'ContentSurround',\n  props: {\n  surround: {\n    type: Array as PropType<Pick<ParsedContent, string>[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'grid gap-8 sm:grid-cols-2',\n  icon: {\n    prev: 'i-heroicons-arrow-left-20-solid',\n    next: 'i-heroicons-arrow-right-20-solid'\n  },\n  link: {}\n}\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('content.surround', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst [prev, next] = props.surround || []\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UContentSurroundLink = _resolveComponent(\"UContentSurroundLink\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    (_unref(prev))\n      ? (_openBlock(), _createBlock(_component_UContentSurroundLink, {\n          key: 0,\n          link: _unref(prev),\n          ui: _unref(ui).link,\n          icon: _unref(ui).icon.prev\n        }, null, 8, [\"link\", \"ui\", \"icon\"]))\n      : (_openBlock(), _createElementBlock(\"span\", _hoisted_1, \" \")),\n    (_unref(next))\n      ? (_openBlock(), _createBlock(_component_UContentSurroundLink, {\n          key: 2,\n          link: _unref(next),\n          ui: _unref(ui).link,\n          icon: _unref(ui).icon.next,\n          class: \"text-right\"\n        }, null, 8, [\"link\", \"ui\", \"icon\"]))\n      : _createCommentVNode(\"\", true)\n  ], 16))\n}\n}\n\n})",
-      "start": 1714172179712,
-      "end": 1714172179713
+      "start": 1714173353500,
+      "end": 1714173353500
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179713,
-      "end": 1714172179713,
+      "start": 1714173353500,
+      "end": 1714173353500,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179713,
-      "end": 1714172179713,
+      "start": 1714173353500,
+      "end": 1714173353500,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179713,
-      "end": 1714172179713,
+      "start": 1714173353500,
+      "end": 1714173353500,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179713,
-      "end": 1714172179713,
+      "start": 1714173353500,
+      "end": 1714173353500,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179713,
-      "end": 1714172179713,
+      "start": 1714173353500,
+      "end": 1714173353500,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock, mergeProps as _mergeProps } from \"vue\";\nconst _hoisted_1 = {\n  key: 1,\n  class: \"hidden sm:block\"\n};\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentSurround\",\n  props: {\n    surround: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"grid gap-8 sm:grid-cols-2\",\n      icon: {\n        prev: \"i-heroicons-arrow-left-20-solid\",\n        next: \"i-heroicons-arrow-right-20-solid\"\n      },\n      link: {}\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.surround\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const [prev, next] = props.surround || [];\n    return (_ctx, _cache) => {\n      const _component_UContentSurroundLink = _resolveComponent(\"UContentSurroundLink\");\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _unref(prev) ? (_openBlock(), _createBlock(_component_UContentSurroundLink, {\n          key: 0,\n          link: _unref(prev),\n          ui: _unref(ui).link,\n          icon: _unref(ui).icon.prev\n        }, null, 8, [\"link\", \"ui\", \"icon\"])) : (_openBlock(), _createElementBlock(\"span\", _hoisted_1, \" \")),\n        _unref(next) ? (_openBlock(), _createBlock(_component_UContentSurroundLink, {\n          key: 2,\n          link: _unref(next),\n          ui: _unref(ui).link,\n          icon: _unref(ui).icon.next,\n          class: \"text-right\"\n        }, null, 8, [\"link\", \"ui\", \"icon\"])) : _createCommentVNode(\"\", true)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179713,
-      "end": 1714172179857,
+      "start": 1714173353500,
+      "end": 1714173353582,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353582,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353582,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353582,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353582,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353582,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353582,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353582,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353582,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353582,
+      "end": 1714173353583,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353583,
+      "end": 1714173353583,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172179857,
-      "end": 1714172179857,
+      "start": 1714173353584,
+      "end": 1714173353584,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock, mergeProps as _mergeProps } from \"vue\";\nconst _hoisted_1 = {\n  key: 1,\n  class: \"hidden sm:block\"\n};\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentSurround\",\n  props: {\n    surround: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"grid gap-8 sm:grid-cols-2\",\n      icon: {\n        prev: \"i-heroicons-arrow-left-20-solid\",\n        next: \"i-heroicons-arrow-right-20-solid\"\n      },\n      link: {}\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.surround\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const [prev, next] = props.surround || [];\n    return (_ctx, _cache) => {\n      const _component_UContentSurroundLink = _resolveComponent(\"UContentSurroundLink\");\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _unref(prev) ? (_openBlock(), _createBlock(_component_UContentSurroundLink, {\n          key: 0,\n          link: _unref(prev),\n          ui: _unref(ui).link,\n          icon: _unref(ui).icon.prev\n        }, null, 8, [\"link\", \"ui\", \"icon\"])) : (_openBlock(), _createElementBlock(\"span\", _hoisted_1, \" \")),\n        _unref(next) ? (_openBlock(), _createBlock(_component_UContentSurroundLink, {\n          key: 2,\n          link: _unref(next),\n          ui: _unref(ui).link,\n          icon: _unref(ui).icon.next,\n          class: \"text-right\"\n        }, null, 8, [\"link\", \"ui\", \"icon\"])) : _createCommentVNode(\"\", true)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179857,
-      "end": 1714172179858,
+      "start": 1714173353584,
+      "end": 1714173353585,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179858,
-      "end": 1714172179858,
+      "start": 1714173353585,
+      "end": 1714173353585,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179858,
-      "end": 1714172179858,
+      "start": 1714173353585,
+      "end": 1714173353585,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179858,
-      "end": 1714172179858,
+      "start": 1714173353585,
+      "end": 1714173353585,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179858,
-      "end": 1714172179858,
+      "start": 1714173353585,
+      "end": 1714173353585,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/content/ContentSurroundLink.vue\";\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock, mergeProps as _mergeProps } from \"vue\";\nconst _hoisted_1 = {\n  key: 1,\n  class: \"hidden sm:block\"\n};\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentSurround\",\n  props: {\n    surround: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"grid gap-8 sm:grid-cols-2\",\n      icon: {\n        prev: \"i-heroicons-arrow-left-20-solid\",\n        next: \"i-heroicons-arrow-right-20-solid\"\n      },\n      link: {}\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.surround\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const [prev, next] = props.surround || [];\n    return (_ctx, _cache) => {\n      const _component_UContentSurroundLink = __nuxt_component_0;\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _unref(prev) ? (_openBlock(), _createBlock(_component_UContentSurroundLink, {\n          key: 0,\n          link: _unref(prev),\n          ui: _unref(ui).link,\n          icon: _unref(ui).icon.prev\n        }, null, 8, [\"link\", \"ui\", \"icon\"])) : (_openBlock(), _createElementBlock(\"span\", _hoisted_1, \" \")),\n        _unref(next) ? (_openBlock(), _createBlock(_component_UContentSurroundLink, {\n          key: 2,\n          link: _unref(next),\n          ui: _unref(ui).link,\n          icon: _unref(ui).icon.next,\n          class: \"text-right\"\n        }, null, 8, [\"link\", \"ui\", \"icon\"])) : _createCommentVNode(\"\", true)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179858,
-      "end": 1714172179858,
+      "start": 1714173353585,
+      "end": 1714173353585,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179858,
-      "end": 1714172179858,
+      "start": 1714173353585,
+      "end": 1714173353585,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179858,
-      "end": 1714172179858,
+      "start": 1714173353585,
+      "end": 1714173353585,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179858,
-      "end": 1714172179858,
+      "start": 1714173353585,
+      "end": 1714173353585,
       "order": "normal"
     }
   ]

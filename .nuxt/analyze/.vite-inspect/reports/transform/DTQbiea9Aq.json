@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, renderSlot as _renderSlot, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\n\nconst _hoisted_1 = { class: \"relative\" }\n\nimport type { PropType } from 'vue'\nimport type { AsideLink } from '#ui-pro/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Aside',\n  props: {\n  links: {\n    type: Array as PropType<AsideLink[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'hidden overflow-y-auto lg:block lg:max-h-[calc(100vh-var(--header-height))] lg:sticky lg:top-[--header-height] py-8 lg:px-4 lg:-mx-4',\n  top: {\n    wrapper: 'sticky -top-8 -mt-8 pointer-events-none z-[1]',\n    header: 'h-8 bg-background -mx-4 px-4',\n    body: 'bg-background relative pointer-events-auto flex -mx-4 px-4',\n    footer: 'h-8 bg-gradient-to-b from-background -mx-4 px-4'\n  }\n}\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('aside', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UAsideLinks = _resolveComponent(\"UAsideLinks\")!\n\n  return (_openBlock(), _createElementBlock(\"aside\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    _createElementVNode(\"div\", _hoisted_1, [\n      (_ctx.$slots.top)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).top.wrapper)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.header)\n            }, null, 2),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.body)\n            }, [\n              _renderSlot(_ctx.$slots, \"top\")\n            ], 2),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.footer)\n            }, null, 2)\n          ], 2))\n        : _createCommentVNode(\"\", true),\n      _renderSlot(_ctx.$slots, \"links\", {}, () => [\n        _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n      ]),\n      _renderSlot(_ctx.$slots, \"default\"),\n      _renderSlot(_ctx.$slots, \"bottom\")\n    ])\n  ], 16))\n}\n}\n\n})",
-      "start": 1714172179774,
-      "end": 1714172179774
+      "start": 1714173353524,
+      "end": 1714173353524
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179774,
-      "end": 1714172179774,
+      "start": 1714173353524,
+      "end": 1714173353524,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179774,
-      "end": 1714172179774,
+      "start": 1714173353524,
+      "end": 1714173353524,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179774,
-      "end": 1714172179774,
+      "start": 1714173353524,
+      "end": 1714173353524,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179774,
-      "end": 1714172179774,
+      "start": 1714173353524,
+      "end": 1714173353524,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179774,
-      "end": 1714172179774,
+      "start": 1714173353524,
+      "end": 1714173353524,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, renderSlot as _renderSlot, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nconst _hoisted_1 = { class: \"relative\" };\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Aside\",\n  props: {\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"hidden overflow-y-auto lg:block lg:max-h-[calc(100vh-var(--header-height))] lg:sticky lg:top-[--header-height] py-8 lg:px-4 lg:-mx-4\",\n      top: {\n        wrapper: \"sticky -top-8 -mt-8 pointer-events-none z-[1]\",\n        header: \"h-8 bg-background -mx-4 px-4\",\n        body: \"bg-background relative pointer-events-auto flex -mx-4 px-4\",\n        footer: \"h-8 bg-gradient-to-b from-background -mx-4 px-4\"\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"aside\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UAsideLinks = _resolveComponent(\"UAsideLinks\");\n      return _openBlock(), _createElementBlock(\"aside\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _createElementVNode(\"div\", _hoisted_1, [\n          _ctx.$slots.top ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).top.wrapper)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.header)\n            }, null, 2),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.body)\n            }, [\n              _renderSlot(_ctx.$slots, \"top\")\n            ], 2),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.footer)\n            }, null, 2)\n          ], 2)) : _createCommentVNode(\"\", true),\n          _renderSlot(_ctx.$slots, \"links\", {}, () => [\n            _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n          ]),\n          _renderSlot(_ctx.$slots, \"default\"),\n          _renderSlot(_ctx.$slots, \"bottom\")\n        ])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179774,
-      "end": 1714172179967,
+      "start": 1714173353524,
+      "end": 1714173353644,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172179967,
-      "end": 1714172179967,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179967,
-      "end": 1714172179967,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172179967,
-      "end": 1714172179967,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179967,
-      "end": 1714172179967,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179967,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172179968,
-      "end": 1714172179968,
+      "start": 1714173353644,
+      "end": 1714173353644,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, renderSlot as _renderSlot, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nconst _hoisted_1 = { class: \"relative\" };\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Aside\",\n  props: {\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"hidden overflow-y-auto lg:block lg:max-h-[calc(100vh-var(--header-height))] lg:sticky lg:top-[--header-height] py-8 lg:px-4 lg:-mx-4\",\n      top: {\n        wrapper: \"sticky -top-8 -mt-8 pointer-events-none z-[1]\",\n        header: \"h-8 bg-background -mx-4 px-4\",\n        body: \"bg-background relative pointer-events-auto flex -mx-4 px-4\",\n        footer: \"h-8 bg-gradient-to-b from-background -mx-4 px-4\"\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"aside\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UAsideLinks = _resolveComponent(\"UAsideLinks\");\n      return _openBlock(), _createElementBlock(\"aside\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _createElementVNode(\"div\", _hoisted_1, [\n          _ctx.$slots.top ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).top.wrapper)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.header)\n            }, null, 2),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.body)\n            }, [\n              _renderSlot(_ctx.$slots, \"top\")\n            ], 2),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.footer)\n            }, null, 2)\n          ], 2)) : _createCommentVNode(\"\", true),\n          _renderSlot(_ctx.$slots, \"links\", {}, () => [\n            _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n          ]),\n          _renderSlot(_ctx.$slots, \"default\"),\n          _renderSlot(_ctx.$slots, \"bottom\")\n        ])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179968,
-      "end": 1714172179969,
+      "start": 1714173353644,
+      "end": 1714173353645,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179969,
-      "end": 1714172179969,
+      "start": 1714173353645,
+      "end": 1714173353645,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179969,
-      "end": 1714172179969,
+      "start": 1714173353645,
+      "end": 1714173353645,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179969,
-      "end": 1714172179969,
+      "start": 1714173353645,
+      "end": 1714173353645,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179969,
-      "end": 1714172179969,
+      "start": 1714173353645,
+      "end": 1714173353645,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/aside/AsideLinks.vue\";\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, renderSlot as _renderSlot, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nconst _hoisted_1 = { class: \"relative\" };\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Aside\",\n  props: {\n    links: {\n      type: Array,\n      default: () => []\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"hidden overflow-y-auto lg:block lg:max-h-[calc(100vh-var(--header-height))] lg:sticky lg:top-[--header-height] py-8 lg:px-4 lg:-mx-4\",\n      top: {\n        wrapper: \"sticky -top-8 -mt-8 pointer-events-none z-[1]\",\n        header: \"h-8 bg-background -mx-4 px-4\",\n        body: \"bg-background relative pointer-events-auto flex -mx-4 px-4\",\n        footer: \"h-8 bg-gradient-to-b from-background -mx-4 px-4\"\n      }\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"aside\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UAsideLinks = __nuxt_component_0;\n      return _openBlock(), _createElementBlock(\"aside\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _createElementVNode(\"div\", _hoisted_1, [\n          _ctx.$slots.top ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).top.wrapper)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.header)\n            }, null, 2),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.body)\n            }, [\n              _renderSlot(_ctx.$slots, \"top\")\n            ], 2),\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).top.footer)\n            }, null, 2)\n          ], 2)) : _createCommentVNode(\"\", true),\n          _renderSlot(_ctx.$slots, \"links\", {}, () => [\n            _createVNode(_component_UAsideLinks, { links: __props.links }, null, 8, [\"links\"])\n          ]),\n          _renderSlot(_ctx.$slots, \"default\"),\n          _renderSlot(_ctx.$slots, \"bottom\")\n        ])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179969,
-      "end": 1714172179969,
+      "start": 1714173353645,
+      "end": 1714173353645,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179969,
-      "end": 1714172179969,
+      "start": 1714173353645,
+      "end": 1714173353645,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179969,
-      "end": 1714172179969,
+      "start": 1714173353645,
+      "end": 1714173353645,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179969,
-      "end": 1714172179969,
+      "start": 1714173353645,
+      "end": 1714173353645,
       "order": "normal"
     }
   ]

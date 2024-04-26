@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div :class=\"ui.group.wrapper\">\n    <h2 v-if=\"label\" :class=\"ui.group.label\">\n      {{ label }}\n    </h2>\n\n    <div :class=\"ui.group.container\" :aria-label=\"group[groupAttribute]\">\n      <HComboboxOption\n        v-for=\"(command, index) of group.commands\"\n        :key=\"`${group.key}-${index}`\"\n        v-slot=\"{ active, selected }\"\n        :value=\"command\"\n        :disabled=\"command.disabled\"\n        as=\"template\"\n      >\n        <div :class=\"[ui.group.command.base, active ? ui.group.command.active : ui.group.command.inactive, command.disabled ? 'cursor-not-allowed' : 'cursor-pointer']\">\n          <div :class=\"ui.group.command.container\">\n            <slot :name=\"`${group.key}-icon`\" :group=\"group\" :command=\"command\" :active=\"active\" :selected=\"selected\">\n              <UIcon v-if=\"command.icon\" :name=\"command.icon\" :class=\"[ui.group.command.icon.base, active ? ui.group.command.icon.active : ui.group.command.icon.inactive, command.iconClass]\" aria-hidden=\"true\" />\n              <UAvatar\n                v-else-if=\"command.avatar\"\n                v-bind=\"{ size: ui.group.command.avatar.size, ...command.avatar }\"\n                :class=\"ui.group.command.avatar.base\"\n                aria-hidden=\"true\"\n              />\n              <span v-else-if=\"command.chip\" :class=\"ui.group.command.chip.base\" :style=\"{ background: `#${command.chip}` }\" />\n            </slot>\n\n            <div :class=\"[ui.group.command.label, command.disabled && ui.group.command.disabled]\">\n              <slot :name=\"`${group.key}-command`\" :group=\"group\" :command=\"command\" :active=\"active\" :selected=\"selected\">\n                <span v-if=\"command.prefix\" class=\"flex-shrink-0\" :class=\"command.prefixClass || ui.group.command.prefix\">{{ command.prefix }}</span>\n\n                <span class=\"truncate\" :class=\"{ 'flex-none': command.suffix || command.matches?.length }\">{{ command[commandAttribute] }}</span>\n\n                <!-- eslint-disable-next-line vue/no-v-html -->\n                <span v-if=\"command.matches?.length\" class=\"truncate\" :class=\"command.suffixClass || ui.group.command.suffix\" v-html=\"highlight(command[commandAttribute], command.matches[0])\" />\n                <span v-else-if=\"command.suffix\" class=\"truncate\" :class=\"command.suffixClass || ui.group.command.suffix\">{{ command.suffix }}</span>\n              </slot>\n            </div>\n          </div>\n\n          <UIcon v-if=\"selected\" :name=\"selectedIcon\" :class=\"ui.group.command.selectedIcon.base\" aria-hidden=\"true\" />\n          <slot\n            v-else-if=\"active && (group.active || $slots[`${group.key}-active`])\"\n            :name=\"`${group.key}-active`\"\n            :group=\"group\"\n            :command=\"command\"\n            :active=\"active\"\n            :selected=\"selected\"\n          >\n            <span v-if=\"group.active\" :class=\"ui.group.active\">{{ group.active }}</span>\n          </slot>\n          <slot\n            v-else\n            :name=\"`${group.key}-inactive`\"\n            :group=\"group\"\n            :command=\"command\"\n            :active=\"active\"\n            :selected=\"selected\"\n          >\n            <span v-if=\"command.shortcuts?.length\" :class=\"ui.group.command.shortcuts\">\n              <UKbd v-for=\"shortcut of command.shortcuts\" :key=\"shortcut\">{{ shortcut }}</UKbd>\n            </span>\n            <span v-else-if=\"!command.disabled && group.inactive\" :class=\"ui.group.inactive\">{{ group.inactive }}</span>\n          </slot>\n        </div>\n      </HComboboxOption>\n    </div>\n  </div>\n</template>\n\n<script>\nimport { computed, defineComponent } from \"vue\";\nimport { ComboboxOption as HComboboxOption, provideUseId } from \"@headlessui/vue\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UKbd from \"../elements/Kbd.vue\";\nimport { useId } from \"#imports\";\nexport default defineComponent({\n  components: {\n    HComboboxOption,\n    UIcon,\n    UAvatar,\n    UKbd\n  },\n  props: {\n    group: {\n      type: Object,\n      required: true\n    },\n    query: {\n      type: String,\n      default: \"\"\n    },\n    groupAttribute: {\n      type: String,\n      required: true\n    },\n    commandAttribute: {\n      type: String,\n      required: true\n    },\n    selectedIcon: {\n      type: String,\n      required: true\n    },\n    ui: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(props) {\n    const label = computed(() => {\n      const label2 = props.group[props.groupAttribute];\n      return typeof label2 === \"function\" ? label2(props.query) : label2;\n    });\n    function highlight(text, { indices, value }) {\n      if (text === value) {\n        return \"\";\n      }\n      let content = \"\";\n      let nextUnhighlightedIndiceStartingIndex = 0;\n      indices.forEach((indice) => {\n        const lastIndiceNextIndex = indice[1] + 1;\n        const isMatched = lastIndiceNextIndex - indice[0] >= props.query.length;\n        content += [\n          value.substring(nextUnhighlightedIndiceStartingIndex, indice[0]),\n          isMatched && \"<mark>\",\n          value.substring(indice[0], lastIndiceNextIndex),\n          isMatched && \"</mark>\"\n        ].filter(Boolean).join(\"\");\n        nextUnhighlightedIndiceStartingIndex = lastIndiceNextIndex;\n      });\n      content += value.substring(nextUnhighlightedIndiceStartingIndex);\n      const index = content.indexOf(\"<mark>\");\n      if (index > 60) {\n        content = `...${content.substring(index - 60)}`;\n      }\n      return content;\n    }\n    provideUseId(() => useId());\n    return {\n      label,\n      highlight\n    };\n  }\n});\n</script>\n\n<style>\nmark{@apply bg-primary-400}\n</style>\n",
-      "start": 1714172179882,
-      "end": 1714172179890,
+      "start": 1714173353802,
+      "end": 1714173353827,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179890,
-      "end": 1714172179890,
+      "start": 1714173353827,
+      "end": 1714173353827,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179890,
-      "end": 1714172179890,
+      "start": 1714173353827,
+      "end": 1714173353827,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179890,
-      "end": 1714172179890,
+      "start": 1714173353827,
+      "end": 1714173353827,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179890,
-      "end": 1714172179890,
+      "start": 1714173353827,
+      "end": 1714173353827,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179890,
-      "end": 1714172179890,
+      "start": 1714173353827,
+      "end": 1714173353827,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714172179890,
-      "end": 1714172179890,
+      "start": 1714173353827,
+      "end": 1714173353827,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714172179890,
-      "end": 1714172179890,
+      "start": 1714173353827,
+      "end": 1714173353827,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179890,
-      "end": 1714172179890,
+      "start": 1714173353827,
+      "end": 1714173353827,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { computed, defineComponent } from \"vue\";\nimport { ComboboxOption as HComboboxOption, provideUseId } from \"@headlessui/vue\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UKbd from \"../elements/Kbd.vue\";\nimport { useId } from \"#imports\";\nconst _sfc_main = defineComponent({\n  components: {\n    HComboboxOption,\n    UIcon,\n    UAvatar,\n    UKbd\n  },\n  props: {\n    group: {\n      type: Object,\n      required: true\n    },\n    query: {\n      type: String,\n      default: \"\"\n    },\n    groupAttribute: {\n      type: String,\n      required: true\n    },\n    commandAttribute: {\n      type: String,\n      required: true\n    },\n    selectedIcon: {\n      type: String,\n      required: true\n    },\n    ui: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(props) {\n    const label = computed(() => {\n      const label2 = props.group[props.groupAttribute];\n      return typeof label2 === \"function\" ? label2(props.query) : label2;\n    });\n    function highlight(text, { indices, value }) {\n      if (text === value) {\n        return \"\";\n      }\n      let content = \"\";\n      let nextUnhighlightedIndiceStartingIndex = 0;\n      indices.forEach((indice) => {\n        const lastIndiceNextIndex = indice[1] + 1;\n        const isMatched = lastIndiceNextIndex - indice[0] >= props.query.length;\n        content += [\n          value.substring(nextUnhighlightedIndiceStartingIndex, indice[0]),\n          isMatched && \"<mark>\",\n          value.substring(indice[0], lastIndiceNextIndex),\n          isMatched && \"</mark>\"\n        ].filter(Boolean).join(\"\");\n        nextUnhighlightedIndiceStartingIndex = lastIndiceNextIndex;\n      });\n      content += value.substring(nextUnhighlightedIndiceStartingIndex);\n      const index = content.indexOf(\"<mark>\");\n      if (index > 60) {\n        content = `...${content.substring(index - 60)}`;\n      }\n      return content;\n    }\n    provideUseId(() => useId());\n    return {\n      label,\n      highlight\n    };\n  }\n});\n\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment, renderSlot as _renderSlot, resolveComponent as _resolveComponent, createBlock as _createBlock, mergeProps as _mergeProps, normalizeStyle as _normalizeStyle, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = [\"aria-label\"]\nconst _hoisted_2 = [\"innerHTML\"]\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_UIcon = _resolveComponent(\"UIcon\")\n  const _component_UAvatar = _resolveComponent(\"UAvatar\")\n  const _component_UKbd = _resolveComponent(\"UKbd\")\n  const _component_HComboboxOption = _resolveComponent(\"HComboboxOption\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass(_ctx.ui.group.wrapper)\n  }, [\n    (_ctx.label)\n      ? (_openBlock(), _createElementBlock(\"h2\", {\n          key: 0,\n          class: _normalizeClass(_ctx.ui.group.label)\n        }, _toDisplayString(_ctx.label), 3))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", {\n      class: _normalizeClass(_ctx.ui.group.container),\n      \"aria-label\": _ctx.group[_ctx.groupAttribute]\n    }, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.group.commands, (command, index) => {\n        return (_openBlock(), _createBlock(_component_HComboboxOption, {\n          key: `${_ctx.group.key}-${index}`,\n          value: command,\n          disabled: command.disabled,\n          as: \"template\"\n        }, {\n          default: _withCtx(({ active, selected }) => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([_ctx.ui.group.command.base, active ? _ctx.ui.group.command.active : _ctx.ui.group.command.inactive, command.disabled ? 'cursor-not-allowed' : 'cursor-pointer'])\n            }, [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_ctx.ui.group.command.container)\n              }, [\n                _renderSlot(_ctx.$slots, `${_ctx.group.key}-icon`, {\n                  group: _ctx.group,\n                  command: command,\n                  active: active,\n                  selected: selected\n                }, () => [\n                  (command.icon)\n                    ? (_openBlock(), _createBlock(_component_UIcon, {\n                        key: 0,\n                        name: command.icon,\n                        class: _normalizeClass([_ctx.ui.group.command.icon.base, active ? _ctx.ui.group.command.icon.active : _ctx.ui.group.command.icon.inactive, command.iconClass]),\n                        \"aria-hidden\": \"true\"\n                      }, null, 8, [\"name\", \"class\"]))\n                    : (command.avatar)\n                      ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({ key: 1 }, { size: _ctx.ui.group.command.avatar.size, ...command.avatar }, {\n                          class: _ctx.ui.group.command.avatar.base,\n                          \"aria-hidden\": \"true\"\n                        }), null, 16, [\"class\"]))\n                      : (command.chip)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 2,\n                            class: _normalizeClass(_ctx.ui.group.command.chip.base),\n                            style: _normalizeStyle({ background: `#${command.chip}` })\n                          }, null, 6))\n                        : _createCommentVNode(\"\", true)\n                ]),\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([_ctx.ui.group.command.label, command.disabled && _ctx.ui.group.command.disabled])\n                }, [\n                  _renderSlot(_ctx.$slots, `${_ctx.group.key}-command`, {\n                    group: _ctx.group,\n                    command: command,\n                    active: active,\n                    selected: selected\n                  }, () => [\n                    (command.prefix)\n                      ? (_openBlock(), _createElementBlock(\"span\", {\n                          key: 0,\n                          class: _normalizeClass([\"flex-shrink-0\", command.prefixClass || _ctx.ui.group.command.prefix])\n                        }, _toDisplayString(command.prefix), 3))\n                      : _createCommentVNode(\"\", true),\n                    _createElementVNode(\"span\", {\n                      class: _normalizeClass([\"truncate\", { 'flex-none': command.suffix || command.matches?.length }])\n                    }, _toDisplayString(command[_ctx.commandAttribute]), 3),\n                    (command.matches?.length)\n                      ? (_openBlock(), _createElementBlock(\"span\", {\n                          key: 1,\n                          class: _normalizeClass([\"truncate\", command.suffixClass || _ctx.ui.group.command.suffix]),\n                          innerHTML: _ctx.highlight(command[_ctx.commandAttribute], command.matches[0])\n                        }, null, 10, _hoisted_2))\n                      : (command.suffix)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 2,\n                            class: _normalizeClass([\"truncate\", command.suffixClass || _ctx.ui.group.command.suffix])\n                          }, _toDisplayString(command.suffix), 3))\n                        : _createCommentVNode(\"\", true)\n                  ])\n                ], 2)\n              ], 2),\n              selected\n                ? (_openBlock(), _createBlock(_component_UIcon, {\n                    key: 0,\n                    name: _ctx.selectedIcon,\n                    class: _normalizeClass(_ctx.ui.group.command.selectedIcon.base),\n                    \"aria-hidden\": \"true\"\n                  }, null, 8, [\"name\", \"class\"]))\n                : (active && (_ctx.group.active || _ctx.$slots[`${_ctx.group.key}-active`]))\n                  ? _renderSlot(_ctx.$slots, `${_ctx.group.key}-active`, {\n                      key: 1,\n                      group: _ctx.group,\n                      command: command,\n                      active: active,\n                      selected: selected\n                    }, () => [\n                      (_ctx.group.active)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 0,\n                            class: _normalizeClass(_ctx.ui.group.active)\n                          }, _toDisplayString(_ctx.group.active), 3))\n                        : _createCommentVNode(\"\", true)\n                    ])\n                  : _renderSlot(_ctx.$slots, `${_ctx.group.key}-inactive`, {\n                      key: 2,\n                      group: _ctx.group,\n                      command: command,\n                      active: active,\n                      selected: selected\n                    }, () => [\n                      (command.shortcuts?.length)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 0,\n                            class: _normalizeClass(_ctx.ui.group.command.shortcuts)\n                          }, [\n                            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(command.shortcuts, (shortcut) => {\n                              return (_openBlock(), _createBlock(_component_UKbd, { key: shortcut }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(_toDisplayString(shortcut), 1)\n                                ]),\n                                _: 2\n                              }, 1024))\n                            }), 128))\n                          ], 2))\n                        : (!command.disabled && _ctx.group.inactive)\n                          ? (_openBlock(), _createElementBlock(\"span\", {\n                              key: 1,\n                              class: _normalizeClass(_ctx.ui.group.inactive)\n                            }, _toDisplayString(_ctx.group.inactive), 3))\n                          : _createCommentVNode(\"\", true)\n                    ])\n            ], 2)\n          ]),\n          _: 2\n        }, 1032, [\"value\", \"disabled\"]))\n      }), 128))\n    ], 10, _hoisted_1)\n  ], 2))\n}\n\nimport \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/navigation/CommandPaletteGroup.vue?vue&type=style&index=0&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172179890,
-      "end": 1714172179893,
+      "start": 1714173353827,
+      "end": 1714173353831,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,105 +68,105 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179893,
-      "end": 1714172179893,
+      "start": 1714173353831,
+      "end": 1714173353831,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "\nimport { computed, defineComponent } from \"vue\";\nimport { ComboboxOption as HComboboxOption, provideUseId } from \"@headlessui/vue\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UKbd from \"../elements/Kbd.vue\";\nimport { useId } from \"#imports\";\nconst _sfc_main = defineComponent({\n  components: {\n    HComboboxOption,\n    UIcon,\n    UAvatar,\n    UKbd\n  },\n  props: {\n    group: {\n      type: Object,\n      required: true\n    },\n    query: {\n      type: String,\n      default: \"\"\n    },\n    groupAttribute: {\n      type: String,\n      required: true\n    },\n    commandAttribute: {\n      type: String,\n      required: true\n    },\n    selectedIcon: {\n      type: String,\n      required: true\n    },\n    ui: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(props) {\n    const label = computed(() => {\n      const label2 = props.group[props.groupAttribute];\n      return typeof label2 === \"function\" ? label2(props.query) : label2;\n    });\n    function highlight(text, { indices, value }) {\n      if (text === value) {\n        return \"\";\n      }\n      let content = \"\";\n      let nextUnhighlightedIndiceStartingIndex = 0;\n      indices.forEach((indice) => {\n        const lastIndiceNextIndex = indice[1] + 1;\n        const isMatched = lastIndiceNextIndex - indice[0] >= props.query.length;\n        content += [\n          value.substring(nextUnhighlightedIndiceStartingIndex, indice[0]),\n          isMatched && \"<mark>\",\n          value.substring(indice[0], lastIndiceNextIndex),\n          isMatched && \"</mark>\"\n        ].filter(Boolean).join(\"\");\n        nextUnhighlightedIndiceStartingIndex = lastIndiceNextIndex;\n      });\n      content += value.substring(nextUnhighlightedIndiceStartingIndex);\n      const index = content.indexOf(\"<mark>\");\n      if (index > 60) {\n        content = `...${content.substring(index - 60)}`;\n      }\n      return content;\n    }\n    provideUseId(() => useId('$xnpcKX55nb'));\n    return {\n      label,\n      highlight\n    };\n  }\n});\n\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment, renderSlot as _renderSlot, resolveComponent as _resolveComponent, createBlock as _createBlock, mergeProps as _mergeProps, normalizeStyle as _normalizeStyle, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = [\"aria-label\"]\nconst _hoisted_2 = [\"innerHTML\"]\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_UIcon = _resolveComponent(\"UIcon\")\n  const _component_UAvatar = _resolveComponent(\"UAvatar\")\n  const _component_UKbd = _resolveComponent(\"UKbd\")\n  const _component_HComboboxOption = _resolveComponent(\"HComboboxOption\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass(_ctx.ui.group.wrapper)\n  }, [\n    (_ctx.label)\n      ? (_openBlock(), _createElementBlock(\"h2\", {\n          key: 0,\n          class: _normalizeClass(_ctx.ui.group.label)\n        }, _toDisplayString(_ctx.label), 3))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", {\n      class: _normalizeClass(_ctx.ui.group.container),\n      \"aria-label\": _ctx.group[_ctx.groupAttribute]\n    }, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.group.commands, (command, index) => {\n        return (_openBlock(), _createBlock(_component_HComboboxOption, {\n          key: `${_ctx.group.key}-${index}`,\n          value: command,\n          disabled: command.disabled,\n          as: \"template\"\n        }, {\n          default: _withCtx(({ active, selected }) => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([_ctx.ui.group.command.base, active ? _ctx.ui.group.command.active : _ctx.ui.group.command.inactive, command.disabled ? 'cursor-not-allowed' : 'cursor-pointer'])\n            }, [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_ctx.ui.group.command.container)\n              }, [\n                _renderSlot(_ctx.$slots, `${_ctx.group.key}-icon`, {\n                  group: _ctx.group,\n                  command: command,\n                  active: active,\n                  selected: selected\n                }, () => [\n                  (command.icon)\n                    ? (_openBlock(), _createBlock(_component_UIcon, {\n                        key: 0,\n                        name: command.icon,\n                        class: _normalizeClass([_ctx.ui.group.command.icon.base, active ? _ctx.ui.group.command.icon.active : _ctx.ui.group.command.icon.inactive, command.iconClass]),\n                        \"aria-hidden\": \"true\"\n                      }, null, 8, [\"name\", \"class\"]))\n                    : (command.avatar)\n                      ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({ key: 1 }, { size: _ctx.ui.group.command.avatar.size, ...command.avatar }, {\n                          class: _ctx.ui.group.command.avatar.base,\n                          \"aria-hidden\": \"true\"\n                        }), null, 16, [\"class\"]))\n                      : (command.chip)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 2,\n                            class: _normalizeClass(_ctx.ui.group.command.chip.base),\n                            style: _normalizeStyle({ background: `#${command.chip}` })\n                          }, null, 6))\n                        : _createCommentVNode(\"\", true)\n                ]),\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([_ctx.ui.group.command.label, command.disabled && _ctx.ui.group.command.disabled])\n                }, [\n                  _renderSlot(_ctx.$slots, `${_ctx.group.key}-command`, {\n                    group: _ctx.group,\n                    command: command,\n                    active: active,\n                    selected: selected\n                  }, () => [\n                    (command.prefix)\n                      ? (_openBlock(), _createElementBlock(\"span\", {\n                          key: 0,\n                          class: _normalizeClass([\"flex-shrink-0\", command.prefixClass || _ctx.ui.group.command.prefix])\n                        }, _toDisplayString(command.prefix), 3))\n                      : _createCommentVNode(\"\", true),\n                    _createElementVNode(\"span\", {\n                      class: _normalizeClass([\"truncate\", { 'flex-none': command.suffix || command.matches?.length }])\n                    }, _toDisplayString(command[_ctx.commandAttribute]), 3),\n                    (command.matches?.length)\n                      ? (_openBlock(), _createElementBlock(\"span\", {\n                          key: 1,\n                          class: _normalizeClass([\"truncate\", command.suffixClass || _ctx.ui.group.command.suffix]),\n                          innerHTML: _ctx.highlight(command[_ctx.commandAttribute], command.matches[0])\n                        }, null, 10, _hoisted_2))\n                      : (command.suffix)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 2,\n                            class: _normalizeClass([\"truncate\", command.suffixClass || _ctx.ui.group.command.suffix])\n                          }, _toDisplayString(command.suffix), 3))\n                        : _createCommentVNode(\"\", true)\n                  ])\n                ], 2)\n              ], 2),\n              selected\n                ? (_openBlock(), _createBlock(_component_UIcon, {\n                    key: 0,\n                    name: _ctx.selectedIcon,\n                    class: _normalizeClass(_ctx.ui.group.command.selectedIcon.base),\n                    \"aria-hidden\": \"true\"\n                  }, null, 8, [\"name\", \"class\"]))\n                : (active && (_ctx.group.active || _ctx.$slots[`${_ctx.group.key}-active`]))\n                  ? _renderSlot(_ctx.$slots, `${_ctx.group.key}-active`, {\n                      key: 1,\n                      group: _ctx.group,\n                      command: command,\n                      active: active,\n                      selected: selected\n                    }, () => [\n                      (_ctx.group.active)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 0,\n                            class: _normalizeClass(_ctx.ui.group.active)\n                          }, _toDisplayString(_ctx.group.active), 3))\n                        : _createCommentVNode(\"\", true)\n                    ])\n                  : _renderSlot(_ctx.$slots, `${_ctx.group.key}-inactive`, {\n                      key: 2,\n                      group: _ctx.group,\n                      command: command,\n                      active: active,\n                      selected: selected\n                    }, () => [\n                      (command.shortcuts?.length)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 0,\n                            class: _normalizeClass(_ctx.ui.group.command.shortcuts)\n                          }, [\n                            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(command.shortcuts, (shortcut) => {\n                              return (_openBlock(), _createBlock(_component_UKbd, { key: shortcut }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(_toDisplayString(shortcut), 1)\n                                ]),\n                                _: 2\n                              }, 1024))\n                            }), 128))\n                          ], 2))\n                        : (!command.disabled && _ctx.group.inactive)\n                          ? (_openBlock(), _createElementBlock(\"span\", {\n                              key: 1,\n                              class: _normalizeClass(_ctx.ui.group.inactive)\n                            }, _toDisplayString(_ctx.group.inactive), 3))\n                          : _createCommentVNode(\"\", true)\n                    ])\n            ], 2)\n          ]),\n          _: 2\n        }, 1032, [\"value\", \"disabled\"]))\n      }), 128))\n    ], 10, _hoisted_1)\n  ], 2))\n}\n\nimport \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/navigation/CommandPaletteGroup.vue?vue&type=style&index=0&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172179893,
-      "end": 1714172179895,
+      "start": 1714173353831,
+      "end": 1714173353837,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -180,8 +180,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useId } from '#app/composables/id';\n\nimport { computed, defineComponent } from \"vue\";\nimport { ComboboxOption as HComboboxOption, provideUseId } from \"@headlessui/vue\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UKbd from \"../elements/Kbd.vue\";\nconst _sfc_main = defineComponent({\n  components: {\n    HComboboxOption,\n    UIcon,\n    UAvatar,\n    UKbd\n  },\n  props: {\n    group: {\n      type: Object,\n      required: true\n    },\n    query: {\n      type: String,\n      default: \"\"\n    },\n    groupAttribute: {\n      type: String,\n      required: true\n    },\n    commandAttribute: {\n      type: String,\n      required: true\n    },\n    selectedIcon: {\n      type: String,\n      required: true\n    },\n    ui: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(props) {\n    const label = computed(() => {\n      const label2 = props.group[props.groupAttribute];\n      return typeof label2 === \"function\" ? label2(props.query) : label2;\n    });\n    function highlight(text, { indices, value }) {\n      if (text === value) {\n        return \"\";\n      }\n      let content = \"\";\n      let nextUnhighlightedIndiceStartingIndex = 0;\n      indices.forEach((indice) => {\n        const lastIndiceNextIndex = indice[1] + 1;\n        const isMatched = lastIndiceNextIndex - indice[0] >= props.query.length;\n        content += [\n          value.substring(nextUnhighlightedIndiceStartingIndex, indice[0]),\n          isMatched && \"<mark>\",\n          value.substring(indice[0], lastIndiceNextIndex),\n          isMatched && \"</mark>\"\n        ].filter(Boolean).join(\"\");\n        nextUnhighlightedIndiceStartingIndex = lastIndiceNextIndex;\n      });\n      content += value.substring(nextUnhighlightedIndiceStartingIndex);\n      const index = content.indexOf(\"<mark>\");\n      if (index > 60) {\n        content = `...${content.substring(index - 60)}`;\n      }\n      return content;\n    }\n    provideUseId(() => useId('$xnpcKX55nb'));\n    return {\n      label,\n      highlight\n    };\n  }\n});\n\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment, renderSlot as _renderSlot, resolveComponent as _resolveComponent, createBlock as _createBlock, mergeProps as _mergeProps, normalizeStyle as _normalizeStyle, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = [\"aria-label\"]\nconst _hoisted_2 = [\"innerHTML\"]\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_UIcon = _resolveComponent(\"UIcon\")\n  const _component_UAvatar = _resolveComponent(\"UAvatar\")\n  const _component_UKbd = _resolveComponent(\"UKbd\")\n  const _component_HComboboxOption = _resolveComponent(\"HComboboxOption\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass(_ctx.ui.group.wrapper)\n  }, [\n    (_ctx.label)\n      ? (_openBlock(), _createElementBlock(\"h2\", {\n          key: 0,\n          class: _normalizeClass(_ctx.ui.group.label)\n        }, _toDisplayString(_ctx.label), 3))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", {\n      class: _normalizeClass(_ctx.ui.group.container),\n      \"aria-label\": _ctx.group[_ctx.groupAttribute]\n    }, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.group.commands, (command, index) => {\n        return (_openBlock(), _createBlock(_component_HComboboxOption, {\n          key: `${_ctx.group.key}-${index}`,\n          value: command,\n          disabled: command.disabled,\n          as: \"template\"\n        }, {\n          default: _withCtx(({ active, selected }) => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([_ctx.ui.group.command.base, active ? _ctx.ui.group.command.active : _ctx.ui.group.command.inactive, command.disabled ? 'cursor-not-allowed' : 'cursor-pointer'])\n            }, [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_ctx.ui.group.command.container)\n              }, [\n                _renderSlot(_ctx.$slots, `${_ctx.group.key}-icon`, {\n                  group: _ctx.group,\n                  command: command,\n                  active: active,\n                  selected: selected\n                }, () => [\n                  (command.icon)\n                    ? (_openBlock(), _createBlock(_component_UIcon, {\n                        key: 0,\n                        name: command.icon,\n                        class: _normalizeClass([_ctx.ui.group.command.icon.base, active ? _ctx.ui.group.command.icon.active : _ctx.ui.group.command.icon.inactive, command.iconClass]),\n                        \"aria-hidden\": \"true\"\n                      }, null, 8, [\"name\", \"class\"]))\n                    : (command.avatar)\n                      ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({ key: 1 }, { size: _ctx.ui.group.command.avatar.size, ...command.avatar }, {\n                          class: _ctx.ui.group.command.avatar.base,\n                          \"aria-hidden\": \"true\"\n                        }), null, 16, [\"class\"]))\n                      : (command.chip)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 2,\n                            class: _normalizeClass(_ctx.ui.group.command.chip.base),\n                            style: _normalizeStyle({ background: `#${command.chip}` })\n                          }, null, 6))\n                        : _createCommentVNode(\"\", true)\n                ]),\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([_ctx.ui.group.command.label, command.disabled && _ctx.ui.group.command.disabled])\n                }, [\n                  _renderSlot(_ctx.$slots, `${_ctx.group.key}-command`, {\n                    group: _ctx.group,\n                    command: command,\n                    active: active,\n                    selected: selected\n                  }, () => [\n                    (command.prefix)\n                      ? (_openBlock(), _createElementBlock(\"span\", {\n                          key: 0,\n                          class: _normalizeClass([\"flex-shrink-0\", command.prefixClass || _ctx.ui.group.command.prefix])\n                        }, _toDisplayString(command.prefix), 3))\n                      : _createCommentVNode(\"\", true),\n                    _createElementVNode(\"span\", {\n                      class: _normalizeClass([\"truncate\", { 'flex-none': command.suffix || command.matches?.length }])\n                    }, _toDisplayString(command[_ctx.commandAttribute]), 3),\n                    (command.matches?.length)\n                      ? (_openBlock(), _createElementBlock(\"span\", {\n                          key: 1,\n                          class: _normalizeClass([\"truncate\", command.suffixClass || _ctx.ui.group.command.suffix]),\n                          innerHTML: _ctx.highlight(command[_ctx.commandAttribute], command.matches[0])\n                        }, null, 10, _hoisted_2))\n                      : (command.suffix)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 2,\n                            class: _normalizeClass([\"truncate\", command.suffixClass || _ctx.ui.group.command.suffix])\n                          }, _toDisplayString(command.suffix), 3))\n                        : _createCommentVNode(\"\", true)\n                  ])\n                ], 2)\n              ], 2),\n              selected\n                ? (_openBlock(), _createBlock(_component_UIcon, {\n                    key: 0,\n                    name: _ctx.selectedIcon,\n                    class: _normalizeClass(_ctx.ui.group.command.selectedIcon.base),\n                    \"aria-hidden\": \"true\"\n                  }, null, 8, [\"name\", \"class\"]))\n                : (active && (_ctx.group.active || _ctx.$slots[`${_ctx.group.key}-active`]))\n                  ? _renderSlot(_ctx.$slots, `${_ctx.group.key}-active`, {\n                      key: 1,\n                      group: _ctx.group,\n                      command: command,\n                      active: active,\n                      selected: selected\n                    }, () => [\n                      (_ctx.group.active)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 0,\n                            class: _normalizeClass(_ctx.ui.group.active)\n                          }, _toDisplayString(_ctx.group.active), 3))\n                        : _createCommentVNode(\"\", true)\n                    ])\n                  : _renderSlot(_ctx.$slots, `${_ctx.group.key}-inactive`, {\n                      key: 2,\n                      group: _ctx.group,\n                      command: command,\n                      active: active,\n                      selected: selected\n                    }, () => [\n                      (command.shortcuts?.length)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 0,\n                            class: _normalizeClass(_ctx.ui.group.command.shortcuts)\n                          }, [\n                            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(command.shortcuts, (shortcut) => {\n                              return (_openBlock(), _createBlock(_component_UKbd, { key: shortcut }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(_toDisplayString(shortcut), 1)\n                                ]),\n                                _: 2\n                              }, 1024))\n                            }), 128))\n                          ], 2))\n                        : (!command.disabled && _ctx.group.inactive)\n                          ? (_openBlock(), _createElementBlock(\"span\", {\n                              key: 1,\n                              class: _normalizeClass(_ctx.ui.group.inactive)\n                            }, _toDisplayString(_ctx.group.inactive), 3))\n                          : _createCommentVNode(\"\", true)\n                    ])\n            ], 2)\n          ]),\n          _: 2\n        }, 1032, [\"value\", \"disabled\"]))\n      }), 128))\n    ], 10, _hoisted_1)\n  ], 2))\n}\n\nimport \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/navigation/CommandPaletteGroup.vue?vue&type=style&index=0&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172179895,
-      "end": 1714172179897,
+      "start": 1714173353837,
+      "end": 1714173353839,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -194,51 +194,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179897,
-      "end": 1714172179897,
+      "start": 1714173353839,
+      "end": 1714173353839,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179897,
-      "end": 1714172179897,
+      "start": 1714173353839,
+      "end": 1714173353839,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179897,
-      "end": 1714172179897,
+      "start": 1714173353839,
+      "end": 1714173353839,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179897,
-      "end": 1714172179897,
+      "start": 1714173353839,
+      "end": 1714173353839,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Kbd.vue\";\nimport { useId } from '#app/composables/id';\n\nimport { computed, defineComponent } from \"vue\";\nimport { ComboboxOption as HComboboxOption, provideUseId } from \"@headlessui/vue\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport UKbd from \"../elements/Kbd.vue\";\nconst _sfc_main = defineComponent({\n  components: {\n    HComboboxOption,\n    UIcon,\n    UAvatar,\n    UKbd\n  },\n  props: {\n    group: {\n      type: Object,\n      required: true\n    },\n    query: {\n      type: String,\n      default: \"\"\n    },\n    groupAttribute: {\n      type: String,\n      required: true\n    },\n    commandAttribute: {\n      type: String,\n      required: true\n    },\n    selectedIcon: {\n      type: String,\n      required: true\n    },\n    ui: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(props) {\n    const label = computed(() => {\n      const label2 = props.group[props.groupAttribute];\n      return typeof label2 === \"function\" ? label2(props.query) : label2;\n    });\n    function highlight(text, { indices, value }) {\n      if (text === value) {\n        return \"\";\n      }\n      let content = \"\";\n      let nextUnhighlightedIndiceStartingIndex = 0;\n      indices.forEach((indice) => {\n        const lastIndiceNextIndex = indice[1] + 1;\n        const isMatched = lastIndiceNextIndex - indice[0] >= props.query.length;\n        content += [\n          value.substring(nextUnhighlightedIndiceStartingIndex, indice[0]),\n          isMatched && \"<mark>\",\n          value.substring(indice[0], lastIndiceNextIndex),\n          isMatched && \"</mark>\"\n        ].filter(Boolean).join(\"\");\n        nextUnhighlightedIndiceStartingIndex = lastIndiceNextIndex;\n      });\n      content += value.substring(nextUnhighlightedIndiceStartingIndex);\n      const index = content.indexOf(\"<mark>\");\n      if (index > 60) {\n        content = `...${content.substring(index - 60)}`;\n      }\n      return content;\n    }\n    provideUseId(() => useId('$xnpcKX55nb'));\n    return {\n      label,\n      highlight\n    };\n  }\n});\n\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment, renderSlot as _renderSlot, resolveComponent as _resolveComponent, createBlock as _createBlock, mergeProps as _mergeProps, normalizeStyle as _normalizeStyle, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = [\"aria-label\"]\nconst _hoisted_2 = [\"innerHTML\"]\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_UIcon = __nuxt_component_0\n  const _component_UAvatar = __nuxt_component_1\n  const _component_UKbd = __nuxt_component_2\n  const _component_HComboboxOption = _resolveComponent(\"HComboboxOption\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass(_ctx.ui.group.wrapper)\n  }, [\n    (_ctx.label)\n      ? (_openBlock(), _createElementBlock(\"h2\", {\n          key: 0,\n          class: _normalizeClass(_ctx.ui.group.label)\n        }, _toDisplayString(_ctx.label), 3))\n      : _createCommentVNode(\"\", true),\n    _createElementVNode(\"div\", {\n      class: _normalizeClass(_ctx.ui.group.container),\n      \"aria-label\": _ctx.group[_ctx.groupAttribute]\n    }, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_ctx.group.commands, (command, index) => {\n        return (_openBlock(), _createBlock(_component_HComboboxOption, {\n          key: `${_ctx.group.key}-${index}`,\n          value: command,\n          disabled: command.disabled,\n          as: \"template\"\n        }, {\n          default: _withCtx(({ active, selected }) => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([_ctx.ui.group.command.base, active ? _ctx.ui.group.command.active : _ctx.ui.group.command.inactive, command.disabled ? 'cursor-not-allowed' : 'cursor-pointer'])\n            }, [\n              _createElementVNode(\"div\", {\n                class: _normalizeClass(_ctx.ui.group.command.container)\n              }, [\n                _renderSlot(_ctx.$slots, `${_ctx.group.key}-icon`, {\n                  group: _ctx.group,\n                  command: command,\n                  active: active,\n                  selected: selected\n                }, () => [\n                  (command.icon)\n                    ? (_openBlock(), _createBlock(_component_UIcon, {\n                        key: 0,\n                        name: command.icon,\n                        class: _normalizeClass([_ctx.ui.group.command.icon.base, active ? _ctx.ui.group.command.icon.active : _ctx.ui.group.command.icon.inactive, command.iconClass]),\n                        \"aria-hidden\": \"true\"\n                      }, null, 8, [\"name\", \"class\"]))\n                    : (command.avatar)\n                      ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({ key: 1 }, { size: _ctx.ui.group.command.avatar.size, ...command.avatar }, {\n                          class: _ctx.ui.group.command.avatar.base,\n                          \"aria-hidden\": \"true\"\n                        }), null, 16, [\"class\"]))\n                      : (command.chip)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 2,\n                            class: _normalizeClass(_ctx.ui.group.command.chip.base),\n                            style: _normalizeStyle({ background: `#${command.chip}` })\n                          }, null, 6))\n                        : _createCommentVNode(\"\", true)\n                ]),\n                _createElementVNode(\"div\", {\n                  class: _normalizeClass([_ctx.ui.group.command.label, command.disabled && _ctx.ui.group.command.disabled])\n                }, [\n                  _renderSlot(_ctx.$slots, `${_ctx.group.key}-command`, {\n                    group: _ctx.group,\n                    command: command,\n                    active: active,\n                    selected: selected\n                  }, () => [\n                    (command.prefix)\n                      ? (_openBlock(), _createElementBlock(\"span\", {\n                          key: 0,\n                          class: _normalizeClass([\"flex-shrink-0\", command.prefixClass || _ctx.ui.group.command.prefix])\n                        }, _toDisplayString(command.prefix), 3))\n                      : _createCommentVNode(\"\", true),\n                    _createElementVNode(\"span\", {\n                      class: _normalizeClass([\"truncate\", { 'flex-none': command.suffix || command.matches?.length }])\n                    }, _toDisplayString(command[_ctx.commandAttribute]), 3),\n                    (command.matches?.length)\n                      ? (_openBlock(), _createElementBlock(\"span\", {\n                          key: 1,\n                          class: _normalizeClass([\"truncate\", command.suffixClass || _ctx.ui.group.command.suffix]),\n                          innerHTML: _ctx.highlight(command[_ctx.commandAttribute], command.matches[0])\n                        }, null, 10, _hoisted_2))\n                      : (command.suffix)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 2,\n                            class: _normalizeClass([\"truncate\", command.suffixClass || _ctx.ui.group.command.suffix])\n                          }, _toDisplayString(command.suffix), 3))\n                        : _createCommentVNode(\"\", true)\n                  ])\n                ], 2)\n              ], 2),\n              selected\n                ? (_openBlock(), _createBlock(_component_UIcon, {\n                    key: 0,\n                    name: _ctx.selectedIcon,\n                    class: _normalizeClass(_ctx.ui.group.command.selectedIcon.base),\n                    \"aria-hidden\": \"true\"\n                  }, null, 8, [\"name\", \"class\"]))\n                : (active && (_ctx.group.active || _ctx.$slots[`${_ctx.group.key}-active`]))\n                  ? _renderSlot(_ctx.$slots, `${_ctx.group.key}-active`, {\n                      key: 1,\n                      group: _ctx.group,\n                      command: command,\n                      active: active,\n                      selected: selected\n                    }, () => [\n                      (_ctx.group.active)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 0,\n                            class: _normalizeClass(_ctx.ui.group.active)\n                          }, _toDisplayString(_ctx.group.active), 3))\n                        : _createCommentVNode(\"\", true)\n                    ])\n                  : _renderSlot(_ctx.$slots, `${_ctx.group.key}-inactive`, {\n                      key: 2,\n                      group: _ctx.group,\n                      command: command,\n                      active: active,\n                      selected: selected\n                    }, () => [\n                      (command.shortcuts?.length)\n                        ? (_openBlock(), _createElementBlock(\"span\", {\n                            key: 0,\n                            class: _normalizeClass(_ctx.ui.group.command.shortcuts)\n                          }, [\n                            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(command.shortcuts, (shortcut) => {\n                              return (_openBlock(), _createBlock(_component_UKbd, { key: shortcut }, {\n                                default: _withCtx(() => [\n                                  _createTextVNode(_toDisplayString(shortcut), 1)\n                                ]),\n                                _: 2\n                              }, 1024))\n                            }), 128))\n                          ], 2))\n                        : (!command.disabled && _ctx.group.inactive)\n                          ? (_openBlock(), _createElementBlock(\"span\", {\n                              key: 1,\n                              class: _normalizeClass(_ctx.ui.group.inactive)\n                            }, _toDisplayString(_ctx.group.inactive), 3))\n                          : _createCommentVNode(\"\", true)\n                    ])\n            ], 2)\n          ]),\n          _: 2\n        }, 1032, [\"value\", \"disabled\"]))\n      }), 128))\n    ], 10, _hoisted_1)\n  ], 2))\n}\n\nimport \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/navigation/CommandPaletteGroup.vue?vue&type=style&index=0&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172179897,
-      "end": 1714172179897,
+      "start": 1714173353839,
+      "end": 1714173353839,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179897,
-      "end": 1714172179897,
+      "start": 1714173353839,
+      "end": 1714173353839,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179897,
-      "end": 1714172179897,
+      "start": 1714173353839,
+      "end": 1714173353839,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179897,
-      "end": 1714172179897,
+      "start": 1714173353839,
+      "end": 1714173353839,
       "order": "normal"
     }
   ]

@@ -173,7 +173,7 @@ const appConfig1 = defineAppConfig({
 
 const inlineAppConfig = {
   "nuxt": {
-    "buildId": "a4e6e74f-371b-47f3-8d9a-5da3da009fb2"
+    "buildId": "1cccb361-6103-4128-ab45-058fa91943a5"
   },
   "ui": {
     "primary": "green",
@@ -293,7 +293,7 @@ const _inlineRuntimeConfig = {
     "content": {
       "locales": [],
       "defaultLocale": "",
-      "integrity": 1714172164796,
+      "integrity": 1714173337916,
       "experimental": {
         "stripQueryParameters": false,
         "advanceQuery": false,
@@ -4267,19 +4267,19 @@ const components = {
           }
         },
         {
-          "name": "name",
-          "type": "string",
+          "name": "class",
+          "type": "any",
           "description": "",
           "declarations": [
             {
               "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
               "range": [
-                953,
-                1001
+                1240,
+                1327
               ]
             }
           ],
-          "schema": "string"
+          "schema": "any"
         },
         {
           "name": "type",
@@ -4304,21 +4304,6 @@ const components = {
           }
         },
         {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
-              "range": [
-                1240,
-                1327
-              ]
-            }
-          ],
-          "schema": "any"
-        },
-        {
           "name": "required",
           "type": "boolean",
           "description": "",
@@ -4339,6 +4324,21 @@ const components = {
               "true"
             ]
           }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
+              "range": [
+                953,
+                1001
+              ]
+            }
+          ],
+          "schema": "string"
         },
         {
           "name": "description",
@@ -7662,6 +7662,65 @@ const components = {
           }
         },
         {
+          "name": "tag",
+          "type": "string",
+          "description": "The tag to use for the renderer element if it is used.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3494,
+                3606
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "excerpt",
+          "type": "boolean",
+          "description": "Whether or not to render the excerpt.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3714,
+                3803
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "boolean",
+            "schema": [
+              "false",
+              "true"
+            ]
+          }
+        },
+        {
+          "name": "path",
+          "type": "string | undefined",
+          "description": "The path of the content to load from content source.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3983,
+                4099
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
+            ]
+          }
+        },
+        {
           "name": "query",
           "type": "QueryBuilderParams | undefined",
           "description": "A query builder params object to be passed to <ContentQuery /> component.",
@@ -8639,65 +8698,6 @@ const components = {
                   }
                 }
               }
-            ]
-          }
-        },
-        {
-          "name": "tag",
-          "type": "string",
-          "description": "The tag to use for the renderer element if it is used.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3494,
-                3606
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
-          "name": "excerpt",
-          "type": "boolean",
-          "description": "Whether or not to render the excerpt.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3714,
-                3803
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "boolean",
-            "schema": [
-              "false",
-              "true"
-            ]
-          }
-        },
-        {
-          "name": "path",
-          "type": "string | undefined",
-          "description": "The path of the content to load from content source.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3983,
-                4099
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
             ]
           }
         },
@@ -10590,6 +10590,28 @@ const components = {
           }
         },
         {
+          "name": "path",
+          "type": "string | undefined",
+          "description": "The path of the content to load from content source.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "range": [
+                1975,
+                2091
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
+            ]
+          }
+        },
+        {
           "name": "query",
           "type": "QueryBuilderParams | undefined",
           "description": "A query builder params object to be passed to <ContentQuery /> component.",
@@ -11567,28 +11589,6 @@ const components = {
                   }
                 }
               }
-            ]
-          }
-        },
-        {
-          "name": "path",
-          "type": "string | undefined",
-          "description": "The path of the content to load from content source.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
-              "range": [
-                1975,
-                2091
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
             ]
           }
         }
@@ -20460,33 +20460,6 @@ const components = {
           "schema": "any"
         },
         {
-          "name": "size",
-          "type": "ButtonSize | undefined",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
-              "range": [
-                4985,
-                5106
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "ButtonSize | undefined",
-            "schema": [
-              "undefined",
-              "\"md\"",
-              "\"2xs\"",
-              "\"xs\"",
-              "\"sm\"",
-              "\"lg\"",
-              "\"xl\""
-            ]
-          }
-        },
-        {
           "name": "block",
           "type": "boolean",
           "description": "",
@@ -20586,6 +20559,33 @@ const components = {
             "schema": [
               "false",
               "true"
+            ]
+          }
+        },
+        {
+          "name": "size",
+          "type": "ButtonSize | undefined",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "range": [
+                4985,
+                5106
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "ButtonSize | undefined",
+            "schema": [
+              "undefined",
+              "\"md\"",
+              "\"2xs\"",
+              "\"xs\"",
+              "\"sm\"",
+              "\"lg\"",
+              "\"xl\""
             ]
           }
         },
@@ -23328,7 +23328,7 @@ const handlers = [
   { route: '/api/_content/query/:qid/**:params', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query/:qid', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query', handler: _UCdZGl, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache.1714172164796.json', handler: _l6MDMm, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache.1714173337916.json', handler: _l6MDMm, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid/**:params', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation', handler: _3cNoJ4, lazy: false, middleware: false, method: "get" },

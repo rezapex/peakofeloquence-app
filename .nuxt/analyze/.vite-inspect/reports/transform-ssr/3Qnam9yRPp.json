@@ -4,272 +4,272 @@
     {
       "name": "virtual",
       "result": "import { default as _91_46_46_46slug_93m4OBvKzDJFMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/about/[...slug].vue?macro=true\";\nimport { default as abouteVykZ265cWMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/about.vue?macro=true\";\nimport { default as _91slug_93hcORZEMCTyMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/blog/[slug].vue?macro=true\";\nimport { default as indexggI6s2JEm4Meta } from \"/Users/rezajafar/peakofeloquence-app/pages/blog/index.vue?macro=true\";\nimport { default as blogD4aMO65GIbMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/blog.vue?macro=true\";\nimport { default as donateEIrj1bWx2QMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/donate.vue?macro=true\";\nimport { default as index7GnCcKW3pSMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/index.vue?macro=true\";\nimport { default as _91_46_46_46slug_93v2bAo1G9QIMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/letters/[...slug].vue?macro=true\";\nimport { default as lettersKQFLJQ3vpdMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/letters.vue?macro=true\";\nimport { default as loginYEKNFETWrrMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/login.vue?macro=true\";\nimport { default as pricingauLBc9UN8EMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/pricing.vue?macro=true\";\nimport { default as _91_46_46_46slug_93ro9Cj8mwLLMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/resources/[...slug].vue?macro=true\";\nimport { default as resourcesETP19JUTGWMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/resources.vue?macro=true\";\nimport { default as _91_46_46_46slug_93x1lYv7SUH5Meta } from \"/Users/rezajafar/peakofeloquence-app/pages/sayings/[...slug].vue?macro=true\";\nimport { default as sayingsqqUdNr2YnkMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/sayings.vue?macro=true\";\nimport { default as _91_46_46_46slug_93fGBTgFYdGfMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/sermons/[...slug].vue?macro=true\";\nimport { default as sermonsw0Ioq42RggMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/sermons.vue?macro=true\";\nimport { default as signuppPAZLNyFRjMeta } from \"/Users/rezajafar/peakofeloquence-app/pages/signup.vue?macro=true\";\nexport default [\n  {\n    name: abouteVykZ265cWMeta?.name ?? \"about\",\n    path: abouteVykZ265cWMeta?.path ?? \"/about\",\n    meta: abouteVykZ265cWMeta || {},\n    alias: abouteVykZ265cWMeta?.alias || [],\n    redirect: abouteVykZ265cWMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/about.vue\").then(m => m.default || m),\n    children: [\n  {\n    name: _91_46_46_46slug_93m4OBvKzDJFMeta?.name ?? \"about-slug\",\n    path: _91_46_46_46slug_93m4OBvKzDJFMeta?.path ?? \":slug(.*)*\",\n    meta: _91_46_46_46slug_93m4OBvKzDJFMeta || {},\n    alias: _91_46_46_46slug_93m4OBvKzDJFMeta?.alias || [],\n    redirect: _91_46_46_46slug_93m4OBvKzDJFMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/about/[...slug].vue\").then(m => m.default || m)\n  }\n]\n  },\n  {\n    name: blogD4aMO65GIbMeta?.name ?? undefined,\n    path: blogD4aMO65GIbMeta?.path ?? \"/blog\",\n    meta: blogD4aMO65GIbMeta || {},\n    alias: blogD4aMO65GIbMeta?.alias || [],\n    redirect: blogD4aMO65GIbMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/blog.vue\").then(m => m.default || m),\n    children: [\n  {\n    name: _91slug_93hcORZEMCTyMeta?.name ?? \"blog-slug\",\n    path: _91slug_93hcORZEMCTyMeta?.path ?? \":slug()\",\n    meta: _91slug_93hcORZEMCTyMeta || {},\n    alias: _91slug_93hcORZEMCTyMeta?.alias || [],\n    redirect: _91slug_93hcORZEMCTyMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/blog/[slug].vue\").then(m => m.default || m)\n  },\n  {\n    name: indexggI6s2JEm4Meta?.name ?? \"blog\",\n    path: indexggI6s2JEm4Meta?.path ?? \"\",\n    meta: indexggI6s2JEm4Meta || {},\n    alias: indexggI6s2JEm4Meta?.alias || [],\n    redirect: indexggI6s2JEm4Meta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/blog/index.vue\").then(m => m.default || m)\n  }\n]\n  },\n  {\n    name: donateEIrj1bWx2QMeta?.name ?? \"donate\",\n    path: donateEIrj1bWx2QMeta?.path ?? \"/donate\",\n    meta: donateEIrj1bWx2QMeta || {},\n    alias: donateEIrj1bWx2QMeta?.alias || [],\n    redirect: donateEIrj1bWx2QMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/donate.vue\").then(m => m.default || m)\n  },\n  {\n    name: index7GnCcKW3pSMeta?.name ?? \"index\",\n    path: index7GnCcKW3pSMeta?.path ?? \"/\",\n    meta: index7GnCcKW3pSMeta || {},\n    alias: index7GnCcKW3pSMeta?.alias || [],\n    redirect: index7GnCcKW3pSMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: lettersKQFLJQ3vpdMeta?.name ?? \"letters\",\n    path: lettersKQFLJQ3vpdMeta?.path ?? \"/letters\",\n    meta: lettersKQFLJQ3vpdMeta || {},\n    alias: lettersKQFLJQ3vpdMeta?.alias || [],\n    redirect: lettersKQFLJQ3vpdMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/letters.vue\").then(m => m.default || m),\n    children: [\n  {\n    name: _91_46_46_46slug_93v2bAo1G9QIMeta?.name ?? \"letters-slug\",\n    path: _91_46_46_46slug_93v2bAo1G9QIMeta?.path ?? \":slug(.*)*\",\n    meta: _91_46_46_46slug_93v2bAo1G9QIMeta || {},\n    alias: _91_46_46_46slug_93v2bAo1G9QIMeta?.alias || [],\n    redirect: _91_46_46_46slug_93v2bAo1G9QIMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/letters/[...slug].vue\").then(m => m.default || m)\n  }\n]\n  },\n  {\n    name: loginYEKNFETWrrMeta?.name ?? \"login\",\n    path: loginYEKNFETWrrMeta?.path ?? \"/login\",\n    meta: loginYEKNFETWrrMeta || {},\n    alias: loginYEKNFETWrrMeta?.alias || [],\n    redirect: loginYEKNFETWrrMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/login.vue\").then(m => m.default || m)\n  },\n  {\n    name: pricingauLBc9UN8EMeta?.name ?? \"pricing\",\n    path: pricingauLBc9UN8EMeta?.path ?? \"/pricing\",\n    meta: pricingauLBc9UN8EMeta || {},\n    alias: pricingauLBc9UN8EMeta?.alias || [],\n    redirect: pricingauLBc9UN8EMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/pricing.vue\").then(m => m.default || m)\n  },\n  {\n    name: resourcesETP19JUTGWMeta?.name ?? \"resources\",\n    path: resourcesETP19JUTGWMeta?.path ?? \"/resources\",\n    meta: resourcesETP19JUTGWMeta || {},\n    alias: resourcesETP19JUTGWMeta?.alias || [],\n    redirect: resourcesETP19JUTGWMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/resources.vue\").then(m => m.default || m),\n    children: [\n  {\n    name: _91_46_46_46slug_93ro9Cj8mwLLMeta?.name ?? \"resources-slug\",\n    path: _91_46_46_46slug_93ro9Cj8mwLLMeta?.path ?? \":slug(.*)*\",\n    meta: _91_46_46_46slug_93ro9Cj8mwLLMeta || {},\n    alias: _91_46_46_46slug_93ro9Cj8mwLLMeta?.alias || [],\n    redirect: _91_46_46_46slug_93ro9Cj8mwLLMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/resources/[...slug].vue\").then(m => m.default || m)\n  }\n]\n  },\n  {\n    name: sayingsqqUdNr2YnkMeta?.name ?? \"sayings\",\n    path: sayingsqqUdNr2YnkMeta?.path ?? \"/sayings\",\n    meta: sayingsqqUdNr2YnkMeta || {},\n    alias: sayingsqqUdNr2YnkMeta?.alias || [],\n    redirect: sayingsqqUdNr2YnkMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/sayings.vue\").then(m => m.default || m),\n    children: [\n  {\n    name: _91_46_46_46slug_93x1lYv7SUH5Meta?.name ?? \"sayings-slug\",\n    path: _91_46_46_46slug_93x1lYv7SUH5Meta?.path ?? \":slug(.*)*\",\n    meta: _91_46_46_46slug_93x1lYv7SUH5Meta || {},\n    alias: _91_46_46_46slug_93x1lYv7SUH5Meta?.alias || [],\n    redirect: _91_46_46_46slug_93x1lYv7SUH5Meta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/sayings/[...slug].vue\").then(m => m.default || m)\n  }\n]\n  },\n  {\n    name: sermonsw0Ioq42RggMeta?.name ?? \"sermons\",\n    path: sermonsw0Ioq42RggMeta?.path ?? \"/sermons\",\n    meta: sermonsw0Ioq42RggMeta || {},\n    alias: sermonsw0Ioq42RggMeta?.alias || [],\n    redirect: sermonsw0Ioq42RggMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/sermons.vue\").then(m => m.default || m),\n    children: [\n  {\n    name: _91_46_46_46slug_93fGBTgFYdGfMeta?.name ?? \"sermons-slug\",\n    path: _91_46_46_46slug_93fGBTgFYdGfMeta?.path ?? \":slug(.*)*\",\n    meta: _91_46_46_46slug_93fGBTgFYdGfMeta || {},\n    alias: _91_46_46_46slug_93fGBTgFYdGfMeta?.alias || [],\n    redirect: _91_46_46_46slug_93fGBTgFYdGfMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/sermons/[...slug].vue\").then(m => m.default || m)\n  }\n]\n  },\n  {\n    name: signuppPAZLNyFRjMeta?.name ?? \"signup\",\n    path: signuppPAZLNyFRjMeta?.path ?? \"/signup\",\n    meta: signuppPAZLNyFRjMeta || {},\n    alias: signuppPAZLNyFRjMeta?.alias || [],\n    redirect: signuppPAZLNyFRjMeta?.redirect,\n    component: () => import(\"/Users/rezajafar/peakofeloquence-app/pages/signup.vue\").then(m => m.default || m)\n  }\n]",
-      "start": 1714172188449,
-      "end": 1714172188449,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172188449,
-      "end": 1714172188449,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172188449,
-      "end": 1714172188449,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172188450,
-      "end": 1714172188450,
+      "start": 1714173364070,
+      "end": 1714173364070,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172188450,
-      "end": 1714172188451,
+      "start": 1714173364070,
+      "end": 1714173364071,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172188451,
-      "end": 1714172188451,
+      "start": 1714173364071,
+      "end": 1714173364071,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714172188451,
-      "end": 1714172188452,
+      "start": 1714173364071,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714172188451,
-      "end": 1714172188452,
+      "start": 1714173364071,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172188452,
-      "end": 1714172188452,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172188452,
-      "end": 1714172188452,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172188452,
-      "end": 1714172188452,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172188452,
-      "end": 1714172188452,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714172188452,
-      "end": 1714172188452,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714172188452,
-      "end": 1714172188452,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172188452,
-      "end": 1714172188452,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172188452,
-      "end": 1714172188452,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172188453,
-      "end": 1714172188453,
+      "start": 1714173364073,
+      "end": 1714173364073,
       "order": "normal"
     }
   ]

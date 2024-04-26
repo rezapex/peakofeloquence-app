@@ -1238,19 +1238,19 @@ export default {
           }
         },
         {
-          "name": "name",
-          "type": "string",
+          "name": "class",
+          "type": "any",
           "description": "",
           "declarations": [
             {
               "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
               "range": [
-                953,
-                1001
+                1240,
+                1327
               ]
             }
           ],
-          "schema": "string"
+          "schema": "any"
         },
         {
           "name": "type",
@@ -1275,21 +1275,6 @@ export default {
           }
         },
         {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
-              "range": [
-                1240,
-                1327
-              ]
-            }
-          ],
-          "schema": "any"
-        },
-        {
           "name": "required",
           "type": "boolean",
           "description": "",
@@ -1310,6 +1295,21 @@ export default {
               "true"
             ]
           }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Field.vue",
+              "range": [
+                953,
+                1001
+              ]
+            }
+          ],
+          "schema": "string"
         },
         {
           "name": "description",
@@ -4633,6 +4633,65 @@ export default {
           }
         },
         {
+          "name": "tag",
+          "type": "string",
+          "description": "The tag to use for the renderer element if it is used.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3494,
+                3606
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "excerpt",
+          "type": "boolean",
+          "description": "Whether or not to render the excerpt.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3714,
+                3803
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "boolean",
+            "schema": [
+              "false",
+              "true"
+            ]
+          }
+        },
+        {
+          "name": "path",
+          "type": "string | undefined",
+          "description": "The path of the content to load from content source.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "range": [
+                3983,
+                4099
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
+            ]
+          }
+        },
+        {
           "name": "query",
           "type": "QueryBuilderParams | undefined",
           "description": "A query builder params object to be passed to <ContentQuery /> component.",
@@ -5610,65 +5669,6 @@ export default {
                   }
                 }
               }
-            ]
-          }
-        },
-        {
-          "name": "tag",
-          "type": "string",
-          "description": "The tag to use for the renderer element if it is used.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3494,
-                3606
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
-          "name": "excerpt",
-          "type": "boolean",
-          "description": "Whether or not to render the excerpt.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3714,
-                3803
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "boolean",
-            "schema": [
-              "false",
-              "true"
-            ]
-          }
-        },
-        {
-          "name": "path",
-          "type": "string | undefined",
-          "description": "The path of the content to load from content source.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
-              "range": [
-                3983,
-                4099
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
             ]
           }
         },
@@ -7561,6 +7561,28 @@ export default {
           }
         },
         {
+          "name": "path",
+          "type": "string | undefined",
+          "description": "The path of the content to load from content source.",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "range": [
+                1975,
+                2091
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": [
+              "undefined",
+              "string"
+            ]
+          }
+        },
+        {
           "name": "query",
           "type": "QueryBuilderParams | undefined",
           "description": "A query builder params object to be passed to <ContentQuery /> component.",
@@ -8538,28 +8560,6 @@ export default {
                   }
                 }
               }
-            ]
-          }
-        },
-        {
-          "name": "path",
-          "type": "string | undefined",
-          "description": "The path of the content to load from content source.",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
-              "range": [
-                1975,
-                2091
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": [
-              "undefined",
-              "string"
             ]
           }
         }
@@ -17431,33 +17431,6 @@ export default {
           "schema": "any"
         },
         {
-          "name": "size",
-          "type": "ButtonSize | undefined",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
-              "range": [
-                4985,
-                5106
-              ]
-            }
-          ],
-          "schema": {
-            "kind": "enum",
-            "type": "ButtonSize | undefined",
-            "schema": [
-              "undefined",
-              "\"md\"",
-              "\"2xs\"",
-              "\"xs\"",
-              "\"sm\"",
-              "\"lg\"",
-              "\"xl\""
-            ]
-          }
-        },
-        {
           "name": "block",
           "type": "boolean",
           "description": "",
@@ -17557,6 +17530,33 @@ export default {
             "schema": [
               "false",
               "true"
+            ]
+          }
+        },
+        {
+          "name": "size",
+          "type": "ButtonSize | undefined",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "range": [
+                4985,
+                5106
+              ]
+            }
+          ],
+          "schema": {
+            "kind": "enum",
+            "type": "ButtonSize | undefined",
+            "schema": [
+              "undefined",
+              "\"md\"",
+              "\"2xs\"",
+              "\"xs\"",
+              "\"sm\"",
+              "\"lg\"",
+              "\"xl\""
             ]
           }
         },

@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { useCssVars as _useCssVars, defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createVNode as _createVNode, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-53db7729\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1))\n\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport { nuxtLinkProps, getNuxtLinkProps } from '#ui/utils'\nimport { getSlotChildrenText } from '../../lib/slots'\nimport colors from '#tailwind-config/theme/colors'\nimport uiColors from '#ui-colors'\nimport { card as cardConfig } from '#ui/ui.config'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'LandingCard',\n  props: {\n  ...nuxtLinkProps,\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  icon: {\n    type: String,\n    default: undefined\n  },\n  color: {\n    type: String as PropType<typeof uiColors[number]>,\n    default: 'primary'\n  },\n  orientation: {\n    type: String as PropType<'vertical' | 'horizontal'>,\n    default: 'vertical'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value & typeof cardConfig>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\n_useCssVars(_ctx => ({\n  \"fb9dae28\": (_unref(colorLight)),\n  \"674828e0\": (_unref(colorDark))\n}))\n\n\n\nconst props = __props\n\nconst colorLight = computed(() => {\n  if (props.color === 'primary') {\n    return 'rgb(var(--color-primary-DEFAULT))'\n  }\n  // @ts-ignore\n  return colors[props.color]?.['500'] || colors[props.color] || props.color\n})\nconst colorDark = computed(() => {\n  if (props.color === 'primary') {\n    return 'rgb(var(--color-primary-DEFAULT))'\n  }\n  // @ts-ignore\n  return colors[props.color]?.['400'] || colors[props.color] || props.color\n})\n\nconst config = computed(() => {\n  const base = twJoin(\n    'gap-x-8 gap-y-4 rounded-xl flex-1',\n    props.orientation === 'vertical' && 'flex flex-col',\n    !!slots.default && props.orientation === 'horizontal' && 'grid lg:grid-cols-2 lg:items-center'\n  )\n\n  return {\n    wrapper: 'relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow',\n    to: 'hover:ring-primary-500 dark:hover:ring-primary-400 transition-shadow duration-200',\n    base: 'flex-1 flex flex-col overflow-hidden',\n    container: '',\n    body: {\n      base\n    },\n    background: 'bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]',\n    ring: '',\n    rounded: 'rounded-xl',\n    shadow: '',\n    icon: {\n      wrapper: 'mb-2 pointer-events-none',\n      base: 'w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white'\n    },\n    title: 'text-gray-900 dark:text-white text-base font-bold truncate',\n    description: 'text-[15px] text-gray-500 dark:text-gray-400 mt-1'\n  }\n})\n\nconst el = ref<HTMLDivElement>()\n\nconst slots = useSlots()\nconst { elementX, elementY } = useSharedMouseInElement(el)\nconst { ui, attrs } = useUI('landing.card', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst nuxtLinkBind = computed(() => getNuxtLinkProps(props))\nconst ariaLabel = computed(() => (props.title || (slots.title && getSlotChildrenText(slots.title())) || 'Card link').trim())\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_UCard = _resolveComponent(\"UCard\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _mergeProps({\n    ref_key: \"el\",\n    ref: el,\n    style: {\n      '--x': `${_unref(elementX)}px`,\n      '--y': `${_unref(elementY)}px`,\n    },\n    class: [_unref(ui).wrapper, _ctx.to && _unref(ui).to]\n  }, _unref(attrs)), [\n    _createVNode(_component_UCard, { ui: _unref(ui) }, {\n      default: _withCtx(() => [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          (_ctx.to)\n            ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({\n                key: 0,\n                \"aria-label\": _unref(ariaLabel)\n              }, _unref(nuxtLinkBind), {\n                class: \"focus:outline-none\",\n                tabindex: \"-1\"\n              }), {\n                default: _withCtx(() => [\n                  _hoisted_1\n                ]),\n                _: 1\n              }, 16, [\"aria-label\"]))\n            : _createCommentVNode(\"\", true),\n          (__props.icon || _ctx.$slots.icon)\n            ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).icon.wrapper)\n              }, [\n                _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                  _createVNode(_component_UIcon, {\n                    name: (__props.icon as string),\n                    class: _normalizeClass(_unref(ui).icon.base)\n                  }, null, 8, [\"name\", \"class\"])\n                ], true)\n              ], 2))\n            : _createCommentVNode(\"\", true),\n          (__props.title || _ctx.$slots.title)\n            ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 2,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ], true)\n              ], 2))\n            : _createCommentVNode(\"\", true),\n          (__props.description || _ctx.$slots.description)\n            ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 3,\n                class: _normalizeClass(_unref(ui).description)\n              }, [\n                _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.description), 1)\n                ], true)\n              ], 2))\n            : _createCommentVNode(\"\", true),\n          _renderSlot(_ctx.$slots, \"container\", {}, undefined, true)\n        ], 2),\n        (_ctx.$slots.default)\n          ? _renderSlot(_ctx.$slots, \"default\", { key: 0 }, undefined, true)\n          : _createCommentVNode(\"\", true)\n      ]),\n      _: 3\n    }, 8, [\"ui\"])\n  ], 16))\n}\n}\n\n})",
-      "start": 1714172179740,
-      "end": 1714172179740
+      "start": 1714173353525,
+      "end": 1714173353525
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179741,
-      "end": 1714172179741,
+      "start": 1714173353525,
+      "end": 1714173353525,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179741,
-      "end": 1714172179741,
+      "start": 1714173353525,
+      "end": 1714173353525,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179741,
-      "end": 1714172179741,
+      "start": 1714173353525,
+      "end": 1714173353525,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179741,
-      "end": 1714172179741,
+      "start": 1714173353525,
+      "end": 1714173353525,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179741,
-      "end": 1714172179741,
+      "start": 1714173353525,
+      "end": 1714173353525,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { useCssVars as _useCssVars, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createVNode as _createVNode, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-53db7729\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1));\nimport { twJoin } from \"tailwind-merge\";\nimport { nuxtLinkProps, getNuxtLinkProps } from \"#ui/utils\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nimport colors from \"#tailwind-config/theme/colors\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingCard\",\n  props: {\n    ...nuxtLinkProps,\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    color: {\n      type: String,\n      default: \"primary\"\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    _useCssVars((_ctx) => ({\n      \"fb9dae28\": _unref(colorLight),\n      \"674828e0\": _unref(colorDark)\n    }));\n    const props = __props;\n    const colorLight = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"500\"] || colors[props.color] || props.color;\n    });\n    const colorDark = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"400\"] || colors[props.color] || props.color;\n    });\n    const config = computed(() => {\n      const base = twJoin(\n        \"gap-x-8 gap-y-4 rounded-xl flex-1\",\n        props.orientation === \"vertical\" && \"flex flex-col\",\n        !!slots.default && props.orientation === \"horizontal\" && \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      return {\n        wrapper: \"relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow\",\n        to: \"hover:ring-primary-500 dark:hover:ring-primary-400 transition-shadow duration-200\",\n        base: \"flex-1 flex flex-col overflow-hidden\",\n        container: \"\",\n        body: {\n          base\n        },\n        background: \"bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]\",\n        ring: \"\",\n        rounded: \"rounded-xl\",\n        shadow: \"\",\n        icon: {\n          wrapper: \"mb-2 pointer-events-none\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        title: \"text-gray-900 dark:text-white text-base font-bold truncate\",\n        description: \"text-[15px] text-gray-500 dark:text-gray-400 mt-1\"\n      };\n    });\n    const el = ref();\n    const slots = useSlots();\n    const { elementX, elementY } = useSharedMouseInElement(el);\n    const { ui, attrs } = useUI(\"landing.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const nuxtLinkBind = computed(() => getNuxtLinkProps(props));\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Card link\").trim());\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        ref_key: \"el\",\n        ref: el,\n        style: {\n          \"--x\": `${_unref(elementX)}px`,\n          \"--y\": `${_unref(elementY)}px`\n        },\n        class: [_unref(ui).wrapper, _ctx.to && _unref(ui).to]\n      }, _unref(attrs)), [\n        _createVNode(_component_UCard, { ui: _unref(ui) }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).container)\n            }, [\n              _ctx.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({\n                key: 0,\n                \"aria-label\": _unref(ariaLabel)\n              }, _unref(nuxtLinkBind), {\n                class: \"focus:outline-none\",\n                tabindex: \"-1\"\n              }), {\n                default: _withCtx(() => [\n                  _hoisted_1\n                ]),\n                _: 1\n              }, 16, [\"aria-label\"])) : _createCommentVNode(\"\", true),\n              __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).icon.wrapper)\n              }, [\n                _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                  _createVNode(_component_UIcon, {\n                    name: __props.icon,\n                    class: _normalizeClass(_unref(ui).icon.base)\n                  }, null, 8, [\"name\", \"class\"])\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 2,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 3,\n                class: _normalizeClass(_unref(ui).description)\n              }, [\n                _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.description), 1)\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              _renderSlot(_ctx.$slots, \"container\", {}, void 0, true)\n            ], 2),\n            _ctx.$slots.default ? _renderSlot(_ctx.$slots, \"default\", { key: 0 }, void 0, true) : _createCommentVNode(\"\", true)\n          ]),\n          _: 3\n        }, 8, [\"ui\"])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179760,
-      "end": 1714172179941,
+      "start": 1714173353546,
+      "end": 1714173353670,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172179941,
-      "end": 1714172179941,
+      "start": 1714173353670,
+      "end": 1714173353670,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, ref, useSlots, toRef } from 'vue';\nimport { useSharedMouseInElement } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useSharedMouseInElement.ts';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { useCssVars as _useCssVars, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createVNode as _createVNode, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-53db7729\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1));\nimport { twJoin } from \"tailwind-merge\";\nimport { nuxtLinkProps, getNuxtLinkProps } from \"#ui/utils\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nimport colors from \"#tailwind-config/theme/colors\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingCard\",\n  props: {\n    ...nuxtLinkProps,\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    color: {\n      type: String,\n      default: \"primary\"\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    _useCssVars((_ctx) => ({\n      \"fb9dae28\": _unref(colorLight),\n      \"674828e0\": _unref(colorDark)\n    }));\n    const props = __props;\n    const colorLight = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"500\"] || colors[props.color] || props.color;\n    });\n    const colorDark = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"400\"] || colors[props.color] || props.color;\n    });\n    const config = computed(() => {\n      const base = twJoin(\n        \"gap-x-8 gap-y-4 rounded-xl flex-1\",\n        props.orientation === \"vertical\" && \"flex flex-col\",\n        !!slots.default && props.orientation === \"horizontal\" && \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      return {\n        wrapper: \"relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow\",\n        to: \"hover:ring-primary-500 dark:hover:ring-primary-400 transition-shadow duration-200\",\n        base: \"flex-1 flex flex-col overflow-hidden\",\n        container: \"\",\n        body: {\n          base\n        },\n        background: \"bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]\",\n        ring: \"\",\n        rounded: \"rounded-xl\",\n        shadow: \"\",\n        icon: {\n          wrapper: \"mb-2 pointer-events-none\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        title: \"text-gray-900 dark:text-white text-base font-bold truncate\",\n        description: \"text-[15px] text-gray-500 dark:text-gray-400 mt-1\"\n      };\n    });\n    const el = ref();\n    const slots = useSlots();\n    const { elementX, elementY } = useSharedMouseInElement(el);\n    const { ui, attrs } = useUI(\"landing.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const nuxtLinkBind = computed(() => getNuxtLinkProps(props));\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Card link\").trim());\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        ref_key: \"el\",\n        ref: el,\n        style: {\n          \"--x\": `${_unref(elementX)}px`,\n          \"--y\": `${_unref(elementY)}px`\n        },\n        class: [_unref(ui).wrapper, _ctx.to && _unref(ui).to]\n      }, _unref(attrs)), [\n        _createVNode(_component_UCard, { ui: _unref(ui) }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).container)\n            }, [\n              _ctx.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({\n                key: 0,\n                \"aria-label\": _unref(ariaLabel)\n              }, _unref(nuxtLinkBind), {\n                class: \"focus:outline-none\",\n                tabindex: \"-1\"\n              }), {\n                default: _withCtx(() => [\n                  _hoisted_1\n                ]),\n                _: 1\n              }, 16, [\"aria-label\"])) : _createCommentVNode(\"\", true),\n              __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).icon.wrapper)\n              }, [\n                _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                  _createVNode(_component_UIcon, {\n                    name: __props.icon,\n                    class: _normalizeClass(_unref(ui).icon.base)\n                  }, null, 8, [\"name\", \"class\"])\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 2,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 3,\n                class: _normalizeClass(_unref(ui).description)\n              }, [\n                _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.description), 1)\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              _renderSlot(_ctx.$slots, \"container\", {}, void 0, true)\n            ], 2),\n            _ctx.$slots.default ? _renderSlot(_ctx.$slots, \"default\", { key: 0 }, void 0, true) : _createCommentVNode(\"\", true)\n          ]),\n          _: 3\n        }, 8, [\"ui\"])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179941,
-      "end": 1714172179943,
+      "start": 1714173353670,
+      "end": 1714173353671,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179943,
-      "end": 1714172179943,
+      "start": 1714173353671,
+      "end": 1714173353671,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179943,
-      "end": 1714172179943,
+      "start": 1714173353671,
+      "end": 1714173353671,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179943,
-      "end": 1714172179943,
+      "start": 1714173353671,
+      "end": 1714173353671,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179943,
-      "end": 1714172179943,
+      "start": 1714173353671,
+      "end": 1714173353672,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Card.vue\";\nimport { computed, ref, useSlots, toRef } from 'vue';\nimport { useSharedMouseInElement } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useSharedMouseInElement.ts';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { useCssVars as _useCssVars, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createVNode as _createVNode, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-53db7729\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1));\nimport { twJoin } from \"tailwind-merge\";\nimport { nuxtLinkProps, getNuxtLinkProps } from \"#ui/utils\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nimport colors from \"#tailwind-config/theme/colors\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingCard\",\n  props: {\n    ...nuxtLinkProps,\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    color: {\n      type: String,\n      default: \"primary\"\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    _useCssVars((_ctx) => ({\n      \"fb9dae28\": _unref(colorLight),\n      \"674828e0\": _unref(colorDark)\n    }));\n    const props = __props;\n    const colorLight = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"500\"] || colors[props.color] || props.color;\n    });\n    const colorDark = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"400\"] || colors[props.color] || props.color;\n    });\n    const config = computed(() => {\n      const base = twJoin(\n        \"gap-x-8 gap-y-4 rounded-xl flex-1\",\n        props.orientation === \"vertical\" && \"flex flex-col\",\n        !!slots.default && props.orientation === \"horizontal\" && \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      return {\n        wrapper: \"relative group isolate rounded-xl background-gradient ring-1 ring-gray-200 dark:ring-gray-800 before:hidden before:lg:block before:absolute before:-inset-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:z-[-1] before:rounded-[13px] flex-1 flex flex-col shadow\",\n        to: \"hover:ring-primary-500 dark:hover:ring-primary-400 transition-shadow duration-200\",\n        base: \"flex-1 flex flex-col overflow-hidden\",\n        container: \"\",\n        body: {\n          base\n        },\n        background: \"bg-white dark:bg-gray-900 hover:bg-opacity-90 dark:hover:bg-opacity-90 transition-[background-opacity]\",\n        ring: \"\",\n        rounded: \"rounded-xl\",\n        shadow: \"\",\n        icon: {\n          wrapper: \"mb-2 pointer-events-none\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        title: \"text-gray-900 dark:text-white text-base font-bold truncate\",\n        description: \"text-[15px] text-gray-500 dark:text-gray-400 mt-1\"\n      };\n    });\n    const el = ref();\n    const slots = useSlots();\n    const { elementX, elementY } = useSharedMouseInElement(el);\n    const { ui, attrs } = useUI(\"landing.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const nuxtLinkBind = computed(() => getNuxtLinkProps(props));\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Card link\").trim());\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = __nuxt_component_0;\n      const _component_UIcon = __nuxt_component_1;\n      const _component_UCard = __nuxt_component_2;\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        ref_key: \"el\",\n        ref: el,\n        style: {\n          \"--x\": `${_unref(elementX)}px`,\n          \"--y\": `${_unref(elementY)}px`\n        },\n        class: [_unref(ui).wrapper, _ctx.to && _unref(ui).to]\n      }, _unref(attrs)), [\n        _createVNode(_component_UCard, { ui: _unref(ui) }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).container)\n            }, [\n              _ctx.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({\n                key: 0,\n                \"aria-label\": _unref(ariaLabel)\n              }, _unref(nuxtLinkBind), {\n                class: \"focus:outline-none\",\n                tabindex: \"-1\"\n              }), {\n                default: _withCtx(() => [\n                  _hoisted_1\n                ]),\n                _: 1\n              }, 16, [\"aria-label\"])) : _createCommentVNode(\"\", true),\n              __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).icon.wrapper)\n              }, [\n                _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                  _createVNode(_component_UIcon, {\n                    name: __props.icon,\n                    class: _normalizeClass(_unref(ui).icon.base)\n                  }, null, 8, [\"name\", \"class\"])\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 2,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 3,\n                class: _normalizeClass(_unref(ui).description)\n              }, [\n                _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.description), 1)\n                ], true)\n              ], 2)) : _createCommentVNode(\"\", true),\n              _renderSlot(_ctx.$slots, \"container\", {}, void 0, true)\n            ], 2),\n            _ctx.$slots.default ? _renderSlot(_ctx.$slots, \"default\", { key: 0 }, void 0, true) : _createCommentVNode(\"\", true)\n          ]),\n          _: 3\n        }, 8, [\"ui\"])\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714172179943,
-      "end": 1714172179943,
+      "start": 1714173353672,
+      "end": 1714173353672,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179943,
-      "end": 1714172179943,
+      "start": 1714173353672,
+      "end": 1714173353672,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179943,
-      "end": 1714172179943,
+      "start": 1714173353672,
+      "end": 1714173353672,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179943,
-      "end": 1714172179943,
+      "start": 1714173353672,
+      "end": 1714173353672,
       "order": "normal"
     }
   ]

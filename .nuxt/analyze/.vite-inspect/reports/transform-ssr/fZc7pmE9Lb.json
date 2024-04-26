@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Field',\n  __ssrInlineRender: true,\n  props: {\n  name: {\n    type: String,\n    required: true\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  type: {\n    type: String,\n    default: undefined\n  },\n  required: {\n    type: Boolean,\n    default: false\n  },\n  default: {\n    type: String,\n    default: undefined\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'mt-5',\n  container: 'flex items-start gap-x-2.5 font-mono text-sm',\n  name: 'rounded-md font-semibold text-primary',\n  required: 'text-gray-500 dark:text-gray-400',\n  type: 'text-right',\n  label: 'flex flex-1 gap-x-2.5',\n  description: 'mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3'\n}\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('content.field', undefined, config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: _unref(ui).wrapper\n    }, _unref(attrs), _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_unref(ui).container)\n  }\"><div class=\"${\n    _ssrRenderClass(_unref(ui).label)\n  }\"><span class=\"${\n    _ssrRenderClass(_unref(ui).name)\n  }\">${\n    _ssrInterpolate(__props.name)\n  }</span>`)\n  if (__props.required) {\n    _push(`<span class=\"${_ssrRenderClass(_unref(ui).required)}\">required</span>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (__props.type) {\n    _push(`<div class=\"${\n      _ssrRenderClass(_unref(ui).type)\n    }\">${\n      _ssrInterpolate(__props.type)\n    }</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n  if (_ctx.$slots.default || __props.description) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).description)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"default\", {}, () => {\n      _push(`${_ssrInterpolate(__props.description)}`)\n    }, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n}\n\n})",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172188646,
-      "end": 1714172188646,
+      "start": 1714173364319,
+      "end": 1714173364319,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Field\",\n  __ssrInlineRender: true,\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    type: {\n      type: String,\n      default: void 0\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    default: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"mt-5\",\n      container: \"flex items-start gap-x-2.5 font-mono text-sm\",\n      name: \"rounded-md font-semibold text-primary\",\n      required: \"text-gray-500 dark:text-gray-400\",\n      type: \"text-right\",\n      label: \"flex flex-1 gap-x-2.5\",\n      description: \"mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.field\", void 0, config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass(_unref(ui).container)}\"><div class=\"${_ssrRenderClass(_unref(ui).label)}\"><span class=\"${_ssrRenderClass(_unref(ui).name)}\">${_ssrInterpolate(__props.name)}</span>`);\n      if (__props.required) {\n        _push(`<span class=\"${_ssrRenderClass(_unref(ui).required)}\">required</span>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (__props.type) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).type)}\">${_ssrInterpolate(__props.type)}</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (_ctx.$slots.default || __props.description) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"default\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714172188646,
-      "end": 1714172189072,
+      "start": 1714173364319,
+      "end": 1714173364618,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -92,147 +92,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364618,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364618,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172189072,
-      "end": 1714172189072,
+      "start": 1714173364619,
+      "end": 1714173364619,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Field\",\n  __ssrInlineRender: true,\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    type: {\n      type: String,\n      default: void 0\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    default: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"mt-5\",\n      container: \"flex items-start gap-x-2.5 font-mono text-sm\",\n      name: \"rounded-md font-semibold text-primary\",\n      required: \"text-gray-500 dark:text-gray-400\",\n      type: \"text-right\",\n      label: \"flex flex-1 gap-x-2.5\",\n      description: \"mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.field\", void 0, config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass(_unref(ui).container)}\"><div class=\"${_ssrRenderClass(_unref(ui).label)}\"><span class=\"${_ssrRenderClass(_unref(ui).name)}\">${_ssrInterpolate(__props.name)}</span>`);\n      if (__props.required) {\n        _push(`<span class=\"${_ssrRenderClass(_unref(ui).required)}\">required</span>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (__props.type) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).type)}\">${_ssrInterpolate(__props.type)}</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (_ctx.$slots.default || __props.description) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"default\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714172189072,
-      "end": 1714172189073,
+      "start": 1714173364619,
+      "end": 1714173364621,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -246,8 +246,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderSlot as _ssrRenderSlot, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Field\",\n  __ssrInlineRender: true,\n  props: {\n    name: {\n      type: String,\n      required: true\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    type: {\n      type: String,\n      default: void 0\n    },\n    required: {\n      type: Boolean,\n      default: false\n    },\n    default: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"mt-5\",\n      container: \"flex items-start gap-x-2.5 font-mono text-sm\",\n      name: \"rounded-md font-semibold text-primary\",\n      required: \"text-gray-500 dark:text-gray-400\",\n      type: \"text-right\",\n      label: \"flex flex-1 gap-x-2.5\",\n      description: \"mt-3 mb-0 text-gray-600 dark:text-gray-300 text-sm space-y-3\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.field\", void 0, config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}><div class=\"${_ssrRenderClass(_unref(ui).container)}\"><div class=\"${_ssrRenderClass(_unref(ui).label)}\"><span class=\"${_ssrRenderClass(_unref(ui).name)}\">${_ssrInterpolate(__props.name)}</span>`);\n      if (__props.required) {\n        _push(`<span class=\"${_ssrRenderClass(_unref(ui).required)}\">required</span>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (__props.type) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).type)}\">${_ssrInterpolate(__props.type)}</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n      if (_ctx.$slots.default || __props.description) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"default\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div>`);\n    };\n  }\n});\n",
-      "start": 1714172189072,
-      "end": 1714172189073,
+      "start": 1714173364619,
+      "end": 1714173364621,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -260,56 +260,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172189073,
-      "end": 1714172189073,
+      "start": 1714173364621,
+      "end": 1714173364621,
       "order": "normal"
     }
   ]

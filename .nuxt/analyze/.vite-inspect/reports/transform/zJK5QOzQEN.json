@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, createBlock as _createBlock, mergeProps as _mergeProps, createElementVNode as _createElementVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, withCtx as _withCtx, createSlots as _createSlots } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"flex-1\"\n}\n\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport type { Badge, Button } from '#ui/types'\nimport { card as cardConfig } from '#ui/ui.config'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'PricingCard',\n  props: {\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  orientation: {\n    type: String as PropType<'vertical' | 'horizontal'>,\n    default: 'vertical'\n  },\n  align: {\n    type: String as PropType<'top' | 'bottom'>,\n    default: 'bottom'\n  },\n  highlight: {\n    type: Boolean,\n    default: false\n  },\n  scale: {\n    type: Boolean,\n    default: false\n  },\n  features: {\n    type: Array as PropType<string[]>,\n    default: () => []\n  },\n  badge: {\n    type: Object as PropType<Badge>,\n    default: undefined\n  },\n  button: {\n    type: Object as PropType<Button & { click?: Function }>,\n    default: undefined\n  },\n  price: {\n    type: String,\n    default: undefined\n  },\n  discount: {\n    type: String,\n    default: undefined\n  },\n  cycle: {\n    type: String,\n    default: undefined\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value & typeof cardConfig>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\n\n\nconst props = __props\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => {\n  const base = twJoin(\n    'flex-1 gap-6 lg:gap-x-8 xl:gap-x-10 flex flex-col',\n    props.orientation === 'horizontal' ? 'lg:grid lg:grid-cols-10' : ''\n  )\n\n  const left: string = props.orientation === 'horizontal' ? 'lg:col-span-7' : ''\n  const right: string = props.orientation === 'horizontal' ? 'flex flex-col lg:items-center justify-center gap-y-6 lg:col-span-3 border-t lg:border-l lg:border-t-0 border-gray-200 dark:border-gray-800 pt-6 lg:pt-0 lg:pl-8 xl:pl-10' : ''\n\n  return {\n    wrapper: 'relative flex flex-col self-stretch w-full',\n    highlight: 'ring-2 ring-primary dark:ring-primary',\n    scale: 'lg:scale-[1.1] lg:z-10',\n    rounded: 'rounded-xl',\n    header: {\n      padding: 'p-6 lg:px-8 xl:px-10'\n    },\n    body: {\n      base,\n      padding: 'p-6 lg:p-8 xl:p-10'\n    },\n    footer: {\n      padding: 'p-6 lg:px-8 xl:px-10'\n    },\n    inner: 'flex items-center gap-3',\n    title: 'text-2xl text-gray-900 dark:text-white sm:text-3xl font-semibold truncate',\n    description: 'text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-2',\n    amount: {\n      base: 'flex flex-row items-baseline gap-x-1',\n      discount: 'text-gray-500 dark:text-gray-400 line-through text-xl sm:text-2xl font-medium',\n      price: 'text-gray-900 dark:text-white text-2xl sm:text-4xl font-semibold',\n      cycle: 'text-gray-500 dark:text-gray-400 text-sm/6 font-medium truncate'\n    },\n    features: {\n      vertical: 'space-y-3 text-sm',\n      horizontal: 'grid lg:grid-cols-2 text-sm gap-3',\n      item: {\n        base: 'flex items-center gap-x-3 min-w-0',\n        label: 'text-gray-600 dark:text-gray-400 truncate',\n        icon: {\n          base: 'w-5 h-5 flex-shrink-0 text-primary',\n          name: appConfig.ui.icons.check\n        }\n      }\n    },\n    divider: 'my-6 lg:my-8',\n    left,\n    right\n  }\n})\n\nconst { ui, attrs } = useUI('pricing.card', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UBadge = _resolveComponent(\"UBadge\")!\n  const _component_UDivider = _resolveComponent(\"UDivider\")!\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_UButton = _resolveComponent(\"UButton\")!\n  const _component_UCard = _resolveComponent(\"UCard\")!\n\n  return (_openBlock(), _createBlock(_component_UCard, _mergeProps({\n    class: [_unref(ui).wrapper, __props.highlight && _unref(ui).highlight, __props.scale && _unref(ui).scale]\n  }, _unref(attrs), { ui: _unref(ui) }), _createSlots({\n    default: _withCtx(() => [\n      _createElementVNode(\"div\", {\n        class: _normalizeClass(_unref(ui).left)\n      }, [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).inner)\n        }, [\n          (__props.title || _ctx.$slots.title)\n            ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ])\n              ], 2))\n            : _createCommentVNode(\"\", true),\n          (__props.badge)\n            ? (_openBlock(), _createBlock(_component_UBadge, _normalizeProps(_mergeProps({ key: 1 }, { variant: 'subtle', ...__props.badge })), null, 16))\n            : _createCommentVNode(\"\", true)\n        ], 2),\n        (__props.description || _ctx.$slots.description)\n          ? (_openBlock(), _createElementBlock(\"p\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).description)\n            }, [\n              _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.description), 1)\n              ])\n            ], 2))\n          : _createCommentVNode(\"\", true),\n        (__props.orientation === 'horizontal')\n          ? (_openBlock(), _createElementBlock(_Fragment, { key: 1 }, [\n              _createVNode(_component_UDivider, {\n                class: _normalizeClass(_unref(ui).divider)\n              }, null, 8, [\"class\"]),\n              (__props.features?.length || _ctx.$slots.features)\n                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n                    _renderSlot(_ctx.$slots, \"features\", {}, () => [\n                      (__props.features?.length)\n                        ? (_openBlock(), _createElementBlock(\"ul\", {\n                            key: 0,\n                            class: _normalizeClass(_unref(ui).features.horizontal)\n                          }, [\n                            (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.features, (offer, index) => {\n                              return (_openBlock(), _createElementBlock(\"li\", {\n                                key: index,\n                                class: _normalizeClass(_unref(ui).features.item.base)\n                              }, [\n                                _createVNode(_component_UIcon, {\n                                  name: _unref(ui).features.item.icon.name,\n                                  class: _normalizeClass(_unref(ui).features.item.icon.base)\n                                }, null, 8, [\"name\", \"class\"]),\n                                _createElementVNode(\"span\", {\n                                  class: _normalizeClass(_unref(ui).features.item.label)\n                                }, _toDisplayString(offer), 3)\n                              ], 2))\n                            }), 128))\n                          ], 2))\n                        : _createCommentVNode(\"\", true)\n                    ])\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ], 64))\n          : _createCommentVNode(\"\", true)\n      ], 2),\n      (__props.orientation === 'vertical')\n        ? (_openBlock(), _createElementBlock(_Fragment, { key: 0 }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).amount.base)\n            }, [\n              (__props.discount && __props.price)\n                ? (_openBlock(), _createElementBlock(\"p\", {\n                    key: 0,\n                    class: _normalizeClass(_unref(ui).amount.discount)\n                  }, _toDisplayString(__props.price), 3))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"p\", {\n                class: _normalizeClass(_unref(ui).amount.price)\n              }, _toDisplayString(__props.discount || __props.price || ' '), 3),\n              (__props.cycle)\n                ? (_openBlock(), _createElementBlock(\"p\", {\n                    key: 1,\n                    class: _normalizeClass(_unref(ui).amount.cycle)\n                  }, _toDisplayString(__props.cycle), 3))\n                : _createCommentVNode(\"\", true)\n            ], 2),\n            (__props.features?.length || _ctx.$slots.features)\n              ? (_openBlock(), _createElementBlock(\"div\", {\n                  key: 0,\n                  class: _normalizeClass([__props.align === 'top' && 'order-last', \"flex-1\"])\n                }, [\n                  _renderSlot(_ctx.$slots, \"features\", {}, () => [\n                    (__props.features?.length)\n                      ? (_openBlock(), _createElementBlock(\"ul\", {\n                          key: 0,\n                          class: _normalizeClass(_unref(ui).features.vertical)\n                        }, [\n                          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.features, (offer, index) => {\n                            return (_openBlock(), _createElementBlock(\"li\", {\n                              key: index,\n                              class: _normalizeClass(_unref(ui).features.item.base)\n                            }, [\n                              _createVNode(_component_UIcon, {\n                                name: _unref(ui).features.item.icon.name,\n                                class: _normalizeClass(_unref(ui).features.item.icon.base)\n                              }, null, 8, [\"name\", \"class\"]),\n                              _createElementVNode(\"span\", {\n                                class: _normalizeClass(_unref(ui).features.item.label)\n                              }, _toDisplayString(offer), 3)\n                            ], 2))\n                          }), 128))\n                        ], 2))\n                      : _createCommentVNode(\"\", true)\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true)\n          ], 64))\n        : _createCommentVNode(\"\", true),\n      _createElementVNode(\"div\", {\n        class: _normalizeClass(_unref(ui).right)\n      }, [\n        (__props.orientation === 'horizontal')\n          ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass([_unref(ui).amount.base, __props.align === 'top' && 'order-last'])\n            }, [\n              (__props.discount && __props.price)\n                ? (_openBlock(), _createElementBlock(\"p\", {\n                    key: 0,\n                    class: _normalizeClass(_unref(ui).amount.discount)\n                  }, _toDisplayString(__props.price), 3))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"p\", {\n                class: _normalizeClass(_unref(ui).amount.price)\n              }, _toDisplayString(__props.discount || __props.price || ' '), 3),\n              (__props.cycle)\n                ? (_openBlock(), _createElementBlock(\"p\", {\n                    key: 1,\n                    class: _normalizeClass(_unref(ui).amount.cycle)\n                  }, _toDisplayString(__props.cycle), 3))\n                : _createCommentVNode(\"\", true)\n            ], 2))\n          : _createCommentVNode(\"\", true),\n        (__props.button)\n          ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({ key: 1 }, { block: true, size: 'lg', ...__props.button }, {\n              onClick: __props.button.click\n            }), null, 16, [\"onClick\"]))\n          : _createCommentVNode(\"\", true),\n        (__props.orientation === 'horizontal')\n          ? _renderSlot(_ctx.$slots, \"bottom\", { key: 2 })\n          : _createCommentVNode(\"\", true)\n      ], 2),\n      (__props.orientation === 'vertical')\n        ? _renderSlot(_ctx.$slots, \"bottom\", { key: 1 })\n        : _createCommentVNode(\"\", true)\n    ]),\n    _: 2\n  }, [\n    (_ctx.$slots.header)\n      ? {\n          name: \"header\",\n          fn: _withCtx(() => [\n            _renderSlot(_ctx.$slots, \"header\")\n          ]),\n          key: \"0\"\n        }\n      : undefined,\n    (_ctx.$slots.footer)\n      ? {\n          name: \"footer\",\n          fn: _withCtx(() => [\n            _renderSlot(_ctx.$slots, \"footer\")\n          ]),\n          key: \"1\"\n        }\n      : undefined\n  ]), 1040, [\"class\", \"ui\"]))\n}\n}\n\n})",
-      "start": 1714172179775,
-      "end": 1714172179775
+      "start": 1714173353548,
+      "end": 1714173353548
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179775,
-      "end": 1714172179775,
+      "start": 1714173353549,
+      "end": 1714173353549,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179775,
-      "end": 1714172179775,
+      "start": 1714173353549,
+      "end": 1714173353549,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179775,
-      "end": 1714172179775,
+      "start": 1714173353549,
+      "end": 1714173353549,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179775,
-      "end": 1714172179775,
+      "start": 1714173353549,
+      "end": 1714173353549,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179775,
-      "end": 1714172179775,
+      "start": 1714173353549,
+      "end": 1714173353549,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, normalizeProps as _normalizeProps, createBlock as _createBlock, mergeProps as _mergeProps, createElementVNode as _createElementVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, withCtx as _withCtx, createSlots as _createSlots } from \"vue\";\nconst _hoisted_1 = {\n  key: 0,\n  class: \"flex-1\"\n};\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PricingCard\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    align: {\n      type: String,\n      default: \"bottom\"\n    },\n    highlight: {\n      type: Boolean,\n      default: false\n    },\n    scale: {\n      type: Boolean,\n      default: false\n    },\n    features: {\n      type: Array,\n      default: () => []\n    },\n    badge: {\n      type: Object,\n      default: void 0\n    },\n    button: {\n      type: Object,\n      default: void 0\n    },\n    price: {\n      type: String,\n      default: void 0\n    },\n    discount: {\n      type: String,\n      default: void 0\n    },\n    cycle: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const appConfig = useAppConfig();\n    const config = computed(() => {\n      const base = twJoin(\n        \"flex-1 gap-6 lg:gap-x-8 xl:gap-x-10 flex flex-col\",\n        props.orientation === \"horizontal\" ? \"lg:grid lg:grid-cols-10\" : \"\"\n      );\n      const left = props.orientation === \"horizontal\" ? \"lg:col-span-7\" : \"\";\n      const right = props.orientation === \"horizontal\" ? \"flex flex-col lg:items-center justify-center gap-y-6 lg:col-span-3 border-t lg:border-l lg:border-t-0 border-gray-200 dark:border-gray-800 pt-6 lg:pt-0 lg:pl-8 xl:pl-10\" : \"\";\n      return {\n        wrapper: \"relative flex flex-col self-stretch w-full\",\n        highlight: \"ring-2 ring-primary dark:ring-primary\",\n        scale: \"lg:scale-[1.1] lg:z-10\",\n        rounded: \"rounded-xl\",\n        header: {\n          padding: \"p-6 lg:px-8 xl:px-10\"\n        },\n        body: {\n          base,\n          padding: \"p-6 lg:p-8 xl:p-10\"\n        },\n        footer: {\n          padding: \"p-6 lg:px-8 xl:px-10\"\n        },\n        inner: \"flex items-center gap-3\",\n        title: \"text-2xl text-gray-900 dark:text-white sm:text-3xl font-semibold truncate\",\n        description: \"text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-2\",\n        amount: {\n          base: \"flex flex-row items-baseline gap-x-1\",\n          discount: \"text-gray-500 dark:text-gray-400 line-through text-xl sm:text-2xl font-medium\",\n          price: \"text-gray-900 dark:text-white text-2xl sm:text-4xl font-semibold\",\n          cycle: \"text-gray-500 dark:text-gray-400 text-sm/6 font-medium truncate\"\n        },\n        features: {\n          vertical: \"space-y-3 text-sm\",\n          horizontal: \"grid lg:grid-cols-2 text-sm gap-3\",\n          item: {\n            base: \"flex items-center gap-x-3 min-w-0\",\n            label: \"text-gray-600 dark:text-gray-400 truncate\",\n            icon: {\n              base: \"w-5 h-5 flex-shrink-0 text-primary\",\n              name: appConfig.ui.icons.check\n            }\n          }\n        },\n        divider: \"my-6 lg:my-8\",\n        left,\n        right\n      };\n    });\n    const { ui, attrs } = useUI(\"pricing.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UBadge = _resolveComponent(\"UBadge\");\n      const _component_UDivider = _resolveComponent(\"UDivider\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createBlock(_component_UCard, _mergeProps({\n        class: [_unref(ui).wrapper, __props.highlight && _unref(ui).highlight, __props.scale && _unref(ui).scale]\n      }, _unref(attrs), { ui: _unref(ui) }), _createSlots({\n        default: _withCtx(() => [\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).left)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).inner)\n            }, [\n              __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.badge ? (_openBlock(), _createBlock(_component_UBadge, _normalizeProps(_mergeProps({ key: 1 }, { variant: \"subtle\", ...__props.badge })), null, 16)) : _createCommentVNode(\"\", true)\n            ], 2),\n            __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).description)\n            }, [\n              _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.description), 1)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.orientation === \"horizontal\" ? (_openBlock(), _createElementBlock(_Fragment, { key: 1 }, [\n              _createVNode(_component_UDivider, {\n                class: _normalizeClass(_unref(ui).divider)\n              }, null, 8, [\"class\"]),\n              __props.features?.length || _ctx.$slots.features ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n                _renderSlot(_ctx.$slots, \"features\", {}, () => [\n                  __props.features?.length ? (_openBlock(), _createElementBlock(\"ul\", {\n                    key: 0,\n                    class: _normalizeClass(_unref(ui).features.horizontal)\n                  }, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.features, (offer, index) => {\n                      return _openBlock(), _createElementBlock(\"li\", {\n                        key: index,\n                        class: _normalizeClass(_unref(ui).features.item.base)\n                      }, [\n                        _createVNode(_component_UIcon, {\n                          name: _unref(ui).features.item.icon.name,\n                          class: _normalizeClass(_unref(ui).features.item.icon.base)\n                        }, null, 8, [\"name\", \"class\"]),\n                        _createElementVNode(\"span\", {\n                          class: _normalizeClass(_unref(ui).features.item.label)\n                        }, _toDisplayString(offer), 3)\n                      ], 2);\n                    }), 128))\n                  ], 2)) : _createCommentVNode(\"\", true)\n                ])\n              ])) : _createCommentVNode(\"\", true)\n            ], 64)) : _createCommentVNode(\"\", true)\n          ], 2),\n          __props.orientation === \"vertical\" ? (_openBlock(), _createElementBlock(_Fragment, { key: 0 }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).amount.base)\n            }, [\n              __props.discount && __props.price ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).amount.discount)\n              }, _toDisplayString(__props.price), 3)) : _createCommentVNode(\"\", true),\n              _createElementVNode(\"p\", {\n                class: _normalizeClass(_unref(ui).amount.price)\n              }, _toDisplayString(__props.discount || __props.price || \" \"), 3),\n              __props.cycle ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).amount.cycle)\n              }, _toDisplayString(__props.cycle), 3)) : _createCommentVNode(\"\", true)\n            ], 2),\n            __props.features?.length || _ctx.$slots.features ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass([__props.align === \"top\" && \"order-last\", \"flex-1\"])\n            }, [\n              _renderSlot(_ctx.$slots, \"features\", {}, () => [\n                __props.features?.length ? (_openBlock(), _createElementBlock(\"ul\", {\n                  key: 0,\n                  class: _normalizeClass(_unref(ui).features.vertical)\n                }, [\n                  (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.features, (offer, index) => {\n                    return _openBlock(), _createElementBlock(\"li\", {\n                      key: index,\n                      class: _normalizeClass(_unref(ui).features.item.base)\n                    }, [\n                      _createVNode(_component_UIcon, {\n                        name: _unref(ui).features.item.icon.name,\n                        class: _normalizeClass(_unref(ui).features.item.icon.base)\n                      }, null, 8, [\"name\", \"class\"]),\n                      _createElementVNode(\"span\", {\n                        class: _normalizeClass(_unref(ui).features.item.label)\n                      }, _toDisplayString(offer), 3)\n                    ], 2);\n                  }), 128))\n                ], 2)) : _createCommentVNode(\"\", true)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true)\n          ], 64)) : _createCommentVNode(\"\", true),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).right)\n          }, [\n            __props.orientation === \"horizontal\" ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass([_unref(ui).amount.base, __props.align === \"top\" && \"order-last\"])\n            }, [\n              __props.discount && __props.price ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).amount.discount)\n              }, _toDisplayString(__props.price), 3)) : _createCommentVNode(\"\", true),\n              _createElementVNode(\"p\", {\n                class: _normalizeClass(_unref(ui).amount.price)\n              }, _toDisplayString(__props.discount || __props.price || \" \"), 3),\n              __props.cycle ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).amount.cycle)\n              }, _toDisplayString(__props.cycle), 3)) : _createCommentVNode(\"\", true)\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.button ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({ key: 1 }, { block: true, size: \"lg\", ...__props.button }, {\n              onClick: __props.button.click\n            }), null, 16, [\"onClick\"])) : _createCommentVNode(\"\", true),\n            __props.orientation === \"horizontal\" ? _renderSlot(_ctx.$slots, \"bottom\", { key: 2 }) : _createCommentVNode(\"\", true)\n          ], 2),\n          __props.orientation === \"vertical\" ? _renderSlot(_ctx.$slots, \"bottom\", { key: 1 }) : _createCommentVNode(\"\", true)\n        ]),\n        _: 2\n      }, [\n        _ctx.$slots.header ? {\n          name: \"header\",\n          fn: _withCtx(() => [\n            _renderSlot(_ctx.$slots, \"header\")\n          ]),\n          key: \"0\"\n        } : void 0,\n        _ctx.$slots.footer ? {\n          name: \"footer\",\n          fn: _withCtx(() => [\n            _renderSlot(_ctx.$slots, \"footer\")\n          ]),\n          key: \"1\"\n        } : void 0\n      ]), 1040, [\"class\", \"ui\"]);\n    };\n  }\n});\n",
-      "start": 1714172179775,
-      "end": 1714172179994,
+      "start": 1714173353549,
+      "end": 1714173353681,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353681,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353681,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353681,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353681,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353681,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353681,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353681,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353681,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353681,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172179994,
-      "end": 1714172179994,
+      "start": 1714173353682,
+      "end": 1714173353682,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, normalizeProps as _normalizeProps, createBlock as _createBlock, mergeProps as _mergeProps, createElementVNode as _createElementVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, withCtx as _withCtx, createSlots as _createSlots } from \"vue\";\nconst _hoisted_1 = {\n  key: 0,\n  class: \"flex-1\"\n};\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PricingCard\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    align: {\n      type: String,\n      default: \"bottom\"\n    },\n    highlight: {\n      type: Boolean,\n      default: false\n    },\n    scale: {\n      type: Boolean,\n      default: false\n    },\n    features: {\n      type: Array,\n      default: () => []\n    },\n    badge: {\n      type: Object,\n      default: void 0\n    },\n    button: {\n      type: Object,\n      default: void 0\n    },\n    price: {\n      type: String,\n      default: void 0\n    },\n    discount: {\n      type: String,\n      default: void 0\n    },\n    cycle: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const appConfig = useAppConfig();\n    const config = computed(() => {\n      const base = twJoin(\n        \"flex-1 gap-6 lg:gap-x-8 xl:gap-x-10 flex flex-col\",\n        props.orientation === \"horizontal\" ? \"lg:grid lg:grid-cols-10\" : \"\"\n      );\n      const left = props.orientation === \"horizontal\" ? \"lg:col-span-7\" : \"\";\n      const right = props.orientation === \"horizontal\" ? \"flex flex-col lg:items-center justify-center gap-y-6 lg:col-span-3 border-t lg:border-l lg:border-t-0 border-gray-200 dark:border-gray-800 pt-6 lg:pt-0 lg:pl-8 xl:pl-10\" : \"\";\n      return {\n        wrapper: \"relative flex flex-col self-stretch w-full\",\n        highlight: \"ring-2 ring-primary dark:ring-primary\",\n        scale: \"lg:scale-[1.1] lg:z-10\",\n        rounded: \"rounded-xl\",\n        header: {\n          padding: \"p-6 lg:px-8 xl:px-10\"\n        },\n        body: {\n          base,\n          padding: \"p-6 lg:p-8 xl:p-10\"\n        },\n        footer: {\n          padding: \"p-6 lg:px-8 xl:px-10\"\n        },\n        inner: \"flex items-center gap-3\",\n        title: \"text-2xl text-gray-900 dark:text-white sm:text-3xl font-semibold truncate\",\n        description: \"text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-2\",\n        amount: {\n          base: \"flex flex-row items-baseline gap-x-1\",\n          discount: \"text-gray-500 dark:text-gray-400 line-through text-xl sm:text-2xl font-medium\",\n          price: \"text-gray-900 dark:text-white text-2xl sm:text-4xl font-semibold\",\n          cycle: \"text-gray-500 dark:text-gray-400 text-sm/6 font-medium truncate\"\n        },\n        features: {\n          vertical: \"space-y-3 text-sm\",\n          horizontal: \"grid lg:grid-cols-2 text-sm gap-3\",\n          item: {\n            base: \"flex items-center gap-x-3 min-w-0\",\n            label: \"text-gray-600 dark:text-gray-400 truncate\",\n            icon: {\n              base: \"w-5 h-5 flex-shrink-0 text-primary\",\n              name: appConfig.ui.icons.check\n            }\n          }\n        },\n        divider: \"my-6 lg:my-8\",\n        left,\n        right\n      };\n    });\n    const { ui, attrs } = useUI(\"pricing.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UBadge = _resolveComponent(\"UBadge\");\n      const _component_UDivider = _resolveComponent(\"UDivider\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createBlock(_component_UCard, _mergeProps({\n        class: [_unref(ui).wrapper, __props.highlight && _unref(ui).highlight, __props.scale && _unref(ui).scale]\n      }, _unref(attrs), { ui: _unref(ui) }), _createSlots({\n        default: _withCtx(() => [\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).left)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).inner)\n            }, [\n              __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.badge ? (_openBlock(), _createBlock(_component_UBadge, _normalizeProps(_mergeProps({ key: 1 }, { variant: \"subtle\", ...__props.badge })), null, 16)) : _createCommentVNode(\"\", true)\n            ], 2),\n            __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).description)\n            }, [\n              _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.description), 1)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.orientation === \"horizontal\" ? (_openBlock(), _createElementBlock(_Fragment, { key: 1 }, [\n              _createVNode(_component_UDivider, {\n                class: _normalizeClass(_unref(ui).divider)\n              }, null, 8, [\"class\"]),\n              __props.features?.length || _ctx.$slots.features ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n                _renderSlot(_ctx.$slots, \"features\", {}, () => [\n                  __props.features?.length ? (_openBlock(), _createElementBlock(\"ul\", {\n                    key: 0,\n                    class: _normalizeClass(_unref(ui).features.horizontal)\n                  }, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.features, (offer, index) => {\n                      return _openBlock(), _createElementBlock(\"li\", {\n                        key: index,\n                        class: _normalizeClass(_unref(ui).features.item.base)\n                      }, [\n                        _createVNode(_component_UIcon, {\n                          name: _unref(ui).features.item.icon.name,\n                          class: _normalizeClass(_unref(ui).features.item.icon.base)\n                        }, null, 8, [\"name\", \"class\"]),\n                        _createElementVNode(\"span\", {\n                          class: _normalizeClass(_unref(ui).features.item.label)\n                        }, _toDisplayString(offer), 3)\n                      ], 2);\n                    }), 128))\n                  ], 2)) : _createCommentVNode(\"\", true)\n                ])\n              ])) : _createCommentVNode(\"\", true)\n            ], 64)) : _createCommentVNode(\"\", true)\n          ], 2),\n          __props.orientation === \"vertical\" ? (_openBlock(), _createElementBlock(_Fragment, { key: 0 }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).amount.base)\n            }, [\n              __props.discount && __props.price ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).amount.discount)\n              }, _toDisplayString(__props.price), 3)) : _createCommentVNode(\"\", true),\n              _createElementVNode(\"p\", {\n                class: _normalizeClass(_unref(ui).amount.price)\n              }, _toDisplayString(__props.discount || __props.price || \" \"), 3),\n              __props.cycle ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).amount.cycle)\n              }, _toDisplayString(__props.cycle), 3)) : _createCommentVNode(\"\", true)\n            ], 2),\n            __props.features?.length || _ctx.$slots.features ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass([__props.align === \"top\" && \"order-last\", \"flex-1\"])\n            }, [\n              _renderSlot(_ctx.$slots, \"features\", {}, () => [\n                __props.features?.length ? (_openBlock(), _createElementBlock(\"ul\", {\n                  key: 0,\n                  class: _normalizeClass(_unref(ui).features.vertical)\n                }, [\n                  (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.features, (offer, index) => {\n                    return _openBlock(), _createElementBlock(\"li\", {\n                      key: index,\n                      class: _normalizeClass(_unref(ui).features.item.base)\n                    }, [\n                      _createVNode(_component_UIcon, {\n                        name: _unref(ui).features.item.icon.name,\n                        class: _normalizeClass(_unref(ui).features.item.icon.base)\n                      }, null, 8, [\"name\", \"class\"]),\n                      _createElementVNode(\"span\", {\n                        class: _normalizeClass(_unref(ui).features.item.label)\n                      }, _toDisplayString(offer), 3)\n                    ], 2);\n                  }), 128))\n                ], 2)) : _createCommentVNode(\"\", true)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true)\n          ], 64)) : _createCommentVNode(\"\", true),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).right)\n          }, [\n            __props.orientation === \"horizontal\" ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass([_unref(ui).amount.base, __props.align === \"top\" && \"order-last\"])\n            }, [\n              __props.discount && __props.price ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).amount.discount)\n              }, _toDisplayString(__props.price), 3)) : _createCommentVNode(\"\", true),\n              _createElementVNode(\"p\", {\n                class: _normalizeClass(_unref(ui).amount.price)\n              }, _toDisplayString(__props.discount || __props.price || \" \"), 3),\n              __props.cycle ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).amount.cycle)\n              }, _toDisplayString(__props.cycle), 3)) : _createCommentVNode(\"\", true)\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.button ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({ key: 1 }, { block: true, size: \"lg\", ...__props.button }, {\n              onClick: __props.button.click\n            }), null, 16, [\"onClick\"])) : _createCommentVNode(\"\", true),\n            __props.orientation === \"horizontal\" ? _renderSlot(_ctx.$slots, \"bottom\", { key: 2 }) : _createCommentVNode(\"\", true)\n          ], 2),\n          __props.orientation === \"vertical\" ? _renderSlot(_ctx.$slots, \"bottom\", { key: 1 }) : _createCommentVNode(\"\", true)\n        ]),\n        _: 2\n      }, [\n        _ctx.$slots.header ? {\n          name: \"header\",\n          fn: _withCtx(() => [\n            _renderSlot(_ctx.$slots, \"header\")\n          ]),\n          key: \"0\"\n        } : void 0,\n        _ctx.$slots.footer ? {\n          name: \"footer\",\n          fn: _withCtx(() => [\n            _renderSlot(_ctx.$slots, \"footer\")\n          ]),\n          key: \"1\"\n        } : void 0\n      ]), 1040, [\"class\", \"ui\"]);\n    };\n  }\n});\n",
-      "start": 1714172179994,
-      "end": 1714172179997,
+      "start": 1714173353682,
+      "end": 1714173353684,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179997,
-      "end": 1714172179997,
+      "start": 1714173353684,
+      "end": 1714173353684,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179997,
-      "end": 1714172179997,
+      "start": 1714173353684,
+      "end": 1714173353684,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179997,
-      "end": 1714172179997,
+      "start": 1714173353684,
+      "end": 1714173353684,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179997,
-      "end": 1714172179997,
+      "start": 1714173353684,
+      "end": 1714173353684,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Badge.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Divider.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Card.vue\";\nimport { useAppConfig } from '#app/config';\nimport { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, normalizeProps as _normalizeProps, createBlock as _createBlock, mergeProps as _mergeProps, createElementVNode as _createElementVNode, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, withCtx as _withCtx, createSlots as _createSlots } from \"vue\";\nconst _hoisted_1 = {\n  key: 0,\n  class: \"flex-1\"\n};\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PricingCard\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    align: {\n      type: String,\n      default: \"bottom\"\n    },\n    highlight: {\n      type: Boolean,\n      default: false\n    },\n    scale: {\n      type: Boolean,\n      default: false\n    },\n    features: {\n      type: Array,\n      default: () => []\n    },\n    badge: {\n      type: Object,\n      default: void 0\n    },\n    button: {\n      type: Object,\n      default: void 0\n    },\n    price: {\n      type: String,\n      default: void 0\n    },\n    discount: {\n      type: String,\n      default: void 0\n    },\n    cycle: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const appConfig = useAppConfig();\n    const config = computed(() => {\n      const base = twJoin(\n        \"flex-1 gap-6 lg:gap-x-8 xl:gap-x-10 flex flex-col\",\n        props.orientation === \"horizontal\" ? \"lg:grid lg:grid-cols-10\" : \"\"\n      );\n      const left = props.orientation === \"horizontal\" ? \"lg:col-span-7\" : \"\";\n      const right = props.orientation === \"horizontal\" ? \"flex flex-col lg:items-center justify-center gap-y-6 lg:col-span-3 border-t lg:border-l lg:border-t-0 border-gray-200 dark:border-gray-800 pt-6 lg:pt-0 lg:pl-8 xl:pl-10\" : \"\";\n      return {\n        wrapper: \"relative flex flex-col self-stretch w-full\",\n        highlight: \"ring-2 ring-primary dark:ring-primary\",\n        scale: \"lg:scale-[1.1] lg:z-10\",\n        rounded: \"rounded-xl\",\n        header: {\n          padding: \"p-6 lg:px-8 xl:px-10\"\n        },\n        body: {\n          base,\n          padding: \"p-6 lg:p-8 xl:p-10\"\n        },\n        footer: {\n          padding: \"p-6 lg:px-8 xl:px-10\"\n        },\n        inner: \"flex items-center gap-3\",\n        title: \"text-2xl text-gray-900 dark:text-white sm:text-3xl font-semibold truncate\",\n        description: \"text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-2\",\n        amount: {\n          base: \"flex flex-row items-baseline gap-x-1\",\n          discount: \"text-gray-500 dark:text-gray-400 line-through text-xl sm:text-2xl font-medium\",\n          price: \"text-gray-900 dark:text-white text-2xl sm:text-4xl font-semibold\",\n          cycle: \"text-gray-500 dark:text-gray-400 text-sm/6 font-medium truncate\"\n        },\n        features: {\n          vertical: \"space-y-3 text-sm\",\n          horizontal: \"grid lg:grid-cols-2 text-sm gap-3\",\n          item: {\n            base: \"flex items-center gap-x-3 min-w-0\",\n            label: \"text-gray-600 dark:text-gray-400 truncate\",\n            icon: {\n              base: \"w-5 h-5 flex-shrink-0 text-primary\",\n              name: appConfig.ui.icons.check\n            }\n          }\n        },\n        divider: \"my-6 lg:my-8\",\n        left,\n        right\n      };\n    });\n    const { ui, attrs } = useUI(\"pricing.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UBadge = __nuxt_component_0;\n      const _component_UDivider = __nuxt_component_1;\n      const _component_UIcon = __nuxt_component_2;\n      const _component_UButton = __nuxt_component_3;\n      const _component_UCard = __nuxt_component_4;\n      return _openBlock(), _createBlock(_component_UCard, _mergeProps({\n        class: [_unref(ui).wrapper, __props.highlight && _unref(ui).highlight, __props.scale && _unref(ui).scale]\n      }, _unref(attrs), { ui: _unref(ui) }), _createSlots({\n        default: _withCtx(() => [\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).left)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).inner)\n            }, [\n              __props.title || _ctx.$slots.title ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).title)\n              }, [\n                _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.title), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.badge ? (_openBlock(), _createBlock(_component_UBadge, _normalizeProps(_mergeProps({ key: 1 }, { variant: \"subtle\", ...__props.badge })), null, 16)) : _createCommentVNode(\"\", true)\n            ], 2),\n            __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).description)\n            }, [\n              _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.description), 1)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.orientation === \"horizontal\" ? (_openBlock(), _createElementBlock(_Fragment, { key: 1 }, [\n              _createVNode(_component_UDivider, {\n                class: _normalizeClass(_unref(ui).divider)\n              }, null, 8, [\"class\"]),\n              __props.features?.length || _ctx.$slots.features ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n                _renderSlot(_ctx.$slots, \"features\", {}, () => [\n                  __props.features?.length ? (_openBlock(), _createElementBlock(\"ul\", {\n                    key: 0,\n                    class: _normalizeClass(_unref(ui).features.horizontal)\n                  }, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.features, (offer, index) => {\n                      return _openBlock(), _createElementBlock(\"li\", {\n                        key: index,\n                        class: _normalizeClass(_unref(ui).features.item.base)\n                      }, [\n                        _createVNode(_component_UIcon, {\n                          name: _unref(ui).features.item.icon.name,\n                          class: _normalizeClass(_unref(ui).features.item.icon.base)\n                        }, null, 8, [\"name\", \"class\"]),\n                        _createElementVNode(\"span\", {\n                          class: _normalizeClass(_unref(ui).features.item.label)\n                        }, _toDisplayString(offer), 3)\n                      ], 2);\n                    }), 128))\n                  ], 2)) : _createCommentVNode(\"\", true)\n                ])\n              ])) : _createCommentVNode(\"\", true)\n            ], 64)) : _createCommentVNode(\"\", true)\n          ], 2),\n          __props.orientation === \"vertical\" ? (_openBlock(), _createElementBlock(_Fragment, { key: 0 }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(ui).amount.base)\n            }, [\n              __props.discount && __props.price ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).amount.discount)\n              }, _toDisplayString(__props.price), 3)) : _createCommentVNode(\"\", true),\n              _createElementVNode(\"p\", {\n                class: _normalizeClass(_unref(ui).amount.price)\n              }, _toDisplayString(__props.discount || __props.price || \" \"), 3),\n              __props.cycle ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).amount.cycle)\n              }, _toDisplayString(__props.cycle), 3)) : _createCommentVNode(\"\", true)\n            ], 2),\n            __props.features?.length || _ctx.$slots.features ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass([__props.align === \"top\" && \"order-last\", \"flex-1\"])\n            }, [\n              _renderSlot(_ctx.$slots, \"features\", {}, () => [\n                __props.features?.length ? (_openBlock(), _createElementBlock(\"ul\", {\n                  key: 0,\n                  class: _normalizeClass(_unref(ui).features.vertical)\n                }, [\n                  (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.features, (offer, index) => {\n                    return _openBlock(), _createElementBlock(\"li\", {\n                      key: index,\n                      class: _normalizeClass(_unref(ui).features.item.base)\n                    }, [\n                      _createVNode(_component_UIcon, {\n                        name: _unref(ui).features.item.icon.name,\n                        class: _normalizeClass(_unref(ui).features.item.icon.base)\n                      }, null, 8, [\"name\", \"class\"]),\n                      _createElementVNode(\"span\", {\n                        class: _normalizeClass(_unref(ui).features.item.label)\n                      }, _toDisplayString(offer), 3)\n                    ], 2);\n                  }), 128))\n                ], 2)) : _createCommentVNode(\"\", true)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true)\n          ], 64)) : _createCommentVNode(\"\", true),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_unref(ui).right)\n          }, [\n            __props.orientation === \"horizontal\" ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass([_unref(ui).amount.base, __props.align === \"top\" && \"order-last\"])\n            }, [\n              __props.discount && __props.price ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 0,\n                class: _normalizeClass(_unref(ui).amount.discount)\n              }, _toDisplayString(__props.price), 3)) : _createCommentVNode(\"\", true),\n              _createElementVNode(\"p\", {\n                class: _normalizeClass(_unref(ui).amount.price)\n              }, _toDisplayString(__props.discount || __props.price || \" \"), 3),\n              __props.cycle ? (_openBlock(), _createElementBlock(\"p\", {\n                key: 1,\n                class: _normalizeClass(_unref(ui).amount.cycle)\n              }, _toDisplayString(__props.cycle), 3)) : _createCommentVNode(\"\", true)\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.button ? (_openBlock(), _createBlock(_component_UButton, _mergeProps({ key: 1 }, { block: true, size: \"lg\", ...__props.button }, {\n              onClick: __props.button.click\n            }), null, 16, [\"onClick\"])) : _createCommentVNode(\"\", true),\n            __props.orientation === \"horizontal\" ? _renderSlot(_ctx.$slots, \"bottom\", { key: 2 }) : _createCommentVNode(\"\", true)\n          ], 2),\n          __props.orientation === \"vertical\" ? _renderSlot(_ctx.$slots, \"bottom\", { key: 1 }) : _createCommentVNode(\"\", true)\n        ]),\n        _: 2\n      }, [\n        _ctx.$slots.header ? {\n          name: \"header\",\n          fn: _withCtx(() => [\n            _renderSlot(_ctx.$slots, \"header\")\n          ]),\n          key: \"0\"\n        } : void 0,\n        _ctx.$slots.footer ? {\n          name: \"footer\",\n          fn: _withCtx(() => [\n            _renderSlot(_ctx.$slots, \"footer\")\n          ]),\n          key: \"1\"\n        } : void 0\n      ]), 1040, [\"class\", \"ui\"]);\n    };\n  }\n});\n",
-      "start": 1714172179997,
-      "end": 1714172179997,
+      "start": 1714173353684,
+      "end": 1714173353684,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179997,
-      "end": 1714172179997,
+      "start": 1714173353684,
+      "end": 1714173353685,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179997,
-      "end": 1714172179997,
+      "start": 1714173353685,
+      "end": 1714173353685,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179997,
-      "end": 1714172179997,
+      "start": 1714173353685,
+      "end": 1714173353685,
       "order": "normal"
     }
   ]

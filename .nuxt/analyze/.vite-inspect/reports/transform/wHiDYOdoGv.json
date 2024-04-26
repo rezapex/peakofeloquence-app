@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeClass as _normalizeClass, createBlock as _createBlock, withCtx as _withCtx } from \"vue\"\n\nimport type { BlogPost } from '~/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'index',\n  async setup(__props) {\n\nlet __temp: any, __restore: any\n\nconst { data: page } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData('blog', () => queryContent('/blog').findOne()))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!page.value) {\n  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })\n}\n\nconst { data: posts } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData('posts', () => queryContent<BlogPost>('/blog')\n  .where({ _extension: 'md' })\n  .sort({ date: -1 })\n  .find()))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\n\nuseSeoMeta({\n  title: page.value.title,\n  ogTitle: page.value.title,\n  description: page.value.description,\n  ogDescription: page.value.description\n})\n\ndefineOgImage({\n  component: 'Saas',\n  title: page.value.title,\n  description: page.value.description\n})\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UPageHeader = _resolveComponent(\"UPageHeader\")!\n  const _component_UBlogPost = _resolveComponent(\"UBlogPost\")!\n  const _component_UBlogList = _resolveComponent(\"UBlogList\")!\n  const _component_UPageBody = _resolveComponent(\"UPageBody\")!\n  const _component_UContainer = _resolveComponent(\"UContainer\")!\n\n  return (_openBlock(), _createBlock(_component_UContainer, null, {\n    default: _withCtx(() => [\n      _createVNode(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, 16),\n      _createVNode(_component_UPageBody, null, {\n        default: _withCtx(() => [\n          _createVNode(_component_UBlogList, null, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                return (_openBlock(), _createBlock(_component_UBlogPost, {\n                  key: index,\n                  to: post._path,\n                  title: post.title,\n                  description: post.description,\n                  image: post.image,\n                  date: new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }),\n                  authors: post.authors,\n                  badge: post.badge,\n                  orientation: index === 0 ? 'horizontal' : 'vertical',\n                  class: _normalizeClass([index === 0 && 'col-span-full']),\n                  ui: {\n            description: 'line-clamp-2'\n          }\n                }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]))\n              }), 128))\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      })\n    ]),\n    _: 1\n  }))\n}\n}\n\n})",
-      "start": 1714172179006,
-      "end": 1714172179006
+      "start": 1714173352619,
+      "end": 1714173352619
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179006,
-      "end": 1714172179006,
+      "start": 1714173352619,
+      "end": 1714173352619,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179006,
-      "end": 1714172179006,
+      "start": 1714173352619,
+      "end": 1714173352619,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179006,
-      "end": 1714172179006,
+      "start": 1714173352619,
+      "end": 1714173352619,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179006,
-      "end": 1714172179006,
+      "start": 1714173352619,
+      "end": 1714173352619,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179006,
-      "end": 1714172179006,
+      "start": 1714173352619,
+      "end": 1714173352619,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeClass as _normalizeClass, createBlock as _createBlock, withCtx as _withCtx } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"blog\", () => queryContent(\"/blog\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: posts } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"posts\", () => queryContent(\"/blog\").where({ _extension: \"md\" }).sort({ date: -1 }).find())), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    return (_ctx, _cache) => {\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UBlogPost = _resolveComponent(\"UBlogPost\");\n      const _component_UBlogList = _resolveComponent(\"UBlogList\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      return _openBlock(), _createBlock(_component_UContainer, null, {\n        default: _withCtx(() => [\n          _createVNode(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, 16),\n          _createVNode(_component_UPageBody, null, {\n            default: _withCtx(() => [\n              _createVNode(_component_UBlogList, null, {\n                default: _withCtx(() => [\n                  (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                    return _openBlock(), _createBlock(_component_UBlogPost, {\n                      key: index,\n                      to: post._path,\n                      title: post.title,\n                      description: post.description,\n                      image: post.image,\n                      date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                      authors: post.authors,\n                      badge: post.badge,\n                      orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                      class: _normalizeClass([index === 0 && \"col-span-full\"]),\n                      ui: {\n                        description: \"line-clamp-2\"\n                      }\n                    }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                  }), 128))\n                ]),\n                _: 1\n              })\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714172179006,
-      "end": 1714172179565,
+      "start": 1714173352619,
+      "end": 1714173353320,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179565,
-      "end": 1714172179565,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172179565,
-      "end": 1714172179566,
+      "start": 1714173353320,
+      "end": 1714173353320,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, createVNode as _createVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeClass as _normalizeClass, createBlock as _createBlock, withCtx as _withCtx } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"blog\", () => queryContent(\"/blog\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    const { data: posts } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"posts\", () => queryContent(\"/blog\").where({ _extension: \"md\" }).sort({ date: -1 }).find())), __temp = await __temp, __restore(), __temp);\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    return (_ctx, _cache) => {\n      const _component_UPageHeader = _resolveComponent(\"UPageHeader\");\n      const _component_UBlogPost = _resolveComponent(\"UBlogPost\");\n      const _component_UBlogList = _resolveComponent(\"UBlogList\");\n      const _component_UPageBody = _resolveComponent(\"UPageBody\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      return _openBlock(), _createBlock(_component_UContainer, null, {\n        default: _withCtx(() => [\n          _createVNode(_component_UPageHeader, _mergeProps(_unref(page), { class: \"py-[50px]\" }), null, 16),\n          _createVNode(_component_UPageBody, null, {\n            default: _withCtx(() => [\n              _createVNode(_component_UBlogList, null, {\n                default: _withCtx(() => [\n                  (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(posts), (post, index) => {\n                    return _openBlock(), _createBlock(_component_UBlogPost, {\n                      key: index,\n                      to: post._path,\n                      title: post.title,\n                      description: post.description,\n                      image: post.image,\n                      date: new Date(post.date).toLocaleDateString(\"en\", { year: \"numeric\", month: \"short\", day: \"numeric\" }),\n                      authors: post.authors,\n                      badge: post.badge,\n                      orientation: index === 0 ? \"horizontal\" : \"vertical\",\n                      class: _normalizeClass([index === 0 && \"col-span-full\"]),\n                      ui: {\n                        description: \"line-clamp-2\"\n                      }\n                    }, null, 8, [\"to\", \"title\", \"description\", \"image\", \"date\", \"authors\", \"badge\", \"orientation\", \"class\"]);\n                  }), 128))\n                ]),\n                _: 1\n              })\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714172179566,
-      "end": 1714172179567,
+      "start": 1714173353320,
+      "end": 1714173353321,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,15 +192,15 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179567,
-      "end": 1714172179567,
+      "start": 1714173353321,
+      "end": 1714173353321,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
       "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
-      "start": 1714172179567,
-      "end": 1714172179567,
+      "start": 1714173353321,
+      "end": 1714173353321,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -213,38 +213,38 @@
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179567,
-      "end": 1714172179567,
+      "start": 1714173353321,
+      "end": 1714173353321,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179567,
-      "end": 1714172179567,
+      "start": 1714173353321,
+      "end": 1714173353321,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714172179567,
-      "end": 1714172179567,
+      "start": 1714173353321,
+      "end": 1714173353321,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179567,
-      "end": 1714172179567,
+      "start": 1714173353321,
+      "end": 1714173353321,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179567,
-      "end": 1714172179567,
+      "start": 1714173353321,
+      "end": 1714173353321,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179567,
-      "end": 1714172179567,
+      "start": 1714173353321,
+      "end": 1714173353321,
       "order": "normal"
     }
   ]

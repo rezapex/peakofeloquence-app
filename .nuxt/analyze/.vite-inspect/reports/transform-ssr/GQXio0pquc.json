@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport { nuxtLinkProps, getNuxtLinkProps } from '#ui/utils'\nimport { getSlotChildrenText } from '../../lib/slots'\nimport type { Avatar, Badge } from '#ui/types'\nimport type { NuxtLinkProps } from '#app'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'BlogPost',\n  __ssrInlineRender: true,\n  props: {\n  ...nuxtLinkProps,\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  date: {\n    type: [String, Date],\n    default: undefined\n  },\n  image: {\n    type: [String, Object] as PropType<Partial<HTMLImageElement> | string>,\n    default: undefined\n  },\n  badge: {\n    type: Object as PropType<Badge>,\n    default: undefined\n  },\n  authors: {\n    type: Array as PropType<({\n      name: string\n      avatar: Avatar\n    } & NuxtLinkProps)[]>,\n    default: undefined\n  },\n  orientation: {\n    type: String as PropType<'vertical' | 'horizontal'>,\n    default: 'vertical'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\n\n\nconst slots = useSlots()\n\nconst props = __props\n\nconst config = computed(() => {\n  const wrapper = twJoin(\n    'relative group flex flex-col w-full gap-y-6',\n    props.orientation === 'horizontal' && (!!props.image || !!slots.image) ? 'lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-center' : undefined\n  )\n\n  return {\n    wrapper,\n    image: {\n      wrapper: 'ring-1 ring-gray-200 dark:ring-gray-800 relative overflow-hidden aspect-[16/9] w-full rounded-lg pointer-events-none',\n      base: 'object-cover object-top w-full h-full transform transition-transform duration-200 group-hover:scale-105'\n    },\n    container: 'flex flex-col justify-between flex-1',\n    inner: 'flex-1',\n    badge: {\n      wrapper: 'mb-3',\n      base: ''\n    },\n    title: 'text-gray-900 dark:text-white text-xl font-semibold truncate group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-200',\n    description: 'text-base text-gray-500 dark:text-gray-400 mt-1',\n    date: 'text-sm text-gray-500 dark:text-gray-400 font-medium pointer-events-none',\n    authors: {\n      wrapper: 'relative flex items-center gap-x-3 mt-4',\n      avatar: {\n        base: 'relative ring-1 lg:hover:scale-105 lg:hover:ring-primary-500 dark:lg:hover:ring-primary-400 transition-transform',\n        size: 'xs' as const\n      }\n    }\n  }\n})\n\nconst { ui, attrs } = useUI('blog.post', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst nuxtLinkBind = computed(() => getNuxtLinkProps(props))\nconst ariaLabel = computed(() => (props.title || (slots.title && getSlotChildrenText(slots.title())) || 'Post link').trim())\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_NuxtImg = _resolveComponent(\"NuxtImg\")!\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n  const _component_UBadge = _resolveComponent(\"UBadge\")!\n  const _component_UAvatarGroup = _resolveComponent(\"UAvatarGroup\")!\n  const _component_UAvatar = _resolveComponent(\"UAvatar\")!\n\n  _push(`<article${_ssrRenderAttrs(_mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs), _attrs))}>`)\n  if (__props.image || _ctx.$slots.image) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).image.wrapper)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"image\", {}, () => {\n      _push(_ssrRenderComponent(_component_NuxtImg, _mergeProps(typeof __props.image === 'string' ? { src: __props.image, alt: __props.title } : { alt: __props.title, ...__props.image }, {\n        class: _unref(ui).image.base\n      }), null, _parent))\n    }, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<div class=\"${\n    _ssrRenderClass(_unref(ui).container)\n  }\"><div class=\"${\n    _ssrRenderClass(_unref(ui).inner)\n  }\">`)\n  if (_ctx.to) {\n    _push(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ \"aria-label\": _unref(ariaLabel) }, _unref(nuxtLinkBind), {\n      class: \"focus:outline-none\",\n      tabindex: \"-1\"\n    }), {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId}></span>`)\n        } else {\n          return [\n            _createVNode(\"span\", {\n              class: \"absolute inset-0\",\n              \"aria-hidden\": \"true\"\n            })\n          ]\n        }\n      }),\n      _: 1\n    }, _parent))\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.badge || _ctx.$slots.badge) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).badge.wrapper)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"badge\", {}, () => {\n      if (__props.badge) {\n        _push(_ssrRenderComponent(_component_UBadge, _mergeProps({ variant: 'subtle', ...__props.badge }, {\n          class: _unref(ui).badge.base\n        }), null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n    }, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.title || _ctx.$slots.title) {\n    _push(`<h2 class=\"${_ssrRenderClass(_unref(ui).title)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n      _push(`${_ssrInterpolate(__props.title)}`)\n    }, _push, _parent)\n    _push(`</h2>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.description || _ctx.$slots.description) {\n    _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n      _push(`${_ssrInterpolate(__props.description)}`)\n    }, _push, _parent)\n    _push(`</p>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent)\n  _push(`</div>`)\n  if (__props.authors?.length || __props.date) {\n    _push(`<div class=\"${_ssrRenderClass(_unref(ui).authors.wrapper)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"authors\", {}, () => {\n      if (__props.authors?.length) {\n        _push(_ssrRenderComponent(_component_UAvatarGroup, null, {\n          default: _withCtx((_, _push, _parent, _scopeId) => {\n            if (_push) {\n              _push(`<!--[-->`)\n              _ssrRenderList(__props.authors, (author, index) => {\n                _push(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                  key: index,\n                  alt: author.name,\n                  class: _unref(ui).authors.avatar.base\n                }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                  default: _withCtx((_, _push, _parent, _scopeId) => {\n                    if (_push) {\n                      if (author.to) {\n                        _push(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ target: '_blank', ..._unref(getNuxtLinkProps)(author) }, {\n                          class: \"focus:outline-none\",\n                          tabindex: \"-1\"\n                        }), {\n                          default: _withCtx((_, _push, _parent, _scopeId) => {\n                            if (_push) {\n                              _push(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId}></span>`)\n                            } else {\n                              return [\n                                _createVNode(\"span\", {\n                                  class: \"absolute inset-0\",\n                                  \"aria-hidden\": \"true\"\n                                })\n                              ]\n                            }\n                          }),\n                          _: 2\n                        }, _parent, _scopeId))\n                      } else {\n                        _push(`<!---->`)\n                      }\n                    } else {\n                      return [\n                        (author.to)\n                          ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: '_blank', ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx(() => [\n                                _createVNode(\"span\", {\n                                  class: \"absolute inset-0\",\n                                  \"aria-hidden\": \"true\"\n                                })\n                              ]),\n                              _: 2\n                            }, 1040))\n                          : _createCommentVNode(\"\", true)\n                      ]\n                    }\n                  }),\n                  _: 2\n                }, _parent, _scopeId))\n              })\n              _push(`<!--]-->`)\n            } else {\n              return [\n                (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.authors, (author, index) => {\n                  return (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                    key: index,\n                    alt: author.name,\n                    class: _unref(ui).authors.avatar.base\n                  }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                    default: _withCtx(() => [\n                      (author.to)\n                        ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: '_blank', ..._unref(getNuxtLinkProps)(author) }, {\n                            class: \"focus:outline-none\",\n                            tabindex: \"-1\"\n                          }), {\n                            default: _withCtx(() => [\n                              _createVNode(\"span\", {\n                                class: \"absolute inset-0\",\n                                \"aria-hidden\": \"true\"\n                              })\n                            ]),\n                            _: 2\n                          }, 1040))\n                        : _createCommentVNode(\"\", true)\n                    ]),\n                    _: 2\n                  }, 1040, [\"alt\", \"class\"]))\n                }), 128))\n              ]\n            }\n          }),\n          _: 1\n        }, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n    }, _push, _parent)\n    _ssrRenderSlot(_ctx.$slots, \"date\", {}, () => {\n      if (__props.date) {\n        _push(`<time${\n          _ssrRenderAttr(\"datetime\", new Date(__props.date).toISOString())\n        } class=\"${\n          _ssrRenderClass(_unref(ui).date)\n        }\">${\n          _ssrInterpolate(__props.date)\n        }</time>`)\n      } else {\n        _push(`<!---->`)\n      }\n    }, _push, _parent)\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div></article>`)\n}\n}\n\n})",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172189743,
-      "end": 1714172189743,
+      "start": 1714173365878,
+      "end": 1714173365878,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { twJoin } from \"tailwind-merge\";\nimport { nuxtLinkProps, getNuxtLinkProps } from \"#ui/utils\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"BlogPost\",\n  __ssrInlineRender: true,\n  props: {\n    ...nuxtLinkProps,\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    date: {\n      type: [String, Date],\n      default: void 0\n    },\n    image: {\n      type: [String, Object],\n      default: void 0\n    },\n    badge: {\n      type: Object,\n      default: void 0\n    },\n    authors: {\n      type: Array,\n      default: void 0\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const slots = useSlots();\n    const props = __props;\n    const config = computed(() => {\n      const wrapper = twJoin(\n        \"relative group flex flex-col w-full gap-y-6\",\n        props.orientation === \"horizontal\" && (!!props.image || !!slots.image) ? \"lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-center\" : void 0\n      );\n      return {\n        wrapper,\n        image: {\n          wrapper: \"ring-1 ring-gray-200 dark:ring-gray-800 relative overflow-hidden aspect-[16/9] w-full rounded-lg pointer-events-none\",\n          base: \"object-cover object-top w-full h-full transform transition-transform duration-200 group-hover:scale-105\"\n        },\n        container: \"flex flex-col justify-between flex-1\",\n        inner: \"flex-1\",\n        badge: {\n          wrapper: \"mb-3\",\n          base: \"\"\n        },\n        title: \"text-gray-900 dark:text-white text-xl font-semibold truncate group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-200\",\n        description: \"text-base text-gray-500 dark:text-gray-400 mt-1\",\n        date: \"text-sm text-gray-500 dark:text-gray-400 font-medium pointer-events-none\",\n        authors: {\n          wrapper: \"relative flex items-center gap-x-3 mt-4\",\n          avatar: {\n            base: \"relative ring-1 lg:hover:scale-105 lg:hover:ring-primary-500 dark:lg:hover:ring-primary-400 transition-transform\",\n            size: \"xs\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"blog.post\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const nuxtLinkBind = computed(() => getNuxtLinkProps(props));\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Post link\").trim());\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_NuxtImg = _resolveComponent(\"NuxtImg\");\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UBadge = _resolveComponent(\"UBadge\");\n      const _component_UAvatarGroup = _resolveComponent(\"UAvatarGroup\");\n      const _component_UAvatar = _resolveComponent(\"UAvatar\");\n      _push(`<article${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (__props.image || _ctx.$slots.image) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).image.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"image\", {}, () => {\n          _push(_ssrRenderComponent(_component_NuxtImg, _mergeProps(typeof __props.image === \"string\" ? { src: __props.image, alt: __props.title } : { alt: __props.title, ...__props.image }, {\n            class: _unref(ui).image.base\n          }), null, _parent));\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"${_ssrRenderClass(_unref(ui).container)}\"><div class=\"${_ssrRenderClass(_unref(ui).inner)}\">`);\n      if (_ctx.to) {\n        _push(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ \"aria-label\": _unref(ariaLabel) }, _unref(nuxtLinkBind), {\n          class: \"focus:outline-none\",\n          tabindex: \"-1\"\n        }), {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId}></span>`);\n            } else {\n              return [\n                _createVNode(\"span\", {\n                  class: \"absolute inset-0\",\n                  \"aria-hidden\": \"true\"\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.badge || _ctx.$slots.badge) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).badge.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"badge\", {}, () => {\n          if (__props.badge) {\n            _push(_ssrRenderComponent(_component_UBadge, _mergeProps({ variant: \"subtle\", ...__props.badge }, {\n              class: _unref(ui).badge.base\n            }), null, _parent));\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.title || _ctx.$slots.title) {\n        _push(`<h2 class=\"${_ssrRenderClass(_unref(ui).title)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n          _push(`${_ssrInterpolate(__props.title)}`);\n        }, _push, _parent);\n        _push(`</h2>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.description || _ctx.$slots.description) {\n        _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</p>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div>`);\n      if (__props.authors?.length || __props.date) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).authors.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"authors\", {}, () => {\n          if (__props.authors?.length) {\n            _push(_ssrRenderComponent(_component_UAvatarGroup, null, {\n              default: _withCtx((_, _push2, _parent2, _scopeId) => {\n                if (_push2) {\n                  _push2(`<!--[-->`);\n                  _ssrRenderList(__props.authors, (author, index) => {\n                    _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                      key: index,\n                      alt: author.name,\n                      class: _unref(ui).authors.avatar.base\n                    }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                      default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                        if (_push3) {\n                          if (author.to) {\n                            _push3(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx((_3, _push4, _parent4, _scopeId3) => {\n                                if (_push4) {\n                                  _push4(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId3}></span>`);\n                                } else {\n                                  return [\n                                    _createVNode(\"span\", {\n                                      class: \"absolute inset-0\",\n                                      \"aria-hidden\": \"true\"\n                                    })\n                                  ];\n                                }\n                              }),\n                              _: 2\n                            }, _parent3, _scopeId2));\n                          } else {\n                            _push3(`<!---->`);\n                          }\n                        } else {\n                          return [\n                            author.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx(() => [\n                                _createVNode(\"span\", {\n                                  class: \"absolute inset-0\",\n                                  \"aria-hidden\": \"true\"\n                                })\n                              ]),\n                              _: 2\n                            }, 1040)) : _createCommentVNode(\"\", true)\n                          ];\n                        }\n                      }),\n                      _: 2\n                    }, _parent2, _scopeId));\n                  });\n                  _push2(`<!--]-->`);\n                } else {\n                  return [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.authors, (author, index) => {\n                      return _openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                        key: index,\n                        alt: author.name,\n                        class: _unref(ui).authors.avatar.base\n                      }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                        default: _withCtx(() => [\n                          author.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                            class: \"focus:outline-none\",\n                            tabindex: \"-1\"\n                          }), {\n                            default: _withCtx(() => [\n                              _createVNode(\"span\", {\n                                class: \"absolute inset-0\",\n                                \"aria-hidden\": \"true\"\n                              })\n                            ]),\n                            _: 2\n                          }, 1040)) : _createCommentVNode(\"\", true)\n                        ]),\n                        _: 2\n                      }, 1040, [\"alt\", \"class\"]);\n                    }), 128))\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent));\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _ssrRenderSlot(_ctx.$slots, \"date\", {}, () => {\n          if (__props.date) {\n            _push(`<time${_ssrRenderAttr(\"datetime\", new Date(__props.date).toISOString())} class=\"${_ssrRenderClass(_unref(ui).date)}\">${_ssrInterpolate(__props.date)}</time>`);\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div></article>`);\n    };\n  }\n});\n",
-      "start": 1714172189743,
-      "end": 1714172189893,
+      "start": 1714173365878,
+      "end": 1714173366080,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -97,147 +97,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189893,
-      "end": 1714172189893,
+      "start": 1714173366080,
+      "end": 1714173366080,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172189893,
-      "end": 1714172189894,
+      "start": 1714173366080,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172189894,
-      "end": 1714172189894,
+      "start": 1714173366081,
+      "end": 1714173366081,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSlots, computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { twJoin } from \"tailwind-merge\";\nimport { nuxtLinkProps, getNuxtLinkProps } from \"#ui/utils\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"BlogPost\",\n  __ssrInlineRender: true,\n  props: {\n    ...nuxtLinkProps,\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    date: {\n      type: [String, Date],\n      default: void 0\n    },\n    image: {\n      type: [String, Object],\n      default: void 0\n    },\n    badge: {\n      type: Object,\n      default: void 0\n    },\n    authors: {\n      type: Array,\n      default: void 0\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const slots = useSlots();\n    const props = __props;\n    const config = computed(() => {\n      const wrapper = twJoin(\n        \"relative group flex flex-col w-full gap-y-6\",\n        props.orientation === \"horizontal\" && (!!props.image || !!slots.image) ? \"lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-center\" : void 0\n      );\n      return {\n        wrapper,\n        image: {\n          wrapper: \"ring-1 ring-gray-200 dark:ring-gray-800 relative overflow-hidden aspect-[16/9] w-full rounded-lg pointer-events-none\",\n          base: \"object-cover object-top w-full h-full transform transition-transform duration-200 group-hover:scale-105\"\n        },\n        container: \"flex flex-col justify-between flex-1\",\n        inner: \"flex-1\",\n        badge: {\n          wrapper: \"mb-3\",\n          base: \"\"\n        },\n        title: \"text-gray-900 dark:text-white text-xl font-semibold truncate group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-200\",\n        description: \"text-base text-gray-500 dark:text-gray-400 mt-1\",\n        date: \"text-sm text-gray-500 dark:text-gray-400 font-medium pointer-events-none\",\n        authors: {\n          wrapper: \"relative flex items-center gap-x-3 mt-4\",\n          avatar: {\n            base: \"relative ring-1 lg:hover:scale-105 lg:hover:ring-primary-500 dark:lg:hover:ring-primary-400 transition-transform\",\n            size: \"xs\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"blog.post\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const nuxtLinkBind = computed(() => getNuxtLinkProps(props));\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Post link\").trim());\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_NuxtImg = _resolveComponent(\"NuxtImg\");\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UBadge = _resolveComponent(\"UBadge\");\n      const _component_UAvatarGroup = _resolveComponent(\"UAvatarGroup\");\n      const _component_UAvatar = _resolveComponent(\"UAvatar\");\n      _push(`<article${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (__props.image || _ctx.$slots.image) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).image.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"image\", {}, () => {\n          _push(_ssrRenderComponent(_component_NuxtImg, _mergeProps(typeof __props.image === \"string\" ? { src: __props.image, alt: __props.title } : { alt: __props.title, ...__props.image }, {\n            class: _unref(ui).image.base\n          }), null, _parent));\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"${_ssrRenderClass(_unref(ui).container)}\"><div class=\"${_ssrRenderClass(_unref(ui).inner)}\">`);\n      if (_ctx.to) {\n        _push(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ \"aria-label\": _unref(ariaLabel) }, _unref(nuxtLinkBind), {\n          class: \"focus:outline-none\",\n          tabindex: \"-1\"\n        }), {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId}></span>`);\n            } else {\n              return [\n                _createVNode(\"span\", {\n                  class: \"absolute inset-0\",\n                  \"aria-hidden\": \"true\"\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.badge || _ctx.$slots.badge) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).badge.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"badge\", {}, () => {\n          if (__props.badge) {\n            _push(_ssrRenderComponent(_component_UBadge, _mergeProps({ variant: \"subtle\", ...__props.badge }, {\n              class: _unref(ui).badge.base\n            }), null, _parent));\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.title || _ctx.$slots.title) {\n        _push(`<h2 class=\"${_ssrRenderClass(_unref(ui).title)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n          _push(`${_ssrInterpolate(__props.title)}`);\n        }, _push, _parent);\n        _push(`</h2>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.description || _ctx.$slots.description) {\n        _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</p>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div>`);\n      if (__props.authors?.length || __props.date) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).authors.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"authors\", {}, () => {\n          if (__props.authors?.length) {\n            _push(_ssrRenderComponent(_component_UAvatarGroup, null, {\n              default: _withCtx((_, _push2, _parent2, _scopeId) => {\n                if (_push2) {\n                  _push2(`<!--[-->`);\n                  _ssrRenderList(__props.authors, (author, index) => {\n                    _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                      key: index,\n                      alt: author.name,\n                      class: _unref(ui).authors.avatar.base\n                    }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                      default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                        if (_push3) {\n                          if (author.to) {\n                            _push3(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx((_3, _push4, _parent4, _scopeId3) => {\n                                if (_push4) {\n                                  _push4(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId3}></span>`);\n                                } else {\n                                  return [\n                                    _createVNode(\"span\", {\n                                      class: \"absolute inset-0\",\n                                      \"aria-hidden\": \"true\"\n                                    })\n                                  ];\n                                }\n                              }),\n                              _: 2\n                            }, _parent3, _scopeId2));\n                          } else {\n                            _push3(`<!---->`);\n                          }\n                        } else {\n                          return [\n                            author.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx(() => [\n                                _createVNode(\"span\", {\n                                  class: \"absolute inset-0\",\n                                  \"aria-hidden\": \"true\"\n                                })\n                              ]),\n                              _: 2\n                            }, 1040)) : _createCommentVNode(\"\", true)\n                          ];\n                        }\n                      }),\n                      _: 2\n                    }, _parent2, _scopeId));\n                  });\n                  _push2(`<!--]-->`);\n                } else {\n                  return [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.authors, (author, index) => {\n                      return _openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                        key: index,\n                        alt: author.name,\n                        class: _unref(ui).authors.avatar.base\n                      }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                        default: _withCtx(() => [\n                          author.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                            class: \"focus:outline-none\",\n                            tabindex: \"-1\"\n                          }), {\n                            default: _withCtx(() => [\n                              _createVNode(\"span\", {\n                                class: \"absolute inset-0\",\n                                \"aria-hidden\": \"true\"\n                              })\n                            ]),\n                            _: 2\n                          }, 1040)) : _createCommentVNode(\"\", true)\n                        ]),\n                        _: 2\n                      }, 1040, [\"alt\", \"class\"]);\n                    }), 128))\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent));\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _ssrRenderSlot(_ctx.$slots, \"date\", {}, () => {\n          if (__props.date) {\n            _push(`<time${_ssrRenderAttr(\"datetime\", new Date(__props.date).toISOString())} class=\"${_ssrRenderClass(_unref(ui).date)}\">${_ssrInterpolate(__props.date)}</time>`);\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div></article>`);\n    };\n  }\n});\n",
-      "start": 1714172189894,
-      "end": 1714172189897,
+      "start": 1714173366081,
+      "end": 1714173366086,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -251,8 +251,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSlots, computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { twJoin } from \"tailwind-merge\";\nimport { nuxtLinkProps, getNuxtLinkProps } from \"#ui/utils\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"BlogPost\",\n  __ssrInlineRender: true,\n  props: {\n    ...nuxtLinkProps,\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    date: {\n      type: [String, Date],\n      default: void 0\n    },\n    image: {\n      type: [String, Object],\n      default: void 0\n    },\n    badge: {\n      type: Object,\n      default: void 0\n    },\n    authors: {\n      type: Array,\n      default: void 0\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const slots = useSlots();\n    const props = __props;\n    const config = computed(() => {\n      const wrapper = twJoin(\n        \"relative group flex flex-col w-full gap-y-6\",\n        props.orientation === \"horizontal\" && (!!props.image || !!slots.image) ? \"lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-center\" : void 0\n      );\n      return {\n        wrapper,\n        image: {\n          wrapper: \"ring-1 ring-gray-200 dark:ring-gray-800 relative overflow-hidden aspect-[16/9] w-full rounded-lg pointer-events-none\",\n          base: \"object-cover object-top w-full h-full transform transition-transform duration-200 group-hover:scale-105\"\n        },\n        container: \"flex flex-col justify-between flex-1\",\n        inner: \"flex-1\",\n        badge: {\n          wrapper: \"mb-3\",\n          base: \"\"\n        },\n        title: \"text-gray-900 dark:text-white text-xl font-semibold truncate group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-200\",\n        description: \"text-base text-gray-500 dark:text-gray-400 mt-1\",\n        date: \"text-sm text-gray-500 dark:text-gray-400 font-medium pointer-events-none\",\n        authors: {\n          wrapper: \"relative flex items-center gap-x-3 mt-4\",\n          avatar: {\n            base: \"relative ring-1 lg:hover:scale-105 lg:hover:ring-primary-500 dark:lg:hover:ring-primary-400 transition-transform\",\n            size: \"xs\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"blog.post\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const nuxtLinkBind = computed(() => getNuxtLinkProps(props));\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Post link\").trim());\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_NuxtImg = _resolveComponent(\"NuxtImg\");\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UBadge = _resolveComponent(\"UBadge\");\n      const _component_UAvatarGroup = _resolveComponent(\"UAvatarGroup\");\n      const _component_UAvatar = _resolveComponent(\"UAvatar\");\n      _push(`<article${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (__props.image || _ctx.$slots.image) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).image.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"image\", {}, () => {\n          _push(_ssrRenderComponent(_component_NuxtImg, _mergeProps(typeof __props.image === \"string\" ? { src: __props.image, alt: __props.title } : { alt: __props.title, ...__props.image }, {\n            class: _unref(ui).image.base\n          }), null, _parent));\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"${_ssrRenderClass(_unref(ui).container)}\"><div class=\"${_ssrRenderClass(_unref(ui).inner)}\">`);\n      if (_ctx.to) {\n        _push(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ \"aria-label\": _unref(ariaLabel) }, _unref(nuxtLinkBind), {\n          class: \"focus:outline-none\",\n          tabindex: \"-1\"\n        }), {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId}></span>`);\n            } else {\n              return [\n                _createVNode(\"span\", {\n                  class: \"absolute inset-0\",\n                  \"aria-hidden\": \"true\"\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.badge || _ctx.$slots.badge) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).badge.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"badge\", {}, () => {\n          if (__props.badge) {\n            _push(_ssrRenderComponent(_component_UBadge, _mergeProps({ variant: \"subtle\", ...__props.badge }, {\n              class: _unref(ui).badge.base\n            }), null, _parent));\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.title || _ctx.$slots.title) {\n        _push(`<h2 class=\"${_ssrRenderClass(_unref(ui).title)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n          _push(`${_ssrInterpolate(__props.title)}`);\n        }, _push, _parent);\n        _push(`</h2>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.description || _ctx.$slots.description) {\n        _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</p>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div>`);\n      if (__props.authors?.length || __props.date) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).authors.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"authors\", {}, () => {\n          if (__props.authors?.length) {\n            _push(_ssrRenderComponent(_component_UAvatarGroup, null, {\n              default: _withCtx((_, _push2, _parent2, _scopeId) => {\n                if (_push2) {\n                  _push2(`<!--[-->`);\n                  _ssrRenderList(__props.authors, (author, index) => {\n                    _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                      key: index,\n                      alt: author.name,\n                      class: _unref(ui).authors.avatar.base\n                    }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                      default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                        if (_push3) {\n                          if (author.to) {\n                            _push3(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx((_3, _push4, _parent4, _scopeId3) => {\n                                if (_push4) {\n                                  _push4(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId3}></span>`);\n                                } else {\n                                  return [\n                                    _createVNode(\"span\", {\n                                      class: \"absolute inset-0\",\n                                      \"aria-hidden\": \"true\"\n                                    })\n                                  ];\n                                }\n                              }),\n                              _: 2\n                            }, _parent3, _scopeId2));\n                          } else {\n                            _push3(`<!---->`);\n                          }\n                        } else {\n                          return [\n                            author.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx(() => [\n                                _createVNode(\"span\", {\n                                  class: \"absolute inset-0\",\n                                  \"aria-hidden\": \"true\"\n                                })\n                              ]),\n                              _: 2\n                            }, 1040)) : _createCommentVNode(\"\", true)\n                          ];\n                        }\n                      }),\n                      _: 2\n                    }, _parent2, _scopeId));\n                  });\n                  _push2(`<!--]-->`);\n                } else {\n                  return [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.authors, (author, index) => {\n                      return _openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                        key: index,\n                        alt: author.name,\n                        class: _unref(ui).authors.avatar.base\n                      }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                        default: _withCtx(() => [\n                          author.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                            class: \"focus:outline-none\",\n                            tabindex: \"-1\"\n                          }), {\n                            default: _withCtx(() => [\n                              _createVNode(\"span\", {\n                                class: \"absolute inset-0\",\n                                \"aria-hidden\": \"true\"\n                              })\n                            ]),\n                            _: 2\n                          }, 1040)) : _createCommentVNode(\"\", true)\n                        ]),\n                        _: 2\n                      }, 1040, [\"alt\", \"class\"]);\n                    }), 128))\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent));\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _ssrRenderSlot(_ctx.$slots, \"date\", {}, () => {\n          if (__props.date) {\n            _push(`<time${_ssrRenderAttr(\"datetime\", new Date(__props.date).toISOString())} class=\"${_ssrRenderClass(_unref(ui).date)}\">${_ssrInterpolate(__props.date)}</time>`);\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div></article>`);\n    };\n  }\n});\n",
-      "start": 1714172189894,
-      "end": 1714172189897,
+      "start": 1714173366081,
+      "end": 1714173366086,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -265,39 +265,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366086,
+      "end": 1714173366086,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366086,
+      "end": 1714173366086,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366086,
+      "end": 1714173366086,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366086,
+      "end": 1714173366086,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366086,
+      "end": 1714173366086,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/image/dist/runtime/components/nuxt-img\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Badge.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/AvatarGroup.mjs\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue\";\nimport { useSlots, computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport { twJoin } from \"tailwind-merge\";\nimport { nuxtLinkProps, getNuxtLinkProps } from \"#ui/utils\";\nimport { getSlotChildrenText } from \"../../lib/slots\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"BlogPost\",\n  __ssrInlineRender: true,\n  props: {\n    ...nuxtLinkProps,\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    date: {\n      type: [String, Date],\n      default: void 0\n    },\n    image: {\n      type: [String, Object],\n      default: void 0\n    },\n    badge: {\n      type: Object,\n      default: void 0\n    },\n    authors: {\n      type: Array,\n      default: void 0\n    },\n    orientation: {\n      type: String,\n      default: \"vertical\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const slots = useSlots();\n    const props = __props;\n    const config = computed(() => {\n      const wrapper = twJoin(\n        \"relative group flex flex-col w-full gap-y-6\",\n        props.orientation === \"horizontal\" && (!!props.image || !!slots.image) ? \"lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-center\" : void 0\n      );\n      return {\n        wrapper,\n        image: {\n          wrapper: \"ring-1 ring-gray-200 dark:ring-gray-800 relative overflow-hidden aspect-[16/9] w-full rounded-lg pointer-events-none\",\n          base: \"object-cover object-top w-full h-full transform transition-transform duration-200 group-hover:scale-105\"\n        },\n        container: \"flex flex-col justify-between flex-1\",\n        inner: \"flex-1\",\n        badge: {\n          wrapper: \"mb-3\",\n          base: \"\"\n        },\n        title: \"text-gray-900 dark:text-white text-xl font-semibold truncate group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-200\",\n        description: \"text-base text-gray-500 dark:text-gray-400 mt-1\",\n        date: \"text-sm text-gray-500 dark:text-gray-400 font-medium pointer-events-none\",\n        authors: {\n          wrapper: \"relative flex items-center gap-x-3 mt-4\",\n          avatar: {\n            base: \"relative ring-1 lg:hover:scale-105 lg:hover:ring-primary-500 dark:lg:hover:ring-primary-400 transition-transform\",\n            size: \"xs\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"blog.post\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const nuxtLinkBind = computed(() => getNuxtLinkProps(props));\n    const ariaLabel = computed(() => (props.title || slots.title && getSlotChildrenText(slots.title()) || \"Post link\").trim());\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_NuxtImg = __nuxt_component_0;\n      const _component_NuxtLink = __nuxt_component_1;\n      const _component_UBadge = __nuxt_component_2;\n      const _component_UAvatarGroup = __nuxt_component_3;\n      const _component_UAvatar = __nuxt_component_4;\n      _push(`<article${_ssrRenderAttrs(_mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs))}>`);\n      if (__props.image || _ctx.$slots.image) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).image.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"image\", {}, () => {\n          _push(_ssrRenderComponent(_component_NuxtImg, _mergeProps(typeof __props.image === \"string\" ? { src: __props.image, alt: __props.title } : { alt: __props.title, ...__props.image }, {\n            class: _unref(ui).image.base\n          }), null, _parent));\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<div class=\"${_ssrRenderClass(_unref(ui).container)}\"><div class=\"${_ssrRenderClass(_unref(ui).inner)}\">`);\n      if (_ctx.to) {\n        _push(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ \"aria-label\": _unref(ariaLabel) }, _unref(nuxtLinkBind), {\n          class: \"focus:outline-none\",\n          tabindex: \"-1\"\n        }), {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId}></span>`);\n            } else {\n              return [\n                _createVNode(\"span\", {\n                  class: \"absolute inset-0\",\n                  \"aria-hidden\": \"true\"\n                })\n              ];\n            }\n          }),\n          _: 1\n        }, _parent));\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.badge || _ctx.$slots.badge) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).badge.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"badge\", {}, () => {\n          if (__props.badge) {\n            _push(_ssrRenderComponent(_component_UBadge, _mergeProps({ variant: \"subtle\", ...__props.badge }, {\n              class: _unref(ui).badge.base\n            }), null, _parent));\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.title || _ctx.$slots.title) {\n        _push(`<h2 class=\"${_ssrRenderClass(_unref(ui).title)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"title\", {}, () => {\n          _push(`${_ssrInterpolate(__props.title)}`);\n        }, _push, _parent);\n        _push(`</h2>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.description || _ctx.$slots.description) {\n        _push(`<p class=\"${_ssrRenderClass(_unref(ui).description)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"description\", {}, () => {\n          _push(`${_ssrInterpolate(__props.description)}`);\n        }, _push, _parent);\n        _push(`</p>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _ssrRenderSlot(_ctx.$slots, \"default\", {}, null, _push, _parent);\n      _push(`</div>`);\n      if (__props.authors?.length || __props.date) {\n        _push(`<div class=\"${_ssrRenderClass(_unref(ui).authors.wrapper)}\">`);\n        _ssrRenderSlot(_ctx.$slots, \"authors\", {}, () => {\n          if (__props.authors?.length) {\n            _push(_ssrRenderComponent(_component_UAvatarGroup, null, {\n              default: _withCtx((_, _push2, _parent2, _scopeId) => {\n                if (_push2) {\n                  _push2(`<!--[-->`);\n                  _ssrRenderList(__props.authors, (author, index) => {\n                    _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                      key: index,\n                      alt: author.name,\n                      class: _unref(ui).authors.avatar.base\n                    }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                      default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                        if (_push3) {\n                          if (author.to) {\n                            _push3(_ssrRenderComponent(_component_NuxtLink, _mergeProps({ target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx((_3, _push4, _parent4, _scopeId3) => {\n                                if (_push4) {\n                                  _push4(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId3}></span>`);\n                                } else {\n                                  return [\n                                    _createVNode(\"span\", {\n                                      class: \"absolute inset-0\",\n                                      \"aria-hidden\": \"true\"\n                                    })\n                                  ];\n                                }\n                              }),\n                              _: 2\n                            }, _parent3, _scopeId2));\n                          } else {\n                            _push3(`<!---->`);\n                          }\n                        } else {\n                          return [\n                            author.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                              class: \"focus:outline-none\",\n                              tabindex: \"-1\"\n                            }), {\n                              default: _withCtx(() => [\n                                _createVNode(\"span\", {\n                                  class: \"absolute inset-0\",\n                                  \"aria-hidden\": \"true\"\n                                })\n                              ]),\n                              _: 2\n                            }, 1040)) : _createCommentVNode(\"\", true)\n                          ];\n                        }\n                      }),\n                      _: 2\n                    }, _parent2, _scopeId));\n                  });\n                  _push2(`<!--]-->`);\n                } else {\n                  return [\n                    (_openBlock(true), _createBlock(_Fragment, null, _renderList(__props.authors, (author, index) => {\n                      return _openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                        key: index,\n                        alt: author.name,\n                        class: _unref(ui).authors.avatar.base\n                      }, { size: _unref(ui).authors.avatar.size, ...author.avatar }), {\n                        default: _withCtx(() => [\n                          author.to ? (_openBlock(), _createBlock(_component_NuxtLink, _mergeProps({ key: 0 }, { target: \"_blank\", ..._unref(getNuxtLinkProps)(author) }, {\n                            class: \"focus:outline-none\",\n                            tabindex: \"-1\"\n                          }), {\n                            default: _withCtx(() => [\n                              _createVNode(\"span\", {\n                                class: \"absolute inset-0\",\n                                \"aria-hidden\": \"true\"\n                              })\n                            ]),\n                            _: 2\n                          }, 1040)) : _createCommentVNode(\"\", true)\n                        ]),\n                        _: 2\n                      }, 1040, [\"alt\", \"class\"]);\n                    }), 128))\n                  ];\n                }\n              }),\n              _: 1\n            }, _parent));\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _ssrRenderSlot(_ctx.$slots, \"date\", {}, () => {\n          if (__props.date) {\n            _push(`<time${_ssrRenderAttr(\"datetime\", new Date(__props.date).toISOString())} class=\"${_ssrRenderClass(_unref(ui).date)}\">${_ssrInterpolate(__props.date)}</time>`);\n          } else {\n            _push(`<!---->`);\n          }\n        }, _push, _parent);\n        _push(`</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div></article>`);\n    };\n  }\n});\n",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366086,
+      "end": 1714173366087,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -310,20 +310,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366087,
+      "end": 1714173366087,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366087,
+      "end": 1714173366087,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172189897,
-      "end": 1714172189897,
+      "start": 1714173366087,
+      "end": 1714173366087,
       "order": "normal"
     }
   ]

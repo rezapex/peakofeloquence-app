@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <component\n    :is=\"$attrs.onSubmit ? 'form' : as\"\n    :class=\"cardClass\"\n    v-bind=\"attrs\"\n  >\n    <div v-if=\"$slots.header\" :class=\"[ui.header.base, ui.header.padding, ui.header.background]\">\n      <slot name=\"header\" />\n    </div>\n    <div v-if=\"$slots.default\" :class=\"[ui.body.base, ui.body.padding, ui.body.background]\">\n      <slot />\n    </div>\n    <div v-if=\"$slots.footer\" :class=\"[ui.footer.base, ui.footer.padding, ui.footer.background]\">\n      <slot name=\"footer\" />\n    </div>\n  </component>\n</template>\n\n<script>\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { card } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.card, card);\nexport default defineComponent({\n  inheritAttrs: false,\n  props: {\n    as: {\n      type: String,\n      default: \"div\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"card\", toRef(props, \"ui\"), config);\n    const cardClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.base,\n        ui.value.rounded,\n        ui.value.divide,\n        ui.value.ring,\n        ui.value.shadow,\n        ui.value.background\n      ), props.class);\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      cardClass\n    };\n  }\n});\n</script>\n",
-      "start": 1714172179144,
-      "end": 1714172179215,
+      "start": 1714173352803,
+      "end": 1714173352829,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179215,
-      "end": 1714172179215,
+      "start": 1714173352829,
+      "end": 1714173352829,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179215,
-      "end": 1714172179215,
+      "start": 1714173352829,
+      "end": 1714173352829,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179215,
-      "end": 1714172179215,
+      "start": 1714173352829,
+      "end": 1714173352829,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179215,
-      "end": 1714172179215,
+      "start": 1714173352829,
+      "end": 1714173352829,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179215,
-      "end": 1714172179215,
+      "start": 1714173352829,
+      "end": 1714173352829,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714172179215,
-      "end": 1714172179215,
+      "start": 1714173352829,
+      "end": 1714173352829,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714172179215,
-      "end": 1714172179215,
+      "start": 1714173352829,
+      "end": 1714173352829,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179215,
-      "end": 1714172179215,
+      "start": 1714173352829,
+      "end": 1714173352829,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { card } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.card, card);\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    as: {\n      type: String,\n      default: \"div\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"card\", toRef(props, \"ui\"), config);\n    const cardClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.base,\n        ui.value.rounded,\n        ui.value.divide,\n        ui.value.ring,\n        ui.value.shadow,\n        ui.value.background\n      ), props.class);\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      cardClass\n    };\n  }\n});\n\nimport { renderSlot as _renderSlot, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveDynamicComponent as _resolveDynamicComponent, mergeProps as _mergeProps, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (_openBlock(), _createBlock(_resolveDynamicComponent(_ctx.$attrs.onSubmit ? 'form' : _ctx.as), _mergeProps({ class: _ctx.cardClass }, _ctx.attrs), {\n    default: _withCtx(() => [\n      (_ctx.$slots.header)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass([_ctx.ui.header.base, _ctx.ui.header.padding, _ctx.ui.header.background])\n          }, [\n            _renderSlot(_ctx.$slots, \"header\")\n          ], 2))\n        : _createCommentVNode(\"\", true),\n      (_ctx.$slots.default)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 1,\n            class: _normalizeClass([_ctx.ui.body.base, _ctx.ui.body.padding, _ctx.ui.body.background])\n          }, [\n            _renderSlot(_ctx.$slots, \"default\")\n          ], 2))\n        : _createCommentVNode(\"\", true),\n      (_ctx.$slots.footer)\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 2,\n            class: _normalizeClass([_ctx.ui.footer.base, _ctx.ui.footer.padding, _ctx.ui.footer.background])\n          }, [\n            _renderSlot(_ctx.$slots, \"footer\")\n          ], 2))\n        : _createCommentVNode(\"\", true)\n    ]),\n    _: 3\n  }, 16, [\"class\"]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172179215,
-      "end": 1714172179217,
+      "start": 1714173352829,
+      "end": 1714173352830,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,158 +68,158 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352830,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352830,
+      "end": 1714173352831,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352831,
+      "end": 1714173352831,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352831,
+      "end": 1714173352831,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179217,
-      "end": 1714172179217,
+      "start": 1714173352831,
+      "end": 1714173352831,
       "order": "normal"
     }
   ]

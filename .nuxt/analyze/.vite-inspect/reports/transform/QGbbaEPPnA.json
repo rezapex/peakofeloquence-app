@@ -4,105 +4,105 @@
     {
       "name": "vite:load-fallback",
       "result": "import { computed, getCurrentScope, onScopeDispose, ref } from \"vue\";\nimport { useNuxtApp } from \"#app/nuxt\";\nfunction defaultEstimatedProgress(duration, elapsed) {\n  const completionPercentage = elapsed / duration * 100;\n  return 2 / Math.PI * 100 * Math.atan(completionPercentage / 50);\n}\nfunction createLoadingIndicator(opts = {}) {\n  const { duration = 2e3, throttle = 200, hideDelay = 500, resetDelay = 400 } = opts;\n  const getProgress = opts.estimatedProgress || defaultEstimatedProgress;\n  const nuxtApp = useNuxtApp();\n  const progress = ref(0);\n  const isLoading = ref(false);\n  let done = false;\n  let rafId;\n  let throttleTimeout;\n  let hideTimeout;\n  let resetTimeout;\n  const start = () => set(0);\n  function set(at = 0) {\n    if (nuxtApp.isHydrating) {\n      return;\n    }\n    if (at >= 100) {\n      return finish();\n    }\n    clear();\n    progress.value = at < 0 ? 0 : at;\n    if (throttle && import.meta.client) {\n      throttleTimeout = setTimeout(() => {\n        isLoading.value = true;\n        _startProgress();\n      }, throttle);\n    } else {\n      isLoading.value = true;\n      _startProgress();\n    }\n  }\n  function _hide() {\n    if (import.meta.client) {\n      hideTimeout = setTimeout(() => {\n        isLoading.value = false;\n        resetTimeout = setTimeout(() => {\n          progress.value = 0;\n        }, resetDelay);\n      }, hideDelay);\n    }\n  }\n  function finish(opts2 = {}) {\n    progress.value = 100;\n    done = true;\n    clear();\n    _clearTimeouts();\n    if (opts2.force) {\n      progress.value = 0;\n      isLoading.value = false;\n    } else {\n      _hide();\n    }\n  }\n  function _clearTimeouts() {\n    if (import.meta.client) {\n      clearTimeout(hideTimeout);\n      clearTimeout(resetTimeout);\n    }\n  }\n  function clear() {\n    if (import.meta.client) {\n      clearTimeout(throttleTimeout);\n      cancelAnimationFrame(rafId);\n    }\n  }\n  function _startProgress() {\n    done = false;\n    let startTimeStamp;\n    function step(timeStamp) {\n      if (done) {\n        return;\n      }\n      startTimeStamp ??= timeStamp;\n      const elapsed = timeStamp - startTimeStamp;\n      progress.value = Math.max(0, Math.min(100, getProgress(duration, elapsed)));\n      if (import.meta.client) {\n        rafId = requestAnimationFrame(step);\n      }\n    }\n    if (import.meta.client) {\n      rafId = requestAnimationFrame(step);\n    }\n  }\n  let _cleanup = () => {\n  };\n  if (import.meta.client) {\n    const unsubLoadingStartHook = nuxtApp.hook(\"page:loading:start\", () => {\n      start();\n    });\n    const unsubLoadingFinishHook = nuxtApp.hook(\"page:loading:end\", () => {\n      finish();\n    });\n    const unsubError = nuxtApp.hook(\"vue:error\", () => finish());\n    _cleanup = () => {\n      unsubError();\n      unsubLoadingStartHook();\n      unsubLoadingFinishHook();\n      clear();\n    };\n  }\n  return {\n    _cleanup,\n    progress: computed(() => progress.value),\n    isLoading: computed(() => isLoading.value),\n    start,\n    set,\n    finish,\n    clear\n  };\n}\nexport function useLoadingIndicator(opts = {}) {\n  const nuxtApp = useNuxtApp();\n  const indicator = nuxtApp._loadingIndicator = nuxtApp._loadingIndicator || createLoadingIndicator(opts);\n  if (import.meta.client && getCurrentScope()) {\n    nuxtApp._loadingIndicatorDeps = nuxtApp._loadingIndicatorDeps || 0;\n    nuxtApp._loadingIndicatorDeps++;\n    onScopeDispose(() => {\n      nuxtApp._loadingIndicatorDeps--;\n      if (nuxtApp._loadingIndicatorDeps === 0) {\n        indicator._cleanup();\n        delete nuxtApp._loadingIndicator;\n      }\n    });\n  }\n  return indicator;\n}\n",
-      "start": 1714172179408,
-      "end": 1714172179418,
+      "start": 1714173353297,
+      "end": 1714173353314,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353314,
       "order": "normal"
     },
     {
       "name": "replace",
       "result": "import { computed, getCurrentScope, onScopeDispose, ref } from \"vue\";\nimport { useNuxtApp } from \"#app/nuxt\";\nfunction defaultEstimatedProgress(duration, elapsed) {\n  const completionPercentage = elapsed / duration * 100;\n  return 2 / Math.PI * 100 * Math.atan(completionPercentage / 50);\n}\nfunction createLoadingIndicator(opts = {}) {\n  const { duration = 2e3, throttle = 200, hideDelay = 500, resetDelay = 400 } = opts;\n  const getProgress = opts.estimatedProgress || defaultEstimatedProgress;\n  const nuxtApp = useNuxtApp();\n  const progress = ref(0);\n  const isLoading = ref(false);\n  let done = false;\n  let rafId;\n  let throttleTimeout;\n  let hideTimeout;\n  let resetTimeout;\n  const start = () => set(0);\n  function set(at = 0) {\n    if (nuxtApp.isHydrating) {\n      return;\n    }\n    if (at >= 100) {\n      return finish();\n    }\n    clear();\n    progress.value = at < 0 ? 0 : at;\n    if (throttle && true) {\n      throttleTimeout = setTimeout(() => {\n        isLoading.value = true;\n        _startProgress();\n      }, throttle);\n    } else {\n      isLoading.value = true;\n      _startProgress();\n    }\n  }\n  function _hide() {\n    if (true) {\n      hideTimeout = setTimeout(() => {\n        isLoading.value = false;\n        resetTimeout = setTimeout(() => {\n          progress.value = 0;\n        }, resetDelay);\n      }, hideDelay);\n    }\n  }\n  function finish(opts2 = {}) {\n    progress.value = 100;\n    done = true;\n    clear();\n    _clearTimeouts();\n    if (opts2.force) {\n      progress.value = 0;\n      isLoading.value = false;\n    } else {\n      _hide();\n    }\n  }\n  function _clearTimeouts() {\n    if (true) {\n      clearTimeout(hideTimeout);\n      clearTimeout(resetTimeout);\n    }\n  }\n  function clear() {\n    if (true) {\n      clearTimeout(throttleTimeout);\n      cancelAnimationFrame(rafId);\n    }\n  }\n  function _startProgress() {\n    done = false;\n    let startTimeStamp;\n    function step(timeStamp) {\n      if (done) {\n        return;\n      }\n      startTimeStamp ??= timeStamp;\n      const elapsed = timeStamp - startTimeStamp;\n      progress.value = Math.max(0, Math.min(100, getProgress(duration, elapsed)));\n      if (true) {\n        rafId = requestAnimationFrame(step);\n      }\n    }\n    if (true) {\n      rafId = requestAnimationFrame(step);\n    }\n  }\n  let _cleanup = () => {\n  };\n  if (true) {\n    const unsubLoadingStartHook = nuxtApp.hook(\"page:loading:start\", () => {\n      start();\n    });\n    const unsubLoadingFinishHook = nuxtApp.hook(\"page:loading:end\", () => {\n      finish();\n    });\n    const unsubError = nuxtApp.hook(\"vue:error\", () => finish());\n    _cleanup = () => {\n      unsubError();\n      unsubLoadingStartHook();\n      unsubLoadingFinishHook();\n      clear();\n    };\n  }\n  return {\n    _cleanup,\n    progress: computed(() => progress.value),\n    isLoading: computed(() => isLoading.value),\n    start,\n    set,\n    finish,\n    clear\n  };\n}\nexport function useLoadingIndicator(opts = {}) {\n  const nuxtApp = useNuxtApp();\n  const indicator = nuxtApp._loadingIndicator = nuxtApp._loadingIndicator || createLoadingIndicator(opts);\n  if (true && getCurrentScope()) {\n    nuxtApp._loadingIndicatorDeps = nuxtApp._loadingIndicatorDeps || 0;\n    nuxtApp._loadingIndicatorDeps++;\n    onScopeDispose(() => {\n      nuxtApp._loadingIndicatorDeps--;\n      if (nuxtApp._loadingIndicatorDeps === 0) {\n        indicator._cleanup();\n        delete nuxtApp._loadingIndicator;\n      }\n    });\n  }\n  return indicator;\n}\n",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353314,
+      "end": 1714173353318,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -115,116 +115,116 @@
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353318,
+      "end": 1714173353318,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353318,
+      "end": 1714173353318,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353318,
+      "end": 1714173353318,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353318,
+      "end": 1714173353318,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353318,
+      "end": 1714173353318,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179418,
-      "end": 1714172179418,
+      "start": 1714173353318,
+      "end": 1714173353318,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179418,
-      "end": 1714172179419,
+      "start": 1714173353318,
+      "end": 1714173353319,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179419,
-      "end": 1714172179419,
+      "start": 1714173353319,
+      "end": 1714173353319,
       "order": "normal"
     }
   ]

@@ -1,1 +1,0 @@
-{"id":"a4e6e74f-371b-47f3-8d9a-5da3da009fb2","timestamp":1714172166169,"matcher":{"static":{"/api/search.json":{"prerender":true},"/about":{"redirect":"/about/introduction","prerender":true}},"wildcard":{},"dynamic":{}},"prerendered":[]}

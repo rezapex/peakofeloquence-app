@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, withCtx as _withCtx, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, isRef as _isRef, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\nimport { Switch, provideUseId } from '@headlessui/vue'\nimport { useId } from '#imports'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'PricingToggle',\n  __ssrInlineRender: true,\n  props: {\n  modelValue: {\n    type: Boolean,\n    default: false\n  },\n  left: {\n    type: String,\n    default: 'Monthly'\n  },\n  right: {\n    type: String,\n    default: 'Yearly'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config>>,\n    default: () => ({})\n  }\n},\n  emits: ['update:modelValue'],\n  setup(__props, { emit: __emit }) {\n\n\n\nconst props = __props\n\nconst emit = __emit\n\nconst config = {\n  wrapper: 'ring-1 ring-gray-300 dark:ring-gray-700 flex items-center relative h-8 w-auto flex-shrink-0 cursor-pointer rounded-full p-1 w-full focus:outline-none',\n  marker: 'w-1/2 text-white dark:text-gray-900 pointer-events-none inline-block h-6 transform rounded-full bg-gray-900 dark:bg-white shadow transition duration-200 ease-in-out z-0 relative',\n  active: 'text-white dark:text-gray-900',\n  inactive: 'text-gray-500 dark:text-gray-400',\n  base: 'absolute inset-y-0 w-1/2 flex items-center justify-center pointer-events-none z-[1] transition-colors duration-200 select-none text-xs font-semibold flex-shrink-0',\n  left: 'left-0',\n  right: 'right-0'\n}\n\nconst isYearly = computed({\n  get () {\n    return props.modelValue\n  },\n  set (value) {\n    emit('update:modelValue', value)\n  }\n})\n\nconst { ui, attrs } = useUI('pricing.toggle', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nprovideUseId(() => useId())\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(_ssrRenderComponent(_unref(Switch), _mergeProps({\n    modelValue: _unref(isYearly),\n    \"onUpdate:modelValue\": ($event: any) => (_isRef(isYearly) ? (isYearly).value = $event : null),\n    \"aria-label\": \"pricing toggle\",\n    class: _unref(ui).wrapper\n  }, _unref(attrs), _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        if (__props.left || _ctx.$slots.left) {\n          _push(`<span aria-hidden=\"true\" class=\"${\n            _ssrRenderClass([_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active])\n          }\"${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"left\", {}, () => {\n            _push(`${_ssrInterpolate(__props.left)}`)\n          }, _push, _parent, _scopeId)\n          _push(`</span>`)\n        } else {\n          _push(`<!---->`)\n        }\n        if (__props.right || _ctx.$slots.right) {\n          _push(`<span aria-hidden=\"true\" class=\"${\n            _ssrRenderClass([_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive])\n          }\"${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"right\", {}, () => {\n            _push(`${_ssrInterpolate(__props.right)}`)\n          }, _push, _parent, _scopeId)\n          _push(`</span>`)\n        } else {\n          _push(`<!---->`)\n        }\n        _push(`<span aria-hidden=\"true\" class=\"${\n          _ssrRenderClass([_unref(isYearly) ? 'translate-x-full' : 'translate-x-0', _unref(ui).marker])\n        }\"${\n          _scopeId\n        }></span>`)\n      } else {\n        return [\n          (__props.left || _ctx.$slots.left)\n            ? (_openBlock(), _createBlock(\"span\", {\n                key: 0,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active]\n              }, [\n                _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.left), 1)\n                ])\n              ], 2))\n            : _createCommentVNode(\"\", true),\n          (__props.right || _ctx.$slots.right)\n            ? (_openBlock(), _createBlock(\"span\", {\n                key: 1,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive]\n              }, [\n                _renderSlot(_ctx.$slots, \"right\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.right), 1)\n                ])\n              ], 2))\n            : _createCommentVNode(\"\", true),\n          _createVNode(\"span\", {\n            \"aria-hidden\": \"true\",\n            class: [_unref(isYearly) ? 'translate-x-full' : 'translate-x-0', _unref(ui).marker]\n          }, null, 2)\n        ]\n      }\n    }),\n    _: 3\n  }, _parent))\n}\n}\n\n})",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365922,
+      "end": 1714173365922,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, withCtx as _withCtx, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, isRef as _isRef, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { Switch, provideUseId } from \"@headlessui/vue\";\nimport { useId } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PricingToggle\",\n  __ssrInlineRender: true,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    left: {\n      type: String,\n      default: \"Monthly\"\n    },\n    right: {\n      type: String,\n      default: \"Yearly\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n    const props = __props;\n    const emit = __emit;\n    const config = {\n      wrapper: \"ring-1 ring-gray-300 dark:ring-gray-700 flex items-center relative h-8 w-auto flex-shrink-0 cursor-pointer rounded-full p-1 w-full focus:outline-none\",\n      marker: \"w-1/2 text-white dark:text-gray-900 pointer-events-none inline-block h-6 transform rounded-full bg-gray-900 dark:bg-white shadow transition duration-200 ease-in-out z-0 relative\",\n      active: \"text-white dark:text-gray-900\",\n      inactive: \"text-gray-500 dark:text-gray-400\",\n      base: \"absolute inset-y-0 w-1/2 flex items-center justify-center pointer-events-none z-[1] transition-colors duration-200 select-none text-xs font-semibold flex-shrink-0\",\n      left: \"left-0\",\n      right: \"right-0\"\n    };\n    const isYearly = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const { ui, attrs } = useUI(\"pricing.toggle\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    provideUseId(() => useId());\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(_ssrRenderComponent(_unref(Switch), _mergeProps({\n        modelValue: _unref(isYearly),\n        \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n        \"aria-label\": \"pricing toggle\",\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            if (__props.left || _ctx.$slots.left) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"left\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.left)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.right || _ctx.$slots.right) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"right\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.right)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker])}\"${_scopeId}></span>`);\n          } else {\n            return [\n              __props.left || _ctx.$slots.left ? (_openBlock(), _createBlock(\"span\", {\n                key: 0,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active]\n              }, [\n                _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.left), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.right || _ctx.$slots.right ? (_openBlock(), _createBlock(\"span\", {\n                key: 1,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive]\n              }, [\n                _renderSlot(_ctx.$slots, \"right\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.right), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              _createVNode(\"span\", {\n                \"aria-hidden\": \"true\",\n                class: [_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker]\n              }, null, 2)\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172189772,
-      "end": 1714172190003,
+      "start": 1714173365922,
+      "end": 1714173366207,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -95,135 +95,135 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172190003,
-      "end": 1714172190003,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172190003,
-      "end": 1714172190004,
+      "start": 1714173366207,
+      "end": 1714173366207,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172190004,
-      "end": 1714172190004,
+      "start": 1714173366207,
+      "end": 1714173366208,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172190004,
-      "end": 1714172190004,
+      "start": 1714173366208,
+      "end": 1714173366208,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172190004,
-      "end": 1714172190004,
+      "start": 1714173366208,
+      "end": 1714173366208,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172190004,
-      "end": 1714172190004,
+      "start": 1714173366208,
+      "end": 1714173366208,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172190004,
-      "end": 1714172190004,
+      "start": 1714173366208,
+      "end": 1714173366208,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172190004,
-      "end": 1714172190004,
+      "start": 1714173366208,
+      "end": 1714173366208,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172190004,
-      "end": 1714172190004,
+      "start": 1714173366208,
+      "end": 1714173366208,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172190004,
-      "end": 1714172190004,
+      "start": 1714173366208,
+      "end": 1714173366208,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, withCtx as _withCtx, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, isRef as _isRef, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { Switch, provideUseId } from \"@headlessui/vue\";\nimport { useId } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PricingToggle\",\n  __ssrInlineRender: true,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    left: {\n      type: String,\n      default: \"Monthly\"\n    },\n    right: {\n      type: String,\n      default: \"Yearly\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n    const props = __props;\n    const emit = __emit;\n    const config = {\n      wrapper: \"ring-1 ring-gray-300 dark:ring-gray-700 flex items-center relative h-8 w-auto flex-shrink-0 cursor-pointer rounded-full p-1 w-full focus:outline-none\",\n      marker: \"w-1/2 text-white dark:text-gray-900 pointer-events-none inline-block h-6 transform rounded-full bg-gray-900 dark:bg-white shadow transition duration-200 ease-in-out z-0 relative\",\n      active: \"text-white dark:text-gray-900\",\n      inactive: \"text-gray-500 dark:text-gray-400\",\n      base: \"absolute inset-y-0 w-1/2 flex items-center justify-center pointer-events-none z-[1] transition-colors duration-200 select-none text-xs font-semibold flex-shrink-0\",\n      left: \"left-0\",\n      right: \"right-0\"\n    };\n    const isYearly = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const { ui, attrs } = useUI(\"pricing.toggle\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    provideUseId(() => useId('$qibiFAg981'));\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(_ssrRenderComponent(_unref(Switch), _mergeProps({\n        modelValue: _unref(isYearly),\n        \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n        \"aria-label\": \"pricing toggle\",\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            if (__props.left || _ctx.$slots.left) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"left\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.left)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.right || _ctx.$slots.right) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"right\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.right)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker])}\"${_scopeId}></span>`);\n          } else {\n            return [\n              __props.left || _ctx.$slots.left ? (_openBlock(), _createBlock(\"span\", {\n                key: 0,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active]\n              }, [\n                _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.left), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.right || _ctx.$slots.right ? (_openBlock(), _createBlock(\"span\", {\n                key: 1,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive]\n              }, [\n                _renderSlot(_ctx.$slots, \"right\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.right), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              _createVNode(\"span\", {\n                \"aria-hidden\": \"true\",\n                class: [_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker]\n              }, null, 2)\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172190004,
-      "end": 1714172190005,
+      "start": 1714173366208,
+      "end": 1714173366209,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -237,8 +237,8 @@
     {
       "name": "nuxt:composable-keys",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, withCtx as _withCtx, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, isRef as _isRef, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { Switch, provideUseId } from \"@headlessui/vue\";\nimport { useId } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PricingToggle\",\n  __ssrInlineRender: true,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    left: {\n      type: String,\n      default: \"Monthly\"\n    },\n    right: {\n      type: String,\n      default: \"Yearly\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n    const props = __props;\n    const emit = __emit;\n    const config = {\n      wrapper: \"ring-1 ring-gray-300 dark:ring-gray-700 flex items-center relative h-8 w-auto flex-shrink-0 cursor-pointer rounded-full p-1 w-full focus:outline-none\",\n      marker: \"w-1/2 text-white dark:text-gray-900 pointer-events-none inline-block h-6 transform rounded-full bg-gray-900 dark:bg-white shadow transition duration-200 ease-in-out z-0 relative\",\n      active: \"text-white dark:text-gray-900\",\n      inactive: \"text-gray-500 dark:text-gray-400\",\n      base: \"absolute inset-y-0 w-1/2 flex items-center justify-center pointer-events-none z-[1] transition-colors duration-200 select-none text-xs font-semibold flex-shrink-0\",\n      left: \"left-0\",\n      right: \"right-0\"\n    };\n    const isYearly = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const { ui, attrs } = useUI(\"pricing.toggle\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    provideUseId(() => useId('$qibiFAg981'));\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(_ssrRenderComponent(_unref(Switch), _mergeProps({\n        modelValue: _unref(isYearly),\n        \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n        \"aria-label\": \"pricing toggle\",\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            if (__props.left || _ctx.$slots.left) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"left\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.left)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.right || _ctx.$slots.right) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"right\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.right)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker])}\"${_scopeId}></span>`);\n          } else {\n            return [\n              __props.left || _ctx.$slots.left ? (_openBlock(), _createBlock(\"span\", {\n                key: 0,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active]\n              }, [\n                _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.left), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.right || _ctx.$slots.right ? (_openBlock(), _createBlock(\"span\", {\n                key: 1,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive]\n              }, [\n                _renderSlot(_ctx.$slots, \"right\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.right), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              _createVNode(\"span\", {\n                \"aria-hidden\": \"true\",\n                class: [_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker]\n              }, null, 2)\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172190004,
-      "end": 1714172190005,
+      "start": 1714173366208,
+      "end": 1714173366209,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -252,8 +252,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { useId } from '#app/composables/id';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, withCtx as _withCtx, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, isRef as _isRef, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { Switch, provideUseId } from \"@headlessui/vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PricingToggle\",\n  __ssrInlineRender: true,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    left: {\n      type: String,\n      default: \"Monthly\"\n    },\n    right: {\n      type: String,\n      default: \"Yearly\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n    const props = __props;\n    const emit = __emit;\n    const config = {\n      wrapper: \"ring-1 ring-gray-300 dark:ring-gray-700 flex items-center relative h-8 w-auto flex-shrink-0 cursor-pointer rounded-full p-1 w-full focus:outline-none\",\n      marker: \"w-1/2 text-white dark:text-gray-900 pointer-events-none inline-block h-6 transform rounded-full bg-gray-900 dark:bg-white shadow transition duration-200 ease-in-out z-0 relative\",\n      active: \"text-white dark:text-gray-900\",\n      inactive: \"text-gray-500 dark:text-gray-400\",\n      base: \"absolute inset-y-0 w-1/2 flex items-center justify-center pointer-events-none z-[1] transition-colors duration-200 select-none text-xs font-semibold flex-shrink-0\",\n      left: \"left-0\",\n      right: \"right-0\"\n    };\n    const isYearly = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const { ui, attrs } = useUI(\"pricing.toggle\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    provideUseId(() => useId('$qibiFAg981'));\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(_ssrRenderComponent(_unref(Switch), _mergeProps({\n        modelValue: _unref(isYearly),\n        \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n        \"aria-label\": \"pricing toggle\",\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            if (__props.left || _ctx.$slots.left) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"left\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.left)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.right || _ctx.$slots.right) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"right\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.right)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker])}\"${_scopeId}></span>`);\n          } else {\n            return [\n              __props.left || _ctx.$slots.left ? (_openBlock(), _createBlock(\"span\", {\n                key: 0,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active]\n              }, [\n                _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.left), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.right || _ctx.$slots.right ? (_openBlock(), _createBlock(\"span\", {\n                key: 1,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive]\n              }, [\n                _renderSlot(_ctx.$slots, \"right\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.right), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              _createVNode(\"span\", {\n                \"aria-hidden\": \"true\",\n                class: [_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker]\n              }, null, 2)\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172190005,
-      "end": 1714172190006,
+      "start": 1714173366209,
+      "end": 1714173366210,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -267,8 +267,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { useId } from '#app/composables/id';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, withCtx as _withCtx, renderSlot as _renderSlot, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, isRef as _isRef, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderClass as _ssrRenderClass, ssrRenderComponent as _ssrRenderComponent, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { Switch, provideUseId } from \"@headlessui/vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PricingToggle\",\n  __ssrInlineRender: true,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    left: {\n      type: String,\n      default: \"Monthly\"\n    },\n    right: {\n      type: String,\n      default: \"Yearly\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\"],\n  setup(__props, { emit: __emit }) {\n    const props = __props;\n    const emit = __emit;\n    const config = {\n      wrapper: \"ring-1 ring-gray-300 dark:ring-gray-700 flex items-center relative h-8 w-auto flex-shrink-0 cursor-pointer rounded-full p-1 w-full focus:outline-none\",\n      marker: \"w-1/2 text-white dark:text-gray-900 pointer-events-none inline-block h-6 transform rounded-full bg-gray-900 dark:bg-white shadow transition duration-200 ease-in-out z-0 relative\",\n      active: \"text-white dark:text-gray-900\",\n      inactive: \"text-gray-500 dark:text-gray-400\",\n      base: \"absolute inset-y-0 w-1/2 flex items-center justify-center pointer-events-none z-[1] transition-colors duration-200 select-none text-xs font-semibold flex-shrink-0\",\n      left: \"left-0\",\n      right: \"right-0\"\n    };\n    const isYearly = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const { ui, attrs } = useUI(\"pricing.toggle\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    provideUseId(() => useId('$qibiFAg981'));\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(_ssrRenderComponent(_unref(Switch), _mergeProps({\n        modelValue: _unref(isYearly),\n        \"onUpdate:modelValue\": ($event) => _isRef(isYearly) ? isYearly.value = $event : null,\n        \"aria-label\": \"pricing toggle\",\n        class: _unref(ui).wrapper\n      }, _unref(attrs), _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            if (__props.left || _ctx.$slots.left) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"left\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.left)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.right || _ctx.$slots.right) {\n              _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive])}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"right\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.right)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</span>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`<span aria-hidden=\"true\" class=\"${_ssrRenderClass([_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker])}\"${_scopeId}></span>`);\n          } else {\n            return [\n              __props.left || _ctx.$slots.left ? (_openBlock(), _createBlock(\"span\", {\n                key: 0,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).left, _unref(isYearly) ? _unref(ui).inactive : _unref(ui).active]\n              }, [\n                _renderSlot(_ctx.$slots, \"left\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.left), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              __props.right || _ctx.$slots.right ? (_openBlock(), _createBlock(\"span\", {\n                key: 1,\n                \"aria-hidden\": \"true\",\n                class: [_unref(ui).base, _unref(ui).right, _unref(isYearly) ? _unref(ui).active : _unref(ui).inactive]\n              }, [\n                _renderSlot(_ctx.$slots, \"right\", {}, () => [\n                  _createTextVNode(_toDisplayString(__props.right), 1)\n                ])\n              ], 2)) : _createCommentVNode(\"\", true),\n              _createVNode(\"span\", {\n                \"aria-hidden\": \"true\",\n                class: [_unref(isYearly) ? \"translate-x-full\" : \"translate-x-0\", _unref(ui).marker]\n              }, null, 2)\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172190005,
-      "end": 1714172190006,
+      "start": 1714173366209,
+      "end": 1714173366210,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -281,56 +281,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172190006,
-      "end": 1714172190006,
+      "start": 1714173366210,
+      "end": 1714173366210,
       "order": "normal"
     }
   ]

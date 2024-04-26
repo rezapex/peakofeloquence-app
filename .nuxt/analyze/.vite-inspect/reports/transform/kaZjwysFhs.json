@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, toDisplayString as _toDisplayString, createVNode as _createVNode, renderSlot as _renderSlot, createElementBlock as _createElementBlock, mergeProps as _mergeProps } from \"vue\"\nimport { renderSlot as _renderMDCSlot } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot'\n\n\nconst _hoisted_1 = /*#__PURE__*/_createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1)\n\nimport type { PropType } from 'vue'\nimport colors from '#tailwind-config/theme/colors'\nimport uiColors from '#ui-colors'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'Card',\n  props: {\n  icon: {\n    type: String,\n    default: undefined\n  },\n  color: {\n    type: String as PropType<typeof uiColors[number]>,\n    default: 'primary'\n  },\n  to: {\n    type: String,\n    default: undefined\n  },\n  target: {\n    type: String,\n    default: undefined\n  },\n  title: {\n    type: String,\n    default: undefined\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  wrapper: 'relative group overflow-hidden flex items-center rounded-lg',\n  to: 'hover:ring-1 hover:ring-[--color-light] dark:hover:ring-[--color-dark] hover:bg-gray-100/50 dark:hover:bg-gray-800/50',\n  icon: {\n    base: 'w-6 h-6 mb-4 inline-flex items-center text-[--color-light] dark:text-[--color-dark] pointer-events-none'\n  },\n  body: {\n    base: 'flex-1'\n  },\n  externalIcon: {\n    name: appConfig.ui.icons.external,\n    base: 'w-4 h-4 absolute right-2 top-2 text-gray-400 dark:text-gray-500 group-hover:text-[--color-light] dark:group-hover:text-[--color-dark]'\n  },\n  title: 'text-gray-900 dark:text-white font-semibold text-base my-0',\n  description: 'text-[15px] text-gray-500 dark:text-gray-400 mt-1 mb-0'\n}))\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('content.card', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst colorLight = computed(() => {\n  if (props.color === 'primary') {\n    return 'rgb(var(--color-primary-DEFAULT))'\n  }\n  // @ts-ignore\n  return colors[props.color]?.['500'] || colors[props.color] || props.color\n})\nconst colorDark = computed(() => {\n  if (props.color === 'primary') {\n    return 'rgb(var(--color-primary-DEFAULT))'\n  }\n  // @ts-ignore\n  return colors[props.color]?.['400'] || colors[props.color] || props.color\n})\n\nconst target = computed(() => props.target || (props.to && props.to.startsWith('http') ? '_blank' : undefined))\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_MDCSlot = _resolveComponent(\"MDCSlot\")!\n  const _component_UCard = _resolveComponent(\"UCard\")!\n\n  return (_openBlock(), _createBlock(_component_UCard, _mergeProps({\n    class: [_unref(ui).wrapper, __props.to && _unref(ui).to]\n  }, _unref(attrs), {\n    ui: _unref(ui),\n    style: { '--color-light': _unref(colorLight), '--color-dark': _unref(colorDark) }\n  }), {\n    default: _withCtx(() => [\n      (__props.to)\n        ? (_openBlock(), _createBlock(_component_NuxtLink, {\n            key: 0,\n            to: __props.to,\n            target: _unref(target),\n            class: \"focus:outline-none\",\n            tabindex: \"-1\"\n          }, {\n            default: _withCtx(() => [\n              _hoisted_1\n            ]),\n            _: 1\n          }, 8, [\"to\", \"target\"]))\n        : _createCommentVNode(\"\", true),\n      (__props.icon)\n        ? (_openBlock(), _createBlock(_component_UIcon, {\n            key: 1,\n            name: __props.icon,\n            class: _normalizeClass(_unref(ui).icon.base)\n          }, null, 8, [\"name\", \"class\"]))\n        : _createCommentVNode(\"\", true),\n      (!!__props.to && _unref(target) === '_blank')\n        ? (_openBlock(), _createBlock(_component_UIcon, {\n            key: 2,\n            name: _unref(ui).externalIcon.name,\n            class: _normalizeClass(_unref(ui).externalIcon.base)\n          }, null, 8, [\"name\", \"class\"]))\n        : _createCommentVNode(\"\", true),\n      _createElementVNode(\"p\", {\n        class: _normalizeClass(_unref(ui).title)\n      }, _toDisplayString(__props.title), 3),\n      (_ctx.$slots.default)\n        ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 3,\n            class: _normalizeClass(_unref(ui).description)\n          }, [\n            _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n          ], 2))\n        : _createCommentVNode(\"\", true)\n    ]),\n    _: 3\n  }, 16, [\"class\", \"ui\", \"style\"]))\n}\n}\n\n})",
-      "start": 1714172178827,
-      "end": 1714172178827
+      "start": 1714173352360,
+      "end": 1714173352360
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172178827,
-      "end": 1714172178827,
+      "start": 1714173352361,
+      "end": 1714173352361,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172178827,
-      "end": 1714172178827,
+      "start": 1714173352361,
+      "end": 1714173352361,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172178827,
-      "end": 1714172178827,
+      "start": 1714173352361,
+      "end": 1714173352361,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172178827,
-      "end": 1714172178827,
+      "start": 1714173352361,
+      "end": 1714173352361,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172178827,
-      "end": 1714172178827,
+      "start": 1714173352361,
+      "end": 1714173352361,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, toDisplayString as _toDisplayString, createElementBlock as _createElementBlock, mergeProps as _mergeProps } from \"vue\";\nimport { renderSlot as _renderMDCSlot } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1);\nimport colors from \"#tailwind-config/theme/colors\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Card\",\n  props: {\n    icon: {\n      type: String,\n      default: void 0\n    },\n    color: {\n      type: String,\n      default: \"primary\"\n    },\n    to: {\n      type: String,\n      default: void 0\n    },\n    target: {\n      type: String,\n      default: void 0\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"relative group overflow-hidden flex items-center rounded-lg\",\n      to: \"hover:ring-1 hover:ring-[--color-light] dark:hover:ring-[--color-dark] hover:bg-gray-100/50 dark:hover:bg-gray-800/50\",\n      icon: {\n        base: \"w-6 h-6 mb-4 inline-flex items-center text-[--color-light] dark:text-[--color-dark] pointer-events-none\"\n      },\n      body: {\n        base: \"flex-1\"\n      },\n      externalIcon: {\n        name: appConfig.ui.icons.external,\n        base: \"w-4 h-4 absolute right-2 top-2 text-gray-400 dark:text-gray-500 group-hover:text-[--color-light] dark:group-hover:text-[--color-dark]\"\n      },\n      title: \"text-gray-900 dark:text-white font-semibold text-base my-0\",\n      description: \"text-[15px] text-gray-500 dark:text-gray-400 mt-1 mb-0\"\n    }));\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const colorLight = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"500\"] || colors[props.color] || props.color;\n    });\n    const colorDark = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"400\"] || colors[props.color] || props.color;\n    });\n    const target = computed(() => props.target || (props.to && props.to.startsWith(\"http\") ? \"_blank\" : void 0));\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_MDCSlot = _resolveComponent(\"MDCSlot\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createBlock(_component_UCard, _mergeProps({\n        class: [_unref(ui).wrapper, __props.to && _unref(ui).to]\n      }, _unref(attrs), {\n        ui: _unref(ui),\n        style: { \"--color-light\": _unref(colorLight), \"--color-dark\": _unref(colorDark) }\n      }), {\n        default: _withCtx(() => [\n          __props.to ? (_openBlock(), _createBlock(_component_NuxtLink, {\n            key: 0,\n            to: __props.to,\n            target: _unref(target),\n            class: \"focus:outline-none\",\n            tabindex: \"-1\"\n          }, {\n            default: _withCtx(() => [\n              _hoisted_1\n            ]),\n            _: 1\n          }, 8, [\"to\", \"target\"])) : _createCommentVNode(\"\", true),\n          __props.icon ? (_openBlock(), _createBlock(_component_UIcon, {\n            key: 1,\n            name: __props.icon,\n            class: _normalizeClass(_unref(ui).icon.base)\n          }, null, 8, [\"name\", \"class\"])) : _createCommentVNode(\"\", true),\n          !!__props.to && _unref(target) === \"_blank\" ? (_openBlock(), _createBlock(_component_UIcon, {\n            key: 2,\n            name: _unref(ui).externalIcon.name,\n            class: _normalizeClass(_unref(ui).externalIcon.base)\n          }, null, 8, [\"name\", \"class\"])) : _createCommentVNode(\"\", true),\n          _createElementVNode(\"p\", {\n            class: _normalizeClass(_unref(ui).title)\n          }, _toDisplayString(__props.title), 3),\n          _ctx.$slots.default ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 3,\n            class: _normalizeClass(_unref(ui).description)\n          }, [\n            _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n          ], 2)) : _createCommentVNode(\"\", true)\n        ]),\n        _: 3\n      }, 16, [\"class\", \"ui\", \"style\"]);\n    };\n  }\n});\n",
-      "start": 1714172178827,
-      "end": 1714172179137,
+      "start": 1714173352362,
+      "end": 1714173352796,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179137,
-      "end": 1714172179137,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179137,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179138,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179138,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179138,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179138,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179138,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179138,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179138,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172179138,
-      "end": 1714172179138,
+      "start": 1714173352796,
+      "end": 1714173352796,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, toDisplayString as _toDisplayString, createElementBlock as _createElementBlock, mergeProps as _mergeProps } from \"vue\";\nimport { renderSlot as _renderMDCSlot } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1);\nimport colors from \"#tailwind-config/theme/colors\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Card\",\n  props: {\n    icon: {\n      type: String,\n      default: void 0\n    },\n    color: {\n      type: String,\n      default: \"primary\"\n    },\n    to: {\n      type: String,\n      default: void 0\n    },\n    target: {\n      type: String,\n      default: void 0\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"relative group overflow-hidden flex items-center rounded-lg\",\n      to: \"hover:ring-1 hover:ring-[--color-light] dark:hover:ring-[--color-dark] hover:bg-gray-100/50 dark:hover:bg-gray-800/50\",\n      icon: {\n        base: \"w-6 h-6 mb-4 inline-flex items-center text-[--color-light] dark:text-[--color-dark] pointer-events-none\"\n      },\n      body: {\n        base: \"flex-1\"\n      },\n      externalIcon: {\n        name: appConfig.ui.icons.external,\n        base: \"w-4 h-4 absolute right-2 top-2 text-gray-400 dark:text-gray-500 group-hover:text-[--color-light] dark:group-hover:text-[--color-dark]\"\n      },\n      title: \"text-gray-900 dark:text-white font-semibold text-base my-0\",\n      description: \"text-[15px] text-gray-500 dark:text-gray-400 mt-1 mb-0\"\n    }));\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const colorLight = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"500\"] || colors[props.color] || props.color;\n    });\n    const colorDark = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"400\"] || colors[props.color] || props.color;\n    });\n    const target = computed(() => props.target || (props.to && props.to.startsWith(\"http\") ? \"_blank\" : void 0));\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_MDCSlot = _resolveComponent(\"MDCSlot\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createBlock(_component_UCard, _mergeProps({\n        class: [_unref(ui).wrapper, __props.to && _unref(ui).to]\n      }, _unref(attrs), {\n        ui: _unref(ui),\n        style: { \"--color-light\": _unref(colorLight), \"--color-dark\": _unref(colorDark) }\n      }), {\n        default: _withCtx(() => [\n          __props.to ? (_openBlock(), _createBlock(_component_NuxtLink, {\n            key: 0,\n            to: __props.to,\n            target: _unref(target),\n            class: \"focus:outline-none\",\n            tabindex: \"-1\"\n          }, {\n            default: _withCtx(() => [\n              _hoisted_1\n            ]),\n            _: 1\n          }, 8, [\"to\", \"target\"])) : _createCommentVNode(\"\", true),\n          __props.icon ? (_openBlock(), _createBlock(_component_UIcon, {\n            key: 1,\n            name: __props.icon,\n            class: _normalizeClass(_unref(ui).icon.base)\n          }, null, 8, [\"name\", \"class\"])) : _createCommentVNode(\"\", true),\n          !!__props.to && _unref(target) === \"_blank\" ? (_openBlock(), _createBlock(_component_UIcon, {\n            key: 2,\n            name: _unref(ui).externalIcon.name,\n            class: _normalizeClass(_unref(ui).externalIcon.base)\n          }, null, 8, [\"name\", \"class\"])) : _createCommentVNode(\"\", true),\n          _createElementVNode(\"p\", {\n            class: _normalizeClass(_unref(ui).title)\n          }, _toDisplayString(__props.title), 3),\n          _ctx.$slots.default ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 3,\n            class: _normalizeClass(_unref(ui).description)\n          }, [\n            _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n          ], 2)) : _createCommentVNode(\"\", true)\n        ]),\n        _: 3\n      }, 16, [\"class\", \"ui\", \"style\"]);\n    };\n  }\n});\n",
-      "start": 1714172179138,
-      "end": 1714172179139,
+      "start": 1714173352796,
+      "end": 1714173352798,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179139,
-      "end": 1714172179140,
+      "start": 1714173352798,
+      "end": 1714173352798,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179140,
-      "end": 1714172179140,
+      "start": 1714173352798,
+      "end": 1714173352798,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179140,
-      "end": 1714172179140,
+      "start": 1714173352798,
+      "end": 1714173352798,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179140,
-      "end": 1714172179140,
+      "start": 1714173352798,
+      "end": 1714173352798,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/components/MDCSlot\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Card.vue\";\nimport { useAppConfig } from '#app/config';\nimport { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass, toDisplayString as _toDisplayString, createElementBlock as _createElementBlock, mergeProps as _mergeProps } from \"vue\";\nimport { renderSlot as _renderMDCSlot } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"span\", {\n  class: \"absolute inset-0\",\n  \"aria-hidden\": \"true\"\n}, null, -1);\nimport colors from \"#tailwind-config/theme/colors\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"Card\",\n  props: {\n    icon: {\n      type: String,\n      default: void 0\n    },\n    color: {\n      type: String,\n      default: \"primary\"\n    },\n    to: {\n      type: String,\n      default: void 0\n    },\n    target: {\n      type: String,\n      default: void 0\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      wrapper: \"relative group overflow-hidden flex items-center rounded-lg\",\n      to: \"hover:ring-1 hover:ring-[--color-light] dark:hover:ring-[--color-dark] hover:bg-gray-100/50 dark:hover:bg-gray-800/50\",\n      icon: {\n        base: \"w-6 h-6 mb-4 inline-flex items-center text-[--color-light] dark:text-[--color-dark] pointer-events-none\"\n      },\n      body: {\n        base: \"flex-1\"\n      },\n      externalIcon: {\n        name: appConfig.ui.icons.external,\n        base: \"w-4 h-4 absolute right-2 top-2 text-gray-400 dark:text-gray-500 group-hover:text-[--color-light] dark:group-hover:text-[--color-dark]\"\n      },\n      title: \"text-gray-900 dark:text-white font-semibold text-base my-0\",\n      description: \"text-[15px] text-gray-500 dark:text-gray-400 mt-1 mb-0\"\n    }));\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.card\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    const colorLight = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"500\"] || colors[props.color] || props.color;\n    });\n    const colorDark = computed(() => {\n      if (props.color === \"primary\") {\n        return \"rgb(var(--color-primary-DEFAULT))\";\n      }\n      return colors[props.color]?.[\"400\"] || colors[props.color] || props.color;\n    });\n    const target = computed(() => props.target || (props.to && props.to.startsWith(\"http\") ? \"_blank\" : void 0));\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = __nuxt_component_0;\n      const _component_UIcon = __nuxt_component_1;\n      const _component_MDCSlot = __nuxt_component_2;\n      const _component_UCard = __nuxt_component_3;\n      return _openBlock(), _createBlock(_component_UCard, _mergeProps({\n        class: [_unref(ui).wrapper, __props.to && _unref(ui).to]\n      }, _unref(attrs), {\n        ui: _unref(ui),\n        style: { \"--color-light\": _unref(colorLight), \"--color-dark\": _unref(colorDark) }\n      }), {\n        default: _withCtx(() => [\n          __props.to ? (_openBlock(), _createBlock(_component_NuxtLink, {\n            key: 0,\n            to: __props.to,\n            target: _unref(target),\n            class: \"focus:outline-none\",\n            tabindex: \"-1\"\n          }, {\n            default: _withCtx(() => [\n              _hoisted_1\n            ]),\n            _: 1\n          }, 8, [\"to\", \"target\"])) : _createCommentVNode(\"\", true),\n          __props.icon ? (_openBlock(), _createBlock(_component_UIcon, {\n            key: 1,\n            name: __props.icon,\n            class: _normalizeClass(_unref(ui).icon.base)\n          }, null, 8, [\"name\", \"class\"])) : _createCommentVNode(\"\", true),\n          !!__props.to && _unref(target) === \"_blank\" ? (_openBlock(), _createBlock(_component_UIcon, {\n            key: 2,\n            name: _unref(ui).externalIcon.name,\n            class: _normalizeClass(_unref(ui).externalIcon.base)\n          }, null, 8, [\"name\", \"class\"])) : _createCommentVNode(\"\", true),\n          _createElementVNode(\"p\", {\n            class: _normalizeClass(_unref(ui).title)\n          }, _toDisplayString(__props.title), 3),\n          _ctx.$slots.default ? (_openBlock(), _createElementBlock(\"p\", {\n            key: 3,\n            class: _normalizeClass(_unref(ui).description)\n          }, [\n            _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n          ], 2)) : _createCommentVNode(\"\", true)\n        ]),\n        _: 3\n      }, 16, [\"class\", \"ui\", \"style\"]);\n    };\n  }\n});\n",
-      "start": 1714172179140,
-      "end": 1714172179140,
+      "start": 1714173352798,
+      "end": 1714173352799,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179140,
-      "end": 1714172179140,
+      "start": 1714173352799,
+      "end": 1714173352799,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179140,
-      "end": 1714172179140,
+      "start": 1714173352799,
+      "end": 1714173352799,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179140,
-      "end": 1714172179140,
+      "start": 1714173352799,
+      "end": 1714173352799,
       "order": "normal"
     }
   ]

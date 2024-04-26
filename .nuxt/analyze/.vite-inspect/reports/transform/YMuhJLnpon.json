@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <TransitionRoot :appear=\"appear\" :show=\"isOpen\" as=\"template\">\n    <HDialog :class=\"ui.wrapper\" v-bind=\"attrs\" @close=\"close\">\n      <TransitionChild v-if=\"overlay\" as=\"template\" :appear=\"appear\" v-bind=\"ui.overlay.transition\">\n        <div :class=\"[ui.overlay.base, ui.overlay.background]\" />\n      </TransitionChild>\n\n      <div :class=\"ui.inner\">\n        <div :class=\"[ui.container, !fullscreen && ui.padding]\">\n          <TransitionChild as=\"template\" :appear=\"appear\" v-bind=\"transitionClass\">\n            <HDialogPanel\n              :class=\"[\n                ui.base,\n                ui.background,\n                ui.ring,\n                ui.shadow,\n                fullscreen ? ui.fullscreen : [ui.width, ui.height, ui.rounded, ui.margin],\n              ]\"\n            >\n              <slot />\n            </HDialogPanel>\n          </TransitionChild>\n        </div>\n      </div>\n    </HDialog>\n  </TransitionRoot>\n</template>\n\n<script>\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { Dialog as HDialog, DialogPanel as HDialogPanel, TransitionRoot, TransitionChild, provideUseId } from \"@headlessui/vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { modal } from \"#ui/ui.config\";\nimport { useId } from \"#imports\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.modal, modal);\nexport default defineComponent({\n  components: {\n    HDialog,\n    HDialogPanel,\n    TransitionRoot,\n    TransitionChild\n  },\n  inheritAttrs: false,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    appear: {\n      type: Boolean,\n      default: false\n    },\n    overlay: {\n      type: Boolean,\n      default: true\n    },\n    transition: {\n      type: Boolean,\n      default: true\n    },\n    preventClose: {\n      type: Boolean,\n      default: false\n    },\n    fullscreen: {\n      type: Boolean,\n      default: false\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\", \"close\", \"close-prevented\"],\n  setup(props, { emit }) {\n    const { ui, attrs } = useUI(\"modal\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const isOpen = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const transitionClass = computed(() => {\n      if (!props.transition) {\n        return {};\n      }\n      return {\n        ...ui.value.transition\n      };\n    });\n    function close(value) {\n      if (props.preventClose) {\n        emit(\"close-prevented\");\n        return;\n      }\n      isOpen.value = value;\n      emit(\"close\");\n    }\n    provideUseId(() => useId());\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      isOpen,\n      transitionClass,\n      close\n    };\n  }\n});\n</script>\n",
-      "start": 1714172179828,
-      "end": 1714172179869,
+      "start": 1714173353765,
+      "end": 1714173353791,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172179869,
-      "end": 1714172179869,
+      "start": 1714173353791,
+      "end": 1714173353791,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172179869,
-      "end": 1714172179869,
+      "start": 1714173353791,
+      "end": 1714173353791,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172179869,
-      "end": 1714172179869,
+      "start": 1714173353791,
+      "end": 1714173353791,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172179869,
-      "end": 1714172179869,
+      "start": 1714173353791,
+      "end": 1714173353791,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172179869,
-      "end": 1714172179869,
+      "start": 1714173353791,
+      "end": 1714173353791,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714172179869,
-      "end": 1714172179869,
+      "start": 1714173353791,
+      "end": 1714173353791,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714172179869,
-      "end": 1714172179869,
+      "start": 1714173353791,
+      "end": 1714173353791,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172179869,
-      "end": 1714172179869,
+      "start": 1714173353791,
+      "end": 1714173353791,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { Dialog as HDialog, DialogPanel as HDialogPanel, TransitionRoot, TransitionChild, provideUseId } from \"@headlessui/vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { modal } from \"#ui/ui.config\";\nimport { useId } from \"#imports\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.modal, modal);\nconst _sfc_main = defineComponent({\n  components: {\n    HDialog,\n    HDialogPanel,\n    TransitionRoot,\n    TransitionChild\n  },\n  inheritAttrs: false,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    appear: {\n      type: Boolean,\n      default: false\n    },\n    overlay: {\n      type: Boolean,\n      default: true\n    },\n    transition: {\n      type: Boolean,\n      default: true\n    },\n    preventClose: {\n      type: Boolean,\n      default: false\n    },\n    fullscreen: {\n      type: Boolean,\n      default: false\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\", \"close\", \"close-prevented\"],\n  setup(props, { emit }) {\n    const { ui, attrs } = useUI(\"modal\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const isOpen = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const transitionClass = computed(() => {\n      if (!props.transition) {\n        return {};\n      }\n      return {\n        ...ui.value.transition\n      };\n    });\n    function close(value) {\n      if (props.preventClose) {\n        emit(\"close-prevented\");\n        return;\n      }\n      isOpen.value = value;\n      emit(\"close\");\n    }\n    provideUseId(() => useId());\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      isOpen,\n      transitionClass,\n      close\n    };\n  }\n});\n\nimport { normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, createVNode as _createVNode } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_TransitionChild = _resolveComponent(\"TransitionChild\")\n  const _component_HDialogPanel = _resolveComponent(\"HDialogPanel\")\n  const _component_HDialog = _resolveComponent(\"HDialog\")\n  const _component_TransitionRoot = _resolveComponent(\"TransitionRoot\")\n\n  return (_openBlock(), _createBlock(_component_TransitionRoot, {\n    appear: _ctx.appear,\n    show: _ctx.isOpen,\n    as: \"template\"\n  }, {\n    default: _withCtx(() => [\n      _createVNode(_component_HDialog, _mergeProps({\n        class: _ctx.ui.wrapper\n      }, _ctx.attrs, { onClose: _ctx.close }), {\n        default: _withCtx(() => [\n          (_ctx.overlay)\n            ? (_openBlock(), _createBlock(_component_TransitionChild, _mergeProps({\n                key: 0,\n                as: \"template\",\n                appear: _ctx.appear\n              }, _ctx.ui.overlay.transition), {\n                default: _withCtx(() => [\n                  _createElementVNode(\"div\", {\n                    class: _normalizeClass([_ctx.ui.overlay.base, _ctx.ui.overlay.background])\n                  }, null, 2)\n                ]),\n                _: 1\n              }, 16, [\"appear\"]))\n            : _createCommentVNode(\"\", true),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_ctx.ui.inner)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([_ctx.ui.container, !_ctx.fullscreen && _ctx.ui.padding])\n            }, [\n              _createVNode(_component_TransitionChild, _mergeProps({\n                as: \"template\",\n                appear: _ctx.appear\n              }, _ctx.transitionClass), {\n                default: _withCtx(() => [\n                  _createVNode(_component_HDialogPanel, {\n                    class: _normalizeClass([\n                _ctx.ui.base,\n                _ctx.ui.background,\n                _ctx.ui.ring,\n                _ctx.ui.shadow,\n                _ctx.fullscreen ? _ctx.ui.fullscreen : [_ctx.ui.width, _ctx.ui.height, _ctx.ui.rounded, _ctx.ui.margin],\n              ])\n                  }, {\n                    default: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, \"default\")\n                    ]),\n                    _: 3\n                  }, 8, [\"class\"])\n                ]),\n                _: 3\n              }, 16, [\"appear\"])\n            ], 2)\n          ], 2)\n        ]),\n        _: 3\n      }, 16, [\"class\", \"onClose\"])\n    ]),\n    _: 3\n  }, 8, [\"appear\", \"show\"]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172179869,
-      "end": 1714172179871,
+      "start": 1714173353791,
+      "end": 1714173353793,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,105 +68,105 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172179871,
-      "end": 1714172179871,
+      "start": 1714173353793,
+      "end": 1714173353793,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { Dialog as HDialog, DialogPanel as HDialogPanel, TransitionRoot, TransitionChild, provideUseId } from \"@headlessui/vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { modal } from \"#ui/ui.config\";\nimport { useId } from \"#imports\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.modal, modal);\nconst _sfc_main = defineComponent({\n  components: {\n    HDialog,\n    HDialogPanel,\n    TransitionRoot,\n    TransitionChild\n  },\n  inheritAttrs: false,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    appear: {\n      type: Boolean,\n      default: false\n    },\n    overlay: {\n      type: Boolean,\n      default: true\n    },\n    transition: {\n      type: Boolean,\n      default: true\n    },\n    preventClose: {\n      type: Boolean,\n      default: false\n    },\n    fullscreen: {\n      type: Boolean,\n      default: false\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\", \"close\", \"close-prevented\"],\n  setup(props, { emit }) {\n    const { ui, attrs } = useUI(\"modal\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const isOpen = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const transitionClass = computed(() => {\n      if (!props.transition) {\n        return {};\n      }\n      return {\n        ...ui.value.transition\n      };\n    });\n    function close(value) {\n      if (props.preventClose) {\n        emit(\"close-prevented\");\n        return;\n      }\n      isOpen.value = value;\n      emit(\"close\");\n    }\n    provideUseId(() => useId('$HAJMhYDoe7'));\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      isOpen,\n      transitionClass,\n      close\n    };\n  }\n});\n\nimport { normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, createVNode as _createVNode } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_TransitionChild = _resolveComponent(\"TransitionChild\")\n  const _component_HDialogPanel = _resolveComponent(\"HDialogPanel\")\n  const _component_HDialog = _resolveComponent(\"HDialog\")\n  const _component_TransitionRoot = _resolveComponent(\"TransitionRoot\")\n\n  return (_openBlock(), _createBlock(_component_TransitionRoot, {\n    appear: _ctx.appear,\n    show: _ctx.isOpen,\n    as: \"template\"\n  }, {\n    default: _withCtx(() => [\n      _createVNode(_component_HDialog, _mergeProps({\n        class: _ctx.ui.wrapper\n      }, _ctx.attrs, { onClose: _ctx.close }), {\n        default: _withCtx(() => [\n          (_ctx.overlay)\n            ? (_openBlock(), _createBlock(_component_TransitionChild, _mergeProps({\n                key: 0,\n                as: \"template\",\n                appear: _ctx.appear\n              }, _ctx.ui.overlay.transition), {\n                default: _withCtx(() => [\n                  _createElementVNode(\"div\", {\n                    class: _normalizeClass([_ctx.ui.overlay.base, _ctx.ui.overlay.background])\n                  }, null, 2)\n                ]),\n                _: 1\n              }, 16, [\"appear\"]))\n            : _createCommentVNode(\"\", true),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_ctx.ui.inner)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([_ctx.ui.container, !_ctx.fullscreen && _ctx.ui.padding])\n            }, [\n              _createVNode(_component_TransitionChild, _mergeProps({\n                as: \"template\",\n                appear: _ctx.appear\n              }, _ctx.transitionClass), {\n                default: _withCtx(() => [\n                  _createVNode(_component_HDialogPanel, {\n                    class: _normalizeClass([\n                _ctx.ui.base,\n                _ctx.ui.background,\n                _ctx.ui.ring,\n                _ctx.ui.shadow,\n                _ctx.fullscreen ? _ctx.ui.fullscreen : [_ctx.ui.width, _ctx.ui.height, _ctx.ui.rounded, _ctx.ui.margin],\n              ])\n                  }, {\n                    default: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, \"default\")\n                    ]),\n                    _: 3\n                  }, 8, [\"class\"])\n                ]),\n                _: 3\n              }, 16, [\"appear\"])\n            ], 2)\n          ], 2)\n        ]),\n        _: 3\n      }, 16, [\"class\", \"onClose\"])\n    ]),\n    _: 3\n  }, 8, [\"appear\", \"show\"]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172179871,
-      "end": 1714172179872,
+      "start": 1714173353793,
+      "end": 1714173353794,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -180,8 +180,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useId } from '#app/composables/id';\n\nimport { computed, toRef, defineComponent } from \"vue\";\nimport { Dialog as HDialog, DialogPanel as HDialogPanel, TransitionRoot, TransitionChild, provideUseId } from \"@headlessui/vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { modal } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.modal, modal);\nconst _sfc_main = defineComponent({\n  components: {\n    HDialog,\n    HDialogPanel,\n    TransitionRoot,\n    TransitionChild\n  },\n  inheritAttrs: false,\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: false\n    },\n    appear: {\n      type: Boolean,\n      default: false\n    },\n    overlay: {\n      type: Boolean,\n      default: true\n    },\n    transition: {\n      type: Boolean,\n      default: true\n    },\n    preventClose: {\n      type: Boolean,\n      default: false\n    },\n    fullscreen: {\n      type: Boolean,\n      default: false\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\", \"close\", \"close-prevented\"],\n  setup(props, { emit }) {\n    const { ui, attrs } = useUI(\"modal\", toRef(props, \"ui\"), config, toRef(props, \"class\"));\n    const isOpen = computed({\n      get() {\n        return props.modelValue;\n      },\n      set(value) {\n        emit(\"update:modelValue\", value);\n      }\n    });\n    const transitionClass = computed(() => {\n      if (!props.transition) {\n        return {};\n      }\n      return {\n        ...ui.value.transition\n      };\n    });\n    function close(value) {\n      if (props.preventClose) {\n        emit(\"close-prevented\");\n        return;\n      }\n      isOpen.value = value;\n      emit(\"close\");\n    }\n    provideUseId(() => useId('$HAJMhYDoe7'));\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      isOpen,\n      transitionClass,\n      close\n    };\n  }\n});\n\nimport { normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, renderSlot as _renderSlot, createVNode as _createVNode } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_TransitionChild = _resolveComponent(\"TransitionChild\")\n  const _component_HDialogPanel = _resolveComponent(\"HDialogPanel\")\n  const _component_HDialog = _resolveComponent(\"HDialog\")\n  const _component_TransitionRoot = _resolveComponent(\"TransitionRoot\")\n\n  return (_openBlock(), _createBlock(_component_TransitionRoot, {\n    appear: _ctx.appear,\n    show: _ctx.isOpen,\n    as: \"template\"\n  }, {\n    default: _withCtx(() => [\n      _createVNode(_component_HDialog, _mergeProps({\n        class: _ctx.ui.wrapper\n      }, _ctx.attrs, { onClose: _ctx.close }), {\n        default: _withCtx(() => [\n          (_ctx.overlay)\n            ? (_openBlock(), _createBlock(_component_TransitionChild, _mergeProps({\n                key: 0,\n                as: \"template\",\n                appear: _ctx.appear\n              }, _ctx.ui.overlay.transition), {\n                default: _withCtx(() => [\n                  _createElementVNode(\"div\", {\n                    class: _normalizeClass([_ctx.ui.overlay.base, _ctx.ui.overlay.background])\n                  }, null, 2)\n                ]),\n                _: 1\n              }, 16, [\"appear\"]))\n            : _createCommentVNode(\"\", true),\n          _createElementVNode(\"div\", {\n            class: _normalizeClass(_ctx.ui.inner)\n          }, [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass([_ctx.ui.container, !_ctx.fullscreen && _ctx.ui.padding])\n            }, [\n              _createVNode(_component_TransitionChild, _mergeProps({\n                as: \"template\",\n                appear: _ctx.appear\n              }, _ctx.transitionClass), {\n                default: _withCtx(() => [\n                  _createVNode(_component_HDialogPanel, {\n                    class: _normalizeClass([\n                _ctx.ui.base,\n                _ctx.ui.background,\n                _ctx.ui.ring,\n                _ctx.ui.shadow,\n                _ctx.fullscreen ? _ctx.ui.fullscreen : [_ctx.ui.width, _ctx.ui.height, _ctx.ui.rounded, _ctx.ui.margin],\n              ])\n                  }, {\n                    default: _withCtx(() => [\n                      _renderSlot(_ctx.$slots, \"default\")\n                    ]),\n                    _: 3\n                  }, 8, [\"class\"])\n                ]),\n                _: 3\n              }, 16, [\"appear\"])\n            ], 2)\n          ], 2)\n        ]),\n        _: 3\n      }, 16, [\"class\", \"onClose\"])\n    ]),\n    _: 3\n  }, 8, [\"appear\", \"show\"]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1714172179872,
-      "end": 1714172179873,
+      "start": 1714173353794,
+      "end": 1714173353795,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -194,50 +194,50 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172179873,
-      "end": 1714172179873,
+      "start": 1714173353795,
+      "end": 1714173353795,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172179873,
-      "end": 1714172179873,
+      "start": 1714173353795,
+      "end": 1714173353795,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714172179873,
-      "end": 1714172179873,
+      "start": 1714173353795,
+      "end": 1714173353795,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714172179873,
-      "end": 1714172179873,
+      "start": 1714173353795,
+      "end": 1714173353795,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714172179873,
-      "end": 1714172179873,
+      "start": 1714173353795,
+      "end": 1714173353795,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172179873,
-      "end": 1714172179873,
+      "start": 1714173353795,
+      "end": 1714173353795,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172179873,
-      "end": 1714172179873,
+      "start": 1714173353795,
+      "end": 1714173353795,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172179873,
-      "end": 1714172179873,
+      "start": 1714173353795,
+      "end": 1714173353795,
       "order": "normal"
     }
   ]

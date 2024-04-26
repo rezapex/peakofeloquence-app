@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport type { PropType } from 'vue'\nimport { getNuxtLinkProps } from '#ui/utils'\nimport type { Avatar } from '#ui/types'\nimport { card as cardConfig } from '#ui/ui.config'\nimport { NuxtLink } from '#components'\nimport type { NuxtLinkProps } from '#app'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'LandingTestimonial',\n  __ssrInlineRender: true,\n  props: {\n  icon: {\n    type: String,\n    default: undefined\n  },\n  quote: {\n    type: String,\n    required: true\n  },\n  author: {\n    type: Object as PropType<{\n      name: string\n      description?: string\n      avatar?: Avatar\n    } & NuxtLinkProps>,\n    default: undefined\n  },\n  card: {\n    type: Boolean,\n    default: true\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value & typeof cardConfig>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\n\n\nconst props = __props\n\nconst config = computed(() => {\n  const card: Record<string, string> = {}\n\n  if (!props.card) {\n    card.ring = ''\n    card.rounded = ''\n    card.background = ''\n    card.shadow = ''\n    card.divide = ''\n  }\n\n  const padding: any = props.card ? undefined : ''\n\n  return {\n    ...card,\n    body: {\n      base: 'flex flex-col',\n      padding\n    },\n    wrapper: 'relative',\n    quote: 'text-gray-600 dark:text-gray-300',\n    icon: {\n      wrapper: 'mb-6 flex',\n      base: 'w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white'\n    },\n    author: {\n      wrapper: 'flex items-center gap-3 mt-6 relative',\n      name: 'font-semibold text-gray-900 dark:text-white text-sm',\n      description: 'text-gray-500 dark:text-gray-400 text-sm',\n      avatar: {\n        base: '',\n        size: 'md' as const\n      }\n    }\n  }\n})\n\nconst { ui, attrs } = useUI('landing.testimonial', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_UCard = _resolveComponent(\"UCard\")!\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_UAvatar = _resolveComponent(\"UAvatar\")!\n\n  _push(_ssrRenderComponent(_component_UCard, _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs), { ui: _unref(ui) }, _attrs), {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(`<div${_scopeId}>`)\n        if (__props.icon || _ctx.$slots.icon) {\n          _push(`<div class=\"${\n            _ssrRenderClass(_unref(ui).icon.wrapper)\n          }\"${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n            _push(_ssrRenderComponent(_component_UIcon, {\n              name: (__props.icon as string),\n              class: _unref(ui).icon.base\n            }, null, _parent, _scopeId))\n          }, _push, _parent, _scopeId)\n          _push(`</div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        if (__props.quote || _ctx.$slots.quote) {\n          _push(`<q class=\"${\n            _ssrRenderClass(_unref(ui).quote)\n          }\"${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"quote\", {}, () => {\n            _push(`${_ssrInterpolate(__props.quote)}`)\n          }, _push, _parent, _scopeId)\n          _push(`</q>`)\n        } else {\n          _push(`<!---->`)\n        }\n        if (__props.author) {\n          _push(`<div class=\"${\n            _ssrRenderClass(_unref(ui).author.wrapper)\n          }\"${\n            _scopeId\n          }>`)\n          if (__props.author.avatar) {\n            _push(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n              alt: __props.author.name\n            }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n              class: _unref(ui).author.avatar.base\n            }), null, _parent, _scopeId))\n          } else {\n            _push(`<!---->`)\n          }\n          _push(`<div${_scopeId}>`)\n          if (__props.author.to) {\n            _push(_ssrRenderComponent(_unref(NuxtLink), _mergeProps({\n              \"aria-label\": __props.author.name\n            }, _unref(getNuxtLinkProps)(__props.author), {\n              class: \"focus:outline-none\",\n              tabindex: \"-1\"\n            }), {\n              default: _withCtx((_, _push, _parent, _scopeId) => {\n                if (_push) {\n                  _push(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId}></span>`)\n                } else {\n                  return [\n                    _createVNode(\"span\", {\n                      class: \"absolute inset-0\",\n                      \"aria-hidden\": \"true\"\n                    })\n                  ]\n                }\n              }),\n              _: 1\n            }, _parent, _scopeId))\n          } else {\n            _push(`<!---->`)\n          }\n          _push(`<p class=\"${\n            _ssrRenderClass(_unref(ui).author.name)\n          }\"${\n            _scopeId\n          }>${\n            _ssrInterpolate(__props.author.name)\n          }</p><p class=\"${\n            _ssrRenderClass(_unref(ui).author.description)\n          }\"${\n            _scopeId\n          }>${\n            _ssrInterpolate(__props.author.description)\n          }</p></div></div>`)\n        } else {\n          _push(`<!---->`)\n        }\n        _push(`</div>`)\n      } else {\n        return [\n          _createVNode(\"div\", null, [\n            (__props.icon || _ctx.$slots.icon)\n              ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).icon.wrapper\n                }, [\n                  _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                    _createVNode(_component_UIcon, {\n                      name: (__props.icon as string),\n                      class: _unref(ui).icon.base\n                    }, null, 8, [\"name\", \"class\"])\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true),\n            (__props.quote || _ctx.$slots.quote)\n              ? (_openBlock(), _createBlock(\"q\", {\n                  key: 1,\n                  class: _unref(ui).quote\n                }, [\n                  _renderSlot(_ctx.$slots, \"quote\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.quote), 1)\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true),\n            (__props.author)\n              ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).author.wrapper\n                }, [\n                  (__props.author.avatar)\n                    ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                        key: 0,\n                        alt: __props.author.name\n                      }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                        class: _unref(ui).author.avatar.base\n                      }), null, 16, [\"alt\", \"class\"]))\n                    : _createCommentVNode(\"\", true),\n                  _createVNode(\"div\", null, [\n                    (__props.author.to)\n                      ? (_openBlock(), _createBlock(_unref(NuxtLink), _mergeProps({\n                          key: 0,\n                          \"aria-label\": __props.author.name\n                        }, _unref(getNuxtLinkProps)(__props.author), {\n                          class: \"focus:outline-none\",\n                          tabindex: \"-1\"\n                        }), {\n                          default: _withCtx(() => [\n                            _createVNode(\"span\", {\n                              class: \"absolute inset-0\",\n                              \"aria-hidden\": \"true\"\n                            })\n                          ]),\n                          _: 1\n                        }, 16, [\"aria-label\"]))\n                      : _createCommentVNode(\"\", true),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.name\n                    }, _toDisplayString(__props.author.name), 3),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.description\n                    }, _toDisplayString(__props.author.description), 3)\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true)\n          ])\n        ]\n      }\n    }),\n    _: 3\n  }, _parent))\n}\n}\n\n})",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,63 +20,63 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714172189772,
-      "end": 1714172189772,
+      "start": 1714173365917,
+      "end": 1714173365917,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { getNuxtLinkProps } from \"#ui/utils\";\nimport { NuxtLink } from \"#components\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingTestimonial\",\n  __ssrInlineRender: true,\n  props: {\n    icon: {\n      type: String,\n      default: void 0\n    },\n    quote: {\n      type: String,\n      required: true\n    },\n    author: {\n      type: Object,\n      default: void 0\n    },\n    card: {\n      type: Boolean,\n      default: true\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const card = {};\n      if (!props.card) {\n        card.ring = \"\";\n        card.rounded = \"\";\n        card.background = \"\";\n        card.shadow = \"\";\n        card.divide = \"\";\n      }\n      const padding = props.card ? void 0 : \"\";\n      return {\n        ...card,\n        body: {\n          base: \"flex flex-col\",\n          padding\n        },\n        wrapper: \"relative\",\n        quote: \"text-gray-600 dark:text-gray-300\",\n        icon: {\n          wrapper: \"mb-6 flex\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        author: {\n          wrapper: \"flex items-center gap-3 mt-6 relative\",\n          name: \"font-semibold text-gray-900 dark:text-white text-sm\",\n          description: \"text-gray-500 dark:text-gray-400 text-sm\",\n          avatar: {\n            base: \"\",\n            size: \"md\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.testimonial\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UCard = _resolveComponent(\"UCard\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UAvatar = _resolveComponent(\"UAvatar\");\n      _push(_ssrRenderComponent(_component_UCard, _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), { ui: _unref(ui) }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div${_scopeId}>`);\n            if (__props.icon || _ctx.$slots.icon) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n                _push2(_ssrRenderComponent(_component_UIcon, {\n                  name: __props.icon,\n                  class: _unref(ui).icon.base\n                }, null, _parent2, _scopeId));\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.quote || _ctx.$slots.quote) {\n              _push2(`<q class=\"${_ssrRenderClass(_unref(ui).quote)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"quote\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.quote)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</q>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.author) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).author.wrapper)}\"${_scopeId}>`);\n              if (__props.author.avatar) {\n                _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                  alt: __props.author.name\n                }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                  class: _unref(ui).author.avatar.base\n                }), null, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<div${_scopeId}>`);\n              if (__props.author.to) {\n                _push2(_ssrRenderComponent(_unref(NuxtLink), _mergeProps({\n                  \"aria-label\": __props.author.name\n                }, _unref(getNuxtLinkProps)(__props.author), {\n                  class: \"focus:outline-none\",\n                  tabindex: \"-1\"\n                }), {\n                  default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                    if (_push3) {\n                      _push3(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId2}></span>`);\n                    } else {\n                      return [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ];\n                    }\n                  }),\n                  _: 1\n                }, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).author.name)}\"${_scopeId}>${_ssrInterpolate(__props.author.name)}</p><p class=\"${_ssrRenderClass(_unref(ui).author.description)}\"${_scopeId}>${_ssrInterpolate(__props.author.description)}</p></div></div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n          } else {\n            return [\n              _createVNode(\"div\", null, [\n                __props.icon || _ctx.$slots.icon ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).icon.wrapper\n                }, [\n                  _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                    _createVNode(_component_UIcon, {\n                      name: __props.icon,\n                      class: _unref(ui).icon.base\n                    }, null, 8, [\"name\", \"class\"])\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.quote || _ctx.$slots.quote ? (_openBlock(), _createBlock(\"q\", {\n                  key: 1,\n                  class: _unref(ui).quote\n                }, [\n                  _renderSlot(_ctx.$slots, \"quote\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.quote), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.author ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).author.wrapper\n                }, [\n                  __props.author.avatar ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                    key: 0,\n                    alt: __props.author.name\n                  }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                    class: _unref(ui).author.avatar.base\n                  }), null, 16, [\"alt\", \"class\"])) : _createCommentVNode(\"\", true),\n                  _createVNode(\"div\", null, [\n                    __props.author.to ? (_openBlock(), _createBlock(_unref(NuxtLink), _mergeProps({\n                      key: 0,\n                      \"aria-label\": __props.author.name\n                    }, _unref(getNuxtLinkProps)(__props.author), {\n                      class: \"focus:outline-none\",\n                      tabindex: \"-1\"\n                    }), {\n                      default: _withCtx(() => [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ]),\n                      _: 1\n                    }, 16, [\"aria-label\"])) : _createCommentVNode(\"\", true),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.name\n                    }, _toDisplayString(__props.author.name), 3),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.description\n                    }, _toDisplayString(__props.author.description), 3)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ])\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172189772,
-      "end": 1714172189996,
+      "start": 1714173365917,
+      "end": 1714173366187,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -97,69 +97,69 @@
     },
     {
       "name": "vite:json",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714172189996,
-      "end": 1714172189996,
+      "start": 1714173366187,
+      "end": 1714173366187,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
       "result": "import NuxtLink from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { getNuxtLinkProps } from \"#ui/utils\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingTestimonial\",\n  __ssrInlineRender: true,\n  props: {\n    icon: {\n      type: String,\n      default: void 0\n    },\n    quote: {\n      type: String,\n      required: true\n    },\n    author: {\n      type: Object,\n      default: void 0\n    },\n    card: {\n      type: Boolean,\n      default: true\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const card = {};\n      if (!props.card) {\n        card.ring = \"\";\n        card.rounded = \"\";\n        card.background = \"\";\n        card.shadow = \"\";\n        card.divide = \"\";\n      }\n      const padding = props.card ? void 0 : \"\";\n      return {\n        ...card,\n        body: {\n          base: \"flex flex-col\",\n          padding\n        },\n        wrapper: \"relative\",\n        quote: \"text-gray-600 dark:text-gray-300\",\n        icon: {\n          wrapper: \"mb-6 flex\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        author: {\n          wrapper: \"flex items-center gap-3 mt-6 relative\",\n          name: \"font-semibold text-gray-900 dark:text-white text-sm\",\n          description: \"text-gray-500 dark:text-gray-400 text-sm\",\n          avatar: {\n            base: \"\",\n            size: \"md\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.testimonial\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UCard = _resolveComponent(\"UCard\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UAvatar = _resolveComponent(\"UAvatar\");\n      _push(_ssrRenderComponent(_component_UCard, _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), { ui: _unref(ui) }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div${_scopeId}>`);\n            if (__props.icon || _ctx.$slots.icon) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n                _push2(_ssrRenderComponent(_component_UIcon, {\n                  name: __props.icon,\n                  class: _unref(ui).icon.base\n                }, null, _parent2, _scopeId));\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.quote || _ctx.$slots.quote) {\n              _push2(`<q class=\"${_ssrRenderClass(_unref(ui).quote)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"quote\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.quote)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</q>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.author) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).author.wrapper)}\"${_scopeId}>`);\n              if (__props.author.avatar) {\n                _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                  alt: __props.author.name\n                }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                  class: _unref(ui).author.avatar.base\n                }), null, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<div${_scopeId}>`);\n              if (__props.author.to) {\n                _push2(_ssrRenderComponent(_unref(NuxtLink), _mergeProps({\n                  \"aria-label\": __props.author.name\n                }, _unref(getNuxtLinkProps)(__props.author), {\n                  class: \"focus:outline-none\",\n                  tabindex: \"-1\"\n                }), {\n                  default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                    if (_push3) {\n                      _push3(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId2}></span>`);\n                    } else {\n                      return [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ];\n                    }\n                  }),\n                  _: 1\n                }, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).author.name)}\"${_scopeId}>${_ssrInterpolate(__props.author.name)}</p><p class=\"${_ssrRenderClass(_unref(ui).author.description)}\"${_scopeId}>${_ssrInterpolate(__props.author.description)}</p></div></div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n          } else {\n            return [\n              _createVNode(\"div\", null, [\n                __props.icon || _ctx.$slots.icon ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).icon.wrapper\n                }, [\n                  _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                    _createVNode(_component_UIcon, {\n                      name: __props.icon,\n                      class: _unref(ui).icon.base\n                    }, null, 8, [\"name\", \"class\"])\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.quote || _ctx.$slots.quote ? (_openBlock(), _createBlock(\"q\", {\n                  key: 1,\n                  class: _unref(ui).quote\n                }, [\n                  _renderSlot(_ctx.$slots, \"quote\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.quote), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.author ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).author.wrapper\n                }, [\n                  __props.author.avatar ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                    key: 0,\n                    alt: __props.author.name\n                  }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                    class: _unref(ui).author.avatar.base\n                  }), null, 16, [\"alt\", \"class\"])) : _createCommentVNode(\"\", true),\n                  _createVNode(\"div\", null, [\n                    __props.author.to ? (_openBlock(), _createBlock(_unref(NuxtLink), _mergeProps({\n                      key: 0,\n                      \"aria-label\": __props.author.name\n                    }, _unref(getNuxtLinkProps)(__props.author), {\n                      class: \"focus:outline-none\",\n                      tabindex: \"-1\"\n                    }), {\n                      default: _withCtx(() => [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ]),\n                      _: 1\n                    }, 16, [\"aria-label\"])) : _createCommentVNode(\"\", true),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.name\n                    }, _toDisplayString(__props.author.name), 3),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.description\n                    }, _toDisplayString(__props.author.description), 3)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ])\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172189996,
-      "end": 1714172189998,
+      "start": 1714173366187,
+      "end": 1714173366189,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -172,81 +172,81 @@
     },
     {
       "name": "replace",
-      "start": 1714172189998,
-      "end": 1714172189998,
+      "start": 1714173366189,
+      "end": 1714173366189,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714172189998,
-      "end": 1714172189998,
+      "start": 1714173366189,
+      "end": 1714173366189,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714172189998,
-      "end": 1714172189999,
+      "start": 1714173366189,
+      "end": 1714173366190,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714172189999,
-      "end": 1714172189999,
+      "start": 1714173366190,
+      "end": 1714173366190,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport NuxtLink from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { getNuxtLinkProps } from \"#ui/utils\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingTestimonial\",\n  __ssrInlineRender: true,\n  props: {\n    icon: {\n      type: String,\n      default: void 0\n    },\n    quote: {\n      type: String,\n      required: true\n    },\n    author: {\n      type: Object,\n      default: void 0\n    },\n    card: {\n      type: Boolean,\n      default: true\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const card = {};\n      if (!props.card) {\n        card.ring = \"\";\n        card.rounded = \"\";\n        card.background = \"\";\n        card.shadow = \"\";\n        card.divide = \"\";\n      }\n      const padding = props.card ? void 0 : \"\";\n      return {\n        ...card,\n        body: {\n          base: \"flex flex-col\",\n          padding\n        },\n        wrapper: \"relative\",\n        quote: \"text-gray-600 dark:text-gray-300\",\n        icon: {\n          wrapper: \"mb-6 flex\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        author: {\n          wrapper: \"flex items-center gap-3 mt-6 relative\",\n          name: \"font-semibold text-gray-900 dark:text-white text-sm\",\n          description: \"text-gray-500 dark:text-gray-400 text-sm\",\n          avatar: {\n            base: \"\",\n            size: \"md\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.testimonial\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UCard = _resolveComponent(\"UCard\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UAvatar = _resolveComponent(\"UAvatar\");\n      _push(_ssrRenderComponent(_component_UCard, _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), { ui: _unref(ui) }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div${_scopeId}>`);\n            if (__props.icon || _ctx.$slots.icon) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n                _push2(_ssrRenderComponent(_component_UIcon, {\n                  name: __props.icon,\n                  class: _unref(ui).icon.base\n                }, null, _parent2, _scopeId));\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.quote || _ctx.$slots.quote) {\n              _push2(`<q class=\"${_ssrRenderClass(_unref(ui).quote)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"quote\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.quote)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</q>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.author) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).author.wrapper)}\"${_scopeId}>`);\n              if (__props.author.avatar) {\n                _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                  alt: __props.author.name\n                }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                  class: _unref(ui).author.avatar.base\n                }), null, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<div${_scopeId}>`);\n              if (__props.author.to) {\n                _push2(_ssrRenderComponent(_unref(NuxtLink), _mergeProps({\n                  \"aria-label\": __props.author.name\n                }, _unref(getNuxtLinkProps)(__props.author), {\n                  class: \"focus:outline-none\",\n                  tabindex: \"-1\"\n                }), {\n                  default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                    if (_push3) {\n                      _push3(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId2}></span>`);\n                    } else {\n                      return [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ];\n                    }\n                  }),\n                  _: 1\n                }, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).author.name)}\"${_scopeId}>${_ssrInterpolate(__props.author.name)}</p><p class=\"${_ssrRenderClass(_unref(ui).author.description)}\"${_scopeId}>${_ssrInterpolate(__props.author.description)}</p></div></div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n          } else {\n            return [\n              _createVNode(\"div\", null, [\n                __props.icon || _ctx.$slots.icon ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).icon.wrapper\n                }, [\n                  _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                    _createVNode(_component_UIcon, {\n                      name: __props.icon,\n                      class: _unref(ui).icon.base\n                    }, null, 8, [\"name\", \"class\"])\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.quote || _ctx.$slots.quote ? (_openBlock(), _createBlock(\"q\", {\n                  key: 1,\n                  class: _unref(ui).quote\n                }, [\n                  _renderSlot(_ctx.$slots, \"quote\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.quote), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.author ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).author.wrapper\n                }, [\n                  __props.author.avatar ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                    key: 0,\n                    alt: __props.author.name\n                  }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                    class: _unref(ui).author.avatar.base\n                  }), null, 16, [\"alt\", \"class\"])) : _createCommentVNode(\"\", true),\n                  _createVNode(\"div\", null, [\n                    __props.author.to ? (_openBlock(), _createBlock(_unref(NuxtLink), _mergeProps({\n                      key: 0,\n                      \"aria-label\": __props.author.name\n                    }, _unref(getNuxtLinkProps)(__props.author), {\n                      class: \"focus:outline-none\",\n                      tabindex: \"-1\"\n                    }), {\n                      default: _withCtx(() => [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ]),\n                      _: 1\n                    }, 16, [\"aria-label\"])) : _createCommentVNode(\"\", true),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.name\n                    }, _toDisplayString(__props.author.name), 3),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.description\n                    }, _toDisplayString(__props.author.description), 3)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ])\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172189999,
-      "end": 1714172190001,
+      "start": 1714173366190,
+      "end": 1714173366196,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -260,8 +260,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport NuxtLink from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { getNuxtLinkProps } from \"#ui/utils\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingTestimonial\",\n  __ssrInlineRender: true,\n  props: {\n    icon: {\n      type: String,\n      default: void 0\n    },\n    quote: {\n      type: String,\n      required: true\n    },\n    author: {\n      type: Object,\n      default: void 0\n    },\n    card: {\n      type: Boolean,\n      default: true\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const card = {};\n      if (!props.card) {\n        card.ring = \"\";\n        card.rounded = \"\";\n        card.background = \"\";\n        card.shadow = \"\";\n        card.divide = \"\";\n      }\n      const padding = props.card ? void 0 : \"\";\n      return {\n        ...card,\n        body: {\n          base: \"flex flex-col\",\n          padding\n        },\n        wrapper: \"relative\",\n        quote: \"text-gray-600 dark:text-gray-300\",\n        icon: {\n          wrapper: \"mb-6 flex\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        author: {\n          wrapper: \"flex items-center gap-3 mt-6 relative\",\n          name: \"font-semibold text-gray-900 dark:text-white text-sm\",\n          description: \"text-gray-500 dark:text-gray-400 text-sm\",\n          avatar: {\n            base: \"\",\n            size: \"md\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.testimonial\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UCard = _resolveComponent(\"UCard\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UAvatar = _resolveComponent(\"UAvatar\");\n      _push(_ssrRenderComponent(_component_UCard, _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), { ui: _unref(ui) }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div${_scopeId}>`);\n            if (__props.icon || _ctx.$slots.icon) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n                _push2(_ssrRenderComponent(_component_UIcon, {\n                  name: __props.icon,\n                  class: _unref(ui).icon.base\n                }, null, _parent2, _scopeId));\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.quote || _ctx.$slots.quote) {\n              _push2(`<q class=\"${_ssrRenderClass(_unref(ui).quote)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"quote\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.quote)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</q>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.author) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).author.wrapper)}\"${_scopeId}>`);\n              if (__props.author.avatar) {\n                _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                  alt: __props.author.name\n                }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                  class: _unref(ui).author.avatar.base\n                }), null, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<div${_scopeId}>`);\n              if (__props.author.to) {\n                _push2(_ssrRenderComponent(_unref(NuxtLink), _mergeProps({\n                  \"aria-label\": __props.author.name\n                }, _unref(getNuxtLinkProps)(__props.author), {\n                  class: \"focus:outline-none\",\n                  tabindex: \"-1\"\n                }), {\n                  default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                    if (_push3) {\n                      _push3(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId2}></span>`);\n                    } else {\n                      return [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ];\n                    }\n                  }),\n                  _: 1\n                }, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).author.name)}\"${_scopeId}>${_ssrInterpolate(__props.author.name)}</p><p class=\"${_ssrRenderClass(_unref(ui).author.description)}\"${_scopeId}>${_ssrInterpolate(__props.author.description)}</p></div></div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n          } else {\n            return [\n              _createVNode(\"div\", null, [\n                __props.icon || _ctx.$slots.icon ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).icon.wrapper\n                }, [\n                  _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                    _createVNode(_component_UIcon, {\n                      name: __props.icon,\n                      class: _unref(ui).icon.base\n                    }, null, 8, [\"name\", \"class\"])\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.quote || _ctx.$slots.quote ? (_openBlock(), _createBlock(\"q\", {\n                  key: 1,\n                  class: _unref(ui).quote\n                }, [\n                  _renderSlot(_ctx.$slots, \"quote\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.quote), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.author ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).author.wrapper\n                }, [\n                  __props.author.avatar ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                    key: 0,\n                    alt: __props.author.name\n                  }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                    class: _unref(ui).author.avatar.base\n                  }), null, 16, [\"alt\", \"class\"])) : _createCommentVNode(\"\", true),\n                  _createVNode(\"div\", null, [\n                    __props.author.to ? (_openBlock(), _createBlock(_unref(NuxtLink), _mergeProps({\n                      key: 0,\n                      \"aria-label\": __props.author.name\n                    }, _unref(getNuxtLinkProps)(__props.author), {\n                      class: \"focus:outline-none\",\n                      tabindex: \"-1\"\n                    }), {\n                      default: _withCtx(() => [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ]),\n                      _: 1\n                    }, 16, [\"aria-label\"])) : _createCommentVNode(\"\", true),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.name\n                    }, _toDisplayString(__props.author.name), 3),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.description\n                    }, _toDisplayString(__props.author.description), 3)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ])\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172189999,
-      "end": 1714172190001,
+      "start": 1714173366190,
+      "end": 1714173366196,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -274,39 +274,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366196,
+      "end": 1714173366196,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366196,
+      "end": 1714173366196,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366196,
+      "end": 1714173366196,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366196,
+      "end": 1714173366196,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366196,
+      "end": 1714173366197,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Card.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue\";\nimport { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport NuxtLink from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, withCtx as _withCtx, createVNode as _createVNode, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode } from \"vue\";\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport { getNuxtLinkProps } from \"#ui/utils\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"LandingTestimonial\",\n  __ssrInlineRender: true,\n  props: {\n    icon: {\n      type: String,\n      default: void 0\n    },\n    quote: {\n      type: String,\n      required: true\n    },\n    author: {\n      type: Object,\n      default: void 0\n    },\n    card: {\n      type: Boolean,\n      default: true\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const card = {};\n      if (!props.card) {\n        card.ring = \"\";\n        card.rounded = \"\";\n        card.background = \"\";\n        card.shadow = \"\";\n        card.divide = \"\";\n      }\n      const padding = props.card ? void 0 : \"\";\n      return {\n        ...card,\n        body: {\n          base: \"flex flex-col\",\n          padding\n        },\n        wrapper: \"relative\",\n        quote: \"text-gray-600 dark:text-gray-300\",\n        icon: {\n          wrapper: \"mb-6 flex\",\n          base: \"w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white\"\n        },\n        author: {\n          wrapper: \"flex items-center gap-3 mt-6 relative\",\n          name: \"font-semibold text-gray-900 dark:text-white text-sm\",\n          description: \"text-gray-500 dark:text-gray-400 text-sm\",\n          avatar: {\n            base: \"\",\n            size: \"md\"\n          }\n        }\n      };\n    });\n    const { ui, attrs } = useUI(\"landing.testimonial\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_UCard = __nuxt_component_0;\n      const _component_UIcon = __nuxt_component_1;\n      const _component_UAvatar = __nuxt_component_2;\n      _push(_ssrRenderComponent(_component_UCard, _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs), { ui: _unref(ui) }, _attrs), {\n        default: _withCtx((_, _push2, _parent2, _scopeId) => {\n          if (_push2) {\n            _push2(`<div${_scopeId}>`);\n            if (__props.icon || _ctx.$slots.icon) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).icon.wrapper)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"icon\", {}, () => {\n                _push2(_ssrRenderComponent(_component_UIcon, {\n                  name: __props.icon,\n                  class: _unref(ui).icon.base\n                }, null, _parent2, _scopeId));\n              }, _push2, _parent2, _scopeId);\n              _push2(`</div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.quote || _ctx.$slots.quote) {\n              _push2(`<q class=\"${_ssrRenderClass(_unref(ui).quote)}\"${_scopeId}>`);\n              _ssrRenderSlot(_ctx.$slots, \"quote\", {}, () => {\n                _push2(`${_ssrInterpolate(__props.quote)}`);\n              }, _push2, _parent2, _scopeId);\n              _push2(`</q>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            if (__props.author) {\n              _push2(`<div class=\"${_ssrRenderClass(_unref(ui).author.wrapper)}\"${_scopeId}>`);\n              if (__props.author.avatar) {\n                _push2(_ssrRenderComponent(_component_UAvatar, _mergeProps({\n                  alt: __props.author.name\n                }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                  class: _unref(ui).author.avatar.base\n                }), null, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<div${_scopeId}>`);\n              if (__props.author.to) {\n                _push2(_ssrRenderComponent(_unref(NuxtLink), _mergeProps({\n                  \"aria-label\": __props.author.name\n                }, _unref(getNuxtLinkProps)(__props.author), {\n                  class: \"focus:outline-none\",\n                  tabindex: \"-1\"\n                }), {\n                  default: _withCtx((_2, _push3, _parent3, _scopeId2) => {\n                    if (_push3) {\n                      _push3(`<span class=\"absolute inset-0\" aria-hidden=\"true\"${_scopeId2}></span>`);\n                    } else {\n                      return [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ];\n                    }\n                  }),\n                  _: 1\n                }, _parent2, _scopeId));\n              } else {\n                _push2(`<!---->`);\n              }\n              _push2(`<p class=\"${_ssrRenderClass(_unref(ui).author.name)}\"${_scopeId}>${_ssrInterpolate(__props.author.name)}</p><p class=\"${_ssrRenderClass(_unref(ui).author.description)}\"${_scopeId}>${_ssrInterpolate(__props.author.description)}</p></div></div>`);\n            } else {\n              _push2(`<!---->`);\n            }\n            _push2(`</div>`);\n          } else {\n            return [\n              _createVNode(\"div\", null, [\n                __props.icon || _ctx.$slots.icon ? (_openBlock(), _createBlock(\"div\", {\n                  key: 0,\n                  class: _unref(ui).icon.wrapper\n                }, [\n                  _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                    _createVNode(_component_UIcon, {\n                      name: __props.icon,\n                      class: _unref(ui).icon.base\n                    }, null, 8, [\"name\", \"class\"])\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.quote || _ctx.$slots.quote ? (_openBlock(), _createBlock(\"q\", {\n                  key: 1,\n                  class: _unref(ui).quote\n                }, [\n                  _renderSlot(_ctx.$slots, \"quote\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.quote), 1)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true),\n                __props.author ? (_openBlock(), _createBlock(\"div\", {\n                  key: 2,\n                  class: _unref(ui).author.wrapper\n                }, [\n                  __props.author.avatar ? (_openBlock(), _createBlock(_component_UAvatar, _mergeProps({\n                    key: 0,\n                    alt: __props.author.name\n                  }, { size: _unref(ui).author.avatar.size, ...__props.author.avatar }, {\n                    class: _unref(ui).author.avatar.base\n                  }), null, 16, [\"alt\", \"class\"])) : _createCommentVNode(\"\", true),\n                  _createVNode(\"div\", null, [\n                    __props.author.to ? (_openBlock(), _createBlock(_unref(NuxtLink), _mergeProps({\n                      key: 0,\n                      \"aria-label\": __props.author.name\n                    }, _unref(getNuxtLinkProps)(__props.author), {\n                      class: \"focus:outline-none\",\n                      tabindex: \"-1\"\n                    }), {\n                      default: _withCtx(() => [\n                        _createVNode(\"span\", {\n                          class: \"absolute inset-0\",\n                          \"aria-hidden\": \"true\"\n                        })\n                      ]),\n                      _: 1\n                    }, 16, [\"aria-label\"])) : _createCommentVNode(\"\", true),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.name\n                    }, _toDisplayString(__props.author.name), 3),\n                    _createVNode(\"p\", {\n                      class: _unref(ui).author.description\n                    }, _toDisplayString(__props.author.description), 3)\n                  ])\n                ], 2)) : _createCommentVNode(\"\", true)\n              ])\n            ];\n          }\n        }),\n        _: 3\n      }, _parent));\n    };\n  }\n});\n",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366197,
+      "end": 1714173366197,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -319,20 +319,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366197,
+      "end": 1714173366197,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366197,
+      "end": 1714173366197,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714172190001,
-      "end": 1714172190001,
+      "start": 1714173366197,
+      "end": 1714173366197,
       "order": "normal"
     }
   ]
