@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <header :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <slot name=\"top\" />\n\n    <UContainer :class=\"ui.container\">\n      <div :class=\"ui.left\">\n        <slot name=\"left\">\n          <NuxtLink :to=\"to\" :aria-label=\"ariaLabel\" :class=\"ui.logo\">\n            <slot name=\"logo\">\n              {{ title || 'Nuxt UI Pro' }}\n            </slot>\n          </NuxtLink>\n        </slot>\n      </div>\n\n      <slot name=\"center\">\n        <UHeaderLinks :links=\"links\" :class=\"ui.center\" />\n      </slot>\n\n      <div :class=\"ui.right\">\n        <slot name=\"right\" />\n\n        <slot name=\"panel-button\" :open=\"isHeaderDialogOpen\">\n          <UButton\n            v-if=\"links.length || $slots.panel\"\n            :class=\"ui.button.base\"\n            v-bind=\"($ui?.button?.secondary as any)\"\n            :aria-label=\"`${isHeaderDialogOpen ? 'Close' : 'Open'} Menu`\"\n            :icon=\"isHeaderDialogOpen ? ui.button.icon.close : ui.button.icon.open\"\n            @click=\"isHeaderDialogOpen = !isHeaderDialogOpen\"\n          />\n        </slot>\n      </div>\n    </UContainer>\n\n    <slot name=\"bottom\" />\n\n    <TransitionRoot :show=\"isHeaderDialogOpen\" as=\"template\">\n      <Dialog as=\"div\" @close=\"isHeaderDialogOpen = false\">\n        <DialogPanel :class=\"ui.panel.wrapper\">\n          <div :class=\"[ui.panel.header, ui.wrapper]\">\n            <div :class=\"ui.container\">\n              <div :class=\"ui.left\">\n                <slot name=\"left\">\n                  <NuxtLink :to=\"to\" :aria-label=\"ariaLabel\" :class=\"ui.logo\">\n                    <slot name=\"logo\">\n                      {{ title || 'Nuxt UI Pro' }}\n                    </slot>\n                  </NuxtLink>\n                </slot>\n              </div>\n\n              <slot name=\"center\" />\n\n              <div :class=\"ui.right\">\n                <slot name=\"right\" />\n\n                <slot name=\"panel-button\" :open=\"isHeaderDialogOpen\">\n                  <UButton\n                    :class=\"ui.button.base\"\n                    v-bind=\"($ui?.button?.secondary as any)\"\n                    :aria-label=\"`${isHeaderDialogOpen ? 'Close' : 'Open'} Menu`\"\n                    :icon=\"isHeaderDialogOpen ? ui.button.icon.close : ui.button.icon.open\"\n                    @click=\"isHeaderDialogOpen = !isHeaderDialogOpen\"\n                  />\n                </slot>\n              </div>\n            </div>\n          </div>\n          <div :class=\"ui.panel.body\">\n            <slot name=\"panel\">\n              <UAsideLinks :links=\"links\" />\n            </slot>\n          </div>\n        </DialogPanel>\n      </Dialog>\n    </TransitionRoot>\n  </header>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\nimport { Dialog, DialogPanel, TransitionRoot, provideUseId } from '@headlessui/vue'\nimport { getSlotChildrenText } from '../../lib/slots'\nimport type { HeaderLink } from '#ui-pro/types'\nimport { useId } from '#imports'\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  wrapper: 'bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50',\n  container: 'flex items-center justify-between gap-3 h-[--header-height]',\n  left: 'lg:flex-1 flex items-center gap-1.5',\n  center: 'hidden lg:flex',\n  right: 'flex items-center justify-end lg:flex-1 gap-1.5',\n  logo: 'flex-shrink-0 font-bold text-xl text-gray-900 dark:text-white flex items-end gap-1.5',\n  panel: {\n    wrapper: 'fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden',\n    header: 'px-4 sm:px-6',\n    body: 'px-4 sm:px-6 pt-3 pb-6'\n  },\n  button: {\n    base: 'lg:hidden',\n    icon: {\n      open: appConfig.ui.icons.menu,\n      close: appConfig.ui.icons.close\n    }\n  }\n}))\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  to: {\n    type: String,\n    default: '/'\n  },\n  title: {\n    type: String,\n    default: undefined\n  },\n  links: {\n    type: Array as PropType<HeaderLink[]>,\n    default: () => []\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n})\n\nconst route = useRoute()\nconst slots = useSlots()\nconst { isHeaderDialogOpen } = useUIState()\nconst { ui, attrs } = useUI('header', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst ariaLabel = computed(() => (props.title || (slots.title && getSlotChildrenText(slots.title())) || 'Logo').trim())\n\nwatch(() => route.fullPath, () => {\n  isHeaderDialogOpen.value = false\n})\n\nprovideUseId(() => useId())\n</script>\n",
-      "start": 1714175002962,
-      "end": 1714175002977,
+      "start": 1714180700931,
+      "end": 1714180700946,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175002977,
-      "end": 1714175002977,
+      "start": 1714180700946,
+      "end": 1714180700946,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175002977,
-      "end": 1714175002977,
+      "start": 1714180700946,
+      "end": 1714180700946,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175002977,
-      "end": 1714175002977,
+      "start": 1714180700946,
+      "end": 1714180700946,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175002977,
-      "end": 1714175002977,
+      "start": 1714180700946,
+      "end": 1714180700946,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175002977,
-      "end": 1714175002977,
+      "start": 1714180700946,
+      "end": 1714180700946,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714175002977,
-      "end": 1714175002977,
+      "start": 1714180700946,
+      "end": 1714180700946,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714175002977,
-      "end": 1714175002977,
+      "start": 1714180700946,
+      "end": 1714180700946,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175002977,
-      "end": 1714175002977,
+      "start": 1714180700946,
+      "end": 1714180700946,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/header/Header.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/header/Header.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
-      "start": 1714175002977,
-      "end": 1714175003213,
+      "start": 1714180700946,
+      "end": 1714180701166,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,158 +68,158 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701166,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701166,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701166,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701166,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701166,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701166,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701166,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701166,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701166,
+      "end": 1714180701167,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175003214,
-      "end": 1714175003214,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175003215,
-      "end": 1714175003215,
+      "start": 1714180701167,
+      "end": 1714180701167,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175003215,
-      "end": 1714175003215,
+      "start": 1714180701168,
+      "end": 1714180701168,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175003215,
-      "end": 1714175003215,
+      "start": 1714180701168,
+      "end": 1714180701168,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175003215,
-      "end": 1714175003215,
+      "start": 1714180701169,
+      "end": 1714180701169,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175003215,
-      "end": 1714175003215,
+      "start": 1714180701169,
+      "end": 1714180701169,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175003215,
-      "end": 1714175003215,
+      "start": 1714180701169,
+      "end": 1714180701169,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175003215,
-      "end": 1714175003215,
+      "start": 1714180701169,
+      "end": 1714180701169,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175003215,
-      "end": 1714175003215,
+      "start": 1714180701169,
+      "end": 1714180701169,
       "order": "normal"
     }
   ]

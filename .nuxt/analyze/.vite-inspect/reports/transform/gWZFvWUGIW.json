@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <UContainer class=\"donation-container\">\n    <iframe\n      id='kofiframe'\n      src='https://ko-fi.com/peakofeloquence/?hidefeed=true&widget=true&embed=true&preview=true'\n      class='donation-iframe'\n      title='peakofeloquence'>\n    </iframe>\n  </UContainer>\n</template>\n\n<script>\nexport default {\n  // If there's any specific logic, it would go here.\n}\n</script>\n\n<style scoped>\n\nbody {\n  margin: 0;\n  font-family: 'Inter', sans-serif;\n  background: black; /* Define this variable in your global styles or here */\n}\n\n.donation-container {\n  max-width: 768px; /* You can adjust this */\n  margin: auto;\n  padding: 2rem;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n  border-radius: 8px;\n  overflow: hidden;\n  background: var(--color-base); /* Define this variable in your global styles or here */\n}\n\n.donation-iframe {\n  border: none;\n  width: 100%;\n  min-height: 712px; /* Adjust height as necessary */\n  background: black; /* Ensure background blends in or contrasts nicely */\n}\n\n/* Apply the grid only if necessary, if you want to keep the background grid pattern */\n.landing-grid {\n  background-size: cover; /* Cover the entire area */\n  background-image:\n    linear-gradient(to right, rgba(var(--color-grid-line), 0.5) 1px, transparent 1px),\n    linear-gradient(to bottom, rgba(var(--color-grid-line), 0.5) 1px, transparent 1px);\n}\n\n/* Theming for dark mode */\n@media (prefers-color-scheme: dark) {\n  .dark .landing-grid {\n    background-image:\n      linear-gradient(to right, rgba(var(--color-grid-line-dark), 0.5) 1px, transparent 1px),\n      linear-gradient(to bottom, rgba(var(--color-grid-line-dark), 0.5) 1px, transparent 1px);\n  }\n\n  .donation-container {\n    background: var(--color-base-dark); /* Define this for dark mode */\n  }\n}\n</style>\n",
-      "start": 1714175001826,
-      "end": 1714175001850,
+      "start": 1714180699787,
+      "end": 1714180699806,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175001850,
-      "end": 1714175001850,
+      "start": 1714180699806,
+      "end": 1714180699806,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175001850,
-      "end": 1714175001850,
+      "start": 1714180699806,
+      "end": 1714180699806,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175001850,
-      "end": 1714175001850,
+      "start": 1714180699806,
+      "end": 1714180699806,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175001850,
-      "end": 1714175001850,
+      "start": 1714180699806,
+      "end": 1714180699806,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175001850,
-      "end": 1714175001850,
+      "start": 1714180699806,
+      "end": 1714180699806,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714175001850,
-      "end": 1714175001850,
+      "start": 1714180699806,
+      "end": 1714180699806,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714175001850,
-      "end": 1714175001850,
+      "start": 1714180699806,
+      "end": 1714180699806,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175001850,
-      "end": 1714175001850,
+      "start": 1714180699806,
+      "end": 1714180699806,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nconst _sfc_main = {\n  // If there's any specific logic, it would go here.\n}\n\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-df94c3ff\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"iframe\", {\n  id: \"kofiframe\",\n  src: \"https://ko-fi.com/peakofeloquence/?hidefeed=true&widget=true&embed=true&preview=true\",\n  class: \"donation-iframe\",\n  title: \"peakofeloquence\"\n}, null, -1))\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_UContainer = _resolveComponent(\"UContainer\")\n\n  return (_openBlock(), _createBlock(_component_UContainer, { class: \"donation-container\" }, {\n    default: _withCtx(() => [\n      _hoisted_1\n    ]),\n    _: 1\n  }))\n}\n\nimport \"/Users/rezajafar/peakofeloquence-app/pages/donate.vue?vue&type=style&index=0&scoped=df94c3ff&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-df94c3ff\"]])",
-      "start": 1714175001850,
-      "end": 1714175001851,
+      "start": 1714180699806,
+      "end": 1714180699807,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,123 +68,123 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175001851,
-      "end": 1714175001851,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175001851,
-      "end": 1714175001852,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175001852,
-      "end": 1714175001852,
+      "start": 1714180699807,
+      "end": 1714180699807,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
       "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
-      "start": 1714175001852,
-      "end": 1714175001852,
+      "start": 1714180699807,
+      "end": 1714180699808,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -197,38 +197,38 @@
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175001852,
-      "end": 1714175001852,
+      "start": 1714180699808,
+      "end": 1714180699808,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175001852,
-      "end": 1714175001852,
+      "start": 1714180699808,
+      "end": 1714180699808,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175001852,
-      "end": 1714175001852,
+      "start": 1714180699808,
+      "end": 1714180699808,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175001852,
-      "end": 1714175001852,
+      "start": 1714180699808,
+      "end": 1714180699808,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175001852,
-      "end": 1714175001852,
+      "start": 1714180699808,
+      "end": 1714180699808,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175001852,
-      "end": 1714175001852,
+      "start": 1714180699808,
+      "end": 1714180699808,
       "order": "normal"
     }
   ]

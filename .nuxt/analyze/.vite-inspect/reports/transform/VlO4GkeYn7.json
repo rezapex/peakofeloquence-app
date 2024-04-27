@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, renderSlot as _renderSlot, mergeProps as _mergeProps, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nimport type { PropType } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'CardGroup',\n  props: {\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  }\n},\n  setup(__props) {\n\nconst config = {\n  wrapper: 'grid sm:grid-cols-2 gap-4'\n}\n\n\n\nconst props = __props\n\nconst { ui, attrs } = useUI('content.cardGroup', undefined, config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    _renderSlot(_ctx.$slots, \"default\")\n  ], 16))\n}\n}\n\n})",
-      "start": 1714175001917,
-      "end": 1714175001917
+      "start": 1714180699903,
+      "end": 1714180699903
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175001917,
-      "end": 1714175001917,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175001917,
-      "end": 1714175001917,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175001917,
-      "end": 1714175001917,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175001917,
-      "end": 1714175001917,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175001917,
-      "end": 1714175001917,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, mergeProps as _mergeProps, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"CardGroup\",\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"grid sm:grid-cols-2 gap-4\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.cardGroup\", void 0, config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _renderSlot(_ctx.$slots, \"default\")\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714175001917,
-      "end": 1714175002340,
+      "start": 1714180699903,
+      "end": 1714180700523,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175002340,
-      "end": 1714175002341,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { toRef } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, mergeProps as _mergeProps, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"CardGroup\",\n  props: {\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    }\n  },\n  setup(__props) {\n    const config = {\n      wrapper: \"grid sm:grid-cols-2 gap-4\"\n    };\n    const props = __props;\n    const { ui, attrs } = useUI(\"content.cardGroup\", void 0, config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _renderSlot(_ctx.$slots, \"default\")\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714175002341,
-      "end": 1714175002342,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,50 +192,50 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700523,
+      "end": 1714180700523,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700523,
+      "end": 1714180700524,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700524,
+      "end": 1714180700524,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700524,
+      "end": 1714180700524,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700524,
+      "end": 1714180700524,
       "order": "normal"
     }
   ]

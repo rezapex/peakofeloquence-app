@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, createVNode as _createVNode, isRef as _isRef, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport type { PropType } from 'vue'\nimport { defu } from 'defu'\nimport { useBreakpoints, breakpointsTailwind } from '@vueuse/core'\nimport type { ParsedContent, NavItem, MarkdownNode } from '@nuxt/content/dist/runtime/types'\nimport type { Group, Command } from '#ui/types'\nimport type { ContentSearchLink } from '#ui-pro/types'\nimport type { UseFuseOptions } from '@vueuse/integrations/useFuse'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'ContentSearch',\n  props: {\n  modelValue: {\n    type: Boolean,\n    default: undefined\n  },\n  files: {\n    type: Array as PropType<ParsedContent[]>,\n    default: () => []\n  },\n  navigation: {\n    type: Array as PropType<NavItem[]>,\n    default: () => []\n  },\n  links: {\n    type: Array as PropType<ContentSearchLink[]>,\n    default: () => []\n  },\n  groups: {\n    type: Array as PropType<Group[]>,\n    default: () => []\n  },\n  fuse: {\n    type: Object as PropType<UseFuseOptions<Command>>,\n    default: () => ({})\n  },\n  hideColorMode: {\n    type: Boolean,\n    default: false\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  emits: ['update:modelValue'],\n  setup(__props, { expose: __expose, emit: __emit }) {\n\n\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  padding: 'p-0 sm:p-4',\n  rounded: 'rounded-none sm:rounded-lg',\n  width: 'sm:max-w-3xl',\n  height: 'h-dvh sm:h-[28rem]',\n  commandPalette: {\n    input: {\n      height: 'h-[--header-height] sm:h-12',\n      icon: {\n        size: 'h-5 w-5',\n        padding: 'ps-11'\n      }\n    },\n    group: {\n      command: {\n        // eslint-disable-next-line quotes\n        prefix: `!text-foreground after:content-['_>']`\n      }\n    },\n    container: 'scroll-py-10'\n  },\n  fileIcon: {\n    name: 'i-heroicons-document-text'\n  },\n  default: {\n    closeButton: {\n      icon: appConfig.ui.icons.close,\n      color: 'gray' as const,\n      variant: 'ghost' as const,\n      size: 'sm' as const\n    }\n  }\n}))\n\nconst props = __props\n\nconst emit = __emit\n\nconst router = useRouter()\nconst { navKeyFromPath } = useContentHelpers()\nconst { usingInput } = useShortcuts()\nconst { isContentSearchModalOpen } = useUIState()\nconst breakpoints = useBreakpoints(breakpointsTailwind)\nconst colorMode = useColorMode()\nconst { ui, attrs } = useUI('content.search', toRef(props, 'ui'), config, undefined, true)\n\nconst smallerThanSm = breakpoints.smaller('sm')\n\nconst commandPaletteRef = ref<HTMLElement & { query: Ref<string>, results: { item: Command }[] }>()\n\nfunction fileIcon (file: ParsedContent) {\n  if (file.icon) return file.icon\n  if (file.navigation?.icon) return file.navigation.icon\n  if (props.navigation) {\n    file.icon = navKeyFromPath(file._path as string, 'icon', props.navigation)\n  }\n  return file.icon || ui.value.fileIcon.name\n}\n\n// Computed\n\nconst isOpen = computed({\n  get () {\n    return props.modelValue !== undefined ? props.modelValue : isContentSearchModalOpen.value\n  },\n  set (value) {\n    props.modelValue !== undefined ? emit('update:modelValue', value) : (isContentSearchModalOpen.value = value)\n  }\n})\n\nconst fuse: ComputedRef<Partial<UseFuseOptions<Command>>> = computed(() => defu({}, props.fuse, {\n  fuseOptions: {\n    ignoreLocation: true,\n    includeMatches: true,\n    threshold: 0.1,\n    keys: [\n      { name: 'title', weight: 5 },\n      { name: 'label', weight: 5 },\n      { name: 'suffix', weight: 3 },\n      'children.children.value',\n      'children.children.children.value',\n      'children.children.children.children.value',\n      'children.children.children.children.children.value'\n    ]\n  },\n  resultLimit: 12\n}))\n\nfunction filter (query: string, commands: Command[]) {\n  if (!query) {\n    return commands?.filter(command => !command.child)\n  }\n\n  return commands\n}\n\nconst groups = computed(() => {\n  let navigationGroups: Group[] = []\n  if (props.navigation?.length) {\n    if (props.navigation.some(link => !!link.children?.length)) {\n      navigationGroups = (props.navigation || []).map(link => {\n        return {\n          key: link._path,\n          label: link.title,\n          commands: (props.files || []).filter(file => file._path?.startsWith(link._path)).flatMap(file => mapFile(file, link)),\n          filter\n        }\n      })\n    } else {\n      navigationGroups = [{\n        key: 'docs',\n        commands: (props.files || []).flatMap(file => mapFile(file)),\n        filter\n      }]\n    }\n  }\n\n  return [props.links?.length && {\n    key: 'links',\n    label: 'Links',\n    commands: props.links.flatMap(link => {\n      return [link.to && {\n        id: router.resolve(link.to).fullPath,\n        ...link,\n        icon: link.icon || ui.value.fileIcon.name\n      }, ...(link.children || []).map((child: { to: string; description: any; icon: any }) => {\n        return {\n          id: router.resolve(child.to as string).fullPath,\n          prefix: link.label,\n          suffix: child.description,\n          ...child,\n          icon: child.icon || link.icon || ui.value.fileIcon.name\n        }\n      })]\n    }).filter(Boolean)\n  }, ...navigationGroups, ...(props.groups || []), !colorMode?.forced && !props.hideColorMode && {\n    key: 'theme',\n    label: 'Theme',\n    commands: [{\n      id: 'theme-light',\n      label: 'Light',\n      icon: appConfig.ui.icons.light,\n      disabled: colorMode.preference === 'light',\n      click: () => {\n        colorMode.preference = 'light'\n      }\n    }, {\n      id: 'theme-dark',\n      label: 'Dark',\n      icon: appConfig.ui.icons.dark,\n      disabled: colorMode.preference === 'dark',\n      click: () => {\n        colorMode.preference = 'dark'\n      }\n    }]\n  }].filter(Boolean) as Group[]\n})\n\n// avoid conflicts between multiple meta_k shortcuts\nconst canToggleModal = computed(() => isOpen.value || !usingInput.value)\n\n// Methods\n\nfunction mapFile (file: ParsedContent, link?: NavItem): Command[] {\n  const prefix = findPageBreadcrumb(link?.children || [], file)?.map(({ title }) => title).join(' > ')\n\n  return [{\n    id: file._id,\n    label: file.navigation?.title || file.title,\n    title: file.navigation?.title || file.title,\n    prefix,\n    to: file._path,\n    suffix: file.description,\n    children: concatChildren(extractUntilFirstTitle(file?.body?.children || [])),\n    icon: fileIcon(file)\n  }, ...Object.entries(groupByHeading(file?.body?.children || [])).map(([hash, { title, children }]) => {\n    if (!title) {\n      return\n    }\n\n    return {\n      id: `${file._path}${hash}`,\n      label: title,\n      prefix: (prefix ? `${prefix} > ` : '') + `${file.navigation?.title || file.title}`,\n      to: `${file._path}${hash}`,\n      children: concatChildren(children),\n      icon: fileIcon(file),\n      child: true\n    }\n  })].filter(Boolean) as Command[]\n}\n\nfunction remapChildren (children: MarkdownNode[]) {\n  return children?.map((grandChild) => {\n    if (['code', 'code-inline', 'em', 'a', 'strong'].includes(grandChild.tag as string)) {\n      return { type: 'text', value: grandChild.children?.find(child => child.type === 'text')?.value || '' }\n    } else if (grandChild.type === 'text') {\n      return grandChild\n    }\n  }).filter(Boolean) as MarkdownNode[] || []\n}\n\nfunction concatChildren (children: MarkdownNode[]): any[] {\n  return children.map((child) => {\n    if (['pre', 'style', 'video'].includes(child.tag as string)) {\n      return\n    }\n\n    let grandChildren = [...(child.children || [])]\n\n    if (['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'td', 'th'].includes(child.tag as string) && grandChildren.length) {\n      grandChildren = remapChildren(grandChildren).reduce((acc: MarkdownNode[], grandChild) => {\n        if (acc.length && acc[acc.length - 1].type === 'text') {\n          acc[acc.length - 1].value += grandChild.value || ''\n        } else {\n          acc.push({ ...grandChild })\n        }\n        return acc\n      }, [])\n\n      return {\n        ...child,\n        children: grandChildren\n      }\n    }\n\n    return {\n      ...child,\n      children: concatChildren(grandChildren)\n    }\n  }).filter(Boolean) as MarkdownNode[]\n}\n\nfunction extractUntilFirstTitle (children: MarkdownNode[]) {\n  const extracted: MarkdownNode[] = []\n  for (const child of children) {\n    if (['h1', 'h2', 'h3'].includes(child.tag as string)) {\n      break\n    }\n    extracted.push(child)\n  }\n  return extracted\n}\n\nfunction groupByHeading (children: MarkdownNode[]) {\n  const groups: Record<string, { title?: string, children: MarkdownNode[] }> = {} // grouped by path\n  let hash = '' // file.page with potential `#anchor` concat\n  let title: string = ''\n  for (const node of children) {\n    // if heading found, udpate current path\n    if (['h1', 'h2', 'h3'].includes(node.tag as string)) {\n      // find heading text value\n      title = node.children?.map(child => {\n        if (child.type === 'text') {\n          return child.value\n        }\n\n        if (['code', 'code-inline', 'em', 'a', 'strong'].includes(child.tag as string)) {\n          return child.children?.find(child => child.type === 'text')?.value\n        }\n      })?.filter(Boolean)?.join(' ') || ''\n\n      if (title && node.props?.id) {\n        hash = `#${encodeURIComponent(node.props.id)}`\n      }\n    }\n    // push to existing/new group based on path\n    if (groups[hash]) {\n      groups[hash].children.push(node)\n    } else {\n      // @ts-ignore\n      groups[hash] = { children: [node], title }\n    }\n  }\n  return groups\n}\n\nfunction onSelect (options: Command[]) {\n  isOpen.value = false\n\n  const option = options[0]\n  if (!option) {\n    return\n  }\n\n  if (option.click) {\n    option.click()\n  } else if (option.to) {\n    if (option.target === '_blank' || option.to.startsWith('http')) {\n      window.open(option.to, option.target || '_blank')\n    } else {\n      router.push(option.to)\n    }\n  } else if (option.href) {\n    window.open(option.href, '_blank')\n  }\n}\n\n// Shortcuts\n\ndefineShortcuts({\n  meta_k: {\n    usingInput: true,\n    whenever: [canToggleModal],\n    handler: () => {\n      isOpen.value = !isOpen.value\n    }\n  },\n  escape: {\n    usingInput: true,\n    whenever: [isOpen],\n    handler: () => { isOpen.value = false }\n  }\n})\n\n// Expose\n\n__expose({\n  commandPaletteRef\n})\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UCommandPalette = _resolveComponent(\"UCommandPalette\")!\n  const _component_UModal = _resolveComponent(\"UModal\")!\n\n  return (_openBlock(), _createBlock(_component_UModal, {\n    modelValue: _unref(isOpen),\n    \"onUpdate:modelValue\": _cache[1] || (_cache[1] = ($event: any) => (_isRef(isOpen) ? (isOpen).value = $event : null)),\n    overlay: !_unref(smallerThanSm),\n    transition: !_unref(smallerThanSm),\n    ui: _unref(ui)\n  }, {\n    default: _withCtx(() => [\n      _createVNode(_component_UCommandPalette, _mergeProps({\n        ref_key: \"commandPaletteRef\",\n        ref: commandPaletteRef,\n        \"model-value\": [],\n        groups: _unref(groups),\n        ui: _unref(ui).commandPalette,\n        \"close-button\": _unref(ui).default.closeButton,\n        fuse: _unref(fuse),\n        multiple: \"\"\n      }, _unref(attrs), {\n        \"onUpdate:modelValue\": onSelect,\n        onClose: _cache[0] || (_cache[0] = ($event: any) => (isOpen.value = false))\n      }), null, 16, [\"groups\", \"ui\", \"close-button\", \"fuse\"])\n    ]),\n    _: 1\n  }, 8, [\"modelValue\", \"overlay\", \"transition\", \"ui\"]))\n}\n}\n\n})",
-      "start": 1714175002852,
-      "end": 1714175002852
+      "start": 1714180700857,
+      "end": 1714180700857
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175002852,
-      "end": 1714175002852,
+      "start": 1714180700857,
+      "end": 1714180700857,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175002852,
-      "end": 1714175002852,
+      "start": 1714180700857,
+      "end": 1714180700857,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175002852,
-      "end": 1714175002852,
+      "start": 1714180700857,
+      "end": 1714180700857,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175002852,
-      "end": 1714175002852,
+      "start": 1714180700857,
+      "end": 1714180700857,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175002852,
-      "end": 1714175002852,
+      "start": 1714180700857,
+      "end": 1714180700857,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, createVNode as _createVNode, isRef as _isRef, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { defu } from \"defu\";\nimport { useBreakpoints, breakpointsTailwind } from \"@vueuse/core\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentSearch\",\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: void 0\n    },\n    files: {\n      type: Array,\n      default: () => []\n    },\n    navigation: {\n      type: Array,\n      default: () => []\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    groups: {\n      type: Array,\n      default: () => []\n    },\n    fuse: {\n      type: Object,\n      default: () => ({})\n    },\n    hideColorMode: {\n      type: Boolean,\n      default: false\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\"],\n  setup(__props, { expose: __expose, emit: __emit }) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      padding: \"p-0 sm:p-4\",\n      rounded: \"rounded-none sm:rounded-lg\",\n      width: \"sm:max-w-3xl\",\n      height: \"h-dvh sm:h-[28rem]\",\n      commandPalette: {\n        input: {\n          height: \"h-[--header-height] sm:h-12\",\n          icon: {\n            size: \"h-5 w-5\",\n            padding: \"ps-11\"\n          }\n        },\n        group: {\n          command: {\n            // eslint-disable-next-line quotes\n            prefix: `!text-foreground after:content-['_>']`\n          }\n        },\n        container: \"scroll-py-10\"\n      },\n      fileIcon: {\n        name: \"i-heroicons-document-text\"\n      },\n      default: {\n        closeButton: {\n          icon: appConfig.ui.icons.close,\n          color: \"gray\",\n          variant: \"ghost\",\n          size: \"sm\"\n        }\n      }\n    }));\n    const props = __props;\n    const emit = __emit;\n    const router = useRouter();\n    const { navKeyFromPath } = useContentHelpers();\n    const { usingInput } = useShortcuts();\n    const { isContentSearchModalOpen } = useUIState();\n    const breakpoints = useBreakpoints(breakpointsTailwind);\n    const colorMode = useColorMode();\n    const { ui, attrs } = useUI(\"content.search\", toRef(props, \"ui\"), config, void 0, true);\n    const smallerThanSm = breakpoints.smaller(\"sm\");\n    const commandPaletteRef = ref();\n    function fileIcon(file) {\n      if (file.icon)\n        return file.icon;\n      if (file.navigation?.icon)\n        return file.navigation.icon;\n      if (props.navigation) {\n        file.icon = navKeyFromPath(file._path, \"icon\", props.navigation);\n      }\n      return file.icon || ui.value.fileIcon.name;\n    }\n    const isOpen = computed({\n      get() {\n        return props.modelValue !== void 0 ? props.modelValue : isContentSearchModalOpen.value;\n      },\n      set(value) {\n        props.modelValue !== void 0 ? emit(\"update:modelValue\", value) : isContentSearchModalOpen.value = value;\n      }\n    });\n    const fuse = computed(() => defu({}, props.fuse, {\n      fuseOptions: {\n        ignoreLocation: true,\n        includeMatches: true,\n        threshold: 0.1,\n        keys: [\n          { name: \"title\", weight: 5 },\n          { name: \"label\", weight: 5 },\n          { name: \"suffix\", weight: 3 },\n          \"children.children.value\",\n          \"children.children.children.value\",\n          \"children.children.children.children.value\",\n          \"children.children.children.children.children.value\"\n        ]\n      },\n      resultLimit: 12\n    }));\n    function filter(query, commands) {\n      if (!query) {\n        return commands?.filter((command) => !command.child);\n      }\n      return commands;\n    }\n    const groups = computed(() => {\n      let navigationGroups = [];\n      if (props.navigation?.length) {\n        if (props.navigation.some((link) => !!link.children?.length)) {\n          navigationGroups = (props.navigation || []).map((link) => {\n            return {\n              key: link._path,\n              label: link.title,\n              commands: (props.files || []).filter((file) => file._path?.startsWith(link._path)).flatMap((file) => mapFile(file, link)),\n              filter\n            };\n          });\n        } else {\n          navigationGroups = [{\n            key: \"docs\",\n            commands: (props.files || []).flatMap((file) => mapFile(file)),\n            filter\n          }];\n        }\n      }\n      return [props.links?.length && {\n        key: \"links\",\n        label: \"Links\",\n        commands: props.links.flatMap((link) => {\n          return [link.to && {\n            id: router.resolve(link.to).fullPath,\n            ...link,\n            icon: link.icon || ui.value.fileIcon.name\n          }, ...(link.children || []).map((child) => {\n            return {\n              id: router.resolve(child.to).fullPath,\n              prefix: link.label,\n              suffix: child.description,\n              ...child,\n              icon: child.icon || link.icon || ui.value.fileIcon.name\n            };\n          })];\n        }).filter(Boolean)\n      }, ...navigationGroups, ...props.groups || [], !colorMode?.forced && !props.hideColorMode && {\n        key: \"theme\",\n        label: \"Theme\",\n        commands: [{\n          id: \"theme-light\",\n          label: \"Light\",\n          icon: appConfig.ui.icons.light,\n          disabled: colorMode.preference === \"light\",\n          click: () => {\n            colorMode.preference = \"light\";\n          }\n        }, {\n          id: \"theme-dark\",\n          label: \"Dark\",\n          icon: appConfig.ui.icons.dark,\n          disabled: colorMode.preference === \"dark\",\n          click: () => {\n            colorMode.preference = \"dark\";\n          }\n        }]\n      }].filter(Boolean);\n    });\n    const canToggleModal = computed(() => isOpen.value || !usingInput.value);\n    function mapFile(file, link) {\n      const prefix = findPageBreadcrumb(link?.children || [], file)?.map(({ title }) => title).join(\" > \");\n      return [{\n        id: file._id,\n        label: file.navigation?.title || file.title,\n        title: file.navigation?.title || file.title,\n        prefix,\n        to: file._path,\n        suffix: file.description,\n        children: concatChildren(extractUntilFirstTitle(file?.body?.children || [])),\n        icon: fileIcon(file)\n      }, ...Object.entries(groupByHeading(file?.body?.children || [])).map(([hash, { title, children }]) => {\n        if (!title) {\n          return;\n        }\n        return {\n          id: `${file._path}${hash}`,\n          label: title,\n          prefix: (prefix ? `${prefix} > ` : \"\") + `${file.navigation?.title || file.title}`,\n          to: `${file._path}${hash}`,\n          children: concatChildren(children),\n          icon: fileIcon(file),\n          child: true\n        };\n      })].filter(Boolean);\n    }\n    function remapChildren(children) {\n      return children?.map((grandChild) => {\n        if ([\"code\", \"code-inline\", \"em\", \"a\", \"strong\"].includes(grandChild.tag)) {\n          return { type: \"text\", value: grandChild.children?.find((child) => child.type === \"text\")?.value || \"\" };\n        } else if (grandChild.type === \"text\") {\n          return grandChild;\n        }\n      }).filter(Boolean) || [];\n    }\n    function concatChildren(children) {\n      return children.map((child) => {\n        if ([\"pre\", \"style\", \"video\"].includes(child.tag)) {\n          return;\n        }\n        let grandChildren = [...child.children || []];\n        if ([\"p\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"li\", \"td\", \"th\"].includes(child.tag) && grandChildren.length) {\n          grandChildren = remapChildren(grandChildren).reduce((acc, grandChild) => {\n            if (acc.length && acc[acc.length - 1].type === \"text\") {\n              acc[acc.length - 1].value += grandChild.value || \"\";\n            } else {\n              acc.push({ ...grandChild });\n            }\n            return acc;\n          }, []);\n          return {\n            ...child,\n            children: grandChildren\n          };\n        }\n        return {\n          ...child,\n          children: concatChildren(grandChildren)\n        };\n      }).filter(Boolean);\n    }\n    function extractUntilFirstTitle(children) {\n      const extracted = [];\n      for (const child of children) {\n        if ([\"h1\", \"h2\", \"h3\"].includes(child.tag)) {\n          break;\n        }\n        extracted.push(child);\n      }\n      return extracted;\n    }\n    function groupByHeading(children) {\n      const groups2 = {};\n      let hash = \"\";\n      let title = \"\";\n      for (const node of children) {\n        if ([\"h1\", \"h2\", \"h3\"].includes(node.tag)) {\n          title = node.children?.map((child) => {\n            if (child.type === \"text\") {\n              return child.value;\n            }\n            if ([\"code\", \"code-inline\", \"em\", \"a\", \"strong\"].includes(child.tag)) {\n              return child.children?.find((child2) => child2.type === \"text\")?.value;\n            }\n          })?.filter(Boolean)?.join(\" \") || \"\";\n          if (title && node.props?.id) {\n            hash = `#${encodeURIComponent(node.props.id)}`;\n          }\n        }\n        if (groups2[hash]) {\n          groups2[hash].children.push(node);\n        } else {\n          groups2[hash] = { children: [node], title };\n        }\n      }\n      return groups2;\n    }\n    function onSelect(options) {\n      isOpen.value = false;\n      const option = options[0];\n      if (!option) {\n        return;\n      }\n      if (option.click) {\n        option.click();\n      } else if (option.to) {\n        if (option.target === \"_blank\" || option.to.startsWith(\"http\")) {\n          window.open(option.to, option.target || \"_blank\");\n        } else {\n          router.push(option.to);\n        }\n      } else if (option.href) {\n        window.open(option.href, \"_blank\");\n      }\n    }\n    defineShortcuts({\n      meta_k: {\n        usingInput: true,\n        whenever: [canToggleModal],\n        handler: () => {\n          isOpen.value = !isOpen.value;\n        }\n      },\n      escape: {\n        usingInput: true,\n        whenever: [isOpen],\n        handler: () => {\n          isOpen.value = false;\n        }\n      }\n    });\n    __expose({\n      commandPaletteRef\n    });\n    return (_ctx, _cache) => {\n      const _component_UCommandPalette = _resolveComponent(\"UCommandPalette\");\n      const _component_UModal = _resolveComponent(\"UModal\");\n      return _openBlock(), _createBlock(_component_UModal, {\n        modelValue: _unref(isOpen),\n        \"onUpdate:modelValue\": _cache[1] || (_cache[1] = ($event) => _isRef(isOpen) ? isOpen.value = $event : null),\n        overlay: !_unref(smallerThanSm),\n        transition: !_unref(smallerThanSm),\n        ui: _unref(ui)\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UCommandPalette, _mergeProps({\n            ref_key: \"commandPaletteRef\",\n            ref: commandPaletteRef,\n            \"model-value\": [],\n            groups: _unref(groups),\n            ui: _unref(ui).commandPalette,\n            \"close-button\": _unref(ui).default.closeButton,\n            fuse: _unref(fuse),\n            multiple: \"\"\n          }, _unref(attrs), {\n            \"onUpdate:modelValue\": onSelect,\n            onClose: _cache[0] || (_cache[0] = ($event) => isOpen.value = false)\n          }), null, 16, [\"groups\", \"ui\", \"close-button\", \"fuse\"])\n        ]),\n        _: 1\n      }, 8, [\"modelValue\", \"overlay\", \"transition\", \"ui\"]);\n    };\n  }\n});\n",
-      "start": 1714175002852,
-      "end": 1714175002991,
+      "start": 1714180700857,
+      "end": 1714180700951,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -60,129 +60,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175002991,
-      "end": 1714175002991,
+      "start": 1714180700951,
+      "end": 1714180700951,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { computed, toRef, ref } from 'vue';\nimport { useRouter } from '#app/composables/router';\nimport { useContentHelpers } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/composables/helpers';\nimport { useShortcuts } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts.mjs';\nimport { useUIState } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useUIState.ts';\nimport { useColorMode } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/color-mode/dist/runtime/composables';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { findPageBreadcrumb } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { defineShortcuts } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, createVNode as _createVNode, isRef as _isRef, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { defu } from \"defu\";\nimport { useBreakpoints, breakpointsTailwind } from \"@vueuse/core\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentSearch\",\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: void 0\n    },\n    files: {\n      type: Array,\n      default: () => []\n    },\n    navigation: {\n      type: Array,\n      default: () => []\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    groups: {\n      type: Array,\n      default: () => []\n    },\n    fuse: {\n      type: Object,\n      default: () => ({})\n    },\n    hideColorMode: {\n      type: Boolean,\n      default: false\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\"],\n  setup(__props, { expose: __expose, emit: __emit }) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      padding: \"p-0 sm:p-4\",\n      rounded: \"rounded-none sm:rounded-lg\",\n      width: \"sm:max-w-3xl\",\n      height: \"h-dvh sm:h-[28rem]\",\n      commandPalette: {\n        input: {\n          height: \"h-[--header-height] sm:h-12\",\n          icon: {\n            size: \"h-5 w-5\",\n            padding: \"ps-11\"\n          }\n        },\n        group: {\n          command: {\n            // eslint-disable-next-line quotes\n            prefix: `!text-foreground after:content-['_>']`\n          }\n        },\n        container: \"scroll-py-10\"\n      },\n      fileIcon: {\n        name: \"i-heroicons-document-text\"\n      },\n      default: {\n        closeButton: {\n          icon: appConfig.ui.icons.close,\n          color: \"gray\",\n          variant: \"ghost\",\n          size: \"sm\"\n        }\n      }\n    }));\n    const props = __props;\n    const emit = __emit;\n    const router = useRouter();\n    const { navKeyFromPath } = useContentHelpers();\n    const { usingInput } = useShortcuts();\n    const { isContentSearchModalOpen } = useUIState();\n    const breakpoints = useBreakpoints(breakpointsTailwind);\n    const colorMode = useColorMode();\n    const { ui, attrs } = useUI(\"content.search\", toRef(props, \"ui\"), config, void 0, true);\n    const smallerThanSm = breakpoints.smaller(\"sm\");\n    const commandPaletteRef = ref();\n    function fileIcon(file) {\n      if (file.icon)\n        return file.icon;\n      if (file.navigation?.icon)\n        return file.navigation.icon;\n      if (props.navigation) {\n        file.icon = navKeyFromPath(file._path, \"icon\", props.navigation);\n      }\n      return file.icon || ui.value.fileIcon.name;\n    }\n    const isOpen = computed({\n      get() {\n        return props.modelValue !== void 0 ? props.modelValue : isContentSearchModalOpen.value;\n      },\n      set(value) {\n        props.modelValue !== void 0 ? emit(\"update:modelValue\", value) : isContentSearchModalOpen.value = value;\n      }\n    });\n    const fuse = computed(() => defu({}, props.fuse, {\n      fuseOptions: {\n        ignoreLocation: true,\n        includeMatches: true,\n        threshold: 0.1,\n        keys: [\n          { name: \"title\", weight: 5 },\n          { name: \"label\", weight: 5 },\n          { name: \"suffix\", weight: 3 },\n          \"children.children.value\",\n          \"children.children.children.value\",\n          \"children.children.children.children.value\",\n          \"children.children.children.children.children.value\"\n        ]\n      },\n      resultLimit: 12\n    }));\n    function filter(query, commands) {\n      if (!query) {\n        return commands?.filter((command) => !command.child);\n      }\n      return commands;\n    }\n    const groups = computed(() => {\n      let navigationGroups = [];\n      if (props.navigation?.length) {\n        if (props.navigation.some((link) => !!link.children?.length)) {\n          navigationGroups = (props.navigation || []).map((link) => {\n            return {\n              key: link._path,\n              label: link.title,\n              commands: (props.files || []).filter((file) => file._path?.startsWith(link._path)).flatMap((file) => mapFile(file, link)),\n              filter\n            };\n          });\n        } else {\n          navigationGroups = [{\n            key: \"docs\",\n            commands: (props.files || []).flatMap((file) => mapFile(file)),\n            filter\n          }];\n        }\n      }\n      return [props.links?.length && {\n        key: \"links\",\n        label: \"Links\",\n        commands: props.links.flatMap((link) => {\n          return [link.to && {\n            id: router.resolve(link.to).fullPath,\n            ...link,\n            icon: link.icon || ui.value.fileIcon.name\n          }, ...(link.children || []).map((child) => {\n            return {\n              id: router.resolve(child.to).fullPath,\n              prefix: link.label,\n              suffix: child.description,\n              ...child,\n              icon: child.icon || link.icon || ui.value.fileIcon.name\n            };\n          })];\n        }).filter(Boolean)\n      }, ...navigationGroups, ...props.groups || [], !colorMode?.forced && !props.hideColorMode && {\n        key: \"theme\",\n        label: \"Theme\",\n        commands: [{\n          id: \"theme-light\",\n          label: \"Light\",\n          icon: appConfig.ui.icons.light,\n          disabled: colorMode.preference === \"light\",\n          click: () => {\n            colorMode.preference = \"light\";\n          }\n        }, {\n          id: \"theme-dark\",\n          label: \"Dark\",\n          icon: appConfig.ui.icons.dark,\n          disabled: colorMode.preference === \"dark\",\n          click: () => {\n            colorMode.preference = \"dark\";\n          }\n        }]\n      }].filter(Boolean);\n    });\n    const canToggleModal = computed(() => isOpen.value || !usingInput.value);\n    function mapFile(file, link) {\n      const prefix = findPageBreadcrumb(link?.children || [], file)?.map(({ title }) => title).join(\" > \");\n      return [{\n        id: file._id,\n        label: file.navigation?.title || file.title,\n        title: file.navigation?.title || file.title,\n        prefix,\n        to: file._path,\n        suffix: file.description,\n        children: concatChildren(extractUntilFirstTitle(file?.body?.children || [])),\n        icon: fileIcon(file)\n      }, ...Object.entries(groupByHeading(file?.body?.children || [])).map(([hash, { title, children }]) => {\n        if (!title) {\n          return;\n        }\n        return {\n          id: `${file._path}${hash}`,\n          label: title,\n          prefix: (prefix ? `${prefix} > ` : \"\") + `${file.navigation?.title || file.title}`,\n          to: `${file._path}${hash}`,\n          children: concatChildren(children),\n          icon: fileIcon(file),\n          child: true\n        };\n      })].filter(Boolean);\n    }\n    function remapChildren(children) {\n      return children?.map((grandChild) => {\n        if ([\"code\", \"code-inline\", \"em\", \"a\", \"strong\"].includes(grandChild.tag)) {\n          return { type: \"text\", value: grandChild.children?.find((child) => child.type === \"text\")?.value || \"\" };\n        } else if (grandChild.type === \"text\") {\n          return grandChild;\n        }\n      }).filter(Boolean) || [];\n    }\n    function concatChildren(children) {\n      return children.map((child) => {\n        if ([\"pre\", \"style\", \"video\"].includes(child.tag)) {\n          return;\n        }\n        let grandChildren = [...child.children || []];\n        if ([\"p\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"li\", \"td\", \"th\"].includes(child.tag) && grandChildren.length) {\n          grandChildren = remapChildren(grandChildren).reduce((acc, grandChild) => {\n            if (acc.length && acc[acc.length - 1].type === \"text\") {\n              acc[acc.length - 1].value += grandChild.value || \"\";\n            } else {\n              acc.push({ ...grandChild });\n            }\n            return acc;\n          }, []);\n          return {\n            ...child,\n            children: grandChildren\n          };\n        }\n        return {\n          ...child,\n          children: concatChildren(grandChildren)\n        };\n      }).filter(Boolean);\n    }\n    function extractUntilFirstTitle(children) {\n      const extracted = [];\n      for (const child of children) {\n        if ([\"h1\", \"h2\", \"h3\"].includes(child.tag)) {\n          break;\n        }\n        extracted.push(child);\n      }\n      return extracted;\n    }\n    function groupByHeading(children) {\n      const groups2 = {};\n      let hash = \"\";\n      let title = \"\";\n      for (const node of children) {\n        if ([\"h1\", \"h2\", \"h3\"].includes(node.tag)) {\n          title = node.children?.map((child) => {\n            if (child.type === \"text\") {\n              return child.value;\n            }\n            if ([\"code\", \"code-inline\", \"em\", \"a\", \"strong\"].includes(child.tag)) {\n              return child.children?.find((child2) => child2.type === \"text\")?.value;\n            }\n          })?.filter(Boolean)?.join(\" \") || \"\";\n          if (title && node.props?.id) {\n            hash = `#${encodeURIComponent(node.props.id)}`;\n          }\n        }\n        if (groups2[hash]) {\n          groups2[hash].children.push(node);\n        } else {\n          groups2[hash] = { children: [node], title };\n        }\n      }\n      return groups2;\n    }\n    function onSelect(options) {\n      isOpen.value = false;\n      const option = options[0];\n      if (!option) {\n        return;\n      }\n      if (option.click) {\n        option.click();\n      } else if (option.to) {\n        if (option.target === \"_blank\" || option.to.startsWith(\"http\")) {\n          window.open(option.to, option.target || \"_blank\");\n        } else {\n          router.push(option.to);\n        }\n      } else if (option.href) {\n        window.open(option.href, \"_blank\");\n      }\n    }\n    defineShortcuts({\n      meta_k: {\n        usingInput: true,\n        whenever: [canToggleModal],\n        handler: () => {\n          isOpen.value = !isOpen.value;\n        }\n      },\n      escape: {\n        usingInput: true,\n        whenever: [isOpen],\n        handler: () => {\n          isOpen.value = false;\n        }\n      }\n    });\n    __expose({\n      commandPaletteRef\n    });\n    return (_ctx, _cache) => {\n      const _component_UCommandPalette = _resolveComponent(\"UCommandPalette\");\n      const _component_UModal = _resolveComponent(\"UModal\");\n      return _openBlock(), _createBlock(_component_UModal, {\n        modelValue: _unref(isOpen),\n        \"onUpdate:modelValue\": _cache[1] || (_cache[1] = ($event) => _isRef(isOpen) ? isOpen.value = $event : null),\n        overlay: !_unref(smallerThanSm),\n        transition: !_unref(smallerThanSm),\n        ui: _unref(ui)\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UCommandPalette, _mergeProps({\n            ref_key: \"commandPaletteRef\",\n            ref: commandPaletteRef,\n            \"model-value\": [],\n            groups: _unref(groups),\n            ui: _unref(ui).commandPalette,\n            \"close-button\": _unref(ui).default.closeButton,\n            fuse: _unref(fuse),\n            multiple: \"\"\n          }, _unref(attrs), {\n            \"onUpdate:modelValue\": onSelect,\n            onClose: _cache[0] || (_cache[0] = ($event) => isOpen.value = false)\n          }), null, 16, [\"groups\", \"ui\", \"close-button\", \"fuse\"])\n        ]),\n        _: 1\n      }, 8, [\"modelValue\", \"overlay\", \"transition\", \"ui\"]);\n    };\n  }\n});\n",
-      "start": 1714175002991,
-      "end": 1714175002994,
+      "start": 1714180700951,
+      "end": 1714180700954,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -195,51 +195,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175002994,
-      "end": 1714175002994,
+      "start": 1714180700954,
+      "end": 1714180700955,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175002994,
-      "end": 1714175002994,
+      "start": 1714180700955,
+      "end": 1714180700955,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175002994,
-      "end": 1714175002994,
+      "start": 1714180700955,
+      "end": 1714180700955,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175002994,
-      "end": 1714175002994,
+      "start": 1714180700955,
+      "end": 1714180700955,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/navigation/CommandPalette.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/overlays/Modal.vue\";\nimport { useAppConfig } from '#app/config';\nimport { computed, toRef, ref } from 'vue';\nimport { useRouter } from '#app/composables/router';\nimport { useContentHelpers } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/composables/helpers';\nimport { useShortcuts } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts.mjs';\nimport { useUIState } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useUIState.ts';\nimport { useColorMode } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/color-mode/dist/runtime/composables';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { findPageBreadcrumb } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { defineShortcuts } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, mergeProps as _mergeProps, createVNode as _createVNode, isRef as _isRef, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { defu } from \"defu\";\nimport { useBreakpoints, breakpointsTailwind } from \"@vueuse/core\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"ContentSearch\",\n  props: {\n    modelValue: {\n      type: Boolean,\n      default: void 0\n    },\n    files: {\n      type: Array,\n      default: () => []\n    },\n    navigation: {\n      type: Array,\n      default: () => []\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    groups: {\n      type: Array,\n      default: () => []\n    },\n    fuse: {\n      type: Object,\n      default: () => ({})\n    },\n    hideColorMode: {\n      type: Boolean,\n      default: false\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  emits: [\"update:modelValue\"],\n  setup(__props, { expose: __expose, emit: __emit }) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      padding: \"p-0 sm:p-4\",\n      rounded: \"rounded-none sm:rounded-lg\",\n      width: \"sm:max-w-3xl\",\n      height: \"h-dvh sm:h-[28rem]\",\n      commandPalette: {\n        input: {\n          height: \"h-[--header-height] sm:h-12\",\n          icon: {\n            size: \"h-5 w-5\",\n            padding: \"ps-11\"\n          }\n        },\n        group: {\n          command: {\n            // eslint-disable-next-line quotes\n            prefix: `!text-foreground after:content-['_>']`\n          }\n        },\n        container: \"scroll-py-10\"\n      },\n      fileIcon: {\n        name: \"i-heroicons-document-text\"\n      },\n      default: {\n        closeButton: {\n          icon: appConfig.ui.icons.close,\n          color: \"gray\",\n          variant: \"ghost\",\n          size: \"sm\"\n        }\n      }\n    }));\n    const props = __props;\n    const emit = __emit;\n    const router = useRouter();\n    const { navKeyFromPath } = useContentHelpers();\n    const { usingInput } = useShortcuts();\n    const { isContentSearchModalOpen } = useUIState();\n    const breakpoints = useBreakpoints(breakpointsTailwind);\n    const colorMode = useColorMode();\n    const { ui, attrs } = useUI(\"content.search\", toRef(props, \"ui\"), config, void 0, true);\n    const smallerThanSm = breakpoints.smaller(\"sm\");\n    const commandPaletteRef = ref();\n    function fileIcon(file) {\n      if (file.icon)\n        return file.icon;\n      if (file.navigation?.icon)\n        return file.navigation.icon;\n      if (props.navigation) {\n        file.icon = navKeyFromPath(file._path, \"icon\", props.navigation);\n      }\n      return file.icon || ui.value.fileIcon.name;\n    }\n    const isOpen = computed({\n      get() {\n        return props.modelValue !== void 0 ? props.modelValue : isContentSearchModalOpen.value;\n      },\n      set(value) {\n        props.modelValue !== void 0 ? emit(\"update:modelValue\", value) : isContentSearchModalOpen.value = value;\n      }\n    });\n    const fuse = computed(() => defu({}, props.fuse, {\n      fuseOptions: {\n        ignoreLocation: true,\n        includeMatches: true,\n        threshold: 0.1,\n        keys: [\n          { name: \"title\", weight: 5 },\n          { name: \"label\", weight: 5 },\n          { name: \"suffix\", weight: 3 },\n          \"children.children.value\",\n          \"children.children.children.value\",\n          \"children.children.children.children.value\",\n          \"children.children.children.children.children.value\"\n        ]\n      },\n      resultLimit: 12\n    }));\n    function filter(query, commands) {\n      if (!query) {\n        return commands?.filter((command) => !command.child);\n      }\n      return commands;\n    }\n    const groups = computed(() => {\n      let navigationGroups = [];\n      if (props.navigation?.length) {\n        if (props.navigation.some((link) => !!link.children?.length)) {\n          navigationGroups = (props.navigation || []).map((link) => {\n            return {\n              key: link._path,\n              label: link.title,\n              commands: (props.files || []).filter((file) => file._path?.startsWith(link._path)).flatMap((file) => mapFile(file, link)),\n              filter\n            };\n          });\n        } else {\n          navigationGroups = [{\n            key: \"docs\",\n            commands: (props.files || []).flatMap((file) => mapFile(file)),\n            filter\n          }];\n        }\n      }\n      return [props.links?.length && {\n        key: \"links\",\n        label: \"Links\",\n        commands: props.links.flatMap((link) => {\n          return [link.to && {\n            id: router.resolve(link.to).fullPath,\n            ...link,\n            icon: link.icon || ui.value.fileIcon.name\n          }, ...(link.children || []).map((child) => {\n            return {\n              id: router.resolve(child.to).fullPath,\n              prefix: link.label,\n              suffix: child.description,\n              ...child,\n              icon: child.icon || link.icon || ui.value.fileIcon.name\n            };\n          })];\n        }).filter(Boolean)\n      }, ...navigationGroups, ...props.groups || [], !colorMode?.forced && !props.hideColorMode && {\n        key: \"theme\",\n        label: \"Theme\",\n        commands: [{\n          id: \"theme-light\",\n          label: \"Light\",\n          icon: appConfig.ui.icons.light,\n          disabled: colorMode.preference === \"light\",\n          click: () => {\n            colorMode.preference = \"light\";\n          }\n        }, {\n          id: \"theme-dark\",\n          label: \"Dark\",\n          icon: appConfig.ui.icons.dark,\n          disabled: colorMode.preference === \"dark\",\n          click: () => {\n            colorMode.preference = \"dark\";\n          }\n        }]\n      }].filter(Boolean);\n    });\n    const canToggleModal = computed(() => isOpen.value || !usingInput.value);\n    function mapFile(file, link) {\n      const prefix = findPageBreadcrumb(link?.children || [], file)?.map(({ title }) => title).join(\" > \");\n      return [{\n        id: file._id,\n        label: file.navigation?.title || file.title,\n        title: file.navigation?.title || file.title,\n        prefix,\n        to: file._path,\n        suffix: file.description,\n        children: concatChildren(extractUntilFirstTitle(file?.body?.children || [])),\n        icon: fileIcon(file)\n      }, ...Object.entries(groupByHeading(file?.body?.children || [])).map(([hash, { title, children }]) => {\n        if (!title) {\n          return;\n        }\n        return {\n          id: `${file._path}${hash}`,\n          label: title,\n          prefix: (prefix ? `${prefix} > ` : \"\") + `${file.navigation?.title || file.title}`,\n          to: `${file._path}${hash}`,\n          children: concatChildren(children),\n          icon: fileIcon(file),\n          child: true\n        };\n      })].filter(Boolean);\n    }\n    function remapChildren(children) {\n      return children?.map((grandChild) => {\n        if ([\"code\", \"code-inline\", \"em\", \"a\", \"strong\"].includes(grandChild.tag)) {\n          return { type: \"text\", value: grandChild.children?.find((child) => child.type === \"text\")?.value || \"\" };\n        } else if (grandChild.type === \"text\") {\n          return grandChild;\n        }\n      }).filter(Boolean) || [];\n    }\n    function concatChildren(children) {\n      return children.map((child) => {\n        if ([\"pre\", \"style\", \"video\"].includes(child.tag)) {\n          return;\n        }\n        let grandChildren = [...child.children || []];\n        if ([\"p\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"li\", \"td\", \"th\"].includes(child.tag) && grandChildren.length) {\n          grandChildren = remapChildren(grandChildren).reduce((acc, grandChild) => {\n            if (acc.length && acc[acc.length - 1].type === \"text\") {\n              acc[acc.length - 1].value += grandChild.value || \"\";\n            } else {\n              acc.push({ ...grandChild });\n            }\n            return acc;\n          }, []);\n          return {\n            ...child,\n            children: grandChildren\n          };\n        }\n        return {\n          ...child,\n          children: concatChildren(grandChildren)\n        };\n      }).filter(Boolean);\n    }\n    function extractUntilFirstTitle(children) {\n      const extracted = [];\n      for (const child of children) {\n        if ([\"h1\", \"h2\", \"h3\"].includes(child.tag)) {\n          break;\n        }\n        extracted.push(child);\n      }\n      return extracted;\n    }\n    function groupByHeading(children) {\n      const groups2 = {};\n      let hash = \"\";\n      let title = \"\";\n      for (const node of children) {\n        if ([\"h1\", \"h2\", \"h3\"].includes(node.tag)) {\n          title = node.children?.map((child) => {\n            if (child.type === \"text\") {\n              return child.value;\n            }\n            if ([\"code\", \"code-inline\", \"em\", \"a\", \"strong\"].includes(child.tag)) {\n              return child.children?.find((child2) => child2.type === \"text\")?.value;\n            }\n          })?.filter(Boolean)?.join(\" \") || \"\";\n          if (title && node.props?.id) {\n            hash = `#${encodeURIComponent(node.props.id)}`;\n          }\n        }\n        if (groups2[hash]) {\n          groups2[hash].children.push(node);\n        } else {\n          groups2[hash] = { children: [node], title };\n        }\n      }\n      return groups2;\n    }\n    function onSelect(options) {\n      isOpen.value = false;\n      const option = options[0];\n      if (!option) {\n        return;\n      }\n      if (option.click) {\n        option.click();\n      } else if (option.to) {\n        if (option.target === \"_blank\" || option.to.startsWith(\"http\")) {\n          window.open(option.to, option.target || \"_blank\");\n        } else {\n          router.push(option.to);\n        }\n      } else if (option.href) {\n        window.open(option.href, \"_blank\");\n      }\n    }\n    defineShortcuts({\n      meta_k: {\n        usingInput: true,\n        whenever: [canToggleModal],\n        handler: () => {\n          isOpen.value = !isOpen.value;\n        }\n      },\n      escape: {\n        usingInput: true,\n        whenever: [isOpen],\n        handler: () => {\n          isOpen.value = false;\n        }\n      }\n    });\n    __expose({\n      commandPaletteRef\n    });\n    return (_ctx, _cache) => {\n      const _component_UCommandPalette = __nuxt_component_0;\n      const _component_UModal = __nuxt_component_1;\n      return _openBlock(), _createBlock(_component_UModal, {\n        modelValue: _unref(isOpen),\n        \"onUpdate:modelValue\": _cache[1] || (_cache[1] = ($event) => _isRef(isOpen) ? isOpen.value = $event : null),\n        overlay: !_unref(smallerThanSm),\n        transition: !_unref(smallerThanSm),\n        ui: _unref(ui)\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UCommandPalette, _mergeProps({\n            ref_key: \"commandPaletteRef\",\n            ref: commandPaletteRef,\n            \"model-value\": [],\n            groups: _unref(groups),\n            ui: _unref(ui).commandPalette,\n            \"close-button\": _unref(ui).default.closeButton,\n            fuse: _unref(fuse),\n            multiple: \"\"\n          }, _unref(attrs), {\n            \"onUpdate:modelValue\": onSelect,\n            onClose: _cache[0] || (_cache[0] = ($event) => isOpen.value = false)\n          }), null, 16, [\"groups\", \"ui\", \"close-button\", \"fuse\"])\n        ]),\n        _: 1\n      }, 8, [\"modelValue\", \"overlay\", \"transition\", \"ui\"]);\n    };\n  }\n});\n",
-      "start": 1714175002994,
-      "end": 1714175002994,
+      "start": 1714180700955,
+      "end": 1714180700955,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175002994,
-      "end": 1714175002994,
+      "start": 1714180700955,
+      "end": 1714180700955,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175002994,
-      "end": 1714175002994,
+      "start": 1714180700955,
+      "end": 1714180700955,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175002994,
-      "end": 1714175002994,
+      "start": 1714180700955,
+      "end": 1714180700955,
       "order": "normal"
     }
   ]

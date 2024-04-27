@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport { renderSlot as _renderMDCSlot } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot'\n\n\nimport { Disclosure, DisclosureButton, DisclosurePanel, provideUseId } from '@headlessui/vue'\nimport { useId } from '#imports'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Collapsible',\n  props: {\n  name: {\n    type: String,\n    default: 'properties'\n  }\n},\n  setup(__props) {\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  button: {\n    base: 'flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200',\n    icon: {\n      name: appConfig.ui.icons.chevron,\n      base: 'w-4 h-4 transform transition-transform duration-200',\n      active: '',\n      inactive: '-rotate-90'\n    }\n  },\n  panel: 'mt-4 ml-2 py-2.5 pl-4 border-l border-gray-200 dark:border-gray-800 [&>div]:!mt-0'\n}))\n\n\n\nconst { ui } = useUI('content.collapsible', undefined, config, undefined, true)\n\nprovideUseId(() => useId())\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_MDCSlot = _resolveComponent(\"MDCSlot\")!\n\n  return (_openBlock(), _createBlock(_unref(Disclosure), { as: \"div\" }, {\n    default: _withCtx(({ open }) => [\n      _createVNode(_unref(DisclosureButton), {\n        class: _normalizeClass(_unref(ui).button.base)\n      }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UIcon, {\n            name: _unref(ui).button.icon.name,\n            class: _normalizeClass([_unref(ui).button.icon.base, open ? _unref(ui).button.icon.active : _unref(ui).button.icon.inactive])\n          }, null, 8, [\"name\", \"class\"]),\n          _createElementVNode(\"span\", null, _toDisplayString(open ? 'Hide' : 'Show') + \" \" + _toDisplayString(__props.name), 1)\n        ]),\n        _: 2\n      }, 1032, [\"class\"]),\n      _createVNode(_unref(DisclosurePanel), {\n        class: _normalizeClass(_unref(ui).panel)\n      }, {\n        default: _withCtx(() => [\n          _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n        ]),\n        _: 3\n      }, 8, [\"class\"])\n    ]),\n    _: 3\n  }))\n}\n}\n\n})",
-      "start": 1714175001941,
-      "end": 1714175001941
+      "start": 1714180699903,
+      "end": 1714180699903
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175001941,
-      "end": 1714175001941,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175001941,
-      "end": 1714175001942,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175001942,
-      "end": 1714175001942,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175001942,
-      "end": 1714175001942,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175001942,
-      "end": 1714175001942,
+      "start": 1714180699903,
+      "end": 1714180699903,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { renderSlot as _renderMDCSlot } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot\";\nimport { Disclosure, DisclosureButton, DisclosurePanel, provideUseId } from \"@headlessui/vue\";\nimport { useId } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Collapsible\",\n  props: {\n    name: {\n      type: String,\n      default: \"properties\"\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      button: {\n        base: \"flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200\",\n        icon: {\n          name: appConfig.ui.icons.chevron,\n          base: \"w-4 h-4 transform transition-transform duration-200\",\n          active: \"\",\n          inactive: \"-rotate-90\"\n        }\n      },\n      panel: \"mt-4 ml-2 py-2.5 pl-4 border-l border-gray-200 dark:border-gray-800 [&>div]:!mt-0\"\n    }));\n    const { ui } = useUI(\"content.collapsible\", void 0, config, void 0, true);\n    provideUseId(() => useId());\n    return (_ctx, _cache) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_MDCSlot = _resolveComponent(\"MDCSlot\");\n      return _openBlock(), _createBlock(_unref(Disclosure), { as: \"div\" }, {\n        default: _withCtx(({ open }) => [\n          _createVNode(_unref(DisclosureButton), {\n            class: _normalizeClass(_unref(ui).button.base)\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_UIcon, {\n                name: _unref(ui).button.icon.name,\n                class: _normalizeClass([_unref(ui).button.icon.base, open ? _unref(ui).button.icon.active : _unref(ui).button.icon.inactive])\n              }, null, 8, [\"name\", \"class\"]),\n              _createElementVNode(\"span\", null, _toDisplayString(open ? \"Hide\" : \"Show\") + \" \" + _toDisplayString(__props.name), 1)\n            ]),\n            _: 2\n          }, 1032, [\"class\"]),\n          _createVNode(_unref(DisclosurePanel), {\n            class: _normalizeClass(_unref(ui).panel)\n          }, {\n            default: _withCtx(() => [\n              _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ]),\n        _: 3\n      });\n    };\n  }\n});\n",
-      "start": 1714175001942,
-      "end": 1714175002340,
+      "start": 1714180699903,
+      "end": 1714180700326,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,123 +57,123 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175002340,
-      "end": 1714175002340,
+      "start": 1714180700326,
+      "end": 1714180700326,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { renderSlot as _renderMDCSlot } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot\";\nimport { Disclosure, DisclosureButton, DisclosurePanel, provideUseId } from \"@headlessui/vue\";\nimport { useId } from \"#imports\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Collapsible\",\n  props: {\n    name: {\n      type: String,\n      default: \"properties\"\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      button: {\n        base: \"flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200\",\n        icon: {\n          name: appConfig.ui.icons.chevron,\n          base: \"w-4 h-4 transform transition-transform duration-200\",\n          active: \"\",\n          inactive: \"-rotate-90\"\n        }\n      },\n      panel: \"mt-4 ml-2 py-2.5 pl-4 border-l border-gray-200 dark:border-gray-800 [&>div]:!mt-0\"\n    }));\n    const { ui } = useUI(\"content.collapsible\", void 0, config, void 0, true);\n    provideUseId(() => useId('$tPo8W3lBsH'));\n    return (_ctx, _cache) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_MDCSlot = _resolveComponent(\"MDCSlot\");\n      return _openBlock(), _createBlock(_unref(Disclosure), { as: \"div\" }, {\n        default: _withCtx(({ open }) => [\n          _createVNode(_unref(DisclosureButton), {\n            class: _normalizeClass(_unref(ui).button.base)\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_UIcon, {\n                name: _unref(ui).button.icon.name,\n                class: _normalizeClass([_unref(ui).button.icon.base, open ? _unref(ui).button.icon.active : _unref(ui).button.icon.inactive])\n              }, null, 8, [\"name\", \"class\"]),\n              _createElementVNode(\"span\", null, _toDisplayString(open ? \"Hide\" : \"Show\") + \" \" + _toDisplayString(__props.name), 1)\n            ]),\n            _: 2\n          }, 1032, [\"class\"]),\n          _createVNode(_unref(DisclosurePanel), {\n            class: _normalizeClass(_unref(ui).panel)\n          }, {\n            default: _withCtx(() => [\n              _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ]),\n        _: 3\n      });\n    };\n  }\n});\n",
-      "start": 1714175002340,
-      "end": 1714175002341,
+      "start": 1714180700326,
+      "end": 1714180700327,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -187,8 +187,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAppConfig } from '#app/config';\nimport { computed } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { useId } from '#app/composables/id';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { renderSlot as _renderMDCSlot } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot\";\nimport { Disclosure, DisclosureButton, DisclosurePanel, provideUseId } from \"@headlessui/vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Collapsible\",\n  props: {\n    name: {\n      type: String,\n      default: \"properties\"\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      button: {\n        base: \"flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200\",\n        icon: {\n          name: appConfig.ui.icons.chevron,\n          base: \"w-4 h-4 transform transition-transform duration-200\",\n          active: \"\",\n          inactive: \"-rotate-90\"\n        }\n      },\n      panel: \"mt-4 ml-2 py-2.5 pl-4 border-l border-gray-200 dark:border-gray-800 [&>div]:!mt-0\"\n    }));\n    const { ui } = useUI(\"content.collapsible\", void 0, config, void 0, true);\n    provideUseId(() => useId('$tPo8W3lBsH'));\n    return (_ctx, _cache) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_MDCSlot = _resolveComponent(\"MDCSlot\");\n      return _openBlock(), _createBlock(_unref(Disclosure), { as: \"div\" }, {\n        default: _withCtx(({ open }) => [\n          _createVNode(_unref(DisclosureButton), {\n            class: _normalizeClass(_unref(ui).button.base)\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_UIcon, {\n                name: _unref(ui).button.icon.name,\n                class: _normalizeClass([_unref(ui).button.icon.base, open ? _unref(ui).button.icon.active : _unref(ui).button.icon.inactive])\n              }, null, 8, [\"name\", \"class\"]),\n              _createElementVNode(\"span\", null, _toDisplayString(open ? \"Hide\" : \"Show\") + \" \" + _toDisplayString(__props.name), 1)\n            ]),\n            _: 2\n          }, 1032, [\"class\"]),\n          _createVNode(_unref(DisclosurePanel), {\n            class: _normalizeClass(_unref(ui).panel)\n          }, {\n            default: _withCtx(() => [\n              _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ]),\n        _: 3\n      });\n    };\n  }\n});\n",
-      "start": 1714175002341,
-      "end": 1714175002342,
+      "start": 1714180700327,
+      "end": 1714180700328,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -201,51 +201,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700328,
+      "end": 1714180700328,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700328,
+      "end": 1714180700328,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700328,
+      "end": 1714180700328,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700328,
+      "end": 1714180700328,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/components/MDCSlot\";\nimport { useAppConfig } from '#app/config';\nimport { computed } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { useId } from '#app/composables/id';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport { renderSlot as _renderMDCSlot } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/utils/slot\";\nimport { Disclosure, DisclosureButton, DisclosurePanel, provideUseId } from \"@headlessui/vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Collapsible\",\n  props: {\n    name: {\n      type: String,\n      default: \"properties\"\n    }\n  },\n  setup(__props) {\n    const appConfig = useAppConfig();\n    const config = computed(() => ({\n      button: {\n        base: \"flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200\",\n        icon: {\n          name: appConfig.ui.icons.chevron,\n          base: \"w-4 h-4 transform transition-transform duration-200\",\n          active: \"\",\n          inactive: \"-rotate-90\"\n        }\n      },\n      panel: \"mt-4 ml-2 py-2.5 pl-4 border-l border-gray-200 dark:border-gray-800 [&>div]:!mt-0\"\n    }));\n    const { ui } = useUI(\"content.collapsible\", void 0, config, void 0, true);\n    provideUseId(() => useId('$tPo8W3lBsH'));\n    return (_ctx, _cache) => {\n      const _component_UIcon = __nuxt_component_0;\n      const _component_MDCSlot = __nuxt_component_1;\n      return _openBlock(), _createBlock(_unref(Disclosure), { as: \"div\" }, {\n        default: _withCtx(({ open }) => [\n          _createVNode(_unref(DisclosureButton), {\n            class: _normalizeClass(_unref(ui).button.base)\n          }, {\n            default: _withCtx(() => [\n              _createVNode(_component_UIcon, {\n                name: _unref(ui).button.icon.name,\n                class: _normalizeClass([_unref(ui).button.icon.base, open ? _unref(ui).button.icon.active : _unref(ui).button.icon.inactive])\n              }, null, 8, [\"name\", \"class\"]),\n              _createElementVNode(\"span\", null, _toDisplayString(open ? \"Hide\" : \"Show\") + \" \" + _toDisplayString(__props.name), 1)\n            ]),\n            _: 2\n          }, 1032, [\"class\"]),\n          _createVNode(_unref(DisclosurePanel), {\n            class: _normalizeClass(_unref(ui).panel)\n          }, {\n            default: _withCtx(() => [\n              _renderMDCSlot(_ctx.$slots, \"default\", { unwrap: \"p\" })\n            ]),\n            _: 3\n          }, 8, [\"class\"])\n        ]),\n        _: 3\n      });\n    };\n  }\n});\n",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700328,
+      "end": 1714180700328,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700328,
+      "end": 1714180700328,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700328,
+      "end": 1714180700328,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175002342,
-      "end": 1714175002342,
+      "start": 1714180700328,
+      "end": 1714180700328,
       "order": "normal"
     }
   ]

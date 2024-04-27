@@ -4,69 +4,69 @@
     {
       "name": "vite:load-fallback",
       "result": "export default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig()\n  const nuxtApp = useNuxtApp()\n\n  const root = computed(() => {\n    return `:root {\n  --header-height: ${appConfig.ui.variables.header.height};\n\n  ${Object.entries(appConfig.ui.variables.light).map(([key, value]) => `--ui-${key}: ${value};`).join('\\n')}\n}\n\n.dark {\n  ${Object.entries(appConfig.ui.variables.dark).map(([key, value]) => `--ui-${key}: ${value};`).join('\\n')}\n}`\n  })\n\n  // Head\n  const headData: any = {\n    style: [{\n      innerHTML: () => root.value,\n      tagPriority: -2,\n      id: 'nuxt-ui-variables'\n    }]\n  }\n\n  // SPA mode\n  if (process.client && nuxtApp.isHydrating && !nuxtApp.payload.serverRendered) {\n    const style = document.createElement('style')\n\n    style.innerHTML = root.value\n    style.setAttribute('data-nuxt-ui-variables', '')\n    document.head.appendChild(style)\n\n    headData.script = [{\n      innerHTML: 'document.head.removeChild(document.querySelector(\\'[data-nuxt-ui-variables]\\'))'\n    }]\n  }\n\n  useHead(headData)\n})\n",
-      "start": 1714175004998,
-      "end": 1714175008258,
+      "start": 1714180704469,
+      "end": 1714180706644,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706644,
+      "end": 1714180706644,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "export default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig();\n  const nuxtApp = useNuxtApp();\n  const root = computed(() => {\n    return `:root {\n  --header-height: ${appConfig.ui.variables.header.height};\n\n  ${Object.entries(appConfig.ui.variables.light).map(([key, value]) => `--ui-${key}: ${value};`).join(\"\\n\")}\n}\n\n.dark {\n  ${Object.entries(appConfig.ui.variables.dark).map(([key, value]) => `--ui-${key}: ${value};`).join(\"\\n\")}\n}`;\n  });\n  const headData = {\n    style: [{\n      innerHTML: () => root.value,\n      tagPriority: -2,\n      id: \"nuxt-ui-variables\"\n    }]\n  };\n  if (process.client && nuxtApp.isHydrating && !nuxtApp.payload.serverRendered) {\n    const style = document.createElement(\"style\");\n    style.innerHTML = root.value;\n    style.setAttribute(\"data-nuxt-ui-variables\", \"\");\n    document.head.appendChild(style);\n    headData.script = [{\n      innerHTML: \"document.head.removeChild(document.querySelector('[data-nuxt-ui-variables]'))\"\n    }];\n  }\n  useHead(headData);\n});\n",
-      "start": 1714175008258,
-      "end": 1714175009176,
+      "start": 1714180706644,
+      "end": 1714180708860,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -82,149 +82,149 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708860,
+      "end": 1714180708860,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708860,
+      "end": 1714180708860,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708860,
+      "end": 1714180708860,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708860,
+      "end": 1714180708860,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708860,
+      "end": 1714180708860,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708860,
+      "end": 1714180708860,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708860,
+      "end": 1714180708861,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708860,
+      "end": 1714180708861,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708861,
+      "end": 1714180708861,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708861,
+      "end": 1714180708861,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708861,
+      "end": 1714180708861,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708861,
+      "end": 1714180708861,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175009176,
-      "end": 1714175009176,
+      "start": 1714180708861,
+      "end": 1714180708861,
       "order": "normal"
     },
     {
       "name": "vite:define",
       "result": "export default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig();\n  const nuxtApp = useNuxtApp();\n  const root = computed(() => {\n    return `:root {\n  --header-height: ${appConfig.ui.variables.header.height};\n\n  ${Object.entries(appConfig.ui.variables.light).map(([key, value]) => `--ui-${key}: ${value};`).join(\"\\n\")}\n}\n\n.dark {\n  ${Object.entries(appConfig.ui.variables.dark).map(([key, value]) => `--ui-${key}: ${value};`).join(\"\\n\")}\n}`;\n  });\n  const headData = {\n    style: [{\n      innerHTML: () => root.value,\n      tagPriority: -2,\n      id: \"nuxt-ui-variables\"\n    }]\n  };\n  if (false) {\n    const style = (void 0).createElement(\"style\");\n    style.innerHTML = root.value;\n    style.setAttribute(\"data-nuxt-ui-variables\", \"\");\n    (void 0).head.appendChild(style);\n    headData.script = [{\n      innerHTML: \"document.head.removeChild(document.querySelector('[data-nuxt-ui-variables]'))\"\n    }];\n  }\n  useHead(headData);\n});\n",
-      "start": 1714175009176,
-      "end": 1714175012835,
+      "start": 1714180708861,
+      "end": 1714180710687,
       "order": "normal",
       "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/plugins/variables.ts\"],\n  \"sourcesContent\": [\"export default defineNuxtPlugin(() => {\\n  const appConfig = useAppConfig();\\n  const nuxtApp = useNuxtApp();\\n  const root = computed(() => {\\n    return `:root {\\n  --header-height: ${appConfig.ui.variables.header.height};\\n\\n  ${Object.entries(appConfig.ui.variables.light).map(([key, value]) => `--ui-${key}: ${value};`).join(\\\"\\\\n\\\")}\\n}\\n\\n.dark {\\n  ${Object.entries(appConfig.ui.variables.dark).map(([key, value]) => `--ui-${key}: ${value};`).join(\\\"\\\\n\\\")}\\n}`;\\n  });\\n  const headData = {\\n    style: [{\\n      innerHTML: () => root.value,\\n      tagPriority: -2,\\n      id: \\\"nuxt-ui-variables\\\"\\n    }]\\n  };\\n  if (process.client && nuxtApp.isHydrating && !nuxtApp.payload.serverRendered) {\\n    const style = document.createElement(\\\"style\\\");\\n    style.innerHTML = root.value;\\n    style.setAttribute(\\\"data-nuxt-ui-variables\\\", \\\"\\\");\\n    document.head.appendChild(style);\\n    headData.script = [{\\n      innerHTML: \\\"document.head.removeChild(document.querySelector('[data-nuxt-ui-variables]'))\\\"\\n    }];\\n  }\\n  useHead(headData);\\n});\\n\"],\n  \"mappings\": \"AAAA,eAAe,iBAAiB,MAAM;AACpC,QAAM,YAAY,aAAa;AAC/B,QAAM,UAAU,WAAW;AAC3B,QAAM,OAAO,SAAS,MAAM;AAC1B,WAAO;AAAA,qBACU,UAAU,GAAG,UAAU,OAAO,MAAM;AAAA;AAAA,IAErD,OAAO,QAAQ,UAAU,GAAG,UAAU,KAAK,EAAE,IAAI,CAAC,CAAC,KAAK,KAAK,MAAM,QAAQ,GAAG,KAAK,KAAK,GAAG,EAAE,KAAK,IAAI,CAAC;AAAA;AAAA;AAAA;AAAA,IAIvG,OAAO,QAAQ,UAAU,GAAG,UAAU,IAAI,EAAE,IAAI,CAAC,CAAC,KAAK,KAAK,MAAM,QAAQ,GAAG,KAAK,KAAK,GAAG,EAAE,KAAK,IAAI,CAAC;AAAA;AAAA,EAExG,CAAC;AACD,QAAM,WAAW;AAAA,IACf,OAAO,CAAC;AAAA,MACN,WAAW,MAAM,KAAK;AAAA,MACtB,aAAa;AAAA,MACb,IAAI;AAAA,IACN,CAAC;AAAA,EACH;AACA,MAAI,OAA0E;AAC5E,UAAM,QAAQ,SAAS,cAAc,OAAO;AAC5C,UAAM,YAAY,KAAK;AACvB,UAAM,aAAa,0BAA0B,EAAE;AAC/C,aAAS,KAAK,YAAY,KAAK;AAC/B,aAAS,SAAS,CAAC;AAAA,MACjB,WAAW;AAAA,IACb,CAAC;AAAA,EACH;AACA,UAAQ,QAAQ;AAClB,CAAC;\",\n  \"names\": []\n}\n"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175012835,
-      "end": 1714175012835,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineNuxtPlugin, useNuxtApp } from '#app/nuxt';\nimport { useAppConfig } from '#app/config';\nimport { computed } from 'vue';\nimport { useHead } from '@unhead/vue';\nexport default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig();\n  const nuxtApp = useNuxtApp();\n  const root = computed(() => {\n    return `:root {\n  --header-height: ${appConfig.ui.variables.header.height};\n\n  ${Object.entries(appConfig.ui.variables.light).map(([key, value]) => `--ui-${key}: ${value};`).join(\"\\n\")}\n}\n\n.dark {\n  ${Object.entries(appConfig.ui.variables.dark).map(([key, value]) => `--ui-${key}: ${value};`).join(\"\\n\")}\n}`;\n  });\n  const headData = {\n    style: [{\n      innerHTML: () => root.value,\n      tagPriority: -2,\n      id: \"nuxt-ui-variables\"\n    }]\n  };\n  if (false) {\n    const style = (void 0).createElement(\"style\");\n    style.innerHTML = root.value;\n    style.setAttribute(\"data-nuxt-ui-variables\", \"\");\n    (void 0).head.appendChild(style);\n    headData.script = [{\n      innerHTML: \"document.head.removeChild(document.querySelector('[data-nuxt-ui-variables]'))\"\n    }];\n  }\n  useHead(headData);\n});\n",
-      "start": 1714175012835,
-      "end": 1714175012836,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -238,8 +238,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineNuxtPlugin, useNuxtApp } from '#app/nuxt';\nimport { useAppConfig } from '#app/config';\nimport { computed } from 'vue';\nimport { useHead } from '@unhead/vue';\nexport default defineNuxtPlugin(() => {\n  const appConfig = useAppConfig();\n  const nuxtApp = useNuxtApp();\n  const root = computed(() => {\n    return `:root {\n  --header-height: ${appConfig.ui.variables.header.height};\n\n  ${Object.entries(appConfig.ui.variables.light).map(([key, value]) => `--ui-${key}: ${value};`).join(\"\\n\")}\n}\n\n.dark {\n  ${Object.entries(appConfig.ui.variables.dark).map(([key, value]) => `--ui-${key}: ${value};`).join(\"\\n\")}\n}`;\n  });\n  const headData = {\n    style: [{\n      innerHTML: () => root.value,\n      tagPriority: -2,\n      id: \"nuxt-ui-variables\"\n    }]\n  };\n  if (false) {\n    const style = (void 0).createElement(\"style\");\n    style.innerHTML = root.value;\n    style.setAttribute(\"data-nuxt-ui-variables\", \"\");\n    (void 0).head.appendChild(style);\n    headData.script = [{\n      innerHTML: \"document.head.removeChild(document.querySelector('[data-nuxt-ui-variables]'))\"\n    }];\n  }\n  useHead(headData);\n});\n",
-      "start": 1714175012835,
-      "end": 1714175012836,
+      "start": 1714180710688,
+      "end": 1714180710688,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -252,56 +252,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710688,
+      "end": 1714180710689,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710688,
+      "end": 1714180710689,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710689,
+      "end": 1714180710689,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710689,
+      "end": 1714180710689,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710689,
+      "end": 1714180710689,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710689,
+      "end": 1714180710689,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710689,
+      "end": 1714180710689,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710689,
+      "end": 1714180710689,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175012836,
-      "end": 1714175012836,
+      "start": 1714180710689,
+      "end": 1714180710689,
       "order": "normal"
     }
   ]

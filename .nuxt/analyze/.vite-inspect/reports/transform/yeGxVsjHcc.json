@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/gold-icon.png'\nimport _imports_1 from '/anotherone.png'\n\n\nconst _hoisted_1 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1)\n\nimport type { NavItem } from \"@nuxt/content/dist/runtime/types\";\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Header',\n  setup(__props) {\n\nconst navigation = inject<Ref<NavItem[]>>(\"navigation\", ref([]));\n\nconst links = [\n  {\n    label: \"About\",\n    to: \"/about/introduction\",\n  },\n  {\n    label: \"Sermons\",\n    to: \"/sermons/sermon_1\",\n  },\n  {\n    label: \"Letters\",\n    to: \"/letters/letter_1\",\n  },\n  {\n    label: \"Sayings\",\n    to: \"/sayings/sayings\",\n  },\n  {\n    label: \"Blog\",\n    to: \"/blog\",\n  },\n];\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UButton = _resolveComponent(\"UButton\")!\n  const _component_UNavigationTree = _resolveComponent(\"UNavigationTree\")!\n  const _component_UHeader = _resolveComponent(\"UHeader\")!\n\n  return (_openBlock(), _createBlock(_component_UHeader, { links: links }, {\n    logo: _withCtx(() => [\n      _hoisted_1\n    ]),\n    right: _withCtx(() => [\n      _createVNode(_component_UButton, {\n        label: \"Support\",\n        color: \"gray\",\n        to: \"/donate\"\n      })\n    ]),\n    panel: _withCtx(() => [\n      _createVNode(_component_UNavigationTree, {\n        links: _ctx.mapContentNavigation(_unref(navigation)),\n        \"default-open\": \"\"\n      }, null, 8, [\"links\"])\n    ]),\n    _: 1\n  }))\n}\n}\n\n})",
-      "start": 1714175002832,
-      "end": 1714175002832
+      "start": 1714180700850,
+      "end": 1714180700850
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175002832,
-      "end": 1714175002832,
+      "start": 1714180700850,
+      "end": 1714180700850,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175002832,
-      "end": 1714175002832,
+      "start": 1714180700850,
+      "end": 1714180700850,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175002832,
-      "end": 1714175002832,
+      "start": 1714180700850,
+      "end": 1714180700850,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175002832,
-      "end": 1714175002832,
+      "start": 1714180700850,
+      "end": 1714180700850,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175002832,
-      "end": 1714175002832,
+      "start": 1714180700850,
+      "end": 1714180700850,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport _imports_0 from \"/gold-icon.png\";\nimport _imports_1 from \"/anotherone.png\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Header\",\n  setup(__props) {\n    const navigation = inject(\"navigation\", ref([]));\n    const links = [\n      {\n        label: \"About\",\n        to: \"/about/introduction\"\n      },\n      {\n        label: \"Sermons\",\n        to: \"/sermons/sermon_1\"\n      },\n      {\n        label: \"Letters\",\n        to: \"/letters/letter_1\"\n      },\n      {\n        label: \"Sayings\",\n        to: \"/sayings/sayings\"\n      },\n      {\n        label: \"Blog\",\n        to: \"/blog\"\n      }\n    ];\n    return (_ctx, _cache) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UNavigationTree = _resolveComponent(\"UNavigationTree\");\n      const _component_UHeader = _resolveComponent(\"UHeader\");\n      return _openBlock(), _createBlock(_component_UHeader, { links }, {\n        logo: _withCtx(() => [\n          _hoisted_1\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UButton, {\n            label: \"Support\",\n            color: \"gray\",\n            to: \"/donate\"\n          })\n        ]),\n        panel: _withCtx(() => [\n          _createVNode(_component_UNavigationTree, {\n            links: _ctx.mapContentNavigation(_unref(navigation)),\n            \"default-open\": \"\"\n          }, null, 8, [\"links\"])\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714175002832,
-      "end": 1714175002957,
+      "start": 1714180700850,
+      "end": 1714180700923,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175002957,
-      "end": 1714175002957,
+      "start": 1714180700923,
+      "end": 1714180700923,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { inject, ref } from 'vue';\nimport { mapContentNavigation as __unimport_mapContentNavigation } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { unref as __unimport_unref_ } from 'vue';import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport _imports_0 from \"/gold-icon.png\";\nimport _imports_1 from \"/anotherone.png\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Header\",\n  setup(__props) {\n    const navigation = inject(\"navigation\", ref([]));\n    const links = [\n      {\n        label: \"About\",\n        to: \"/about/introduction\"\n      },\n      {\n        label: \"Sermons\",\n        to: \"/sermons/sermon_1\"\n      },\n      {\n        label: \"Letters\",\n        to: \"/letters/letter_1\"\n      },\n      {\n        label: \"Sayings\",\n        to: \"/sayings/sayings\"\n      },\n      {\n        label: \"Blog\",\n        to: \"/blog\"\n      }\n    ];\n    return (_ctx, _cache) => {\n      const _component_UButton = _resolveComponent(\"UButton\");\n      const _component_UNavigationTree = _resolveComponent(\"UNavigationTree\");\n      const _component_UHeader = _resolveComponent(\"UHeader\");\n      return _openBlock(), _createBlock(_component_UHeader, { links }, {\n        logo: _withCtx(() => [\n          _hoisted_1\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UButton, {\n            label: \"Support\",\n            color: \"gray\",\n            to: \"/donate\"\n          })\n        ]),\n        panel: _withCtx(() => [\n          _createVNode(_component_UNavigationTree, {\n            links: (\"mapContentNavigation\" in _ctx ? _ctx.mapContentNavigation : __unimport_unref_(__unimport_mapContentNavigation))(_unref(navigation)),\n            \"default-open\": \"\"\n          }, null, 8, [\"links\"])\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714175002957,
-      "end": 1714175002958,
+      "start": 1714180700923,
+      "end": 1714180700925,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175002958,
-      "end": 1714175002958,
+      "start": 1714180700925,
+      "end": 1714180700925,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175002958,
-      "end": 1714175002958,
+      "start": 1714180700925,
+      "end": 1714180700925,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175002958,
-      "end": 1714175002958,
+      "start": 1714180700925,
+      "end": 1714180700925,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175002958,
-      "end": 1714175002958,
+      "start": 1714180700925,
+      "end": 1714180700925,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/navigation/NavigationTree.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/header/Header.vue\";\nimport { inject, ref } from 'vue';\nimport { mapContentNavigation as __unimport_mapContentNavigation } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/utils/content.ts';\nimport { unref as __unimport_unref_ } from 'vue';import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport _imports_0 from \"/gold-icon.png\";\nimport _imports_1 from \"/anotherone.png\";\nconst _hoisted_1 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"flex items-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    class: \"h-7 w-auto mr-3\"\n  }),\n  /* @__PURE__ */ _createElementVNode(\"img\", {\n    src: _imports_1,\n    alt: \"Heading\",\n    class: \"h-4 w-auto mr-3\"\n  })\n], -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Header\",\n  setup(__props) {\n    const navigation = inject(\"navigation\", ref([]));\n    const links = [\n      {\n        label: \"About\",\n        to: \"/about/introduction\"\n      },\n      {\n        label: \"Sermons\",\n        to: \"/sermons/sermon_1\"\n      },\n      {\n        label: \"Letters\",\n        to: \"/letters/letter_1\"\n      },\n      {\n        label: \"Sayings\",\n        to: \"/sayings/sayings\"\n      },\n      {\n        label: \"Blog\",\n        to: \"/blog\"\n      }\n    ];\n    return (_ctx, _cache) => {\n      const _component_UButton = __nuxt_component_0;\n      const _component_UNavigationTree = __nuxt_component_1;\n      const _component_UHeader = __nuxt_component_2;\n      return _openBlock(), _createBlock(_component_UHeader, { links }, {\n        logo: _withCtx(() => [\n          _hoisted_1\n        ]),\n        right: _withCtx(() => [\n          _createVNode(_component_UButton, {\n            label: \"Support\",\n            color: \"gray\",\n            to: \"/donate\"\n          })\n        ]),\n        panel: _withCtx(() => [\n          _createVNode(_component_UNavigationTree, {\n            links: (\"mapContentNavigation\" in _ctx ? _ctx.mapContentNavigation : __unimport_unref_(__unimport_mapContentNavigation))(_unref(navigation)),\n            \"default-open\": \"\"\n          }, null, 8, [\"links\"])\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714175002958,
-      "end": 1714175002958,
+      "start": 1714180700925,
+      "end": 1714180700925,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175002958,
-      "end": 1714175002958,
+      "start": 1714180700925,
+      "end": 1714180700925,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175002958,
-      "end": 1714175002958,
+      "start": 1714180700925,
+      "end": 1714180700925,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175002958,
-      "end": 1714175002958,
+      "start": 1714180700925,
+      "end": 1714180700925,
       "order": "normal"
     }
   ]

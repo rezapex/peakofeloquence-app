@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'signup',\n  setup(__props) {\n\ndefinePageMeta({\n  layout: 'auth'\n})\n\nuseSeoMeta({\n  title: 'Sign up'\n})\n\nconst fields = [{\n  name: 'name',\n  type: 'text',\n  label: 'Name',\n  placeholder: 'Enter your name'\n}, {\n  name: 'email',\n  type: 'text',\n  label: 'Email',\n  placeholder: 'Enter your email'\n}, {\n  name: 'password',\n  label: 'Password',\n  type: 'password',\n  placeholder: 'Enter your password'\n}]\n\nconst validate = (state: any) => {\n  const errors = []\n  if (!state.email) errors.push({ path: 'email', message: 'Email is required' })\n  if (!state.password) errors.push({ path: 'password', message: 'Password is required' })\n  return errors\n}\n\nconst providers = [{\n  label: 'Continue with GitHub',\n  icon: 'i-simple-icons-github',\n  color: 'gray' as const,\n  click: () => {\n    console.log('Redirect to GitHub')\n  }\n}]\n\nfunction onSubmit (data: any) {\n  console.log('Submitted', data)\n}\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n  const _component_UAuthForm = _resolveComponent(\"UAuthForm\")!\n  const _component_UCard = _resolveComponent(\"UCard\")!\n\n  return (_openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n    default: _withCtx(() => [\n      _createVNode(_component_UAuthForm, {\n        fields: fields,\n        validate: validate,\n        providers: providers,\n        align: \"top\",\n        title: \"Create an account\",\n        ui: { base: 'text-center', footer: 'text-center' },\n        \"submit-button\": { label: 'Create account' },\n        onSubmit: onSubmit\n      }, {\n        description: _withCtx(() => [\n          _createTextVNode(\" Already have an account? \"),\n          _createVNode(_component_NuxtLink, {\n            to: \"/login\",\n            class: \"text-primary font-medium\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\"Login\")\n            ]),\n            _: 1\n          }),\n          _createTextVNode(\". \")\n        ]),\n        footer: _withCtx(() => [\n          _createTextVNode(\" By signing up, you agree to our \"),\n          _createVNode(_component_NuxtLink, {\n            to: \"/\",\n            class: \"text-primary font-medium\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\"Terms of Service\")\n            ]),\n            _: 1\n          }),\n          _createTextVNode(\". \")\n        ]),\n        _: 1\n      })\n    ]),\n    _: 1\n  }))\n}\n}\n\n})",
-      "start": 1714175002093,
-      "end": 1714175002093
+      "start": 1714180700129,
+      "end": 1714180700129
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"signup\",\n  setup(__props) {\n    definePageMeta({\n      layout: \"auth\"\n    });\n    useSeoMeta({\n      title: \"Sign up\"\n    });\n    const fields = [{\n      name: \"name\",\n      type: \"text\",\n      label: \"Name\",\n      placeholder: \"Enter your name\"\n    }, {\n      name: \"email\",\n      type: \"text\",\n      label: \"Email\",\n      placeholder: \"Enter your email\"\n    }, {\n      name: \"password\",\n      label: \"Password\",\n      type: \"password\",\n      placeholder: \"Enter your password\"\n    }];\n    const validate = (state) => {\n      const errors = [];\n      if (!state.email)\n        errors.push({ path: \"email\", message: \"Email is required\" });\n      if (!state.password)\n        errors.push({ path: \"password\", message: \"Password is required\" });\n      return errors;\n    };\n    const providers = [{\n      label: \"Continue with GitHub\",\n      icon: \"i-simple-icons-github\",\n      color: \"gray\",\n      click: () => {\n        console.log(\"Redirect to GitHub\");\n      }\n    }];\n    function onSubmit(data) {\n      console.log(\"Submitted\", data);\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UAuthForm = _resolveComponent(\"UAuthForm\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UAuthForm, {\n            fields,\n            validate,\n            providers,\n            align: \"top\",\n            title: \"Create an account\",\n            ui: { base: \"text-center\", footer: \"text-center\" },\n            \"submit-button\": { label: \"Create account\" },\n            onSubmit\n          }, {\n            description: _withCtx(() => [\n              _createTextVNode(\" Already have an account? \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/login\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Login\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            footer: _withCtx(() => [\n              _createTextVNode(\" By signing up, you agree to our \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Terms of Service\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714175002093,
-      "end": 1714175002601,
+      "start": 1714180700129,
+      "end": 1714180700759,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175002601,
-      "end": 1714175002601,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175002601,
-      "end": 1714175002601,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175002601,
-      "end": 1714175002601,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175002601,
-      "end": 1714175002601,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002601,
-      "end": 1714175002601,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175002601,
-      "end": 1714175002601,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175002601,
-      "end": 1714175002601,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175002601,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175002602,
-      "end": 1714175002602,
+      "start": 1714180700759,
+      "end": 1714180700759,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { definePageMeta } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/pages/runtime/composables';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"signup\",\n  setup(__props) {\n    definePageMeta({\n      layout: \"auth\"\n    });\n    useSeoMeta({\n      title: \"Sign up\"\n    });\n    const fields = [{\n      name: \"name\",\n      type: \"text\",\n      label: \"Name\",\n      placeholder: \"Enter your name\"\n    }, {\n      name: \"email\",\n      type: \"text\",\n      label: \"Email\",\n      placeholder: \"Enter your email\"\n    }, {\n      name: \"password\",\n      label: \"Password\",\n      type: \"password\",\n      placeholder: \"Enter your password\"\n    }];\n    const validate = (state) => {\n      const errors = [];\n      if (!state.email)\n        errors.push({ path: \"email\", message: \"Email is required\" });\n      if (!state.password)\n        errors.push({ path: \"password\", message: \"Password is required\" });\n      return errors;\n    };\n    const providers = [{\n      label: \"Continue with GitHub\",\n      icon: \"i-simple-icons-github\",\n      color: \"gray\",\n      click: () => {\n        console.log(\"Redirect to GitHub\");\n      }\n    }];\n    function onSubmit(data) {\n      console.log(\"Submitted\", data);\n    }\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      const _component_UAuthForm = _resolveComponent(\"UAuthForm\");\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createBlock(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n        default: _withCtx(() => [\n          _createVNode(_component_UAuthForm, {\n            fields,\n            validate,\n            providers,\n            align: \"top\",\n            title: \"Create an account\",\n            ui: { base: \"text-center\", footer: \"text-center\" },\n            \"submit-button\": { label: \"Create account\" },\n            onSubmit\n          }, {\n            description: _withCtx(() => [\n              _createTextVNode(\" Already have an account? \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/login\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Login\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            footer: _withCtx(() => [\n              _createTextVNode(\" By signing up, you agree to our \"),\n              _createVNode(_component_NuxtLink, {\n                to: \"/\",\n                class: \"text-primary font-medium\"\n              }, {\n                default: _withCtx(() => [\n                  _createTextVNode(\"Terms of Service\")\n                ]),\n                _: 1\n              }),\n              _createTextVNode(\". \")\n            ]),\n            _: 1\n          })\n        ]),\n        _: 1\n      });\n    };\n  }\n});\n",
-      "start": 1714175002602,
-      "end": 1714175002603,
+      "start": 1714180700759,
+      "end": 1714180700760,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,15 +192,15 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175002603,
-      "end": 1714175002603,
+      "start": 1714180700760,
+      "end": 1714180700761,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
       "result": "const __nuxt_page_meta = {\n      layout: \"auth\"\n    }\nexport default __nuxt_page_meta",
-      "start": 1714175002603,
-      "end": 1714175002604,
+      "start": 1714180700761,
+      "end": 1714180700761,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -213,38 +213,38 @@
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175002604,
-      "end": 1714175002604,
+      "start": 1714180700761,
+      "end": 1714180700761,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175002604,
-      "end": 1714175002604,
+      "start": 1714180700761,
+      "end": 1714180700761,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175002604,
-      "end": 1714175002604,
+      "start": 1714180700761,
+      "end": 1714180700761,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175002604,
-      "end": 1714175002604,
+      "start": 1714180700761,
+      "end": 1714180700761,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175002604,
-      "end": 1714175002604,
+      "start": 1714180700761,
+      "end": 1714180700761,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175002604,
-      "end": 1714175002604,
+      "start": 1714180700761,
+      "end": 1714180700761,
       "order": "normal"
     }
   ]

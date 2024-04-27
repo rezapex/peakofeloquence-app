@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div :class=\"wrapperClass\" v-bind=\"attrs\">\n    <div :class=\"borderClass\" />\n\n    <template v-if=\"label || icon || avatar || $slots.default\">\n      <div :class=\"containerClass\">\n        <slot>\n          <span v-if=\"label\" :class=\"ui.label\">\n            {{ label }}\n          </span>\n          <UIcon v-else-if=\"icon\" :name=\"icon\" :class=\"ui.icon.base\" />\n          <UAvatar v-else-if=\"avatar\" v-bind=\"{ size: ui.avatar.size, ...avatar }\" :class=\"ui.avatar.base\" />\n        </slot>\n      </div>\n\n      <div :class=\"borderClass\" />\n    </template>\n  </div>\n</template>\n\n<script>\nimport { toRef, computed, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { divider } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.divider, divider);\nexport default defineComponent({\n  components: {\n    UIcon,\n    UAvatar\n  },\n  inheritAttrs: false,\n  props: {\n    label: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: null\n    },\n    avatar: {\n      type: Object,\n      default: null\n    },\n    size: {\n      type: String,\n      default: () => config.default.size,\n      validator(value) {\n        return Object.keys(config.border.size.horizontal).includes(value) || Object.keys(config.border.size.vertical).includes(value);\n      }\n    },\n    orientation: {\n      type: String,\n      default: \"horizontal\",\n      validator: (value) => [\"horizontal\", \"vertical\"].includes(value)\n    },\n    type: {\n      type: String,\n      default: \"solid\",\n      validator: (value) => [\"solid\", \"dotted\", \"dashed\"].includes(value)\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"divider\", toRef(props, \"ui\"), config);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper.base,\n        ui.value.wrapper[props.orientation]\n      ), props.class);\n    });\n    const containerClass = computed(() => {\n      return twJoin(\n        ui.value.container.base,\n        ui.value.container[props.orientation]\n      );\n    });\n    const borderClass = computed(() => {\n      return twJoin(\n        ui.value.border.base,\n        ui.value.border[props.orientation],\n        ui.value.border.size[props.orientation][props.size],\n        ui.value.border.type[props.type]\n      );\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      containerClass,\n      borderClass\n    };\n  }\n});\n</script>\n",
-      "start": 1714175014741,
-      "end": 1714175014758,
+      "start": 1714180712630,
+      "end": 1714180712631,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175014758,
-      "end": 1714175014758,
+      "start": 1714180712631,
+      "end": 1714180712631,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { toRef, computed, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { divider } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.divider, divider);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon,\n    UAvatar\n  },\n  inheritAttrs: false,\n  props: {\n    label: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: null\n    },\n    avatar: {\n      type: Object,\n      default: null\n    },\n    size: {\n      type: String,\n      default: () => config.default.size,\n      validator(value) {\n        return Object.keys(config.border.size.horizontal).includes(value) || Object.keys(config.border.size.vertical).includes(value);\n      }\n    },\n    orientation: {\n      type: String,\n      default: \"horizontal\",\n      validator: (value) => [\"horizontal\", \"vertical\"].includes(value)\n    },\n    type: {\n      type: String,\n      default: \"solid\",\n      validator: (value) => [\"solid\", \"dotted\", \"dashed\"].includes(value)\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"divider\", toRef(props, \"ui\"), config);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper.base,\n        ui.value.wrapper[props.orientation]\n      ), props.class);\n    });\n    const containerClass = computed(() => {\n      return twJoin(\n        ui.value.container.base,\n        ui.value.container[props.orientation]\n      );\n    });\n    const borderClass = computed(() => {\n      return twJoin(\n        ui.value.border.base,\n        ui.value.border[props.orientation],\n        ui.value.border.size[props.orientation][props.size],\n        ui.value.border.type[props.type]\n      );\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      containerClass,\n      borderClass\n    };\n  }\n});\n\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = _resolveComponent(\"UIcon\")\n  const _component_UAvatar = _resolveComponent(\"UAvatar\")\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: _ctx.wrapperClass }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_ctx.borderClass)\n  }\"></div>`)\n  if (_ctx.label || _ctx.icon || _ctx.avatar || _ctx.$slots.default) {\n    _push(`<!--[--><div class=\"${_ssrRenderClass(_ctx.containerClass)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"default\", {}, () => {\n      if (_ctx.label) {\n        _push(`<span class=\"${\n          _ssrRenderClass(_ctx.ui.label)\n        }\">${\n          _ssrInterpolate(_ctx.label)\n        }</span>`)\n      } else if (_ctx.icon) {\n        _push(_ssrRenderComponent(_component_UIcon, {\n          name: _ctx.icon,\n          class: _ctx.ui.icon.base\n        }, null, _parent))\n      } else if (_ctx.avatar) {\n        _push(_ssrRenderComponent(_component_UAvatar, _mergeProps({ size: _ctx.ui.avatar.size, ..._ctx.avatar }, {\n          class: _ctx.ui.avatar.base\n        }), null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n    }, _push, _parent)\n    _push(`</div><div class=\"${_ssrRenderClass(_ctx.borderClass)}\"></div><!--]-->`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/layout/Divider.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714175014758,
-      "end": 1714175014760,
+      "start": 1714180712631,
+      "end": 1714180712633,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -101,171 +101,171 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712633,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712633,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714175014760,
-      "end": 1714175014760,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue\";\n\nimport { toRef, computed, defineComponent } from \"vue\";\nimport { twMerge, twJoin } from \"tailwind-merge\";\nimport UIcon from \"../elements/Icon.vue\";\nimport UAvatar from \"../elements/Avatar.vue\";\nimport { useUI } from \"../../composables/useUI\";\nimport { mergeConfig } from \"../../utils\";\nimport appConfig from \"#build/app.config\";\nimport { divider } from \"#ui/ui.config\";\nconst config = mergeConfig(appConfig.ui.strategy, appConfig.ui.divider, divider);\nconst _sfc_main = defineComponent({\n  components: {\n    UIcon,\n    UAvatar\n  },\n  inheritAttrs: false,\n  props: {\n    label: {\n      type: String,\n      default: null\n    },\n    icon: {\n      type: String,\n      default: null\n    },\n    avatar: {\n      type: Object,\n      default: null\n    },\n    size: {\n      type: String,\n      default: () => config.default.size,\n      validator(value) {\n        return Object.keys(config.border.size.horizontal).includes(value) || Object.keys(config.border.size.vertical).includes(value);\n      }\n    },\n    orientation: {\n      type: String,\n      default: \"horizontal\",\n      validator: (value) => [\"horizontal\", \"vertical\"].includes(value)\n    },\n    type: {\n      type: String,\n      default: \"solid\",\n      validator: (value) => [\"solid\", \"dotted\", \"dashed\"].includes(value)\n    },\n    class: {\n      type: [String, Object, Array],\n      default: () => \"\"\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(props) {\n    const { ui, attrs } = useUI(\"divider\", toRef(props, \"ui\"), config);\n    const wrapperClass = computed(() => {\n      return twMerge(twJoin(\n        ui.value.wrapper.base,\n        ui.value.wrapper[props.orientation]\n      ), props.class);\n    });\n    const containerClass = computed(() => {\n      return twJoin(\n        ui.value.container.base,\n        ui.value.container[props.orientation]\n      );\n    });\n    const borderClass = computed(() => {\n      return twJoin(\n        ui.value.border.base,\n        ui.value.border[props.orientation],\n        ui.value.border.size[props.orientation][props.size],\n        ui.value.border.type[props.type]\n      );\n    });\n    return {\n      // eslint-disable-next-line vue/no-dupe-keys\n      ui,\n      attrs,\n      wrapperClass,\n      containerClass,\n      borderClass\n    };\n  }\n});\n\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderClass as _ssrRenderClass, ssrRenderSlot as _ssrRenderSlot, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_UIcon = __nuxt_component_0\n  const _component_UAvatar = __nuxt_component_1\n\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: _ctx.wrapperClass }, _ctx.attrs, _attrs))\n  }><div class=\"${\n    _ssrRenderClass(_ctx.borderClass)\n  }\"></div>`)\n  if (_ctx.label || _ctx.icon || _ctx.avatar || _ctx.$slots.default) {\n    _push(`<!--[--><div class=\"${_ssrRenderClass(_ctx.containerClass)}\">`)\n    _ssrRenderSlot(_ctx.$slots, \"default\", {}, () => {\n      if (_ctx.label) {\n        _push(`<span class=\"${\n          _ssrRenderClass(_ctx.ui.label)\n        }\">${\n          _ssrInterpolate(_ctx.label)\n        }</span>`)\n      } else if (_ctx.icon) {\n        _push(_ssrRenderComponent(_component_UIcon, {\n          name: _ctx.icon,\n          class: _ctx.ui.icon.base\n        }, null, _parent))\n      } else if (_ctx.avatar) {\n        _push(_ssrRenderComponent(_component_UAvatar, _mergeProps({ size: _ctx.ui.avatar.size, ..._ctx.avatar }, {\n          class: _ctx.ui.avatar.base\n        }), null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n    }, _push, _parent)\n    _push(`</div><div class=\"${_ssrRenderClass(_ctx.borderClass)}\"></div><!--]-->`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/layout/Divider.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714175014760,
-      "end": 1714175014761,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -278,20 +278,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175014761,
-      "end": 1714175014761,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175014761,
-      "end": 1714175014761,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175014761,
-      "end": 1714175014761,
+      "start": 1714180712634,
+      "end": 1714180712634,
       "order": "normal"
     }
   ]

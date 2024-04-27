@@ -4,105 +4,105 @@
     {
       "name": "vite:load-fallback",
       "result": "import { createMatcherFromExport, createRouter as createRadixRouter, toRouteMatcher } from \"radix3\";\nimport { defu } from \"defu\";\nimport { useAppConfig } from \"../config.js\";\nimport { useRuntimeConfig } from \"../nuxt.js\";\nimport { appManifest as isAppManifestEnabled } from \"#build/nuxt.config.mjs\";\nimport { buildAssetsURL } from \"#internal/nuxt/paths\";\nlet manifest;\nlet matcher;\nfunction fetchManifest() {\n  if (!isAppManifestEnabled) {\n    throw new Error(\"[nuxt] app manifest should be enabled with `experimental.appManifest`\");\n  }\n  const buildId = useAppConfig().nuxt?.buildId;\n  manifest = $fetch(buildAssetsURL(`builds/meta/${buildId}.json`));\n  manifest.then((m) => {\n    matcher = createMatcherFromExport(m.matcher);\n  });\n  return manifest;\n}\nexport function getAppManifest() {\n  if (!isAppManifestEnabled) {\n    throw new Error(\"[nuxt] app manifest should be enabled with `experimental.appManifest`\");\n  }\n  return manifest || fetchManifest();\n}\nexport async function getRouteRules(url) {\n  if (import.meta.server) {\n    const _routeRulesMatcher = toRouteMatcher(\n      createRadixRouter({ routes: useRuntimeConfig().nitro.routeRules })\n    );\n    return defu({}, ..._routeRulesMatcher.matchAll(url).reverse());\n  }\n  await getAppManifest();\n  return defu({}, ...matcher.matchAll(url).reverse());\n}\n",
-      "start": 1714175001705,
-      "end": 1714175001748,
+      "start": 1714180699653,
+      "end": 1714180699708,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699708,
+      "end": 1714180699708,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175001748,
-      "end": 1714175001748,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "replace",
       "result": "import { createMatcherFromExport, createRouter as createRadixRouter, toRouteMatcher } from \"radix3\";\nimport { defu } from \"defu\";\nimport { useAppConfig } from \"../config.js\";\nimport { useRuntimeConfig } from \"../nuxt.js\";\nimport { appManifest as isAppManifestEnabled } from \"#build/nuxt.config.mjs\";\nimport { buildAssetsURL } from \"#internal/nuxt/paths\";\nlet manifest;\nlet matcher;\nfunction fetchManifest() {\n  if (!isAppManifestEnabled) {\n    throw new Error(\"[nuxt] app manifest should be enabled with `experimental.appManifest`\");\n  }\n  const buildId = useAppConfig().nuxt?.buildId;\n  manifest = $fetch(buildAssetsURL(`builds/meta/${buildId}.json`));\n  manifest.then((m) => {\n    matcher = createMatcherFromExport(m.matcher);\n  });\n  return manifest;\n}\nexport function getAppManifest() {\n  if (!isAppManifestEnabled) {\n    throw new Error(\"[nuxt] app manifest should be enabled with `experimental.appManifest`\");\n  }\n  return manifest || fetchManifest();\n}\nexport async function getRouteRules(url) {\n  if (false) {\n    const _routeRulesMatcher = toRouteMatcher(\n      createRadixRouter({ routes: useRuntimeConfig().nitro.routeRules })\n    );\n    return defu({}, ..._routeRulesMatcher.matchAll(url).reverse());\n  }\n  await getAppManifest();\n  return defu({}, ...matcher.matchAll(url).reverse());\n}\n",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -115,116 +115,116 @@
     },
     {
       "name": "ssr-styles",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175001749,
-      "end": 1714175001749,
+      "start": 1714180699709,
+      "end": 1714180699709,
       "order": "normal"
     }
   ]

@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withModifiers as _withModifiers, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"flex flex-col items-center justify-center p-4\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"p\", null, [\n  /*#__PURE__*/_createElementVNode(\"label\", null, [\n    /*#__PURE__*/_createTextVNode(\"Email: \"),\n    /*#__PURE__*/_createElementVNode(\"input\", {\n      type: \"email\",\n      name: \"email\"\n    })\n  ])\n], -1)\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"p\", null, [\n  /*#__PURE__*/_createElementVNode(\"label\", null, [\n    /*#__PURE__*/_createTextVNode(\"Password: \"),\n    /*#__PURE__*/_createElementVNode(\"input\", {\n      type: \"password\",\n      name: \"password\"\n    })\n  ])\n], -1)\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"p\", null, [\n  /*#__PURE__*/_createElementVNode(\"button\", { type: \"submit\" }, \"Log In\")\n], -1)\nconst _hoisted_5 = [\n  _hoisted_2,\n  _hoisted_3,\n  _hoisted_4\n]\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'login',\n  setup(__props) {\n\ndefinePageMeta({\n  layout: 'auth'\n})\n\nuseSeoMeta({\n  title: 'Login'\n})\n\n// Your existing script setup code...\n\n// Update your onSubmit function or create a new one for handling Netlify form submission\nfunction onNetlifySubmit(event: Event) {\n  event.preventDefault();\n  console.log('Netlify form submission handled');\n  // You might want to handle the form submission using Netlify's AJAX method here\n}\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UCard = _resolveComponent(\"UCard\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur mb-8\" }),\n    _createVNode(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n      default: _withCtx(() => [\n        _createElementVNode(\"form\", {\n          name: \"login-form\",\n          method: \"POST\",\n          \"data-netlify\": \"true\",\n          onSubmit: _withModifiers(onNetlifySubmit, [\"prevent\"])\n        }, _hoisted_5, 32)\n      ]),\n      _: 1\n    })\n  ]))\n}\n}\n\n})",
-      "start": 1714175002093,
-      "end": 1714175002093
+      "start": 1714180700080,
+      "end": 1714180700080
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700080,
+      "end": 1714180700080,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700080,
+      "end": 1714180700080,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700080,
+      "end": 1714180700080,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700080,
+      "end": 1714180700080,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175002093,
-      "end": 1714175002093,
+      "start": 1714180700080,
+      "end": 1714180700080,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withModifiers as _withModifiers, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"flex flex-col items-center justify-center p-4\" };\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"p\", null, [\n  /* @__PURE__ */ _createElementVNode(\"label\", null, [\n    /* @__PURE__ */ _createTextVNode(\"Email: \"),\n    /* @__PURE__ */ _createElementVNode(\"input\", {\n      type: \"email\",\n      name: \"email\"\n    })\n  ])\n], -1);\nconst _hoisted_3 = /* @__PURE__ */ _createElementVNode(\"p\", null, [\n  /* @__PURE__ */ _createElementVNode(\"label\", null, [\n    /* @__PURE__ */ _createTextVNode(\"Password: \"),\n    /* @__PURE__ */ _createElementVNode(\"input\", {\n      type: \"password\",\n      name: \"password\"\n    })\n  ])\n], -1);\nconst _hoisted_4 = /* @__PURE__ */ _createElementVNode(\"p\", null, [\n  /* @__PURE__ */ _createElementVNode(\"button\", { type: \"submit\" }, \"Log In\")\n], -1);\nconst _hoisted_5 = [\n  _hoisted_2,\n  _hoisted_3,\n  _hoisted_4\n];\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"login\",\n  setup(__props) {\n    definePageMeta({\n      layout: \"auth\"\n    });\n    useSeoMeta({\n      title: \"Login\"\n    });\n    function onNetlifySubmit(event) {\n      event.preventDefault();\n      console.log(\"Netlify form submission handled\");\n    }\n    return (_ctx, _cache) => {\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur mb-8\" }),\n        _createVNode(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"form\", {\n              name: \"login-form\",\n              method: \"POST\",\n              \"data-netlify\": \"true\",\n              onSubmit: _withModifiers(onNetlifySubmit, [\"prevent\"])\n            }, _hoisted_5, 32)\n          ]),\n          _: 1\n        })\n      ]);\n    };\n  }\n});\n",
-      "start": 1714175002093,
-      "end": 1714175002668,
+      "start": 1714180700080,
+      "end": 1714180700591,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175002668,
-      "end": 1714175002668,
+      "start": 1714180700591,
+      "end": 1714180700591,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { definePageMeta } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/pages/runtime/composables';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, withModifiers as _withModifiers, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"flex flex-col items-center justify-center p-4\" };\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"p\", null, [\n  /* @__PURE__ */ _createElementVNode(\"label\", null, [\n    /* @__PURE__ */ _createTextVNode(\"Email: \"),\n    /* @__PURE__ */ _createElementVNode(\"input\", {\n      type: \"email\",\n      name: \"email\"\n    })\n  ])\n], -1);\nconst _hoisted_3 = /* @__PURE__ */ _createElementVNode(\"p\", null, [\n  /* @__PURE__ */ _createElementVNode(\"label\", null, [\n    /* @__PURE__ */ _createTextVNode(\"Password: \"),\n    /* @__PURE__ */ _createElementVNode(\"input\", {\n      type: \"password\",\n      name: \"password\"\n    })\n  ])\n], -1);\nconst _hoisted_4 = /* @__PURE__ */ _createElementVNode(\"p\", null, [\n  /* @__PURE__ */ _createElementVNode(\"button\", { type: \"submit\" }, \"Log In\")\n], -1);\nconst _hoisted_5 = [\n  _hoisted_2,\n  _hoisted_3,\n  _hoisted_4\n];\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"login\",\n  setup(__props) {\n    definePageMeta({\n      layout: \"auth\"\n    });\n    useSeoMeta({\n      title: \"Login\"\n    });\n    function onNetlifySubmit(event) {\n      event.preventDefault();\n      console.log(\"Netlify form submission handled\");\n    }\n    return (_ctx, _cache) => {\n      const _component_UCard = _resolveComponent(\"UCard\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur mb-8\" }),\n        _createVNode(_component_UCard, { class: \"max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur\" }, {\n          default: _withCtx(() => [\n            _createElementVNode(\"form\", {\n              name: \"login-form\",\n              method: \"POST\",\n              \"data-netlify\": \"true\",\n              onSubmit: _withModifiers(onNetlifySubmit, [\"prevent\"])\n            }, _hoisted_5, 32)\n          ]),\n          _: 1\n        })\n      ]);\n    };\n  }\n});\n",
-      "start": 1714175002668,
-      "end": 1714175002669,
+      "start": 1714180700591,
+      "end": 1714180700592,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,15 +192,15 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175002669,
-      "end": 1714175002669,
+      "start": 1714180700592,
+      "end": 1714180700593,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
       "result": "const __nuxt_page_meta = {\n      layout: \"auth\"\n    }\nexport default __nuxt_page_meta",
-      "start": 1714175002669,
-      "end": 1714175002670,
+      "start": 1714180700593,
+      "end": 1714180700593,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -213,38 +213,38 @@
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175002670,
-      "end": 1714175002670,
+      "start": 1714180700593,
+      "end": 1714180700593,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175002670,
-      "end": 1714175002670,
+      "start": 1714180700593,
+      "end": 1714180700593,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175002670,
-      "end": 1714175002670,
+      "start": 1714180700593,
+      "end": 1714180700593,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175002670,
-      "end": 1714175002670,
+      "start": 1714180700593,
+      "end": 1714180700593,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175002670,
-      "end": 1714175002670,
+      "start": 1714180700593,
+      "end": 1714180700593,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175002670,
-      "end": 1714175002670,
+      "start": 1714180700593,
+      "end": 1714180700593,
       "order": "normal"
     }
   ]

@@ -4,69 +4,69 @@
     {
       "name": "vite:load-fallback",
       "result": "export default defineAppConfig({\n  ui: {\n    variables: {\n      light: {\n        background: '255 255 255',\n        foreground: 'var(--color-gray-700)'\n      },\n      dark: {\n        background: 'var(--color-gray-900)',\n        foreground: 'var(--color-gray-200)'\n      },\n      header: {\n        height: '4rem'\n      }\n    },\n    icons: {\n      dark: 'i-heroicons-moon-20-solid',\n      light: 'i-heroicons-sun-20-solid',\n      system: 'i-heroicons-computer-desktop-20-solid',\n      search: 'i-heroicons-magnifying-glass-20-solid',\n      external: 'i-heroicons-arrow-up-right-20-solid',\n      chevron: 'i-heroicons-chevron-down-20-solid',\n      hash: 'i-heroicons-hashtag-20-solid',\n      menu: 'i-heroicons-bars-3-20-solid',\n      close: 'i-heroicons-x-mark-20-solid',\n      check: 'i-heroicons-check-circle-20-solid'\n    },\n    presets: {\n      button: {\n        primary: {\n          color: 'white',\n          variant: 'solid'\n        },\n        secondary: {\n          color: 'gray',\n          variant: 'ghost'\n        },\n        input: {\n          color: 'white',\n          variant: 'outline',\n          ui: {\n            font: '',\n            color: {\n              white: {\n                outline: 'ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:ring-gray-300 dark:hover:ring-gray-700 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-200 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400'\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n})\n",
-      "start": 1714175013820,
-      "end": 1714175013925,
+      "start": 1714180711730,
+      "end": 1714180711765,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175013925,
-      "end": 1714175013925,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175013925,
-      "end": 1714175013925,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175013925,
-      "end": 1714175013925,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175013925,
-      "end": 1714175013925,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175013925,
-      "end": 1714175013925,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175013925,
-      "end": 1714175013925,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175013925,
-      "end": 1714175013925,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714175013925,
-      "end": 1714175013925,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175013925,
-      "end": 1714175013926,
+      "start": 1714180711765,
+      "end": 1714180711765,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "export default defineAppConfig({\n  ui: {\n    variables: {\n      light: {\n        background: \"255 255 255\",\n        foreground: \"var(--color-gray-700)\"\n      },\n      dark: {\n        background: \"var(--color-gray-900)\",\n        foreground: \"var(--color-gray-200)\"\n      },\n      header: {\n        height: \"4rem\"\n      }\n    },\n    icons: {\n      dark: \"i-heroicons-moon-20-solid\",\n      light: \"i-heroicons-sun-20-solid\",\n      system: \"i-heroicons-computer-desktop-20-solid\",\n      search: \"i-heroicons-magnifying-glass-20-solid\",\n      external: \"i-heroicons-arrow-up-right-20-solid\",\n      chevron: \"i-heroicons-chevron-down-20-solid\",\n      hash: \"i-heroicons-hashtag-20-solid\",\n      menu: \"i-heroicons-bars-3-20-solid\",\n      close: \"i-heroicons-x-mark-20-solid\",\n      check: \"i-heroicons-check-circle-20-solid\"\n    },\n    presets: {\n      button: {\n        primary: {\n          color: \"white\",\n          variant: \"solid\"\n        },\n        secondary: {\n          color: \"gray\",\n          variant: \"ghost\"\n        },\n        input: {\n          color: \"white\",\n          variant: \"outline\",\n          ui: {\n            font: \"\",\n            color: {\n              white: {\n                outline: \"ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:ring-gray-300 dark:hover:ring-gray-700 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-200 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n});\n",
-      "start": 1714175013926,
-      "end": 1714175014449,
+      "start": 1714180711765,
+      "end": 1714180712298,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -82,147 +82,147 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014449,
-      "end": 1714175014449,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712299,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineAppConfig } from '#app/nuxt';\nexport default defineAppConfig({\n  ui: {\n    variables: {\n      light: {\n        background: \"255 255 255\",\n        foreground: \"var(--color-gray-700)\"\n      },\n      dark: {\n        background: \"var(--color-gray-900)\",\n        foreground: \"var(--color-gray-200)\"\n      },\n      header: {\n        height: \"4rem\"\n      }\n    },\n    icons: {\n      dark: \"i-heroicons-moon-20-solid\",\n      light: \"i-heroicons-sun-20-solid\",\n      system: \"i-heroicons-computer-desktop-20-solid\",\n      search: \"i-heroicons-magnifying-glass-20-solid\",\n      external: \"i-heroicons-arrow-up-right-20-solid\",\n      chevron: \"i-heroicons-chevron-down-20-solid\",\n      hash: \"i-heroicons-hashtag-20-solid\",\n      menu: \"i-heroicons-bars-3-20-solid\",\n      close: \"i-heroicons-x-mark-20-solid\",\n      check: \"i-heroicons-check-circle-20-solid\"\n    },\n    presets: {\n      button: {\n        primary: {\n          color: \"white\",\n          variant: \"solid\"\n        },\n        secondary: {\n          color: \"gray\",\n          variant: \"ghost\"\n        },\n        input: {\n          color: \"white\",\n          variant: \"outline\",\n          ui: {\n            font: \"\",\n            color: {\n              white: {\n                outline: \"ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:ring-gray-300 dark:hover:ring-gray-700 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-200 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n});\n",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712300,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -236,8 +236,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineAppConfig } from '#app/nuxt';\nexport default defineAppConfig({\n  ui: {\n    variables: {\n      light: {\n        background: \"255 255 255\",\n        foreground: \"var(--color-gray-700)\"\n      },\n      dark: {\n        background: \"var(--color-gray-900)\",\n        foreground: \"var(--color-gray-200)\"\n      },\n      header: {\n        height: \"4rem\"\n      }\n    },\n    icons: {\n      dark: \"i-heroicons-moon-20-solid\",\n      light: \"i-heroicons-sun-20-solid\",\n      system: \"i-heroicons-computer-desktop-20-solid\",\n      search: \"i-heroicons-magnifying-glass-20-solid\",\n      external: \"i-heroicons-arrow-up-right-20-solid\",\n      chevron: \"i-heroicons-chevron-down-20-solid\",\n      hash: \"i-heroicons-hashtag-20-solid\",\n      menu: \"i-heroicons-bars-3-20-solid\",\n      close: \"i-heroicons-x-mark-20-solid\",\n      check: \"i-heroicons-check-circle-20-solid\"\n    },\n    presets: {\n      button: {\n        primary: {\n          color: \"white\",\n          variant: \"solid\"\n        },\n        secondary: {\n          color: \"gray\",\n          variant: \"ghost\"\n        },\n        input: {\n          color: \"white\",\n          variant: \"outline\",\n          ui: {\n            font: \"\",\n            color: {\n              white: {\n                outline: \"ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:ring-gray-300 dark:hover:ring-gray-700 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-200 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n});\n",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712299,
+      "end": 1714180712300,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -250,56 +250,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175014450,
-      "end": 1714175014450,
+      "start": 1714180712300,
+      "end": 1714180712300,
       "order": "normal"
     }
   ]

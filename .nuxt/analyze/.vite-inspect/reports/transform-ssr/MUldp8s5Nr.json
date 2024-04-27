@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <UCard :class=\"[ui.wrapper, highlight && ui.highlight, scale && ui.scale]\" v-bind=\"attrs\" :ui=\"ui\">\n    <template v-if=\"$slots.header\" #header>\n      <slot name=\"header\" />\n    </template>\n\n    <div :class=\"ui.left\">\n      <div :class=\"ui.inner\">\n        <p v-if=\"title || $slots.title\" :class=\"ui.title\">\n          <slot name=\"title\">\n            {{ title }}\n          </slot>\n        </p>\n\n        <UBadge v-if=\"badge\" v-bind=\"{ variant: 'subtle', ...badge }\" />\n      </div>\n\n      <p v-if=\"description || $slots.description\" :class=\"ui.description\">\n        <slot name=\"description\">\n          {{ description }}\n        </slot>\n      </p>\n\n      <template v-if=\"orientation === 'horizontal'\">\n        <UDivider :class=\"ui.divider\" />\n\n        <div v-if=\"features?.length || $slots.features\" class=\"flex-1\">\n          <slot name=\"features\">\n            <ul v-if=\"features?.length\" :class=\"ui.features.horizontal\">\n              <li v-for=\"(offer, index) of features\" :key=\"index\" :class=\"ui.features.item.base\">\n                <UIcon :name=\"ui.features.item.icon.name\" :class=\"ui.features.item.icon.base\" />\n\n                <span :class=\"ui.features.item.label\">{{ offer }}</span>\n              </li>\n            </ul>\n          </slot>\n        </div>\n      </template>\n    </div>\n\n    <template v-if=\"orientation === 'vertical'\">\n      <div :class=\"ui.amount.base\">\n        <p v-if=\"discount && price\" :class=\"ui.amount.discount\">\n          {{ price }}\n        </p>\n        <p :class=\"ui.amount.price\">\n          {{ discount || price || '&nbsp;' }}\n        </p>\n        <p v-if=\"cycle\" :class=\"ui.amount.cycle\">\n          {{ cycle }}\n        </p>\n      </div>\n\n      <div v-if=\"features?.length || $slots.features\" :class=\"align === 'top' && 'order-last'\" class=\"flex-1\">\n        <slot name=\"features\">\n          <ul v-if=\"features?.length\" :class=\"ui.features.vertical\">\n            <li v-for=\"(offer, index) of features\" :key=\"index\" :class=\"ui.features.item.base\">\n              <UIcon :name=\"ui.features.item.icon.name\" :class=\"ui.features.item.icon.base\" />\n\n              <span :class=\"ui.features.item.label\">{{ offer }}</span>\n            </li>\n          </ul>\n        </slot>\n      </div>\n    </template>\n\n    <div :class=\"ui.right\">\n      <div v-if=\"orientation === 'horizontal'\" :class=\"[ui.amount.base, align === 'top' && 'order-last']\">\n        <p v-if=\"discount && price\" :class=\"ui.amount.discount\">\n          {{ price }}\n        </p>\n        <p :class=\"ui.amount.price\">\n          {{ discount || price || '&nbsp;' }}\n        </p>\n        <p v-if=\"cycle\" :class=\"ui.amount.cycle\">\n          {{ cycle }}\n        </p>\n      </div>\n\n      <UButton v-if=\"button\" v-bind=\"{ block: true, size: 'lg', ...button }\" @click=\"button.click\" />\n\n      <slot v-if=\"orientation === 'horizontal'\" name=\"bottom\" />\n    </div>\n\n    <slot v-if=\"orientation === 'vertical'\" name=\"bottom\" />\n\n    <template v-if=\"$slots.footer\" #footer>\n      <slot name=\"footer\" />\n    </template>\n  </UCard>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport type { Badge, Button } from '#ui/types'\nimport { card as cardConfig } from '#ui/ui.config'\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  orientation: {\n    type: String as PropType<'vertical' | 'horizontal'>,\n    default: 'vertical'\n  },\n  align: {\n    type: String as PropType<'top' | 'bottom'>,\n    default: 'bottom'\n  },\n  highlight: {\n    type: Boolean,\n    default: false\n  },\n  scale: {\n    type: Boolean,\n    default: false\n  },\n  features: {\n    type: Array as PropType<string[]>,\n    default: () => []\n  },\n  badge: {\n    type: Object as PropType<Badge>,\n    default: undefined\n  },\n  button: {\n    type: Object as PropType<Button & { click?: Function }>,\n    default: undefined\n  },\n  price: {\n    type: String,\n    default: undefined\n  },\n  discount: {\n    type: String,\n    default: undefined\n  },\n  cycle: {\n    type: String,\n    default: undefined\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value & typeof cardConfig>>,\n    default: () => ({})\n  }\n})\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => {\n  const base = twJoin(\n    'flex-1 gap-6 lg:gap-x-8 xl:gap-x-10 flex flex-col',\n    props.orientation === 'horizontal' ? 'lg:grid lg:grid-cols-10' : ''\n  )\n\n  const left: string = props.orientation === 'horizontal' ? 'lg:col-span-7' : ''\n  const right: string = props.orientation === 'horizontal' ? 'flex flex-col lg:items-center justify-center gap-y-6 lg:col-span-3 border-t lg:border-l lg:border-t-0 border-gray-200 dark:border-gray-800 pt-6 lg:pt-0 lg:pl-8 xl:pl-10' : ''\n\n  return {\n    wrapper: 'relative flex flex-col self-stretch w-full',\n    highlight: 'ring-2 ring-primary dark:ring-primary',\n    scale: 'lg:scale-[1.1] lg:z-10',\n    rounded: 'rounded-xl',\n    header: {\n      padding: 'p-6 lg:px-8 xl:px-10'\n    },\n    body: {\n      base,\n      padding: 'p-6 lg:p-8 xl:p-10'\n    },\n    footer: {\n      padding: 'p-6 lg:px-8 xl:px-10'\n    },\n    inner: 'flex items-center gap-3',\n    title: 'text-2xl text-gray-900 dark:text-white sm:text-3xl font-semibold truncate',\n    description: 'text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-2',\n    amount: {\n      base: 'flex flex-row items-baseline gap-x-1',\n      discount: 'text-gray-500 dark:text-gray-400 line-through text-xl sm:text-2xl font-medium',\n      price: 'text-gray-900 dark:text-white text-2xl sm:text-4xl font-semibold',\n      cycle: 'text-gray-500 dark:text-gray-400 text-sm/6 font-medium truncate'\n    },\n    features: {\n      vertical: 'space-y-3 text-sm',\n      horizontal: 'grid lg:grid-cols-2 text-sm gap-3',\n      item: {\n        base: 'flex items-center gap-x-3 min-w-0',\n        label: 'text-gray-600 dark:text-gray-400 truncate',\n        icon: {\n          base: 'w-5 h-5 flex-shrink-0 text-primary',\n          name: appConfig.ui.icons.check\n        }\n      }\n    },\n    divider: 'my-6 lg:my-8',\n    left,\n    right\n  }\n})\n\nconst { ui, attrs } = useUI('pricing.card', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n</script>\n",
-      "start": 1714175014202,
-      "end": 1714175014228,
+      "start": 1714180712099,
+      "end": 1714180712117,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175014228,
-      "end": 1714175014228,
+      "start": 1714180712117,
+      "end": 1714180712117,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingCard.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingCard.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"node_modules/@nuxt/ui-pro/components/pricing/PricingCard.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
-      "start": 1714175014228,
-      "end": 1714175014533,
+      "start": 1714180712117,
+      "end": 1714180712375,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -92,188 +92,188 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712375,
+      "end": 1714180712376,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712376,
+      "end": 1714180712376,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712376,
+      "end": 1714180712376,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712376,
+      "end": 1714180712376,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175014533,
-      "end": 1714175014533,
+      "start": 1714180712376,
+      "end": 1714180712376,
       "order": "normal"
     }
   ]

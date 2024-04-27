@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, renderSlot as _renderSlot, mergeProps as _mergeProps, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nimport type { PropType } from 'vue'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'BlogList',\n  props: {\n  orientation: {\n    type: String as PropType<'vertical' | 'horizontal'>,\n    default: 'horizontal'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\n\n\nconst props = __props\n\nconst config = computed(() => {\n  const wrapper: string = ({\n    horizontal: 'flex flex-col lg:grid lg:grid-cols-3 gap-x-8 gap-y-16',\n    vertical: 'flex flex-col gap-y-16 w-full'\n  })[props.orientation]\n\n  return {\n    wrapper\n  }\n})\n\nconst { ui, attrs } = useUI('blog.list', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    _renderSlot(_ctx.$slots, \"default\")\n  ], 16))\n}\n}\n\n})",
-      "start": 1714175002927,
-      "end": 1714175002927
+      "start": 1714180700868,
+      "end": 1714180700868
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175002927,
-      "end": 1714175002927,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175002927,
-      "end": 1714175002927,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175002927,
-      "end": 1714175002927,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175002927,
-      "end": 1714175002927,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175002927,
-      "end": 1714175002927,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, mergeProps as _mergeProps, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"BlogList\",\n  props: {\n    orientation: {\n      type: String,\n      default: \"horizontal\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const wrapper = {\n        horizontal: \"flex flex-col lg:grid lg:grid-cols-3 gap-x-8 gap-y-16\",\n        vertical: \"flex flex-col gap-y-16 w-full\"\n      }[props.orientation];\n      return {\n        wrapper\n      };\n    });\n    const { ui, attrs } = useUI(\"blog.list\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _renderSlot(_ctx.$slots, \"default\")\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714175002927,
-      "end": 1714175003194,
+      "start": 1714180700868,
+      "end": 1714180701044,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175003194,
-      "end": 1714175003194,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175003194,
-      "end": 1714175003194,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175003194,
-      "end": 1714175003194,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175003194,
-      "end": 1714175003194,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175003194,
-      "end": 1714175003194,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175003194,
-      "end": 1714175003194,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175003194,
-      "end": 1714175003194,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175003194,
-      "end": 1714175003194,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175003195,
-      "end": 1714175003195,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175003195,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175003196,
-      "end": 1714175003196,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, mergeProps as _mergeProps, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"BlogList\",\n  props: {\n    orientation: {\n      type: String,\n      default: \"horizontal\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const wrapper = {\n        horizontal: \"flex flex-col lg:grid lg:grid-cols-3 gap-x-8 gap-y-16\",\n        vertical: \"flex flex-col gap-y-16 w-full\"\n      }[props.orientation];\n      return {\n        wrapper\n      };\n    });\n    const { ui, attrs } = useUI(\"blog.list\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _renderSlot(_ctx.$slots, \"default\")\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714175003196,
-      "end": 1714175003197,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,50 +192,50 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175003197,
-      "end": 1714175003197,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175003201,
-      "end": 1714175003201,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175003201,
-      "end": 1714175003201,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175003201,
-      "end": 1714175003201,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175003201,
-      "end": 1714175003201,
+      "start": 1714180701044,
+      "end": 1714180701044,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175003201,
-      "end": 1714175003201,
+      "start": 1714180701044,
+      "end": 1714180701045,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175003202,
-      "end": 1714175003202,
+      "start": 1714180701045,
+      "end": 1714180701045,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175003202,
-      "end": 1714175003202,
+      "start": 1714180701045,
+      "end": 1714180701045,
       "order": "normal"
     }
   ]

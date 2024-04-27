@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { key: 2 }\n\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport type { Button } from '#ui/types'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  ...{\n  inheritAttrs: false\n},\n  __name: 'PageHero',\n  props: {\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  icon: {\n    type: String,\n    default: undefined\n  },\n  links: {\n    type: Array as PropType<(Button & { click?: Function })[]>,\n    default: () => []\n  },\n  align: {\n    type: String as PropType<'left' | 'center' | 'right'>,\n    default: 'left'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n},\n  setup(__props) {\n\n\n\nconst props = __props\n\nconst config = computed(() => {\n  const container: string = twJoin(\n    'gap-8 sm:gap-y-16',\n    props.align === 'center' ? 'flex flex-col' : 'grid lg:grid-cols-2 lg:items-center'\n  )\n\n  const base: string = twJoin(\n    '',\n    props.align === 'center' && 'text-center flex flex-col items-center',\n    props.align === 'right' && 'lg:order-last'\n  )\n\n  const links: string = twJoin(\n    'mt-8 flex flex-wrap gap-x-3 gap-y-1.5',\n    props.align === 'center' && 'justify-center'\n  )\n\n  return {\n    wrapper: 'py-8 sm:py-16',\n    container,\n    base,\n    icon: {\n      wrapper: 'flex mb-4',\n      base: 'w-10 h-10 flex-shrink-0 text-primary'\n    },\n    title: 'text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl',\n    description: 'mt-4 text-lg text-gray-500 dark:text-gray-400',\n    links\n  }\n})\n\nconst { ui, attrs } = useUI('page.hero', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_UButton = _resolveComponent(\"UButton\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _mergeProps({\n    class: _unref(ui).wrapper\n  }, _unref(attrs)), [\n    _createElementVNode(\"div\", {\n      class: _normalizeClass(_unref(ui).container)\n    }, [\n      ((__props.icon || _ctx.$slots.icon) || (__props.title || _ctx.$slots.title) || (__props.description || _ctx.$slots.description) || (__props.links?.length || _ctx.$slots.links))\n        ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).base)\n          }, [\n            (__props.icon || _ctx.$slots.icon)\n              ? (_openBlock(), _createElementBlock(\"div\", {\n                  key: 0,\n                  class: _normalizeClass(_unref(ui).icon.wrapper)\n                }, [\n                  _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                    _createVNode(_component_UIcon, {\n                      name: (__props.icon as string),\n                      class: _normalizeClass(_unref(ui).icon.base)\n                    }, null, 8, [\"name\", \"class\"])\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true),\n            _createElementVNode(\"h1\", {\n              class: _normalizeClass(_unref(ui).title)\n            }, [\n              _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.title), 1)\n              ])\n            ], 2),\n            (__props.description || _ctx.$slots.description)\n              ? (_openBlock(), _createElementBlock(\"p\", {\n                  key: 1,\n                  class: _normalizeClass(_unref(ui).description)\n                }, [\n                  _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                    _createTextVNode(_toDisplayString(__props.description), 1)\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true),\n            (__props.links?.length || _ctx.$slots.links)\n              ? (_openBlock(), _createElementBlock(\"div\", {\n                  key: 2,\n                  class: _normalizeClass(_unref(ui).links)\n                }, [\n                  _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                      return (_openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                        onClick: link.click\n                      }), null, 16, [\"onClick\"]))\n                    }), 128))\n                  ])\n                ], 2))\n              : _createCommentVNode(\"\", true)\n          ], 2))\n        : _createCommentVNode(\"\", true),\n      (_ctx.$slots.default)\n        ? _renderSlot(_ctx.$slots, \"default\", { key: 1 })\n        : (__props.align === 'right')\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1))\n          : _createCommentVNode(\"\", true)\n    ], 2)\n  ], 16))\n}\n}\n\n})",
-      "start": 1714175002872,
-      "end": 1714175002872
+      "start": 1714180700868,
+      "end": 1714180700868
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175002872,
-      "end": 1714175002872,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175002872,
-      "end": 1714175002872,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175002872,
-      "end": 1714175002872,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175002872,
-      "end": 1714175002872,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175002872,
-      "end": 1714175002872,
+      "start": 1714180700868,
+      "end": 1714180700868,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { key: 2 };\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageHero\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    align: {\n      type: String,\n      default: \"left\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-8 sm:gap-y-16\",\n        props.align === \"center\" ? \"flex flex-col\" : \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      const base = twJoin(\n        \"\",\n        props.align === \"center\" && \"text-center flex flex-col items-center\",\n        props.align === \"right\" && \"lg:order-last\"\n      );\n      const links = twJoin(\n        \"mt-8 flex flex-wrap gap-x-3 gap-y-1.5\",\n        props.align === \"center\" && \"justify-center\"\n      );\n      return {\n        wrapper: \"py-8 sm:py-16\",\n        container,\n        base,\n        icon: {\n          wrapper: \"flex mb-4\",\n          base: \"w-10 h-10 flex-shrink-0 text-primary\"\n        },\n        title: \"text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl\",\n        description: \"mt-4 text-lg text-gray-500 dark:text-gray-400\",\n        links\n      };\n    });\n    const { ui, attrs } = useUI(\"page.hero\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          __props.icon || _ctx.$slots.icon || (__props.title || _ctx.$slots.title) || (__props.description || _ctx.$slots.description) || (__props.links?.length || _ctx.$slots.links) ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).base)\n          }, [\n            __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).icon.wrapper)\n            }, [\n              _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                _createVNode(_component_UIcon, {\n                  name: __props.icon,\n                  class: _normalizeClass(_unref(ui).icon.base)\n                }, null, 8, [\"name\", \"class\"])\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            _createElementVNode(\"h1\", {\n              class: _normalizeClass(_unref(ui).title)\n            }, [\n              _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.title), 1)\n              ])\n            ], 2),\n            __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n              key: 1,\n              class: _normalizeClass(_unref(ui).description)\n            }, [\n              _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.description), 1)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.links?.length || _ctx.$slots.links ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 2,\n              class: _normalizeClass(_unref(ui).links)\n            }, [\n              _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                  return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                    onClick: link.click\n                  }), null, 16, [\"onClick\"]);\n                }), 128))\n              ])\n            ], 2)) : _createCommentVNode(\"\", true)\n          ], 2)) : _createCommentVNode(\"\", true),\n          _ctx.$slots.default ? _renderSlot(_ctx.$slots, \"default\", { key: 1 }) : __props.align === \"right\" ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1)) : _createCommentVNode(\"\", true)\n        ], 2)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714175002872,
-      "end": 1714175003132,
+      "start": 1714180700868,
+      "end": 1714180701102,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175003132,
-      "end": 1714175003132,
+      "start": 1714180701102,
+      "end": 1714180701102,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { key: 2 };\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageHero\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    align: {\n      type: String,\n      default: \"left\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-8 sm:gap-y-16\",\n        props.align === \"center\" ? \"flex flex-col\" : \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      const base = twJoin(\n        \"\",\n        props.align === \"center\" && \"text-center flex flex-col items-center\",\n        props.align === \"right\" && \"lg:order-last\"\n      );\n      const links = twJoin(\n        \"mt-8 flex flex-wrap gap-x-3 gap-y-1.5\",\n        props.align === \"center\" && \"justify-center\"\n      );\n      return {\n        wrapper: \"py-8 sm:py-16\",\n        container,\n        base,\n        icon: {\n          wrapper: \"flex mb-4\",\n          base: \"w-10 h-10 flex-shrink-0 text-primary\"\n        },\n        title: \"text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl\",\n        description: \"mt-4 text-lg text-gray-500 dark:text-gray-400\",\n        links\n      };\n    });\n    const { ui, attrs } = useUI(\"page.hero\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_UButton = _resolveComponent(\"UButton\");\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          __props.icon || _ctx.$slots.icon || (__props.title || _ctx.$slots.title) || (__props.description || _ctx.$slots.description) || (__props.links?.length || _ctx.$slots.links) ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).base)\n          }, [\n            __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).icon.wrapper)\n            }, [\n              _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                _createVNode(_component_UIcon, {\n                  name: __props.icon,\n                  class: _normalizeClass(_unref(ui).icon.base)\n                }, null, 8, [\"name\", \"class\"])\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            _createElementVNode(\"h1\", {\n              class: _normalizeClass(_unref(ui).title)\n            }, [\n              _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.title), 1)\n              ])\n            ], 2),\n            __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n              key: 1,\n              class: _normalizeClass(_unref(ui).description)\n            }, [\n              _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.description), 1)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.links?.length || _ctx.$slots.links ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 2,\n              class: _normalizeClass(_unref(ui).links)\n            }, [\n              _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                  return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                    onClick: link.click\n                  }), null, 16, [\"onClick\"]);\n                }), 128))\n              ])\n            ], 2)) : _createCommentVNode(\"\", true)\n          ], 2)) : _createCommentVNode(\"\", true),\n          _ctx.$slots.default ? _renderSlot(_ctx.$slots, \"default\", { key: 1 }) : __props.align === \"right\" ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1)) : _createCommentVNode(\"\", true)\n        ], 2)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714175003132,
-      "end": 1714175003133,
+      "start": 1714180701102,
+      "end": 1714180701104,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,51 +192,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175003133,
-      "end": 1714175003133,
+      "start": 1714180701104,
+      "end": 1714180701104,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175003133,
-      "end": 1714175003133,
+      "start": 1714180701104,
+      "end": 1714180701104,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175003133,
-      "end": 1714175003133,
+      "start": 1714180701104,
+      "end": 1714180701104,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175003133,
-      "end": 1714175003133,
+      "start": 1714180701104,
+      "end": 1714180701104,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue\";\nimport { computed, toRef } from 'vue';\nimport { useUI } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/composables/useUI.mjs';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderSlot as _renderSlot, resolveComponent as _resolveComponent, normalizeClass as _normalizeClass, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, mergeProps as _mergeProps, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { key: 2 };\nimport { twJoin } from \"tailwind-merge\";\nexport default /* @__PURE__ */ _defineComponent({\n  ...{\n    inheritAttrs: false\n  },\n  __name: \"PageHero\",\n  props: {\n    title: {\n      type: String,\n      default: void 0\n    },\n    description: {\n      type: String,\n      default: void 0\n    },\n    icon: {\n      type: String,\n      default: void 0\n    },\n    links: {\n      type: Array,\n      default: () => []\n    },\n    align: {\n      type: String,\n      default: \"left\"\n    },\n    class: {\n      type: [String, Object, Array],\n      default: void 0\n    },\n    ui: {\n      type: Object,\n      default: () => ({})\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const config = computed(() => {\n      const container = twJoin(\n        \"gap-8 sm:gap-y-16\",\n        props.align === \"center\" ? \"flex flex-col\" : \"grid lg:grid-cols-2 lg:items-center\"\n      );\n      const base = twJoin(\n        \"\",\n        props.align === \"center\" && \"text-center flex flex-col items-center\",\n        props.align === \"right\" && \"lg:order-last\"\n      );\n      const links = twJoin(\n        \"mt-8 flex flex-wrap gap-x-3 gap-y-1.5\",\n        props.align === \"center\" && \"justify-center\"\n      );\n      return {\n        wrapper: \"py-8 sm:py-16\",\n        container,\n        base,\n        icon: {\n          wrapper: \"flex mb-4\",\n          base: \"w-10 h-10 flex-shrink-0 text-primary\"\n        },\n        title: \"text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl\",\n        description: \"mt-4 text-lg text-gray-500 dark:text-gray-400\",\n        links\n      };\n    });\n    const { ui, attrs } = useUI(\"page.hero\", toRef(props, \"ui\"), config, toRef(props, \"class\"), true);\n    return (_ctx, _cache) => {\n      const _component_UIcon = __nuxt_component_0;\n      const _component_UButton = __nuxt_component_1;\n      return _openBlock(), _createElementBlock(\"div\", _mergeProps({\n        class: _unref(ui).wrapper\n      }, _unref(attrs)), [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(ui).container)\n        }, [\n          __props.icon || _ctx.$slots.icon || (__props.title || _ctx.$slots.title) || (__props.description || _ctx.$slots.description) || (__props.links?.length || _ctx.$slots.links) ? (_openBlock(), _createElementBlock(\"div\", {\n            key: 0,\n            class: _normalizeClass(_unref(ui).base)\n          }, [\n            __props.icon || _ctx.$slots.icon ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 0,\n              class: _normalizeClass(_unref(ui).icon.wrapper)\n            }, [\n              _renderSlot(_ctx.$slots, \"icon\", {}, () => [\n                _createVNode(_component_UIcon, {\n                  name: __props.icon,\n                  class: _normalizeClass(_unref(ui).icon.base)\n                }, null, 8, [\"name\", \"class\"])\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            _createElementVNode(\"h1\", {\n              class: _normalizeClass(_unref(ui).title)\n            }, [\n              _renderSlot(_ctx.$slots, \"title\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.title), 1)\n              ])\n            ], 2),\n            __props.description || _ctx.$slots.description ? (_openBlock(), _createElementBlock(\"p\", {\n              key: 1,\n              class: _normalizeClass(_unref(ui).description)\n            }, [\n              _renderSlot(_ctx.$slots, \"description\", {}, () => [\n                _createTextVNode(_toDisplayString(__props.description), 1)\n              ])\n            ], 2)) : _createCommentVNode(\"\", true),\n            __props.links?.length || _ctx.$slots.links ? (_openBlock(), _createElementBlock(\"div\", {\n              key: 2,\n              class: _normalizeClass(_unref(ui).links)\n            }, [\n              _renderSlot(_ctx.$slots, \"links\", {}, () => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.links, (link, index) => {\n                  return _openBlock(), _createBlock(_component_UButton, _mergeProps({ key: index }, link, {\n                    onClick: link.click\n                  }), null, 16, [\"onClick\"]);\n                }), 128))\n              ])\n            ], 2)) : _createCommentVNode(\"\", true)\n          ], 2)) : _createCommentVNode(\"\", true),\n          _ctx.$slots.default ? _renderSlot(_ctx.$slots, \"default\", { key: 1 }) : __props.align === \"right\" ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1)) : _createCommentVNode(\"\", true)\n        ], 2)\n      ], 16);\n    };\n  }\n});\n",
-      "start": 1714175003133,
-      "end": 1714175003133,
+      "start": 1714180701104,
+      "end": 1714180701104,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175003133,
-      "end": 1714175003133,
+      "start": 1714180701104,
+      "end": 1714180701104,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175003133,
-      "end": 1714175003133,
+      "start": 1714180701104,
+      "end": 1714180701104,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175003133,
-      "end": 1714175003133,
+      "start": 1714180701104,
+      "end": 1714180701104,
       "order": "normal"
     }
   ]

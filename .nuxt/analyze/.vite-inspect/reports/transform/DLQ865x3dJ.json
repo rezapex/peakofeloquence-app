@@ -4,44 +4,44 @@
     {
       "name": "vite:vue",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, createVNode as _createVNode, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = { key: 0 }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'pricing',\n  async setup(__props) {\n\nlet __temp: any, __restore: any\n\nconst { data: page } = (\n  ([__temp,__restore] = _withAsyncContext(() => useAsyncData('pricing', () => queryContent('/pricing').findOne()))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n)\nif (!page.value) {\n  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })\n}\n\nuseSeoMeta({\n  title: page.value.title,\n  ogTitle: page.value.title,\n  description: page.value.description,\n  ogDescription: page.value.description\n})\n\ndefineOgImage({\n  component: 'Saas',\n  title: page.value.title,\n  description: page.value.description\n})\n\nconst isYearly = ref(false)\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_UPricingToggle = _resolveComponent(\"UPricingToggle\")!\n  const _component_UPageHero = _resolveComponent(\"UPageHero\")!\n  const _component_UPricingCard = _resolveComponent(\"UPricingCard\")!\n  const _component_UPricingGrid = _resolveComponent(\"UPricingGrid\")!\n  const _component_UContainer = _resolveComponent(\"UContainer\")!\n  const _component_UIcon = _resolveComponent(\"UIcon\")!\n  const _component_ULandingLogos = _resolveComponent(\"ULandingLogos\")!\n  const _component_ULandingSection = _resolveComponent(\"ULandingSection\")!\n  const _component_ULandingFAQ = _resolveComponent(\"ULandingFAQ\")!\n\n  return (_unref(page))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_UPageHero, _normalizeProps(_guardReactiveProps(_unref(page).hero)), {\n          links: _withCtx(() => [\n            _createVNode(_component_UPricingToggle, {\n              modelValue: _unref(isYearly),\n              \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event: any) => (_isRef(isYearly) ? (isYearly).value = $event : null)),\n              class: \"w-48\"\n            }, null, 8, [\"modelValue\"])\n          ]),\n          _: 1\n        }, 16),\n        _createVNode(_component_UContainer, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPricingGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                  return (_openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                    price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                    cycle: _unref(isYearly) ? '/year' : '/month'\n                  }), null, 16, [\"price\", \"cycle\"]))\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingLogos, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                  return (_openBlock(), _createBlock(_component_UIcon, {\n                    key: icon,\n                    name: icon,\n                    class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                  }, null, 8, [\"name\"]))\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingFAQ, {\n              items: _unref(page).faq.items,\n              multiple: \"\",\n              \"default-open\": \"\",\n              class: \"max-w-4xl mx-auto\"\n            }, null, 8, [\"items\"])\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n})",
-      "start": 1714175002179,
-      "end": 1714175002179
+      "start": 1714180700129,
+      "end": 1714180700129
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175002179,
-      "end": 1714175002179,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175002179,
-      "end": 1714175002179,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175002179,
-      "end": 1714175002179,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175002179,
-      "end": 1714175002179,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175002179,
-      "end": 1714175002179,
+      "start": 1714180700129,
+      "end": 1714180700129,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, createVNode as _createVNode, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { key: 0 };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"pricing\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"pricing\", () => queryContent(\"/pricing\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const isYearly = ref(false);\n    return (_ctx, _cache) => {\n      const _component_UPricingToggle = _resolveComponent(\"UPricingToggle\");\n      const _component_UPageHero = _resolveComponent(\"UPageHero\");\n      const _component_UPricingCard = _resolveComponent(\"UPricingCard\");\n      const _component_UPricingGrid = _resolveComponent(\"UPricingGrid\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_ULandingLogos = _resolveComponent(\"ULandingLogos\");\n      const _component_ULandingSection = _resolveComponent(\"ULandingSection\");\n      const _component_ULandingFAQ = _resolveComponent(\"ULandingFAQ\");\n      return _unref(page) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_UPageHero, _normalizeProps(_guardReactiveProps(_unref(page).hero)), {\n          links: _withCtx(() => [\n            _createVNode(_component_UPricingToggle, {\n              modelValue: _unref(isYearly),\n              \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => _isRef(isYearly) ? isYearly.value = $event : null),\n              class: \"w-48\"\n            }, null, 8, [\"modelValue\"])\n          ]),\n          _: 1\n        }, 16),\n        _createVNode(_component_UContainer, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPricingGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                  return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                    price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                    cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                  }), null, 16, [\"price\", \"cycle\"]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingLogos, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                  return _openBlock(), _createBlock(_component_UIcon, {\n                    key: icon,\n                    name: icon,\n                    class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                  }, null, 8, [\"name\"]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingFAQ, {\n              items: _unref(page).faq.items,\n              multiple: \"\",\n              \"default-open\": \"\",\n              class: \"max-w-4xl mx-auto\"\n            }, null, 8, [\"items\"])\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"])\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
-      "start": 1714175002179,
-      "end": 1714175002621,
+      "start": 1714180700129,
+      "end": 1714180700712,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -57,129 +57,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175002621,
-      "end": 1714175002621,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175002621,
-      "end": 1714175002622,
+      "start": 1714180700712,
+      "end": 1714180700712,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, createVNode as _createVNode, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { key: 0 };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"pricing\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"pricing\", () => queryContent(\"/pricing\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const isYearly = ref(false);\n    return (_ctx, _cache) => {\n      const _component_UPricingToggle = _resolveComponent(\"UPricingToggle\");\n      const _component_UPageHero = _resolveComponent(\"UPageHero\");\n      const _component_UPricingCard = _resolveComponent(\"UPricingCard\");\n      const _component_UPricingGrid = _resolveComponent(\"UPricingGrid\");\n      const _component_UContainer = _resolveComponent(\"UContainer\");\n      const _component_UIcon = _resolveComponent(\"UIcon\");\n      const _component_ULandingLogos = _resolveComponent(\"ULandingLogos\");\n      const _component_ULandingSection = _resolveComponent(\"ULandingSection\");\n      const _component_ULandingFAQ = _resolveComponent(\"ULandingFAQ\");\n      return _unref(page) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_UPageHero, _normalizeProps(_guardReactiveProps(_unref(page).hero)), {\n          links: _withCtx(() => [\n            _createVNode(_component_UPricingToggle, {\n              modelValue: _unref(isYearly),\n              \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => _isRef(isYearly) ? isYearly.value = $event : null),\n              class: \"w-48\"\n            }, null, 8, [\"modelValue\"])\n          ]),\n          _: 1\n        }, 16),\n        _createVNode(_component_UContainer, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPricingGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                  return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                    price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                    cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                  }), null, 16, [\"price\", \"cycle\"]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingLogos, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                  return _openBlock(), _createBlock(_component_UIcon, {\n                    key: icon,\n                    name: icon,\n                    class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                  }, null, 8, [\"name\"]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingFAQ, {\n              items: _unref(page).faq.items,\n              multiple: \"\",\n              \"default-open\": \"\",\n              class: \"max-w-4xl mx-auto\"\n            }, null, 8, [\"items\"])\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"])\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
-      "start": 1714175002622,
-      "end": 1714175002623,
+      "start": 1714180700712,
+      "end": 1714180700713,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -192,52 +192,52 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175002623,
-      "end": 1714175002623,
+      "start": 1714180700713,
+      "end": 1714180700713,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175002623,
-      "end": 1714175002623,
+      "start": 1714180700713,
+      "end": 1714180700713,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175002623,
-      "end": 1714175002623,
+      "start": 1714180700713,
+      "end": 1714180700713,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175002623,
-      "end": 1714175002623,
+      "start": 1714180700713,
+      "end": 1714180700713,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingToggle.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageHero.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingCard.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingGrid.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Container.vue\";\nimport { default as __nuxt_component_5 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_6 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingLogos.vue\";\nimport { default as __nuxt_component_7 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingSection.vue\";\nimport { default as __nuxt_component_8 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingFAQ.vue\";\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, createVNode as _createVNode, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { key: 0 };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"pricing\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"pricing\", () => queryContent(\"/pricing\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n    defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const isYearly = ref(false);\n    return (_ctx, _cache) => {\n      const _component_UPricingToggle = __nuxt_component_0;\n      const _component_UPageHero = __nuxt_component_1;\n      const _component_UPricingCard = __nuxt_component_2;\n      const _component_UPricingGrid = __nuxt_component_3;\n      const _component_UContainer = __nuxt_component_4;\n      const _component_UIcon = __nuxt_component_5;\n      const _component_ULandingLogos = __nuxt_component_6;\n      const _component_ULandingSection = __nuxt_component_7;\n      const _component_ULandingFAQ = __nuxt_component_8;\n      return _unref(page) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_UPageHero, _normalizeProps(_guardReactiveProps(_unref(page).hero)), {\n          links: _withCtx(() => [\n            _createVNode(_component_UPricingToggle, {\n              modelValue: _unref(isYearly),\n              \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => _isRef(isYearly) ? isYearly.value = $event : null),\n              class: \"w-48\"\n            }, null, 8, [\"modelValue\"])\n          ]),\n          _: 1\n        }, 16),\n        _createVNode(_component_UContainer, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPricingGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                  return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                    price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                    cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                  }), null, 16, [\"price\", \"cycle\"]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingLogos, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                  return _openBlock(), _createBlock(_component_UIcon, {\n                    key: icon,\n                    name: icon,\n                    class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                  }, null, 8, [\"name\"]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingFAQ, {\n              items: _unref(page).faq.items,\n              multiple: \"\",\n              \"default-open\": \"\",\n              class: \"max-w-4xl mx-auto\"\n            }, null, 8, [\"items\"])\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"])\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
-      "start": 1714175002623,
-      "end": 1714175002623,
+      "start": 1714180700713,
+      "end": 1714180700714,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingToggle.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/page/PageHero.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingCard.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/pricing/PricingGrid.vue\";\nimport { default as __nuxt_component_4 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/layout/Container.vue\";\nimport { default as __nuxt_component_5 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui/dist/runtime/components/elements/Icon.vue\";\nimport { default as __nuxt_component_6 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingLogos.vue\";\nimport { default as __nuxt_component_7 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingSection.vue\";\nimport { default as __nuxt_component_8 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/landing/LandingFAQ.vue\";\nimport { useAsyncData } from '#app/composables/asyncData';\nimport { queryContent } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/content/dist/runtime/legacy/composables/query';\nimport { createError } from '#app/composables/error';\nimport { useSeoMeta } from '@unhead/vue';\nimport { defineOgImage } from '/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';\nimport { ref } from 'vue';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, isRef as _isRef, createVNode as _createVNode, normalizeProps as _normalizeProps, guardReactiveProps as _guardReactiveProps, withCtx as _withCtx, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, mergeProps as _mergeProps, createBlock as _createBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = { key: 0 };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"pricing\",\n  async setup(__props) {\n    let __temp, __restore;\n    const { data: page } = ([__temp, __restore] = _withAsyncContext(() => useAsyncData(\"pricing\", () => queryContent(\"/pricing\").findOne())), __temp = await __temp, __restore(), __temp);\n    if (!page.value) {\n      throw createError({ statusCode: 404, statusMessage: \"Page not found\", fatal: true });\n    }\n    useSeoMeta({\n      title: page.value.title,\n      ogTitle: page.value.title,\n      description: page.value.description,\n      ogDescription: page.value.description\n    });\n     false && /*@__PURE__*/ defineOgImage({\n      component: \"Saas\",\n      title: page.value.title,\n      description: page.value.description\n    });\n    const isYearly = ref(false);\n    return (_ctx, _cache) => {\n      const _component_UPricingToggle = __nuxt_component_0;\n      const _component_UPageHero = __nuxt_component_1;\n      const _component_UPricingCard = __nuxt_component_2;\n      const _component_UPricingGrid = __nuxt_component_3;\n      const _component_UContainer = __nuxt_component_4;\n      const _component_UIcon = __nuxt_component_5;\n      const _component_ULandingLogos = __nuxt_component_6;\n      const _component_ULandingSection = __nuxt_component_7;\n      const _component_ULandingFAQ = __nuxt_component_8;\n      return _unref(page) ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_UPageHero, _normalizeProps(_guardReactiveProps(_unref(page).hero)), {\n          links: _withCtx(() => [\n            _createVNode(_component_UPricingToggle, {\n              modelValue: _unref(isYearly),\n              \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => _isRef(isYearly) ? isYearly.value = $event : null),\n              class: \"w-48\"\n            }, null, 8, [\"modelValue\"])\n          ]),\n          _: 1\n        }, 16),\n        _createVNode(_component_UContainer, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_UPricingGrid, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).plans, (plan, index) => {\n                  return _openBlock(), _createBlock(_component_UPricingCard, _mergeProps({ key: index }, plan, {\n                    price: _unref(isYearly) ? plan.price.year : plan.price.month,\n                    cycle: _unref(isYearly) ? \"/year\" : \"/month\"\n                  }), null, 16, [\"price\", \"cycle\"]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, null, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingLogos, null, {\n              default: _withCtx(() => [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(page).logos.icons, (icon) => {\n                  return _openBlock(), _createBlock(_component_UIcon, {\n                    key: icon,\n                    name: icon,\n                    class: \"w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400\"\n                  }, null, 8, [\"name\"]);\n                }), 128))\n              ]),\n              _: 1\n            })\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_ULandingSection, {\n          title: _unref(page).faq.title,\n          description: _unref(page).faq.description\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_ULandingFAQ, {\n              items: _unref(page).faq.items,\n              multiple: \"\",\n              \"default-open\": \"\",\n              class: \"max-w-4xl mx-auto\"\n            }, null, 8, [\"items\"])\n          ]),\n          _: 1\n        }, 8, [\"title\", \"description\"])\n      ])) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
-      "start": 1714175002623,
-      "end": 1714175002624,
+      "start": 1714180700714,
+      "end": 1714180700714,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175002624,
-      "end": 1714175002625,
+      "start": 1714180700714,
+      "end": 1714180700714,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175002625,
-      "end": 1714175002625,
+      "start": 1714180700714,
+      "end": 1714180700714,
       "order": "normal"
     }
   ]

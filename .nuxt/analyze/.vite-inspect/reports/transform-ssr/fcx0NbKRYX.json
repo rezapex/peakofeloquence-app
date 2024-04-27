@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <component\n    :is=\"as\"\n    v-if=\"!to\"\n    :type=\"type\"\n    :disabled=\"disabled\"\n    v-bind=\"$attrs\"\n    :class=\"active ? activeClass : inactiveClass\"\n  >\n    <slot v-bind=\"{ isActive: active }\" />\n  </component>\n  <NuxtLink\n    v-else\n    v-slot=\"{ route, href, target, rel, navigate, isActive, isExactActive, isExternal }\"\n    v-bind=\"$props\"\n    custom\n  >\n    <a\n      v-bind=\"$attrs\"\n      :href=\"!disabled ? href : undefined\"\n      :aria-disabled=\"disabled ? 'true' : undefined\"\n      :role=\"disabled ? 'link' : undefined\"\n      :rel=\"rel\"\n      :target=\"target\"\n      :class=\"active !== undefined ? (active ? activeClass : inactiveClass) : resolveLinkClass(route, $route, { isActive, isExactActive })\"\n      @click=\"(e) => (!isExternal && !disabled) && navigate(e)\"\n    >\n      <slot v-bind=\"{ isActive: active !== undefined ? active : (exact ? isExactActive : isActive) }\" />\n    </a>\n  </NuxtLink>\n</template>\n\n<script>\nimport { isEqual } from \"ohash\";\nimport { defineComponent } from \"vue\";\nimport { nuxtLinkProps } from \"../../utils\";\nexport default defineComponent({\n  inheritAttrs: false,\n  props: {\n    ...nuxtLinkProps,\n    as: {\n      type: String,\n      default: \"button\"\n    },\n    type: {\n      type: String,\n      default: \"button\"\n    },\n    disabled: {\n      type: Boolean,\n      default: null\n    },\n    active: {\n      type: Boolean,\n      default: void 0\n    },\n    exact: {\n      type: Boolean,\n      default: false\n    },\n    exactQuery: {\n      type: Boolean,\n      default: false\n    },\n    exactHash: {\n      type: Boolean,\n      default: false\n    },\n    inactiveClass: {\n      type: String,\n      default: void 0\n    }\n  },\n  setup(props) {\n    function resolveLinkClass(route, $route, { isActive, isExactActive }) {\n      if (props.exactQuery && !isEqual(route.query, $route.query)) {\n        return props.inactiveClass;\n      }\n      if (props.exactHash && route.hash !== $route.hash) {\n        return props.inactiveClass;\n      }\n      if (props.exact && isExactActive) {\n        return props.activeClass;\n      }\n      if (!props.exact && isActive) {\n        return props.activeClass;\n      }\n      return props.inactiveClass;\n    }\n    return {\n      resolveLinkClass\n    };\n  }\n});\n</script>\n",
-      "start": 1714175013056,
-      "end": 1714175013170,
+      "start": 1714180710895,
+      "end": 1714180711023,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175013170,
-      "end": 1714175013170,
+      "start": 1714180711023,
+      "end": 1714180711023,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport { isEqual } from \"ohash\";\nimport { defineComponent } from \"vue\";\nimport { nuxtLinkProps } from \"../../utils\";\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    ...nuxtLinkProps,\n    as: {\n      type: String,\n      default: \"button\"\n    },\n    type: {\n      type: String,\n      default: \"button\"\n    },\n    disabled: {\n      type: Boolean,\n      default: null\n    },\n    active: {\n      type: Boolean,\n      default: void 0\n    },\n    exact: {\n      type: Boolean,\n      default: false\n    },\n    exactQuery: {\n      type: Boolean,\n      default: false\n    },\n    exactHash: {\n      type: Boolean,\n      default: false\n    },\n    inactiveClass: {\n      type: String,\n      default: void 0\n    }\n  },\n  setup(props) {\n    function resolveLinkClass(route, $route, { isActive, isExactActive }) {\n      if (props.exactQuery && !isEqual(route.query, $route.query)) {\n        return props.inactiveClass;\n      }\n      if (props.exactHash && route.hash !== $route.hash) {\n        return props.inactiveClass;\n      }\n      if (props.exact && isExactActive) {\n        return props.activeClass;\n      }\n      if (!props.exact && isActive) {\n        return props.activeClass;\n      }\n      return props.inactiveClass;\n    }\n    return {\n      resolveLinkClass\n    };\n  }\n});\n\nimport { resolveDynamicComponent as _resolveDynamicComponent, withCtx as _withCtx, renderSlot as _renderSlot, mergeProps as _mergeProps, createVNode as _createVNode, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderVNode as _ssrRenderVNode, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n\n  if (!_ctx.to) {\n    _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_ctx.as), _mergeProps({\n      type: _ctx.type,\n      disabled: _ctx.disabled\n    }, _ctx.$attrs, {\n      class: _ctx.active ? _ctx.activeClass : _ctx.inactiveClass\n    }, _attrs), {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _ssrRenderSlot(_ctx.$slots, \"default\", { isActive: _ctx.active }, null, _push, _parent, _scopeId)\n        } else {\n          return [\n            _renderSlot(_ctx.$slots, \"default\", { isActive: _ctx.active })\n          ]\n        }\n      }),\n      _: 3\n    }), _parent)\n  } else {\n    _push(_ssrRenderComponent(_component_NuxtLink, _mergeProps(_ctx.$props, { custom: \"\" }, _attrs), {\n      default: _withCtx(({ route, href, target, rel, navigate, isActive, isExactActive, isExternal }, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<a${\n            _ssrRenderAttrs(_mergeProps(_ctx.$attrs, {\n              href: !_ctx.disabled ? href : undefined,\n              \"aria-disabled\": _ctx.disabled ? 'true' : undefined,\n              role: _ctx.disabled ? 'link' : undefined,\n              rel: rel,\n              target: target,\n              class: _ctx.active !== undefined ? (_ctx.active ? _ctx.activeClass : _ctx.inactiveClass) : _ctx.resolveLinkClass(route, _ctx.$route, { isActive, isExactActive })\n            }))\n          }${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"default\", { isActive: _ctx.active !== undefined ? _ctx.active : (_ctx.exact ? isExactActive : isActive) }, null, _push, _parent, _scopeId)\n          _push(`</a>`)\n        } else {\n          return [\n            _createVNode(\"a\", _mergeProps(_ctx.$attrs, {\n              href: !_ctx.disabled ? href : undefined,\n              \"aria-disabled\": _ctx.disabled ? 'true' : undefined,\n              role: _ctx.disabled ? 'link' : undefined,\n              rel: rel,\n              target: target,\n              class: _ctx.active !== undefined ? (_ctx.active ? _ctx.activeClass : _ctx.inactiveClass) : _ctx.resolveLinkClass(route, _ctx.$route, { isActive, isExactActive }),\n              onClick: (e) => (!isExternal && !_ctx.disabled) && navigate(e)\n            }), [\n              _renderSlot(_ctx.$slots, \"default\", { isActive: _ctx.active !== undefined ? _ctx.active : (_ctx.exact ? isExactActive : isActive) })\n            ], 16, [\"href\", \"aria-disabled\", \"role\", \"rel\", \"target\", \"onClick\"])\n          ]\n        }\n      }),\n      _: 3\n    }, _parent))\n  }\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/elements/Link.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714175013170,
-      "end": 1714175013174,
+      "start": 1714180711023,
+      "end": 1714180711026,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -101,171 +101,171 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711026,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711026,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714175013174,
-      "end": 1714175013174,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt/dist/app/components/nuxt-link\";\n\nimport { isEqual } from \"ohash\";\nimport { defineComponent } from \"vue\";\nimport { nuxtLinkProps } from \"../../utils\";\nconst _sfc_main = defineComponent({\n  inheritAttrs: false,\n  props: {\n    ...nuxtLinkProps,\n    as: {\n      type: String,\n      default: \"button\"\n    },\n    type: {\n      type: String,\n      default: \"button\"\n    },\n    disabled: {\n      type: Boolean,\n      default: null\n    },\n    active: {\n      type: Boolean,\n      default: void 0\n    },\n    exact: {\n      type: Boolean,\n      default: false\n    },\n    exactQuery: {\n      type: Boolean,\n      default: false\n    },\n    exactHash: {\n      type: Boolean,\n      default: false\n    },\n    inactiveClass: {\n      type: String,\n      default: void 0\n    }\n  },\n  setup(props) {\n    function resolveLinkClass(route, $route, { isActive, isExactActive }) {\n      if (props.exactQuery && !isEqual(route.query, $route.query)) {\n        return props.inactiveClass;\n      }\n      if (props.exactHash && route.hash !== $route.hash) {\n        return props.inactiveClass;\n      }\n      if (props.exact && isExactActive) {\n        return props.activeClass;\n      }\n      if (!props.exact && isActive) {\n        return props.activeClass;\n      }\n      return props.inactiveClass;\n    }\n    return {\n      resolveLinkClass\n    };\n  }\n});\n\nimport { resolveDynamicComponent as _resolveDynamicComponent, withCtx as _withCtx, renderSlot as _renderSlot, mergeProps as _mergeProps, createVNode as _createVNode, resolveComponent as _resolveComponent } from \"vue\"\nimport { ssrRenderSlot as _ssrRenderSlot, ssrRenderVNode as _ssrRenderVNode, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderComponent as _ssrRenderComponent } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_NuxtLink = __nuxt_component_0\n\n  if (!_ctx.to) {\n    _ssrRenderVNode(_push, _createVNode(_resolveDynamicComponent(_ctx.as), _mergeProps({\n      type: _ctx.type,\n      disabled: _ctx.disabled\n    }, _ctx.$attrs, {\n      class: _ctx.active ? _ctx.activeClass : _ctx.inactiveClass\n    }, _attrs), {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _ssrRenderSlot(_ctx.$slots, \"default\", { isActive: _ctx.active }, null, _push, _parent, _scopeId)\n        } else {\n          return [\n            _renderSlot(_ctx.$slots, \"default\", { isActive: _ctx.active })\n          ]\n        }\n      }),\n      _: 3\n    }), _parent)\n  } else {\n    _push(_ssrRenderComponent(_component_NuxtLink, _mergeProps(_ctx.$props, { custom: \"\" }, _attrs), {\n      default: _withCtx(({ route, href, target, rel, navigate, isActive, isExactActive, isExternal }, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<a${\n            _ssrRenderAttrs(_mergeProps(_ctx.$attrs, {\n              href: !_ctx.disabled ? href : undefined,\n              \"aria-disabled\": _ctx.disabled ? 'true' : undefined,\n              role: _ctx.disabled ? 'link' : undefined,\n              rel: rel,\n              target: target,\n              class: _ctx.active !== undefined ? (_ctx.active ? _ctx.activeClass : _ctx.inactiveClass) : _ctx.resolveLinkClass(route, _ctx.$route, { isActive, isExactActive })\n            }))\n          }${\n            _scopeId\n          }>`)\n          _ssrRenderSlot(_ctx.$slots, \"default\", { isActive: _ctx.active !== undefined ? _ctx.active : (_ctx.exact ? isExactActive : isActive) }, null, _push, _parent, _scopeId)\n          _push(`</a>`)\n        } else {\n          return [\n            _createVNode(\"a\", _mergeProps(_ctx.$attrs, {\n              href: !_ctx.disabled ? href : undefined,\n              \"aria-disabled\": _ctx.disabled ? 'true' : undefined,\n              role: _ctx.disabled ? 'link' : undefined,\n              rel: rel,\n              target: target,\n              class: _ctx.active !== undefined ? (_ctx.active ? _ctx.activeClass : _ctx.inactiveClass) : _ctx.resolveLinkClass(route, _ctx.$route, { isActive, isExactActive }),\n              onClick: (e) => (!isExternal && !_ctx.disabled) && navigate(e)\n            }), [\n              _renderSlot(_ctx.$slots, \"default\", { isActive: _ctx.active !== undefined ? _ctx.active : (_ctx.exact ? isExactActive : isActive) })\n            ], 16, [\"href\", \"aria-disabled\", \"role\", \"rel\", \"target\", \"onClick\"])\n          ]\n        }\n      }),\n      _: 3\n    }, _parent))\n  }\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/@nuxt/ui/dist/runtime/components/elements/Link.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1714175013174,
-      "end": 1714175013175,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -278,20 +278,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175013175,
-      "end": 1714175013175,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175013175,
-      "end": 1714175013175,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175013175,
-      "end": 1714175013175,
+      "start": 1714180711027,
+      "end": 1714180711027,
       "order": "normal"
     }
   ]

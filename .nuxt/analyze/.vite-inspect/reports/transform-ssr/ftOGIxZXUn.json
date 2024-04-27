@@ -4,215 +4,215 @@
     {
       "name": "vite:load-fallback",
       "result": "import { createSiteConfigStack } from \"site-config-stack\";\nimport { defineNuxtPlugin, useNuxtApp, useRequestEvent, useRuntimeConfig, useState } from \"#imports\";\nexport default defineNuxtPlugin({\n  name: \"nuxt-site-config\",\n  enforce: \"pre\",\n  async setup(nuxtApp) {\n    const config = useRuntimeConfig()[\"nuxt-site-config\"] || { debug: false };\n    let stack;\n    const state = useState(\"site-config\");\n    if (process.server) {\n      stack = useRequestEvent().context.siteConfig;\n      nuxtApp.hooks.hook(\"app:rendered\", () => {\n        state.value = useRequestEvent().context.siteConfig.get();\n      });\n    }\n    if (!stack) {\n      stack = createSiteConfigStack({\n        debug: config.debug\n      });\n    }\n    if (process.client) {\n      stack.push({\n        _context: \"window\",\n        url: window.location.origin\n      });\n      const nuxt = useNuxtApp();\n      if (nuxt.payload.serverRendered) {\n        stack.push(state.value);\n      } else if (typeof window.__NUXT_SITE_CONFIG__ !== \"undefined\") {\n        stack.push(window.__NUXT_SITE_CONFIG__);\n      }\n    }\n    return {\n      provide: {\n        nuxtSiteConfig: stack\n      }\n    };\n  }\n});\n",
-      "start": 1714175004933,
-      "end": 1714175008258,
+      "start": 1714180704469,
+      "end": 1714180706641,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175008258,
-      "end": 1714175008258,
+      "start": 1714180706641,
+      "end": 1714180706641,
       "order": "normal"
     },
     {
       "name": "vite:define",
       "result": "import { createSiteConfigStack } from \"site-config-stack\";\nimport { defineNuxtPlugin, useNuxtApp, useRequestEvent, useRuntimeConfig, useState } from \"#imports\";\nexport default defineNuxtPlugin({\n  name: \"nuxt-site-config\",\n  enforce: \"pre\",\n  async setup(nuxtApp) {\n    const config = useRuntimeConfig()[\"nuxt-site-config\"] || { debug: false };\n    let stack;\n    const state = useState(\"site-config\");\n    if (true) {\n      stack = useRequestEvent().context.siteConfig;\n      nuxtApp.hooks.hook(\"app:rendered\", () => {\n        state.value = useRequestEvent().context.siteConfig.get();\n      });\n    }\n    if (!stack) {\n      stack = createSiteConfigStack({\n        debug: config.debug\n      });\n    }\n    if (false) {\n      stack.push({\n        _context: \"window\",\n        url: (void 0).location.origin\n      });\n      const nuxt = useNuxtApp();\n      if (nuxt.payload.serverRendered) {\n        stack.push(state.value);\n      } else if (typeof (void 0).__NUXT_SITE_CONFIG__ !== \"undefined\") {\n        stack.push((void 0).__NUXT_SITE_CONFIG__);\n      }\n    }\n    return {\n      provide: {\n        nuxtSiteConfig: stack\n      }\n    };\n  }\n});\n",
-      "start": 1714175008258,
-      "end": 1714175010924,
+      "start": 1714180706641,
+      "end": 1714180708871,
       "order": "normal",
       "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-site-config/dist/runtime/plugins/0.siteConfig.mjs\"],\n  \"sourcesContent\": [\"import { createSiteConfigStack } from \\\"site-config-stack\\\";\\nimport { defineNuxtPlugin, useNuxtApp, useRequestEvent, useRuntimeConfig, useState } from \\\"#imports\\\";\\nexport default defineNuxtPlugin({\\n  name: \\\"nuxt-site-config\\\",\\n  enforce: \\\"pre\\\",\\n  async setup(nuxtApp) {\\n    const config = useRuntimeConfig()[\\\"nuxt-site-config\\\"] || { debug: false };\\n    let stack;\\n    const state = useState(\\\"site-config\\\");\\n    if (process.server) {\\n      stack = useRequestEvent().context.siteConfig;\\n      nuxtApp.hooks.hook(\\\"app:rendered\\\", () => {\\n        state.value = useRequestEvent().context.siteConfig.get();\\n      });\\n    }\\n    if (!stack) {\\n      stack = createSiteConfigStack({\\n        debug: config.debug\\n      });\\n    }\\n    if (process.client) {\\n      stack.push({\\n        _context: \\\"window\\\",\\n        url: window.location.origin\\n      });\\n      const nuxt = useNuxtApp();\\n      if (nuxt.payload.serverRendered) {\\n        stack.push(state.value);\\n      } else if (typeof window.__NUXT_SITE_CONFIG__ !== \\\"undefined\\\") {\\n        stack.push(window.__NUXT_SITE_CONFIG__);\\n      }\\n    }\\n    return {\\n      provide: {\\n        nuxtSiteConfig: stack\\n      }\\n    };\\n  }\\n});\\n\"],\n  \"mappings\": \"AAAA,SAAS,6BAA6B;AACtC,SAAS,kBAAkB,YAAY,iBAAiB,kBAAkB,gBAAgB;AAC1F,eAAe,iBAAiB;AAAA,EAC9B,MAAM;AAAA,EACN,SAAS;AAAA,EACT,MAAM,MAAM,SAAS;AACnB,UAAM,SAAS,iBAAiB,EAAE,kBAAkB,KAAK,EAAE,OAAO,MAAM;AACxE,QAAI;AACJ,UAAM,QAAQ,SAAS,aAAa;AACpC,QAAI,MAAgB;AAClB,cAAQ,gBAAgB,EAAE,QAAQ;AAClC,cAAQ,MAAM,KAAK,gBAAgB,MAAM;AACvC,cAAM,QAAQ,gBAAgB,EAAE,QAAQ,WAAW,IAAI;AAAA,MACzD,CAAC;AAAA,IACH;AACA,QAAI,CAAC,OAAO;AACV,cAAQ,sBAAsB;AAAA,QAC5B,OAAO,OAAO;AAAA,MAChB,CAAC;AAAA,IACH;AACA,QAAI,OAAgB;AAClB,YAAM,KAAK;AAAA,QACT,UAAU;AAAA,QACV,KAAK,SAAO,SAAS;AAAA,MACvB,CAAC;AACD,YAAM,OAAO,WAAW;AACxB,UAAI,KAAK,QAAQ,gBAAgB;AAC/B,cAAM,KAAK,MAAM,KAAK;AAAA,MACxB,WAAW,OAAO,SAAO,yBAAyB,aAAa;AAC7D,cAAM,KAAK,SAAO,oBAAoB;AAAA,MACxC;AAAA,IACF;AACA,WAAO;AAAA,MACL,SAAS;AAAA,QACP,gBAAgB;AAAA,MAClB;AAAA,IACF;AAAA,EACF;AACF,CAAC;\",\n  \"names\": []\n}\n"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175010924,
-      "end": 1714175010924,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175010924,
-      "end": 1714175010924,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175010924,
-      "end": 1714175010924,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175010924,
-      "end": 1714175010924,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175010924,
-      "end": 1714175010924,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175010924,
-      "end": 1714175010924,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175010924,
-      "end": 1714175010924,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175010924,
-      "end": 1714175010925,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175010924,
-      "end": 1714175010925,
+      "start": 1714180708871,
+      "end": 1714180708871,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineNuxtPlugin, useNuxtApp, useRuntimeConfig } from '#app/nuxt';\nimport { useRequestEvent } from '#app/composables/ssr';\nimport { useState } from '#app/composables/state';\nimport { createSiteConfigStack } from \"site-config-stack\";\nexport default defineNuxtPlugin({\n  name: \"nuxt-site-config\",\n  enforce: \"pre\",\n  async setup(nuxtApp) {\n    const config = useRuntimeConfig()[\"nuxt-site-config\"] || { debug: false };\n    let stack;\n    const state = useState(\"site-config\");\n    if (true) {\n      stack = useRequestEvent().context.siteConfig;\n      nuxtApp.hooks.hook(\"app:rendered\", () => {\n        state.value = useRequestEvent().context.siteConfig.get();\n      });\n    }\n    if (!stack) {\n      stack = createSiteConfigStack({\n        debug: config.debug\n      });\n    }\n    if (false) {\n      stack.push({\n        _context: \"window\",\n        url: (void 0).location.origin\n      });\n      const nuxt = useNuxtApp();\n      if (nuxt.payload.serverRendered) {\n        stack.push(state.value);\n      } else if (typeof (void 0).__NUXT_SITE_CONFIG__ !== \"undefined\") {\n        stack.push((void 0).__NUXT_SITE_CONFIG__);\n      }\n    }\n    return {\n      provide: {\n        nuxtSiteConfig: stack\n      }\n    };\n  }\n});\n",
-      "start": 1714175010925,
-      "end": 1714175010925,
+      "start": 1714180708871,
+      "end": 1714180708872,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -226,8 +226,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineNuxtPlugin, useNuxtApp, useRuntimeConfig } from '#app/nuxt';\nimport { useRequestEvent } from '#app/composables/ssr';\nimport { useState } from '#app/composables/state';\nimport { createSiteConfigStack } from \"site-config-stack\";\nexport default defineNuxtPlugin({\n  name: \"nuxt-site-config\",\n  enforce: \"pre\",\n  async setup(nuxtApp) {\n    const config = useRuntimeConfig()[\"nuxt-site-config\"] || { debug: false };\n    let stack;\n    const state = useState(\"site-config\");\n    if (true) {\n      stack = useRequestEvent().context.siteConfig;\n      nuxtApp.hooks.hook(\"app:rendered\", () => {\n        state.value = useRequestEvent().context.siteConfig.get();\n      });\n    }\n    if (!stack) {\n      stack = createSiteConfigStack({\n        debug: config.debug\n      });\n    }\n    if (false) {\n      stack.push({\n        _context: \"window\",\n        url: (void 0).location.origin\n      });\n      const nuxt = useNuxtApp();\n      if (nuxt.payload.serverRendered) {\n        stack.push(state.value);\n      } else if (typeof (void 0).__NUXT_SITE_CONFIG__ !== \"undefined\") {\n        stack.push((void 0).__NUXT_SITE_CONFIG__);\n      }\n    }\n    return {\n      provide: {\n        nuxtSiteConfig: stack\n      }\n    };\n  }\n});\n",
-      "start": 1714175010925,
-      "end": 1714175010925,
+      "start": 1714180708871,
+      "end": 1714180708872,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -240,56 +240,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175010925,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175010925,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175010926,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175010926,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714175010926,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175010926,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175010926,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175010926,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175010926,
-      "end": 1714175010926,
+      "start": 1714180708872,
+      "end": 1714180708872,
       "order": "normal"
     }
   ]

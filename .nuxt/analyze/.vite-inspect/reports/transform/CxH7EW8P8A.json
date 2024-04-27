@@ -4,27 +4,27 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <Disclosure v-slot=\"{ open }\" as=\"div\">\n    <DisclosureButton :class=\"ui.button.base\">\n      <UIcon :name=\"ui.button.icon.name\" :class=\"[ui.button.icon.base, open ? ui.button.icon.active : ui.button.icon.inactive]\" />\n      <span>{{ open ? 'Hide' : 'Show' }} {{ name }}</span>\n    </DisclosureButton>\n\n    <DisclosurePanel :class=\"ui.panel\">\n      <ContentSlot unwrap=\"p\" :use=\"$slots.default\" />\n    </DisclosurePanel>\n  </Disclosure>\n</template>\n\n<script setup lang=\"ts\">\nimport { Disclosure, DisclosureButton, DisclosurePanel, provideUseId } from '@headlessui/vue'\nimport { useId } from '#imports'\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  button: {\n    base: 'flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200',\n    icon: {\n      name: appConfig.ui.icons.chevron,\n      base: 'w-4 h-4 transform transition-transform duration-200',\n      active: '',\n      inactive: '-rotate-90'\n    }\n  },\n  panel: 'mt-4 ml-2 py-2.5 pl-4 border-l border-gray-200 dark:border-gray-800 [&>div]:!mt-0'\n}))\n\ndefineProps({\n  name: {\n    type: String,\n    default: 'properties'\n  }\n})\n\nconst { ui } = useUI('content.collapsible', undefined, config, undefined, true)\n\nprovideUseId(() => useId())\n</script>\n",
-      "start": 1714174996005,
-      "end": 1714174999115,
+      "start": 1714180695354,
+      "end": 1714180697095,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714174999115,
-      "end": 1714174999115,
+      "start": 1714180697095,
+      "end": 1714180697095,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714174999115,
-      "end": 1714174999115,
+      "start": 1714180697095,
+      "end": 1714180697095,
       "order": "pre"
     },
     {
       "name": "content-slot",
       "result": "<template>\n  <Disclosure v-slot=\"{ open }\" as=\"div\">\n    <DisclosureButton :class=\"ui.button.base\">\n      <UIcon :name=\"ui.button.icon.name\" :class=\"[ui.button.icon.base, open ? ui.button.icon.active : ui.button.icon.inactive]\" />\n      <span>{{ open ? 'Hide' : 'Show' }} {{ name }}</span>\n    </DisclosureButton>\n\n    <DisclosurePanel :class=\"ui.panel\">\n      <MDCSlot unwrap=\"p\" name=\"default\" />\n    </DisclosurePanel>\n  </Disclosure>\n</template>\n\n<script setup lang=\"ts\">\nimport { Disclosure, DisclosureButton, DisclosurePanel, provideUseId } from '@headlessui/vue'\nimport { useId } from '#imports'\n\nconst appConfig = useAppConfig()\n\nconst config = computed(() => ({\n  button: {\n    base: 'flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200',\n    icon: {\n      name: appConfig.ui.icons.chevron,\n      base: 'w-4 h-4 transform transition-transform duration-200',\n      active: '',\n      inactive: '-rotate-90'\n    }\n  },\n  panel: 'mt-4 ml-2 py-2.5 pl-4 border-l border-gray-200 dark:border-gray-800 [&>div]:!mt-0'\n}))\n\ndefineProps({\n  name: {\n    type: String,\n    default: 'properties'\n  }\n})\n\nconst { ui } = useUI('content.collapsible', undefined, config, undefined, true)\n\nprovideUseId(() => useId())\n</script>\n",
-      "start": 1714174999115,
-      "end": 1714174999115,
+      "start": 1714180697095,
+      "end": 1714180697095,
       "order": "pre",
       "sourcemaps": {
         "mappings": ""
@@ -32,39 +32,39 @@
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714174999115,
-      "end": 1714174999115,
+      "start": 1714180697095,
+      "end": 1714180697095,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714174999115,
-      "end": 1714174999115,
+      "start": 1714180697095,
+      "end": 1714180697095,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714174999115,
-      "end": 1714174999115,
+      "start": 1714180697095,
+      "end": 1714180697095,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714174999115,
-      "end": 1714174999115,
+      "start": 1714180697095,
+      "end": 1714180697095,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714174999115,
-      "end": 1714174999115,
+      "start": 1714180697095,
+      "end": 1714180697095,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Collapsible.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Collapsible.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
-      "start": 1714174999115,
-      "end": 1714174999134,
+      "start": 1714180697095,
+      "end": 1714180697109,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -72,162 +72,162 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714174999134,
-      "end": 1714174999134,
+      "start": 1714180697109,
+      "end": 1714180697109,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714174999135,
-      "end": 1714174999135,
+      "start": 1714180697109,
+      "end": 1714180697109,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714174999135,
-      "end": 1714174999135,
+      "start": 1714180697109,
+      "end": 1714180697109,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714174999135,
-      "end": 1714174999135,
+      "start": 1714180697109,
+      "end": 1714180697109,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714174999135,
-      "end": 1714174999135,
+      "start": 1714180697109,
+      "end": 1714180697109,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
       "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Collapsible.vue\").then(r => r[\"default\"] || r.default || r))",
-      "start": 1714174999135,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal",
       "sourcemaps": null
     },
     {
       "name": "replace",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697110,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697110,
+      "end": 1714180697111,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714174999139,
-      "end": 1714174999139,
+      "start": 1714180697111,
+      "end": 1714180697111,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714174999139,
-      "end": 1714174999140,
+      "start": 1714180697111,
+      "end": 1714180697111,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714174999140,
-      "end": 1714174999140,
+      "start": 1714180697111,
+      "end": 1714180697111,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714174999140,
-      "end": 1714174999140,
+      "start": 1714180697111,
+      "end": 1714180697111,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714174999141,
-      "end": 1714174999141,
+      "start": 1714180697112,
+      "end": 1714180697112,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714174999141,
-      "end": 1714174999141,
+      "start": 1714180697112,
+      "end": 1714180697112,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714174999141,
-      "end": 1714174999141,
+      "start": 1714180697112,
+      "end": 1714180697112,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714174999141,
-      "end": 1714174999141,
+      "start": 1714180697113,
+      "end": 1714180697113,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714174999141,
-      "end": 1714174999142,
+      "start": 1714180697113,
+      "end": 1714180697113,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
       "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/Collapsible.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r[\"default\"] || r.default || r))",
-      "start": 1714174999142,
-      "end": 1714174999142,
+      "start": 1714180697113,
+      "end": 1714180697113,
       "order": "normal",
       "sourcemaps": null
     },
     {
       "name": "vite:reporter",
-      "start": 1714174999142,
-      "end": 1714174999142,
+      "start": 1714180697113,
+      "end": 1714180697113,
       "order": "normal"
     }
   ]

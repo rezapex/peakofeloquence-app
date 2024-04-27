@@ -4,87 +4,87 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div :class=\"ui.wrapper\" v-bind=\"attrs\">\n    <div v-if=\"(icon || $slots.icon) || (title || $slots.title) || (description || $slots.description)\" :class=\"ui.base\">\n      <div v-if=\"icon || $slots.icon\" :class=\"ui.icon.wrapper\">\n        <slot name=\"icon\">\n          <UIcon :name=\"(icon as string)\" :class=\"ui.icon.base\" />\n        </slot>\n      </div>\n\n      <p v-if=\"title || $slots.title\" :class=\"ui.title\">\n        <slot name=\"title\">\n          {{ title }}\n        </slot>\n      </p>\n\n      <p v-if=\"description || $slots.description\" :class=\"ui.description\">\n        <slot name=\"description\">\n          {{ description }}\n        </slot>\n      </p>\n    </div>\n\n    <div :class=\"ui.container\">\n      <div v-if=\"providers?.length\" :class=\"ui.providers\">\n        <UButton v-for=\"(provider, index) in providers\" :key=\"index\" v-bind=\"provider\" block @click=\"provider.click\" />\n      </div>\n\n      <UDivider v-if=\"providers?.length && fields?.length\" :label=\"divider\" />\n\n      <UForm\n        v-if=\"fields?.length\"\n        ref=\"formRef\"\n        :state=\"state\"\n        :schema=\"schema\"\n        :validate=\"validate\"\n        :validate-on=\"validateOn\"\n        :class=\"ui.form\"\n        @submit=\"$emit('submit', $event.data)\"\n      >\n        <UFormGroup\n          v-for=\"field in fields\"\n          :key=\"field.name\"\n          :label=\"field.label\"\n          :description=\"field.description\"\n          :help=\"field.help\"\n          :hint=\"field.hint\"\n          :name=\"field.name\"\n          :size=\"field.size\"\n        >\n          <UInput v-model=\"state[field.name]\" v-bind=\"omit(field, ['label', 'description', 'help', 'hint', 'size'])\" />\n\n          <template v-if=\"$slots[`${field.name}-label`]\" #label>\n            <slot :name=\"`${field.name}-label`\" />\n          </template>\n          <template v-if=\"$slots[`${field.name}-description`]\" #description>\n            <slot :name=\"`${field.name}-description`\" />\n          </template>\n          <template v-if=\"$slots[`${field.name}-hint`]\" #hint>\n            <slot :name=\"`${field.name}-hint`\" />\n          </template>\n          <template v-if=\"$slots[`${field.name}-help`]\" #help>\n            <slot :name=\"`${field.name}-help`\" />\n          </template>\n        </UFormGroup>\n        <slot name=\"validation\" />\n        <UButton type=\"submit\" block :loading=\"loading\" v-bind=\"{ ...ui.default.submitButton, ...submitButton }\" />\n      </UForm>\n    </div>\n\n    <p v-if=\"$slots.footer\" :class=\"ui.footer\">\n      <slot name=\"footer\" />\n    </p>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { PropType } from 'vue'\nimport { twJoin } from 'tailwind-merge'\nimport { omit } from '#ui/utils'\nimport type { Button, FormError, FormEventType, FormGroupSize } from '#ui/types'\n\ndefineOptions({\n  inheritAttrs: false\n})\n\nconst props = defineProps({\n  title: {\n    type: String,\n    default: undefined\n  },\n  description: {\n    type: String,\n    default: undefined\n  },\n  icon: {\n    type: String,\n    default: undefined\n  },\n  align: {\n    type: String as PropType<'top' | 'bottom'>,\n    default: 'bottom'\n  },\n  loading: {\n    type: Boolean,\n    default: false\n  },\n  fields: {\n    type: Array as PropType<{\n      name: string\n      type: string\n      label: string\n      description?: string\n      help?: string\n      hint?: string\n      size?: FormGroupSize\n      placeholder?: string\n      required?: boolean\n      value?: string | number\n      readonly?: boolean\n    }[]>,\n    default: () => []\n  },\n  providers: {\n    type: Array as PropType<(Button & { click?: Function })[]>,\n    default: () => []\n  },\n  submitButton: {\n    type: Object as PropType<Button>,\n    default: () => ({})\n  },\n  schema: {\n    type: Object as PropType<any>,\n    default: undefined\n  },\n  validate: {\n    type: [Function, Array] as PropType<((state: any) => Promise<FormError[]>) | ((state: any) => FormError[])>,\n    default: undefined\n  },\n  validateOn: {\n    type: Array as PropType<FormEventType[]>,\n    default: () => ['submit']\n  },\n  divider: {\n    type: String,\n    default: 'or'\n  },\n  class: {\n    type: [String, Object, Array] as PropType<any>,\n    default: undefined\n  },\n  ui: {\n    type: Object as PropType<Partial<typeof config.value>>,\n    default: () => ({})\n  }\n})\n\ndefineEmits(['submit'])\n\nconst config = computed(() => {\n  const container: string = twJoin(\n    'gap-y-6 flex flex-col',\n    props.align === 'top' && 'flex-col-reverse'\n  )\n\n  return {\n    wrapper: 'w-full max-w-sm space-y-6',\n    base: '',\n    container,\n    title: 'text-2xl text-gray-900 dark:text-white font-bold',\n    description: 'text-gray-500 dark:text-gray-400 mt-1',\n    icon: {\n      wrapper: 'mb-2 pointer-events-none',\n      base: 'w-8 h-8 flex-shrink-0 text-gray-900 dark:text-white'\n    },\n    providers: 'space-y-3',\n    form: 'space-y-6',\n    footer: 'text-sm text-gray-500 dark:text-gray-400 mt-2',\n    default: {\n      submitButton: {\n        label: 'Continue'\n      }\n    }\n  }\n})\n\nconst formRef = ref<HTMLElement>()\n\nconst { ui, attrs } = useUI('auth.form', toRef(props, 'ui'), config, toRef(props, 'class'), true)\n\nconst state = reactive(Object.values(props.fields).reduce((acc, { name, value }) => {\n  acc[name] = value\n  return acc\n}, {} as Record<string, any>))\n\n// Expose\n\ndefineExpose({\n  formRef,\n  state\n})\n</script>\n",
-      "start": 1714175014114,
-      "end": 1714175014139,
+      "start": 1714180712088,
+      "end": 1714180712109,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "pre"
     },
     {
       "name": "server-only-component-transform",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175014139,
-      "end": 1714175014139,
+      "start": 1714180712109,
+      "end": 1714180712109,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import _sfc_main from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/auth/AuthForm.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/components/auth/AuthForm.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"node_modules/@nuxt/ui-pro/components/auth/AuthForm.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
-      "start": 1714175014139,
-      "end": 1714175014521,
+      "start": 1714180712109,
+      "end": 1714180712375,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -92,188 +92,188 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712375,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712375,
+      "end": 1714180712376,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175014521,
-      "end": 1714175014521,
+      "start": 1714180712376,
+      "end": 1714180712376,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175014521,
-      "end": 1714175014522,
+      "start": 1714180712376,
+      "end": 1714180712376,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175014522,
-      "end": 1714175014522,
+      "start": 1714180712376,
+      "end": 1714180712376,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175014522,
-      "end": 1714175014522,
+      "start": 1714180712376,
+      "end": 1714180712376,
       "order": "normal"
     }
   ]

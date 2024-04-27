@@ -4,45 +4,45 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defaultWindow, watchThrottled, unrefElement } from '@vueuse/core'\nimport type { MaybeElementRef, MouseInElementOptions } from '@vueuse/core'\n\nexport function useSharedMouseInElement (\n  target?: MaybeElementRef,\n  options: MouseInElementOptions = {}\n) {\n  const { x, y } = useSharedMouse(options)\n\n  const targetRef = ref(target ?? window?.document.body)\n  const elementX = ref(0)\n  const elementY = ref(0)\n\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef)\n        if (!el) { return }\n\n        const { left, top } = el.getBoundingClientRect()\n\n        const eX = x.value - (left + defaultWindow!.scrollX)\n        const eY = y.value - (top + defaultWindow!.scrollY)\n\n        // We don't update the value when the mouse to too far away\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow!.screen.width <= 800) {\n          return\n        }\n\n        elementX.value = eX\n        elementY.value = eY\n      },\n      { immediate: true, throttle: 50 }\n    )\n  }\n\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  }\n}\n",
-      "start": 1714175003193,
-      "end": 1714175003206,
+      "start": 1714180701157,
+      "end": 1714180701171,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714175003206,
-      "end": 1714175003206,
+      "start": 1714180701171,
+      "end": 1714180701171,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714175003206,
-      "end": 1714175003206,
+      "start": 1714180701171,
+      "end": 1714180701171,
       "order": "pre"
     },
     {
       "name": "content-slot",
-      "start": 1714175003206,
-      "end": 1714175003206,
+      "start": 1714180701171,
+      "end": 1714180701171,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714175003206,
-      "end": 1714175003206,
+      "start": 1714180701171,
+      "end": 1714180701171,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714175003206,
-      "end": 1714175003206,
+      "start": 1714180701171,
+      "end": 1714180701171,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defaultWindow, watchThrottled, unrefElement } from \"@vueuse/core\";\nexport function useSharedMouseInElement(target, options = {}) {\n  const { x, y } = useSharedMouse(options);\n  const targetRef = ref(target ?? window?.document.body);\n  const elementX = ref(0);\n  const elementY = ref(0);\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef);\n        if (!el) {\n          return;\n        }\n        const { left, top } = el.getBoundingClientRect();\n        const eX = x.value - (left + defaultWindow.scrollX);\n        const eY = y.value - (top + defaultWindow.scrollY);\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow.screen.width <= 800) {\n          return;\n        }\n        elementX.value = eX;\n        elementY.value = eY;\n      },\n      { immediate: true, throttle: 50 }\n    );\n  }\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  };\n}\n",
-      "start": 1714175003206,
-      "end": 1714175003220,
+      "start": 1714180701171,
+      "end": 1714180701189,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -58,129 +58,129 @@
     },
     {
       "name": "vite:json",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "nuxt:fonts:font-family-injection",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714175003221,
-      "end": 1714175003221,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714175003222,
-      "end": 1714175003222,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714175003222,
-      "end": 1714175003222,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714175003222,
-      "end": 1714175003222,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSharedMouse } from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/composables/useSharedMouse.ts';\nimport { ref } from 'vue';\nimport { defaultWindow, watchThrottled, unrefElement } from \"@vueuse/core\";\nexport function useSharedMouseInElement(target, options = {}) {\n  const { x, y } = useSharedMouse(options);\n  const targetRef = ref(target ?? window?.document.body);\n  const elementX = ref(0);\n  const elementY = ref(0);\n  if (defaultWindow) {\n    watchThrottled(\n      [targetRef, x, y],\n      () => {\n        const el = unrefElement(targetRef);\n        if (!el) {\n          return;\n        }\n        const { left, top } = el.getBoundingClientRect();\n        const eX = x.value - (left + defaultWindow.scrollX);\n        const eY = y.value - (top + defaultWindow.scrollY);\n        if (Math.abs(eX) > 1500 || Math.abs(eY) > 1500 || defaultWindow.screen.width <= 800) {\n          return;\n        }\n        elementX.value = eX;\n        elementY.value = eY;\n      },\n      { immediate: true, throttle: 50 }\n    );\n  }\n  return {\n    x,\n    y,\n    elementX,\n    elementY\n  };\n}\n",
-      "start": 1714175003222,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -193,50 +193,50 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1714175003223,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714175003223,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1714175003223,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1714175003223,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1714175003223,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714175003223,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714175003223,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714175003223,
-      "end": 1714175003223,
+      "start": 1714180701189,
+      "end": 1714180701189,
       "order": "normal"
     }
   ]
