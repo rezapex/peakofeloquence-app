@@ -242,6 +242,13 @@ const _inlineRuntimeConfig = {
       "/api/search.json": {
         "prerender": true
       },
+      "/docs": {
+        "redirect": {
+          "to": "/docs/getting-started",
+          "statusCode": 307
+        },
+        "prerender": false
+      },
       "/_nuxt/builds/meta/**": {
         "headers": {
           "cache-control": "public, max-age=31536000, immutable"

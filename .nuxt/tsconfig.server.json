@@ -155,6 +155,7 @@
     "../node_modules/@nuxt/ui-pro/modules/pro/runtime/server",
     "../node_modules/@nuxtjs/mdc/runtime/server",
     "../node_modules/@nuxt/content/runtime/server",
+    "../node_modules/@nuxt/eslint/runtime/server",
     "../node_modules/@nuxt/image/runtime/server",
     "../node_modules/nuxt-icon/runtime/server",
     "../node_modules/@nuxtjs/color-mode/runtime/server",
