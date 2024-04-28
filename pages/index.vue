@@ -53,8 +53,11 @@ useSeoMeta({
       </template>
     </ULandingHero>
 
-    <ULandingSection class="!pt-0 font-serif">
-      <Placeholder />
+    <ULandingSection>
+      <spline-viewer
+        loading-anim-type="spinner-small-dark"
+        url="https://prod.spline.design/qdYWpjA3Lr1k-5Yc/scene.splinecode"
+      ></spline-viewer>
     </ULandingSection>
 
     <ULandingSection

@@ -93,13 +93,13 @@
         "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#mdc-configs": [
-        "./mdc-configs.mjs"
+        "./mdc-configs"
       ],
       "#mdc-highlighter": [
-        "./mdc-highlighter.mjs"
+        "./mdc-highlighter"
       ],
       "#mdc-imports": [
-        "./mdc-imports.mjs"
+        "./mdc-imports"
       ],
       "#image": [
         "../node_modules/@nuxt/image/dist/runtime"
@@ -114,10 +114,10 @@
         "../node_modules/@nuxt/ui/dist/runtime/*"
       ],
       "#ui-colors": [
-        "./ui.colors.mjs"
+        "./ui.colors"
       ],
       "#icon-collections": [
-        "./icon-collections.mjs"
+        "./icon-collections"
       ],
       "#color-mode-options": [
         "./color-mode-options.mjs"
@@ -125,11 +125,8 @@
       "#tailwind-config": [
         "./tailwind.config"
       ],
-      "#nuxt-component-meta": [
-        "./component-meta.mjs"
-      ],
-      "#nuxt-component-meta/types": [
-        "./component-meta.d.ts"
+      "#tailwind-config/*": [
+        "./tailwind.config/*"
       ],
       "#vue-router": [
         "./vue-router-stub"
@@ -138,7 +135,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/0b46fc51-c4d1-4237-8214-7a99c6ec668f.json"
+        "./manifest/meta/dev"
       ],
       "#build": [
         "."
@@ -184,7 +181,6 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime",
     "../node_modules/@nuxt/ui/runtime",
     "../node_modules/@nuxt/fonts/runtime",
-    "../node_modules/nuxt-component-meta/runtime",
     "../node_modules/@nuxthq/studio/runtime",
     "../node_modules/@vueuse/nuxt/runtime",
     "../node_modules/nuxt-site-config/dist/runtime",
@@ -208,7 +204,6 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxt/ui/runtime/server",
     "../node_modules/@nuxt/fonts/runtime/server",
-    "../node_modules/nuxt-component-meta/runtime/server",
     "../node_modules/@nuxthq/studio/runtime/server",
     "../node_modules/@vueuse/nuxt/runtime/server",
     "../node_modules/nuxt-site-config/dist/runtime/server",

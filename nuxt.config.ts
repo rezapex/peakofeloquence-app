@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // plugins
+  plugins: ['~/plugins/spline-viewer.client.ts'],
   extends: [process.env.NUXT_UI_PRO_PATH || '@nuxt/ui-pro'],
   modules: [
     '@nuxt/content',
@@ -32,5 +34,11 @@ export default defineNuxtConfig({
   typescript: {
     strict: false
   },
-
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => {
+        return tag === 'spline-viewer';
+      }
+    }
+  },
 })

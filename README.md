@@ -1,18 +1,27 @@
-![nuxt-ui-saas-social-card](https://github.com/nuxt-ui-pro/saas/assets/739984/50bf4ddd-c4d5-47e5-a09e-0f699513dfb5)
+# Sources
 
-# Nuxt UI Pro - SaaS template
+This README.md file provides a list of sources for further reading on various topics related to Islam and related subjects.
 
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
+## Books
 
-- [Live demo](https://saas-template.nuxt.dev/)
-- [Play on Stackblitz](https://stackblitz.com/github/nuxt-ui-pro/saas)
-- [Documentation](https://ui.nuxt.com/pro/getting-started)
+- [Al-Islam.org](https://www.al-islam.org/book/export)
+- [Nahjul Balagah Revisited: Introducing Imam ‘Ali Ibn Abu Talib](https://www.al-islam.org/nahjul-balagah-revisited-introducing-imam-ali-ibn-abu-talib-asgharali-m-m-jaffer)
+- [Nahjul Balagha Part 2, Letters and Sayings](https://www.al-islam.org/nahjul-balagha-part-2-letters-and-sayings)
+- [Nahjul Balaghah - Juzuu ya Kwanza](https://www.al-islam.org/node/24794)
+- [Nahjul Balaghah - Juzuu ya Pili](https://www.al-islam.org/node/24854)
+- [The Authenticity of Nahjul Balaghah](https://www.al-islam.org/articles/authenticity-nahjul-balaghah-sayyid-fadhil-milani)
+- [The Commentaries on Nahjul Balaghah](https://www.al-islam.org/articles/commentaries-nahjul-balaghah-sayyid-wahid-akhtar)
+- [The Concept of Freedom in the Nahjul Balaghah](https://www.al-islam.org/articles/concept-freedom-nahjul-balaghah-sayyid-wahid-akhtar)
+- [The Contents of Nahjul Balaghah](https://www.al-islam.org/articles/contents-nahjul-balaghah-sayyid-wahid-akhtar)
+- [The Emphasis on Justice in Nahjul Balaghah](https://www.al-islam.org/message-thaqalayn/vol-15-no-2-summer-2014/emphasis-justice-nahjul-balaghah-jafar-shahidi)
+- [What is True Success? Excerpts from Peak of Eloquence (Nahjul Balagha)](https://www.al-islam.org/what-true-success-excerpts-peak-eloquence-nahjul-balagha)
+- [Books on Islam, Muslims, Prophet Muhammad(s), Ahlul Bayt](https://www.al-islam.org/)
 
-## Quick Start
+## Other Sources
 
-```bash [Terminal]
-npx nuxi init -t github:nuxt-ui-pro/saas
-```
+- [brill.com/flyer/title/69007?print=pdf&pdfGenerator=headless_chrome](https://brill.com/flyer/title/69007?print=pdf&pdfGenerator=headless_chrome)
+
+---
 
 ## Setup
 
@@ -83,8 +92,6 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
 ## Nuxt Studio integration
 
