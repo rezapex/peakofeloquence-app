@@ -1,9 +1,14 @@
 ---
-title: Purpose and Goals
+title: Sayings
 description:
+icon: i-heroicons-academic-cap
 ---
 
 ## Introduction
+
+> Quote or verse in original language
+
+> Translation of the quote or verse
 
 <!-- Add your introduction here -->
 

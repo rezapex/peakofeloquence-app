@@ -1,6 +1,7 @@
 ---
-title: Sayings
+title: Letters
 description:
+icon: i-heroicons-academic-cap
 ---
 
 ## Introduction

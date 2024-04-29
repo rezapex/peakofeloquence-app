@@ -1,6 +1,7 @@
 ---
 title: Sermons
 description:
+icon: i-heroicons-academic-cap
 ---
 
 ## Introduction
