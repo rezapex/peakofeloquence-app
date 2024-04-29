@@ -24,8 +24,11 @@ useSeoMeta({
         class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
       />
       <template #title>
-        <h1 class="font-serif font-light">{{ page.hero.title }}</h1>
+        <h1 class="font-serif font-light">
+          {{ page.hero.title }} <br /><strong>Nahjul Balagha</strong>
+        </h1>
       </template>
+
       <template #headline>
         <UBadge
           v-if="page.hero.headline"
@@ -54,10 +57,7 @@ useSeoMeta({
     </ULandingHero>
 
     <ULandingSection>
-      <spline-viewer
-        loading-anim-type="spinner-small-dark"
-        url="https://prod.spline.design/qdYWpjA3Lr1k-5Yc/scene.splinecode"
-      ></spline-viewer>
+      <Placeholder />
     </ULandingSection>
 
     <ULandingSection
