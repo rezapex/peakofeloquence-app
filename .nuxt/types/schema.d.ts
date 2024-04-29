@@ -187,31 +187,39 @@ declare module 'nuxt/schema' {
 
       satoriOptions: any,
 
-      runtimeSatori: boolean,
+      resvgOptions: any,
 
-      runtimeBrowser: boolean,
+      sharpOptions: any,
 
       defaults: {
-         provider: string,
+         emojis: string,
+
+         renderer: string,
 
          component: string,
+
+         extension: string,
 
          width: number,
 
          height: number,
 
-         cache: boolean,
-
-         cacheTtl: number,
+         cacheMaxAgeSeconds: number,
       },
 
-      runtimeCacheStorage: string,
+      debug: boolean,
+
+      baseCacheKey: string,
 
       fonts: Array<{
 
       }>,
 
-      assetDirs: Array<string>,
+      hasNuxtIcon: boolean,
+
+      colorPreference: string,
+
+      isNuxtContentDocumentDriven: boolean,
    },
 
    appConfigSchema: {

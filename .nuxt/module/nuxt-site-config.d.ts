@@ -7,11 +7,15 @@ declare module 'nitropack' {
   interface NitroRouteConfig {
     site?: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfig
   }
+  interface NitroRuntimeHooks {
+    'site-config:init': (ctx: import('../../node_modules/nuxt-site-config/dist/runtime/types').HookSiteConfigInitContext) => void | Promise<void>
+  }
 }
 
 declare module 'h3' {
   interface H3EventContext {
     siteConfig: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfigStack
+    siteConfigNitroOrigin: string
   }
 }
 
@@ -19,6 +23,9 @@ declare module 'nuxt/schema' {
   interface AppConfigInput {
     /** Theme configuration */
     site?: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfigInput
+  }
+  interface Nuxt {
+    _siteConfig?: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfigStack
   }
 }
 
@@ -31,10 +38,19 @@ declare module '@nuxt/schema' {
     _siteConfig?: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfigStack
   }
 }
-
-declare module '@nuxt/schema' {
-  export interface RuntimeNuxtHooks {
-    'site-config:resolve': (siteConfig: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfig) => void
+declare module 'nuxt/app' {
+  interface NuxtApp {
+     $nuxtSiteConfig: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfigResolved
+  }
+}
+declare module '#app' {
+  interface NuxtApp {
+    $nuxtSiteConfig: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfigResolved
+  }
+}
+declare global {
+  interface Window {
+    __NUXT_SITE_CONFIG__: import('../../node_modules/nuxt-site-config/dist/runtime/types').SiteConfigResolved
   }
 }
 

@@ -24,8 +24,11 @@ useSeoMeta({
         class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
       />
       <template #title>
-        <h1 class="font-serif font-light">
-          {{ page.hero.title }} <br /><strong>Nahjul Balagha</strong>
+        <h1
+          class="font-serif font-light text-4xl md:text-5xl mb-6 uppercase text-white text-shadow"
+        >
+          {{ page.hero.title }}
+          <br /><strong>Nahjul Balagha</strong>
         </h1>
       </template>
 
@@ -44,9 +47,7 @@ useSeoMeta({
           >
             <span class="absolute inset-0" aria-hidden="true" />
           </NuxtLink>
-
           {{ page.hero.headline.label }}
-
           <UIcon
             v-if="page.hero.headline.icon"
             :name="page.hero.headline.icon"

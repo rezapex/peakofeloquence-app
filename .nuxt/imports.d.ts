@@ -46,6 +46,10 @@ export { slidOverInjectionKey, useSlideover } from '../node_modules/@nuxt/ui/dis
 export { useTimer } from '../node_modules/@nuxt/ui/dist/runtime/composables/useTimer';
 export { useToast } from '../node_modules/@nuxt/ui/dist/runtime/composables/useToast';
 export { useUI } from '../node_modules/@nuxt/ui/dist/runtime/composables/useUI';
+export { updateSiteConfig } from '../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/updateSiteConfig';
+export { useNitroOrigin } from '../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/useNitroOrigin';
+export { useSiteConfig } from '../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/useSiteConfig';
+export { createSitePathResolver, withSiteTrailingSlash, withSiteUrl } from '../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils';
 export { queryContent } from '../node_modules/@nuxt/content/dist/runtime/legacy/composables/query';
 export { useContentHelpers } from '../node_modules/@nuxt/content/dist/runtime/composables/helpers';
 export { useContentHead } from '../node_modules/@nuxt/content/dist/runtime/composables/head';
@@ -57,10 +61,8 @@ export { flatUnwrap as unwrapSlot } from '../node_modules/@nuxtjs/mdc/dist/runti
 export { parseMarkdown } from '../node_modules/@nuxtjs/mdc/dist/runtime/parser';
 export { useImage } from '../node_modules/@nuxt/image/dist/runtime/composables';
 export { useColorMode } from '../node_modules/@nuxtjs/color-mode/dist/runtime/composables';
-export { useSiteConfig } from '../node_modules/nuxt-site-config/dist/runtime/composables/useSiteConfig';
-export { updateSiteConfig } from '../node_modules/nuxt-site-config/dist/runtime/composables/updateSiteConfig';
-export { useNitroOrigin } from '../node_modules/nuxt-site-config/dist/runtime/composables/useNitroOrigin';
-export { createSitePathResolver, withSiteTrailingSlash, withSiteUrl } from '../node_modules/nuxt-site-config/dist/runtime/composables/utils';
-export { defineOgImageDynamic, defineOgImageStatic, defineOgImage, defineOgImageCached, defineOgImageWithoutCache, defineOgImageScreenshot } from '../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage';
+export { defineOgImage } from '../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImage';
+export { defineOgImageComponent } from '../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImageComponent';
+export { defineOgImageScreenshot } from '../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImageScreenshot';
 export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

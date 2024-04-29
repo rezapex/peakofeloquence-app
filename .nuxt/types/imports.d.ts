@@ -28,7 +28,7 @@ declare global {
   const createReactiveFn: typeof import('../../node_modules/@vueuse/core')['createReactiveFn']
   const createReusableTemplate: typeof import('../../node_modules/@vueuse/core')['createReusableTemplate']
   const createSharedComposable: typeof import('../../node_modules/@vueuse/core')['createSharedComposable']
-  const createSitePathResolver: typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['createSitePathResolver']
+  const createSitePathResolver: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['createSitePathResolver']
   const createTemplatePromise: typeof import('../../node_modules/@vueuse/core')['createTemplatePromise']
   const createUnrefFn: typeof import('../../node_modules/@vueuse/core')['createUnrefFn']
   const customRef: typeof import('../../node_modules/vue')['customRef']
@@ -42,12 +42,9 @@ declare global {
   const defineNuxtLink: typeof import('../../node_modules/nuxt/dist/app/components/nuxt-link')['defineNuxtLink']
   const defineNuxtPlugin: typeof import('../../node_modules/nuxt/dist/app/nuxt')['defineNuxtPlugin']
   const defineNuxtRouteMiddleware: typeof import('../../node_modules/nuxt/dist/app/composables/router')['defineNuxtRouteMiddleware']
-  const defineOgImage: typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImage']
-  const defineOgImageCached: typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageCached']
-  const defineOgImageDynamic: typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageDynamic']
-  const defineOgImageScreenshot: typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageScreenshot']
-  const defineOgImageStatic: typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageStatic']
-  const defineOgImageWithoutCache: typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageWithoutCache']
+  const defineOgImage: typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImage')['defineOgImage']
+  const defineOgImageComponent: typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImageComponent')['defineOgImageComponent']
+  const defineOgImageScreenshot: typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImageScreenshot')['defineOgImageScreenshot']
   const defineOptions: typeof import('../../node_modules/vue')['defineOptions']
   const definePageMeta: typeof import('../../node_modules/nuxt/dist/pages/runtime/composables')['definePageMeta']
   const definePayloadPlugin: typeof import('../../node_modules/nuxt/dist/app/nuxt')['definePayloadPlugin']
@@ -174,7 +171,7 @@ declare global {
   const until: typeof import('../../node_modules/@vueuse/core')['until']
   const unwrapSlot: typeof import('../../node_modules/@nuxtjs/mdc/dist/runtime/utils/node')['flatUnwrap']
   const updateAppConfig: typeof import('../../node_modules/nuxt/dist/app/config')['updateAppConfig']
-  const updateSiteConfig: typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/updateSiteConfig')['updateSiteConfig']
+  const updateSiteConfig: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/updateSiteConfig')['updateSiteConfig']
   const useAbs: typeof import('../../node_modules/@vueuse/math')['useAbs']
   const useActiveElement: typeof import('../../node_modules/@vueuse/core')['useActiveElement']
   const useAnimate: typeof import('../../node_modules/@vueuse/core')['useAnimate']
@@ -295,7 +292,7 @@ declare global {
   const useMutationObserver: typeof import('../../node_modules/@vueuse/core')['useMutationObserver']
   const useNavigatorLanguage: typeof import('../../node_modules/@vueuse/core')['useNavigatorLanguage']
   const useNetwork: typeof import('../../node_modules/@vueuse/core')['useNetwork']
-  const useNitroOrigin: typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/useNitroOrigin')['useNitroOrigin']
+  const useNitroOrigin: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/useNitroOrigin')['useNitroOrigin']
   const useNow: typeof import('../../node_modules/@vueuse/core')['useNow']
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']
   const useNuxtData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']
@@ -350,7 +347,7 @@ declare global {
   const useSharedMouse: typeof import('../../node_modules/@nuxt/ui-pro/composables/useSharedMouse')['useSharedMouse']
   const useSharedMouseInElement: typeof import('../../node_modules/@nuxt/ui-pro/composables/useSharedMouseInElement')['useSharedMouseInElement']
   const useShortcuts: typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts')['useShortcuts']
-  const useSiteConfig: typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/useSiteConfig')['useSiteConfig']
+  const useSiteConfig: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/useSiteConfig')['useSiteConfig']
   const useSlideover: typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/useSlideover')['useSlideover']
   const useSlots: typeof import('../../node_modules/vue')['useSlots']
   const useSorted: typeof import('../../node_modules/@vueuse/core')['useSorted']
@@ -423,8 +420,8 @@ declare global {
   const withMemo: typeof import('../../node_modules/vue')['withMemo']
   const withModifiers: typeof import('../../node_modules/vue')['withModifiers']
   const withScopeId: typeof import('../../node_modules/vue')['withScopeId']
-  const withSiteTrailingSlash: typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['withSiteTrailingSlash']
-  const withSiteUrl: typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['withSiteUrl']
+  const withSiteTrailingSlash: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['withSiteTrailingSlash']
+  const withSiteUrl: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['withSiteUrl']
 }
 // for type re-export
 declare global {
@@ -463,7 +460,7 @@ declare module 'vue' {
     readonly createReactiveFn: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createReactiveFn']>
     readonly createReusableTemplate: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createReusableTemplate']>
     readonly createSharedComposable: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createSharedComposable']>
-    readonly createSitePathResolver: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['createSitePathResolver']>
+    readonly createSitePathResolver: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['createSitePathResolver']>
     readonly createTemplatePromise: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createTemplatePromise']>
     readonly createUnrefFn: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createUnrefFn']>
     readonly customRef: UnwrapRef<typeof import('../../node_modules/vue')['customRef']>
@@ -477,12 +474,9 @@ declare module 'vue' {
     readonly defineNuxtLink: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/components/nuxt-link')['defineNuxtLink']>
     readonly defineNuxtPlugin: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['defineNuxtPlugin']>
     readonly defineNuxtRouteMiddleware: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['defineNuxtRouteMiddleware']>
-    readonly defineOgImage: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImage']>
-    readonly defineOgImageCached: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageCached']>
-    readonly defineOgImageDynamic: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageDynamic']>
-    readonly defineOgImageScreenshot: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageScreenshot']>
-    readonly defineOgImageStatic: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageStatic']>
-    readonly defineOgImageWithoutCache: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageWithoutCache']>
+    readonly defineOgImage: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImage')['defineOgImage']>
+    readonly defineOgImageComponent: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImageComponent')['defineOgImageComponent']>
+    readonly defineOgImageScreenshot: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImageScreenshot')['defineOgImageScreenshot']>
     readonly defineOptions: UnwrapRef<typeof import('../../node_modules/vue')['defineOptions']>
     readonly definePageMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/pages/runtime/composables')['definePageMeta']>
     readonly definePayloadPlugin: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['definePayloadPlugin']>
@@ -609,7 +603,7 @@ declare module 'vue' {
     readonly until: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['until']>
     readonly unwrapSlot: UnwrapRef<typeof import('../../node_modules/@nuxtjs/mdc/dist/runtime/utils/node')['flatUnwrap']>
     readonly updateAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/config')['updateAppConfig']>
-    readonly updateSiteConfig: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/updateSiteConfig')['updateSiteConfig']>
+    readonly updateSiteConfig: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/updateSiteConfig')['updateSiteConfig']>
     readonly useAbs: UnwrapRef<typeof import('../../node_modules/@vueuse/math')['useAbs']>
     readonly useActiveElement: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useActiveElement']>
     readonly useAnimate: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useAnimate']>
@@ -730,7 +724,7 @@ declare module 'vue' {
     readonly useMutationObserver: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useMutationObserver']>
     readonly useNavigatorLanguage: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useNavigatorLanguage']>
     readonly useNetwork: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useNetwork']>
-    readonly useNitroOrigin: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/useNitroOrigin')['useNitroOrigin']>
+    readonly useNitroOrigin: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/useNitroOrigin')['useNitroOrigin']>
     readonly useNow: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useNow']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
@@ -785,7 +779,7 @@ declare module 'vue' {
     readonly useSharedMouse: UnwrapRef<typeof import('../../node_modules/@nuxt/ui-pro/composables/useSharedMouse')['useSharedMouse']>
     readonly useSharedMouseInElement: UnwrapRef<typeof import('../../node_modules/@nuxt/ui-pro/composables/useSharedMouseInElement')['useSharedMouseInElement']>
     readonly useShortcuts: UnwrapRef<typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts')['useShortcuts']>
-    readonly useSiteConfig: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/useSiteConfig')['useSiteConfig']>
+    readonly useSiteConfig: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/useSiteConfig')['useSiteConfig']>
     readonly useSlideover: UnwrapRef<typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/useSlideover')['useSlideover']>
     readonly useSlots: UnwrapRef<typeof import('../../node_modules/vue')['useSlots']>
     readonly useSorted: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useSorted']>
@@ -858,8 +852,8 @@ declare module 'vue' {
     readonly withMemo: UnwrapRef<typeof import('../../node_modules/vue')['withMemo']>
     readonly withModifiers: UnwrapRef<typeof import('../../node_modules/vue')['withModifiers']>
     readonly withScopeId: UnwrapRef<typeof import('../../node_modules/vue')['withScopeId']>
-    readonly withSiteTrailingSlash: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['withSiteTrailingSlash']>
-    readonly withSiteUrl: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['withSiteUrl']>
+    readonly withSiteTrailingSlash: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['withSiteTrailingSlash']>
+    readonly withSiteUrl: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['withSiteUrl']>
   }
 }
 declare module '@vue/runtime-core' {
@@ -891,7 +885,7 @@ declare module '@vue/runtime-core' {
     readonly createReactiveFn: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createReactiveFn']>
     readonly createReusableTemplate: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createReusableTemplate']>
     readonly createSharedComposable: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createSharedComposable']>
-    readonly createSitePathResolver: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['createSitePathResolver']>
+    readonly createSitePathResolver: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['createSitePathResolver']>
     readonly createTemplatePromise: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createTemplatePromise']>
     readonly createUnrefFn: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['createUnrefFn']>
     readonly customRef: UnwrapRef<typeof import('../../node_modules/vue')['customRef']>
@@ -905,12 +899,9 @@ declare module '@vue/runtime-core' {
     readonly defineNuxtLink: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/components/nuxt-link')['defineNuxtLink']>
     readonly defineNuxtPlugin: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['defineNuxtPlugin']>
     readonly defineNuxtRouteMiddleware: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['defineNuxtRouteMiddleware']>
-    readonly defineOgImage: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImage']>
-    readonly defineOgImageCached: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageCached']>
-    readonly defineOgImageDynamic: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageDynamic']>
-    readonly defineOgImageScreenshot: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageScreenshot']>
-    readonly defineOgImageStatic: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageStatic']>
-    readonly defineOgImageWithoutCache: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/composables/defineOgImage')['defineOgImageWithoutCache']>
+    readonly defineOgImage: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImage')['defineOgImage']>
+    readonly defineOgImageComponent: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImageComponent')['defineOgImageComponent']>
+    readonly defineOgImageScreenshot: UnwrapRef<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nuxt/composables/defineOgImageScreenshot')['defineOgImageScreenshot']>
     readonly defineOptions: UnwrapRef<typeof import('../../node_modules/vue')['defineOptions']>
     readonly definePageMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/pages/runtime/composables')['definePageMeta']>
     readonly definePayloadPlugin: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['definePayloadPlugin']>
@@ -1037,7 +1028,7 @@ declare module '@vue/runtime-core' {
     readonly until: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['until']>
     readonly unwrapSlot: UnwrapRef<typeof import('../../node_modules/@nuxtjs/mdc/dist/runtime/utils/node')['flatUnwrap']>
     readonly updateAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/config')['updateAppConfig']>
-    readonly updateSiteConfig: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/updateSiteConfig')['updateSiteConfig']>
+    readonly updateSiteConfig: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/updateSiteConfig')['updateSiteConfig']>
     readonly useAbs: UnwrapRef<typeof import('../../node_modules/@vueuse/math')['useAbs']>
     readonly useActiveElement: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useActiveElement']>
     readonly useAnimate: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useAnimate']>
@@ -1158,7 +1149,7 @@ declare module '@vue/runtime-core' {
     readonly useMutationObserver: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useMutationObserver']>
     readonly useNavigatorLanguage: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useNavigatorLanguage']>
     readonly useNetwork: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useNetwork']>
-    readonly useNitroOrigin: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/useNitroOrigin')['useNitroOrigin']>
+    readonly useNitroOrigin: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/useNitroOrigin')['useNitroOrigin']>
     readonly useNow: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useNow']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
@@ -1213,7 +1204,7 @@ declare module '@vue/runtime-core' {
     readonly useSharedMouse: UnwrapRef<typeof import('../../node_modules/@nuxt/ui-pro/composables/useSharedMouse')['useSharedMouse']>
     readonly useSharedMouseInElement: UnwrapRef<typeof import('../../node_modules/@nuxt/ui-pro/composables/useSharedMouseInElement')['useSharedMouseInElement']>
     readonly useShortcuts: UnwrapRef<typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/useShortcuts')['useShortcuts']>
-    readonly useSiteConfig: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/useSiteConfig')['useSiteConfig']>
+    readonly useSiteConfig: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/useSiteConfig')['useSiteConfig']>
     readonly useSlideover: UnwrapRef<typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/useSlideover')['useSlideover']>
     readonly useSlots: UnwrapRef<typeof import('../../node_modules/vue')['useSlots']>
     readonly useSorted: UnwrapRef<typeof import('../../node_modules/@vueuse/core')['useSorted']>
@@ -1286,7 +1277,7 @@ declare module '@vue/runtime-core' {
     readonly withMemo: UnwrapRef<typeof import('../../node_modules/vue')['withMemo']>
     readonly withModifiers: UnwrapRef<typeof import('../../node_modules/vue')['withModifiers']>
     readonly withScopeId: UnwrapRef<typeof import('../../node_modules/vue')['withScopeId']>
-    readonly withSiteTrailingSlash: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['withSiteTrailingSlash']>
-    readonly withSiteUrl: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/composables/utils')['withSiteUrl']>
+    readonly withSiteTrailingSlash: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['withSiteTrailingSlash']>
+    readonly withSiteUrl: UnwrapRef<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nuxt/composables/utils')['withSiteUrl']>
   }
 }
