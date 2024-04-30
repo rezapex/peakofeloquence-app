@@ -31,7 +31,10 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/@nuxt/ui-pro/plugins/presets").default> &
   InjectionType<typeof import("../../node_modules/@nuxt/ui-pro/plugins/scrollbars.client").default> &
   InjectionType<typeof import("../../node_modules/@nuxt/ui-pro/plugins/variables").default> &
-  InjectionType<typeof import("../../plugins/spline-viewer.client").default>
+  InjectionType<typeof import("../../plugins/spline-viewer.client").default> &
+  InjectionType<typeof import("../../plugins/colors").default> &
+  InjectionType<typeof import("../../plugins/modals").default> &
+  InjectionType<typeof import("../../plugins/slideovers").default>
 
 declare module '#app' {
   interface NuxtApp extends NuxtAppInjections { }
