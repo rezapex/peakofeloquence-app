@@ -1,5 +1,0 @@
-// ROLLUP_NO_REPLACE 
- const letter_86 = "{\"parsed\":{\"_path\":\"/letters/letter_86\",\"_dir\":\"letters\",\"_draft\":false,\"_partial\":false,\"_locale\":\"\",\"title\":\"Letter 86\",\"description\":\"When Imam Ali (a) sent Ibn Abbas as his representative to Basra, he gave him the following instructions.\",\"body\":{\"type\":\"root\",\"children\":[{\"type\":\"element\",\"tag\":\"p\",\"props\":{},\"children\":[{\"type\":\"text\",\"value\":\"Treat people kindly, receive them in audience, do not be very harsh in issuing and enforcing\\norders, do not lose temper because this weakness is always a good opening for Satan to find\\nits way into your mind. Always keep this in mind that the thing which takes you nearer to\\nAllah will carry you away from Hell and the thing which drives you away from Allah will\\ndrive you towards Hell.\"}]}],\"toc\":{\"title\":\"\",\"searchDepth\":2,\"depth\":2,\"links\":[]}},\"_type\":\"markdown\",\"_id\":\"content:3.letters:letter_86.md\",\"_source\":\"content\",\"_file\":\"3.letters/letter_86.md\",\"_extension\":\"md\"},\"hash\":\"5ArUeVeb1j\"}";
-
-export { letter_86 as default };
-//# sourceMappingURL=letter_86.mjs.map

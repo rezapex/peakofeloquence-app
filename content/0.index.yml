@@ -28,18 +28,18 @@ sections:
     align: left
     features:
       - name: Sermons (Khutbah)
-        description: Explore the profound sermons delivered by Ali ibn Abi Talib on various topics.
+        description: Explore the profound sermons delivered by Ali ibn Abi Talib on topics such as piety, justice, and the essence of faith.
         icon: i-heroicons-book-open
       - name: Letters (Risalah)
-        description: Read the insightful letters written by Ali to his companions, governors, and adversaries.
+        description: Read the insightful letters written by Ali to his companions, governors, and adversaries, addressing matters of governance and spirituality.
         icon: i-heroicons-pencil
       - name: Sayings (Hikam)
-        description: Discover the wisdom-filled sayings and aphorisms of Ali ibn Abi Talib.
+        description: Discover the wisdom-filled sayings and aphorisms of Ali ibn Abi Talib, covering a wide range of subjects relevant to personal and societal well-being.
         icon: i-heroicons-chat-bubble-left
     links:
       - label: Browse Content
-        to: /content
-        color: gray
+        to: /about/about-nahjul-balagha/overview
+        color: primary
         icon: i-heroicons-arrow-right-20-solid
         trailing: true
         size: md
@@ -48,19 +48,19 @@ sections:
     description: Ali ibn Abi Talib, the cousin and son-in-law of Prophet Muhammad (peace be upon him), was renowned for his eloquence, piety, and deep understanding of Islamic principles.
     align: right
     features:
-      - name: Eloquence
-        description: Experience the unparalleled eloquence and linguistic mastery of Ali ibn Abi Talib.
+      - name: Unparalleled Eloquence
+        description: Experience the unparalleled eloquence and linguistic mastery of Ali ibn Abi Talib, which continues to captivate hearts and minds across generations.
         icon: i-heroicons-academic-cap
-      - name: Wisdom
-        description: Gain wisdom and insights applicable to various aspects of life.
+      - name: Timeless Wisdom
+        description: Gain wisdom and insights from Ali's teachings, which remain relevant and applicable to various aspects of life, even in the modern era.
         icon: i-heroicons-light-bulb
-      - name: Piety
-        description: Learn about the exemplary character and piety of Ali ibn Abi Talib.
+      - name: Exemplary Character
+        description: Learn about the exemplary character and piety of Ali ibn Abi Talib, whose life serves as a model for those seeking spiritual growth and righteousness.
         icon: i-heroicons-hand-raised
     links:
       - label: About Ali ibn Abi Talib
         to: /ali-ibn-abi-talib
-        color: gray
+        color: secondary
         icon: i-heroicons-arrow-right-20-solid
         trailing: true
         size: md
@@ -141,7 +141,6 @@ testimonials:
         avatar:
           src: https://pbs.twimg.com/profile_images/1749941633947508736/8rGYwXh__400x400.jpg
           loading: lazy
-
 cta:
   title: Start Your Journey with Nahj al-Balagha
   description: Embark on a transformative journey of knowledge, wisdom, and spiritual growth with Nahj al-Balagha.

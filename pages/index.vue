@@ -23,15 +23,16 @@ useSeoMeta({
       <div
         class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
       />
+
+      <!--------- SITE SECTION --------->
       <template #title>
-        <h1
-          class="font-serif font-light text-4xl md:text-5xl mb-6 uppercase text-white text-shadow"
-        >
+        <h1 class="font-light text-4xl md:text-5xl mb-6 uppercase text-white text-shadow">
           {{ page.hero.title }}
           <br /><strong>Nahjul Balagha</strong>
         </h1>
       </template>
 
+      <!--------- SITE SECTION --------->
       <template #headline>
         <UBadge
           v-if="page.hero.headline"
@@ -56,22 +57,25 @@ useSeoMeta({
         </UBadge>
       </template>
     </ULandingHero>
+    <!--------- SITE SECTION --------->
 
     <ULandingSection>
       <Placeholder />
     </ULandingSection>
 
+    <!--------- SITE SECTION --------->
     <ULandingSection
       v-for="(section, index) in page.sections"
       :key="index"
       :title="section.title"
+      class="font-serif"
       :description="section.description"
       :align="section.align"
       :features="section.features"
     >
       <Placeholder />
     </ULandingSection>
-
+    <!--------- SITE SECTION --------->
     <ULandingSection
       :title="page.features.title"
       :description="page.features.description"
@@ -84,7 +88,7 @@ useSeoMeta({
         />
       </UPageGrid>
     </ULandingSection>
-
+    <!--------- SITE SECTION --------->
     <ULandingSection
       :headline="page.testimonials.headline"
       :title="page.testimonials.title"
@@ -103,7 +107,7 @@ useSeoMeta({
         </div>
       </UPageColumns>
     </ULandingSection>
-
+    <!--------- SITE SECTION --------->
     <ULandingSection>
       <ULandingCTA v-bind="page.cta" class="bg-gray-100/50 dark:bg-gray-800/50" />
     </ULandingSection>
