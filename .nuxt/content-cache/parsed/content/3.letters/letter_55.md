@@ -1,1 +1,17 @@
-{"parsed":{"_path":"/letters/letter_55","_dir":"letters","_draft":false,"_partial":false,"_locale":"","title":"Letter 55","description":"A letter to Mu'awiya.","body":{"type":"root","children":[{"type":"element","tag":"p","props":{},"children":[{"type":"text","value":"Remember that inequity and falsehood bring disgrace to a man in this world and in the\nHereafter. The vicious character of a tyrant always betrays itself to those who carefully look\ninto his actions. You must know that you can never get what has not been destined for you.\nThere are people who want to grab a thing without having any right or claim over it. To get\nthe object which they crave for, they try to interpret the commands of Allah to suit their\npurpose. But Allah has always given a lie to such people. Therefore, you should also fear the\nDay of Judgement, the day when only those people who have done deeds deserving reward\nwill be happy, and those, who have surrendered themselves to Satan and do not want to come\nout of its influence, will cut a sorry figure.\nYou invited me to let the Holy Book act as an arbitrator but you never believed that Book to\nbe the Word of Allah. I, therefore, did not accept your invitation though I always accept the\ncommands of that Book."}]}],"toc":{"title":"","searchDepth":2,"depth":2,"links":[]}},"_type":"markdown","_id":"content:3.letters:letter_55.md","_source":"content","_file":"3.letters/letter_55.md","_extension":"md"},"hash":"mGTasd6meR"}
+---
+title: Letter 55
+description: A letter to Mu'awiya.
+---
+
+Remember that inequity and falsehood bring disgrace to a man in this world and in the 
+Hereafter. The vicious character of a tyrant always betrays itself to those who carefully look 
+into his actions. You must know that you can never get what has not been destined for you. 
+There are people who want to grab a thing without having any right or claim over it. To get 
+the object which they crave for, they try to interpret the commands of Allah to suit their 
+purpose. But Allah has always given a lie to such people. Therefore, you should also fear the 
+Day of Judgement, the day when only those people who have done deeds deserving reward 
+will be happy, and those, who have surrendered themselves to Satan and do not want to come 
+out of its influence, will cut a sorry figure. 
+You invited me to let the Holy Book act as an arbitrator but you never believed that Book to 
+be the Word of Allah. I, therefore, did not accept your invitation though I always accept the 
+commands of that Book.

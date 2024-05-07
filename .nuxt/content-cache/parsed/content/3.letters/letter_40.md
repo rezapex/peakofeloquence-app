@@ -1,1 +1,21 @@
-{"parsed":{"_path":"/letters/letter_40","_dir":"letters","_draft":false,"_partial":false,"_locale":"","title":"Letter 40","description":"The following letter was written to Qutham bin Abbas, the brother of Abdullah bin Abbas, who was the Governor of Imam Ali (a) in the province of Hijaz.","body":{"type":"root","children":[{"type":"element","tag":"p","props":{},"children":[{"type":"text","value":"I have received confidential reports from the Western State saying that certain people have\nbeen sent from Syria and they are pretending that they are at Makkah for Hajj pilgrimage but\nthe duty assigned to them was to carry on propaganda and create disloyalty against me.\nThese people have no eyes for truth and no ears for the Orders of Allah and sayings of the\nHoly Prophet (s). They are trying to reach the path of religion through wrong ways and to\nacquire worldly wealth and pleasure under the pretence of religious activities.\nNot only this but they are also trying in various ways to persuade noble and pious persons to\nsell their salvation to the possession of pleasures of this life. They are serving their vicious\nruler by sinning against Allah and man.\nRemember that Divine Reward is for those who earn it with their sincere and good deeds and\npunishment is the lot of men who deserve it by their evil activities. Therefore, you should\ncarry on your duties like an experienced, wise and faithful officer, like an officer who obeys\nhis ruler, guards his interest and keeps himself well-informed of the affairs of the State.\nDo not act in a way that you may in future feel sorry for your actions and may have to offer\nexcuses and apologies. Do not get arrogant when times prove favourable to you and do not\nshow weakness when your duties require you to be strong and resolute."}]}],"toc":{"title":"","searchDepth":2,"depth":2,"links":[]}},"_type":"markdown","_id":"content:3.letters:letter_40.md","_source":"content","_file":"3.letters/letter_40.md","_extension":"md"},"hash":"eerRpb1qmC"}
+---
+title: Letter 40
+description: The following letter was written to Qutham bin Abbas, the brother of Abdullah bin Abbas, who was the Governor of Imam Ali (a) in the province of Hijaz.
+---
+
+I have received confidential reports from the Western State saying that certain people have 
+been sent from Syria and they are pretending that they are at Makkah for Hajj pilgrimage but 
+the duty assigned to them was to carry on propaganda and create disloyalty against me. 
+These people have no eyes for truth and no ears for the Orders of Allah and sayings of the 
+Holy Prophet (s). They are trying to reach the path of religion through wrong ways and to 
+acquire worldly wealth and pleasure under the pretence of religious activities. 
+Not only this but they are also trying in various ways to persuade noble and pious persons to 
+sell their salvation to the possession of pleasures of this life. They are serving their vicious 
+ruler by sinning against Allah and man. 
+Remember that Divine Reward is for those who earn it with their sincere and good deeds and 
+punishment is the lot of men who deserve it by their evil activities. Therefore, you should 
+carry on your duties like an experienced, wise and faithful officer, like an officer who obeys 
+his ruler, guards his interest and keeps himself well-informed of the affairs of the State. 
+Do not act in a way that you may in future feel sorry for your actions and may have to offer 
+excuses and apologies. Do not get arrogant when times prove favourable to you and do not 
+show weakness when your duties require you to be strong and resolute.
