@@ -802,7 +802,7 @@ const cfg1 = defineAppConfig({
 });
 const inlineConfig = {
   "nuxt": {
-    "buildId": "256e1315-edfd-40f2-9df4-a0ff1cf06d9c"
+    "buildId": "32ad5e2d-1bf2-4c7a-b6b7-97166460b7da"
   },
   "ui": {
     "primary": "green",
@@ -852,13 +852,12 @@ async function getRouteRules(url) {
     return defu({}, ..._routeRulesMatcher.matchAll(url).reverse());
   }
 }
-const __nuxt_page_meta$9 = {
+const __nuxt_page_meta$8 = {
   layout: "auth"
 };
-const __nuxt_page_meta$1 = {
+const __nuxt_page_meta = {
   layout: "auth"
 };
-const component_45stubRWRQXTTiuW = {};
 const _routes = [
   {
     name: "about",
@@ -939,11 +938,11 @@ const _routes = [
     ]
   },
   {
-    name: (__nuxt_page_meta$9 == null ? void 0 : __nuxt_page_meta$9.name) ?? "login",
-    path: (__nuxt_page_meta$9 == null ? void 0 : __nuxt_page_meta$9.path) ?? "/login",
-    meta: __nuxt_page_meta$9 || {},
-    alias: (__nuxt_page_meta$9 == null ? void 0 : __nuxt_page_meta$9.alias) || [],
-    redirect: __nuxt_page_meta$9 == null ? void 0 : __nuxt_page_meta$9.redirect,
+    name: (__nuxt_page_meta$8 == null ? void 0 : __nuxt_page_meta$8.name) ?? "login",
+    path: (__nuxt_page_meta$8 == null ? void 0 : __nuxt_page_meta$8.path) ?? "/login",
+    meta: __nuxt_page_meta$8 || {},
+    alias: (__nuxt_page_meta$8 == null ? void 0 : __nuxt_page_meta$8.alias) || [],
+    redirect: __nuxt_page_meta$8 == null ? void 0 : __nuxt_page_meta$8.redirect,
     component: () => import('./login-DxZ_sVSi.mjs').then((m2) => m2.default || m2)
   },
   {
@@ -1009,20 +1008,12 @@ const _routes = [
     ]
   },
   {
-    name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "signup",
-    path: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.path) ?? "/signup",
-    meta: __nuxt_page_meta$1 || {},
-    alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
-    redirect: __nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect,
+    name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "signup",
+    path: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.path) ?? "/signup",
+    meta: __nuxt_page_meta || {},
+    alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
+    redirect: __nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect,
     component: () => import('./signup-BOqybSZy.mjs').then((m2) => m2.default || m2)
-  },
-  {
-    name: void 0,
-    path: "/docs",
-    meta: {},
-    alias: [],
-    redirect: void 0 ,
-    component: component_45stubRWRQXTTiuW
   }
 ];
 const _wrapIf = (component, props, slots) => {

@@ -122,17 +122,17 @@
       "#color-mode-options": [
         "./color-mode-options.mjs"
       ],
-      "#tailwind-config": [
-        "./tailwind.config"
-      ],
-      "#tailwind-config/*": [
-        "./tailwind.config/*"
-      ],
       "#vue-router": [
         "./vue-router-stub"
       ],
       "#imports": [
         "./imports"
+      ],
+      "#tailwind-config": [
+        "./tailwind.config"
+      ],
+      "#tailwind-config/*": [
+        "./tailwind.config/*"
       ],
       "#app-manifest": [
         "./manifest/meta/dev.json"

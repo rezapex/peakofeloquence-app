@@ -19,7 +19,7 @@
     "@nuxt/eslint": "^0.3.10",
     "@nuxt/fonts": "^0.6.1",
     "@nuxt/image": "^1.6.0",
-    "@nuxt/ui": "^2.15.2",
+    "@nuxt/ui": "^2.16.0",
     "@nuxt/ui-pro": "^1.1.0",
     "@vueuse/nuxt": "^10.9.0",
     "kofi": "^0.7.0",
