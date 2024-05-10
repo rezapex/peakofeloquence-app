@@ -4,7 +4,7 @@ import { defuFn } from 'defu'
 
 const inlineConfig = {
   "nuxt": {
-    "buildId": "dev"
+    "buildId": "c3b50db0-9f61-4a37-a2d0-939f30e4f899"
   },
   "ui": {
     "primary": "green",
@@ -41,6 +41,6 @@ if (import.meta.hot) {
 }
 
 import cfg0 from "/Users/rezajafar/peakofeloquence-app/app.config.ts"
-import cfg1 from "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/app.config.ts"
+import cfg1 from "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui-pro@1.2.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4._vkhnqkaultie3oz27x7miifqb4/node_modules/@nuxt/ui-pro/app.config.ts"
 
 export default /*@__PURE__*/ defuFn(cfg0, cfg1, inlineConfig)
