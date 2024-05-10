@@ -69,6 +69,7 @@ jobs:
       - name: Generate
         run: npx nuxi build
         env:
+          NUXT_UI_PRO_LICENSE: 1798B9DB-2FDA-438A-9BF2-6F34C16D51B4
           NUXT_PUBLIC_STUDIO_API_URL: https://api.nuxt.studio
           NUXT_PUBLIC_STUDIO_TOKENS: 08a393abc243a16a4de9a2fb26c24c0a9234218848532fa32a481656266a76a01
 
