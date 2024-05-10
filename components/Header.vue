@@ -36,13 +36,13 @@ const links = [
     <template #logo>
       <div class="flex items-center">
         <img src="/gold-icon.png" alt="Logo" class="h-7 w-auto mr-3" />
-        <img src="/anotherone.png" alt="Heading" class="h-4 w-auto mr-3" />
+        <img src="/whiteheading.png" alt="Heading" class="h-4 w-auto mr-3" />
       </div>
     </template>
 
     <!-- Header Right -->
     <template #right>
-      <UButton label="Support" color="gray" to="/donate" />
+      <!-- <UButton label="Support" color="gray" to="/donate" /> -->
       <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" /> -->
     </template>
 

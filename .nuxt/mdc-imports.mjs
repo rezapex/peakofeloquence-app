@@ -1,4 +1,4 @@
-import _Highlight from '/Users/rezajafar/peakofeloquence-app/node_modules/@nuxtjs/mdc/dist/runtime/highlighter/rehype-nuxt.mjs'
+import _Highlight from '/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/highlighter/rehype-nuxt.mjs'
 
 export const remarkPlugins = {
 }

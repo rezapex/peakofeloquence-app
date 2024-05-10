@@ -1,45 +1,50 @@
 <script setup lang="ts">
-import { withoutTrailingSlash, joinURL } from 'ufo'
-import type { BlogPost } from '~/types'
+import { withoutTrailingSlash, joinURL } from "ufo";
+import type { BlogPost } from "~/types";
 
-const route = useRoute()
+const route = useRoute();
 
-const { data: post } = await useAsyncData(route.path, () => queryContent<BlogPost>(route.path).findOne())
+const { data: post } = await useAsyncData(route.path, () =>
+  queryContent<BlogPost>(route.path).findOne()
+);
 if (!post.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: "Post not found", fatal: true });
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/blog')
-  .where({ _extension: 'md' })
-  .without(['body', 'excerpt'])
-  .sort({ date: -1 })
-  .findSurround(withoutTrailingSlash(route.path))
-, { default: () => [] })
+const { data: surround } = await useAsyncData(
+  `${route.path}-surround`,
+  () =>
+    queryContent("/blog")
+      .where({ _extension: "md" })
+      .without(["body", "excerpt"])
+      .sort({ date: -1 })
+      .findSurround(withoutTrailingSlash(route.path)),
+  { default: () => [] }
+);
 
-const title = post.value.head?.title || post.value.title
-const description = post.value.head?.description || post.value.description
+const title = post.value.head?.title || post.value.title;
+const description = post.value.head?.description || post.value.description;
 
 useSeoMeta({
   title,
   ogTitle: title,
   description,
   ogDescription: description,
-})
+});
 
 if (post.value.image?.src) {
-  const site = useSiteConfig()
+  const site = useSiteConfig();
 
   useSeoMeta({
     ogImage: joinURL(site.url, post.value.image.src),
-    twitterImage: joinURL(site.url, post.value.image.src)
-  })
+    twitterImage: joinURL(site.url, post.value.image.src),
+  });
 } else {
   defineOgImage({
-    component: 'Saas',
     title,
     description,
-    headline: 'Blog'
-  })
+    headline: "Blog",
+  });
 }
 </script>
 
@@ -49,7 +54,13 @@ if (post.value.image?.src) {
       <template #headline>
         <UBadge v-bind="post.badge" variant="subtle" />
         <span class="text-gray-500 dark:text-gray-400">&middot;</span>
-        <time class="text-gray-500 dark:text-gray-400">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        <time class="text-gray-500 dark:text-gray-400">{{
+          new Date(post.date).toLocaleDateString("en", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        }}</time>
       </template>
 
       <div class="flex flex-wrap items-center gap-3 mt-4">
@@ -72,7 +83,7 @@ if (post.value.image?.src) {
       <UPageBody prose>
         <ContentRenderer v-if="post && post.body" :value="post" />
 
-        <hr v-if="surround?.length">
+        <hr v-if="surround?.length" />
 
         <UContentSurround :surround="surround" />
       </UPageBody>

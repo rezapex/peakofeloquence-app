@@ -71,7 +71,7 @@
         "../node_modules/nuxt"
       ],
       "#internal/nuxt/paths": [
-        "../node_modules/nuxt/dist/core/runtime/nitro/paths"
+        "../../node_modules/nuxt/dist/core/runtime/nitro/paths"
       ],
       "~": [
         "./.."
@@ -113,16 +113,16 @@
         "./mdc-imports"
       ],
       "#image": [
-        "../node_modules/@nuxt/image/dist/runtime"
+        "../../node_modules/@nuxt/image/dist/runtime"
       ],
       "#image/*": [
-        "../node_modules/@nuxt/image/dist/runtime/*"
+        "../../node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#ui": [
-        "../node_modules/@nuxt/ui/dist/runtime"
+        "../../node_modules/@nuxt/ui/dist/runtime"
       ],
       "#ui/*": [
-        "../node_modules/@nuxt/ui/dist/runtime/*"
+        "../../node_modules/@nuxt/ui/dist/runtime/*"
       ],
       "#ui-colors": [
         "./ui.colors"
@@ -140,46 +140,34 @@
         "./tailwind.config/*"
       ],
       "#internal/nuxt-site-config": [
-        "../node_modules/nuxt-site-config/dist/runtime/nitro/composables"
+        "../../node_modules/nuxt-site-config/dist/runtime/nitro/composables"
       ],
       "#internal/nuxt-site-config/*": [
-        "../node_modules/nuxt-site-config/dist/runtime/nitro/composables/*"
+        "../../node_modules/nuxt-site-config/dist/runtime/nitro/composables/*"
       ],
       "#content/server": [
-        "../node_modules/@nuxt/content/dist/runtime/legacy/server"
+        "../../node_modules/@nuxt/content/dist/runtime/legacy/server"
       ],
       "#nuxt-og-image/renderers/satori": [
-        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/satori/renderer"
+        "../../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/satori/renderer"
       ],
       "#nuxt-og-image/renderers/chromium": [
-        "./unenv/runtime/mock/empty"
+        "../../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/chromium/renderer"
       ],
       "#nuxt-og-image/bindings/css-inline": [
-        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/css-inline/node"
+        "../../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/css-inline/node"
       ],
       "#nuxt-og-image/bindings/sharp": [
-        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/sharp/node"
+        "../../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/sharp/node"
       ],
       "#nuxt-og-image/bindings/resvg": [
-        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/resvg/node"
+        "../../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/resvg/node"
       ],
       "#nuxt-og-image/bindings/satori": [
-        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/satori/node"
+        "../../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/satori/node"
       ],
       "#nuxt-og-image/bindings/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/chromium/null"
-      ],
-      "electron": [
-        "./unenv/runtime/mock/proxy-cjs"
-      ],
-      "bufferutil": [
-        "./unenv/runtime/mock/proxy-cjs"
-      ],
-      "utf-8-validate": [
-        "./unenv/runtime/mock/proxy-cjs"
-      ],
-      "queue": [
-        "./unenv/runtime/mock/proxy-cjs"
+        "../../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/chromium/chrome-launcher"
       ]
     }
   },
@@ -197,7 +185,7 @@
     "../node_modules/@nuxt/fonts/runtime/server",
     "../node_modules/@nuxthq/studio/runtime/server",
     "../node_modules/@vueuse/nuxt/runtime/server",
-    "../node_modules/nuxt-site-config/dist/module.mjs/runtime/server",
+    "../../node_modules/nuxt-site-config/dist/module.mjs/runtime/server",
     "../node_modules/nuxt-og-image/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
@@ -209,9 +197,9 @@
   ],
   "exclude": [
     "../node_modules",
-    "../node_modules/nuxt/node_modules",
+    "../../node_modules/nuxt/node_modules",
     "../node_modules/@nuxt/ui-pro/modules/pro/node_modules",
-    "../node_modules/nuxt-site-config/dist/node_modules",
+    "../../node_modules/nuxt-site-config/dist/node_modules",
     "../dist"
   ]
 }
