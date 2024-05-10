@@ -67,10 +67,10 @@ jobs:
         run: echo $'\nautoImport=true\nmodules[]=@nuxthq/studio' >> .nuxtrc
 
       - name: Generate
-        run: npx nuxi build --preset github_pages
+        run: npx nuxi build
         env:
           NUXT_PUBLIC_STUDIO_API_URL: https://api.nuxt.studio
-          NUXT_PUBLIC_STUDIO_TOKENS: ac51f984373b4ebfa82e415cf09eedeaa0d73c350414cd94f197d7672c5760e7
+          NUXT_PUBLIC_STUDIO_TOKENS: 08a393abc243a16a4de9a2fb26c24c0a9234218848532fa32a481656266a76a01
 
 
       # Deployment job
