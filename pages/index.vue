@@ -26,10 +26,20 @@ useSeoMeta({
 
       <!--------- SITE SECTION --------->
       <template #title>
-        <h1 class="font-light text-4xl md:text-5xl mb-6 uppercase text-white text-shadow">
-          {{ page.hero.title }}
-          <br /><strong>Nahjul Balagha</strong>
-        </h1>
+        <span class="font-montserrat font-bold text-5xl">
+          Discover the
+          <span
+            class="bg-gradient-to-r from-blue-200 to-yellow-600 bg-clip-text text-transparent"
+            >Wisdom</span
+          >
+          of
+        </span>
+        <br />
+        <span
+          class="font-Playfair Display font-bold text-5xl bg-gradient-to-r from-blue-100 to-yellow-600 bg-clip-text text-transparent"
+        >
+          Nahj al-Balagha
+        </span>
       </template>
 
       <!--------- SITE SECTION --------->
@@ -68,7 +78,7 @@ useSeoMeta({
       v-for="(section, index) in page.sections"
       :key="index"
       :title="section.title"
-      class="font-serif"
+      class=""
       :description="section.description"
       :align="section.align"
       :features="section.features"
@@ -119,19 +129,9 @@ useSeoMeta({
   background-size: 100px 100px;
   background-image: linear-gradient(
       to right,
-      rgb(var(--color-gray-200)) 1px,
+      rgb(var(--color-gray-800)) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgb(var(--color-gray-200)) 1px, transparent 1px);
-}
-.dark {
-  .landing-grid {
-    background-image: linear-gradient(
-        to right,
-        rgb(var(--color-gray-800)) 1px,
-        transparent 1px
-      ),
-      linear-gradient(to bottom, rgb(var(--color-gray-800)) 1px, transparent 1px);
-  }
+    linear-gradient(to bottom, rgb(var(--color-gray-800)) 1px, transparent 1px);
 }
 </style>

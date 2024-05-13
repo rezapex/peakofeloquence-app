@@ -16,4 +16,24 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.donation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.donation-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: hidden;
+  background-color: black;
+}
+
+.body {
+  background-color: black;
+}
+</style>

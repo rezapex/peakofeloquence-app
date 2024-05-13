@@ -12,20 +12,14 @@ declare module 'nitropack' {
     '/api/_mdc/highlight': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/@nuxtjs/mdc/dist/runtime/highlighter/event-handler').default>>>>
     }
-    '/__studio.json': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/@nuxthq/studio/dist/runtime/server/routes/studio').default>>>>
-    }
-    '/api/component-meta': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
-    }
-    '/api/component-meta.json': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
-    }
-    '/api/component-meta/:component?': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
+    '/__site-config__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/nuxt-site-config/dist/runtime/nitro/routes/__site-config__/debug').default>>>>
     }
     '/__og-image__/font/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nitro/routes/font').default>>>>
+    }
+    '/__og-image__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nitro/routes/debug.json').default>>>>
     }
     '/__og-image__/image/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nitro/routes/image').default>>>>
@@ -39,7 +33,7 @@ declare module 'nitropack' {
     '/api/_content/query': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
     }
-    '/api/_content/cache.1715374032476.json': {
+    '/api/_content/cache.json': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/@nuxt/content/dist/runtime/server/api/cache').default>>>>
     }
     '/api/_content/navigation/:qid/**:params': {

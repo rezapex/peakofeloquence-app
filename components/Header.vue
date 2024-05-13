@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import type { NavItem } from "@nuxt/content/dist/runtime/types";
 import { useAppConfig } from "#imports";
-const { header } = useAppConfig();
-const navigation = inject<Ref<NavItem[]>>("navigation", ref([]));
 const appConfig = useAppConfig();
-const primaryColor = appConfig.ui.primary;
+const navigation = inject<Ref<NavItem[]>>("navigation", ref([]));
 
 const links = [
   {
@@ -35,15 +33,14 @@ const links = [
     <!-- Logo -->
     <template #logo>
       <div class="flex items-center">
-        <img src="/gold-icon.png" alt="Logo" class="h-7 w-auto mr-3" />
-        <img src="/whiteheading.png" alt="Heading" class="h-4 w-auto mr-3" />
+        <img src="/public/gold-icon.png" alt="Logo" class="h-7 w-auto mr-3" />
       </div>
     </template>
 
     <!-- Header Right -->
     <template #right>
-      <!-- <UButton label="Support" color="gray" to="/donate" /> -->
-      <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" /> -->
+      <UColorModeButton />
+      <UButton label="Support" color="gray" to="/donate" />
     </template>
 
     <UButton
