@@ -11,7 +11,7 @@ hero:
     icon: i-heroicons-book-open-20-solid
   links:
     - label: About Peak of Eloquence
-      to: '/about'
+      to: 'about/introduction'
       size: xl
       color: gray
       icon: i-heroicons-academic-cap

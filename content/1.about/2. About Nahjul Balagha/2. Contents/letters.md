@@ -1,7 +1,7 @@
 ---
 title: Letters
 description:
-icon: i-heroicons-academic-cap
+icon: i-heroicons-envolope
 ---
 
 ## Introduction
