@@ -37,11 +37,11 @@ export default defineNuxtConfig({
   typescript: {
     strict: false
   },
-  vue: {
-    compilerOptions: {
-      isCustomElement: (tag) => {
-        return tag === 'spline-viewer';
-      }
-    }
-  },
+  // vue: {
+  //   compilerOptions: {
+  //     isCustomElement: (tag) => {
+  //       return tag === 'spline-viewer';
+  //     }
+  //   }
+  // },
 })
