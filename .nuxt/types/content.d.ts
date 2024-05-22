@@ -1,4 +1,4 @@
 declare module '#content/server' {
-  const serverQueryContent: typeof import('/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/legacy/types').serverQueryContent
-  const parseContent: typeof import('/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/server').parseContent
+  const serverQueryContent: typeof import('/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/legacy/types').serverQueryContent
+  const parseContent: typeof import('/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/server').parseContent
 }

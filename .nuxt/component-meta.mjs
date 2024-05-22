@@ -143,7 +143,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -427,7 +427,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -600,7 +600,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -683,7 +683,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -850,7 +850,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -1072,7 +1072,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -1237,7 +1237,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -1418,7 +1418,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -1669,7 +1669,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -1698,21 +1698,6 @@ export default {
           }
         },
         {
-          "name": "icon",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui-pro@1.2.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4._vkhnqkaultie3oz27x7miifqb4/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
-              "range": [
-                130,
-                182
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
           "name": "code",
           "type": "string",
           "description": "",
@@ -1722,6 +1707,21 @@ export default {
               "range": [
                 78,
                 126
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui-pro@1.2.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4._vkhnqkaultie3oz27x7miifqb4/node_modules/@nuxt/ui-pro/modules/pro/runtime/components/global/prose/ProseCode.vue",
+              "range": [
+                130,
+                182
               ]
             }
           ],
@@ -2035,7 +2035,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -2144,7 +2144,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -2253,7 +2253,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -2362,7 +2362,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -2413,14 +2413,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue",
     "pascalName": "ContentDoc",
     "kebabName": "content-doc",
     "chunkName": "components/content-doc",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -2433,7 +2433,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 4632,
                 4644
@@ -2451,7 +2451,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 4653,
                 4666
@@ -2469,7 +2469,7 @@ export default {
           "type": "QueryBuilderParams",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 4675,
                 4701
@@ -2489,7 +2489,7 @@ export default {
                 "type": "boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9173,
                       9189
@@ -2514,7 +2514,7 @@ export default {
                 "type": "number",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9194,
                       9208
@@ -2532,7 +2532,7 @@ export default {
                 "type": "number",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9213,
                       9228
@@ -2550,7 +2550,7 @@ export default {
                 "type": "string[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9233,
                       9249
@@ -2574,7 +2574,7 @@ export default {
                 "type": "string[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9254,
                       9273
@@ -2592,7 +2592,7 @@ export default {
                 "type": "SortOptions[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9278,
                       9299
@@ -2625,7 +2625,7 @@ export default {
                               "type": "string",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     3558,
                                     3575
@@ -2648,7 +2648,7 @@ export default {
                               "type": "boolean",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     3749,
                                     3768
@@ -2671,7 +2671,7 @@ export default {
                               "type": "\"upper\" | \"lower\" | \"false\"",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     3953,
                                     3994
@@ -2702,7 +2702,7 @@ export default {
                               "type": "\"base\" | \"accent\" | \"case\" | \"variant\"",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     4733,
                                     4787
@@ -2741,7 +2741,7 @@ export default {
                 "type": "QueryBuilderWhere[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9304,
                       9332
@@ -2770,7 +2770,7 @@ export default {
                           "type": "QueryBuilderWhere[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 5305,
                                 5332
@@ -2793,7 +2793,7 @@ export default {
                           "type": "QueryBuilderWhere[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 5576,
                                 5602
@@ -2816,7 +2816,7 @@ export default {
                           "type": "string | number | boolean | RegExp | QueryBuilderWhere",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 5799,
                                 5861
@@ -2849,7 +2849,7 @@ export default {
                                     "type": "(string: string) => RegExpExecArray",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           40960,
                                           41005
@@ -2876,7 +2876,7 @@ export default {
                                     "type": "(string: string) => boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41187,
                                           41217
@@ -2898,7 +2898,7 @@ export default {
                                     "type": "string",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41399,
                                           41423
@@ -2916,7 +2916,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41569,
                                           41594
@@ -2934,7 +2934,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41744,
                                           41773
@@ -2952,7 +2952,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41922,
                                           41950
@@ -2970,7 +2970,7 @@ export default {
                                     "type": "number",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41956,
                                           41974
@@ -2993,7 +2993,7 @@ export default {
                                     "type": "(pattern: string, flags?: string) => RegExp",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           42077,
                                           42124
@@ -3015,7 +3015,7 @@ export default {
                                     "type": "string",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.core.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.core.d.ts",
                                         "range": [
                                           14897,
                                           14920
@@ -3033,7 +3033,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.core.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.core.d.ts",
                                         "range": [
                                           15085,
                                           15110
@@ -3051,7 +3051,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.core.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.core.d.ts",
                                         "range": [
                                           15276,
                                           15302
@@ -3069,7 +3069,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
                                         "range": [
                                           1204,
                                           1229
@@ -3087,7 +3087,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2022.regexp.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2022.regexp.d.ts",
                                         "range": [
                                           1304,
                                           1333
@@ -3096,8 +3096,8 @@ export default {
                                     ],
                                     "schema": "boolean"
                                   },
-                                  "__@match@7945": {
-                                    "name": "__@match@7945",
+                                  "__@match@6574": {
+                                    "name": "__@match@6574",
                                     "global": false,
                                     "description": "Matches a string with this regular expression, and returns an array containing the results of\nthat search.",
                                     "tags": [
@@ -3110,7 +3110,7 @@ export default {
                                     "type": "(string: string) => RegExpMatchArray",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           5644,
                                           5700
@@ -3123,8 +3123,8 @@ export default {
                                       "schema": []
                                     }
                                   },
-                                  "__@replace@7947": {
-                                    "name": "__@replace@7947",
+                                  "__@replace@6576": {
+                                    "name": "__@replace@6576",
                                     "global": false,
                                     "description": "Replaces text in a string, using this regular expression.",
                                     "tags": [
@@ -3149,14 +3149,14 @@ export default {
                                     "type": "{ (string: string, replaceValue: string): string; (string: string, replacer: (substring: string, ...args: any[]) => string): string; }",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           6110,
                                           6173
                                         ]
                                       },
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           6478,
                                           6576
@@ -3165,8 +3165,8 @@ export default {
                                     ],
                                     "schema": "{ (string: string, replaceValue: string): string; (string: string, replacer: (substring: string, ...args: any[]) => string): string; }"
                                   },
-                                  "__@search@7950": {
-                                    "name": "__@search@7950",
+                                  "__@search@6579": {
+                                    "name": "__@search@6579",
                                     "global": false,
                                     "description": "Finds the position beginning first substring match in a regular expression search\nusing this regular expression.",
                                     "tags": [
@@ -3179,7 +3179,7 @@ export default {
                                     "type": "(string: string) => number",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           6782,
                                           6822
@@ -3192,8 +3192,8 @@ export default {
                                       "schema": []
                                     }
                                   },
-                                  "__@split@7952": {
-                                    "name": "__@split@7952",
+                                  "__@split@6581": {
+                                    "name": "__@split@6581",
                                     "global": false,
                                     "description": "Returns an array of substrings that were delimited by strings in the original input that\nmatch against this regular expression.\n\nIf the regular expression contains capturing parentheses, then each time this\nregular expression matches, the results (including any undefined results) of the\ncapturing parentheses are spliced.",
                                     "tags": [
@@ -3210,7 +3210,7 @@ export default {
                                     "type": "(string: string, limit?: number) => string[]",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           7384,
                                           7441
@@ -3223,8 +3223,8 @@ export default {
                                       "schema": []
                                     }
                                   },
-                                  "__@matchAll@7954": {
-                                    "name": "__@matchAll@7954",
+                                  "__@matchAll@6583": {
+                                    "name": "__@matchAll@6583",
                                     "global": false,
                                     "description": "Matches a string with this regular expression, and returns an iterable of matches\ncontaining the results of that search.",
                                     "tags": [
@@ -3237,7 +3237,7 @@ export default {
                                     "type": "(str: string) => IterableIterator<RegExpMatchArray>",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
                                         "range": [
                                           1385,
                                           1452
@@ -3270,7 +3270,7 @@ export default {
                           "type": "string | number | boolean | RegExp",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6060,
                                 6101
@@ -3303,7 +3303,7 @@ export default {
                           "type": "string | number | boolean | RegExp",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6294,
                                 6335
@@ -3326,7 +3326,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6533,
                                 6546
@@ -3349,7 +3349,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6757,
                                 6771
@@ -3372,7 +3372,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6966,
                                 6979
@@ -3395,7 +3395,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 7187,
                                 7201
@@ -3418,7 +3418,7 @@ export default {
                           "type": "string | RegExp",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 7435,
                                 7460
@@ -3448,7 +3448,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 7664,
                                 7679
@@ -3471,7 +3471,7 @@ export default {
                           "type": "boolean",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 7860,
                                 7878
@@ -3494,7 +3494,7 @@ export default {
                           "type": "string | number | boolean | (string | number | boolean)[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 8135,
                                 8208
@@ -3542,7 +3542,7 @@ export default {
                           "type": "(string | number | boolean)[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 8451,
                                 8499
@@ -3565,7 +3565,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 8695,
                                 8715
@@ -3588,7 +3588,7 @@ export default {
                           "type": "string | (string | number | boolean)[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 8938,
                                 8986
@@ -3718,7 +3718,7 @@ export default {
                 "type": "{ query: string | QueryBuilderWhere; before?: number; after?: number; }",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9337,
                       9448
@@ -3738,7 +3738,7 @@ export default {
                       "type": "string | QueryBuilderWhere",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             9358,
                             9392
@@ -3763,7 +3763,7 @@ export default {
                       "type": "number",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             9401,
                             9417
@@ -3781,7 +3781,7 @@ export default {
                       "type": "number",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             9426,
                             9441
@@ -3805,7 +3805,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 4606,
                 4623
@@ -3830,7 +3830,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 4710,
                 4724
@@ -3854,7 +3854,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 6347,
                 6476
@@ -3874,7 +3874,7 @@ export default {
                 "type": "ParsedContent",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
                     "range": [
                       6380,
                       6399
@@ -3894,7 +3894,7 @@ export default {
                       "type": "MarkdownRoot",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             2459,
                             2482
@@ -3914,7 +3914,7 @@ export default {
                             "type": "\"root\"",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1465,
                                   1478
@@ -3932,7 +3932,7 @@ export default {
                             "type": "MarkdownNode[]",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1483,
                                   1508
@@ -3956,7 +3956,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1214,
                                             1227
@@ -3974,7 +3974,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1232,
                                             1245
@@ -3992,7 +3992,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1250,
                                             1265
@@ -4010,7 +4010,7 @@ export default {
                                       "type": "Record<string, any>",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1270,
                                             1298
@@ -4028,7 +4028,7 @@ export default {
                                       "type": "any",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1303,
                                             1317
@@ -4046,7 +4046,7 @@ export default {
                                       "type": "MarkdownNode[]",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1322,
                                             1348
@@ -4064,7 +4064,7 @@ export default {
                                       "type": "Record<string, any>",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1353,
                                             1386
@@ -4082,7 +4082,7 @@ export default {
                                       "type": "Record<string, any>",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1391,
                                             1426
@@ -4105,7 +4105,7 @@ export default {
                             "type": "Record<string, any>",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1513,
                                   1541
@@ -4123,7 +4123,7 @@ export default {
                             "type": "Toc",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1546,
                                   1556
@@ -4143,7 +4143,7 @@ export default {
                                   "type": "string",
                                   "declarations": [
                                     {
-                                      "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                      "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                       "range": [
                                         1095,
                                         1109
@@ -4161,7 +4161,7 @@ export default {
                                   "type": "number",
                                   "declarations": [
                                     {
-                                      "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                      "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                       "range": [
                                         1114,
                                         1128
@@ -4179,7 +4179,7 @@ export default {
                                   "type": "number",
                                   "declarations": [
                                     {
-                                      "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                      "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                       "range": [
                                         1133,
                                         1153
@@ -4197,7 +4197,7 @@ export default {
                                   "type": "TocLink[]",
                                   "declarations": [
                                     {
-                                      "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                      "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                       "range": [
                                         1158,
                                         1175
@@ -4221,7 +4221,7 @@ export default {
                                             "type": "string",
                                             "declarations": [
                                               {
-                                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                 "range": [
                                                   991,
                                                   1002
@@ -4239,7 +4239,7 @@ export default {
                                             "type": "string",
                                             "declarations": [
                                               {
-                                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                 "range": [
                                                   1007,
                                                   1020
@@ -4257,7 +4257,7 @@ export default {
                                             "type": "number",
                                             "declarations": [
                                               {
-                                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                 "range": [
                                                   1025,
                                                   1039
@@ -4275,7 +4275,7 @@ export default {
                                             "type": "TocLink[]",
                                             "declarations": [
                                               {
-                                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                 "range": [
                                                   1044,
                                                   1065
@@ -4304,7 +4304,7 @@ export default {
                       "type": "MarkdownRoot",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             2523,
                             2549
@@ -4322,7 +4322,7 @@ export default {
                       "type": "LayoutKey",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             2319,
                             2338
@@ -4347,7 +4347,7 @@ export default {
                       "type": "string",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             185,
                             197
@@ -4365,7 +4365,7 @@ export default {
                       "type": "string",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             240,
                             257
@@ -4383,7 +4383,7 @@ export default {
                       "type": "string",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             369,
                             384
@@ -4401,7 +4401,7 @@ export default {
                       "type": "string",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             426,
                             441
@@ -4419,7 +4419,7 @@ export default {
                       "type": "boolean",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             490,
                             507
@@ -4444,7 +4444,7 @@ export default {
                       "type": "boolean",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             558,
                             577
@@ -4462,7 +4462,7 @@ export default {
                       "type": "string",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             620,
                             637
@@ -4480,7 +4480,7 @@ export default {
                       "type": "\"markdown\" | \"yaml\" | \"json\" | \"csv\"",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             706,
                             751
@@ -4507,7 +4507,7 @@ export default {
                       "type": "string",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             830,
                             845
@@ -4525,7 +4525,7 @@ export default {
                       "type": "\"yaml\" | \"json\" | \"csv\" | \"md\" | \"yml\" | \"json5\"",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             895,
                             957
@@ -4557,7 +4557,7 @@ export default {
                 "type": "() => Promise<void>",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
                     "range": [
                       6412,
                       6441
@@ -4581,14 +4581,14 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 6329,
                 6483
@@ -4608,7 +4608,7 @@ export default {
                 "type": "(context: { doc: ParsedContent; refresh: () => Promise<void>; }) => VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
                     "range": [
                       6347,
                       6476
@@ -4630,7 +4630,7 @@ export default {
           "description": "The tag to use for the renderer element if it is used.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 3494,
                 3606
@@ -4645,7 +4645,7 @@ export default {
           "description": "Whether or not to render the excerpt.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 3714,
                 3803
@@ -4667,7 +4667,7 @@ export default {
           "description": "The path of the content to load from content source.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 3983,
                 4099
@@ -4682,7 +4682,7 @@ export default {
           "description": "A query builder params object to be passed to <ContentQuery /> component.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 4217,
                 4345
@@ -4697,7 +4697,7 @@ export default {
           "description": "Whether or not to map the document data to the `head` property.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue.d.ts",
               "range": [
                 4453,
                 4570
@@ -4721,14 +4721,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/ContentList.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue",
     "pascalName": "ContentList",
     "kebabName": "content-list",
     "chunkName": "components/content-list",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/ContentList.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -4741,7 +4741,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
               "range": [
                 2373,
                 2386
@@ -4759,7 +4759,7 @@ export default {
           "type": "QueryBuilderParams",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
               "range": [
                 2395,
                 2421
@@ -4779,7 +4779,7 @@ export default {
                 "type": "boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9173,
                       9189
@@ -4804,7 +4804,7 @@ export default {
                 "type": "number",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9194,
                       9208
@@ -4822,7 +4822,7 @@ export default {
                 "type": "number",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9213,
                       9228
@@ -4840,7 +4840,7 @@ export default {
                 "type": "string[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9233,
                       9249
@@ -4864,7 +4864,7 @@ export default {
                 "type": "string[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9254,
                       9273
@@ -4882,7 +4882,7 @@ export default {
                 "type": "SortOptions[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9278,
                       9299
@@ -4915,7 +4915,7 @@ export default {
                               "type": "string",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     3558,
                                     3575
@@ -4938,7 +4938,7 @@ export default {
                               "type": "boolean",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     3749,
                                     3768
@@ -4961,7 +4961,7 @@ export default {
                               "type": "\"upper\" | \"lower\" | \"false\"",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     3953,
                                     3994
@@ -4992,7 +4992,7 @@ export default {
                               "type": "\"base\" | \"accent\" | \"case\" | \"variant\"",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     4733,
                                     4787
@@ -5031,7 +5031,7 @@ export default {
                 "type": "QueryBuilderWhere[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9304,
                       9332
@@ -5060,7 +5060,7 @@ export default {
                           "type": "QueryBuilderWhere[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 5305,
                                 5332
@@ -5083,7 +5083,7 @@ export default {
                           "type": "QueryBuilderWhere[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 5576,
                                 5602
@@ -5106,7 +5106,7 @@ export default {
                           "type": "string | number | boolean | RegExp | QueryBuilderWhere",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 5799,
                                 5861
@@ -5139,7 +5139,7 @@ export default {
                                     "type": "(string: string) => RegExpExecArray",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           40960,
                                           41005
@@ -5166,7 +5166,7 @@ export default {
                                     "type": "(string: string) => boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41187,
                                           41217
@@ -5188,7 +5188,7 @@ export default {
                                     "type": "string",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41399,
                                           41423
@@ -5206,7 +5206,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41569,
                                           41594
@@ -5224,7 +5224,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41744,
                                           41773
@@ -5242,7 +5242,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41922,
                                           41950
@@ -5260,7 +5260,7 @@ export default {
                                     "type": "number",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           41956,
                                           41974
@@ -5283,7 +5283,7 @@ export default {
                                     "type": "(pattern: string, flags?: string) => RegExp",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                                         "range": [
                                           42077,
                                           42124
@@ -5305,7 +5305,7 @@ export default {
                                     "type": "string",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.core.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.core.d.ts",
                                         "range": [
                                           14897,
                                           14920
@@ -5323,7 +5323,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.core.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.core.d.ts",
                                         "range": [
                                           15085,
                                           15110
@@ -5341,7 +5341,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.core.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.core.d.ts",
                                         "range": [
                                           15276,
                                           15302
@@ -5359,7 +5359,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
                                         "range": [
                                           1204,
                                           1229
@@ -5377,7 +5377,7 @@ export default {
                                     "type": "boolean",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2022.regexp.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2022.regexp.d.ts",
                                         "range": [
                                           1304,
                                           1333
@@ -5386,8 +5386,8 @@ export default {
                                     ],
                                     "schema": "boolean"
                                   },
-                                  "__@match@7945": {
-                                    "name": "__@match@7945",
+                                  "__@match@6574": {
+                                    "name": "__@match@6574",
                                     "global": false,
                                     "description": "Matches a string with this regular expression, and returns an array containing the results of\nthat search.",
                                     "tags": [
@@ -5400,7 +5400,7 @@ export default {
                                     "type": "(string: string) => RegExpMatchArray",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           5644,
                                           5700
@@ -5413,8 +5413,8 @@ export default {
                                       "schema": []
                                     }
                                   },
-                                  "__@replace@7947": {
-                                    "name": "__@replace@7947",
+                                  "__@replace@6576": {
+                                    "name": "__@replace@6576",
                                     "global": false,
                                     "description": "Replaces text in a string, using this regular expression.",
                                     "tags": [
@@ -5439,14 +5439,14 @@ export default {
                                     "type": "{ (string: string, replaceValue: string): string; (string: string, replacer: (substring: string, ...args: any[]) => string): string; }",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           6110,
                                           6173
                                         ]
                                       },
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           6478,
                                           6576
@@ -5455,8 +5455,8 @@ export default {
                                     ],
                                     "schema": "{ (string: string, replaceValue: string): string; (string: string, replacer: (substring: string, ...args: any[]) => string): string; }"
                                   },
-                                  "__@search@7950": {
-                                    "name": "__@search@7950",
+                                  "__@search@6579": {
+                                    "name": "__@search@6579",
                                     "global": false,
                                     "description": "Finds the position beginning first substring match in a regular expression search\nusing this regular expression.",
                                     "tags": [
@@ -5469,7 +5469,7 @@ export default {
                                     "type": "(string: string) => number",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           6782,
                                           6822
@@ -5482,8 +5482,8 @@ export default {
                                       "schema": []
                                     }
                                   },
-                                  "__@split@7952": {
-                                    "name": "__@split@7952",
+                                  "__@split@6581": {
+                                    "name": "__@split@6581",
                                     "global": false,
                                     "description": "Returns an array of substrings that were delimited by strings in the original input that\nmatch against this regular expression.\n\nIf the regular expression contains capturing parentheses, then each time this\nregular expression matches, the results (including any undefined results) of the\ncapturing parentheses are spliced.",
                                     "tags": [
@@ -5500,7 +5500,7 @@ export default {
                                     "type": "(string: string, limit?: number) => string[]",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                                         "range": [
                                           7384,
                                           7441
@@ -5513,8 +5513,8 @@ export default {
                                       "schema": []
                                     }
                                   },
-                                  "__@matchAll@7954": {
-                                    "name": "__@matchAll@7954",
+                                  "__@matchAll@6583": {
+                                    "name": "__@matchAll@6583",
                                     "global": false,
                                     "description": "Matches a string with this regular expression, and returns an iterable of matches\ncontaining the results of that search.",
                                     "tags": [
@@ -5527,7 +5527,7 @@ export default {
                                     "type": "(str: string) => IterableIterator<RegExpMatchArray>",
                                     "declarations": [
                                       {
-                                        "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
+                                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
                                         "range": [
                                           1385,
                                           1452
@@ -5560,7 +5560,7 @@ export default {
                           "type": "string | number | boolean | RegExp",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6060,
                                 6101
@@ -5593,7 +5593,7 @@ export default {
                           "type": "string | number | boolean | RegExp",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6294,
                                 6335
@@ -5616,7 +5616,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6533,
                                 6546
@@ -5639,7 +5639,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6757,
                                 6771
@@ -5662,7 +5662,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 6966,
                                 6979
@@ -5685,7 +5685,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 7187,
                                 7201
@@ -5708,7 +5708,7 @@ export default {
                           "type": "string | RegExp",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 7435,
                                 7460
@@ -5738,7 +5738,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 7664,
                                 7679
@@ -5761,7 +5761,7 @@ export default {
                           "type": "boolean",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 7860,
                                 7878
@@ -5784,7 +5784,7 @@ export default {
                           "type": "string | number | boolean | (string | number | boolean)[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 8135,
                                 8208
@@ -5832,7 +5832,7 @@ export default {
                           "type": "(string | number | boolean)[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 8451,
                                 8499
@@ -5855,7 +5855,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 8695,
                                 8715
@@ -5878,7 +5878,7 @@ export default {
                           "type": "string | (string | number | boolean)[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 8938,
                                 8986
@@ -6008,7 +6008,7 @@ export default {
                 "type": "{ query: string | QueryBuilderWhere; before?: number; after?: number; }",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       9337,
                       9448
@@ -6028,7 +6028,7 @@ export default {
                       "type": "string | QueryBuilderWhere",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             9358,
                             9392
@@ -6053,7 +6053,7 @@ export default {
                       "type": "number",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             9401,
                             9417
@@ -6071,7 +6071,7 @@ export default {
                       "type": "number",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             9426,
                             9441
@@ -6094,7 +6094,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
               "range": [
                 3377,
                 3509
@@ -6114,7 +6114,7 @@ export default {
                 "type": "ParsedContent[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
                     "range": [
                       3410,
                       3432
@@ -6138,7 +6138,7 @@ export default {
                           "type": "MarkdownRoot",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 2459,
                                 2482
@@ -6158,7 +6158,7 @@ export default {
                                 "type": "\"root\"",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1465,
                                       1478
@@ -6176,7 +6176,7 @@ export default {
                                 "type": "MarkdownNode[]",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1483,
                                       1508
@@ -6200,7 +6200,7 @@ export default {
                                           "type": "string",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1214,
                                                 1227
@@ -6218,7 +6218,7 @@ export default {
                                           "type": "string",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1232,
                                                 1245
@@ -6236,7 +6236,7 @@ export default {
                                           "type": "string",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1250,
                                                 1265
@@ -6254,7 +6254,7 @@ export default {
                                           "type": "Record<string, any>",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1270,
                                                 1298
@@ -6272,7 +6272,7 @@ export default {
                                           "type": "any",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1303,
                                                 1317
@@ -6290,7 +6290,7 @@ export default {
                                           "type": "MarkdownNode[]",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1322,
                                                 1348
@@ -6308,7 +6308,7 @@ export default {
                                           "type": "Record<string, any>",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1353,
                                                 1386
@@ -6326,7 +6326,7 @@ export default {
                                           "type": "Record<string, any>",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1391,
                                                 1426
@@ -6349,7 +6349,7 @@ export default {
                                 "type": "Record<string, any>",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1513,
                                       1541
@@ -6367,7 +6367,7 @@ export default {
                                 "type": "Toc",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1546,
                                       1556
@@ -6387,7 +6387,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1095,
                                             1109
@@ -6405,7 +6405,7 @@ export default {
                                       "type": "number",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1114,
                                             1128
@@ -6423,7 +6423,7 @@ export default {
                                       "type": "number",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1133,
                                             1153
@@ -6441,7 +6441,7 @@ export default {
                                       "type": "TocLink[]",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1158,
                                             1175
@@ -6465,7 +6465,7 @@ export default {
                                                 "type": "string",
                                                 "declarations": [
                                                   {
-                                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                     "range": [
                                                       991,
                                                       1002
@@ -6483,7 +6483,7 @@ export default {
                                                 "type": "string",
                                                 "declarations": [
                                                   {
-                                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                     "range": [
                                                       1007,
                                                       1020
@@ -6501,7 +6501,7 @@ export default {
                                                 "type": "number",
                                                 "declarations": [
                                                   {
-                                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                     "range": [
                                                       1025,
                                                       1039
@@ -6519,7 +6519,7 @@ export default {
                                                 "type": "TocLink[]",
                                                 "declarations": [
                                                   {
-                                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                     "range": [
                                                       1044,
                                                       1065
@@ -6548,7 +6548,7 @@ export default {
                           "type": "MarkdownRoot",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 2523,
                                 2549
@@ -6566,7 +6566,7 @@ export default {
                           "type": "LayoutKey",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 2319,
                                 2338
@@ -6591,7 +6591,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 185,
                                 197
@@ -6609,7 +6609,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 240,
                                 257
@@ -6627,7 +6627,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 369,
                                 384
@@ -6645,7 +6645,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 426,
                                 441
@@ -6663,7 +6663,7 @@ export default {
                           "type": "boolean",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 490,
                                 507
@@ -6688,7 +6688,7 @@ export default {
                           "type": "boolean",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 558,
                                 577
@@ -6706,7 +6706,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 620,
                                 637
@@ -6724,7 +6724,7 @@ export default {
                           "type": "\"markdown\" | \"yaml\" | \"json\" | \"csv\"",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 706,
                                 751
@@ -6751,7 +6751,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 830,
                                 845
@@ -6769,7 +6769,7 @@ export default {
                           "type": "\"yaml\" | \"json\" | \"csv\" | \"md\" | \"yml\" | \"json5\"",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 895,
                                 957
@@ -6803,7 +6803,7 @@ export default {
                 "type": "() => Promise<void>",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
                     "range": [
                       3445,
                       3474
@@ -6827,14 +6827,14 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
               "range": [
                 3359,
                 3516
@@ -6854,7 +6854,7 @@ export default {
                 "type": "(context: { list: ParsedContent[]; refresh: () => Promise<void>; }) => VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
                     "range": [
                       3377,
                       3509
@@ -6876,7 +6876,7 @@ export default {
           "description": "The path of the content to load from content source.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
               "range": [
                 1975,
                 2091
@@ -6891,7 +6891,7 @@ export default {
           "description": "A query builder params object to be passed to <ContentQuery /> component.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentList.vue.d.ts",
               "range": [
                 2209,
                 2337
@@ -6908,14 +6908,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue",
     "pascalName": "ContentNavigation",
     "kebabName": "content-navigation",
     "chunkName": "components/content-navigation",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -6928,7 +6928,7 @@ export default {
           "type": "QueryBuilderParams | QueryBuilder<ParsedContentMeta>",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
               "range": [
                 1708,
                 1787
@@ -6952,7 +6952,7 @@ export default {
                     "type": "boolean",
                     "declarations": [
                       {
-                        "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                         "range": [
                           9173,
                           9189
@@ -6977,7 +6977,7 @@ export default {
                     "type": "number",
                     "declarations": [
                       {
-                        "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                         "range": [
                           9194,
                           9208
@@ -6995,7 +6995,7 @@ export default {
                     "type": "number",
                     "declarations": [
                       {
-                        "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                         "range": [
                           9213,
                           9228
@@ -7013,7 +7013,7 @@ export default {
                     "type": "string[]",
                     "declarations": [
                       {
-                        "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                         "range": [
                           9233,
                           9249
@@ -7037,7 +7037,7 @@ export default {
                     "type": "string[]",
                     "declarations": [
                       {
-                        "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                         "range": [
                           9254,
                           9273
@@ -7055,7 +7055,7 @@ export default {
                     "type": "SortOptions[]",
                     "declarations": [
                       {
-                        "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                         "range": [
                           9278,
                           9299
@@ -7088,7 +7088,7 @@ export default {
                                   "type": "string",
                                   "declarations": [
                                     {
-                                      "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                      "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                       "range": [
                                         3558,
                                         3575
@@ -7111,7 +7111,7 @@ export default {
                                   "type": "boolean",
                                   "declarations": [
                                     {
-                                      "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                      "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                       "range": [
                                         3749,
                                         3768
@@ -7134,7 +7134,7 @@ export default {
                                   "type": "\"upper\" | \"lower\" | \"false\"",
                                   "declarations": [
                                     {
-                                      "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                      "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                       "range": [
                                         3953,
                                         3994
@@ -7165,7 +7165,7 @@ export default {
                                   "type": "\"base\" | \"accent\" | \"case\" | \"variant\"",
                                   "declarations": [
                                     {
-                                      "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                      "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                       "range": [
                                         4733,
                                         4787
@@ -7204,7 +7204,7 @@ export default {
                     "type": "QueryBuilderWhere[]",
                     "declarations": [
                       {
-                        "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                         "range": [
                           9304,
                           9332
@@ -7233,7 +7233,7 @@ export default {
                               "type": "QueryBuilderWhere[]",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     5305,
                                     5332
@@ -7256,7 +7256,7 @@ export default {
                               "type": "QueryBuilderWhere[]",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     5576,
                                     5602
@@ -7279,7 +7279,7 @@ export default {
                               "type": "string | number | boolean | RegExp | QueryBuilderWhere",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     5799,
                                     5861
@@ -7317,7 +7317,7 @@ export default {
                               "type": "string | number | boolean | RegExp",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     6060,
                                     6101
@@ -7350,7 +7350,7 @@ export default {
                               "type": "string | number | boolean | RegExp",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     6294,
                                     6335
@@ -7373,7 +7373,7 @@ export default {
                               "type": "number",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     6533,
                                     6546
@@ -7396,7 +7396,7 @@ export default {
                               "type": "number",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     6757,
                                     6771
@@ -7419,7 +7419,7 @@ export default {
                               "type": "number",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     6966,
                                     6979
@@ -7442,7 +7442,7 @@ export default {
                               "type": "number",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     7187,
                                     7201
@@ -7465,7 +7465,7 @@ export default {
                               "type": "string | RegExp",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     7435,
                                     7460
@@ -7495,7 +7495,7 @@ export default {
                               "type": "string",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     7664,
                                     7679
@@ -7518,7 +7518,7 @@ export default {
                               "type": "boolean",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     7860,
                                     7878
@@ -7541,7 +7541,7 @@ export default {
                               "type": "string | number | boolean | (string | number | boolean)[]",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     8135,
                                     8208
@@ -7589,7 +7589,7 @@ export default {
                               "type": "(string | number | boolean)[]",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     8451,
                                     8499
@@ -7612,7 +7612,7 @@ export default {
                               "type": "string",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     8695,
                                     8715
@@ -7635,7 +7635,7 @@ export default {
                               "type": "string | (string | number | boolean)[]",
                               "declarations": [
                                 {
-                                  "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                  "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                   "range": [
                                     8938,
                                     8986
@@ -7765,7 +7765,7 @@ export default {
                     "type": "{ query: string | QueryBuilderWhere; before?: number; after?: number; }",
                     "declarations": [
                       {
-                        "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                        "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                         "range": [
                           9337,
                           9448
@@ -7785,7 +7785,7 @@ export default {
                           "type": "string | QueryBuilderWhere",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 9358,
                                 9392
@@ -7810,7 +7810,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 9401,
                                 9417
@@ -7828,7 +7828,7 @@ export default {
                           "type": "number",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 9426,
                                 9441
@@ -7854,7 +7854,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
               "range": [
                 2590,
                 2687
@@ -7874,7 +7874,7 @@ export default {
                 "type": "NavItem[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
                     "range": [
                       2630,
                       2652
@@ -7898,7 +7898,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 11231,
                                 11245
@@ -7916,7 +7916,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 11250,
                                 11264
@@ -7934,7 +7934,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 11269,
                                 11282
@@ -7952,7 +7952,7 @@ export default {
                           "type": "boolean",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 11287,
                                 11304
@@ -7977,7 +7977,7 @@ export default {
                           "type": "NavItem[]",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 11309,
                                 11330
@@ -8003,14 +8003,14 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
               "range": [
                 2572,
                 2694
@@ -8030,7 +8030,7 @@ export default {
                 "type": "({ navigation }: { navigation: NavItem[]; }) => VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
                     "range": [
                       2590,
                       2687
@@ -8052,7 +8052,7 @@ export default {
           "description": "A query to be passed to `fetchContentNavigation()`.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
               "range": [
                 1461,
                 1642
@@ -8067,7 +8067,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.vue.d.ts",
               "range": [
                 1662,
                 1678
@@ -8084,14 +8084,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue",
     "pascalName": "ContentQuery",
     "kebabName": "content-query",
     "chunkName": "components/content-query",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -8104,7 +8104,7 @@ export default {
           "type": "number",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6505,
                 6518
@@ -8122,7 +8122,7 @@ export default {
           "type": "number",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6527,
                 6541
@@ -8140,7 +8140,7 @@ export default {
           "type": "string[]",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6550,
                 6565
@@ -8164,7 +8164,7 @@ export default {
           "type": "string[]",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6574,
                 6592
@@ -8188,7 +8188,7 @@ export default {
           "type": "SortParams",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6601,
                 6618
@@ -8213,7 +8213,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       3558,
                       3575
@@ -8236,7 +8236,7 @@ export default {
                 "type": "boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       3749,
                       3768
@@ -8266,7 +8266,7 @@ export default {
                 "type": "\"upper\" | \"lower\" | \"false\"",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       3953,
                       3994
@@ -8297,7 +8297,7 @@ export default {
                 "type": "\"base\" | \"accent\" | \"case\" | \"variant\"",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       4733,
                       4787
@@ -8327,7 +8327,7 @@ export default {
           "type": "{ [key: string]: any; }",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6627,
                 6678
@@ -8349,7 +8349,7 @@ export default {
           "type": "\"surround\" | \"one\"",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6687,
                 6712
@@ -8374,7 +8374,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6721,
                 6734
@@ -8392,7 +8392,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6743,
                 6758
@@ -8409,7 +8409,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 8930,
                 9004
@@ -8429,7 +8429,7 @@ export default {
                 "type": "ParsedContent | ParsedContent[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
                     "range": [
                       162,
                       205
@@ -8453,7 +8453,7 @@ export default {
                           "type": "MarkdownRoot",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 2459,
                                 2482
@@ -8473,7 +8473,7 @@ export default {
                                 "type": "\"root\"",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1465,
                                       1478
@@ -8491,7 +8491,7 @@ export default {
                                 "type": "MarkdownNode[]",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1483,
                                       1508
@@ -8515,7 +8515,7 @@ export default {
                                           "type": "string",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1214,
                                                 1227
@@ -8533,7 +8533,7 @@ export default {
                                           "type": "string",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1232,
                                                 1245
@@ -8551,7 +8551,7 @@ export default {
                                           "type": "string",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1250,
                                                 1265
@@ -8569,7 +8569,7 @@ export default {
                                           "type": "Record<string, any>",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1270,
                                                 1298
@@ -8587,7 +8587,7 @@ export default {
                                           "type": "any",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1303,
                                                 1317
@@ -8605,7 +8605,7 @@ export default {
                                           "type": "MarkdownNode[]",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1322,
                                                 1348
@@ -8623,7 +8623,7 @@ export default {
                                           "type": "Record<string, any>",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1353,
                                                 1386
@@ -8641,7 +8641,7 @@ export default {
                                           "type": "Record<string, any>",
                                           "declarations": [
                                             {
-                                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                               "range": [
                                                 1391,
                                                 1426
@@ -8664,7 +8664,7 @@ export default {
                                 "type": "Record<string, any>",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1513,
                                       1541
@@ -8682,7 +8682,7 @@ export default {
                                 "type": "Toc",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1546,
                                       1556
@@ -8702,7 +8702,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1095,
                                             1109
@@ -8720,7 +8720,7 @@ export default {
                                       "type": "number",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1114,
                                             1128
@@ -8738,7 +8738,7 @@ export default {
                                       "type": "number",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1133,
                                             1153
@@ -8756,7 +8756,7 @@ export default {
                                       "type": "TocLink[]",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1158,
                                             1175
@@ -8780,7 +8780,7 @@ export default {
                                                 "type": "string",
                                                 "declarations": [
                                                   {
-                                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                     "range": [
                                                       991,
                                                       1002
@@ -8798,7 +8798,7 @@ export default {
                                                 "type": "string",
                                                 "declarations": [
                                                   {
-                                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                     "range": [
                                                       1007,
                                                       1020
@@ -8816,7 +8816,7 @@ export default {
                                                 "type": "number",
                                                 "declarations": [
                                                   {
-                                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                     "range": [
                                                       1025,
                                                       1039
@@ -8834,7 +8834,7 @@ export default {
                                                 "type": "TocLink[]",
                                                 "declarations": [
                                                   {
-                                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                                     "range": [
                                                       1044,
                                                       1065
@@ -8863,7 +8863,7 @@ export default {
                           "type": "MarkdownRoot",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 2523,
                                 2549
@@ -8881,7 +8881,7 @@ export default {
                           "type": "LayoutKey",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 2319,
                                 2338
@@ -8906,7 +8906,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 185,
                                 197
@@ -8924,7 +8924,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 240,
                                 257
@@ -8942,7 +8942,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 369,
                                 384
@@ -8960,7 +8960,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 426,
                                 441
@@ -8978,7 +8978,7 @@ export default {
                           "type": "boolean",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 490,
                                 507
@@ -9003,7 +9003,7 @@ export default {
                           "type": "boolean",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 558,
                                 577
@@ -9021,7 +9021,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 620,
                                 637
@@ -9039,7 +9039,7 @@ export default {
                           "type": "\"markdown\" | \"yaml\" | \"json\" | \"csv\"",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 706,
                                 751
@@ -9066,7 +9066,7 @@ export default {
                           "type": "string",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 830,
                                 845
@@ -9084,7 +9084,7 @@ export default {
                           "type": "\"yaml\" | \"json\" | \"csv\" | \"md\" | \"yml\" | \"json5\"",
                           "declarations": [
                             {
-                              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                               "range": [
                                 895,
                                 957
@@ -9125,7 +9125,7 @@ export default {
                 "type": "() => Promise<void>",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
                     "range": [
                       210,
                       239
@@ -9146,7 +9146,7 @@ export default {
                 "type": "boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
                     "range": [
                       244,
                       263
@@ -9167,14 +9167,14 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 8912,
                 9011
@@ -9194,7 +9194,7 @@ export default {
                 "type": "(context: ContentQueryDefaultSlotContext) => VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
                     "range": [
                       8930,
                       9004
@@ -9216,7 +9216,7 @@ export default {
           "description": "A type of query to be made.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6272,
                 6399
@@ -9238,7 +9238,7 @@ export default {
           "description": "Sort results",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 5522,
                 5641
@@ -9253,7 +9253,7 @@ export default {
           "description": "The path of the content to load from content source.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 4752,
                 4868
@@ -9268,7 +9268,7 @@ export default {
           "description": "Select a subset of fields",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 4938,
                 5055
@@ -9289,7 +9289,7 @@ export default {
           "description": "Remove a subset of fields",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 5125,
                 5245
@@ -9310,7 +9310,7 @@ export default {
           "description": "Filter results",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 5304,
                 5465
@@ -9325,7 +9325,7 @@ export default {
           "description": "Limit number of results",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 5709,
                 5825
@@ -9340,7 +9340,7 @@ export default {
           "description": "Skip number of results",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 5892,
                 6007
@@ -9355,7 +9355,7 @@ export default {
           "description": "Filter contents based on locale",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6083,
                 6200
@@ -9370,7 +9370,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6419,
                 6434
@@ -9385,7 +9385,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6443,
                 6453
@@ -9400,7 +9400,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue.d.ts",
               "range": [
                 6462,
                 6475
@@ -9417,14 +9417,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue",
     "pascalName": "ContentRenderer",
     "kebabName": "content-renderer",
     "chunkName": "components/content-renderer",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -9437,7 +9437,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
               "range": [
                 1256,
                 1268
@@ -9456,7 +9456,7 @@ export default {
           "type": "Record<string, any>",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
               "range": [
                 1273,
                 1300
@@ -9475,7 +9475,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
               "range": [
                 1234,
                 1251
@@ -9502,7 +9502,7 @@ export default {
           "description": "The document to render.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
               "range": [
                 781,
                 881
@@ -9517,7 +9517,7 @@ export default {
           "description": "The tag to use for the renderer element if it is used.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
               "range": [
                 1151,
                 1222
@@ -9532,7 +9532,7 @@ export default {
           "description": "Whether or not to render the excerpt.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue.d.ts",
               "range": [
                 969,
                 1046
@@ -9556,14 +9556,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
     "pascalName": "ContentRendererMarkdown",
     "kebabName": "content-renderer-markdown",
     "chunkName": "components/content-renderer-markdown",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -9576,14 +9576,14 @@ export default {
           "type": "Record<string, any>",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 359,
                 408
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 359,
                 408
@@ -9601,7 +9601,7 @@ export default {
           "type": "Record<string, any>",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 675,
                 734
@@ -9620,7 +9620,7 @@ export default {
           "type": "Record<string, any>",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 739,
                 792
@@ -9639,7 +9639,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 556,
                 603
@@ -9658,7 +9658,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 453,
                 505
@@ -9685,7 +9685,7 @@ export default {
           "description": "Content to render",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 359,
                 408
@@ -9700,7 +9700,7 @@ export default {
           "description": "The map of custom components to use for rendering.",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 675,
                 734
@@ -9715,7 +9715,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 739,
                 792
@@ -9730,7 +9730,7 @@ export default {
           "description": "Root tag to use for rendering",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 556,
                 603
@@ -9745,7 +9745,7 @@ export default {
           "description": "Render only the excerpt",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue",
               "range": [
                 453,
                 505
@@ -9769,14 +9769,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue",
     "pascalName": "ContentSlot",
     "kebabName": "content-slot",
     "chunkName": "components/content-slot",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -9789,7 +9789,7 @@ export default {
           "type": "Function",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue.d.ts",
               "range": [
                 881,
                 895
@@ -9818,7 +9818,7 @@ export default {
                 "type": "(this: Function, thisArg: any, argArray?: any) => any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       10258,
                       10315
@@ -9849,7 +9849,7 @@ export default {
                 "type": "(this: Function, thisArg: any, ...argArray: any[]) => any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       10563,
                       10623
@@ -9880,7 +9880,7 @@ export default {
                 "type": "(this: Function, thisArg: any, ...argArray: any[]) => any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11046,
                       11106
@@ -9902,7 +9902,7 @@ export default {
                 "type": "() => string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11170,
                       11189
@@ -9923,7 +9923,7 @@ export default {
                 "type": "any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11195,
                       11210
@@ -9941,7 +9941,7 @@ export default {
                 "type": "number",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11215,
                       11239
@@ -9959,7 +9959,7 @@ export default {
                 "type": "any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11276,
                       11291
@@ -9977,7 +9977,7 @@ export default {
                 "type": "Function",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11296,
                       11313
@@ -9995,7 +9995,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.core.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.core.d.ts",
                     "range": [
                       4364,
                       4386
@@ -10013,7 +10013,7 @@ export default {
                 "type": "(value: any) => boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                     "range": [
                       5097,
                       5139
@@ -10035,7 +10035,7 @@ export default {
                 "type": "DecoratorMetadataObject",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.esnext.decorators.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.esnext.decorators.d.ts",
                     "range": [
                       1023,
                       1067
@@ -10061,7 +10061,7 @@ export default {
           "type": "string | boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue.d.ts",
               "range": [
                 900,
                 925
@@ -10089,7 +10089,7 @@ export default {
           "description": "A slot name or function",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue.d.ts",
               "range": [
                 606,
                 682
@@ -10118,7 +10118,7 @@ export default {
                 "type": "(this: Function, thisArg: any, argArray?: any) => any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       10258,
                       10315
@@ -10149,7 +10149,7 @@ export default {
                 "type": "(this: Function, thisArg: any, ...argArray: any[]) => any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       10563,
                       10623
@@ -10180,7 +10180,7 @@ export default {
                 "type": "(this: Function, thisArg: any, ...argArray: any[]) => any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11046,
                       11106
@@ -10202,7 +10202,7 @@ export default {
                 "type": "() => string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11170,
                       11189
@@ -10223,7 +10223,7 @@ export default {
                 "type": "any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11195,
                       11210
@@ -10241,7 +10241,7 @@ export default {
                 "type": "number",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11215,
                       11239
@@ -10259,7 +10259,7 @@ export default {
                 "type": "any",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11276,
                       11291
@@ -10277,7 +10277,7 @@ export default {
                 "type": "Function",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es5.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es5.d.ts",
                     "range": [
                       11296,
                       11313
@@ -10295,7 +10295,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.core.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.core.d.ts",
                     "range": [
                       4364,
                       4386
@@ -10313,7 +10313,7 @@ export default {
                 "type": "(value: any) => boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
                     "range": [
                       5097,
                       5139
@@ -10335,7 +10335,7 @@ export default {
                 "type": "DecoratorMetadataObject",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/typescript/lib/lib.esnext.decorators.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/typescript@5.4.5/node_modules/typescript/lib/lib.esnext.decorators.d.ts",
                     "range": [
                       1023,
                       1067
@@ -10357,7 +10357,7 @@ export default {
           "description": "Tags to unwrap separated by spaces\nExample: 'ul li'",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/ContentSlot.vue.d.ts",
               "range": [
                 769,
                 869
@@ -10382,14 +10382,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue",
     "pascalName": "DocumentDrivenEmpty",
     "kebabName": "document-driven-empty",
     "chunkName": "components/document-driven-empty",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -10402,14 +10402,14 @@ export default {
           "type": "ParsedContent",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue.d.ts",
               "range": [
                 470,
                 548
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue.d.ts",
               "range": [
                 470,
                 548
@@ -10429,7 +10429,7 @@ export default {
                 "type": "MarkdownRoot",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       2459,
                       2482
@@ -10449,7 +10449,7 @@ export default {
                       "type": "\"root\"",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             1465,
                             1478
@@ -10467,7 +10467,7 @@ export default {
                       "type": "MarkdownNode[]",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             1483,
                             1508
@@ -10491,7 +10491,7 @@ export default {
                                 "type": "string",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1214,
                                       1227
@@ -10509,7 +10509,7 @@ export default {
                                 "type": "string",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1232,
                                       1245
@@ -10527,7 +10527,7 @@ export default {
                                 "type": "string",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1250,
                                       1265
@@ -10545,7 +10545,7 @@ export default {
                                 "type": "Record<string, any>",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1270,
                                       1298
@@ -10563,7 +10563,7 @@ export default {
                                 "type": "any",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1303,
                                       1317
@@ -10581,7 +10581,7 @@ export default {
                                 "type": "MarkdownNode[]",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1322,
                                       1348
@@ -10599,7 +10599,7 @@ export default {
                                 "type": "Record<string, any>",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1353,
                                       1386
@@ -10617,7 +10617,7 @@ export default {
                                 "type": "Record<string, any>",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1391,
                                       1426
@@ -10640,7 +10640,7 @@ export default {
                       "type": "Record<string, any>",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             1513,
                             1541
@@ -10658,7 +10658,7 @@ export default {
                       "type": "Toc",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             1546,
                             1556
@@ -10678,7 +10678,7 @@ export default {
                             "type": "string",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1095,
                                   1109
@@ -10696,7 +10696,7 @@ export default {
                             "type": "number",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1114,
                                   1128
@@ -10714,7 +10714,7 @@ export default {
                             "type": "number",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1133,
                                   1153
@@ -10732,7 +10732,7 @@ export default {
                             "type": "TocLink[]",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1158,
                                   1175
@@ -10756,7 +10756,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             991,
                                             1002
@@ -10774,7 +10774,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1007,
                                             1020
@@ -10792,7 +10792,7 @@ export default {
                                       "type": "number",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1025,
                                             1039
@@ -10810,7 +10810,7 @@ export default {
                                       "type": "TocLink[]",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1044,
                                             1065
@@ -10839,7 +10839,7 @@ export default {
                 "type": "MarkdownRoot",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       2523,
                       2549
@@ -10857,7 +10857,7 @@ export default {
                 "type": "LayoutKey",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       2319,
                       2338
@@ -10882,7 +10882,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       185,
                       197
@@ -10900,7 +10900,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       240,
                       257
@@ -10918,7 +10918,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       369,
                       384
@@ -10936,7 +10936,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       426,
                       441
@@ -10954,7 +10954,7 @@ export default {
                 "type": "boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       490,
                       507
@@ -10979,7 +10979,7 @@ export default {
                 "type": "boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       558,
                       577
@@ -10997,7 +10997,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       620,
                       637
@@ -11015,7 +11015,7 @@ export default {
                 "type": "\"markdown\" | \"yaml\" | \"json\" | \"csv\"",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       706,
                       751
@@ -11042,7 +11042,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       830,
                       845
@@ -11060,7 +11060,7 @@ export default {
                 "type": "\"yaml\" | \"json\" | \"csv\" | \"md\" | \"yml\" | \"json5\"",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       895,
                       957
@@ -11093,7 +11093,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenEmpty.vue.d.ts",
               "range": [
                 470,
                 548
@@ -11113,7 +11113,7 @@ export default {
                 "type": "MarkdownRoot",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       2459,
                       2482
@@ -11133,7 +11133,7 @@ export default {
                       "type": "\"root\"",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             1465,
                             1478
@@ -11151,7 +11151,7 @@ export default {
                       "type": "MarkdownNode[]",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             1483,
                             1508
@@ -11175,7 +11175,7 @@ export default {
                                 "type": "string",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1214,
                                       1227
@@ -11193,7 +11193,7 @@ export default {
                                 "type": "string",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1232,
                                       1245
@@ -11211,7 +11211,7 @@ export default {
                                 "type": "string",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1250,
                                       1265
@@ -11229,7 +11229,7 @@ export default {
                                 "type": "Record<string, any>",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1270,
                                       1298
@@ -11247,7 +11247,7 @@ export default {
                                 "type": "any",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1303,
                                       1317
@@ -11265,7 +11265,7 @@ export default {
                                 "type": "MarkdownNode[]",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1322,
                                       1348
@@ -11283,7 +11283,7 @@ export default {
                                 "type": "Record<string, any>",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1353,
                                       1386
@@ -11301,7 +11301,7 @@ export default {
                                 "type": "Record<string, any>",
                                 "declarations": [
                                   {
-                                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                     "range": [
                                       1391,
                                       1426
@@ -11324,7 +11324,7 @@ export default {
                       "type": "Record<string, any>",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             1513,
                             1541
@@ -11342,7 +11342,7 @@ export default {
                       "type": "Toc",
                       "declarations": [
                         {
-                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                           "range": [
                             1546,
                             1556
@@ -11362,7 +11362,7 @@ export default {
                             "type": "string",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1095,
                                   1109
@@ -11380,7 +11380,7 @@ export default {
                             "type": "number",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1114,
                                   1128
@@ -11398,7 +11398,7 @@ export default {
                             "type": "number",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1133,
                                   1153
@@ -11416,7 +11416,7 @@ export default {
                             "type": "TocLink[]",
                             "declarations": [
                               {
-                                "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                 "range": [
                                   1158,
                                   1175
@@ -11440,7 +11440,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             991,
                                             1002
@@ -11458,7 +11458,7 @@ export default {
                                       "type": "string",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1007,
                                             1020
@@ -11476,7 +11476,7 @@ export default {
                                       "type": "number",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1025,
                                             1039
@@ -11494,7 +11494,7 @@ export default {
                                       "type": "TocLink[]",
                                       "declarations": [
                                         {
-                                          "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                                          "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                                           "range": [
                                             1044,
                                             1065
@@ -11523,7 +11523,7 @@ export default {
                 "type": "MarkdownRoot",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       2523,
                       2549
@@ -11541,7 +11541,7 @@ export default {
                 "type": "LayoutKey",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       2319,
                       2338
@@ -11566,7 +11566,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       185,
                       197
@@ -11584,7 +11584,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       240,
                       257
@@ -11602,7 +11602,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       369,
                       384
@@ -11620,7 +11620,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       426,
                       441
@@ -11638,7 +11638,7 @@ export default {
                 "type": "boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       490,
                       507
@@ -11663,7 +11663,7 @@ export default {
                 "type": "boolean",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       558,
                       577
@@ -11681,7 +11681,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       620,
                       637
@@ -11699,7 +11699,7 @@ export default {
                 "type": "\"markdown\" | \"yaml\" | \"json\" | \"csv\"",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       706,
                       751
@@ -11726,7 +11726,7 @@ export default {
                 "type": "string",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       830,
                       845
@@ -11744,7 +11744,7 @@ export default {
                 "type": "\"yaml\" | \"json\" | \"csv\" | \"md\" | \"yml\" | \"json5\"",
                 "declarations": [
                   {
-                    "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
+                    "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/types/index.d.ts",
                     "range": [
                       895,
                       957
@@ -11775,14 +11775,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenNotFound.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenNotFound.vue",
     "pascalName": "DocumentDrivenNotFound",
     "kebabName": "document-driven-not-found",
     "chunkName": "components/document-driven-not-found",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenNotFound.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenNotFound.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenNotFound.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/DocumentDrivenNotFound.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -11796,14 +11796,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/Markdown.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Markdown.vue",
     "pascalName": "Markdown",
     "kebabName": "markdown",
     "chunkName": "components/markdown",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/Markdown.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Markdown.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Markdown.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Markdown.vue",
     "meta": {
       "type": null,
       "props": [],
@@ -11817,14 +11817,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/Prose/ProseCodeInline.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseCodeInline.vue",
     "pascalName": "ProseCodeInline",
     "kebabName": "prose-code-inline",
     "chunkName": "components/prose-code-inline",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/Prose/ProseCodeInline.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseCodeInline.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseCodeInline.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseCodeInline.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -11849,7 +11849,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -11885,36 +11885,17 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
     "pascalName": "ProsePre",
     "kebabName": "prose-pre",
     "chunkName": "components/prose-pre",
-    "shortPath": "../node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
     "meta": {
       "type": 1,
       "props": [
-        {
-          "name": "filename",
-          "global": false,
-          "description": "",
-          "tags": [],
-          "required": false,
-          "type": "string",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
-              "range": [
-                352,
-                403
-              ]
-            }
-          ],
-          "schema": "string",
-          "default": "null"
-        },
         {
           "name": "code",
           "global": false,
@@ -11924,7 +11905,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 248,
                 293
@@ -11943,10 +11924,29 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 297,
                 348
+              ]
+            }
+          ],
+          "schema": "string",
+          "default": "null"
+        },
+        {
+          "name": "filename",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "range": [
+                352,
+                403
               ]
             }
           ],
@@ -11962,7 +11962,7 @@ export default {
           "type": "number[]",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 407,
                 481
@@ -11987,7 +11987,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 485,
                 532
@@ -12019,7 +12019,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -12053,7 +12053,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 536,
                 584
@@ -12068,7 +12068,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 588,
                 646
@@ -12085,27 +12085,12 @@ export default {
           }
         },
         {
-          "name": "filename",
-          "type": "string",
-          "description": "",
-          "declarations": [
-            {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
-              "range": [
-                352,
-                403
-              ]
-            }
-          ],
-          "schema": "string"
-        },
-        {
           "name": "code",
           "type": "string",
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 248,
                 293
@@ -12120,10 +12105,25 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 297,
                 348
+              ]
+            }
+          ],
+          "schema": "string"
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "",
+          "declarations": [
+            {
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "range": [
+                352,
+                403
               ]
             }
           ],
@@ -12135,7 +12135,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 407,
                 481
@@ -12156,7 +12156,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_r5k6n7pgousrgqlopd3expp3zq/node_modules/@nuxt/content/dist/runtime/components/Prose/ProsePre.vue",
               "range": [
                 485,
                 532
@@ -12173,14 +12173,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
     "pascalName": "ProseA",
     "kebabName": "prose-a",
     "chunkName": "components/prose-a",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -12193,7 +12193,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
               "range": [
                 146,
                 191
@@ -12212,7 +12212,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
               "range": [
                 195,
                 270
@@ -12244,7 +12244,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -12278,7 +12278,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
               "range": [
                 146,
                 191
@@ -12293,7 +12293,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseA.vue",
               "range": [
                 195,
                 270
@@ -12310,14 +12310,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue",
     "pascalName": "ProseBlockquote",
     "kebabName": "prose-blockquote",
     "chunkName": "components/prose-blockquote",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseBlockquote.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -12342,7 +12342,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -12378,14 +12378,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseEm.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseEm.vue",
     "pascalName": "ProseEm",
     "kebabName": "prose-em",
     "chunkName": "components/prose-em",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseEm.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseEm.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseEm.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseEm.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -12410,7 +12410,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -12446,14 +12446,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
     "pascalName": "ProseH5",
     "kebabName": "prose-h5",
     "chunkName": "components/prose-h5",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -12466,14 +12466,14 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
               "range": [
                 264,
                 275
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
               "range": [
                 264,
                 275
@@ -12504,7 +12504,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -12538,7 +12538,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
               "range": [
                 264,
                 275
@@ -12555,14 +12555,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
     "pascalName": "ProseH6",
     "kebabName": "prose-h6",
     "chunkName": "components/prose-h6",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -12575,14 +12575,14 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
               "range": [
                 264,
                 275
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
               "range": [
                 264,
                 275
@@ -12613,7 +12613,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -12647,7 +12647,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
               "range": [
                 264,
                 275
@@ -12664,14 +12664,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseHr.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseHr.vue",
     "pascalName": "ProseHr",
     "kebabName": "prose-hr",
     "chunkName": "components/prose-hr",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseHr.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseHr.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseHr.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseHr.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -12685,14 +12685,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
     "pascalName": "ProseImg",
     "kebabName": "prose-img",
     "chunkName": "components/prose-img",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -12705,7 +12705,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
               "range": [
                 289,
                 333
@@ -12724,7 +12724,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
               "range": [
                 337,
                 381
@@ -12743,7 +12743,7 @@ export default {
           "type": "string | number",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
               "range": [
                 385,
                 448
@@ -12769,7 +12769,7 @@ export default {
           "type": "string | number",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
               "range": [
                 452,
                 516
@@ -12796,7 +12796,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
               "range": [
                 289,
                 333
@@ -12811,7 +12811,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
               "range": [
                 337,
                 381
@@ -12826,7 +12826,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
               "range": [
                 385,
                 448
@@ -12848,7 +12848,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseImg.vue",
               "range": [
                 452,
                 516
@@ -12872,14 +12872,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseLi.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseLi.vue",
     "pascalName": "ProseLi",
     "kebabName": "prose-li",
     "chunkName": "components/prose-li",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseLi.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseLi.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseLi.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseLi.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -12904,7 +12904,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -12940,14 +12940,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseOl.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseOl.vue",
     "pascalName": "ProseOl",
     "kebabName": "prose-ol",
     "chunkName": "components/prose-ol",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseOl.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseOl.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseOl.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseOl.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -12972,7 +12972,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13008,14 +13008,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseP.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseP.vue",
     "pascalName": "ProseP",
     "kebabName": "prose-p",
     "chunkName": "components/prose-p",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseP.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseP.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseP.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseP.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13040,7 +13040,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13076,14 +13076,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
     "pascalName": "ProseScript",
     "kebabName": "prose-script",
     "chunkName": "components/prose-script",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -13096,7 +13096,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
               "range": [
                 285,
                 329
@@ -13116,7 +13116,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue",
               "range": [
                 285,
                 329
@@ -13133,14 +13133,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseStrong.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseStrong.vue",
     "pascalName": "ProseStrong",
     "kebabName": "prose-strong",
     "chunkName": "components/prose-strong",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseStrong.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseStrong.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseStrong.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseStrong.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13165,7 +13165,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13201,14 +13201,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTable.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTable.vue",
     "pascalName": "ProseTable",
     "kebabName": "prose-table",
     "chunkName": "components/prose-table",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTable.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTable.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTable.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTable.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13233,7 +13233,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13269,14 +13269,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTbody.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTbody.vue",
     "pascalName": "ProseTbody",
     "kebabName": "prose-tbody",
     "chunkName": "components/prose-tbody",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTbody.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTbody.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTbody.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTbody.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13301,7 +13301,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13337,14 +13337,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTd.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTd.vue",
     "pascalName": "ProseTd",
     "kebabName": "prose-td",
     "chunkName": "components/prose-td",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTd.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTd.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTd.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTd.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13369,7 +13369,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13405,14 +13405,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTh.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTh.vue",
     "pascalName": "ProseTh",
     "kebabName": "prose-th",
     "chunkName": "components/prose-th",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTh.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTh.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTh.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTh.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13437,7 +13437,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13473,14 +13473,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseThead.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseThead.vue",
     "pascalName": "ProseThead",
     "kebabName": "prose-thead",
     "chunkName": "components/prose-thead",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseThead.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseThead.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseThead.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseThead.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13505,7 +13505,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13541,14 +13541,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTr.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTr.vue",
     "pascalName": "ProseTr",
     "kebabName": "prose-tr",
     "chunkName": "components/prose-tr",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTr.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTr.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTr.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTr.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13573,7 +13573,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13609,14 +13609,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseUl.vue",
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseUl.vue",
     "pascalName": "ProseUl",
     "kebabName": "prose-ul",
     "chunkName": "components/prose-ul",
-    "shortPath": "../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseUl.vue",
+    "shortPath": "node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseUl.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseUl.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxtjs+mdc@0.6.1_rollup@4.17.2/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseUl.vue",
     "meta": {
       "type": 1,
       "props": [],
@@ -13641,7 +13641,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -13677,14 +13677,14 @@ export default {
     "global": true,
     "prefetch": false,
     "preload": false,
-    "filePath": "../node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue",
+    "filePath": "node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue",
     "pascalName": "UButton",
     "kebabName": "u-button",
     "chunkName": "components/u-button",
-    "shortPath": "../node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue",
+    "shortPath": "node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue",
     "export": "default",
     "priority": 0,
-    "fullPath": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue",
     "meta": {
       "type": 1,
       "props": [
@@ -13697,7 +13697,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8034,
                 8057
@@ -13719,7 +13719,7 @@ export default {
           "type": "ButtonSize",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8062,
                 8079
@@ -13749,7 +13749,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8084,
                 8097
@@ -13768,7 +13768,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8102,
                 8116
@@ -13787,7 +13787,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8160,
                 8182
@@ -13809,7 +13809,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8187,
                 8206
@@ -13831,7 +13831,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8211,
                 8232
@@ -13853,7 +13853,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8237,
                 8261
@@ -13875,7 +13875,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8266,
                 8292
@@ -13897,7 +13897,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8297,
                 8324
@@ -13919,7 +13919,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8329,
                 8361
@@ -13941,7 +13941,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8366,
                 8397
@@ -13963,7 +13963,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8402,
                 8434
@@ -13985,7 +13985,7 @@ export default {
           "type": "NuxtLinkProps",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8439,
                 8463
@@ -14007,7 +14007,7 @@ export default {
           "type": "any",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8490,
                 8501
@@ -14026,7 +14026,7 @@ export default {
           "type": "ButtonVariant",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8506,
                 8529
@@ -14055,7 +14055,7 @@ export default {
           "type": "RouteLocationRaw",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8557,
                 8578
@@ -14073,7 +14073,7 @@ export default {
           "type": "RouteLocationRaw",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8583,
                 8606
@@ -14091,7 +14091,7 @@ export default {
           "type": "any",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8611,
                 8619
@@ -14110,7 +14110,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8687,
                 8700
@@ -14129,7 +14129,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8705,
                 8725
@@ -14148,7 +14148,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8730,
                 8750
@@ -14167,7 +14167,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8755,
                 8776
@@ -14186,7 +14186,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8137,
                 8155
@@ -14212,7 +14212,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8468,
                 8485
@@ -14238,7 +14238,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8534,
                 8552
@@ -14264,7 +14264,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8624,
                 8639
@@ -14290,7 +14290,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8644,
                 8661
@@ -14316,7 +14316,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8666,
                 8682
@@ -14342,7 +14342,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8781,
                 8799
@@ -14368,7 +14368,7 @@ export default {
           "type": "boolean",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 8804,
                 8820
@@ -14395,7 +14395,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 7594,
                 7730
@@ -14414,7 +14414,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4985,
                 5106
@@ -14440,7 +14440,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 6019,
                 6090
@@ -14455,7 +14455,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4506,
                 4578
@@ -14470,7 +14470,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5363,
                 5433
@@ -14485,7 +14485,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5231,
                 5358
@@ -14510,7 +14510,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 6307,
                 6443
@@ -14525,7 +14525,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 6448,
                 6583
@@ -14544,7 +14544,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4583,
                 4658
@@ -14566,7 +14566,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4663,
                 4734
@@ -14581,7 +14581,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4739,
                 4816
@@ -14603,7 +14603,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4821,
                 4899
@@ -14625,7 +14625,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4904,
                 4980
@@ -14647,7 +14647,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5111,
                 5226
@@ -14662,7 +14662,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5438,
                 5520
@@ -14677,7 +14677,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5525,
                 5602
@@ -14692,7 +14692,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5607,
                 5685
@@ -14707,7 +14707,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5690,
                 5768
@@ -14729,7 +14729,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5773,
                 5850
@@ -14751,7 +14751,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5855,
                 5931
@@ -14773,7 +14773,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 5936,
                 6014
@@ -14795,7 +14795,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 6168,
                 6302
@@ -14810,7 +14810,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 6588,
                 6720
@@ -14829,7 +14829,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 6725,
                 6859
@@ -14848,7 +14848,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 6864,
                 7001
@@ -14867,7 +14867,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 7006,
                 7145
@@ -14886,7 +14886,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 7150,
                 7290
@@ -14905,7 +14905,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 7295,
                 7440
@@ -14924,7 +14924,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 7445,
                 7589
@@ -14943,7 +14943,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 7735,
                 7880
@@ -14962,7 +14962,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 7885,
                 8022
@@ -14981,7 +14981,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 3685,
                 3720
@@ -14996,7 +14996,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 3725,
                 3811
@@ -15011,7 +15011,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 3816,
                 3868
@@ -15033,7 +15033,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 3873,
                 3926
@@ -15055,7 +15055,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 3931,
                 3976
@@ -15077,7 +15077,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 3981,
                 4028
@@ -15092,7 +15092,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4033,
                 4096
@@ -15107,7 +15107,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4101,
                 4165
@@ -15122,7 +15122,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4170,
                 4222
@@ -15137,7 +15137,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4227,
                 4280
@@ -15152,7 +15152,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui@2.16.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@_edwnm6i5htwutto6ejinu4fzaq/node_modules/@nuxt/ui/dist/runtime/components/elements/Button.vue.d.ts",
               "range": [
                 4285,
                 4326
@@ -15177,7 +15177,7 @@ export default {
     "prefetch": false,
     "preload": false,
     "mode": "all",
-    "shortPath": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+    "shortPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/Icon.vue",
     "priority": 0,
     "meta": {
       "type": 1,
@@ -15191,14 +15191,14 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/Icon.vue",
               "range": [
                 669,
                 717
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/Icon.vue",
               "range": [
                 669,
                 717
@@ -15216,7 +15216,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/Icon.vue",
               "range": [
                 721,
                 766
@@ -15248,7 +15248,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
               "range": [
                 8475,
                 8502
@@ -15282,7 +15282,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/Icon.vue",
               "range": [
                 721,
                 766
@@ -15297,7 +15297,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/Icon.vue",
               "range": [
                 669,
                 717
@@ -15309,8 +15309,8 @@ export default {
       ]
     },
     "name": "Icon",
-    "filePath": "../node_modules/nuxt-icon/dist/runtime/Icon.vue",
-    "fullPath": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/Icon.vue"
+    "filePath": "node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/Icon.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/Icon.vue"
   },
   "IconCSS": {
     "export": "default",
@@ -15321,7 +15321,7 @@ export default {
     "prefetch": false,
     "preload": false,
     "mode": "all",
-    "shortPath": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+    "shortPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
     "priority": 0,
     "meta": {
       "type": 1,
@@ -15335,14 +15335,14 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
               "range": [
                 387,
                 435
               ]
             },
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
               "range": [
                 387,
                 435
@@ -15360,7 +15360,7 @@ export default {
           "type": "string",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
               "range": [
                 439,
                 484
@@ -15380,7 +15380,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
               "range": [
                 439,
                 484
@@ -15395,7 +15395,7 @@ export default {
           "description": "",
           "declarations": [
             {
-              "file": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+              "file": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
               "range": [
                 387,
                 435
@@ -15407,7 +15407,7 @@ export default {
       ]
     },
     "name": "IconCSS",
-    "filePath": "../node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
-    "fullPath": "/Users/rezajafar/node_modules/nuxt-icon/dist/runtime/IconCSS.vue"
+    "filePath": "node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/IconCSS.vue",
+    "fullPath": "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/nuxt-icon@0.6.10_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12_y3rxipoifpuysibwejm3zbnt44/node_modules/nuxt-icon/dist/runtime/IconCSS.vue"
   }
 }

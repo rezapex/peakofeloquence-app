@@ -2,29 +2,29 @@
 
 declare module 'nitropack' {
   interface NitroRouteRules {
-    ogImage?: false | import('../../../node_modules/nuxt-og-image/dist/runtime/types').OgImageOptions & Record<string, any>
+    ogImage?: false | import('../../node_modules/.pnpm/nuxt-og-image@3.0.0-rc.53_@lezer+common@1.2.1_@nuxt+devtools@1.3.1_@unocss+reset@0.60.0_float_gel263vjvnhlhdktixsjz3tham/node_modules/nuxt-og-image/dist/runtime/types').OgImageOptions & Record<string, any>
   }
   interface NitroRouteConfig {
-    ogImage?: false | import('../../../node_modules/nuxt-og-image/dist/runtime/types').OgImageOptions & Record<string, any>
+    ogImage?: false | import('../../node_modules/.pnpm/nuxt-og-image@3.0.0-rc.53_@lezer+common@1.2.1_@nuxt+devtools@1.3.1_@unocss+reset@0.60.0_float_gel263vjvnhlhdktixsjz3tham/node_modules/nuxt-og-image/dist/runtime/types').OgImageOptions & Record<string, any>
   }
   interface NitroRuntimeHooks {
-    'nuxt-og-image:context': (ctx: import('../../../node_modules/nuxt-og-image/dist/runtime/types').OgImageRenderEventContext) => void | Promise<void>
-    'nuxt-og-image:satori:vnodes': (vnodes: import('../../../node_modules/nuxt-og-image/dist/runtime/types').VNode, ctx: import('../../../node_modules/nuxt-og-image/dist/runtime/types').OgImageRenderEventContext) => void | Promise<void>
+    'nuxt-og-image:context': (ctx: import('../../node_modules/.pnpm/nuxt-og-image@3.0.0-rc.53_@lezer+common@1.2.1_@nuxt+devtools@1.3.1_@unocss+reset@0.60.0_float_gel263vjvnhlhdktixsjz3tham/node_modules/nuxt-og-image/dist/runtime/types').OgImageRenderEventContext) => void | Promise<void>
+    'nuxt-og-image:satori:vnodes': (vnodes: import('../../node_modules/.pnpm/nuxt-og-image@3.0.0-rc.53_@lezer+common@1.2.1_@nuxt+devtools@1.3.1_@unocss+reset@0.60.0_float_gel263vjvnhlhdktixsjz3tham/node_modules/nuxt-og-image/dist/runtime/types').VNode, ctx: import('../../node_modules/.pnpm/nuxt-og-image@3.0.0-rc.53_@lezer+common@1.2.1_@nuxt+devtools@1.3.1_@unocss+reset@0.60.0_float_gel263vjvnhlhdktixsjz3tham/node_modules/nuxt-og-image/dist/runtime/types').OgImageRenderEventContext) => void | Promise<void>
   }
 }
 
 declare module '#nuxt-og-image/components' {
   export interface OgImageComponents {
-    'Saas': typeof import('../../components/OgImage/OgImageSaas.vue')['default']
-    'BrandedLogo': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/BrandedLogo.vue')['default']
-    'Frame': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/Frame.vue')['default']
-    'Nuxt': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/Nuxt.vue')['default']
-    'NuxtSeo': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/NuxtSeo.vue')['default']
-    'Pergel': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/Pergel.vue')['default']
-    'SimpleBlog': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/SimpleBlog.vue')['default']
-    'UnJs': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/UnJs.vue')['default']
-    'Wave': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/Wave.vue')['default']
-    'WithEmoji': typeof import('../../../node_modules/nuxt-og-image/dist/runtime/nuxt/components/Templates/Community/WithEmoji.vue')['default']
+    'Saas': typeof import('../..')['default']
+    'BrandedLogo': typeof import('../..')['default']
+    'Frame': typeof import('../..')['default']
+    'Nuxt': typeof import('../..')['default']
+    'NuxtSeo': typeof import('../..')['default']
+    'Pergel': typeof import('../..')['default']
+    'SimpleBlog': typeof import('../..')['default']
+    'UnJs': typeof import('../..')['default']
+    'Wave': typeof import('../..')['default']
+    'WithEmoji': typeof import('../..')['default']
   }
 }
 declare module '#nuxt-og-image/unocss-config' {
