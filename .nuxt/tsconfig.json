@@ -122,6 +122,12 @@
       "#color-mode-options": [
         "./color-mode-options.mjs"
       ],
+      "#nuxt-component-meta": [
+        "./component-meta"
+      ],
+      "#nuxt-component-meta/types": [
+        "./component-meta.d"
+      ],
       "#vue-router": [
         "./vue-router-stub"
       ],
@@ -135,7 +141,7 @@
         "./tailwind.config/*"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/d5df8b27-97de-42b1-910d-02e093895c69.json"
       ],
       "#build": [
         "."
@@ -181,6 +187,7 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime",
     "../node_modules/@nuxt/ui/runtime",
     "../node_modules/@nuxt/fonts/runtime",
+    "../node_modules/nuxt-component-meta/runtime",
     "../node_modules/@nuxthq/studio/runtime",
     "../node_modules/@vueuse/nuxt/runtime",
     "../node_modules/nuxt-site-config/dist/runtime",
@@ -204,6 +211,7 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxt/ui/runtime/server",
     "../node_modules/@nuxt/fonts/runtime/server",
+    "../node_modules/nuxt-component-meta/runtime/server",
     "../node_modules/@nuxthq/studio/runtime/server",
     "../node_modules/@vueuse/nuxt/runtime/server",
     "../node_modules/nuxt-site-config/dist/runtime/server",

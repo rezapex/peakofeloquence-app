@@ -1,1 +1,10 @@
-{"parsed":{"_path":"/letters/letter_87","_dir":"letters","_draft":false,"_partial":false,"_locale":"","title":"Letter 87","description":"When Imam Ali (a) sent Ibn Abbas for discussions with the Kharijites, he, peace be upon him, gave him the following instructions.","body":{"type":"root","children":[{"type":"element","tag":"p","props":{},"children":[{"type":"text","value":"While arguing, never quote statements from the Holy Qur'an because the passages of this\nBook require very careful consideration as they could be paraphrased in various ways and\ntheir meanings could be construed differently. Thus, you will adhere to your explanation and\nthey will stick to their elucidation. Therefore, argue with them in the light of the traditions of\nthe Holy Prophet (s) and then they will find no way to misrepresent truth."}]}],"toc":{"title":"","searchDepth":2,"depth":2,"links":[]}},"_type":"markdown","_id":"content:3.letters:letter_87.md","_source":"content","_file":"3.letters/letter_87.md","_extension":"md"},"hash":"XKA67FYSMQ"}
+---
+title: Letter 87
+description: When Imam Ali (a) sent Ibn Abbas for discussions with the Kharijites, he, peace be upon him, gave him the following instructions.
+---
+
+While arguing, never quote statements from the Holy Qur'an because the passages of this 
+Book require very careful consideration as they could be paraphrased in various ways and 
+their meanings could be construed differently. Thus, you will adhere to your explanation and 
+they will stick to their elucidation. Therefore, argue with them in the light of the traditions of 
+the Holy Prophet (s) and then they will find no way to misrepresent truth.
