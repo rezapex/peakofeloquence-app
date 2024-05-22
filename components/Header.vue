@@ -33,7 +33,7 @@ const links = [
     <!-- Logo -->
     <template #logo>
       <div class="flex items-center">
-        <img src="/public/gold-icon.png" alt="Logo" class="h-7 w-auto mr-3" />
+        <img src="/public/nav-logo-light.png" alt="Logo" class="h-7 w-auto mr-3" />
       </div>
     </template>
 
