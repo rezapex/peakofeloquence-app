@@ -93,13 +93,13 @@
         "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#mdc-configs": [
-        "./mdc-configs"
+        "./mdc-configs.mjs"
       ],
       "#mdc-highlighter": [
-        "./mdc-highlighter"
+        "./mdc-highlighter.mjs"
       ],
       "#mdc-imports": [
-        "./mdc-imports"
+        "./mdc-imports.mjs"
       ],
       "#image": [
         "../node_modules/@nuxt/image/dist/runtime"
@@ -114,19 +114,19 @@
         "../node_modules/@nuxt/ui/dist/runtime/*"
       ],
       "#ui-colors": [
-        "./ui.colors"
+        "./ui.colors.mjs"
       ],
       "#icon-collections": [
-        "./icon-collections"
+        "./icon-collections.mjs"
       ],
       "#color-mode-options": [
         "./color-mode-options.mjs"
       ],
       "#nuxt-component-meta": [
-        "./component-meta"
+        "./component-meta.mjs"
       ],
       "#nuxt-component-meta/types": [
-        "./component-meta.d"
+        "./component-meta.d.ts"
       ],
       "#vue-router": [
         "./vue-router-stub"
@@ -137,11 +137,8 @@
       "#tailwind-config": [
         "./tailwind.config"
       ],
-      "#tailwind-config/*": [
-        "./tailwind.config/*"
-      ],
       "#app-manifest": [
-        "./manifest/meta/d5df8b27-97de-42b1-910d-02e093895c69.json"
+        "./manifest/meta/7830e1d2-5d81-41fd-a0ce-e2972d197c78.json"
       ],
       "#build": [
         "."
