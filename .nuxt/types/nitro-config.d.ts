@@ -4,7 +4,7 @@
 import type { Defu } from 'defu'
 
 import type { default as appConfig0 } from "/Users/rezajafar/peakofeloquence-app/app.config";
-import type { default as appConfig1 } from "/Users/rezajafar/peakofeloquence-app/node_modules/.pnpm/@nuxt+ui-pro@1.2.0_focus-trap@7.5.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4._vkhnqkaultie3oz27x7miifqb4/node_modules/@nuxt/ui-pro/app.config";
+import type { default as appConfig1 } from "/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/app.config";
 
 type UserAppConfig = Defu<{}, [typeof appConfig0, typeof appConfig1]>
 

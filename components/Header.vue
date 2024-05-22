@@ -26,20 +26,34 @@ const links = [
     to: "/blog",
   },
 ];
+
+// Define the mapContentNavigation method
+function mapContentNavigation(navigation: NavItem[]): NavItem[] {
+  // Your logic here to map the navigation items
+  return navigation;
+}
 </script>
 
 <template>
+  <!-- Your template code here -->
   <UHeader :links="links">
     <!-- Logo -->
     <template #logo>
       <div class="flex items-center">
-        <img src="/public/nav-logo-light.png" alt="Logo" class="h-7 w-auto mr-3" />
+        <img
+          v-if="$colorMode.preference === 'light'"
+          src="/public/nav-logo-black.png"
+          alt="Logo"
+          class="h-7 w-auto mr-3"
+        />
+        <img v-else src="/public/nav-logo-light.png" alt="Logo" class="h-7 w-auto mr-3" />
       </div>
     </template>
 
     <!-- Header Right -->
     <template #right>
       <UColorModeButton />
+      <UColorModeToggle />
       <UButton label="Support" color="gray" to="/donate" />
     </template>
 
