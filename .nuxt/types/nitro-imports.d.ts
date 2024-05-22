@@ -7,6 +7,7 @@ declare global {
   const appendHeaders: typeof import('../../node_modules/h3')['appendHeaders']
   const appendResponseHeader: typeof import('../../node_modules/h3')['appendResponseHeader']
   const appendResponseHeaders: typeof import('../../node_modules/h3')['appendResponseHeaders']
+  const asSitemapUrl: typeof import('../../node_modules/nuxt-simple-sitemap/dist/runtime/composables/asSitemapUrl')['asSitemapUrl']
   const assertMethod: typeof import('../../node_modules/h3')['assertMethod']
   const cachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime')['cachedEventHandler']
   const cachedFunction: typeof import('../../node_modules/nitropack/dist/runtime')['cachedFunction']
@@ -33,6 +34,7 @@ declare global {
   const defineRenderHandler: typeof import('../../node_modules/nitropack/dist/runtime')['defineRenderHandler']
   const defineRequestMiddleware: typeof import('../../node_modules/h3')['defineRequestMiddleware']
   const defineResponseMiddleware: typeof import('../../node_modules/h3')['defineResponseMiddleware']
+  const defineSitemapEventHandler: typeof import('../../node_modules/nuxt-simple-sitemap/dist/runtime/composables/defineSitemapEventHandler')['defineSitemapEventHandler']
   const defineTask: typeof import('../../node_modules/nitropack/dist/runtime')['defineTask']
   const defineWebSocket: typeof import('../../node_modules/h3')['defineWebSocket']
   const defineWebSocketHandler: typeof import('../../node_modules/h3')['defineWebSocketHandler']
@@ -47,6 +49,7 @@ declare global {
   const getHeader: typeof import('../../node_modules/h3')['getHeader']
   const getHeaders: typeof import('../../node_modules/h3')['getHeaders']
   const getMethod: typeof import('../../node_modules/h3')['getMethod']
+  const getPathRobotConfig: typeof import('../../node_modules/nuxt-simple-sitemap/dist/runtime/nitro/composables/getPathRobotConfigPolyfill')['getPathRobotConfigPolyfill']
   const getProxyRequestHeaders: typeof import('../../node_modules/h3')['getProxyRequestHeaders']
   const getQuery: typeof import('../../node_modules/h3')['getQuery']
   const getRequestFingerprint: typeof import('../../node_modules/h3')['getRequestFingerprint']
@@ -137,3 +140,6 @@ export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHead
 export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '../../node_modules/nuxt/dist/core/runtime/nitro/paths';
 export { defineAppConfig } from '../../node_modules/nuxt/dist/core/runtime/nitro/config';
 export { parseMarkdown } from '../../node_modules/@nuxtjs/mdc/dist/runtime/parser';
+export { getPathRobotConfigPolyfill as getPathRobotConfig } from '../../node_modules/nuxt-simple-sitemap/dist/runtime/nitro/composables/getPathRobotConfigPolyfill';
+export { defineSitemapEventHandler } from '../../node_modules/nuxt-simple-sitemap/dist/runtime/composables/defineSitemapEventHandler';
+export { asSitemapUrl } from '../../node_modules/nuxt-simple-sitemap/dist/runtime/composables/asSitemapUrl';

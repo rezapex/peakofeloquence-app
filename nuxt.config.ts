@@ -15,13 +15,11 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    '@nuxtjs/sitemap'
+    'nuxt-simple-sitemap', // Add this module for sitemap
   ],
   hooks: {
-    // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
     'components:extend': (components) => {
       const globals = components.filter(c => ['UButton'].includes(c.pascalName))
-
       globals.forEach(c => c.global = true)
     }
   },
@@ -30,7 +28,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/api/search.json': { prerender: true },
-  //  '/docs': { redirect: '/docs/getting-started', prerender: false }
+    // '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
   devtools: {
     enabled: true
@@ -38,11 +36,19 @@ export default defineNuxtConfig({
   typescript: {
     strict: false
   },
-  // vue: {
-  //   compilerOptions: {
-  //     isCustomElement: (tag) => {
-  //       return tag === 'spline-viewer';
-  //     }
-  //   }
-  // },
+  // Sitemap configuration
+  sitemap: {
+    siteUrl: 'https://www.peakofeloquence.org',
+    gzip: true,
+    routes: [
+      '/',
+      '/about',
+      '/courses',
+      '/contact',
+      '/blog'
+    ],
+    exclude: [
+      '/node_modules/**'
+    ]
+  }
 })
