@@ -49,9 +49,6 @@
       "@unhead/vue": [
         "../node_modules/@unhead/vue"
       ],
-      "vue": [
-        "../node_modules/vue"
-      ],
       "@vue/runtime-core": [
         "../node_modules/@vue/runtime-core"
       ],
@@ -133,6 +130,15 @@
       "#color-mode-options": [
         "./color-mode-options"
       ],
+      "#nuxt-component-meta": [
+        "./component-meta"
+      ],
+      "#nuxt-component-meta/types": [
+        "./component-meta.d"
+      ],
+      "#sitemap": [
+        "../node_modules/@nuxtjs/sitemap/dist/runtime/types"
+      ],
       "#tailwind-config": [
         "./tailwind.config"
       ],
@@ -152,7 +158,7 @@
         "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/satori/renderer"
       ],
       "#nuxt-og-image/renderers/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/chromium/renderer"
+        "./unenv/runtime/mock/empty"
       ],
       "#nuxt-og-image/bindings/css-inline": [
         "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/css-inline/node"
@@ -167,7 +173,19 @@
         "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/satori/node"
       ],
       "#nuxt-og-image/bindings/chromium": [
-        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/chromium/chrome-launcher"
+        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/chromium/null"
+      ],
+      "electron": [
+        "./unenv/runtime/mock/proxy-cjs"
+      ],
+      "bufferutil": [
+        "./unenv/runtime/mock/proxy-cjs"
+      ],
+      "utf-8-validate": [
+        "./unenv/runtime/mock/proxy-cjs"
+      ],
+      "queue": [
+        "./unenv/runtime/mock/proxy-cjs"
       ]
     }
   },
@@ -183,15 +201,17 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxt/ui/runtime/server",
     "../node_modules/@nuxt/fonts/runtime/server",
+    "../node_modules/nuxt-component-meta/runtime/server",
     "../node_modules/@nuxthq/studio/runtime/server",
     "../node_modules/@vueuse/nuxt/runtime/server",
     "../node_modules/nuxt-site-config/dist/module.mjs/runtime/server",
     "../node_modules/nuxt-og-image/runtime/server",
-    "../node_modules/nuxt-simple-sitemap/runtime/server",
+    "../node_modules/@nuxtjs/sitemap/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "./module/nuxt-site-config.d.ts",
     "./module/nuxt-og-image.d.ts",
+    "./module/@nuxtjs-sitemap.d.ts",
     "./types/nitro.d.ts",
     "../**/*",
     "../server/**/*"

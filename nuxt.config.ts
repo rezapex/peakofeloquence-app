@@ -15,8 +15,9 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    'nuxt-simple-sitemap',
-    'nuxt-icon'
+    '@nuxtjs/sitemap',
+    'nuxt-icon',
+    //'nuxt-simple-sitemap',
   ],
   hooks: {
     'components:extend': (components) => {
@@ -39,7 +40,7 @@ export default defineNuxtConfig({
   },
   // Sitemap configuration
   sitemap: {
-    siteUrl: 'https://www.peakofeloquence.org',
+    hostname: 'https://www.peakofeloquence.org',
     gzip: true,
     routes: [
       '/',
@@ -53,3 +54,4 @@ export default defineNuxtConfig({
     ],
   }
 })
+
