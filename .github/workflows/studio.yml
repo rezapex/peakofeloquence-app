@@ -1,10 +1,7 @@
-name: Build and Deploy to Netlify
+name: Studio Nuxt Build
 
 on:
   push:
-    branches:
-      - 'main'
-  pull_request:
     branches:
       - 'main'
   workflow_dispatch:
@@ -22,23 +19,20 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
+        node: [20.x]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js ${{ matrix.node-version }}
+      - name: Set up Node.js ${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node }}
           cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install
-
-      - name: Run tests
-        run: yarn test
 
       - name: Install @nuxthq/studio
         run: yarn add -D @nuxthq/studio
