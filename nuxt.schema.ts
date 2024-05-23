@@ -53,6 +53,13 @@ export default defineNuxtSchema({
               description: 'Icon for hash anchors.',
               icon: 'i-ph-hash',
               default: 'i-heroicons-hashtag-20-solid'
+            }),
+            annotation: field({
+              type: 'icon',
+              title: 'Annotation',
+              description: 'Icon for annotation.',
+              icon: 'i-heroicons-annotation',
+              default: 'i-heroicons-annotation-20-solid'
             })
           }
         }),

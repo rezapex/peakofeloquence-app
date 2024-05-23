@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // plugins
+  // Plugins (if needed, uncomment)
   // plugins: [
   //   '~/plugins/vue-spline',
   //   '~/plugins/vue-spline-viewer',
@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    'nuxt-simple-sitemap', // Add this module for sitemap
+    'nuxt-simple-sitemap',
+    'nuxt-icon'
   ],
   hooks: {
     'components:extend': (components) => {
@@ -49,6 +50,6 @@ export default defineNuxtConfig({
     ],
     exclude: [
       '/node_modules/**'
-    ]
+    ],
   }
 })

@@ -167,6 +167,19 @@ export interface NuxtCustomSchema {
      * @studioIcon i-ph-hash
     */
     hash?: string,
+
+    /**
+     * Annotation
+     * 
+     * Icon for annotation.
+     * 
+     * @default "i-heroicons-annotation-20-solid"
+     * 
+     * @studioInput icon
+     * 
+     * @studioIcon i-heroicons-annotation
+    */
+    annotation?: string,
    },
 
    /**

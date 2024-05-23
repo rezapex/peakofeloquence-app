@@ -169,6 +169,17 @@
                     "@studioIcon i-ph-hash"
                   ],
                   "id": "#appConfig/ui/icons/hash"
+                },
+                "annotation": {
+                  "type": "string",
+                  "title": "Annotation",
+                  "description": "Icon for annotation.",
+                  "default": "i-heroicons-annotation-20-solid",
+                  "tags": [
+                    "@studioInput icon",
+                    "@studioIcon i-heroicons-annotation"
+                  ],
+                  "id": "#appConfig/ui/icons/annotation"
                 }
               },
               "type": "object",
@@ -178,7 +189,8 @@
                 "light": "i-heroicons-sun-20-solid",
                 "external": "i-heroicons-arrow-up-right-20-solid",
                 "chevron": "i-heroicons-chevron-down-20-solid",
-                "hash": "i-heroicons-hashtag-20-solid"
+                "hash": "i-heroicons-hashtag-20-solid",
+                "annotation": "i-heroicons-annotation-20-solid"
               }
             },
             "primary": {
@@ -242,7 +254,8 @@
               "light": "i-heroicons-sun-20-solid",
               "external": "i-heroicons-arrow-up-right-20-solid",
               "chevron": "i-heroicons-chevron-down-20-solid",
-              "hash": "i-heroicons-hashtag-20-solid"
+              "hash": "i-heroicons-hashtag-20-solid",
+              "annotation": "i-heroicons-annotation-20-solid"
             },
             "primary": "green",
             "gray": "slate"
@@ -267,7 +280,8 @@
             "light": "i-heroicons-sun-20-solid",
             "external": "i-heroicons-arrow-up-right-20-solid",
             "chevron": "i-heroicons-chevron-down-20-solid",
-            "hash": "i-heroicons-hashtag-20-solid"
+            "hash": "i-heroicons-hashtag-20-solid",
+            "annotation": "i-heroicons-annotation-20-solid"
           },
           "primary": "green",
           "gray": "slate"
@@ -294,7 +308,8 @@
           "light": "i-heroicons-sun-20-solid",
           "external": "i-heroicons-arrow-up-right-20-solid",
           "chevron": "i-heroicons-chevron-down-20-solid",
-          "hash": "i-heroicons-hashtag-20-solid"
+          "hash": "i-heroicons-hashtag-20-solid",
+          "annotation": "i-heroicons-annotation-20-solid"
         },
         "primary": "green",
         "gray": "slate"

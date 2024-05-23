@@ -11,7 +11,6 @@ declare module 'nuxt/schema' {
     ["tailwindcss"]?: typeof import("@nuxtjs/tailwindcss").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["ui"]?: typeof import("@nuxt/ui").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["fonts"]?: typeof import("@nuxt/fonts").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
-    ["componentMeta"]?: typeof import("nuxt-component-meta").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["studio"]?: typeof import("@nuxthq/studio").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["vueuse"]?: typeof import("@vueuse/nuxt").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["site"]?: typeof import("/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-site-config/dist/module").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
@@ -19,7 +18,7 @@ declare module 'nuxt/schema' {
     ["sitemap"]?: typeof import("nuxt-simple-sitemap").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["devtools"]?: typeof import("@nuxt/devtools").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["telemetry"]?: typeof import("@nuxt/telemetry").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
-    modules?: (undefined | null | false | NuxtModule | string | [NuxtModule | string, Record<string, any>] | ["/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/index", Exclude<NuxtConfig["uiPro"], boolean>] | ["@nuxtjs/mdc", Exclude<NuxtConfig["mdc"], boolean>] | ["@nuxt/content", Exclude<NuxtConfig["content"], boolean>] | ["@nuxt/eslint", Exclude<NuxtConfig["eslint"], boolean>] | ["@nuxt/image", Exclude<NuxtConfig["image"], boolean>] | ["nuxt-icon", Exclude<NuxtConfig["icon"], boolean>] | ["@nuxtjs/color-mode", Exclude<NuxtConfig["colorMode"], boolean>] | ["@nuxtjs/tailwindcss", Exclude<NuxtConfig["tailwindcss"], boolean>] | ["@nuxt/ui", Exclude<NuxtConfig["ui"], boolean>] | ["@nuxt/fonts", Exclude<NuxtConfig["fonts"], boolean>] | ["nuxt-component-meta", Exclude<NuxtConfig["componentMeta"], boolean>] | ["@nuxthq/studio", Exclude<NuxtConfig["studio"], boolean>] | ["@vueuse/nuxt", Exclude<NuxtConfig["vueuse"], boolean>] | ["/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-site-config/dist/module", Exclude<NuxtConfig["site"], boolean>] | ["nuxt-og-image", Exclude<NuxtConfig["ogImage"], boolean>] | ["nuxt-simple-sitemap", Exclude<NuxtConfig["sitemap"], boolean>] | ["@nuxt/devtools", Exclude<NuxtConfig["devtools"], boolean>] | ["@nuxt/telemetry", Exclude<NuxtConfig["telemetry"], boolean>])[],
+    modules?: (undefined | null | false | NuxtModule | string | [NuxtModule | string, Record<string, any>] | ["/Users/rezajafar/peakofeloquence-app/node_modules/@nuxt/ui-pro/modules/pro/index", Exclude<NuxtConfig["uiPro"], boolean>] | ["@nuxtjs/mdc", Exclude<NuxtConfig["mdc"], boolean>] | ["@nuxt/content", Exclude<NuxtConfig["content"], boolean>] | ["@nuxt/eslint", Exclude<NuxtConfig["eslint"], boolean>] | ["@nuxt/image", Exclude<NuxtConfig["image"], boolean>] | ["nuxt-icon", Exclude<NuxtConfig["icon"], boolean>] | ["@nuxtjs/color-mode", Exclude<NuxtConfig["colorMode"], boolean>] | ["@nuxtjs/tailwindcss", Exclude<NuxtConfig["tailwindcss"], boolean>] | ["@nuxt/ui", Exclude<NuxtConfig["ui"], boolean>] | ["@nuxt/fonts", Exclude<NuxtConfig["fonts"], boolean>] | ["@nuxthq/studio", Exclude<NuxtConfig["studio"], boolean>] | ["@vueuse/nuxt", Exclude<NuxtConfig["vueuse"], boolean>] | ["/Users/rezajafar/peakofeloquence-app/node_modules/nuxt-site-config/dist/module", Exclude<NuxtConfig["site"], boolean>] | ["nuxt-og-image", Exclude<NuxtConfig["ogImage"], boolean>] | ["nuxt-simple-sitemap", Exclude<NuxtConfig["sitemap"], boolean>] | ["@nuxt/devtools", Exclude<NuxtConfig["devtools"], boolean>] | ["@nuxt/telemetry", Exclude<NuxtConfig["telemetry"], boolean>])[],
   }
   interface RuntimeConfig {
    app: {
@@ -171,20 +170,6 @@ declare module 'nuxt/schema' {
          advanceQuery: boolean,
 
          search: any,
-      },
-   },
-
-   studio: {
-      version: string,
-
-      publicToken: string,
-
-      gitInfo: {
-         name: string,
-
-         owner: string,
-
-         url: string,
       },
    },
 
@@ -516,6 +501,20 @@ declare module 'nuxt/schema' {
 
                            id: string,
                         },
+
+                        annotation: {
+                           type: string,
+
+                           title: string,
+
+                           description: string,
+
+                           default: string,
+
+                           tags: Array<string>,
+
+                           id: string,
+                        },
                      },
 
                      type: string,
@@ -532,6 +531,8 @@ declare module 'nuxt/schema' {
                         chevron: string,
 
                         hash: string,
+
+                        annotation: string,
                      },
                   },
 
@@ -583,6 +584,8 @@ declare module 'nuxt/schema' {
                      chevron: string,
 
                      hash: string,
+
+                     annotation: string,
                   },
 
                   primary: string,
@@ -622,6 +625,8 @@ declare module 'nuxt/schema' {
                   chevron: string,
 
                   hash: string,
+
+                  annotation: string,
                },
 
                primary: string,
@@ -659,6 +664,8 @@ declare module 'nuxt/schema' {
                chevron: string,
 
                hash: string,
+
+               annotation: string,
             },
 
             primary: string,
@@ -748,7 +755,7 @@ declare module 'nuxt/schema' {
 
       defaultLocale: any,
 
-      integrity: number,
+      integrity: any,
 
       experimental: {
          stripQueryParameters: boolean,
@@ -851,12 +858,6 @@ declare module 'nuxt/schema' {
 
          exclude: Array<number>,
       },
-   },
-
-   studio: {
-      apiURL: string,
-
-      iframeMessagingAllowedOrigins: any,
    },
   }
 }
