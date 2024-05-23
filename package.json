@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.3.12",
+    "@nuxt/typescript-build": "^3.0.2",
     "@nuxthq/studio": "^1.1.0",
     "eslint": "^8.56.0",
     "nuxt-icon": "^0.6.10",
