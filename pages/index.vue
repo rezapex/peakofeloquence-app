@@ -42,7 +42,7 @@ useSeoMeta({
         </span>
       </template>
 
-      <!--------- SITE SECTION --------->
+      <!--------- HERO SECTION --------->
       <template #headline>
         <UBadge
           v-if="page.hero.headline"
@@ -67,11 +67,14 @@ useSeoMeta({
         </UBadge>
       </template>
     </ULandingHero>
-    <!--------- SITE SECTION --------->
+
+    <!-------IMG----------->
 
     <ULandingSection>
       <Placeholder />
     </ULandingSection>
+
+    <!------------------>
 
     <!--------- SITE SECTION --------->
     <ULandingSection
@@ -83,7 +86,7 @@ useSeoMeta({
       :align="section.align"
       :features="section.features"
     >
-      <Placeholder />
+      <Placeholder1 />
     </ULandingSection>
     <!--------- SITE SECTION --------->
     <ULandingSection
