@@ -155,25 +155,37 @@
         "../node_modules/@nuxt/content/dist/runtime/legacy/server"
       ],
       "#nuxt-og-image/renderers/satori": [
-        "./unenv/runtime/mock/empty"
+        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/satori/renderer"
       ],
       "#nuxt-og-image/renderers/chromium": [
         "./unenv/runtime/mock/empty"
       ],
       "#nuxt-og-image/bindings/css-inline": [
-        "./unenv/runtime/mock/empty"
+        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/css-inline/node"
       ],
       "#nuxt-og-image/bindings/sharp": [
-        "./unenv/runtime/mock/empty"
+        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/sharp/node"
       ],
       "#nuxt-og-image/bindings/resvg": [
-        "./unenv/runtime/mock/empty"
+        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/resvg/node"
       ],
       "#nuxt-og-image/bindings/satori": [
-        "./unenv/runtime/mock/empty"
+        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/satori/node"
       ],
       "#nuxt-og-image/bindings/chromium": [
-        "./unenv/runtime/mock/empty"
+        "../node_modules/nuxt-og-image/dist/runtime/nitro/og-image/bindings/chromium/null"
+      ],
+      "electron": [
+        "./unenv/runtime/mock/proxy-cjs"
+      ],
+      "bufferutil": [
+        "./unenv/runtime/mock/proxy-cjs"
+      ],
+      "utf-8-validate": [
+        "./unenv/runtime/mock/proxy-cjs"
+      ],
+      "queue": [
+        "./unenv/runtime/mock/proxy-cjs"
       ]
     }
   },
