@@ -75,7 +75,7 @@ useSeoMeta({
     <!-------IMG----------->
 
     <ULandingSection>
-      <Placeholder />
+      <SplineFrame />
     </ULandingSection>
 
     <!------------------>
