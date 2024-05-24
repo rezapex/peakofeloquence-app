@@ -131,10 +131,16 @@ useSeoMeta({
 */
 
 .hero-title-gradient {
-  background: linear-gradient(to right, #b7a087, #cfb192); /* Adjust gradient colors */
+  background: linear-gradient(
+    to right,
+    #e0c3fc,
+    #ffffff,
+    #ac8e62
+  ); /* Enhanced gradient for readability */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 /* 
 .font-playfair-display {
   font-family: "Playfair Display", serif;
@@ -144,7 +150,7 @@ useSeoMeta({
   /* font-family: "Playfair Display", serif; */
   font-size: 3rem;
   font-weight: bold;
-  color: #eec89f; /* Example color */
+  color: white; /* Example color */
   /* letter-spacing: 0.05em;  */
   margin-bottom: 1rem; /* Adjust title bottom margin */
 }
