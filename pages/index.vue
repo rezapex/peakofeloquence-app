@@ -16,7 +16,7 @@ useSeoMeta({
 <template>
   <div
     v-if="page"
-    class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500"
+    class="bg-grayscale-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500"
   >
     <ULandingHero
       :title="page.hero.title"
@@ -32,7 +32,7 @@ useSeoMeta({
         <span class="font-montserrat font-bold text-5xl">
           Discover the
           <span
-            class="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 dark:from-primary-500 dark:via-primary-600 dark:to-primary-700 bg-clip-text text-transparent"
+            class="bg-gradient-to-r from-grayscale-800 via-grayscale-600 to-grayscale-500 dark:from-grayscale-300 dark:via-grayscale-300 dark:to-grayscale-400 bg-clip-text text-transparent"
           >
             Wisdom
           </span>
@@ -40,7 +40,7 @@ useSeoMeta({
         </span>
         <br />
         <span
-          class="font-playfair-display font-bold text-5xl bg-gradient-to-r from-primary-200 via-primary-300 to-primary-500 dark:from-primary-400 dark:via-primary-500 dark:to-primary-700 bg-clip-text text-transparent"
+          class="font-playfair-display font-bold text-5xl bg-gradient-to-r from-grayscale-800 via-grayscale-800 to-grayscale-500 dark:from-grayscale-400 dark:via-grayscale-500 dark:to-grayscale-600 bg-clip-text text-transparent"
         >
           Nahj al-Balagha
         </span>
@@ -52,7 +52,7 @@ useSeoMeta({
           v-if="page.hero.headline"
           variant="subtle"
           size="lg"
-          class="relative rounded-full font-semibold bg-gray-200 dark:bg-gray-700"
+          class="relative rounded-full font-semibold bg-grayscale-200 dark:bg-gray-700"
         >
           <NuxtLink
             :to="page.hero.headline.to"
@@ -88,7 +88,7 @@ useSeoMeta({
       :description="section.description"
       :align="section.align"
       :features="section.features"
-      class="bg-gray-50 dark:bg-gray-900"
+      class="bg-grayscale-50 dark:bg-gray-900"
     >
       <Placeholder1 />
     </ULandingSection>
@@ -96,7 +96,7 @@ useSeoMeta({
     <ULandingSection
       :title="page.features.title"
       :description="page.features.description"
-      class="bg-gray-50 dark:bg-gray-900"
+      class="bg-grayscale-50 dark:bg-gray-900"
     >
       <UPageGrid>
         <ULandingCard
@@ -112,7 +112,7 @@ useSeoMeta({
       :headline="page.testimonials.headline"
       :title="page.testimonials.title"
       :description="page.testimonials.description"
-      class="bg-gray-50 dark:bg-gray-900"
+      class="bg-grayscale-50 dark:bg-gray-900"
     >
       <UPageColumns class="xl:columns-4">
         <div
@@ -122,14 +122,14 @@ useSeoMeta({
         >
           <ULandingTestimonial
             v-bind="testimonial"
-            class="bg-gray-200 dark:bg-gray-700"
+            class="bg-grayscale-200 dark:bg-gray-700"
           />
         </div>
       </UPageColumns>
     </ULandingSection>
     <!--------- SITE SECTION --------->
-    <ULandingSection class="bg-gray-50 dark:bg-gray-900">
-      <ULandingCTA v-bind="page.cta" class="bg-gray-200 dark:bg-gray-700" />
+    <ULandingSection class="bg-grayscale-50 dark:bg-gray-900">
+      <ULandingCTA v-bind="page.cta" class="bg-grayscale-200 dark:bg-gray-700" />
     </ULandingSection>
   </div>
 </template>
