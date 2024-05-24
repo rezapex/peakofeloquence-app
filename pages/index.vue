@@ -14,14 +14,17 @@ useSeoMeta({
 </script>
 
 <template>
-  <div v-if="page">
+  <div
+    v-if="page"
+    class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500"
+  >
     <ULandingHero
       :title="page.hero.title"
       :description="page.hero.description"
       :links="page.hero.links"
     >
       <div
-        class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:[mask-image:radial-gradient(100%_100%_at_top_right,black,transparent)]"
       />
 
       <!--------- SITE SECTION --------->
@@ -29,14 +32,15 @@ useSeoMeta({
         <span class="font-montserrat font-bold text-5xl">
           Discover the
           <span
-            class="bg-gradient-to-r from-blue-200 to-yellow-600 bg-clip-text text-transparent"
-            >Wisdom</span
+            class="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 dark:from-primary-500 dark:via-primary-600 dark:to-primary-700 bg-clip-text text-transparent"
           >
+            Wisdom
+          </span>
           of
         </span>
         <br />
         <span
-          class="font-Playfair Display font-bold text-5xl bg-gradient-to-r from-blue-100 to-yellow-600 bg-clip-text text-transparent"
+          class="font-playfair-display font-bold text-5xl bg-gradient-to-r from-primary-200 via-primary-300 to-primary-500 dark:from-primary-400 dark:via-primary-500 dark:to-primary-700 bg-clip-text text-transparent"
         >
           Nahj al-Balagha
         </span>
@@ -48,7 +52,7 @@ useSeoMeta({
           v-if="page.hero.headline"
           variant="subtle"
           size="lg"
-          class="relative rounded-full font-semibold"
+          class="relative rounded-full font-semibold bg-gray-200 dark:bg-gray-700"
         >
           <NuxtLink
             :to="page.hero.headline.to"
@@ -81,10 +85,10 @@ useSeoMeta({
       v-for="(section, index) in page.sections"
       :key="index"
       :title="section.title"
-      class=""
       :description="section.description"
       :align="section.align"
       :features="section.features"
+      class="bg-gray-50 dark:bg-gray-900"
     >
       <Placeholder1 />
     </ULandingSection>
@@ -92,12 +96,14 @@ useSeoMeta({
     <ULandingSection
       :title="page.features.title"
       :description="page.features.description"
+      class="bg-gray-50 dark:bg-gray-900"
     >
       <UPageGrid>
         <ULandingCard
           v-for="(item, index) in page.features.items"
           :key="index"
           v-bind="item"
+          class="bg-white dark:bg-gray-800"
         />
       </UPageGrid>
     </ULandingSection>
@@ -106,6 +112,7 @@ useSeoMeta({
       :headline="page.testimonials.headline"
       :title="page.testimonials.title"
       :description="page.testimonials.description"
+      class="bg-gray-50 dark:bg-gray-900"
     >
       <UPageColumns class="xl:columns-4">
         <div
@@ -115,14 +122,14 @@ useSeoMeta({
         >
           <ULandingTestimonial
             v-bind="testimonial"
-            class="bg-gray-100/50 dark:bg-gray-800/50"
+            class="bg-gray-200 dark:bg-gray-700"
           />
         </div>
       </UPageColumns>
     </ULandingSection>
     <!--------- SITE SECTION --------->
-    <ULandingSection>
-      <ULandingCTA v-bind="page.cta" class="bg-gray-100/50 dark:bg-gray-800/50" />
+    <ULandingSection class="bg-gray-50 dark:bg-gray-900">
+      <ULandingCTA v-bind="page.cta" class="bg-gray-200 dark:bg-gray-700" />
     </ULandingSection>
   </div>
 </template>
@@ -130,11 +137,7 @@ useSeoMeta({
 <style scoped>
 .landing-grid {
   background-size: 100px 100px;
-  background-image: linear-gradient(
-      to right,
-      rgb(var(--color-gray-800)) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgb(var(--color-gray-800)) 1px, transparent 1px);
+  background-image: linear-gradient(to left, rgb(100, 100, 100) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(100, 100, 100) 1px, transparent 1px);
 }
 </style>

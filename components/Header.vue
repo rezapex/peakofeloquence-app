@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { NavItem } from "@nuxt/content/dist/runtime/types";
-import { useAppConfig } from "#imports";
+import { useAppConfig, useColorMode } from "#imports";
 const appConfig = useAppConfig();
 const navigation = inject<Ref<NavItem[]>>("navigation", ref([]));
+const colorMode = useColorMode();
 
 const links = [
   {
@@ -40,23 +41,23 @@ function mapContentNavigation(navigation: NavItem[]): NavItem[] {
     <template #logo>
       <div class="flex items-center">
         <img
-          v-if="$colorMode.preference === 'light'"
-          src="/public/nav-logo-black.png"
+          v-if="colorMode.preference === 'light'"
+          src="/nav-logo-dark.png"
           alt="Logo"
           class="h-7 w-auto mr-3"
         />
-        <img v-else src="/public/nav-logo-light.png" alt="Logo" class="h-7 w-auto mr-3" />
+        <img v-else src="/nav-logo-light.png" alt="Logo" class="h-7 w-auto mr-3" />
       </div>
     </template>
 
     <!-- Header Right -->
     <template #right>
-      <UColorModeToggle />
-      <UButton label="Support" color="gray" to="/donate" />
+      <UColorModeButton />
+      <!-- <UButton label="Support" color="gray" to="/donate" /> -->
     </template>
 
     <UButton
-      v-for="(link, index) of links"
+      v-for="(link, index) in links"
       :key="index"
       v-bind="{ color: 'gray', variant: 'ghost', ...link }"
     />
