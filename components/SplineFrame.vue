@@ -7,7 +7,7 @@
     >
       <!-- NuxtImg component to display the image -->
       <iframe
-        :src="'https://my.spline.design/particlenebula-cc6e3aa8f0758ed1875898b31ad2a147/'"
+        :src="'https://my.spline.design/astarlikeourown-726da45f335a0f913a01c2423681656b/'"
         frameborder="0"
         class="absolute top-0 left-0 w-full h-full"
         allow="fullscreen"

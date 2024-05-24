@@ -27,12 +27,12 @@ useSeoMeta({
         class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:[mask-image:radial-gradient(100%_100%_at_top_right,black,transparent)]"
       />
 
-      <!--------- SITE SECTION --------->
+      <!--------- HERO TEXT --------->
       <template #title>
         <span class="font-montserrat font-bold text-5xl">
           Discover the
           <span
-            class="bg-gradient-to-r from-grayscale-800 via-grayscale-600 to-grayscale-500 dark:from-grayscale-300 dark:via-grayscale-300 dark:to-grayscale-400 bg-clip-text text-transparent"
+            class="bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 dark:from-gray-300 dark:via-gray-400 dark:to-gray-500 bg-clip-text text-transparent"
           >
             Wisdom
           </span>
@@ -40,13 +40,13 @@ useSeoMeta({
         </span>
         <br />
         <span
-          class="font-playfair-display font-bold text-5xl bg-gradient-to-r from-grayscale-800 via-grayscale-800 to-grayscale-500 dark:from-grayscale-400 dark:via-grayscale-500 dark:to-grayscale-600 bg-clip-text text-transparent"
+          class="font-playfair-display font-bold text-5xl bg-gradient-to-r from-gold-light via-gold to-gold-gold dark:from-gold-light dark:via-gold-light dark:to-gold bg-clip-text text-transparent"
         >
           Nahj al-Balagha
         </span>
       </template>
 
-      <!--------- HERO SECTION --------->
+      <!--------- HERO TEXT --------->
       <template #headline>
         <UBadge
           v-if="page.hero.headline"
@@ -72,15 +72,14 @@ useSeoMeta({
       </template>
     </ULandingHero>
 
-    <!-------IMG----------->
+    <!-------HERO IMAGE----------->
 
     <ULandingSection>
-      <SplineFrame />
+      <!-- <SplineFrame /> -->
+      <Placeholder />
     </ULandingSection>
 
-    <!------------------>
-
-    <!--------- SITE SECTION --------->
+    <!--------- FEATURES GRID SECTION --------->
     <ULandingSection
       v-for="(section, index) in page.sections"
       :key="index"
@@ -90,9 +89,10 @@ useSeoMeta({
       :features="section.features"
       class="bg-grayscale-50 dark:bg-gray-900"
     >
-      <Placeholder1 />
+      <Placeholder />
     </ULandingSection>
-    <!--------- SITE SECTION --------->
+
+    <!--------- CARDS SECTION --------->
     <ULandingSection
       :title="page.features.title"
       :description="page.features.description"
@@ -107,7 +107,8 @@ useSeoMeta({
         />
       </UPageGrid>
     </ULandingSection>
-    <!--------- SITE SECTION --------->
+
+    <!--------- TESTIMONIALS SECTION --------->
     <ULandingSection
       :headline="page.testimonials.headline"
       :title="page.testimonials.title"
