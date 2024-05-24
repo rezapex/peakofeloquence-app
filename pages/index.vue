@@ -70,15 +70,15 @@ useSeoMeta({
       :description="section.description"
       :align="section.align"
       :features="section.features"
-      class="bg-grayscale-50 dark:bg-gray-900"
+      class="bg-gray-900 text-gray-100 py-12 px-6 sm:px-12 flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-12"
     >
       <template #title>
-        <h2 class="custom-title-class">{{ section.title }}</h2>
+        <h2 class="text-4xl font-bold mb-4">{{ section.title }}</h2>
       </template>
       <template #description>
-        <p class="custom-description-class">{{ section.description }}</p>
+        <p class="text-lg text-gray-300 mb-6">{{ section.description }}</p>
       </template>
-      <Placeholder2 />
+      <Placeholder />
     </ULandingSection>
 
     <ULandingSection
@@ -110,14 +110,14 @@ useSeoMeta({
         >
           <ULandingTestimonial
             v-bind="testimonial"
-            class="bg-grayscale-200 dark:bg-gray-700"
+            class="bg-grayscale-200 dark:bg-gray-800"
           />
         </div>
       </UPageColumns>
     </ULandingSection>
 
     <ULandingSection class="bg-grayscale-50 dark:bg-gray-900">
-      <ULandingCTA v-bind="page.cta" class="bg-grayscale-200 dark:bg-gray-700" />
+      <ULandingCTA v-bind="page.cta" class="bg-grayscale-200 dark:bg-gray-800" />
     </ULandingSection>
   </div>
 </template>
@@ -133,8 +133,8 @@ useSeoMeta({
 .hero-title-gradient {
   background: linear-gradient(
     to right,
-    #e0c3fc,
-    #ffffff,
+    #68685a,
+    #e6e4db,
     #ac8e62
   ); /* Enhanced gradient for readability */
   -webkit-background-clip: text;

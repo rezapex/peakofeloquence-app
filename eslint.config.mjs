@@ -1,6 +1,20 @@
 // @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs'
+import { defineConfig } from 'eslint-define-config';
 
-export default withNuxt(
-  // Your custom configs here
-)
+export default defineConfig({
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
+    sourceType: 'module'
+  },
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
+  ],
+  plugins: ['vue', '@typescript-eslint'],
+  rules: {
+    // Add your custom rules here
+  }
+});

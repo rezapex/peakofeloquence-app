@@ -8,7 +8,8 @@
     "generate": "yarn nuxt generate",
     "preview": "yarn nuxt preview",
     "postinstall": "yarn nuxt prepare",
-    "lint": "yarn eslint .",
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "format": "prettier --write .",
     "typecheck": "yarn nuxt typecheck"
   },
   "dependencies": {
@@ -39,8 +40,14 @@
     "@nuxt/eslint-config": "^0.3.12",
     "@nuxt/typescript-build": "^3.0.2",
     "@nuxthq/studio": "^1.1.0",
-    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "eslint": "^9.3.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-vue": "^9.26.0",
     "nuxt-icon": "^0.6.10",
+    "prettier": "^3.2.5",
     "vue-tsc": "^2.0.17"
   }
 }

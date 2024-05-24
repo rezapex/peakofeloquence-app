@@ -1,3 +1,6 @@
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt/config';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // Plugins (if needed, uncomment)
@@ -16,21 +19,19 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
     '@nuxtjs/sitemap',
-    'nuxt-icon',
-    //'nuxt-simple-sitemap',
+    'nuxt-icon'
   ],
   hooks: {
     'components:extend': (components) => {
-      const globals = components.filter(c => ['UButton'].includes(c.pascalName))
-      globals.forEach(c => c.global = true)
+      const globals = components.filter(c => ['UButton'].includes(c.pascalName));
+      globals.forEach(c => c.global = true);
     }
   },
   ui: {
     icons: ['heroicons', 'simple-icons']
   },
   routeRules: {
-    '/api/search.json': { prerender: true },
-    // '/docs': { redirect: '/docs/getting-started', prerender: false }
+    '/api/search.json': { prerender: true }
   },
   devtools: {
     enabled: true
@@ -38,7 +39,6 @@ export default defineNuxtConfig({
   typescript: {
     strict: false
   },
-  // Sitemap configuration
   sitemap: {
     hostname: 'https://www.peakofeloquence.org',
     gzip: true,
@@ -53,5 +53,4 @@ export default defineNuxtConfig({
       '/node_modules/**'
     ],
   }
-})
-
+});

@@ -2,7 +2,7 @@
   <div class="donation-page">
     <UContainer class="donation-container">
       <div
-        class="content-wrapper flex flex-col md:flex-row justify-between items-start w-full"
+        class="content-wrapper flex flex-col md:flex-row justify-between items-center md:items-start w-full"
       >
         <div class="donation-description md:w-1/2 md:pr-8">
           <h2
@@ -44,11 +44,11 @@
           <p
             class="text-lg text-center md:text-left mb-8 text-gray-800 dark:text-gray-300 leading-relaxed italic"
           >
-            "I hope to continuatlly improve this website and make it a valuable resource
+            "I hope to continually improve this website and make it a valuable resource
             for everyone. Your support means the world to me!" 🌍
           </p>
         </div>
-        <div class="iframe-container md:w-1/2">
+        <div class="iframe-container md:w-1/2 w-full">
           <iframe
             id="kofiframe"
             src="https://ko-fi.com/peakofeloquence/?hidefeed=true&widget=true&embed=true&preview=true"
@@ -72,7 +72,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Use min-height instead of height to allow content overflow */
   background-color: #f9fafb; /* Tailwind gray-50 */
   padding: 20px;
 }
