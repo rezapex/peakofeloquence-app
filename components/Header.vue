@@ -53,7 +53,7 @@ function mapContentNavigation(navigation: NavItem[]): NavItem[] {
     <!-- Header Right -->
     <template #right>
       <UColorModeButton />
-      <!-- <UButton label="Support" color="gray" to="/donate" /> -->
+      <UButton label="Donate" color="gray" to="/donate" />
     </template>
 
     <UButton
