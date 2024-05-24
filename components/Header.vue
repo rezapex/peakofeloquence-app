@@ -63,9 +63,5 @@ const links = [
     label: "Sayings",
     to: "/sayings/sayings",
   },
-  {
-    label: "Blog",
-    to: "/blog",
-  },
 ];
 </script>
