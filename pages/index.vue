@@ -23,30 +23,18 @@ useSeoMeta({
       :description="page.hero.description"
       :links="page.hero.links"
     >
-      <!-- <div
-        class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:[mask-image:radial-gradient(100%_100%_at_top_right,black,transparent)]"
-      /> -->
-
-      <!--------- HERO TEXT --------->
       <template #title>
-        <span class="font-montserrat font-bold text-5xl">
+        <span class="font-montserrat font-bold text-6xl hero-title">
           Discover the
-          <span
-            class="bg-gradient-to-r from-gray-900 via-gray-500 to-gray-600 dark:from-gray-300 dark:via-gray-400 dark:to-gray-500 bg-clip-text text-transparent"
-          >
-            Wisdom
-          </span>
+          <span class="hero-title-gradient"> Wisdom </span>
           of
         </span>
         <br />
-        <span
-          class="font-playfair-display font-bold text-5xl bg-gradient-to-r from-gold-light via-gold to-gold-dark dark:from-gold-light dark:via-gold-light dark:to-gold bg-clip-text text-transparent"
-        >
+        <span class="font-playfair-display font-bold text-6xl hero-title-gradient">
           Nahj al-Balagha
         </span>
       </template>
 
-      <!--------- HERO TEXT --------->
       <template #headline>
         <UBadge
           v-if="page.hero.headline"
@@ -72,27 +60,27 @@ useSeoMeta({
       </template>
     </ULandingHero>
 
-    <!-------HERO IMAGE----------->
-
     <ULandingSection>
-      <!-- <SplineFrame /> -->
       <Placeholder />
     </ULandingSection>
 
-    <!--------- FEATURES GRID SECTION --------->
     <ULandingSection
       v-for="(section, index) in page.sections"
       :key="index"
-      :title="section.title"
       :description="section.description"
       :align="section.align"
       :features="section.features"
       class="bg-grayscale-50 dark:bg-gray-900"
     >
-      <Placeholder />
+      <template #title>
+        <h2 class="custom-title-class">{{ section.title }}</h2>
+      </template>
+      <template #description>
+        <p class="custom-description-class">{{ section.description }}</p>
+      </template>
+      <Placeholder2 />
     </ULandingSection>
 
-    <!--------- CARDS SECTION --------->
     <ULandingSection
       :title="page.features.title"
       :description="page.features.description"
@@ -108,7 +96,6 @@ useSeoMeta({
       </UPageGrid>
     </ULandingSection>
 
-    <!--------- TESTIMONIALS SECTION --------->
     <ULandingSection
       :headline="page.testimonials.headline"
       :title="page.testimonials.title"
@@ -128,7 +115,7 @@ useSeoMeta({
         </div>
       </UPageColumns>
     </ULandingSection>
-    <!--------- SITE SECTION --------->
+
     <ULandingSection class="bg-grayscale-50 dark:bg-gray-900">
       <ULandingCTA v-bind="page.cta" class="bg-grayscale-200 dark:bg-gray-700" />
     </ULandingSection>
@@ -136,9 +123,38 @@ useSeoMeta({
 </template>
 
 <style scoped>
-.landing-grid {
-  background-size: 100px 100px;
-  background-image: linear-gradient(to left, rgb(100, 100, 100) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(100, 100, 100) 1px, transparent 1px);
+/* 
+.hero-title {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.05em; /* Adjust letter spacing for the main title 
+}
+*/
+
+.hero-title-gradient {
+  background: linear-gradient(to right, #b7a087, #cfb192); /* Adjust gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* 
+.font-playfair-display {
+  font-family: "Playfair Display", serif;
+}
+*/
+.custom-title-class {
+  /* font-family: "Playfair Display", serif; */
+  font-size: 3rem;
+  font-weight: bold;
+  color: #eec89f; /* Example color */
+  /* letter-spacing: 0.05em;  */
+  margin-bottom: 1rem; /* Adjust title bottom margin */
+}
+
+.custom-description-class {
+  font-size: 1.125rem; /* Example size */
+  line-height: 1.75rem; /* Example line height */
+  color: white; /* Example color */
+  letter-spacing: 0.02em; /* Adjust letter spacing for description */
+  margin-top: 1rem; /* Example spacing */
+  margin-bottom: 2rem; /* Adjust description bottom margin */
 }
 </style>

@@ -27,7 +27,9 @@ const inlineConfig = {
       "fuchsia",
       "pink",
       "rose",
-      "primary"
+      "primary",
+      "secondary",
+      "gold"
     ],
     "strategy": "merge"
   }
