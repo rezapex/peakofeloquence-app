@@ -48,6 +48,7 @@
     "eslint-plugin-vue": "^9.26.0",
     "nuxt-icon": "^0.6.10",
     "prettier": "^3.2.5",
+    "supabase": "^1.169.8",
     "vue-tsc": "^2.0.17"
   }
 }
