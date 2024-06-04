@@ -1,8 +1,58 @@
-# Sources
+## About
+
+**PeakofEloquence** is an open-source Islamic education platform developed with modern web technologies to offer a rich and engaging learning experience in Islamic studies. Built using Nuxt, Tailwind CSS, and TypeScript, the platform includes interactive lessons, texts, and multimedia content. PeakofEloquence aims to make high-quality Islamic educational resources accessible to everyone.
+
+[peakofeloquence.org](https://peakofeloquence.org/)
+
+## Technologies Used
+-   **Frontend**: Nuxt.js, Tailwind CSS, TypeScript
+-   **Backend**: Node.js, Express.js
+-   **Database**: MongoDB
+-   **Other Tools**: Vercel (deployment), Jest (testing)
+
+## Getting Started
+To get started with PeakofEloquence, follow these steps:
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/peakofeloquence.git
+    ```
+2. **Navigate into the repository**:
+    ```bash
+    cd peakofeloquence
+    ```
+3. **Install dependencies**:
+    ```bash
+    yarn install
+    ```
+4. **Run the development server**:
+    ```bash
+    yarn dev
+    ```
+
+---
+
+## Community and Contributions
+
+PeakofEloquence was created for the community. Contributions are welcome both in development and in the form of donations to help keep the site running and support further development. Planned features include voice integration, AI-powered interactions, and more.
+
+If you want to contribute, please check out our [contribution guidelines](#). If you'd like to support us financially, consider [donating on Ko-fi](https://ko-fi.com/P5P3X2SN5) to help sustain our efforts and bring more features to the platform.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_lg.svg)](https://ko-fi.com/P5P3X2SN5)
+
+
+License
+This project is licensed under the [License Name] - see the [LICENSE file](link to license file) for details.
+
+Contact
+For any queries or support, feel free to reach out to me @ [admin@rezajafar.com](mailto:admin@rezajafar.com.)
+
+---
+
+## Sources
 
 This README.md file provides a list of sources for further reading on various topics related to Islam and related subjects.
 
-## Books
+### Books
 
 - [Al-Islam.org](https://www.al-islam.org/book/export)
 - [Nahjul Balagah Revisited: Introducing Imam ‘Ali Ibn Abu Talib](https://www.al-islam.org/nahjul-balagah-revisited-introducing-imam-ali-ibn-abu-talib-asgharali-m-m-jaffer)
@@ -23,108 +73,3 @@ This README.md file provides a list of sources for further reading on various to
 
 ---
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-## Nuxt Studio integration
-
-Add `@nuxthq/studio` dependency to your package.json:
-
-```bash
-# npm
-npm install --save-dev @nuxthq/studio
-
-# pnpm
-pnpm add -D @nuxthq/studio
-
-# yarn
-yarn add -D @nuxthq/studio
-
-# bun
-bun add -d @nuxthq/studio
-```
-
-Add this module to your `nuxt.config.ts`:
-
-```ts
-export default defineNuxtConfig({
-  ...
-  modules: [
-    ...
-    '@nuxthq/studio'
-  ]
-})
-```
-
-Read more on [Nuxt Studio docs](https://nuxt.studio/docs/projects/setup).
-
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
