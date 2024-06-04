@@ -37,7 +37,7 @@ PeakofEloquence was created for the community. Contributions are welcome both in
 
 If you want to contribute, please check out our [contribution guidelines](#). If you'd like to support us financially, consider [donating on Ko-fi](https://ko-fi.com/P5P3X2SN5) to help sustain our efforts and bring more features to the platform.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_lg.svg)](https://ko-fi.com/P5P3X2SN5)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P3X2SN5)
 
 
 License
