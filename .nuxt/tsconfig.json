@@ -20,6 +20,9 @@
       "@unhead/vue": [
         "../node_modules/@unhead/vue"
       ],
+      "@nuxt/devtools": [
+        "../node_modules/@nuxt/devtools"
+      ],
       "@vue/runtime-core": [
         "../node_modules/@vue/runtime-core"
       ],
@@ -81,13 +84,13 @@
         "../node_modules/@nuxt/ui-pro/*"
       ],
       "#app": [
-        "../node_modules/nuxt/dist/app"
+        "../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/app"
       ],
       "#app/*": [
-        "../node_modules/nuxt/dist/app/*"
+        "../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/app/*"
       ],
       "vue-demi": [
-        "../node_modules/nuxt/dist/app/compat/vue-demi"
+        "../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#mdc-configs": [
         "./mdc-configs"
@@ -99,16 +102,16 @@
         "./mdc-imports"
       ],
       "#image": [
-        "../node_modules/@nuxt/image/dist/runtime"
+        "../../node_modules/.pnpm/@nuxt+image@1.7.0_ioredis@5.4.1_magicast@0.3.4_rollup@4.18.0/node_modules/@nuxt/image/dist/runtime"
       ],
       "#image/*": [
-        "../node_modules/@nuxt/image/dist/runtime/*"
+        "../../node_modules/.pnpm/@nuxt+image@1.7.0_ioredis@5.4.1_magicast@0.3.4_rollup@4.18.0/node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#ui": [
-        "../node_modules/@nuxt/ui/dist/runtime"
+        "../../node_modules/@nuxt/ui/dist/runtime"
       ],
       "#ui/*": [
-        "../node_modules/@nuxt/ui/dist/runtime/*"
+        "../../node_modules/@nuxt/ui/dist/runtime/*"
       ],
       "#ui-colors": [
         "./ui.colors"
@@ -118,12 +121,6 @@
       ],
       "#color-mode-options": [
         "./color-mode-options.mjs"
-      ],
-      "#nuxt-component-meta": [
-        "./component-meta"
-      ],
-      "#nuxt-component-meta/types": [
-        "./component-meta.d"
       ],
       "#sitemap": [
         "../node_modules/@nuxtjs/sitemap/dist/runtime/types"
@@ -141,7 +138,7 @@
         "./tailwind.config/*"
       ],
       "#app-manifest": [
-        "./manifest/meta/25a2c641-fded-4feb-8056-a32db2c692f2.json"
+        "./manifest/meta/dev.json"
       ],
       "#build": [
         "."
@@ -153,23 +150,31 @@
         "./components"
       ]
     },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "strict": false,
+    "noUncheckedIndexedAccess": false,
     "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true,
+    "module": "preserve",
+    "noEmit": true,
+    "lib": [
+      "ESNext",
+      "dom",
+      "dom.iterable"
+    ],
     "jsx": "preserve",
     "jsxImportSource": "vue",
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "useDefineForClassFields": true,
-    "strict": false,
-    "noImplicitThis": true,
-    "esModuleInterop": true,
     "types": [],
-    "verbatimModuleSyntax": true,
-    "allowJs": true,
-    "noEmit": true,
-    "resolveJsonModule": true,
+    "moduleResolution": "Bundler",
+    "useDefineForClassFields": true,
+    "noImplicitThis": true,
     "allowSyntheticDefaultImports": true
   },
   "include": [
@@ -187,7 +192,6 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime",
     "../node_modules/@nuxt/ui/runtime",
     "../node_modules/@nuxt/fonts/runtime",
-    "../node_modules/nuxt-component-meta/runtime",
     "../node_modules/@nuxthq/studio/runtime",
     "../node_modules/@vueuse/nuxt/runtime",
     "../node_modules/nuxt-site-config/dist/runtime",
@@ -195,11 +199,16 @@
     "../node_modules/@nuxtjs/sitemap/runtime",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
-    ".."
+    "..",
+    "../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/app",
+    "../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/app/compat/vue-demi",
+    "../../node_modules/.pnpm/@nuxt+image@1.7.0_ioredis@5.4.1_magicast@0.3.4_rollup@4.18.0/node_modules/@nuxt/image/dist/runtime",
+    "../../node_modules/@nuxt/ui/dist/runtime"
   ],
   "exclude": [
     "../node_modules",
-    "../node_modules/nuxt/node_modules",
+    "../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/node_modules",
+    "../node_modules/@nuxt/ui-pro/node_modules",
     "../node_modules/@nuxt/ui-pro/modules/pro/node_modules",
     "../node_modules/nuxt-site-config/dist/node_modules",
     "../node_modules/@nuxt/ui-pro/modules/pro/runtime/server",
@@ -212,7 +221,6 @@
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
     "../node_modules/@nuxt/ui/runtime/server",
     "../node_modules/@nuxt/fonts/runtime/server",
-    "../node_modules/nuxt-component-meta/runtime/server",
     "../node_modules/@nuxthq/studio/runtime/server",
     "../node_modules/@vueuse/nuxt/runtime/server",
     "../node_modules/nuxt-site-config/dist/runtime/server",

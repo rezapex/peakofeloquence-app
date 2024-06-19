@@ -3,9 +3,7 @@ import { updateAppConfig } from '#app/config'
 import { defuFn } from 'defu'
 
 const inlineConfig = {
-  "nuxt": {
-    "buildId": "25a2c641-fded-4feb-8056-a32db2c692f2"
-  },
+  "nuxt": {},
   "ui": {
     "primary": "green",
     "gray": "cool",
@@ -42,7 +40,7 @@ if (import.meta.hot) {
   })
 }
 
-import cfg0 from "/Users/rezajafar/Desktop/Development/peakofeloquence-app/app.config.ts"
-import cfg1 from "/Users/rezajafar/Desktop/Development/peakofeloquence-app/node_modules/@nuxt/ui-pro/app.config.ts"
+import cfg0 from "/Users/minimalist/peakofeloquence-app/app.config.ts"
+import cfg1 from "/Users/minimalist/peakofeloquence-app/node_modules/@nuxt/ui-pro/app.config.ts"
 
 export default /*@__PURE__*/ defuFn(cfg0, cfg1, inlineConfig)

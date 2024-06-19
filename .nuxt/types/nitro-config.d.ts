@@ -3,8 +3,8 @@
 // App Config
 import type { Defu } from 'defu'
 
-import type { default as appConfig0 } from "/Users/rezajafar/Desktop/Development/peakofeloquence-app/app.config";
-import type { default as appConfig1 } from "/Users/rezajafar/Desktop/Development/peakofeloquence-app/node_modules/@nuxt/ui-pro/app.config";
+import type { default as appConfig0 } from "/Users/minimalist/peakofeloquence-app/app.config";
+import type { default as appConfig1 } from "/Users/minimalist/peakofeloquence-app/node_modules/@nuxt/ui-pro/app.config";
 
 type UserAppConfig = Defu<{}, [typeof appConfig0, typeof appConfig1]>
 

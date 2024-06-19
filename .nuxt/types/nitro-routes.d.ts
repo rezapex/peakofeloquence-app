@@ -7,31 +7,28 @@ declare module 'nitropack' {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/search.json.get').default>>>>
     }
     '/__nuxt_error': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>
     }
     '/api/_mdc/highlight': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/mdc/dist/runtime/highlighter/event-handler').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/@nuxtjs/mdc/dist/runtime/highlighter/event-handler').default>>>>
     }
-    '/__studio.json': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxthq/studio/dist/runtime/server/routes/studio').default>>>>
-    }
-    '/api/component-meta': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
-    }
-    '/api/component-meta.json': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
-    }
-    '/api/component-meta/:component?': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
+    '/__site-config__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-site-config/dist/runtime/nitro/routes/__site-config__/debug').default>>>>
     }
     '/__og-image__/font/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nitro/routes/font').default>>>>
+    }
+    '/__og-image__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nitro/routes/debug.json').default>>>>
     }
     '/__og-image__/image/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-og-image/dist/runtime/nitro/routes/image').default>>>>
     }
     '/__sitemap__/nuxt-content-urls.json': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/routes/__sitemap__/nuxt-content-urls').default>>>>
+    }
+    '/__sitemap__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/routes/__sitemap__/debug').default>>>>
     }
     '/__sitemap__/style.xsl': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/routes/sitemap.xsl').default>>>>
@@ -40,28 +37,28 @@ declare module 'nitropack' {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/routes/sitemap.xml').default>>>>
     }
     '/api/_content/query/:qid/**:params': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.1_@opentelemetry+api@1.9.0_@parce_hclosptkgtrfgnvn2frt5p4i6e/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
     }
     '/api/_content/query/:qid': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.1_@opentelemetry+api@1.9.0_@parce_hclosptkgtrfgnvn2frt5p4i6e/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
     }
     '/api/_content/query': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.1_@opentelemetry+api@1.9.0_@parce_hclosptkgtrfgnvn2frt5p4i6e/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
     }
-    '/api/_content/cache.1716947182376.json': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/cache').default>>>>
+    '/api/_content/cache.json': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.1_@opentelemetry+api@1.9.0_@parce_hclosptkgtrfgnvn2frt5p4i6e/node_modules/@nuxt/content/dist/runtime/server/api/cache').default>>>>
     }
     '/api/_content/navigation/:qid/**:params': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.1_@opentelemetry+api@1.9.0_@parce_hclosptkgtrfgnvn2frt5p4i6e/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
     }
     '/api/_content/navigation/:qid': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.1_@opentelemetry+api@1.9.0_@parce_hclosptkgtrfgnvn2frt5p4i6e/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
     }
     '/api/_content/navigation': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/@nuxt+content@2.12.1_ioredis@5.4.1_magicast@0.3.4_nuxt@3.12.1_@opentelemetry+api@1.9.0_@parce_hclosptkgtrfgnvn2frt5p4i6e/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
     }
     '/_ipx/**': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/image/dist/runtime/ipx').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../node_modules/.pnpm/@nuxt+image@1.7.0_ioredis@5.4.1_magicast@0.3.4_rollup@4.18.0/node_modules/@nuxt/image/dist/runtime/ipx').default>>>>
     }
   }
 }

@@ -1,6 +1,6 @@
 declare global {
-  const __buildAssetsURL: typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/paths')['buildAssetsURL']
-  const __publicAssetsURL: typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/paths')['publicAssetsURL']
+  const __buildAssetsURL: typeof import('../../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/core/runtime/nitro/paths')['buildAssetsURL']
+  const __publicAssetsURL: typeof import('../../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/core/runtime/nitro/paths')['publicAssetsURL']
   const appendCorsHeaders: typeof import('../../node_modules/h3')['appendCorsHeaders']
   const appendCorsPreflightHeaders: typeof import('../../node_modules/h3')['appendCorsPreflightHeaders']
   const appendHeader: typeof import('../../node_modules/h3')['appendHeader']
@@ -9,8 +9,8 @@ declare global {
   const appendResponseHeaders: typeof import('../../node_modules/h3')['appendResponseHeaders']
   const asSitemapUrl: typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/composables/asSitemapUrl')['asSitemapUrl']
   const assertMethod: typeof import('../../node_modules/h3')['assertMethod']
-  const cachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime')['cachedEventHandler']
-  const cachedFunction: typeof import('../../node_modules/nitropack/dist/runtime')['cachedFunction']
+  const cachedEventHandler: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['cachedEventHandler']
+  const cachedFunction: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['cachedFunction']
   const callNodeListener: typeof import('../../node_modules/h3')['callNodeListener']
   const clearResponseHeaders: typeof import('../../node_modules/h3')['clearResponseHeaders']
   const clearSession: typeof import('../../node_modules/h3')['clearSession']
@@ -22,20 +22,20 @@ declare global {
   const createRouter: typeof import('../../node_modules/h3')['createRouter']
   const createSitePathResolver: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nitro/composables')['createSitePathResolver']
   const defaultContentType: typeof import('../../node_modules/h3')['defaultContentType']
-  const defineAppConfig: typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/config')['defineAppConfig']
-  const defineCachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime')['defineCachedEventHandler']
-  const defineCachedFunction: typeof import('../../node_modules/nitropack/dist/runtime')['defineCachedFunction']
+  const defineAppConfig: typeof import('../../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/core/runtime/nitro/config')['defineAppConfig']
+  const defineCachedEventHandler: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['defineCachedEventHandler']
+  const defineCachedFunction: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['defineCachedFunction']
   const defineEventHandler: typeof import('../../node_modules/h3')['defineEventHandler']
   const defineLazyEventHandler: typeof import('../../node_modules/h3')['defineLazyEventHandler']
-  const defineNitroErrorHandler: typeof import('../../node_modules/nitropack/dist/runtime')['defineNitroErrorHandler']
-  const defineNitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime')['defineNitroPlugin']
+  const defineNitroErrorHandler: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['defineNitroErrorHandler']
+  const defineNitroPlugin: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['defineNitroPlugin']
   const defineNodeListener: typeof import('../../node_modules/h3')['defineNodeListener']
   const defineNodeMiddleware: typeof import('../../node_modules/h3')['defineNodeMiddleware']
-  const defineRenderHandler: typeof import('../../node_modules/nitropack/dist/runtime')['defineRenderHandler']
+  const defineRenderHandler: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['defineRenderHandler']
   const defineRequestMiddleware: typeof import('../../node_modules/h3')['defineRequestMiddleware']
   const defineResponseMiddleware: typeof import('../../node_modules/h3')['defineResponseMiddleware']
   const defineSitemapEventHandler: typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/composables/defineSitemapEventHandler')['defineSitemapEventHandler']
-  const defineTask: typeof import('../../node_modules/nitropack/dist/runtime')['defineTask']
+  const defineTask: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['defineTask']
   const defineWebSocket: typeof import('../../node_modules/h3')['defineWebSocket']
   const defineWebSocketHandler: typeof import('../../node_modules/h3')['defineWebSocketHandler']
   const deleteCookie: typeof import('../../node_modules/h3')['deleteCookie']
@@ -65,7 +65,7 @@ declare global {
   const getResponseHeaders: typeof import('../../node_modules/h3')['getResponseHeaders']
   const getResponseStatus: typeof import('../../node_modules/h3')['getResponseStatus']
   const getResponseStatusText: typeof import('../../node_modules/h3')['getResponseStatusText']
-  const getRouteRules: typeof import('../../node_modules/nitropack/dist/runtime')['getRouteRules']
+  const getRouteRules: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['getRouteRules']
   const getRouterParam: typeof import('../../node_modules/h3')['getRouterParam']
   const getRouterParams: typeof import('../../node_modules/h3')['getRouterParams']
   const getSession: typeof import('../../node_modules/h3')['getSession']
@@ -82,9 +82,9 @@ declare global {
   const isStream: typeof import('../../node_modules/h3')['isStream']
   const isWebResponse: typeof import('../../node_modules/h3')['isWebResponse']
   const lazyEventHandler: typeof import('../../node_modules/h3')['lazyEventHandler']
-  const nitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime')['nitroPlugin']
+  const nitroPlugin: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['nitroPlugin']
   const parseCookies: typeof import('../../node_modules/h3')['parseCookies']
-  const parseMarkdown: typeof import('../../node_modules/@nuxtjs/mdc/dist/runtime/parser')['parseMarkdown']
+  const parseMarkdown: typeof import('../../../node_modules/@nuxtjs/mdc/dist/runtime/parser')['parseMarkdown']
   const promisifyNodeListener: typeof import('../../node_modules/h3')['promisifyNodeListener']
   const proxyRequest: typeof import('../../node_modules/h3')['proxyRequest']
   const readBody: typeof import('../../node_modules/h3')['readBody']
@@ -93,7 +93,7 @@ declare global {
   const readRawBody: typeof import('../../node_modules/h3')['readRawBody']
   const readValidatedBody: typeof import('../../node_modules/h3')['readValidatedBody']
   const removeResponseHeader: typeof import('../../node_modules/h3')['removeResponseHeader']
-  const runTask: typeof import('../../node_modules/nitropack/dist/runtime')['runTask']
+  const runTask: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['runTask']
   const sanitizeStatusCode: typeof import('../../node_modules/h3')['sanitizeStatusCode']
   const sanitizeStatusMessage: typeof import('../../node_modules/h3')['sanitizeStatusMessage']
   const sealSession: typeof import('../../node_modules/h3')['sealSession']
@@ -121,25 +121,25 @@ declare global {
   const unsealSession: typeof import('../../node_modules/h3')['unsealSession']
   const updateSession: typeof import('../../node_modules/h3')['updateSession']
   const updateSiteConfig: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nitro/composables')['updateSiteConfig']
-  const useAppConfig: typeof import('../../node_modules/nitropack/dist/runtime')['useAppConfig']
+  const useAppConfig: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['useAppConfig']
   const useBase: typeof import('../../node_modules/h3')['useBase']
-  const useEvent: typeof import('../../node_modules/nitropack/dist/runtime')['useEvent']
-  const useNitroApp: typeof import('../../node_modules/nitropack/dist/runtime')['useNitroApp']
+  const useEvent: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['useEvent']
+  const useNitroApp: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['useNitroApp']
   const useNitroOrigin: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nitro/composables')['useNitroOrigin']
-  const useRuntimeConfig: typeof import('../../node_modules/nitropack/dist/runtime')['useRuntimeConfig']
+  const useRuntimeConfig: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['useRuntimeConfig']
   const useSession: typeof import('../../node_modules/h3')['useSession']
   const useSiteConfig: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nitro/composables')['useSiteConfig']
-  const useStorage: typeof import('../../node_modules/nitropack/dist/runtime')['useStorage']
+  const useStorage: typeof import('../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime')['useStorage']
   const withSiteTrailingSlash: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nitro/composables')['withSiteTrailingSlash']
   const withSiteUrl: typeof import('../../node_modules/nuxt-site-config/dist/runtime/nitro/composables')['withSiteUrl']
   const writeEarlyHints: typeof import('../../node_modules/h3')['writeEarlyHints']
 }
 export { useSiteConfig, useNitroOrigin, updateSiteConfig, withSiteUrl, withSiteTrailingSlash, createSitePathResolver } from '#internal/nuxt-site-config';
-export { defineCachedFunction, defineCachedEventHandler, cachedFunction, cachedEventHandler, useRuntimeConfig, useStorage, useNitroApp, defineNitroPlugin, nitroPlugin, defineRenderHandler, getRouteRules, useAppConfig, useEvent, defineTask, runTask, defineNitroErrorHandler } from '../../node_modules/nitropack/dist/runtime';
+export { defineCachedFunction, defineCachedEventHandler, cachedFunction, cachedEventHandler, useRuntimeConfig, useStorage, useNitroApp, defineNitroPlugin, nitroPlugin, defineRenderHandler, getRouteRules, useAppConfig, useEvent, defineTask, runTask, defineNitroErrorHandler } from '../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.9.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack/dist/runtime';
 export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
-export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '../../node_modules/nuxt/dist/core/runtime/nitro/paths';
-export { defineAppConfig } from '../../node_modules/nuxt/dist/core/runtime/nitro/config';
-export { parseMarkdown } from '../../node_modules/@nuxtjs/mdc/dist/runtime/parser';
+export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '../../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/core/runtime/nitro/paths';
+export { defineAppConfig } from '../../../node_modules/.pnpm/nuxt@3.12.1_@opentelemetry+api@1.9.0_@parcel+watcher@2.4.1_@types+node@20.14.2_@unocss+reset@_trvaz5tmsdjeaqqwqdbsquuv4u/node_modules/nuxt/dist/core/runtime/nitro/config';
+export { parseMarkdown } from '../../../node_modules/@nuxtjs/mdc/dist/runtime/parser';
 export { getPathRobotConfigPolyfill as getPathRobotConfig } from '../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/composables/getPathRobotConfigPolyfill';
 export { defineSitemapEventHandler } from '../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/composables/defineSitemapEventHandler';
 export { asSitemapUrl } from '../../node_modules/@nuxtjs/sitemap/dist/runtime/nitro/composables/asSitemapUrl';
